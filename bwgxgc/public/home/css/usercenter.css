@@ -1,0 +1,273 @@
+@charset "UTF-8";
+/*初始化css*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  border: none;
+}
+
+/*主体*/
+main {
+  width: 100%;
+}
+main .main-content {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-left: 50px;
+}
+main .main-content .content-top {
+  width: 100%;
+  margin-bottom: 75px;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-left {
+  width: 198px;
+  height: 242px;
+  float: left;
+  position: relative;
+}
+main .main-content .content-top .content-t-left #localImag {
+  width: 100%;
+  height: 188px;
+  position: relative;
+  margin-bottom: 22px;
+  border: 1px solid #bfbfbf;
+}
+main .main-content .content-top .content-t-left #localImag .localIgag-zhezhao {
+  width: 172px;
+  height: 160px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: linear-gradient(to left, #e4e4e4, #e4e4e4) left top no-repeat, linear-gradient(to bottom, #e4e4e4, #e4e4e4) left top no-repeat, linear-gradient(to left, #e4e4e4, #e4e4e4) right top no-repeat, linear-gradient(to bottom, #e4e4e4, #e4e4e4) right top no-repeat, linear-gradient(to left, #e4e4e4, #e4e4e4) left bottom no-repeat, linear-gradient(to bottom, #e4e4e4, #e4e4e4) left bottom no-repeat, linear-gradient(to left, #e4e4e4, #e4e4e4) right bottom no-repeat, linear-gradient(to left, #e4e4e4, #e4e4e4) right bottom no-repeat;
+  background-size: 1px 42px, 42px 1px, 1px 42px, 42px 1px;
+  text-align: center;
+  line-height: 160px;
+}
+main .main-content .content-top .content-t-left #localImag .localIgag-zhezhao .iconfont {
+  font-size: 90px;
+  color: #e4e4e4;
+}
+main .main-content .content-top .content-t-left #localImag img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+main .main-content .content-top .content-t-left label {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #fefefe;
+  font-size: 14px;
+  background: #81a2fe;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+main .main-content .content-top .content-t-left label input {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+main .main-content .content-top .content-t-righht {
+  width: 670px;
+  float: right;
+  margin-right: 60px;
+}
+main .main-content .content-top .content-t-righht label {
+  font-size: 16px;
+  color: #555555;
+  margin-right: 30px;
+  float: left;
+}
+main .main-content .content-top .content-t-righht span {
+  font-size: 16px;
+  color: #555555;
+  margin-right: 30px;
+  float: left;
+}
+main .main-content .content-top .content-t-righht input {
+  float: left;
+  border: 1px solid #bfbfbf;
+  outline: none;
+  padding-left: 3px;
+}
+main .main-content .content-top .content-t-righht .content-right-name {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-righht .content-right-name .nc-name {
+  margin-right: 106px;
+}
+main .main-content .content-top .content-t-righht .content-right-name .radio {
+  width: 55px;
+  position: relative;
+}
+main .main-content .content-top .content-t-righht .content-right-name .radio input {
+  position: absolute;
+  float: right;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid #c1c1c1;
+  margin-left: 14px;
+}
+main .main-content .content-top .content-t-righht .content-right-csrq {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-righht .content-right-csrq label {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+main .main-content .content-top .content-t-righht .content-right-csrq label:first-child {
+  margin-left: 0;
+}
+main .main-content .content-top .content-t-righht .content-right-csrq select {
+  float: left;
+  width: 75px;
+  height: 30px;
+  font-size: 14px;
+  outline: none;
+  color: #9f9f9f;
+}
+main .main-content .content-top .content-t-righht .content-right-csrq .select-ri {
+  margin-right: 70px;
+}
+main .main-content .content-top .content-t-righht .content-right-csrq .csrq-nz {
+  width: 140px;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-righht .content-right-csrq .csrq-nz input {
+  width: 60px;
+  height: 30px;
+  float: right;
+}
+main .main-content .content-top .content-t-righht .content-right-hj {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-righht .content-right-hj .content-hj {
+  width: 186px;
+  margin-right: 106px;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-righht .content-right-hj .content-hj input {
+  width: 100px;
+  height: 30px;
+  float: right;
+}
+main .main-content .content-top .content-t-righht .content-right-hj .content-lxfs {
+  width: 333px;
+  margin: 0;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-righht .content-right-hj .content-lxfs input {
+  width: 220px;
+  height: 30px;
+  float: right;
+}
+main .main-content .content-top .content-t-righht .content-right-yx {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-righht .content-right-yx .content-hj {
+  width: 306px;
+  margin-right: 32px;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-righht .content-right-yx .content-hj input {
+  width: 220px;
+  height: 30px;
+  float: right;
+}
+main .main-content .content-top .content-t-righht .content-right-yx .content-lxfs {
+  width: 306px;
+  margin: 0;
+  overflow: hidden;
+}
+main .main-content .content-top .content-t-righht .content-right-yx .content-lxfs input {
+  width: 220px;
+  height: 30px;
+  float: right;
+}
+main .main-content .content-bottom {
+  width: 100%;
+  margin-bottom: 46px;
+}
+main .main-content .content-bottom label {
+  width: 100%;
+}
+main .main-content .content-bottom textarea {
+  width: 1090px;
+  height: 212px;
+  padding-top: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  color: #555555;
+  outline: none;
+  resize: none;
+  border: 1px solid #bfbfbf;
+}
+main .main-content .content-bottom p {
+  margin-right: 60px;
+  font-size: 14px;
+  color: #555555;
+  float: right;
+}
+main .main-content .main-button {
+  width: 100px;
+  height: 30px;
+  float: right;
+  margin-right: 60px;
+}
+main .main-content .main-button input {
+  width: 100%;
+  height: 100%;
+  background: #81a2fe;
+  font-size: 14px;
+  color: #fefefe;
+  outline: none;
+  border: 0;
+}

@@ -1,0 +1,299 @@
+@charset "UTF-8";
+/*初始化css*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f8f8f8;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  border: none;
+}
+
+/*主体*/
+main {
+  width: 100%;
+  padding-top: 54px;
+  position: relative;
+}
+main .cedaohang-dingwei {
+  width: 140px;
+  position: fixed;
+  left: 0;
+  top: 150px;
+  z-index: 10;
+}
+main .cedaohang-dingwei .cedaohang-li {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+main .cedaohang-dingwei .cedaohang-li:nth-child(n) {
+  background: #b786e5;
+}
+main .cedaohang-dingwei .cedaohang-li:nth-child(2n) {
+  background: #a260de;
+}
+main .cedaohang-dingwei .cedaohang-active {
+  background: #fff !important;
+  color: #555555;
+}
+main .main-title-box {
+  width: 100%;
+  height: 54px;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-top: 14px solid #f8f8f8;
+  z-index: 10;
+}
+main .main-title-box .main-title {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+main .main-title-box .main-title a {
+  display: block;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 40px;
+  float: left;
+  font-size: 14px;
+  color: #555555;
+  text-decoration: none;
+}
+main .main-title-box .main-title .a-active {
+  color: #a260de;
+}
+main .main-form-box {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 51px;
+}
+main .main-form-box form {
+  width: 1200px;
+  margin-bottom: 242px;
+}
+main .main-form-box form .form-img-big-box {
+  width: 100%;
+  height: 356px;
+}
+main .main-form-box form .form-img-big-box .form-img-box-left {
+  width: 457px;
+  height: 100%;
+  padding-left: 70px;
+  float: left;
+}
+main .main-form-box form .form-img-big-box .form-img-box-left #localImag {
+  width: 280px;
+  height: 280px;
+  background: #fff;
+  color: #e6e6e6;
+  font-size: 20px;
+  position: relative;
+  line-height: 280px;
+  text-align: center;
+  border: 1px solid #bfbfbf;
+}
+main .main-form-box form .form-img-big-box .form-img-box-left #localImag img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+main .main-form-box form .form-img-big-box .form-img-box-left #localImag label {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+main .main-form-box form .form-img-big-box .form-img-box-left #localImag label input {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+main .main-form-box form .form-img-big-box .form-img-box-right {
+  width: 680px;
+  height: 100%;
+  float: left;
+}
+main .main-form-box form .form-img-big-box .form-img-box-right .localImag {
+  width: 150px;
+  height: 140px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  background: #fff;
+  color: #e6e6e6;
+  font-size: 16px;
+  position: relative;
+  line-height: 140px;
+  text-align: center;
+  border: 1px solid #bfbfbf;
+  float: left;
+}
+main .main-form-box form .form-img-big-box .form-img-box-right .localImag img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+main .main-form-box form .form-img-big-box .form-img-box-right .localImag label {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+main .main-form-box form .form-img-big-box .form-img-box-right .localImag label input {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+main .main-form-box form .form-text-big-box {
+  width: 100%;
+  border: 2px solid #dcdcdc;
+  margin-bottom: 60px;
+  background: #fff;
+}
+main .main-form-box form .form-text-big-box .select-div {
+  width: 90%;
+  overflow: hidden;
+}
+main .main-form-box form .form-text-big-box .select-div .select-box {
+  width: 1196px;
+  height: 44px;
+  padding-left: 40px;
+  color: #7b7b7b;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+main .main-form-box form .form-text-big-box .select-div .select-box .select-option {
+  font-size: 14px;
+  color: #bbbbbb;
+}
+main .main-form-box form .form-text-big-box .form-text-ul {
+  width: 100%;
+  overflow: hidden;
+}
+main .main-form-box form .form-text-big-box .form-text-ul .form-text-li {
+  float: left;
+  width: 50%;
+  height: 44px;
+  background: #eeeeee;
+}
+main .main-form-box form .form-text-big-box .form-text-ul .form-text-li label {
+  float: left;
+  width: 197px;
+  height: 100%;
+  border-right: 2px solid #fff;
+  margin: 0;
+  font-size: 14px;
+  color: #555555;
+  line-height: 44px;
+  padding-left: 40px;
+}
+main .main-form-box form .form-text-big-box .form-text-ul .form-text-li input {
+  width: 393px;
+  height: 100%;
+  border: none;
+  background: none;
+  float: left;
+  font-size: 12px;
+  color: #999999;
+  outline: none;
+  padding-left: 42px;
+}
+main .main-form-box form .form-text-big-box .form-text-ul .form-text-li-1 {
+  float: left;
+  width: 50%;
+  height: 44px;
+  background: #ffffff;
+}
+main .main-form-box form .form-text-big-box .form-text-ul .form-text-li-1 label {
+  float: left;
+  width: 197px;
+  height: 100%;
+  border-right: 2px solid #eeeeee;
+  margin: 0;
+  font-size: 14px;
+  color: #555555;
+  line-height: 44px;
+  padding-left: 40px;
+}
+main .main-form-box form .form-text-big-box .form-text-ul .form-text-li-1 input {
+  width: 393px;
+  height: 100%;
+  border: none;
+  background: none;
+  float: left;
+  font-size: 12px;
+  color: #999999;
+  outline: none;
+  padding-left: 42px;
+}
+main .main-form-box form .form-text-big-box .form-text-ul .li-you-biankuang {
+  border-right: 2px solid #dcdcdc;
+}
+main .main-form-box form .form-button {
+  width: 180px;
+  height: 60px;
+  background: #a260de;
+  margin: 0 auto;
+}
+main .main-form-box form .form-button input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  color: #fff;
+  outline: none;
+}

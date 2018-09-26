@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>企业信息</title>
+    <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
+    <link rel="stylesheet" href="{:config('home_css')}/enterpriseinformation.css">
+    <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/bootstrap.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<main>
+    <div class="main-content-box">
+        <form action="" method="post">
+            <div class="main-content--top">
+                <div class="main-content-top-left">
+                    <div id="localImag">
+                        <div class="localIgag-zhezhao">
+                            <i class="iconfont icon-xiangji"></i>
+                        </div>
+                        <img src="" id="preview" alt="">
+                    </div>
+                    <!--这是图片上传的input框-->
+                    <label>上传头像<input type='file' id='doc' name='pic'value=""></label>
+                </div>
+                <div class="main-content-top-right">
+                    <div class="control-group">
+                        <label class="control-label" for="dwmc">单位名称：</label>
+                        <div class="controls controls-dwmc">
+                            <input type="text" id="dwmc" value="" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">成立时间：</label>
+                        <div class="controls controls-clsj">
+                            <input type="text" value="" autocomplete="off">
+                            <span>年</span>
+                            <input type="text" value="" autocomplete="off">
+                            <span>月</span>
+                            <input type="text" value="" autocomplete="off">
+                            <span>日</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">所在地：</label>
+                        <div class="controls controls-clsj">
+                            <input type="text" value="" autocomplete="off">
+                            <span>省</span>
+                            <input type="text" value="" autocomplete="off">
+                            <span>市</span>
+                            <input type="text" value="" autocomplete="off">
+                            <span>区/县</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="xxdz">详细地址：</label>
+                        <div class="controls controls-xxdz">
+                            <input type="text" id="xxdz" value="" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="gcgm">工厂规模：</label>
+                        <div class="controls controls-gcgm">
+                            <input type="text" id="gcgm" value="" autocomplete="off">
+                        </div>
+                        <label class="control-label" for="gcrs">工厂人数：</label>
+                        <div class="controls controls-gcgm">
+                            <input type="text" id="gcrs" value="" autocomplete="off">
+                            <span>人</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="sclb">生产类别：</label>
+                        <div class="controls controls-xxdz">
+                            <input type="text" id="sclb" value="" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="zydgcp">主要代工品牌：</label>
+                        <div class="controls controls-xxdz">
+                            <input type="text" id="zydgcp" value="" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="sbxjcd">设备新旧程度：</label>
+                        <div class="controls controls-gcgm">
+                            <input type="text" id="sbxjcd" value="" autocomplete="off">
+                            <span>成新</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mian-content-middle">
+                <div class="main-middle-title">生产能力：</div>
+                <div class="main-middle-content">
+                    <div class="main-middle-t-title">
+                        <span>例:</span>
+                        <span>生产</span>
+                        <input type="text" value="卫生巾" disabled="disabled">
+                        <span>产品</span>
+                        <input type="text" value="2000" disabled="disabled">
+                        <span>件/月</span>
+                    </div>
+                    <div class="main-middle-t-content-box">
+                        <div class="dianjitianjia">添加...</div>
+                        <div class="main-middle-t-content">
+                            <span>填:</span>
+                            <span>生产</span>
+                            <input type="text" value="">
+                            <span>产品</span>
+                            <input type="text" value="">
+                            <span>件/月</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content--bottom">
+                <div class="main-bottom-title">公司简介：</div>
+                <div class="main-bottom-text">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="main-button-box">
+                <div class="mian-button-left"><button>保存信息</button></div>
+                <div class="mian-button-right"><button>提交验厂</button></div>
+            </div>
+        </form>
+    </div>
+    <p class="wenxintishi">温馨提示：验厂入驻为收费项目，您可以提交申请等待客服与您联系，或拨打客服电话8616-9983，验厂申请成功您将可以通过我的工厂在此网站平台发布您的商品信息，验证成功后将会通过邮箱或者短信给与通知。</p>
+</main>
+
+
+<script src="{:config('home_js')}/enterpriseinformation.js"></script>
+</body>
+</html>

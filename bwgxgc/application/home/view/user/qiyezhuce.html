@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>企业注册</title>
+    <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
+    <link rel="stylesheet" href="{:config('home_css')}/qiyezhuce.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_688641_t22yxngd6g.css">
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<form class="form-horizontal" method="post" action="{$Request.url}">
+    <div class="control-group">
+        <div class="controls">
+            <input type="text" id="user" placeholder="请输入用户信息(3-15位字符可由英文数字组成)" name="username" value="{$shuju.username|default=''}">
+            <span style="color:red;">{$errorinfo.username|default=''}</span>
+        </div>
+        <label class="control-label" for="user">企业账号：</label>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="password" id="Password" placeholder="请设置6-20位数字或字符密码"
+                   name="pwd"  value="{$shuju.pwd|default=''}">
+            <span style="color:red;">{$errorinfo.pwd|default=''}</span>
+        </div>
+        <label class="control-label" for="Password">设置密码：</label>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="password" id="Passwordtwo" placeholder="请再次输入您的密码"
+                   name="pwd2"  value="{$shuju.pwd2|default=''}">
+            <span style="color:red;">{$errorinfo.pwd2|default=''}</span>
+        </div>
+        <label class="control-label" for="Passwordtwo">确认密码：</label>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="text" id="qiyename" placeholder="请输入企业名称"
+                   name="company_name"  value="{$shuju.company_name|default=''}">
+            <span style="color:red;">{$errorinfo.company_name|default=''}</span>
+        </div>
+        <label class="control-label" for="qiyename">企业名称：</label>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="text" id="address" placeholder="请输入地址"
+                   name="address"  value="{$shuju.address|default=''}">
+            <span style="color:red;">{$errorinfo.address|default=''}</span>
+        </div>
+        <label class="control-label" for="telphone">地址：</label>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <input type="text" id="telphone" placeholder="请输入邮箱号"
+                   name="email"  value="{$shuju.email|default=''}">
+            <span style="color:red;">{$errorinfo.email|default=''}</span>
+        </div>
+        <label class="control-label" for="telphone">邮箱：</label>
+    </div>
+    <div class="control-group">
+        <div class="controls zc-controls">
+            <label class="checkbox">
+                <input type="checkbox">同意并已阅读《用户协议》
+            </label>
+            <div class="zhuce-button">
+                <button type="submit" class="btn">注册</button>
+                <span style="color:red;">{$aa|default=''}</span>
+                <div class="fanhui-button"><a onclick=window.top.location="javascript:history.back(-1)">返回</a></div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<script src="{:config('home_js')}/jquery.js"></script>
+<script src="{:config('home_js')}/bootstrap.js"></script>
+<script src="{:config('home_js')}/citylist.js"></script>
+<script  language="JavaScript" src="{:config('home_js')}/qiyezhuce.js"></script>
+<script>
+    $(document).ready(function(){
+        var dizhi='<option value="-1">请选择</option>';
+        for(var key in provinceList){
+            dizhi+='<option value="'+provinceList[key].name+'">'+provinceList[key].name+'</option>';
+        }
+        $('#dizhi').html(dizhi);
+
+        // 点击一级
+        $('#dizhi').on('change',function (e) {
+            var name=$('#dizhi').val();
+            var dizhi1='<option value="-1">请选择</option>';
+            if(name != -1){
+                for(var key in provinceList){
+                    if(provinceList[key].name==name){
+                        for(var val in provinceList[key].cityList){
+                            dizhi1+='<option value="'+provinceList[key].cityList[val].name+'">'+provinceList[key].cityList[val].name+'</option>';
+                            // console.log(provinceList[key].cityList[val].name)
+                        }
+                        // console.log(provinceList[key].cityList)
+                    }
+                }
+                $('#dizhi1').html(dizhi1);
+                $('#dizhi2').html('<option value="-1">请选择</option>');
+            }
+        })
+        $('#dizhi1').on('change',function (e) {
+            var name=$('#dizhi').val();
+            var name1=$('#dizhi1').val();
+            var dizhi2='<option value="-1">请选择</option>';
+            if(name != -1){
+                for(var key in provinceList){
+                    if(provinceList[key].name==name){
+                        for(var val in provinceList[key].cityList){
+                            if(provinceList[key].cityList[val].name==name1){
+                                for(var value in provinceList[key].cityList[val].areaList){
+                                    dizhi2+='<option value="'+provinceList[key].cityList[val].areaList[value]+'">'+provinceList[key].cityList[val].areaList[value]+'</option>';
+                                    // console.log(provinceList[key].cityList[val].areaList[value])
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+                $('#dizhi2').html(dizhi2);
+            }
+        })
+    });
+</script>
+</body>
+</html>

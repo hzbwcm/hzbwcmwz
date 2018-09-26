@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机绑定</title>
+    <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
+    <link rel="stylesheet" href="{:config('home_css')}/bindingphone.css">
+    <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/bootstrap.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<header>
+    <div class="header-bdsj header-active">绑定手机</div>
+    <div class="header-xgmm">修改密码</div>
+</header>
+<main>
+    <!--绑定手机-->
+    <div class="main-content">
+        <form class="form-horizontal" action="" method="post">
+            <div class="control-group">
+                <label class="control-label" for="telphone">绑定手机：</label>
+                <div class="controls">
+                    <input type="text" id="telphone" placeholder="请输入手机号" value="" autocomplete="off" class="telphone-num">
+                </div>
+                <div class="huoquyanzhengma">获取验证码</div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">验证码：</label>
+                <div class="controls">
+                    <input type="text" id="inputEmail" placeholder="请输入验证码"  value="" autocomplete="off">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPassword">登陆密码：</label>
+                <div class="controls">
+                    <input type="password" id="inputPassword" placeholder="请输入密码" value="">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls bootstrop-button">
+                    <button type="submit" class="btn">确定</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--修改密码-->
+    <div class="main-content1 active">
+        <form class="form-horizontal" action="" method="post">
+            <div class="control-group">
+                <label class="control-label" for="oldpassword">原密码：</label>
+                <div class="controls">
+                    <input type="password" id="oldpassword" placeholder="请输入原密码" value="" autocomplete="off" class="telphone-num">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password">新密码：</label>
+                <div class="controls">
+                    <input type="password" id="password" placeholder="请输入新密码"  value="" autocomplete="off">
+                </div>
+                <div class="huoquyanzhengma"><i class="iconfont icon-gantanhao1"></i>密码由6-32位数字,字母及下划线组成</div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="Passwordtwo">确认新密码：</label>
+                <div class="controls">
+                    <input type="password" id="Passwordtwo" placeholder="" value="">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls bootstrop-button">
+                    <button type="submit" class="btn">确定</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src="{:config('home_js')}/bindingphone.js"></script>
+</body>
+</html>

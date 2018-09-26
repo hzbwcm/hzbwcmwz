@@ -1,0 +1,331 @@
+@charset "UTF-8";
+/*初始化css*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f8f8f8;
+}
+
+img {
+  border: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/*头部*/
+header {
+  width: 100%;
+  background: #f8f8f8;
+}
+header .header-box {
+  width: 1200px;
+  height: 90px;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+header .header-box .header-logo {
+  float: left;
+}
+header .header-box .header-right-box {
+  float: right;
+  height: 50px;
+}
+header .header-box .header-right-box .header-shoucangjia {
+  display: block;
+  height: 100%;
+  line-height: 50px;
+  font-size: 14px;
+  color: #555555;
+  margin-right: 20px;
+  text-decoration: none;
+  float: left;
+}
+header .header-box .header-right-box .header-shoucangjia .iconfont {
+  font-size: 16px;
+  color: #cbdff9;
+  margin-right: 5px;
+}
+
+/*导航*/
+.daohang {
+  width: 100%;
+  height: 40px;
+  background: #a260de;
+  line-height: 40px;
+}
+.daohang nav {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.daohang nav a {
+  margin-left: 40px;
+  margin-right: 40px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+/*路径*/
+.lujing-box {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+}
+.lujing-box .lujing {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+.lujing-box .lujing .lujing-right {
+  float: right;
+  height: 100%;
+}
+.lujing-box .lujing .lujing-right .iconfont {
+  font-size: 18px;
+  color: #555555;
+}
+.lujing-box .lujing .lujing-right .icon-shuangjiantouyou {
+  font-size: 12px;
+  color: #555555;
+}
+.lujing-box .lujing .lujing-right span {
+  font-size: 14px;
+  color: #555555;
+}
+
+/*主体*/
+main {
+  /*搜索,操作行*/
+  /*已关注内容*/
+  /*分页*/
+}
+main .caozuo-big-box {
+  width: 1200px;
+  height: 40px;
+  margin: 0 auto;
+  border-bottom: 2px solid #e2e2e2;
+  padding-left: 64px;
+  line-height: 38px;
+  margin-bottom: 20px;
+}
+main .caozuo-big-box .caozuo-qb {
+  float: left;
+}
+main .caozuo-big-box .caozuo-qb span {
+  font-size: 14px;
+  color: #555555;
+}
+main .caozuo-big-box .caozuo-qb .caozuo-qb-num {
+  color: #a260de;
+}
+main .caozuo-big-box .caozuo-sousuo-box {
+  float: right;
+  padding-right: 12px;
+}
+main .caozuo-big-box .caozuo-sousuo-box .quanxuan-box {
+  float: left;
+  margin-right: 22px;
+}
+main .caozuo-big-box .caozuo-sousuo-box .quanxuan-box label {
+  font-size: 14px;
+  color: #555555;
+}
+main .caozuo-big-box .caozuo-sousuo-box .quanxuan-box input {
+  outline: none;
+}
+main .caozuo-big-box .caozuo-sousuo-box .shanchu-box {
+  margin-right: 22px;
+  cursor: pointer;
+  float: left;
+}
+main .caozuo-big-box .caozuo-sousuo-box .shanchu-box .iconfont {
+  font-size: 14px;
+  color: #b98de0;
+  margin-right: 10px;
+}
+main .caozuo-big-box .caozuo-sousuo-box .shanchu-box .caozuo-shanchu {
+  font-size: 14px;
+  color: #555555;
+}
+main .caozuo-big-box .caozuo-sousuo-box .sousuo-box {
+  float: left;
+  padding-top: 7px;
+  overflow: hidden;
+}
+main .caozuo-big-box .caozuo-sousuo-box .sousuo-box input {
+  float: left;
+  width: 130px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  outline: none;
+  border: 1px solid #bfbfbf;
+}
+main .caozuo-big-box .caozuo-sousuo-box .sousuo-box .sousuo-button {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: #b98de0;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+}
+main .main-ygz-box {
+  width: 1200px;
+  margin: 0 auto;
+}
+main .main-ygz-box .ygz-box {
+  width: 100%;
+  height: 160px;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+main .main-ygz-box .ygz-box .ygz-box-a .ygz-img {
+  width: 120px;
+  height: 120px;
+  float: left;
+  margin-right: 40px;
+  position: relative;
+  background: #9d5fd6;
+}
+main .main-ygz-box .ygz-box .ygz-box-a .ygz-img img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+main .main-ygz-box .ygz-box .ygz-box-a .ygz-xx-box {
+  max-width: 896px;
+  float: left;
+}
+main .main-ygz-box .ygz-box .ygz-box-a .ygz-xx-box .ygz-xx-gsmc {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 10px;
+}
+main .main-ygz-box .ygz-box .ygz-box-a .ygz-xx-box .ygz-xx-gsxx {
+  margin-bottom: 10px;
+}
+main .main-ygz-box .ygz-box .ygz-box-a .ygz-xx-box .ygz-xx-gsxx .ygz-xx-gsxx-l {
+  font-size: 14px;
+  color: #555555;
+}
+main .main-ygz-box .ygz-box .ygz-box-a .ygz-xx-box .ygz-xx-gsxx .ygz-xx-gsxx-r {
+  font-size: 14px;
+  color: #555555;
+}
+main .main-ygz-box .ygz-box .ygz-cz-box {
+  float: right;
+  width: 120px;
+  height: 100%;
+  padding-top: 20px;
+  position: relative;
+}
+main .main-ygz-box .ygz-box .ygz-cz-box .ygz-cz-bqfl {
+  font-size: 14px;
+  color: #555555;
+}
+main .main-ygz-box .ygz-box .ygz-cz-box .ygz-cz-bqfl input {
+  width: 100%;
+}
+main .main-ygz-box .ygz-box .ygz-cz-box .ygz-cz-xz-sc-box {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+}
+main .main-ygz-box .ygz-box .ygz-cz-box .ygz-cz-xz-sc-box .ygz-cz-xz {
+  font-size: 14px;
+  color: #555555;
+  margin-right: 20px;
+  float: left;
+}
+main .main-ygz-box .ygz-box .ygz-cz-box .ygz-cz-xz-sc-box .ygz-cz-sc {
+  float: left;
+  font-size: 14px;
+  color: #555555;
+  cursor: pointer;
+}
+main .main-fenye-box {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 66px;
+  margin-bottom: 100px;
+  color: #555555;
+  overflow: hidden;
+  /*点击效果css*/
+}
+main .main-fenye-box span {
+  float: left;
+  cursor: pointer;
+}
+main .main-fenye-box div {
+  float: left;
+  cursor: pointer;
+}
+main .main-fenye-box li {
+  float: left;
+  font-size: 12px;
+  margin-right: 14px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+main .main-fenye-box .right-bottom-click {
+  font-weight: bold;
+  color: #8c3ab8;
+}
+main .main-fenye-box .main-sy {
+  font-size: 16px;
+  margin-right: 40px;
+}
+main .main-fenye-box .main-syy {
+  font-size: 16px;
+  margin-right: 40px;
+}
+main .main-fenye-box .main-xyy {
+  font-size: 16px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+main .main-fenye-box .main-tiaozhuan {
+  font-size: 16px;
+}
+main .main-fenye-box .main-tiaozhuan input {
+  float: left;
+  width: 40px;
+  height: 28px;
+  background: none;
+  border: 1px solid #b7b6b6;
+  margin-left: 22px;
+  margin-right: 22px;
+}
+main .main-fenye-box .main-wy {
+  float: right;
+  font-size: 16px;
+}

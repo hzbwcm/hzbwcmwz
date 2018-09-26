@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户中心</title>
+    <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
+    <link rel="stylesheet" href="{:config('home_css')}/usercenter.css">
+    <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/bootstrap.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<main>
+    <div class="main-content">
+        <form method="post">
+            <div class="content-top">
+                <div class="content-t-left">
+                    <!--这是要展示上传图片的div以及img标签-->
+                    <div id="localImag">
+                        <div class="localIgag-zhezhao">
+                            <i class="iconfont icon-xiangji"></i>
+                        </div>
+                        <img src="" id="preview" alt="">
+                    </div>
+                    <!--这是图片上传的input框-->
+                    <label>上传头像<input type='file' id='doc' name='pic'value=""></label>
+                </div>
+                <div class="content-t-righht">
+                    <div class="content-right1">
+                        <div class="content-right-name">
+                            <label>昵称：</label>
+                            <input type="text" value="" class="nc-name">
+                            <span>性别：</span>
+                            <label class="radio">男
+                                <input type="radio" name="gender" id="optionsRadios1" value="option1" checked>
+                            </label>
+                            <label class="radio">女
+                                <input type="radio" name="gender" id="optionsRadios2" value="option2">
+                            </label>
+                        </div>
+                        <div class="content-right-csrq">
+                            <label>出生日期:</label>
+                            <select name="">
+                                <option value="">请选择</option>
+                                <option value="">1994</option>
+                                <option value="">1995</option>
+                                <option value="">1996</option>
+                                <option value="">1997</option>
+                                <option value="">1998</option>
+                                <option value="">1999</option>
+                                <option value="">2000</option>
+                                <option value="">2001</option>
+                                <option value="">2002</option>
+                            </select>
+                            <label>年</label>
+                            <select name="">
+                                <option value="">请选择</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                                <option value="">11</option>
+                                <option value="">12</option>
+                            </select>
+                            <label>月</label>
+                            <select name="">
+                                <option value="">请选择</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                                <option value="">11</option>
+                                <option value="">12</option>
+                                <option value="">13</option>
+                                <option value="">14</option>
+                                <option value="">15</option>
+                                <option value="">16</option>
+                                <option value="">17</option>
+                                <option value="">18</option>
+                                <option value="">19</option>
+                                <option value="">20</option>
+                                <option value="">21</option>
+                                <option value="">22</option>
+                                <option value="">23</option>
+                                <option value="">24</option>
+                                <option value="">25</option>
+                                <option value="">26</option>
+                                <option value="">27</option>
+                                <option value="">28</option>
+                                <option value="">29</option>
+                                <option value="">30</option>
+                                <option value="">31</option>
+                            </select>
+                            <label class="select-ri">日</label>
+
+                            <label class="csrq-nz">民族：<input type="text"></label>
+                        </div>
+                        <div class="content-right-hj">
+                            <label class="content-hj">籍贯：<input type="text"></label>
+                            <label class="content-lxfs">联系方式：<input type="text"></label>
+                        </div>
+                        <div class="content-right-yx">
+                            <label class="content-hj">邮箱：<input type="text"></label>
+                            <label class="content-lxfs">QQ：<input type="text"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-bottom">
+                <label><strong>我的签名:</strong></label>
+                <textarea class="limit-textarea" onfocus="limitTextarea(this,'.state');" cols="30" rows="10" placeholder="我想说..." maxlength="500"></textarea>
+                <p><span class="state">0</span>/500字</p>
+            </div>
+            <div class="main-button"><input type="button" value="保存信息"></div>
+        </form>
+    </div>
+</main>
+
+
+
+<script type="text/javascript">
+    function limitTextarea(self,nowleng){
+        $(self).on('input propertychange', function(event) {
+            var _val = $(self).val();
+            _val = _val < 500 ? _val : _val.substr(0,500);
+            $(self).val(_val);
+            $(nowleng).text(_val.length)
+        });
+        $(self).blur(function(){
+            $(self).off('input propertychange');
+        });
+    }
+</script>
+<script src="{:config('home_js')}/usercenter.js"></script>
+</body>
+</html>

@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品定制</title>
+    <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
+    <link rel="stylesheet" href="{:config('home_css')}/custom.css">
+    <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/bootstrap.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<header class="header">
+    <div class="header-centre">
+        <ul class="header-left">
+            <li>
+                <a href="">
+                    <div class="h-f-i">
+                        <div class="header-img">
+                            <img src="{:config('home_img')}/asjgc.jpg" alt="">
+                        </div>
+                        <div class="h-l-t">手机工厂 |</div>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
+            </a></li>
+            <li><a href="/">
+                <div class="h-l-t">请登陆 |</div>
+            </a></li>
+            <li><a href="register">
+                <div class="h-l-t">免费注册 |</div>
+            </a></li>
+        </ul>
+        <ul class="header-right">
+            <li><a href="">
+                <div class="h-l-t">工厂首页 |</div>
+            </a></li>
+            <li><a href="">
+                <div class="h-l-t">我的工厂 |</div>
+            </a></li>
+            <li><a href="">
+                <div class="h-l-t">收藏夹(<span>0</span>) |</div>
+            </a>
+            </li>
+            <li><a href="">
+                <div class="h-l-t">实力商家 |</div>
+            </a></li>
+            <li><a href="">
+                <div class="h-l-t">我是供应商 |</div>
+            </a></li>
+            <li><a href="">
+                <div class="h-l-t">客服中心 |</div>
+            </a></li>
+            <li><a href="">
+                <div class="h-l-t">网站导航</div>
+            </a></li>
+        </ul>
+    </div>
+</header>
+<!--搜索-->
+<div class="search-box">
+    <div class="search-centre">
+        <div class="sear-logo">
+            <img src="{:config('home_img')}/a0.png" alt="">
+        </div>
+
+        <div class="search-c-b">
+            <div class="search">
+                <div class="search-fram">
+                    <div class="s-f-i-i">
+                        <img src="{:config('home_img')}/aa.png" alt="">
+                    </div>
+                    <input type="text" placeholder="共2000家企业入驻" value="">
+                </div>
+                <div class="search-button">
+                    <i class="iconfont icon-fangdajing"></i>
+                </div>
+            </div>
+            <div class="re-search">
+                <span>热门搜索:</span>
+                <a href="">卫生巾</a>
+                <a href="">纸尿裤</a>
+            </div>
+        </div>
+
+        <div class="search-right-b">
+            <div class="s-trademark">
+                <div>
+                    <img src="{:config('home_img')}/a1.png" alt="">
+                </div>
+                <span>海量工厂</span>
+            </div>
+            <div class="s-trademark">
+                <div>
+                    <img src="{:config('home_img')}/a2.png" alt="">
+                </div>
+                <span>产品定制</span>
+            </div>
+            <div class="s-trademark">
+                <div>
+                    <img src="{:config('home_img')}/a3.png" alt="">
+                </div>
+                <span>团购批发</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导航-->
+<div class="daohang-box">
+    <ul>
+        <a href="javascript:;">
+            <li class="daohang-f-li"></li>
+        </a>
+        <a href="/">
+            <li>首页</li>
+        </a>
+        <a href="{:url('home/index/custom')}">
+            <li>产品定制</li>
+        </a>
+        <a href="{:url('home/index/stickacard')}">
+            <li>贴牌专区</li>
+        </a>
+        <a href="{:url('home/index/inspection')}">
+            <li>优选验厂</li>
+        </a>
+        <a href="{:url('home/index/shebeitransfer')}">
+            <li>设备转让</li>
+        </a>
+        <a href="{:url('home/index/documentary')}">
+            <li>跟单专家</li>
+        </a>
+        <a href="{:url('home/index/wlpf')}">
+            <li>网络批发</li>
+        </a>
+        <a href="">
+            <li class="daohang-fabu"><div class="daohang-yuan"></div>发布需求>></li>
+        </a>
+    </ul>
+</div>
+<!--banner-->
+<div class="banner-box">
+    <div class="banner-c-box">
+        <div class="banner-img">
+            <a href="" class="banner-c-img" banner_color="{:config('home_img')}/2.jpg">
+                <img src="{:config('home_img')}/1.png" alt="">
+            </a>
+            <a href="" class="banner-c-img" banner_color="{:config('home_img')}/4.jpg">
+                <img src="{:config('home_img')}/3.png" alt="">
+            </a>
+            <!--<div class="banner-c-img" banner_color="#3fb799">-->
+            <!--<img src="{:config('home_img')}/byc.jpg" alt="">-->
+            <!--</div>-->
+            <!--<div class="banner-c-img" banner_color="#3f42b7">-->
+            <!--<img src="{:config('home_img')}/banner.jpg" alt="">-->
+            <!--</div>-->
+            <!--<div class="banner-c-img" banner_color="#42ff00">-->
+            <!--<img src="{:config('home_img')}/banner.jpg" alt="">-->
+            <!--</div>-->
+            <!--<div class="banner-c-img" banner_color="#f0ff00">-->
+            <!--<img src="{:config('home_img')}/banner.jpg" alt="">-->
+            <!--</div>-->
+
+            <ul class="banner-dian-box">
+                <li class="banner-dian" banner_id="0"></li>
+                <li class="banner-dian" banner_id="1"></li>
+                <!--<li class="banner-dian" banner_id="2"></li>-->
+                <!--<li class="banner-dian" banner_id="3"></li>-->
+                <!--<li class="banner-dian" banner_id="4"></li>-->
+                <!--<li class="banner-dian" banner_id="5"></li>-->
+            </ul>
+        </div>
+        <ul class="ce-daohang">
+            <a href="javascript:;">
+                <li><i class="iconfont icon-daohang"></i>工厂产品分类</li>
+            </a>
+            <a href="">
+                <li>卫生用品定制</li>
+            </a>
+            <a href="">
+                <li>纸尿裤加工</li>
+            </a>
+            <a href="">
+                <li>经期裤加工</li>
+            </a>
+            <a href="">
+                <li>湿纸巾加工</li>
+            </a>
+            <a href="">
+                <li>卫生巾加工</li>
+            </a>
+            <a href="">
+                <li>护理垫加工</li>
+            </a>
+            <a href="">
+                <li>生活用纸加工</li>
+            </a>
+        </ul>
+    </div>
+
+</div>
+<!--主体-->
+<main>
+    <div class="main-left">
+        <div class="main-left-title">产品定制</div>
+        <div class="main-bootstrap">
+            <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                           href="#collapseOne">
+                            卫生巾加工
+                            <i class="iconfont icon-iconfontarrows1"></i>
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse in">
+                        <div class="accordion-inner left-click">
+                            全部
+                        </div>
+                        <div class="accordion-inner">
+                            多规格
+                        </div>
+                        <div class="accordion-inner">
+                            小于150
+                        </div>
+                        <div class="accordion-inner">
+                            150-180
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                           href="#collapseTwo">
+                            婴儿尿裤加工
+                            <i class="iconfont icon-iconfontarrows1"></i>
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            全部
+                        </div>
+                        <div class="accordion-inner">
+                            多规格
+                        </div>
+                        <div class="accordion-inner">
+                            纸尿片
+                        </div>
+                        <div class="accordion-inner">
+                            普通尿裤
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-right">
+        <div class="main-right-top">
+            <div class="main-top-qy">
+                <span>省份：</span>
+                <ul>
+                    <li class="right-click">请问</li>
+                    <li>阿斯顿</li>
+                    <li>自行车</li>
+                    <li>而</li>
+                    <li>士大夫</li>
+                </ul>
+            </div>
+            <div class="main-top-qx">
+                <span>城市：</span>
+                <ul>
+                    <li class="right-click">请问</li>
+                    <li>阿斯顿</li>
+                    <li>自行车</li>
+                    <li>而</li>
+                    <li>士大夫</li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-right-bottom">
+            <div class="main-bottom-title">
+                <div class="title-xx">信息主题</div>
+                <div class="title-qy">区域</div>
+                <div class="title-fb">发布</div>
+                <div class="title-time">发布时间</div>
+            </div>
+            <div class="main-bottom-content">
+                <!--内容-->
+                <a href="{:url('home/index/customizing')}" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+                <!--内容-->
+                <a href="http://www.baidu.com" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+                <!--内容-->
+                <a href="http://www.baidu.com" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+                <!--内容-->
+                <a href="http://www.baidu.com" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+                <!--内容-->
+                <a href="http://www.baidu.com" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+                <!--内容-->
+                <a href="http://www.baidu.com" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+                <!--内容-->
+                <a href="http://www.baidu.com" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+                <!--内容-->
+                <a href="http://www.baidu.com" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+                <!--内容-->
+                <a href="http://www.baidu.com" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+                <!--内容-->
+                <a href="http://www.baidu.com" class="bottom-content-box">
+                    <div class="content-xx">
+                        <div class="content-img">
+                            <img src="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                        </div>
+                        <div class="content-title">
+                            <span>某某品牌</span>
+                            <div class="img-num">4图</div>
+                        </div>
+                        <div class="coontent-cplb-box">
+                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
+                            <div class="cpgg"><span>规格：</span>290-330</div>
+                        </div>
+                    </div>
+                    <div class="content-qy">
+                        <ul>
+                            <li>福建</li>
+                            <li>厦门</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                        </ul>
+                    </div>
+                    <div class="content-fb">杭州博卫传媒</div>
+                    <div class="content-time">2011年11月3日</div>
+                </a>
+            </div>
+        </div>
+        <!--分页-->
+        <div class="main-fenye-box">
+            <span class="main-sy">首页</span>
+            <div class="main-syy">上一页</div>
+            <ul>
+                <li class="right-bottom-click">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+            <div class="main-xyy">下一页</div>
+            <div class="main-tiaozhuan">
+                <span class="tiaozhuan">跳转</span>
+                <input type="text" value="">
+                <span>页</span>
+            </div>
+            <span class="main-wy">尾页</span>
+        </div>
+    </div>
+</main>
+<!--页脚-->
+<footer>
+    <div class="footer-bjt-box">
+        <div class="footer-c-box">
+            <div class="footer-box">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb1.png" alt="">
+                </div>
+                <div class="footer-text-box">
+                    <div class="footer-text-title">网站介绍</div>
+                    <span class="footer-text"><a href="">官方信息港</a></span>
+                    <span class="footer-text"><a href="">个人草根网站</a></span>
+                    <span class="footer-text"><a href="">加盟的分站</a></span>
+                    <span class="footer-text"><a href="">实力团队</a></span>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb2.png" alt="">
+                </div>
+                <div class="footer-text-box">
+                    <div class="footer-text-title">关于我们</div>
+                    <span class="footer-text"><a href="">市场分析调查</a></span>
+                    <span class="footer-text"><a href="">可行性分析</a></span>
+                    <span class="footer-text"><a href="">项目策划</a></span>
+                    <span class="footer-text"><a href="">项目的可行性</a></span>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb3.png" alt="">
+                </div>
+                <div class="footer-text-box">
+                    <div class="footer-text-title">服务条款</div>
+                    <span class="footer-text"><a href="">服务的确认和接纳</a></span>
+                    <span class="footer-text"><a href="">服务修订</a></span>
+                    <span class="footer-text"><a href="">用户隐私</a></span>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb4.png" alt="">
+                </div>
+                <div class="footer-text-box">
+                    <div class="footer-text-title">广告服务</div>
+                    <span class="footer-text"><a href="">管理平台</a></span>
+                    <span class="footer-text"><a href="">创意案例</a></span>
+                    <span class="footer-text"><a href="">推广评估</a></span>
+                    <span class="footer-text"><a href="">指导优化</a></span>
+                </div>
+            </div>
+            <div class="footer-box1">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb5.png" alt="">
+                </div>
+                <div class="footer-ewm-box">
+                    <div class="footer-ewm-img">
+                        <img src="{:config('home_img')}/by-ewm.jpg" alt="">
+                        <div class="ewm-text">微信公众号</div>
+                    </div>
+                    <div class="footer-ewm-img">
+                        <img src="{:config('home_img')}/by-ewm.jpg" alt="">
+                        <div class="ewm-text">客服微信</div>
+                    </div>
+                </div>
+                <div class="footer-kf-box">
+                    <div class="footer-kf-title">客服电话</div>
+                    <div class="footer-kf-text">0595-28113222</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-footer">
+        Copyright © 2003-2015 163k.com All Reserved © 卫品共享工厂闽ICP备16026715号-1
+    </div>
+</footer>
+<script src="{:config('home_js')}/custom.js"></script>
+</body>
+</html>

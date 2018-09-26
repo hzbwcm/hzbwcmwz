@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>设备转让</title>
+    <link rel="stylesheet" href="{:config('home_css')}/shebeitransfer.css">
+    <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/bootstrap.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<header>
+    <div class="header-box">
+        <div class="header-logo">
+            <img src="{:config('home_img')}/a0.png" alt="">
+        </div>
+        <div class="header-right-box">
+            <a href="" class="header-shoucangjia">
+                <i class="iconfont icon-iconxingjikongxin"></i>
+                <span class="header-text">收藏夹</span>
+            </a>
+            <a href="" class="header-shoucangjia">
+                <i class="iconfont icon-guanzhuzuozheyiguanzhu"></i>
+                <span class="header-text">已关注</span>
+            </a>
+            <a href="" class="header-shoucangjia">
+                <i class="iconfont icon-dinghuodan"></i>
+                <span class="header-text">订货单</span>
+            </a>
+        </div>
+    </div>
+</header>
+<!--导航-->
+<div class="daohang">
+    <div class="daohang">
+        <nav>
+            <a href="{:url('/')}">首页</a>
+            <a href="{:url('home/index/custom')}">产品定制</a>
+            <a href="{:url('home/index/stickacard')}">贴牌专区</a>
+            <a href="{:url('home/index/inspection')}">优选验厂</a>
+            <a href="{:url('home/index/shebeitransfer')}">设备转让</a>
+            <a href="{:url('home/index/documentary')}">跟单专家</a>
+            <a href="javascript:;">网络批发</a>
+        </nav>
+    </div>
+</div>
+
+<!--主体-->
+<main>
+    <!--设备名称-->
+    <div class="main-sbmc-box">
+        <div class="main-sbmc-title">设备名称 :</div>
+        <div class="main-sbmc-name">
+            <span class="main-sbmc sbmc-name-active">卫生巾设备</span>
+            <span class="main-sbmc">婴儿纸尿裤设备</span>
+            <span class="main-sbmc">成人纸尿裤设备</span>
+            <span class="main-sbmc">湿纸巾设备</span>
+            <span class="main-sbmc">生活用纸设备</span>
+            <span class="main-sbmc">妇产巾设备</span>
+            <span class="main-sbmc">卫生巾设备</span>
+            <span class="main-sbmc">婴儿纸尿裤设备</span>
+            <span class="main-sbmc">成人纸尿裤设备</span>
+            <span class="main-sbmc">湿纸巾设备</span>
+            <span class="main-sbmc">生活用纸设备</span>
+            <span class="main-sbmc">妇产巾设备</span>
+            <span class="main-sbmc">卫生巾设备</span>
+            <span class="main-sbmc">婴儿纸尿裤设备</span>
+            <span class="main-sbmc">成人纸尿裤设备</span>
+            <span class="main-sbmc">湿纸巾设备</span>
+            <span class="main-sbmc">生活用纸设备</span>
+            <span class="main-sbmc">妇产巾设备</span>
+        </div>
+    </div>
+    <!--排序方式-->
+    <div class="main-sbpxfs-box">
+        <div class="main-sbpxfs-zh">综合</div>
+        <div class="main-sbpxfs-css main-sbpxfs-jg">
+            价格
+            <i class="iconfont icon-xiasanjiao"></i>
+            <div class="sbpxfs-display sbpxfs-none">
+                <span class="sbpxfs-span sbpxfs-span-active">100-10000</span>
+                <span class="sbpxfs-span">100-10000</span>
+                <span class="sbpxfs-span">100-10000</span>
+                <span class="sbpxfs-span">100-10000</span>
+                <span class="sbpxfs-span">100-10000</span>
+                <span class="sbpxfs-span">100-10000</span>
+                <span class="sbpxfs-span">100-10000</span>
+                <span class="sbpxfs-span">100-10000</span>
+            </div>
+        </div>
+        <div class="main-sbpxfs-css main-sbpxfs-szdq">
+            所在地区
+            <i class="iconfont icon-xiasanjiao"></i>
+            <div class="sbpxfs-display sbpxfs-none">
+                <span class="sbpxfs-span sbpxfs-span-active">苏州</span>
+                <span class="sbpxfs-span">重庆</span>
+                <span class="sbpxfs-span">四川</span>
+                <span class="sbpxfs-span">成都</span>
+                <span class="sbpxfs-span">山西</span>
+                <span class="sbpxfs-span">北京</span>
+                <span class="sbpxfs-span">天津</span>
+                <span class="sbpxfs-span">浙江</span>
+            </div>
+        </div>
+        <div class="main-sbpxfs-css main-sbpxfs-ppmc">
+            品牌名称
+            <i class="iconfont icon-xiasanjiao"></i>
+            <div class="sbpxfs-display sbpxfs-none">
+                <span class="sbpxfs-span sbpxfs-span-active">苏州</span>
+                <span class="sbpxfs-span">重庆</span>
+                <span class="sbpxfs-span">四川</span>
+                <span class="sbpxfs-span">成都</span>
+                <span class="sbpxfs-span">山西</span>
+                <span class="sbpxfs-span">北京</span>
+                <span class="sbpxfs-span">天津</span>
+                <span class="sbpxfs-span">浙江</span>
+            </div>
+        </div>
+    </div>
+    <!--设备转让内容-->
+    <div class="sbzr-content-box">
+        <!--设备转让内容div-->
+        <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+        <!--设备转让内容div-->
+        <a href="" class="sbzr-content-box">
+            <div class="sbzr-img">
+                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+            </div>
+            <div class="sbzr-text-box">
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">设备名称：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">入场时间：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">稳定生产速度：</span>
+                    <span class="sbzr-cpxx-gg-r">xxxxxxxxxx</span>
+                </div>
+                <div class="sbzr-cpxx">
+                    <span class="sbzr-cpxx-gg-l">价格：</span>
+                    <span class="sbzr-cpxx-jg-r">15000</span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+    <!--分页-->
+    <div class="main-fenye-box">
+        <span class="main-sy">首页</span>
+        <div class="main-syy">上一页</div>
+        <ul>
+            <li class="right-bottom-click">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+        <div class="main-xyy">下一页</div>
+        <div class="main-tiaozhuan">
+            <span class="tiaozhuan">跳转</span>
+            <input type="text" value="">
+            <span>页</span>
+        </div>
+        <span class="main-wy">尾页</span>
+    </div>
+</main>
+<!--页脚-->
+<footer>
+    <div class="footer-bjt-box">
+        <div class="footer-c-box">
+            <div class="footer-box">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb1.png" alt="">
+                </div>
+                <div class="footer-text-box">
+                    <div class="footer-text-title">网站介绍</div>
+                    <span class="footer-text"><a href="">官方信息港</a></span>
+                    <span class="footer-text"><a href="">个人草根网站</a></span>
+                    <span class="footer-text"><a href="">加盟的分站</a></span>
+                    <span class="footer-text"><a href="">实力团队</a></span>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb2.png" alt="">
+                </div>
+                <div class="footer-text-box">
+                    <div class="footer-text-title">关于我们</div>
+                    <span class="footer-text"><a href="">市场分析调查</a></span>
+                    <span class="footer-text"><a href="">可行性分析</a></span>
+                    <span class="footer-text"><a href="">项目策划</a></span>
+                    <span class="footer-text"><a href="">项目的可行性</a></span>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb3.png" alt="">
+                </div>
+                <div class="footer-text-box">
+                    <div class="footer-text-title">服务条款</div>
+                    <span class="footer-text"><a href="">服务的确认和接纳</a></span>
+                    <span class="footer-text"><a href="">服务修订</a></span>
+                    <span class="footer-text"><a href="">用户隐私</a></span>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb4.png" alt="">
+                </div>
+                <div class="footer-text-box">
+                    <div class="footer-text-title">广告服务</div>
+                    <span class="footer-text"><a href="">管理平台</a></span>
+                    <span class="footer-text"><a href="">创意案例</a></span>
+                    <span class="footer-text"><a href="">推广评估</a></span>
+                    <span class="footer-text"><a href="">指导优化</a></span>
+                </div>
+            </div>
+            <div class="footer-box1">
+                <div class="footer-img">
+                    <img src="{:config('home_img')}/gtb5.png" alt="">
+                </div>
+                <div class="footer-ewm-box">
+                    <div class="footer-ewm-img">
+                        <img src="{:config('home_img')}/by-ewm.jpg" alt="">
+                        <div class="ewm-text">微信公众号</div>
+                    </div>
+                    <div class="footer-ewm-img">
+                        <img src="{:config('home_img')}/by-ewm.jpg" alt="">
+                        <div class="ewm-text">客服微信</div>
+                    </div>
+                </div>
+                <div class="footer-kf-box">
+                    <div class="footer-kf-title">客服电话</div>
+                    <div class="footer-kf-text">0595-28113222</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-footer">
+        Copyright © 2003-2015 163k.com All Reserved © 卫品共享工厂闽ICP备16026715号-1
+    </div>
+</footer>
+
+<script src="{:config('home_js')}/shebeitransfer.js"></script>
+</body>
+</html>

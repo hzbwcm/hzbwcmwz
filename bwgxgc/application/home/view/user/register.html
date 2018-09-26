@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户注册</title>
+    <script src="{:config('home_js')}/jquery.js"></script>
+    <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
+    <link rel="stylesheet" href="{:config('home_css')}/register.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_688641_t22yxngd6g.css">
+    <script src="{:config('home_js')}/html5.js"></script>
+    <script src="{:config('home_js')}/respond.js"></script>
+    <script src="{:config('home_js')}/bootstrap.js"></script>
+
+</head>
+<body>
+<main>
+    <div class="zhuce">
+        <div class="zhuce-title">
+            <a href="{:url('home/user/gerenzhuce')}" target="iframe"><span class="a-span">个人注册</span></a>
+            <a href="{:url('home/user/qiyezhuce')}" target="iframe"><span>企业注册</span></a>
+        </div>
+        <iframe src="{:url('home/user/gerenzhuce')}" frameborder="0" name="iframe"></iframe>
+    </div>
+    <div class="denglu-zhuce-tishi">提示信息</div>
+</main>
+
+</body>
+</html>
+<script src="{:config('home_js')}/register.js"></script>

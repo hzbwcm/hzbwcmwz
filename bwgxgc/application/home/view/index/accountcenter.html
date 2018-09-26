@@ -1,0 +1,81 @@
+ <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>账号中心</title>
+    <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
+    <link rel="stylesheet" href="{:config('home_css')}/accountcenter.css">
+    <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/bootstrap.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<header>
+    <div class="header-img">
+        <a href="">
+            <img src="{:config('home_img')}/a0.png" alt="">
+        </a>
+    </div>
+    <div class="header-right">
+        <div class="header-r-img">
+            <img src="" alt="">
+        </div>
+        <div class="header-name">xxxxxxx</div>
+        <i class="iconfont icon-sandian"></i>
+    </div>
+</header>
+<!--主体-->
+<main>
+    <div class="main-content-title">
+        <div class="content-title">
+            <ul class="content-title-ul">
+                <li>
+                    <a href="./usercenter.html" target="iframe">
+                        <span class="iconfont icon-yonghuzhongxin1 top-iconfont"></span>
+                        <div class="content-title-li">用户中心</div>
+                        <i class="iconfont icon-xiasanjiao weixuanzhong yixuanzhong"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="./accountcenter.html" target="iframe">
+                        <span class="iconfont icon-gaiqiyexinxi top-iconfont"></span>
+                        <div class="content-title-li">企业信息</div>
+                        <i class="iconfont icon-xiasanjiao weixuanzhong"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="iframe">
+                        <span class="iconfont icon-gongchang top-iconfont"></span>
+                        <div class="content-title-li">我的工厂</div>
+                        <i class="iconfont icon-xiasanjiao weixuanzhong"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="./security.html" target="iframe">
+                        <span class="iconfont icon-anquan top-iconfont"></span>
+                        <div class="content-title-li">账户安全</div>
+                        <i class="iconfont icon-xiasanjiao weixuanzhong"></i>
+                    </a>
+                </li>
+                <div class="dingwei"></div>
+            </ul>
+        </div>
+    </div>
+    <div class="main-iframe">
+        <div>
+            <iframe src="./security.html" frameborder="0" name="iframe"></iframe>
+        </div>
+    </div>
+</main>
+
+
+<script src="{:config('home_js')}/accountcenter.js"></script>
+</body>
+</html>

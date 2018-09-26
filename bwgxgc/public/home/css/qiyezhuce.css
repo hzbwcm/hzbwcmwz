@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/*初始化css*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  outline: none;
+  color: #fff;
+}
+
+body {
+  background: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/*form*/
+form {
+  width: 100%;
+  height: 800px;
+}
+form .control-group {
+  width: auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+form .control-group .control-label {
+  width: 95px;
+  float: right;
+  margin-bottom: 0;
+  color: #fff;
+}
+form .control-group .control-label .iconfont {
+  font-size: 28px;
+  color: #fff;
+  margin-right: 18px;
+  float: right;
+}
+form .control-group .controls {
+  float: right;
+  width: 334px;
+  position: relative;
+}
+form .control-group .controls ::-webkit-input-placeholder {
+  color: #a7a7a7;
+  font-size: 14px;
+}
+form .control-group .controls .form-control {
+  width: 72px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0;
+  font-size: 12px;
+  outline: none;
+  background: none;
+  border-radius: 0;
+  color: #fff;
+  float: left;
+}
+form .control-group .controls .form-control option {
+  color: #555;
+}
+form .control-group .controls span {
+  display: block;
+  margin-right: 6px;
+  margin-left: 6px;
+  font-size: 14px;
+  color: #fff;
+  float: left;
+}
+form .control-group .controls input {
+  width: 100%;
+  background: none;
+  border: none;
+  border: 1px solid #fff;
+  padding-left: 4px;
+}
+form .control-group .controls .checkbox {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+form .control-group .controls .checkbox input {
+  width: 12px;
+  height: 12px;
+  background: none;
+  border: 1px solid #fff;
+  margin-right: 10px;
+}
+form .control-group .controls .zhuce-button {
+  width: 260px;
+  margin: 0 auto;
+}
+form .control-group .controls .zhuce-button .btn {
+  width: 260px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  background: rgba(74, 147, 255, 0.7);
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+form .control-group .controls .hqyzm {
+  width: 76px;
+  height: 25px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  background: #4a93ff;
+  border-radius: 3px;
+  position: absolute;
+  right: 5px;
+  top: 0;
+}
+form .control-group .zc-controls {
+  width: 100%;
+}
+
+/*返回按钮*/
+.fanhui-button {
+  width: 260px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  background: rgba(74, 147, 255, 0.7);
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.fanhui-button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}

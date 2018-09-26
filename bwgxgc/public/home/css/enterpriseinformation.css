@@ -1,0 +1,324 @@
+@charset "UTF-8";
+/*初始化css*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  border: none;
+}
+
+/*主体*/
+main {
+  width: 100%;
+}
+main .main-content-box {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 80px;
+  overflow: hidden;
+}
+main .main-content-box .main-content--top {
+  width: 100%;
+  margin-bottom: 72px;
+  overflow: hidden;
+}
+main .main-content-box .main-content--top .main-content-top-left {
+  float: left;
+  width: 380px;
+  height: 450px;
+  position: relative;
+}
+main .main-content-box .main-content--top .main-content-top-left #localImag {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  margin-bottom: 22px;
+  border: 1px solid #bfbfbf;
+}
+main .main-content-box .main-content--top .main-content-top-left #localImag .localIgag-zhezhao {
+  width: 331px;
+  height: 331px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: linear-gradient(to left, #e4e4e4, #e4e4e4) left top no-repeat, linear-gradient(to bottom, #e4e4e4, #e4e4e4) left top no-repeat, linear-gradient(to left, #e4e4e4, #e4e4e4) right top no-repeat, linear-gradient(to bottom, #e4e4e4, #e4e4e4) right top no-repeat, linear-gradient(to left, #e4e4e4, #e4e4e4) left bottom no-repeat, linear-gradient(to bottom, #e4e4e4, #e4e4e4) left bottom no-repeat, linear-gradient(to left, #e4e4e4, #e4e4e4) right bottom no-repeat, linear-gradient(to left, #e4e4e4, #e4e4e4) right bottom no-repeat;
+  background-size: 1px 84px, 84px 1px, 1px 84px, 84px 1px;
+  text-align: center;
+  line-height: 331px;
+}
+main .main-content-box .main-content--top .main-content-top-left #localImag .localIgag-zhezhao .iconfont {
+  font-size: 218px;
+  color: #e4e4e4;
+}
+main .main-content-box .main-content--top .main-content-top-left #localImag img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+main .main-content-box .main-content--top .main-content-top-left label {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #fefefe;
+  font-size: 14px;
+  background: #a260de;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+main .main-content-box .main-content--top .main-content-top-left label input {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+main .main-content-box .main-content--top .main-content-top-right {
+  width: 740px;
+  float: right;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group label {
+  float: left;
+  width: 115px;
+  text-align: right;
+  margin-right: 22px;
+  font-size: 14px;
+  color: #555555;
+  line-height: 30px;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-dwmc {
+  width: 290px;
+  height: 30px;
+  float: left;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-dwmc input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #cccccc;
+  outline: none;
+  padding-left: 3px;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-clsj {
+  width: 500px;
+  height: 30px;
+  float: left;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-clsj input {
+  width: 60px;
+  height: 100%;
+  border: 1px solid #cccccc;
+  outline: none;
+  padding-left: 3px;
+  float: left;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-clsj span {
+  float: left;
+  margin-right: 14px;
+  margin-left: 14px;
+  font-size: 14px;
+  color: #555555;
+  line-height: 30px;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-gcgm {
+  width: 180px;
+  height: 30px;
+  float: left;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-gcgm input {
+  width: 200px;
+  height: 100%;
+  border: 1px solid #cccccc;
+  outline: none;
+  padding-left: 3px;
+  float: left;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-gcgm span {
+  float: left;
+  margin-right: 14px;
+  margin-left: 14px;
+  font-size: 14px;
+  color: #555555;
+  line-height: 30px;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-xxdz {
+  width: 500px;
+  height: 30px;
+  float: left;
+}
+main .main-content-box .main-content--top .main-content-top-right .control-group .controls-xxdz input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #cccccc;
+  outline: none;
+  padding-left: 3px;
+}
+main .main-content-box .mian-content-middle {
+  width: 100%;
+}
+main .main-content-box .mian-content-middle .main-middle-title {
+  width: 100%;
+  padding-left: 28px;
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 20px;
+}
+main .main-content-box .mian-content-middle .main-middle-content {
+  width: 100%;
+  padding-left: 120px;
+}
+main .main-content-box .mian-content-middle .main-middle-content .main-middle-t-title {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 30px;
+}
+main .main-content-box .mian-content-middle .main-middle-content .main-middle-t-title span {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+main .main-content-box .mian-content-middle .main-middle-content .main-middle-t-title input {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: none;
+  border: 1px solid #cccccc;
+}
+main .main-content-box .mian-content-middle .main-middle-content .main-middle-t-content-box {
+  width: 70%;
+  font-size: 14px;
+  color: #555555;
+  position: relative;
+  margin-bottom: 62px;
+}
+main .main-content-box .mian-content-middle .main-middle-content .main-middle-t-content-box .main-middle-t-content {
+  width: 70%;
+  margin-bottom: 30px;
+}
+main .main-content-box .mian-content-middle .main-middle-content .main-middle-t-content-box .main-middle-t-content span {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+main .main-content-box .mian-content-middle .main-middle-content .main-middle-t-content-box .main-middle-t-content input {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: none;
+  border: 1px solid #cccccc;
+  outline: none;
+}
+main .main-content-box .mian-content-middle .main-middle-content .main-middle-t-content-box .dianjitianjia {
+  width: 60px;
+  height: 30px;
+  background: #a260de;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 30px;
+  text-align: center;
+  position: absolute;
+  right: 80px;
+  bottom: 0;
+}
+main .main-content-box .mian-content-middle .main-middle-content .main-middle-t-content-box .dianjishanchu {
+  width: 60px;
+  height: 30px;
+  background: #a260de;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 30px;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+main .main-content-box .main-content--bottom {
+  width: 100%;
+}
+main .main-content-box .main-content--bottom .main-bottom-title {
+  width: 100%;
+  padding-left: 28px;
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 20px;
+}
+main .main-content-box .main-content--bottom .main-bottom-text {
+  width: 100%;
+  padding-left: 120px;
+  margin-bottom: 140px;
+}
+main .main-content-box .main-content--bottom .main-bottom-text textarea {
+  width: 1000px;
+  height: 260px;
+  resize: none;
+  padding-left: 10px;
+  outline: none;
+  text-indent: 32px;
+}
+main .main-content-box .main-button-box {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 118px;
+}
+main .main-content-box .main-button-box .mian-button-left {
+  width: 120px;
+  height: 60px;
+  margin: 0 auto;
+  background: #a260de;
+}
+main .main-content-box .main-button-box .mian-button-left button {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+}
+main .wenxintishi {
+  display: block;
+  width: 1000px;
+  font-size: 14px;
+  color: #555555;
+  text-align: left;
+  margin: 0 auto;
+  line-height: 34px;
+}

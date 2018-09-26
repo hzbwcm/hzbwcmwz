@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/*初始化css*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f8f8f8;
+  overflow: hidden;
+  background: #fff;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  border: none;
+}
+
+header {
+  width: 1200px;
+  height: 36px;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  margin-top: 60px;
+  border-bottom: 2px solid #ccc;
+  position: relative;
+}
+header .header-bdsj {
+  height: 100%;
+  font-size: 24px;
+  color: #555555;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+header .header-xgmm {
+  height: 100%;
+  font-size: 24px;
+  color: #555555;
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+}
+header .header-active {
+  color: #a260de;
+  border-bottom: 2px solid #a260de;
+}
+
+/*主体*/
+main {
+  width: 100%;
+}
+main .main-content {
+  width: 1200px;
+  margin: 0 auto;
+}
+main .main-content form {
+  width: 490px;
+  margin: 0 auto;
+}
+main .main-content form .control-group {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+main .main-content form .control-group label {
+  width: 90px;
+  float: left;
+  font-size: 16px;
+  color: #555;
+}
+main .main-content form .control-group input {
+  width: 270px;
+  height: 30px;
+  margin-right: 20px;
+  float: left;
+  outline: none;
+}
+main .main-content form .control-group .huoquyanzhengma {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  float: left;
+  background: #a260de;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+main .main-content form .control-group .bootstrop-button {
+  width: 150px;
+  height: 40px;
+  margin: 0ch auto;
+}
+main .main-content form .control-group .bootstrop-button .btn {
+  width: 100%;
+  height: 100%;
+  background: #a260de;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  padding: 0;
+}
+main .main-content1 {
+  width: 1200px;
+  margin: 0 auto;
+}
+main .main-content1 form {
+  width: 490px;
+  margin: 0 auto;
+}
+main .main-content1 form .control-group {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+main .main-content1 form .control-group label {
+  width: 100px;
+  float: left;
+  font-size: 16px;
+  color: #555;
+}
+main .main-content1 form .control-group input {
+  width: 270px;
+  height: 30px;
+  margin-right: 20px;
+  float: left;
+  outline: none;
+}
+main .main-content1 form .control-group .huoquyanzhengma {
+  width: 150px;
+  height: 20px;
+  line-height: 20px;
+  float: left;
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+  cursor: pointer;
+}
+main .main-content1 form .control-group .huoquyanzhengma .iconfont {
+  font-size: 14px;
+  color: #a260de;
+}
+main .main-content1 form .control-group .bootstrop-button {
+  width: 150px;
+  height: 40px;
+  margin: 0ch auto;
+}
+main .main-content1 form .control-group .bootstrop-button .btn {
+  width: 100%;
+  height: 100%;
+  background: #a260de;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  padding: 0;
+}
+main .active {
+  display: none;
+}
