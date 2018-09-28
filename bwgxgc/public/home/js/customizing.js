@@ -6,7 +6,7 @@ $(function () {
 
     //
     var num=$('.main-content').length;
-    if(num/2){
+    if(num%2==0){
         $('.main-content').eq(num-2).css('border-bottom','none');
     }
 })
