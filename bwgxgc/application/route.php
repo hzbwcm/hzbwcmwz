@@ -4,6 +4,7 @@ use think\Route;
 //home分组
 Route::get('/','home/index/index');//首页
 Route::get('home/index/index','home/index/index');//首页
+Route::get('home/index/foot_base','home/index/foot_base');//页脚
 
 Route::get('home/user/sms','home/user/sms');//短信个人测试
 Route::post('home/user/sendsms','home/user/sendsms');//发送短信

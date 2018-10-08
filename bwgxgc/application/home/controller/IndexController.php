@@ -9,6 +9,11 @@ class IndexController extends Controller
     {
         return $this->fetch();
     }
+    //前台页脚
+    public function foot_base()
+    {
+        return $this->fetch();
+    }
     //前台产品定制
     public function custom()
     {
