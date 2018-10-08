@@ -19,7 +19,7 @@
 <body>
 <header>
     <div class="header-img">
-        <a href="">
+        <a href="/">
             <img src="{:config('home_img')}/a0.png" alt="">
         </a>
     </div>
@@ -39,38 +39,25 @@
                 <li>
                     <a href="./usercenter.html" target="iframe">
                         <span class="iconfont icon-yonghuzhongxin1 top-iconfont"></span>
-                        <div class="content-title-li">用户中心</div>
+                        <div class="content-title-li">个人信息</div>
                         <i class="iconfont icon-xiasanjiao weixuanzhong yixuanzhong"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="./accountcenter.html" target="iframe">
+                    <a href="{:url('home/index/fabuxinxi')}" target="iframe">
                         <span class="iconfont icon-gaiqiyexinxi top-iconfont"></span>
-                        <div class="content-title-li">企业信息</div>
+                        <div class="content-title-li">产品定制发布</div>
                         <i class="iconfont icon-xiasanjiao weixuanzhong"></i>
                     </a>
                 </li>
-                <li>
-                    <a href="" target="iframe">
-                        <span class="iconfont icon-gongchang top-iconfont"></span>
-                        <div class="content-title-li">我的工厂</div>
-                        <i class="iconfont icon-xiasanjiao weixuanzhong"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="./security.html" target="iframe">
-                        <span class="iconfont icon-anquan top-iconfont"></span>
-                        <div class="content-title-li">账户安全</div>
-                        <i class="iconfont icon-xiasanjiao weixuanzhong"></i>
-                    </a>
-                </li>
+
                 <div class="dingwei"></div>
             </ul>
         </div>
     </div>
     <div class="main-iframe">
         <div>
-            <iframe src="./security.html" frameborder="0" name="iframe"></iframe>
+            <iframe src="{:url('home/index/usercenter')}" frameborder="0" name="iframe"></iframe>
         </div>
     </div>
 </main>

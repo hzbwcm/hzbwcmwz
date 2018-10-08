@@ -69,8 +69,29 @@ class IndexController extends Controller
     {
         return $this->fetch();
     }
-    //用户中心
+
+    //个人中心
     public function usercenter()
+    {
+        return $this->fetch();
+    }
+    //个人中心框
+    public function accountcenter()
+    {
+        return $this->fetch();
+    }
+    //发布信息
+    public function fabuxinxi()
+    {
+        return $this->fetch();
+    }
+    //信息管理首页
+    public function xinxiguanlishouye()
+    {
+        return $this->fetch();
+    }
+    //信息管理
+    public function xinxiguanli()
     {
         return $this->fetch();
     }
