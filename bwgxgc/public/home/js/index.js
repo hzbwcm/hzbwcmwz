@@ -211,5 +211,11 @@ $(function () {
             // })
         }
     })
+    //优选验厂箭头显示隐藏
+    $('.youxuan-xw-img').on('mouseover',function (event) {
+        $(this).children('.youxuan-jt').css('display','block')
+    }).on('mouseout',function (event) {
+        $(this).children('.youxuan-jt').css('display','none')
+    })
 // 结束
 })
