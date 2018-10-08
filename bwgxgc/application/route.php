@@ -12,8 +12,8 @@ Route::get('home/user/gerenzhuce','home/user/gerenzhuce');//个人注册
 Route::post('home/user/gerenzhuce','home/user/gerenzhuce');//个人注册
 Route::get('home/user/zhuceshibai','home/user/zhuceshibai');//个人注册失败
 Route::any('home/user/qiyezhuce','home/user/qiyezhuce',['method'=>'get|post']);//企业注册
-//Route::post('home/user/qiyezhuce','home/user/qiyezhuce');//企业注册
 Route::any('home/user/login','home/user/login',['method'=>'get|post']);//登陆
+
 
 Route::get('home/index/custom','home/index/custom');//产品定制
 Route::get('home/index/stickacard','home/index/stickacard');//贴牌专区
@@ -25,6 +25,11 @@ Route::get('home/index/wlpf','home/index/wlpf');//网络批发
 Route::get('home/index/shebeitransfer','home/index/shebeitransfer');//设备转让
 Route::get('home/index/shebeizhuanrang','home/index/shebeizhuanrang');//设备转让详情
 Route::get('home/index/customizing','home/index/customizing');//产品定制详情详情页
+Route::get('home/index/usercenter','home/index/usercenter');//个人中心
+Route::get('home/index/accountcenter','home/index/accountcenter');//个人中心框
+Route::get('home/index/fabuxinxi','home/index/fabuxinxi');//个人中心框
+Route::get('home/index/xinxiguanlishouye','home/index/xinxiguanlishouye');//个人中心框
+Route::get('home/index/xinxiguanli','home/index/xinxiguanli');//个人中心框
 //企业商铺
 Route::get('home/shangpu/index','home/shangpu/index');//优选验厂商铺首页
 Route::get('home/shangpu/gongsijianjie','home/shangpu/gongsijianjie');//优选验厂商铺公司简介
