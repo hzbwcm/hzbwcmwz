@@ -196,7 +196,7 @@ main .main-bottom-box .main-bottom-right .main-bootom-top-box {
   width: 100%;
   background: #fff;
   border: 1px solid #bfbfbf;
-  margin-bottom: 90px;
+  margin-bottom: 40px;
 }
 main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-bottom-t-t-b {
   overflow: hidden;
@@ -243,6 +243,33 @@ main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-bottom-t-t-b
   font-size: 14px;
   color: #777777;
   text-align: center;
+}
+main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-content-name-box {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #bfbfbf;
+}
+main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-content-name-box .main-content-name-left {
+  float: left;
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  line-height: 40px;
+  background: #f6f6f6;
+  font-size: 14px;
+  color: #555555;
+  border-right: 1px solid #bfbfbf;
+}
+main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-content-name-box .main-content-name-right {
+  float: left;
+  width: 698px;
+  height: 100%;
+  line-height: 40px;
+  background: #ffffff;
+  font-size: 14px;
+  color: #555555;
+  padding-left: 20px;
+  overflow: hidden;
 }
 main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-content-box {
   width: 100%;
@@ -309,6 +336,28 @@ main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-content-box 
 }
 main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-content-box .main-content:last-child {
   border-bottom: none;
+}
+main .main-bottom-box .main-bottom-right .main-bottom-sm-box {
+  width: 100%;
+  margin-bottom: 90px;
+}
+main .main-bottom-box .main-bottom-right .main-bottom-sm-box .main-bottom-sm-top .main-bottom-sm-title {
+  width: 120px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 16px;
+  color: #a260de;
+  border: 2px solid #dcdcdc;
+  border-bottom: none;
+  background: #f2f2f2;
+}
+main .main-bottom-box .main-bottom-right .main-bottom-sm-box .main-bottom-sm-bottom {
+  width: 100%;
+  padding: 20px;
+  border: 2px solid #dcdcdc;
+  font-size: 14px;
+  color: #555555;
 }
 main .main-bottom-box .main-bottom-right .main-lxsj {
   width: 120px;

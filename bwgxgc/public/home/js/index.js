@@ -1,5 +1,3 @@
-//ajax  53 搜索,77 登陆,145 获取验证码,
-
 $(function () {
     (function () {//设置banner父元素高度     banner轮播
         var height = $('.banner-box .banner-c-box .banner-img .banner-c-img img')[0].height;
