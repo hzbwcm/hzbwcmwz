@@ -223,9 +223,10 @@ class UserController extends Controller
             }
 
     }else
-        { return $this->fetch();
+        {
+            return $this->fetch();
         }
-        }
+    }
     //登陆
 
 
