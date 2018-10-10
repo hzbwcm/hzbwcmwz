@@ -21,10 +21,10 @@
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>商品属性列表</title>
+    <title>商品分类列表</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品属性列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品类别列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
     <div class="text-c"> 日期范围：
         <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
@@ -37,18 +37,15 @@
     <table class="table table-border table-bordered table-bg">
         <thead>
         <tr>
-            <th scope="col" colspan="10">商品属性列表</th>
+            <th scope="col" colspan="7">员工列表</th>
         </tr>
         <tr class="text-c">
             <th width="25"><input type="checkbox" name="" value=""></th>
             <th width="40">ID</th>
-            <th width="150">属性名称</th>
-            <th width="90">外键type_id</th>
-            <th width="25">属性是否可选</th>
-            <th width="200">可选值列表信息</th>
-            <th width="100">添加时间</th>
-            <th width="100">修改时间</th>
-            <th width="100">删除时间</th>
+            <th width="150">类型名称</th>
+            <th width="90">添加时间</th>
+            <th width="150">修改时间</th>
+            <th width="130">删除时间</th>
             <th width="100">操作</th>
         </tr>
         </thead>
@@ -58,42 +55,18 @@
             <td>1</td>
             <td>admin</td>
             <td>13000000000</td>
-            <td><input type="checkbox" name="" value=""></td>
-            <td>
-                <span class="select-box" style="border: none;">
-                    <select class="select" size="1" name="demo1">
-                        <option value="" selected>默认select</option>
-                        <option value="1">菜单一</option>
-                        <option value="2">菜单二</option>
-                        <option value="3">菜单三</option>
-                    </select>
-                </span>
-            </td>
-            <td>2014-6-11 11:11:42</td>
-            <td>2014-6-11 11:11:42</td>
+            <td>admin@mail.com</td>
             <td>2014-6-11 11:11:42</td>
             <td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>
         <tr class="text-c">
-            <td><input type="checkbox" value="1" name=""></td>
-            <td>1</td>
-            <td>admin</td>
+            <td><input type="checkbox" value="2" name=""></td>
+            <td>2</td>
+            <td>zhangsan</td>
             <td>13000000000</td>
-            <td><input type="checkbox" name="" value=""></td>
-            <td>
-                <span class="select-box" style="border: none;">
-                    <select class="select" size="1" name="demo1">
-                        <option value="" selected>默认select</option>
-                        <option value="1">菜单一</option>
-                        <option value="2">菜单二</option>
-                        <option value="3">菜单三</option>
-                    </select>
-                </span>
-            </td>
+            <td>admin@mail.com</td>
             <td>2014-6-11 11:11:42</td>
-            <td>2014-6-11 11:11:42</td>
-            <td>2014-6-11 11:11:42</td>
-            <td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+            <td class="td-manage"><a style="text-decoration:none" onClick="admin_start(this,'10001')" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe615;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','2','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>
         </tbody>
     </table>
