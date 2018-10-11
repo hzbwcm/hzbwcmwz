@@ -49,6 +49,10 @@ Route::any('admin/user/login','admin/user/login');//admin登陆
 Route::get('admin/type/showlist','admin/type/showlist');//商品类型
 Route::get('admin/goods/showlist','admin/goods/showlist');//商品属性
 
+Route::get('admin/goods/guanliyuan','admin/goods/guanliyuan');//管理员表
+Route::get('admin/goods/juesebiao','admin/goods/juesebiao');//角色表
+Route::get('admin/goods/quanxianbiao','admin/goods/quanxianbiao');//权限表
+
 
 
 Route::group('admin',function (){
