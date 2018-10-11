@@ -46,6 +46,9 @@ Route::any('admin/user/login','admin/user/login');//admin登陆
 //Route::get('admin/index/index','admin/index/index');//admin首页
 //Route::get('admin/index/welcome','admin/index/welcome');//admin首页welcome
 
+Route::get('admin/type/showlist','admin/type/showlist');//商品类型
+Route::get('admin/goods/showlist','admin/goods/showlist');//商品属性
+
 
 
 Route::group('admin',function (){

@@ -7,14 +7,15 @@ use think\Request;
 
 class TypeController extends Controller
 {
-    /**
-     * 显示资源列表
-     *
-     * @return \think\Response
-     */
+    //列表展示
     public function showlist()
     {
-        //
+        //获得类型列表信息
+        $info =
+
+            D('goods_type')->select();
+        $this -> assign('info',$info);
+        $this->display();
     }
 
     /**
