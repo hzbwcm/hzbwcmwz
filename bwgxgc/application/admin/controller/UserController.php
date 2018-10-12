@@ -37,4 +37,10 @@ class UserController extends Controller
         Session::clear();
         $this -> redirect('admin/user/login');
     }
+
+    //展示管理员
+    public function guanliyuan()
+    {
+        return $this->fetch();
+    }
 }
