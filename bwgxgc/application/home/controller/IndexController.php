@@ -95,4 +95,10 @@ class IndexController extends Controller
     {
         return $this->fetch();
     }
+    //收藏夹
+    public function shoucangjia()
+    {
+        return $this->fetch();
+    }
+    
 }

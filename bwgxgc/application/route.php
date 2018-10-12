@@ -31,6 +31,7 @@ Route::get('home/index/accountcenter','home/index/accountcenter');//个人中心
 Route::get('home/index/fabuxinxi','home/index/fabuxinxi');//个人中心框
 Route::get('home/index/xinxiguanlishouye','home/index/xinxiguanlishouye');//个人中心框
 Route::get('home/index/xinxiguanli','home/index/xinxiguanli');//个人中心框
+Route::get('home/index/shoucangjia','home/index/shoucangjia');//收藏夹
 //企业商铺
 Route::get('home/shangpu/index','home/shangpu/index');//优选验厂商铺首页
 Route::get('home/shangpu/gongsijianjie','home/shangpu/gongsijianjie');//优选验厂商铺公司简介
