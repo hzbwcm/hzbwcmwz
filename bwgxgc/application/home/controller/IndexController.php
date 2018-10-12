@@ -100,5 +100,5 @@ class IndexController extends Controller
     {
         return $this->fetch();
     }
-    
+
 }
