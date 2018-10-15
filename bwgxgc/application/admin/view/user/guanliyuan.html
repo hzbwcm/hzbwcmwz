@@ -53,67 +53,31 @@
             <th width="100">电话</th>
             <th width="100">传真</th>
             <th width="100">是否激活</th>
-            <th width="100">添加时间</th>
-            <th width="100">修改时间</th>
-            <th width="100">记录删除时间</th>
             <th width="100">操作</th>
         </tr>
         </thead>
         <tbody>
+        {volist name="info" id="val" mod="2"}
+        {eq name="mod" value="1"}
+        <tr class="text-c" style="background-color: #00a0e9;">
+            {else/}
         <tr class="text-c">
+            {/eq}
             <td><input type="checkbox" value="1" name=""></td>
-            <td>1</td>
-            <td>admin</td>
-            <td>sdfsd56156165165</td>
-            <td>9</td>
-            <td>川田</td>
-            <td>杭州</td>
-            <td>admin@mail.com</td>
-            <td>某先生</td>
-            <td>1471471414147</td>
-            <td>传真123</td>
-            <td>0</td>
-            <td>2014-6-11 11:11:42</td>
-            <td>2014-6-11 11:11:42</td>
-            <td>2014-6-11 11:11:42</td>
+            <td>{$val.com_id}</td>
+            <td>{$val.username}</td>
+            <td>{$val.pwd}</td>
+            <td>{$val.role_id}</td>
+            <td>{$val.company_name}</td>
+            <td>{$val.address}</td>
+            <td>{$val.email}</td>
+            <td>{$val.man}</td>
+            <td>{$val.tel}</td>
+            <td>{$val.fax}</td>
+            <td>{$val.status}</td>
             <td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>
-        <tr class="text-c">
-            <td><input type="checkbox" value="1" name=""></td>
-            <td>1</td>
-            <td>admin</td>
-            <td>sdfsd56156165165</td>
-            <td>9</td>
-            <td>川田</td>
-            <td>杭州</td>
-            <td>admin@mail.com</td>
-            <td>某先生</td>
-            <td>1471471414147</td>
-            <td>传真123</td>
-            <td>0</td>
-            <td>2014-6-11 11:11:42</td>
-            <td>2014-6-11 11:11:42</td>
-            <td>2014-6-11 11:11:42</td>
-            <td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-        </tr>
-        <tr class="text-c">
-            <td><input type="checkbox" value="1" name=""></td>
-            <td>1</td>
-            <td>admin</td>
-            <td>sdfsd56156165165</td>
-            <td>9</td>
-            <td>川田</td>
-            <td>杭州</td>
-            <td>admin@mail.com</td>
-            <td>某先生</td>
-            <td>1471471414147</td>
-            <td>传真123</td>
-            <td>0</td>
-            <td>2014-6-11 11:11:42</td>
-            <td>2014-6-11 11:11:42</td>
-            <td>2014-6-11 11:11:42</td>
-            <td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-        </tr>
+        {/volist}
         </tbody>
     </table>
 </div>

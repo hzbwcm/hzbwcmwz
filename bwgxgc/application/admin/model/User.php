@@ -1,7 +1,9 @@
 <?php
+
 namespace app\admin\model;
 
 use think\Model;
+use traits\model\SoftDelete;
 
 class User extends Model
 {
@@ -11,7 +13,7 @@ class User extends Model
 
     public static function  invoke()
     {
-        $id = request()->param('id');
+        $id = request()->param('com_id');
         return company_info::get($id);
     }
 }

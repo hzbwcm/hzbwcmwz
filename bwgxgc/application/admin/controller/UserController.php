@@ -4,7 +4,7 @@ namespace app\admin\controller;
 
 use think\Controller;
 use think\Request;
-use app\admin\model\company_info;
+use app\admin\model\Company_info;
 use think\Session;
 
 
@@ -18,7 +18,7 @@ class UserController extends Controller
             {
                 $name = $request->param('username');
                 $pwd  = md5($request->param('pwd'));
-                $exists =   company_info::where(['username'=>$name,'pwd'=>$pwd])->find();
+                $exists =   Company_info::where(['username'=>$name,'pwd'=>$pwd])->find();
                 if($exists){
                     Session::set('com_id',$exists->com_id);
                     Session::set('username',$exists->username);
@@ -41,6 +41,8 @@ class UserController extends Controller
     //展示管理员
     public function guanliyuan()
     {
+        $info = Company_info::select();
+        $this -> assign('info',$info);
         return $this->fetch();
     }
 }
