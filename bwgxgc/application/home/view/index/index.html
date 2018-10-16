@@ -8,6 +8,7 @@
     <title>卫生用品工厂</title>
     <link rel="stylesheet" href="{:config('home_css')}/index.css">
     <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <link rel="icon " type="images/x-icon" href="{:config('home_img')}/favicon.ico">
     <script src="{:config('home_js')}/jquery.js"></script>
     <script src="{:config('home_js')}/jquery.lazyload.js"></script>
     <!--[if lt IE 9]>
@@ -23,7 +24,7 @@
                 <a href="">
                     <div class="h-f-i">
                         <div class="header-img">
-                            <img src="{:config('home_img')}/asjgc.jpg" alt="">
+                            <img data-original="{:config('home_img')}/asjgc.jpg" alt="">
                         </div>
                         <div class="h-l-t">手机工厂 |</div>
                     </div>
@@ -1365,7 +1366,7 @@
     <!--</div>-->
 <!--</div>-->
 <!--页脚-->
-<div class="footer" style="width: 100%;padding-top: 100px;">
+<div class="footer" style="width: 100%;min-width: 1200px;padding-top: 100px;">
     <object data="{:url('home/index/foot_base')}" type="text/x-scriptlet" style="width: 100%;height: 530px;"></object>
 </div>
 <!--结束-->
