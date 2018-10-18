@@ -419,7 +419,7 @@ li {
   overflow: hidden;
   float: right;
 }
-.main .main-right-box .main-right-top .main-qy-sf .main-right-t-r .main-right-text {
+.main .main-right-box .main-right-top .main-qy-sf .main-right-t-r .main-right-text, .main .main-right-box .main-right-top .main-qy-sf .main-right-t-r .main-right-text-city {
   padding: 6px 10px;
   font-size: 14px;
   margin-right: 20px;

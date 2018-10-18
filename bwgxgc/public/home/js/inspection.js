@@ -54,10 +54,27 @@ $(function () {
         })
     })
 
-//区域点击效果
+//省份点击效果
     $('.main-right-text').on('click',function (e) {
         $('.main-right-text').removeClass('main-right-text1');
         $(e.target).addClass('main-right-text1');
+
+        // $.ajax({
+        //     url:'',
+        //     type:post,
+        //     data:{},
+        //     dataType:JSON,
+        //     success:function (str) {
+        //
+        //     }
+        //
+        // })
+    })
+
+//市区点击效果
+    $('.main-right-text-city').on('click',function () {
+        $('.main-right-text-city').removeClass('main-right-text1');
+        $(this).addClass('main-right-text1');
 
         // $.ajax({
         //     url:'',
