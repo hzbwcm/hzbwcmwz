@@ -229,16 +229,12 @@
                 <div class="main--right-t-l"><i class="iconfont icon-icon_location"></i>省份:</div>
                 <ul class="main-right-t-r">
                     <div class="main-right-text main-right-text1">全部区域</div>
-                    <li class="main-right-text">福建(0)</li>
+                    {volist name='info' id='v'}
+                    <li class="main-right-text">{$v.Name}</li>
+                    {/volist}
                 </ul>
             </div>
-            <div class="main-qy-sf">
-                <div class="main--right-t-l"><i class="iconfont icon-icon_location"></i>市区:</div>
-                <ul class="main-right-t-r">
-                    <div class="main-right-text main-right-text1">全部区域</div>
-                    <li class="main-right-text">福建(0)</li>
-                </ul>
-            </div>
+
         </div>
         <div class="main-right-bottom">
             <!--<div class="main-right-b-t">-->

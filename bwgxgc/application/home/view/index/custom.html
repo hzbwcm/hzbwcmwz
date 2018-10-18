@@ -264,23 +264,12 @@
     <div class="main-right">
         <div class="main-right-top">
             <div class="main-top-qy">
-                <span>省份：</span>
+                <span>地区：</span>
                 <ul>
-                    <li class="right-click">请问</li>
-                    <li>阿斯顿</li>
-                    <li>自行车</li>
-                    <li>而</li>
-                    <li>士大夫</li>
-                </ul>
-            </div>
-            <div class="main-top-qx">
-                <span>城市：</span>
-                <ul>
-                    <li class="right-click">请问</li>
-                    <li>阿斯顿</li>
-                    <li>自行车</li>
-                    <li>而</li>
-                    <li>士大夫</li>
+                    <li class="right-click">全部</li>
+                    {volist name='info' id='v'}
+                    <li>{$v.Name}</li>
+                    {/volist}
                 </ul>
             </div>
         </div>

@@ -2,6 +2,7 @@
 namespace app\home\controller;
 
 use think\Controller;
+use app\home\model\Area;
 class IndexController extends Controller
 {
     //前台首页
@@ -17,12 +18,16 @@ class IndexController extends Controller
     //前台产品定制
     public function custom()
     {
+        //地区
+        $info = Area::where('Pid',0)->select();
+        $this -> assign('info',$info);
+        return $this->fetch();
         return $this->fetch();
     }
     //贴牌专区
     public function stickacard()
     {
-        return $this->fetch();
+
     }
     //贴牌详情
     public function tiepaixiangqing()
@@ -36,7 +41,9 @@ class IndexController extends Controller
     }
     //优选验厂
     public function inspection()
-    {
+    {   //地区
+        $info = Area::where('Pid',0)->select();
+        $this -> assign('info',$info);
         return $this->fetch();
     }
     //设备转让
