@@ -36,11 +36,6 @@ return [
 
 
 
-
-    //给静态资源设置访问路径【admin分组】
-    'admin_lib'             => '/admin/lib',
-    'admin_static'          => '/admin/static',
-    'admin_temp'            => '/admin/temp',
     //
     // 应用命名空间
     'app_namespace'          => 'app',

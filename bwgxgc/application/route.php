@@ -47,8 +47,9 @@ Route::any('admin/user/login','admin/user/login');//admin登陆
 //Route::get('admin/index/index','admin/index/index');//admin首页
 //Route::get('admin/index/welcome','admin/index/welcome');//admin首页welcome
 
-Route::get('admin/type/showlist','admin/type/showlist');//商品类型
-Route::get('admin/goods/showlist','admin/goods/showlist');//商品属性
+Route::get('admin/type/index','admin/type/index');//商品类型
+Route::any('admin/type/add','admin/type/add',['method'=>'get|post']);//商品类型添加
+Route::get('admin/attribute/index','admin/attribute/index');//商品属性
 
 Route::get('admin/user/guanliyuan','admin/user/guanliyuan');//管理员表
 Route::get('admin/role/juesebiao','admin/role/juesebiao');//角色表
