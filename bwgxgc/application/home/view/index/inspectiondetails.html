@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.3">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>验厂详情</title>
     <link rel="stylesheet" href="{:config('home_css')}/swiper.min.css">
     <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
     <link rel="stylesheet" href="{:config('home_css')}/inspectiondetails.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_688641_t22yxngd6g.css">
+    <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <link rel="stylesheet" href="{:config('home_css')}/foot_base.css">
     <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/jquery.lazyload.js"></script>
     <script src="{:config('home_js')}/bootstrap.js"></script>
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
@@ -22,7 +24,7 @@
 <header>
     <div class="header-box">
         <div class="header-logo">
-            <img src="{:config('home_img')}/a0.png" alt="">
+            <img data-original="{:config('home_img')}/a0.png" alt="">
         </div>
         <div class="header-right-box">
             <a href="" class="header-shoucangjia">
@@ -72,7 +74,7 @@
     <div class="main-top-box">
         <div class="main-t-t">
             <div class="main-t-t-img">
-                <img src="{:config('home_img')}/inspectiondetails/eyyz.png" alt="">
+                <img data-original="{:config('home_img')}/inspectiondetails/eyyz.png" alt="">
             </div>
             <strong>已选类别：<span>卫生巾</span></strong>
             <div class="main-t-t-r">
@@ -94,7 +96,7 @@
     </div>
     <div class="main-bottom-box">
         <div class="main-bottom-left">
-            <img src="{:config('home_img')}/inspectiondetails/ect.jpg" alt="">
+            <img data-original="{:config('home_img')}/inspectiondetails/ect.jpg" alt="">
         </div>
         <div class="main-bottom-right">
             <a href="" class="main-lxkf"><i class="iconfont icon-kefu"></i>联系客服</a>
@@ -129,7 +131,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -137,7 +139,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -145,7 +147,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -153,7 +155,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -161,7 +163,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -169,7 +171,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -177,7 +179,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -185,76 +187,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="gongsitupian-img-box">
-                    <div class="gongsitupian-img-title">卫生巾</div>
-                    <ul class="gongsitupian-img-ul">
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -267,7 +200,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -275,7 +208,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -283,7 +216,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -291,7 +224,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -299,7 +232,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -307,7 +240,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -315,7 +248,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -323,76 +256,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="gongsitupian-img-box">
-                    <div class="gongsitupian-img-title">卫生巾</div>
-                    <ul class="gongsitupian-img-ul">
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
-                                </div>
-                                <div class="li-img-name">七格格</div>
-                            </a>
-                        </li>
-                        <li class="gongsitupian-img-li">
-                            <a href="">
-                                <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -405,7 +269,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -413,7 +277,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -421,7 +285,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -429,7 +293,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -437,7 +301,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -445,7 +309,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -453,7 +317,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -461,7 +325,145 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         <li class="gongsitupian-img-li">
                             <a href="">
                                 <div class="li-img-box">
-                                    <img src="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gongsitupian-img-box">
+                    <div class="gongsitupian-img-title">卫生巾</div>
+                    <ul class="gongsitupian-img-ul">
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gongsitupian-img-box">
+                    <div class="gongsitupian-img-title">卫生巾</div>
+                    <ul class="gongsitupian-img-ul">
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
+                                </div>
+                                <div class="li-img-name">七格格</div>
+                            </a>
+                        </li>
+                        <li class="gongsitupian-img-li">
+                            <a href="">
+                                <div class="li-img-box">
+                                    <img data-original="{:config('home_img')}/inspectiondetails/240mmx8.png" alt="">
                                 </div>
                                 <div class="li-img-name">七格格</div>
                             </a>
@@ -475,12 +477,62 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 <!--页脚-->
-<div class="footer" style="width: 100%;padding-top: 100px;">
-    <object data="{:url('home/index/foot_base')}" type="text/x-scriptlet" style="width: 100%;height: 530px;"></object>
+<div class="footer">
+    <footer>
+        <div class="footer-left">
+            <div class="footer-content-box">
+                <strong class="footer-l-title">工厂指南</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">成长攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-content-box">
+                <strong class="footer-l-title">定制指南</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">加工定制</a></li>
+                    <li class="footer-l-li"><a href="">加工攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-content-box">
+                <strong class="footer-l-title">关于我们</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">联系我们</a></li>
+                    <li class="footer-l-li"><a href="">广告报价</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-weixin-box">
+                <div class="footer-weixin-img">
+                    <img data-original="{:config('home_img')}/weigzh.png" alt="">
+                </div>
+                <div class="footer-r-weixin-text">微信公众号</div>
+            </div>
+            <div class="footer-weixin-box">
+                <div class="footer-weixin-img">
+                    <img data-original="{:config('home_img')}/weikefu.png" alt="">
+                </div>
+                <div class="footer-r-weixin-text">客服微信</div>
+            </div>
+            <div class="footer-weixin-box">
+                <div class="footer-r-tel-title">客服电话</div>
+                <div class="footer-r-tel-content">0571-86169936</div>
+            </div>
+        </div>
+    </footer>
 </div>
+<div class="footer-beian">版权2018-2028 @ 杭州博卫传媒有限公司 闽ICP备16026715号</div>
 
 
 <script src="{:config('home_js')}/inspectiondetails.js"></script>
 <script src="{:config('home_js')}/swiper.min.js"></script>
+<script>
+    $(function() {
+        $("img").lazyload({
+            threshold : 200,
+            skip_invisible : false
+        });
+    });
+</script>
 </body>
 </html>

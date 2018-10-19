@@ -5,9 +5,6 @@ $(function () {
         var banner_num = $('.banner-box .banner-c-box .banner-img .banner-c-img img').length//轮播图数量
         var num = 46 + height + 'px';
         var number = 0;
-        // $('.banner-box .banner-c-box').css('height', height + 'px');
-        // $('.banner-box .banner-c-box .banner-img').css('height', height + 'px');
-        // $('.banner-box').css('height', num);
         $('.banner-box .banner-c-box .banner-img .banner-dian-box').css('margin-left', '-' + dian_box_w / 2 + 'px');//轮播图圆点居中
 
         //轮播
@@ -68,72 +65,57 @@ $(function () {
         //
         // })
     })
-//登陆注册
-    //登陆
-    $('.denglu-button').on('click', function () {
-        var user = $('.denglu .dl-zh input')[0].value
-        var password = $('.denglu .dl-mm input')[0].value
-        // $.ajax({//登陆ajax
-        //     url:'',
-        //     type:post,
-        //     data:{user,password},
-        //     dataType:JSON,
-        //     success:function (res) {
-        //
-        //     }
-        //
-        // })
-        console.log(user, password)
-    })
-//一键找厂下拉菜单
-    $('.gongchang-ch-x').on('click', function (e) {
-        var class_name = $(e.target).parent().attr('class');
-        var dqdj_name=$(e.target).attr('dqdj');
-        if(dqdj_name=='a1'){
-            class_name=$(e.target).parent().parent().attr('class');
-        }
-        if(class_name=='cp-l-b' || class_name=='cp-p-p' || class_name=='gc-p-y'){
-            if ($("." + class_name + " .cp-xl").css('display') == 'block') {
-                $('.gongchang-ch-x .cp-xl').css('display', 'none');
-            } else {
-                $('.gongchang-ch-x .cp-xl').css('display', 'none');//隐藏下拉菜单
-                $("." + class_name + " .cp-xl").css('display', 'block');//显示当前点击下拉菜单
-            }
-            if (class_name == 'yijian-x-z') {
-                var category_name = $('.cp-l-b .cp-xl-title').text();
-                var brand_name = $('.cp-p-p .cp-xl-title').text();
-                var area_name = $('.gc-p-y .cp-xl-title').text();
-                if (category_name == '产品类别') {
+// //一键找厂下拉菜单
+//     $('.gongchang-ch-x').on('click', function (e) {
+//         var class_name = $(e.target).parent().attr('class');
+//         var dqdj_name=$(e.target).attr('dqdj');
+//         if(dqdj_name=='a1'){
+//             class_name=$(e.target).parent().parent().attr('class');
+//         }
+//         if(class_name=='cp-l-b' || class_name=='cp-p-p' || class_name=='gc-p-y'){
+//             if ($("." + class_name + " .cp-xl").css('display') == 'block') {
+//                 $('.gongchang-ch-x .cp-xl').css('display', 'none');
+//             } else {
+//                 $('.gongchang-ch-x .cp-xl').css('display', 'none');//隐藏下拉菜单
+//                 $("." + class_name + " .cp-xl").css('display', 'block');//显示当前点击下拉菜单
+//             }
+//             if (class_name == 'yijian-x-z') {
+//                 var category_name = $('.cp-l-b .cp-xl-title').text();
+//                 var brand_name = $('.cp-p-p .cp-xl-title').text();
+//                 var area_name = $('.gc-p-y .cp-xl-title').text();
+//                 if (category_name == '产品类别') {
+//
+//                 } else if (brand_name == '产品品牌') {
+//
+//                 } else if (area_name = '工厂区域 ') {
+//
+//                 } else {
+//                     // $.ajax({
+//                     //     url:'',
+//                     //     type:post,
+//                     //     data:{category_name,brand_name,area_name},
+//                     //     dataType:JSON,
+//                     //     success:function (res) {
+//                     //
+//                     //     }
+//                     //
+//                     // })
+//                 }
+//
+//             }
+//
+//         }
+//     })
+// // 一键找厂三级联动
+//     $('.gongchang-ch-x .cp-xl-box .cp-xl ').on('click',function (e) {
+//         var class_name = $(e.target).parent().parent().attr('class');
+//         var str = $(e.target).text()
+//         $("."+class_name+" .cp-xl-title span").text(str);
+//         $('.gongchang-ch-x .cp-xl').css('display', 'none');
+//
+//     })
 
-                } else if (brand_name == '产品品牌') {
 
-                } else if (area_name = '工厂区域 ') {
-
-                } else {
-                    // $.ajax({
-                    //     url:'',
-                    //     type:post,
-                    //     data:{category_name,brand_name,area_name},
-                    //     dataType:JSON,
-                    //     success:function (res) {
-                    //
-                    //     }
-                    //
-                    // })
-                }
-
-            }
-
-        }
-    })
-// 一键找厂三级联动
-    $('.gongchang-ch-x .cp-xl-box .cp-xl ').on('click',function (e) {
-        var class_name = $(e.target).parent().parent().attr('class');
-        var str = $(e.target).text()
-        $("."+class_name+" .cp-xl-title span").text(str);
-        $('.gongchang-ch-x .cp-xl').css('display', 'none');
-
-    })
 //点击播放视频
     $('.video-img-box').on('click',function (e) {
         var class_name=$(e.target).parent().attr('class');
@@ -217,5 +199,6 @@ $(function () {
     }).on('mouseout',function (event) {
         $(this).children('.youxuan-jt').css('display','none')
     })
+
 // 结束
 })

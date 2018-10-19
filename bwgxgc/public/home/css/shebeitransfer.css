@@ -109,6 +109,8 @@ main .main-sbmc-box .main-sbmc-name {
   max-width: 1100px;
 }
 main .main-sbmc-box .main-sbmc-name .main-sbmc {
+  display: block;
+  float: left;
   font-size: 14px;
   color: #555555;
   margin-right: 24px;
@@ -143,7 +145,7 @@ main .main-sbpxfs-box .main-sbpxfs-zh {
 }
 main .main-sbpxfs-box .main-sbpxfs-jg {
   float: left;
-  width: 120px;
+  padding: 0 30px 0 30px;
   height: 100%;
   text-align: center;
   line-height: 40px;

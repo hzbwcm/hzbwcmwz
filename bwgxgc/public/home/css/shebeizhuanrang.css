@@ -312,6 +312,28 @@ main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-content-box 
 main .main-bottom-box .main-bottom-right .main-bootom-top-box .main-content-box .main-content-sblczx:last-child {
   border-bottom: none;
 }
+main .main-bottom-box .main-bottom-right .main-bottom-sm-box {
+  width: 100%;
+  margin-bottom: 90px;
+}
+main .main-bottom-box .main-bottom-right .main-bottom-sm-box .main-bottom-sm-top .main-bottom-sm-title {
+  width: 120px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 16px;
+  color: #a260de;
+  border: 2px solid #dcdcdc;
+  border-bottom: none;
+  background: #f2f2f2;
+}
+main .main-bottom-box .main-bottom-right .main-bottom-sm-box .main-bottom-sm-bottom {
+  width: 100%;
+  padding: 20px;
+  border: 2px solid #dcdcdc;
+  font-size: 14px;
+  color: #555555;
+}
 main .main-bottom-box .main-bottom-right .main-lxsj {
   width: 120px;
   height: 40px;

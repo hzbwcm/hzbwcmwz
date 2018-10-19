@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.3">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>信息管理首页</title>
     <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
     <link rel="stylesheet" href="{:config('home_css')}/xinxiguanlishouye.css">
     <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
     <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/jquery.lazyload.js"></script>
     <script src="{:config('home_js')}/bootstrap.js"></script>
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
@@ -48,7 +49,7 @@
         <ul class="form-ul">
             <li class="form-li">
                 <div class="form-img">
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                     <a href="{:url('home/index/xinxiguanli')}" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
@@ -57,7 +58,7 @@
             </li>
             <li class="form-li">
                 <div class="form-img">
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                     <a href="" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
@@ -66,7 +67,7 @@
             </li>
             <li class="form-li">
                 <div class="form-img">
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                     <a href="" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
@@ -75,7 +76,7 @@
             </li>
             <li class="form-li">
                 <div class="form-img">
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                     <a href="" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
@@ -84,7 +85,7 @@
             </li>
             <li class="form-li">
                 <div class="form-img">
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                     <a href="" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
@@ -93,7 +94,7 @@
             </li>
             <li class="form-li">
                 <div class="form-img">
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                     <a href="" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
@@ -102,7 +103,7 @@
             </li>
             <li class="form-li">
                 <div class="form-img">
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                     <a href="" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
@@ -111,7 +112,7 @@
             </li>
             <li class="form-li">
                 <div class="form-img">
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                     <a href="" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
@@ -146,5 +147,13 @@
 </main>
 
 <script src="{:config('home_js')}/xinxiguanlishouye.js"></script>
+<script>
+    $(function() {
+        $("img").lazyload({
+            threshold : 200,
+            skip_invisible : false
+        });
+    });
+</script>
 </body>
 </html>

@@ -106,7 +106,7 @@ main .main-content-title .content-title .content-title-ul {
   position: relative;
 }
 main .main-content-title .content-title .content-title-ul li {
-  width: 33.33%;
+  width: 50%;
   height: 100%;
   float: left;
   padding-top: 10px;
@@ -136,7 +136,7 @@ main .main-content-title .content-title .content-title-ul li a .yixuanzhong {
   font-size: 12px;
 }
 main .main-content-title .content-title .content-title-ul .dingwei {
-  width: 33.33%;
+  width: 50%;
   border-bottom: 2px solid #a260de;
   position: absolute;
   left: 0;

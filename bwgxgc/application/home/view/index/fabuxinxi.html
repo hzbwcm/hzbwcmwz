@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.3">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>发布信息</title>
     <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
     <link rel="stylesheet" href="{:config('home_css')}/fabuxinxi.css">
     <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
     <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/jquery.lazyload.js"></script>
     <script src="{:config('home_js')}/bootstrap.js"></script>
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
@@ -55,7 +56,7 @@
                         <!--这是图片上传的input框-->
                         <label class="lacalLabel"><input type='file' id='doc' name='pic' value=""
                                                          onclick="inputimg('pic','lacalImag','preview','doc')"></label>
-                        <img src="" id="preview" alt="">
+                        <img data-original="" id="preview" alt="">
                     </div>
                 </div>
                 <div class="form-img-box-right">
@@ -64,56 +65,56 @@
                         <!--这是图片上传的input框-->
                         <label class="lacalLabel"><input type='file' id='doc2' name='pic2' value=""
                                                          onclick="inputimg('pic2','lacalImag2','preview2','doc2')"></label>
-                        <img src="" id="preview2" alt="">
+                        <img data-original="" id="preview2" alt="">
                     </div>
                     <div id="localImag3" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
                         <label class="lacalLabel"><input type='file' id='doc3' name='pic3' value=""
                                                          onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
-                        <img src="" id="preview3" alt="">
+                        <img data-original="" id="preview3" alt="">
                     </div>
                     <div id="localImag4" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
                         <label class="lacalLabel"><input type='file' id='doc4' name='pic4' value=""
                                                          onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
-                        <img src="" id="preview4" alt="">
+                        <img data-original="" id="preview4" alt="">
                     </div>
                     <div id="localImag5" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
                         <label class="lacalLabel"><input type='file' id='doc5' name='pic5' value=""
                                                          onclick="inputimg('pic5','lacalImag5','preview5','doc5')"></label>
-                        <img src="" id="preview5" alt="">
+                        <img data-original="" id="preview5" alt="">
                     </div>
                     <div id="localImag6" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
                         <label class="lacalLabel"><input type='file' id='doc6' name='pic6' value=""
                                                          onclick="inputimg('pic6','lacalImag6','preview6','doc6')"></label>
-                        <img src="" id="preview6" alt="">
+                        <img data-original="" id="preview6" alt="">
                     </div>
                     <div id="localImag7" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
                         <label class="lacalLabel"><input type='file' id='doc7' name='pic7' value=""
                                                          onclick="inputimg('pic7','lacalImag7','preview7','doc7')"></label>
-                        <img src="" id="preview7" alt="">
+                        <img data-original="" id="preview7" alt="">
                     </div>
                     <div id="localImag8" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
                         <label class="lacalLabel"><input type='file' id='doc8' name='pic8' value=""
                                                          onclick="inputimg('pic8','lacalImag8','preview8','doc8')"></label>
-                        <img src="" id="preview8" alt="">
+                        <img data-original="" id="preview8" alt="">
                     </div>
                     <div id="localImag1" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
                         <label class="lacalLabel"><input type='file' id='doc1' name='pic1' value=""
                                                          onclick="inputimg('pic1','lacalImag1','preview1','doc1')"></label>
-                        <img src="" id="preview1" alt="">
+                        <img data-original="" id="preview1" alt="">
                     </div>
                 </div>
             </div>
@@ -230,6 +231,14 @@
     </div>
 </main>
 
-<script src="{:config('home_js')}/fabuxinxi.js"></script>
+<script src="{:config('home_js')}/fabuxinxi.js"></script>\
+<script>
+    $(function() {
+        $("img").lazyload({
+            threshold : 200,
+            skip_invisible : false
+        });
+    });
+</script>
 </body>
 </html>

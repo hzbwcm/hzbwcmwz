@@ -1,103 +1,97 @@
 @charset "UTF-8";
 /*初始化css*/
-html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #f8f8f8;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: '微软雅黑';
-}
-
-a {
-  text-decoration: none;
-}
-
-li {
-  list-style-type: none;
+img {
+  border: none;
 }
 
 /*页脚*/
-footer {
+.footer {
   width: 100%;
-  height: 100%;
+  min-width: 1200px;
+  margin-top: 80px;
+  padding: 50px 0 50px 0;
+  background: #e9e6e6;
 }
-footer .footer-bjt-box {
-  width: 100%;
-  height: 490px;
-  background-image: url("../img/hyb.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  padding-top: 70px;
-}
-footer .footer-bjt-box .footer-c-box {
+.footer footer {
   width: 1200px;
-  height: 100%;
   margin: 0 auto;
+  overflow: hidden;
 }
-footer .footer-bjt-box .footer-c-box .footer-box {
+.footer footer .footer-left {
+  width: 754px;
   float: left;
-  margin-right: 150px;
+  overflow: hidden;
 }
-footer .footer-bjt-box .footer-c-box .footer-box .footer-img {
+.footer footer .footer-left .footer-content-box {
+  width: 33%;
+  float: left;
   text-align: center;
-  margin-bottom: 46px;
 }
-footer .footer-bjt-box .footer-c-box .footer-box .footer-text-box .footer-text-title {
-  font-size: 22px;
-  color: #fff;
-  font-weight: bold;
-  padding-bottom: 10px;
-}
-footer .footer-bjt-box .footer-c-box .footer-box .footer-text-box .footer-text {
+.footer footer .footer-left .footer-content-box .footer-l-title {
   display: block;
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-footer .footer-bjt-box .footer-c-box .footer-box .footer-text-box .footer-text a {
   font-size: 16px;
-  color: #fff;
+  color: #555555;
+  margin-bottom: 30px;
 }
-footer .footer-bjt-box .footer-c-box .footer-box1 {
+.footer footer .footer-left .footer-content-box .footer-l-ul {
+  width: 100%;
+}
+.footer footer .footer-left .footer-content-box .footer-l-ul .footer-l-li {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.footer footer .footer-left .footer-content-box .footer-l-ul .footer-l-li a {
+  font-size: 14px;
+  color: #555555;
+}
+.footer footer .footer-left .footer-content-box .footer-l-ul .footer-l-li:last-child {
   margin: 0;
 }
-footer .footer-bjt-box .footer-c-box .footer-box1 .footer-img {
-  text-align: center;
-  margin-bottom: 46px;
-}
-footer .footer-bjt-box .footer-c-box .footer-box1 .footer-ewm-box {
-  min-height: 100px;
-  margin-bottom: 48px;
-}
-footer .footer-bjt-box .footer-c-box .footer-box1 .footer-ewm-box .footer-ewm-img {
+.footer footer .footer-right {
+  width: 446px;
+  height: 114px;
   float: left;
-  margin-right: 10px;
+  overflow: hidden;
 }
-footer .footer-bjt-box .footer-c-box .footer-box1 .footer-ewm-box .footer-ewm-img .ewm-text {
-  font-size: 16px;
-  color: #fff;
+.footer footer .footer-right .footer-weixin-box {
+  width: 33%;
+  height: 100%;
+  float: left;
 }
-footer .footer-bjt-box .footer-c-box .footer-box1 .footer-kf-box {
-  color: #fff;
-}
-footer .footer-bjt-box .footer-c-box .footer-box1 .footer-kf-box .footer-kf-title {
-  font-size: 16px;
-  font-weight: bold;
-}
-footer .footer-bjt-box .footer-c-box .footer-box1 .footer-kf-box .footer-kf-text {
-  font-size: 22px;
-  font-weight: bold;
-}
-footer .footer-footer {
-  width: 1200px;
+.footer footer .footer-right .footer-weixin-box .footer-weixin-img {
+  width: 80px;
+  height: 80px;
   margin: 0 auto;
-  text-align: center;
+  margin-bottom: 12px;
+}
+.footer footer .footer-right .footer-weixin-box .footer-weixin-img img {
+  width: 100%;
+  height: 100%;
+}
+.footer footer .footer-right .footer-weixin-box .footer-r-weixin-text {
+  width: 100%;
   font-size: 16px;
-  color: #1b1b1b;
-  padding-top: 8px;
+  color: #555555;
+  text-align: center;
+}
+.footer footer .footer-right .footer-weixin-box .footer-r-tel-title {
+  width: 100%;
+  font-size: 16px;
+  color: #555555;
+  margin-top: 74px;
+}
+.footer footer .footer-right .footer-weixin-box .footer-r-tel-content {
+  width: 100%;
+  font-size: 16px;
+  color: #555555;
+}
+
+.footer-beian {
+  width: 1200px;
+  height: 26px;
+  margin: 0 auto;
+  font-size: 12px;
+  color: #555555;
+  text-align: center;
+  line-height: 26px;
 }

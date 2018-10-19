@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.3">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>卫生用品工厂</title>
     <link rel="stylesheet" href="{:config('home_css')}/index.css">
     <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <link rel="icon " type="images/x-icon" href="{:config('home_img')}/favicon.ico">
+    <link rel="stylesheet" href="{:config('home_css')}/foot_base.css">
     <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/jquery.lazyload.js"></script>
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -22,7 +25,7 @@
                 <a href="">
                     <div class="h-f-i">
                         <div class="header-img">
-                            <img src="{:config('home_img')}/asjgc.jpg" alt="">
+                            <img data-original="{:config('home_img')}/asjgc.jpg" alt="">
                         </div>
                         <div class="h-l-t">手机工厂 |</div>
                     </div>
@@ -68,16 +71,16 @@
 <div class="search-box">
     <div class="search-centre">
         <div class="sear-logo">
-            <img src="{:config('home_img')}/a0.png" alt="">
+            <img data-original="{:config('home_img')}/a0.png" alt="">
         </div>
 
         <div class="search-c-b">
             <div class="search">
                 <div class="search-fram">
                     <div class="s-f-i-i">
-                        <img src="{:config('home_img')}/aa.png" alt="">
+                        <img data-original="{:config('home_img')}/aa.png" alt="">
                     </div>
-                    <input type="text" placeholder="共2000家企业入驻" value="">
+                    <input type="text" placeholder="" value="">
                 </div>
                 <div class="search-button">
                     <i class="iconfont icon-fangdajing"></i>
@@ -93,19 +96,19 @@
         <div class="search-right-b">
             <div class="s-trademark">
                 <div>
-                    <img src="{:config('home_img')}/a1.png" alt="">
+                    <img data-original="{:config('home_img')}/a1.png" alt="">
                 </div>
                 <span>海量工厂</span>
             </div>
             <div class="s-trademark">
                 <div>
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                 </div>
                 <span>产品定制</span>
             </div>
             <div class="s-trademark">
                 <div>
-                    <img src="{:config('home_img')}/a3.png" alt="">
+                    <img data-original="{:config('home_img')}/a3.png" alt="">
                 </div>
                 <span>团购批发</span>
             </div>
@@ -140,7 +143,7 @@
             <li>网络批发</li>
         </a>
         <a href="">
-            <li class="daohang-fabu"><div class="daohang-yuan"></div>发布需求>></li>
+            <li class="daohang-fabu"><div class="daohang-yuan"></div>我的工厂>></li>
         </a>
     </ul>
 </div>
@@ -149,28 +152,28 @@
     <div class="banner-c-box">
         <div class="banner-img">
             <a href="" class="banner-c-img" banner_color="{:config('home_img')}/2.png">
-                <img src="{:config('home_img')}/1.png" alt="">
+                <img data-original="{:config('home_img')}/1.png" alt="">
             </a>
             <a href="" class="banner-c-img" banner_color="{:config('home_img')}/4.png">
-                <img src="{:config('home_img')}/3.png" alt="">
+                <img data-original="{:config('home_img')}/3.png" alt="">
             </a>
-            <!--<div class="banner-c-img" banner_color="#3fb799">-->
-            <!--<img src="{:config('home_img')}/byc.jpg" alt="">-->
-            <!--</div>-->
+            <a href="" class="banner-c-img" banner_color="{:config('home_img')}/byc_bj.png">
+                <img data-original="{:config('home_img')}/byc.png" alt="">
+            </a>
             <!--<div class="banner-c-img" banner_color="#3f42b7">-->
-            <!--<img src="{:config('home_img')}/banner.jpg" alt="">-->
+            <!--<img data-original="{:config('home_img')}/banner.jpg" alt="">-->
             <!--</div>-->
             <!--<div class="banner-c-img" banner_color="#42ff00">-->
-            <!--<img src="{:config('home_img')}/banner.jpg" alt="">-->
+            <!--<img data-original="{:config('home_img')}/banner.jpg" alt="">-->
             <!--</div>-->
             <!--<div class="banner-c-img" banner_color="#f0ff00">-->
-            <!--<img src="{:config('home_img')}/banner.jpg" alt="">-->
+            <!--<img data-original="{:config('home_img')}/banner.jpg" alt="">-->
             <!--</div>-->
 
             <ul class="banner-dian-box">
                 <li class="banner-dian" banner_id="0"></li>
                 <li class="banner-dian" banner_id="1"></li>
-                <!--<li class="banner-dian" banner_id="2"></li>-->
+                <li class="banner-dian" banner_id="2"></li>
                 <!--<li class="banner-dian" banner_id="3"></li>-->
                 <!--<li class="banner-dian" banner_id="4"></li>-->
                 <!--<li class="banner-dian" banner_id="5"></li>-->
@@ -259,7 +262,7 @@
     <!--<div class="ruzhu-c-b">-->
         <!--<a href="" class="ruzhu-za-z">-->
             <!--<div class="zazhi-img">-->
-                <!--<img src="{:config('home_img')}/cs1.png" alt="">-->
+                <!--<img data-original="{:config('home_img')}/cs1.png" alt="">-->
             <!--</div>-->
             <!--<div class="zazhi-text">-->
                 <!--<div class="zazhi-t-t"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
@@ -268,7 +271,7 @@
         <!--</a>-->
         <!--<a href="" class="ruzhu-za-z">-->
             <!--<div class="zazhi-img">-->
-                <!--<img src="{:config('home_img')}/cs2.png" alt="">-->
+                <!--<img data-original="{:config('home_img')}/cs2.png" alt="">-->
             <!--</div>-->
             <!--<div class="zazhi-text">-->
                 <!--<div class="zazhi-t-t-1"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
@@ -277,7 +280,7 @@
         <!--</a>-->
         <!--<a href="" class="ruzhu-za-z">-->
             <!--<div class="zazhi-img">-->
-                <!--<img src="{:config('home_img')}/cs3.png" alt="">-->
+                <!--<img data-original="{:config('home_img')}/cs3.png" alt="">-->
             <!--</div>-->
             <!--<div class="zazhi-text">-->
                 <!--<div class="zazhi-t-t-2"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
@@ -286,7 +289,7 @@
         <!--</a>-->
         <!--<a href="" class="ruzhu-za-z">-->
             <!--<div class="zazhi-img">-->
-                <!--<img src="{:config('home_img')}/cs4.png" alt="">-->
+                <!--<img data-original="{:config('home_img')}/cs4.png" alt="">-->
             <!--</div>-->
             <!--<div class="zazhi-text">-->
                 <!--<div class="zazhi-t-t-3"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
@@ -304,14 +307,14 @@
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img src="" alt="">
+                        <img data-original="" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r-b-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                     </div>
                 </div>
@@ -334,14 +337,14 @@
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img src="" alt="">
+                        <img data-original="" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r-b-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                     </div>
                 </div>
@@ -364,14 +367,14 @@
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img src="" alt="">
+                        <img data-original="" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r-b-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                     </div>
                 </div>
@@ -394,14 +397,14 @@
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img src="" alt="">
+                        <img data-original="" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r-b-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                     </div>
                 </div>
@@ -424,14 +427,14 @@
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img src="" alt="">
+                        <img data-original="" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r-b-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                     </div>
                 </div>
@@ -454,14 +457,14 @@
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img src="" alt="">
+                        <img data-original="" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r-b-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                     </div>
                 </div>
@@ -484,14 +487,14 @@
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img src="" alt="">
+                        <img data-original="" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r-b-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                     </div>
                 </div>
@@ -514,14 +517,14 @@
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img src="" alt="">
+                        <img data-original="" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r-b-1">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                     </div>
                 </div>
@@ -548,7 +551,7 @@
     <div class="jiagong-b-box">
         <div class="wsjjg-bt-box">
             <span>产品定制</span>
-            <a href="">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
+            <a href="{:url('home/index/custom')}">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
         </div>
         <div class="dj-wsjgg-box">
             <div class="dj-gg">
@@ -559,21 +562,21 @@
         </div>
         <div class="wsjcp-z-sh">
             <div class="wsjcp-left">
-                <img src="{:config('home_img')}/dwsj.jpg" alt="">
+                <img data-original="{:config('home_img')}/dwsj.jpg" alt="">
             </div>
             <div class="wsjcp-right">
                 <!---->
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -594,14 +597,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -622,14 +625,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -650,14 +653,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -678,14 +681,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -706,14 +709,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -738,11 +741,7 @@
     <div class="jiagong-b-box">
         <div class="wsjjg-bt-box">
             <span>贴牌专区</span>
-            <div>全部</div>
-            <div class="wsjgg">多规格</div>
-            <div class="wsjgg">小于150</div>
-            <div class="wsjgg">150-180</div>
-            <a href="">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
+            <a href="{:url('home/index/stickacard')}">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
         </div>
         <div class="dj-wsjgg-box">
             <div class="dj-gg">
@@ -753,21 +752,21 @@
         </div>
         <div class="wsjcp-z-sh">
             <div class="wsjcp-left">
-                <img src="{:config('home_img')}/dznk.jpg" alt="">
+                <img data-original="{:config('home_img')}/dznk.jpg" alt="">
             </div>
             <div class="wsjcp-right">
                 <!---->
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -788,14 +787,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -816,14 +815,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -844,14 +843,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -872,14 +871,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -900,14 +899,14 @@
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img src="" alt="">
+                            <img data-original="" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img src="" alt="">
+                                <img data-original="" alt="">
                             </div>
                         </div>
                     </div>
@@ -933,7 +932,7 @@
 <!--优选新闻-->
 <div class="youxuan-box">
     <div class="youxuan-neirong">
-        <div class="w-s-yx">卫生用品优选验厂</div>
+        <div class="w-s-yx"></div>
         <div class="wenben-neirong">
             <div class="youxuan-title">
                 <div class="youxuan-left">
@@ -949,7 +948,7 @@
             <div class="youxuan-xw-box">
                 <div class="youxuan-xw-left">
                     <a href="" class="youxuan-xw-img">
-                        <img src="{:config('home_img')}/ect.jpg" alt="">
+                        <img data-original="{:config('home_img')}/ect.jpg" alt="">
                         <div class="youxuan-img-title">某某省某某卫生用品有限公司</div>
                         <div class="youxuan-left-jt youxuan-jt"><i class="iconfont icon-zuojiantou"></i></div>
                         <div class="youxuan-right-jt youxuan-jt"><i class="iconfont icon-iconfontjiantou6"></i></div>
@@ -961,12 +960,12 @@
                         <div class="xw-gongsi-zl">公司成立时间 : <span>2010年12月30日</span></div>
                         <div class="xw-gongsi-zl">公司地址 : <span>浙江省杭州市某某区某某路201号</span></div>
                         <div class="xw-gongsi-zl">公司简介 : <span>*********************************</span></div>
-                        <div class="youxuan-yyc"><img src="{:config('home_img')}/eyyz.png" alt=""></div>
+                        <div class="youxuan-yyc"><img data-original="{:config('home_img')}/eyyz.png" alt=""></div>
                     </div>
                 </div>
                 <div class="youxuan-xw-you">
                     <div class="yx-xw-yo-img">
-                        <img src="{:config('home_img')}/ebt.jpg" alt="">
+                        <img data-original="{:config('home_img')}/ebt.jpg" alt="">
                     </div>
                     <div class="yx-xw-yo-text">
                         <div><span>[7-15]</span>做网站,多年网站经验承接各种</div>
@@ -1003,13 +1002,13 @@
 <div class="sbzr-big-box">
     <div class="sbzr-title">
         <span class="sbzr-title-l">设备转让</span>
-        <a href="" class="sbzr-title-r">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
+        <a href="{:url('home/index/shebeitransfer')}" class="sbzr-title-r">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
     </div>
     <div class="sbzr-box">
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1033,7 +1032,7 @@
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1057,7 +1056,7 @@
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1081,7 +1080,7 @@
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1105,7 +1104,7 @@
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1129,7 +1128,7 @@
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1153,7 +1152,7 @@
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1177,7 +1176,7 @@
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1201,7 +1200,7 @@
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1225,7 +1224,7 @@
         <!--设备转让内容div-->
         <a href="" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -1259,19 +1258,19 @@
     <div class="sjrz-img-xy-box">
         <a href="" class="sjrz-img-box">
             <div class="sjrz-img">
-                <img src="" alt="">
+                <img data-original="" alt="">
             </div>
             <div class="sjrz-img-title">某某卫生用品公司</div>
         </a>
         <a href="" class="sjrz-img-box">
             <div class="sjrz-img">
-                <img src="" alt="">
+                <img data-original="" alt="">
             </div>
             <div class="sjrz-img-title">某某卫生用品公司</div>
         </a>
         <a href="" class="sjrz-img-box">
             <div class="sjrz-img">
-                <img src="{:config('home_img')}/a0.png" alt="">
+                <img data-original="{:config('home_img')}/a0.png" alt="">
             </div>
             <div class="sjrz-img-title">某某卫生用品公司</div>
         </a>
@@ -1331,7 +1330,7 @@
     <!--<div class="ruzhu-c-b">-->
         <!--<a href="" class="ruzhu-za-z">-->
             <!--<div class="zazhi-img">-->
-                <!--<img src="{:config('home_img')}/cs1.png" alt="">-->
+                <!--<img data-original="{:config('home_img')}/cs1.png" alt="">-->
             <!--</div>-->
             <!--<div class="zazhi-text">-->
                 <!--<div class="zazhi-t-t"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
@@ -1340,7 +1339,7 @@
         <!--</a>-->
         <!--<a href="" class="ruzhu-za-z">-->
             <!--<div class="zazhi-img">-->
-                <!--<img src="{:config('home_img')}/cs2.png" alt="">-->
+                <!--<img data-original="{:config('home_img')}/cs2.png" alt="">-->
             <!--</div>-->
             <!--<div class="zazhi-text">-->
                 <!--<div class="zazhi-t-t-1"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
@@ -1349,7 +1348,7 @@
         <!--</a>-->
         <!--<a href="" class="ruzhu-za-z">-->
             <!--<div class="zazhi-img">-->
-                <!--<img src="{:config('home_img')}/cs3.png" alt="">-->
+                <!--<img data-original="{:config('home_img')}/cs3.png" alt="">-->
             <!--</div>-->
             <!--<div class="zazhi-text">-->
                 <!--<div class="zazhi-t-t-2"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
@@ -1358,7 +1357,7 @@
         <!--</a>-->
         <!--<a href="" class="ruzhu-za-z">-->
             <!--<div class="zazhi-img">-->
-                <!--<img src="{:config('home_img')}/cs4.png" alt="">-->
+                <!--<img data-original="{:config('home_img')}/cs4.png" alt="">-->
             <!--</div>-->
             <!--<div class="zazhi-text">-->
                 <!--<div class="zazhi-t-t-3"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
@@ -1368,10 +1367,60 @@
     <!--</div>-->
 <!--</div>-->
 <!--页脚-->
-<div class="footer" style="width: 100%;padding-top: 100px;">
-    <object data="{:url('home/index/foot_base')}" type="text/x-scriptlet" style="width: 100%;height: 530px;"></object>
+<div class="footer">
+    <footer>
+        <div class="footer-left">
+            <div class="footer-content-box">
+                <strong class="footer-l-title">工厂指南</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">成长攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-content-box">
+                <strong class="footer-l-title">定制指南</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">加工定制</a></li>
+                    <li class="footer-l-li"><a href="">加工攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-content-box">
+                <strong class="footer-l-title">关于我们</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">联系我们</a></li>
+                    <li class="footer-l-li"><a href="">广告报价</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-weixin-box">
+                <div class="footer-weixin-img">
+                    <img data-original="{:config('home_img')}/weigzh.png" alt="">
+                </div>
+                <div class="footer-r-weixin-text">微信公众号</div>
+            </div>
+            <div class="footer-weixin-box">
+                <div class="footer-weixin-img">
+                    <img data-original="{:config('home_img')}/weikefu.png" alt="">
+                </div>
+                <div class="footer-r-weixin-text">客服微信</div>
+            </div>
+            <div class="footer-weixin-box">
+                <div class="footer-r-tel-title">客服电话</div>
+                <div class="footer-r-tel-content">0571-86169936</div>
+            </div>
+        </div>
+    </footer>
 </div>
+<div class="footer-beian">版权2018-2028 @ 杭州博卫传媒有限公司 闽ICP备16026715号</div>
 <!--结束-->
 </body>
 <script src="{:config('home_js')}/index.js"></script>
+<script>
+    $(function() {
+        $("img").lazyload({
+            threshold : 200,
+            skip_invisible : false
+        });
+    });
+</script>
 </html>
