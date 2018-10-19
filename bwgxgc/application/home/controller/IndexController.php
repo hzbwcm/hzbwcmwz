@@ -22,12 +22,12 @@ class IndexController extends Controller
         $info = Area::where('Pid',0)->select();
         $this -> assign('info',$info);
         return $this->fetch();
-        return $this->fetch();
+
     }
     //贴牌专区
     public function stickacard()
     {
-
+        return $this->fetch();
     }
     //贴牌详情
     public function tiepaixiangqing()
