@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.3">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>优选验厂</title>
     <link rel="stylesheet" href="{:config('home_css')}/inspection.css">
     <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <link rel="stylesheet" href="{:config('home_css')}/foot_base.css">
     <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/jquery.lazyload.js"></script>
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -22,7 +24,7 @@
                 <a href="">
                     <div class="h-f-i">
                         <div class="header-img">
-                            <img src="{:config('home_img')}/asjgc.jpg" alt="">
+                            <img data-original="{:config('home_img')}/asjgc.jpg" alt="">
                         </div>
                         <div class="h-l-t">手机工厂 |</div>
                     </div>
@@ -68,14 +70,14 @@
 <div class="search-box">
     <div class="search-centre">
         <div class="sear-logo">
-            <img src="{:config('home_img')}/a0.png" alt="">
+            <img data-original="{:config('home_img')}/a0.png" alt="">
         </div>
 
         <div class="search-c-b">
             <div class="search">
                 <div class="search-fram">
                     <div class="s-f-i-i">
-                        <img src="{:config('home_img')}/aa.png" alt="">
+                        <img data-original="{:config('home_img')}/aa.png" alt="">
                     </div>
                     <input type="text" placeholder="共2000家企业入驻" value="">
                 </div>
@@ -93,19 +95,19 @@
         <div class="search-right-b">
             <div class="s-trademark">
                 <div>
-                    <img src="{:config('home_img')}/a1.png" alt="">
+                    <img data-original="{:config('home_img')}/a1.png" alt="">
                 </div>
                 <span>海量工厂</span>
             </div>
             <div class="s-trademark">
                 <div>
-                    <img src="{:config('home_img')}/a2.png" alt="">
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
                 </div>
                 <span>产品定制</span>
             </div>
             <div class="s-trademark">
                 <div>
-                    <img src="{:config('home_img')}/a3.png" alt="">
+                    <img data-original="{:config('home_img')}/a3.png" alt="">
                 </div>
                 <span>团购批发</span>
             </div>
@@ -177,14 +179,14 @@
     <div class="banner-box-box">
         <div class="banner-box-img">
             <ul class="banner-img-box">
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/1.jpg" alt=""></a></li>
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/ct2.jpg" alt=""></a></li>
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/banner.jpg" alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img data-original="{:config('home_img')}/inspection/1.jpg" alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img data-original="{:config('home_img')}/inspection/ct2.jpg" alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img data-original="{:config('home_img')}/inspection/banner.jpg" alt=""></a></li>
             </ul>
             <ul class="banner-img-box">
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/1.jpg" alt=""></a></li>
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/ct2.jpg" alt=""></a></li>
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/banner.jpg" alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img data-original="{:config('home_img')}/inspection/1.jpg" alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img data-original="{:config('home_img')}/inspection/ct2.jpg" alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img data-original="{:config('home_img')}/inspection/banner.jpg" alt=""></a></li>
             </ul>
         </div>
     </div>
@@ -247,7 +249,7 @@
             <div class="main-right-b-c">
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -267,7 +269,7 @@
                 </div>
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -287,7 +289,7 @@
                 </div>
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -307,7 +309,7 @@
                 </div>
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -327,7 +329,7 @@
                 </div>
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -347,7 +349,7 @@
                 </div>
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -367,7 +369,7 @@
                 </div>
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -387,7 +389,7 @@
                 </div>
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -407,7 +409,7 @@
                 </div>
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -427,7 +429,7 @@
                 </div>
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('home_img')}/inspection/ct1.png" alt="">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -470,10 +472,60 @@
     </div>
 </div>
 <!--页脚-->
-<div class="footer" style="width: 100%;padding-top: 100px;">
-    <object data="{:url('home/index/foot_base')}" type="text/x-scriptlet" style="width: 100%;height: 530px;"></object>
+<div class="footer">
+    <footer>
+        <div class="footer-left">
+            <div class="footer-content-box">
+                <strong class="footer-l-title">工厂指南</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">成长攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-content-box">
+                <strong class="footer-l-title">定制指南</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">加工定制</a></li>
+                    <li class="footer-l-li"><a href="">加工攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-content-box">
+                <strong class="footer-l-title">关于我们</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">联系我们</a></li>
+                    <li class="footer-l-li"><a href="">广告报价</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-weixin-box">
+                <div class="footer-weixin-img">
+                    <img data-original="{:config('home_img')}/weigzh.png" alt="">
+                </div>
+                <div class="footer-r-weixin-text">微信公众号</div>
+            </div>
+            <div class="footer-weixin-box">
+                <div class="footer-weixin-img">
+                    <img data-original="{:config('home_img')}/weikefu.png" alt="">
+                </div>
+                <div class="footer-r-weixin-text">客服微信</div>
+            </div>
+            <div class="footer-weixin-box">
+                <div class="footer-r-tel-title">客服电话</div>
+                <div class="footer-r-tel-content">0571-86169936</div>
+            </div>
+        </div>
+    </footer>
 </div>
+<div class="footer-beian">版权2018-2028 @ 杭州博卫传媒有限公司 闽ICP备16026715号</div>
 
 <script src="{:config('home_js')}/inspection.js"></script>
+<script>
+    $(function() {
+        $("img").lazyload({
+            threshold : 200,
+            skip_invisible : false
+        });
+    });
+</script>
 </body>
 </html>

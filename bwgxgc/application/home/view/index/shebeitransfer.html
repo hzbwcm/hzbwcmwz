@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.3">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>设备转让</title>
     <link rel="stylesheet" href="{:config('home_css')}/shebeitransfer.css">
     <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <link rel="stylesheet" href="{:config('home_css')}/foot_base.css">
     <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/jquery.lazyload.js"></script>
     <script src="{:config('home_js')}/bootstrap.js"></script>
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
@@ -19,7 +21,7 @@
 <header>
     <div class="header-box">
         <div class="header-logo">
-            <img src="{:config('home_img')}/a0.png" alt="">
+            <img data-original="{:config('home_img')}/a0.png" alt="">
         </div>
         <div class="header-right-box">
             <a href="" class="header-shoucangjia">
@@ -129,7 +131,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -153,7 +155,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -177,7 +179,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -201,7 +203,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -225,7 +227,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -249,7 +251,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -273,7 +275,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -297,7 +299,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -321,7 +323,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -345,7 +347,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -369,7 +371,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -393,7 +395,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -417,7 +419,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -441,7 +443,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -465,7 +467,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -489,7 +491,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -513,7 +515,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -537,7 +539,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -561,7 +563,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -585,7 +587,7 @@
         <!--设备转让内容div-->
         <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
-                <img src="{:config('home_img')}/index_sbzr.png" alt="">
+                <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
             <div class="sbzr-text-box">
                 <div class="sbzr-cpxx">
@@ -629,10 +631,60 @@
     </div>
 </main>
 <!--页脚-->
-<div class="footer" style="width: 100%;padding-top: 100px;">
-    <object data="{:url('home/index/foot_base')}" type="text/x-scriptlet" style="width: 100%;height: 530px;"></object>
+<div class="footer">
+    <footer>
+        <div class="footer-left">
+            <div class="footer-content-box">
+                <strong class="footer-l-title">工厂指南</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">成长攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-content-box">
+                <strong class="footer-l-title">定制指南</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">加工定制</a></li>
+                    <li class="footer-l-li"><a href="">加工攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-content-box">
+                <strong class="footer-l-title">关于我们</strong>
+                <ul class="footer-l-ul">
+                    <li class="footer-l-li"><a href="">联系我们</a></li>
+                    <li class="footer-l-li"><a href="">广告报价</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-weixin-box">
+                <div class="footer-weixin-img">
+                    <img data-original="{:config('home_img')}/weigzh.png" alt="">
+                </div>
+                <div class="footer-r-weixin-text">微信公众号</div>
+            </div>
+            <div class="footer-weixin-box">
+                <div class="footer-weixin-img">
+                    <img data-original="{:config('home_img')}/weikefu.png" alt="">
+                </div>
+                <div class="footer-r-weixin-text">客服微信</div>
+            </div>
+            <div class="footer-weixin-box">
+                <div class="footer-r-tel-title">客服电话</div>
+                <div class="footer-r-tel-content">0571-86169936</div>
+            </div>
+        </div>
+    </footer>
 </div>
+<div class="footer-beian">版权2018-2028 @ 杭州博卫传媒有限公司 闽ICP备16026715号</div>
 
 <script src="{:config('home_js')}/shebeitransfer.js"></script>
+<script>
+    $(function() {
+        $("img").lazyload({
+            threshold : 200,
+            skip_invisible : false
+        });
+    });
+</script>
 </body>
 </html>
