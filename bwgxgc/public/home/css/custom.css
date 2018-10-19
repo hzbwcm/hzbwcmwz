@@ -26,6 +26,7 @@ li {
 .header {
   width: 100%;
   height: 30px;
+  min-width: 1200px;
   color: #383838;
   background: #ffffff;
   box-shadow: darkgrey -16px 0px 40px -3px;
@@ -247,6 +248,7 @@ li {
 .banner-box {
   width: 100%;
   height: 500px;
+  min-width: 1200px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin-bottom: 40px;
@@ -641,7 +643,7 @@ main .main-left {
 main .main-left .main-left-title {
   width: 100%;
   height: 48px;
-  background: #760cd9;
+  background: #ad6fc8;
   border-radius: 5px;
   margin-bottom: 10px;
   font-size: 16px;
@@ -719,7 +721,7 @@ main .main-right .main-right-top .main-top-sx ul li, main .main-right .main-righ
   cursor: pointer;
 }
 main .main-right .main-right-top .main-top-sx ul .right-click, main .main-right .main-right-top .main-top-qy ul .right-click, main .main-right .main-right-top .main-top-qx ul .right-click {
-  background: #8c3ab8;
+  background: #a560c8;
   color: #fff;
 }
 main .main-right .main-right-bottom {

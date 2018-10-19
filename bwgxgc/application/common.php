@@ -11,7 +11,6 @@
 
 // 应用公共文件
 
-
 /***********递归方式获取上下级权限信息****************/
 function generateTree($data){
     $items = array();

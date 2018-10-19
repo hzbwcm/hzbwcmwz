@@ -2,7 +2,7 @@ $(function () {
     var flage=true;
     $('.content-title-ul li').on('click',function (e) {
         var index=$('.content-title-ul li').index(this);
-        var left1=33.33*(index);
+        var left1=50*(index);
         if(flage){
             flage=false;
             $('.content-title-ul li .weixuanzhong').removeClass('yixuanzhong');

@@ -30,8 +30,11 @@ $(function () {
     })
     //点击排序
     $('.sbpxfs-span').on('click', function () {
+        var content_text=$(this).text();
+        console.log(content_text)
         $('.sbpxfs-span').removeClass('sbpxfs-span-active');
-        $(this).addClass('sbpxfs-span-active');
+        $(this).addClass('sbpxfs-span-active').parent().parent().children('span').text(content_text);
+        console.log($(this).addClass('sbpxfs-span-active').parent().parent())
         // $.ajax({
         //     url:'',
         //     type:post,
