@@ -20,7 +20,7 @@ class TypeController extends Controller
         if($request->ispost()){
             $shuju = $request->post();
             $rule = [
-                'type_name' => 'require|require:type',
+                'type_name' => 'require|unique:type',
             ];
             $notices = [
                 'type_name.require'=>'类型名称必填',
