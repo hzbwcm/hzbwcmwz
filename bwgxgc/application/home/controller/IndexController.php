@@ -15,15 +15,7 @@ class IndexController extends Controller
     {
         return $this->fetch();
     }
-    //前台产品定制
-    public function custom()
-    {
-        //地区
-        $info = Area::where('Pid',0)->select();
-        $this -> assign('info',$info);
-        return $this->fetch();
 
-    }
     //贴牌专区
     public function stickacard()
     {

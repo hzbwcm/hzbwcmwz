@@ -214,52 +214,30 @@
         <div class="main-left-title">产品定制</div>
         <div class="main-bootstrap">
             <div class="accordion" id="accordion2">
+                {volist name='type' id='v'}
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-                           href="#collapseOne">
-                            卫生巾加工
+                           href="#{$v.id}">
+                            {eq name="v.pid" value="0" }{$v.name}{/eq}
                             <i class="iconfont icon-iconfontarrows1"></i>
                         </a>
                     </div>
-                    <div id="collapseOne" class="accordion-body collapse in">
+
+                    <div id={$v.id} class="accordion-body collapse in">
                         <div class="accordion-inner left-click">
                             全部
                         </div>
+                        {volist name='type' id='v'}
                         <div class="accordion-inner">
-                            多规格
+                            {eq name="v.pid" value=""}
+                            {$v.name}
+                            {/eq}
                         </div>
-                        <div class="accordion-inner">
-                            小于150
-                        </div>
-                        <div class="accordion-inner">
-                            150-180
-                        </div>
+                        {/volist}
                     </div>
                 </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
-                           href="#collapseTwo">
-                            婴儿尿裤加工
-                            <i class="iconfont icon-iconfontarrows1"></i>
-                        </a>
-                    </div>
-                    <div id="collapseTwo" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            全部
-                        </div>
-                        <div class="accordion-inner">
-                            多规格
-                        </div>
-                        <div class="accordion-inner">
-                            纸尿片
-                        </div>
-                        <div class="accordion-inner">
-                            普通尿裤
-                        </div>
-                    </div>
-                </div>
+                {/volist}
             </div>
         </div>
     </div>

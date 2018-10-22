@@ -16,7 +16,9 @@ Route::any('home/user/qiyezhuce','home/user/qiyezhuce',['method'=>'get|post']);/
 Route::any('home/user/login','home/user/login',['method'=>'get|post']);//登陆
 
 
-Route::get('home/index/custom','home/index/custom');//产品定制
+Route::get('home/custom/custom','home/custom/custom');//产品定制
+Route::get('home/custom/get_area','home/custom/get_area');//产品定制
+
 Route::get('home/index/stickacard','home/index/stickacard');//贴牌专区
 Route::get('home/index/tiepaixiangqing','home/index/tiepaixiangqing');//贴牌专区
 Route::get('home/index/tiepaigengduo','home/index/tiepaigengduo');//贴牌更多
