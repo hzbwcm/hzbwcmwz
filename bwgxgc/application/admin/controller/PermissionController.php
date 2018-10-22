@@ -9,7 +9,7 @@ use think\Request;
 class PermissionController extends Controller
 {
     //权限表
-    public function quanxianbiao()
+    public function index()
     {
         $info = Permission::select();
         $arr = [];
