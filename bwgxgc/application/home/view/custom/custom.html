@@ -215,11 +215,12 @@
         <div class="main-bootstrap">
             <div class="accordion" id="accordion2">
                 {volist name='type' id='v'}
+                {eq name="v.pid" value="0" }
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
                            href="#{$v.id}">
-                            {eq name="v.pid" value="0" }{$v.name}{/eq}
+                            {$v.name}
                             <i class="iconfont icon-iconfontarrows1"></i>
                         </a>
                     </div>
@@ -228,15 +229,16 @@
                         <div class="accordion-inner left-click">
                             全部
                         </div>
-                        {volist name='type' id='v'}
+                        {volist name='type' id='v1'}
+                        {eq name="v1.pid" value="$v.id"}
                         <div class="accordion-inner">
-                            {eq name="v.pid" value=""}
-                            {$v.name}
-                            {/eq}
+                            {$v1.name}
                         </div>
+                        {/eq}
                         {/volist}
                     </div>
                 </div>
+                {/eq}
                 {/volist}
             </div>
         </div>
