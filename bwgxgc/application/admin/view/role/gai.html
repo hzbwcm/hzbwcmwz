@@ -24,32 +24,64 @@
 <![endif]-->
 <!--/meta 作为公共模版分离出去-->
 
-<title>新建网站权限 - 商品类型管理 - H-ui.admin v3.1</title>
+<title>新建网站角色 - 管理员管理 - H-ui.admin v3.1</title>
 <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
 <body>
 <article class="page-container">
-	<form action="" method="post" class="form form-horizontal" id="form-admin-type-add">
+	<form action="" method="post" class="form form-horizontal" id="form-admin-role-gai">
+		<input type="hidden" name="role_id" value="{$role.role_id}" />
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>类型名称：</label>
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>角色名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value=""  name="type_name">
+				<input type="text" class="input-text" value="{$role.role_name}"  id="role_name" name="role_name">
 			</div>
 		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">操作权限：</label>
+			<div class="formControls col-xs-8 col-sm-9">
 
+				{volist name='ps_infoA' id='v'}
+				<dl class="permission-list">
+					<dt>
+						<label><input type="checkbox" value="{$v.ps_id}" name="quanxian[]" {in name="v.ps_id" value="$role->role_ps_ids"}checked="checked"{/in} />{$v.ps_name}</label>
+					</dt>
+					<dd>
+						{volist name='ps_infoB' id='vv'}
+						{eq name='vv.ps_pid' value='$v.ps_id'}
+						<dl class="cl permission-list2">
+							<dt>
+								<label class=""><input type="checkbox" value="{$vv.ps_id}" name="quanxian[]" {in name="v.ps_id" value="$role->role_ps_ids"}checked="checked"{/in} />{$vv.ps_name}</label>
+							</dt>
+							<dd>
+								{volist name='ps_infoC' id='vvv'}
+								{eq name='vvv.ps_pid' value='$vv.ps_id'}
+								<label class=""><input type="checkbox" value="{$vvv.ps_id}" name="quanxian[]" {in name="v.ps_id" value="$role->role_ps_ids"}checked="checked"{/in} />{$vvv.ps_name}</label>
+								{/eq}
+								{/volist}
+							</dd>
+						</dl>
+						{/eq}
+						{/volist}
+					</dd>
+				</dl>
+
+				{/volist}
+			</div>
+		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-				<button type="submit" class="btn btn-success radius" id="admin-type-save" name="admin-type-save"><i class="icon-ok"></i> 确定</button>
+				<button type="submit" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
 			</div>
 		</div>
 	</form>
 </article>
 
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="{:config('admin_lib')}/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{:config('admin_lib')}/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="{:config('admin_lib')}/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="{:config('admin_static')}/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="{:config('admin_static')}/h-ui/js/H-ui.min.js"></script> 
 <script type="text/javascript" src="{:config('admin_static')}/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
@@ -58,53 +90,47 @@
 <script type="text/javascript" src="{:config('admin_lib')}/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
 $(function(){
-	$(".type-list dt input:checkbox").click(function(){
+	$(".permission-list dt input:checkbox").click(function(){
 		$(this).closest("dl").find("dd input:checkbox").prop("checked",$(this).prop("checked"));
 	});
-	$(".type-list2 dd input:checkbox").click(function(){
+	$(".permission-list2 dd input:checkbox").click(function(){
 		var l =$(this).parent().parent().find("input:checked").length;
-		var l2=$(this).parents(".type-list").find(".type-list2 dd").find("input:checked").length;
+		var l2=$(this).parents(".permission-list").find(".permission-list2 dd").find("input:checked").length;
 		if($(this).prop("checked")){
 			$(this).closest("dl").find("dt input:checkbox").prop("checked",true);
-			$(this).parents(".type-list").find("dt").first().find("input:checkbox").prop("checked",true);
+			$(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",true);
 		}
 		else{
 			if(l==0){
 				$(this).closest("dl").find("dt input:checkbox").prop("checked",false);
 			}
 			if(l2==0){
-				$(this).parents(".type-list").find("dt").first().find("input:checkbox").prop("checked",false);
+				$(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",false);
 			}
 		}
 	});
-
-
-	//form表单通过Ajax无刷新方式提交数据给服务器端
-	$('#form-admin-type-add').submit(function(evt){
-	    //组织浏览器默认的form表单提交
+	
+	$('#form-admin-role-gai').submit(function (evt) {
 		evt.preventDefault();
-		//收集form表单的信息,下述serialize()收集的信息传递给服务器端的时候与传统form表单提交的效果一致
-		var shuju = $(this).serialize();  //字符串  name=val&name=val&name=val...
-		//走Ajax
-		$.ajax({
-			url:'{$Request.url}',
-			data:shuju,
-			dataType:'json',
-			type:'post',
-			success:function(msg){
+		var shuju = $(this).serialize();
+        $.ajax({
+            url:'{$Request.url}',
+            data:shuju,
+            dataType:'json',
+            type:'post',
+            success:function(msg){
                 if(msg.status=='success'){
-                    layer.alert('添加成功', {icon: 6},function(){
-                        //主页面刷新
+                    layer.alert('修改成功', {icon: 6},function(){
                         parent.window.location.href=parent.window.location.href;
-                        //当前窗口关闭
-                        layer_close();//本身的H-ui.admin.js封装的
+                        layer_close();
                     });
                 }else{
-                    layer.alert('添加失败，【'+msg.errorinfo+'】', {icon: 5});
+                    layer.alert('修改失败，【'+msg.errorinfo+'】', {icon: 5});
                 }
-			}
-		});
-	});
+            }
+        });
+    });
+
 });
 </script>
 <!--/请在上方写此页面业务相关的脚本-->

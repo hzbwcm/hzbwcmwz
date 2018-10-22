@@ -16,4 +16,8 @@ class Type extends Model
         $id = request()->param('type_id');
         return self::get($id);
     }
+    public function attribute()
+    {
+        return $this->hasMany('Attribute','type_id','type_id');
+    }
 }
