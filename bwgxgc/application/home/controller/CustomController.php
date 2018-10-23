@@ -6,6 +6,7 @@ use think\Controller;
 use think\Request;
 use app\home\model\Area;
 use app\home\model\Pro_type;
+use app\home\model\Custom;
 
 class CustomController extends Controller
 {
@@ -24,10 +25,8 @@ class CustomController extends Controller
         return $this->fetch();
     }
 
-    public function get_area()
+    public function Customizing()
     {
-        //地区
-
+        return $this->fetch();
     }
-
 }
