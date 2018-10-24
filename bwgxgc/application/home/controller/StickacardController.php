@@ -4,11 +4,14 @@ namespace app\home\controller;
 
 use think\Controller;
 use think\Request;
+use app\home\model\Pro_type;
 
 class StickacardController extends Controller
 {
     public function stickacard()
     {
+        $type = Pro_type::where('pid',0)->select();
+        $this->assign('type',$type);
         return $this->fetch();
     }
     //贴牌详情

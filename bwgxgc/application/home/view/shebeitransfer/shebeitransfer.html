@@ -59,7 +59,7 @@
 <main>
     <!--设备名称-->
     <div class="main-sbmc-box">
-        <div class="main-sbmc-title">设备名称 :</div>
+        <div class="main-sbmc-title">设备类型 :</div>
         <div class="main-sbmc-name">
             <span class="main-sbmc sbmc-name-active">卫生巾设备</span>
             <span class="main-sbmc">婴儿纸尿裤设备</span>
@@ -102,14 +102,9 @@
             <span>所在地区</span>
             <i class="iconfont icon-xiasanjiao"></i>
             <div class="sbpxfs-display sbpxfs-none">
-                <span class="sbpxfs-span sbpxfs-span-active">苏州</span>
-                <span class="sbpxfs-span">重庆</span>
-                <span class="sbpxfs-span">四川</span>
-                <span class="sbpxfs-span">成都</span>
-                <span class="sbpxfs-span">山西</span>
-                <span class="sbpxfs-span">北京</span>
-                <span class="sbpxfs-span">天津</span>
-                <span class="sbpxfs-span">浙江</span>
+                {volist name='info' id='v'}
+                <span class="sbpxfs-span">{$v.Name}</span>
+                {/volist}
             </div>
         </div>
         <div class="main-sbpxfs-css main-sbpxfs-ppmc">
@@ -202,7 +197,7 @@
             </div>
         </a>
         <!--设备转让内容div-->
-        <a href="{:url('home/index/shebeizhuanrang')}" class="sbzr-content-box">
+        <a href="{:url('home/shebeizhuanrang/shebeizhuanrang')}" class="sbzr-content-box">
             <div class="sbzr-img">
                 <img data-original="{:config('home_img')}/index_sbzr.png" alt="">
             </div>
