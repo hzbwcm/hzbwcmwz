@@ -32,6 +32,8 @@ class RoleController extends Controller
                 'quanxian.min'=>'权限必选(两个或以上)',
             ];
             $validate = new Validate($rules,$notices);
+
+
             if($validate->batch()->check($form_datas)){
                 $role_ps_ids = implode(',',$form_datas['quanxian']);
                 $cas = Permission::where('ps_id','in',$role_ps_ids)

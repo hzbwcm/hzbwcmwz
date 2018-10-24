@@ -16,7 +16,7 @@ class TypeController extends Controller
         $this -> assign('info',$info);
         return $this -> fetch();
     }
-    public function add(Request $request){
+    public function addition(Request $request){
         if($request->ispost()){
             $shuju = $request->post();
             $rule = [

@@ -18,7 +18,7 @@ class AttributeController extends Controller
 
         return $this->fetch();
     }
-    public function add(Request $request)
+    public function addition(Request $request)
     {
         if($request->isPost()){
             //收集数据

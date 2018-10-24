@@ -48,14 +48,16 @@ Route::any('admin/user/login','admin/user/login');//admin登陆
 //Route::get('admin/index/welcome','admin/index/welcome');//admin首页welcome
 
 Route::get('admin/type/index','admin/type/index');//商品类型
-Route::any('admin/type/add','admin/type/add',['method'=>'get|post']);//商品类型添加
+Route::any('admin/type/addition','admin/type/addition',['method'=>'get|post']);//商品类型添加
 Route::get('admin/attribute/index','admin/attribute/index');//商品属性
-Route::any('admin/attribute/add','admin/attribute/add',['method'=>'get|post']);//商品属性添加
+Route::any('admin/attribute/addition','admin/attribute/addition',['method'=>'get|post']);//商品属性添加
+Route::get('admin/attribute/getAttributeByType','admin/attribute/getAttributeByType');//商品属性添加
 
 Route::get('admin/user/guanliyuan','admin/user/guanliyuan');//管理员表
 Route::get('admin/role/index','admin/role/index');//角色表
 Route::any('admin/role/gai','admin/role/gai',['method'=>'get|post']);//角色修改
 Route::get('admin/permission/index','admin/permission/index');//权限表
+Route::any('admin/permission/addition','admin/permission/addition',['method'=>'get|post']);//权限添加
 
 
 

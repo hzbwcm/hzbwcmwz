@@ -9,7 +9,19 @@
 // | Author: 流年 <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+use app\admin\model\Type;
+use app\admin\model\Category;
+use app\home\model\Attribute;
+
+
 // 应用公共文件
+
+/**
+ * 获得全部可供选取的类型信息
+ */
+function get_type_info(){
+    return Type::select();
+}
 
 /***********递归方式获取上下级权限信息****************/
 function generateTree($data){
