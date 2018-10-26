@@ -5,7 +5,7 @@ namespace app\home\controller;
 use think\Controller;
 use think\Request;
 use app\home\model\Area;
-use app\home\model\Pro_type;
+use app\home\model\Type;
 use app\home\model\Custom;
 
 class CustomController extends Controller
@@ -15,7 +15,7 @@ class CustomController extends Controller
     {
         $info = Area::where('Pid',0)->select();
 
-        $type = Pro_type::select();
+        $type = Type::select();
         $this->assign([
             'info'  => $info,
             'type' => $type

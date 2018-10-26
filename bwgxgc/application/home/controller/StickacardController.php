@@ -2,16 +2,16 @@
 
 namespace app\home\controller;
 
+use app\home\model\Type;
 use think\Controller;
 use think\Request;
-use app\home\model\Pro_type;
 use app\home\model\Area;
 
 class StickacardController extends Controller
 {
     public function stickacard()
     {
-        $type = Pro_type::where('type_pid',0)->select();
+        $type = Type::where('type_pid',0)->select();
         $this->assign('type',$type);
         return $this->fetch();
     }
@@ -25,7 +25,7 @@ class StickacardController extends Controller
     {
         $info = Area::where('Pid',0)->select();
 
-        $type = Pro_type::select();
+        $type = Type::select();
         $this->assign([
             'info'  => $info,
             'type' => $type

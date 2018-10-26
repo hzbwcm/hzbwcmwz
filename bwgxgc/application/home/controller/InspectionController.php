@@ -5,7 +5,7 @@ namespace app\home\controller;
 use think\Controller;
 use think\Request;
 use app\home\model\Area;
-use app\home\model\Pro_type;
+use app\home\model\Type;
 
 class InspectionController extends Controller
 {
@@ -13,7 +13,7 @@ class InspectionController extends Controller
     public function inspection()
     {   //地区
         $info = Area::where('Pid',0)->select();
-        $type = Pro_type::where('type_pid',0)->select();
+        $type = Type::where('type_pid',0)->select();
         $this->assign([
             'info'  => $info,
             'type' => $type

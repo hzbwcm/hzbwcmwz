@@ -61,24 +61,9 @@
     <div class="main-sbmc-box">
         <div class="main-sbmc-title">设备类型 :</div>
         <div class="main-sbmc-name">
-            <span class="main-sbmc sbmc-name-active">卫生巾设备</span>
-            <span class="main-sbmc">婴儿纸尿裤设备</span>
-            <span class="main-sbmc">成人纸尿裤设备</span>
-            <span class="main-sbmc">湿纸巾设备</span>
-            <span class="main-sbmc">生活用纸设备</span>
-            <span class="main-sbmc">妇产巾设备</span>
-            <span class="main-sbmc">卫生巾设备</span>
-            <span class="main-sbmc">婴儿纸尿裤设备</span>
-            <span class="main-sbmc">成人纸尿裤设备</span>
-            <span class="main-sbmc">湿纸巾设备</span>
-            <span class="main-sbmc">生活用纸设备</span>
-            <span class="main-sbmc">妇产巾设备</span>
-            <span class="main-sbmc">卫生巾设备</span>
-            <span class="main-sbmc">婴儿纸尿裤设备</span>
-            <span class="main-sbmc">成人纸尿裤设备</span>
-            <span class="main-sbmc">湿纸巾设备</span>
-            <span class="main-sbmc">生活用纸设备</span>
-            <span class="main-sbmc">妇产巾设备</span>
+            {volist name='type' id='v'}
+            <span class="main-sbmc">{$v.name}设备</span>
+            {/volist}
         </div>
     </div>
     <!--排序方式-->
