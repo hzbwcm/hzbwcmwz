@@ -4,7 +4,7 @@ namespace app\home\model;
 
 use think\Model;
 
-class Pro_type extends Model
+class Type extends Model
 {
 
 }

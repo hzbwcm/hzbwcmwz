@@ -9,8 +9,7 @@ Route::get('home/index/foot_base','home/index/foot_base');//页脚
 Route::get('home/user/sms','home/user/sms');//短信个人测试
 Route::post('home/user/sendsms','home/user/sendsms');//发送短信
 Route::get('home/user/register','home/user/register');//注册1
-Route::get('home/user/gerenzhuce','home/user/gerenzhuce');//个人注册
-Route::post('home/user/gerenzhuce','home/user/gerenzhuce');//个人注册
+Route::any('home/user/gerenzhuce','home/user/gerenzhuce',['method'=>'get|post']);//个人注册
 Route::get('home/user/zhuceshibai','home/user/zhuceshibai');//个人注册失败
 Route::any('home/user/qiyezhuce','home/user/qiyezhuce',['method'=>'get|post']);//企业注册
 Route::any('home/user/login','home/user/login',['method'=>'get|post']);//登陆

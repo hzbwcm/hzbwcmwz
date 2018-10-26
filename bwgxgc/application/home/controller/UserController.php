@@ -1,7 +1,7 @@
 <?php
 namespace app\home\controller;
 
-use app\home\model\company_info;
+use app\home\model\Company_info;
 use app\home\model\User_person;
 use think\Controller;
 use think\Request;
@@ -17,13 +17,13 @@ class UserController extends Controller
      //个人用户登录
     public function login(Request $request)
     {
-        //判断：展示 or 收集
         if($request->ispost()){
-            //收集、判断、登录
-            $name = $request->param('username');
-            $pwd  = md5($request->param('password'));
+            $username = $request->param('username');
+            $password  = md5($request->param('password'));
             //判断
-            $exists = User_person::where(['username'=>$name,'password'=>$pwd])->find();//返回object null
+            $exists = User_person::where(['username'=>$username,'password'=>$password])
+                ->find();//返回object null
+//                ->join('company_info c','u.query_id=c.query_id')
             if(exists){
                 //持久化用户信息Session
                 Session::set('user_id',$exists->user_id);
@@ -31,7 +31,7 @@ class UserController extends Controller
                 //登录系统（页面跳转）
                 return $this->redirect('home/user/register');
             }else{
-                $this->assign('erroinfo','用户名或密码不正确');
+                $this->assign('errorinfo','用户名或密码不正确');
             }
         }
         //展示 登录的表单页面
@@ -115,53 +115,44 @@ class UserController extends Controller
     public function gerenzhuce(Request $request)
     {
         if(request()->ispost()){
-            //[post请求]收集form表单信息存储
-            //要通过param（）收集客户上传的信息，有过滤机制，比较安全
-            $shuju = request()->param();//或调用post也可以
-            //对收集到的信息实现校验
-            //规则制作
-
+            $shuju = request()->param();
             $rules = [
                 'username'  =>'require|unique:user_person,username|max:25',
-
-                'password'  =>'require',
+                'password'  =>'require|length:6,15',
                 'password2' =>'require|confirm:password',
-
-                'tel'  =>['require','regex'=>'/^1[358]\d{9}$/'],
+                'tel'       =>['require','regex'=>'/^1[358]\d{9}$/'],
             ];
-            //错误提示
             $msg = [
                 'username.require'      => '名称必填',
-
                 'username.unique'       => '用户名已经被使用',
                 'username.max'          => '用户名长度不能超过25位',
-                'password.unique'       => '密码必填',
-                'password2.unique'      => '确认密码必填',
-                'password2.confirm'     => '密码与确认密码不一致',
+                'password.require'       => '密码必填',
+                'password.length'       => '密码长度须在6到15之间',
+                'password2.require'      => '确认密码必填',
+                'password2.confirm'     => '两次密码不一致',
                 'tel.require'           => '手机号码必填',
                 'tel.regex'             => '手机号码规则不正确',
             ];
-            $validate = new Validate($rules,$msg);//实例化验证对象
+            $validate = new Validate($rules,$msg);
             if($validate ->batch()-> check($shuju)){
-                //验证通过，把数据添加到数据库中
-                $user_person = new User_person();
+                $user_person = new user_person();
                 $shuju['password'] = md5($shuju['password']);
-                $result = $user_person->allowField(true)->save($shuju);//返回添加的个数
+                $result = $user_person->allowField(true)->save($shuju);
                 if($result){
-                    //直接返回数据信息，tp5框架底层会对该数组进行“自动”json转化，进而给客户端使用
-                    return ['status'=>'success'];
+                    echo "<script>alert('恭喜您注册成功');</script>";
+                    echo "<script>parent.location.href = \"../index/index\";</script>";
+//                    $this->success('添加成功',('index'));
+//                    return ['status'=>'success'];
                 }else{
-                    return ['status'=>'failure','errorinfo'=>'数据写入失败，请重新输入'];
+                    return $this->redirect('home/uer/zhuceshibai');
                 }
             }else{
-                //验证不通过
-                $errorinfo = $validate->getError();
-                //把#errorinfo由“数组”变为字符串
-                $errorinfo = implode('',$errorinfo);
-                return ['status'=>'failure','errorinfo'=>$errorinfo];//把错误信息变为字符串返回给客户端的Ajax
+                $errorinfo= $validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                $this -> assign('shuju',$shuju);
+                return $this -> fetch();
             }
         }else{
-            //[get请求]展示添加效果
             return $this->fetch();
         }
 
@@ -176,8 +167,6 @@ class UserController extends Controller
     //企业注册
     public function qiyezhuce(Request $request)
     {
-
-
         if($request->isPost()){
             $shuju = $request -> post();
             $rules = [

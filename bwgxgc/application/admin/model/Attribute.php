@@ -18,6 +18,6 @@ class Attribute extends Model
     }
     public function type()
     {
-        return $this->hasOne('Type','type_id','type_id');
+        return $this->hasOne('type','type_id','type_id');
     }
 }

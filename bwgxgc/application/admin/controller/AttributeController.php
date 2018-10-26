@@ -54,7 +54,7 @@ class AttributeController extends Controller
         else
         {
             //获得可供选取的“类型”
-            $typeinfo = Type::field('type_id,type_name')->select();
+            $typeinfo = type::field('type_id,type_name')->select();
             $this -> assign('typeinfo',$typeinfo);
 
             return $this -> fetch();
@@ -64,11 +64,8 @@ class AttributeController extends Controller
 
     public function getAttributeByType(Request $request)
     {
-        //获得"类型id"信息
         $type_id = $request->param('type_id');
-        //获得属性信息
-        //①根据$type_id获得对应的属性信息
-        //②$type_id为空，就获得全部的属性信息
+
         if(empty($type_id)){
             $attr_info = Attribute::with('type')
                 ->field('attr_id,attr_name,attr_sel,attr_vals,type_id')

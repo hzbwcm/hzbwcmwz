@@ -22,37 +22,38 @@
 <form class="form-horizontal" method="post" action="{$Request.url}">
     <div class="control-group">
         <div class="controls">
-            <input type="text" name="username" value="{$shuju.username|default=''}" id="user" placeholder="请输入用户信息(3-15位字符可由英文数字组成)">
+            <input type="text" name="username" value="{$shuju.username|default=''}" placeholder="请输入你的用户名" >
             <span style="color:red;">{$errorinfo.username|default=''}</span>
         </div>
-        <label class="control-label" for="user"><i class="iconfont icon-ren111"></i></label>
+        <label class="control-label"><i class="iconfont icon-ren111"></i></label>
     </div>
     <div class="control-group">
         <div class="controls">
-            <input type="password" name="password" value="{$shuju.password|default=''}" id="Password" placeholder="请设置6-20位数字或字符密码">
+            <input type="password" name="password" value="{$shuju.password|default=''}" placeholder="请设置6-20位数字或字符密码">
             <span style="color:red;">{$errorinfo.password|default=''}</span>
         </div>
-        <label class="control-label" for="Password"><i class="iconfont icon-suo"></i></label>
+        <label class="control-label"><i class="iconfont icon-suo"></i></label>
     </div>
     <div class="control-group">
         <div class="controls">
-            <input type="password" name="password2" value="{$shuju.password2|default=''}" id="Passwordtwo" placeholder="请再次输入您的密码">
+            <input type="password" name="password2" value="{$shuju.password2|default=''}" placeholder="请再次输入您的密码">
             <span style="color:red;">{$errorinfo.password2|default=''}</span>
         </div>
-        <label class="control-label" for="Passwordtwo"><i class="iconfont icon-suo"></i></label>
+        <label class="control-label"><i class="iconfont icon-suo"></i></label>
     </div>
     <div class="control-group">
         <div class="controls">
-            <input name="tel" type="text"  value="{$shuju.tel|default=''}" id="telphone" placeholder="请输入11位手机号">
+            <input name="tel" type="text"  value="{$shuju.tel|default=''}" placeholder="请输入11位手机号">
+            <span style="color:red;">{$errorinfo.tel|default=''}</span>
             <input type="button" value="获取验证码" class="hqyzm" onclick="send_sms()">
         </div>
-        <label class="control-label" for="telphone"><i class="iconfont icon-shouji"></i></label>
+        <label class="control-label"><i class="iconfont icon-shouji"></i></label>
     </div>
     <div class="control-group">
         <div class="controls">
-            <input name='tel_code' type="text" value="{$shuju.tel_code|default=''}" id="validation" placeholder="请输入验证码">
+            <input name='tel_code' type="text" value="{$shuju.tel_code|default=''}" placeholder="请输入验证码">
         </div>
-        <label class="control-label" for="validation"><i class="iconfont icon-yanzhengyanzhengma"></i></label>
+        <label class="control-label"><i class="iconfont icon-yanzhengyanzhengma"></i></label>
     </div>
     <div class="control-group">.
         <div class="controls zc-controls">
@@ -60,7 +61,7 @@
                 <input type="checkbox">同意并已阅读《用户协议》
             </label>
             <div class="zhuce-button">
-                <button type="submit" class="btn" >注册</button>
+                <button type="submit" class="btn" >完成注册</button>
                 <div class="fanhui-button"><a onclick=window.top.location="javascript:history.back(-1)">返回</a></div>
             </div>
 
@@ -85,29 +86,28 @@
             }
         });
     }
-    //给form表单设置submit注册事件
-    $('.form-horizontal').submit(function(evt){
-        //evt（自定义）是当前submit的时间对象
-        //阻止真实的form表单浏览器提交执行
-        evt.preventDefault();
-        //序列化收集form表单的信息
-        var shuju = $(this).serialize();
-        $.ajax({
-            url:"{:url('home/user/gerenzhuce')}",
-            data:shuju,
-            datatype:'json',
-            type:'post',
-            success:function(msg){
-                if(msg.status=='success'){
-                    alert('注册成功');
-                    parent.location.href = "../index/index";
-                }else{
-                    alert('注册失败');
-                    window.location.href = "zhuceshibai";
-                }
-            }
-        });
-    });
+    // 给form表单设置submit注册事件
+    // $('.form-horizontal').submit(function(evt){
+    //     //evt（自定义）是当前submit的时间对象
+    //     //阻止真实的form表单浏览器提交执行
+    //     evt.preventDefault();
+    //     //序列化收集form表单的信息
+    //     var shuju = $(this).serialize();
+    //     $.ajax({
+    //         url:"{:url('home/user/gerenzhuce')}",
+    //         data:shuju,
+    //         datatype:'json',
+    //         type:'post',
+    //         success:function(msg){
+    //             if(msg.status=='success'){
+    //                 alert('注册成功');
+    //                 parent.location.href = "../index/index";
+    //             }else{
+    //                 window.location.href = "zhuceshibai";
+    //             }
+    //         }
+    //     });
+    // });
 
 </script>
 <!--<script src="{:config('home_js')}/gerenzhuce.js"></script>-->

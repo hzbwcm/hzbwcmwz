@@ -42,6 +42,7 @@
             <th width="25"><input type="checkbox" name="" value=""></th>
             <th width="40">ID</th>
             <th width="150">类型名称</th>
+            <th width="150">父ID</th>
             <th width="100">操作</th>
         </tr>
         </thead>
@@ -55,6 +56,7 @@
             <td><input type="checkbox" value="1" name=""></td>
             <td>{$val.type_id}</td>
             <td style="text-align: left;">{$val.type_name}</td>
+            <td>{$val.type_pid}</td>
             <td class="td-manage">
                 <a style="text-decoration:none" href="{:url('admin/attribute/index')}" title="属性列表">属性列表</a>
                 <a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i                        class="Hui-iconfont">&#xe631;</i></a>
