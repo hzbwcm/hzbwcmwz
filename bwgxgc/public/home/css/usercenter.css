@@ -92,8 +92,8 @@ main {
             left: 0;
             top: 0; }
       main .main-content .content-top .content-t-righht {
-        width: 100%;
-        float: right;
+        width: 33%;
+        margin: 0 auto;
         overflow: hidden; }
         main .main-content .content-top .content-t-righht label {
           font-size: 16px;
@@ -111,12 +111,16 @@ main {
           outline: none;
           padding-left: 3px; }
         main .main-content .content-top .content-t-righht .content-right-name {
-          width: 50%;
+          width: 100%;
           margin-bottom: 30px;
           float: left;
           overflow: hidden; }
+          main .main-content .content-top .content-t-righht .content-right-name span {
+            width: 90px;
+            text-align: justify;
+            text-align-last: justify; }
           main .main-content .content-top .content-t-righht .content-right-name .nc-name {
-            margin-right: 106px; }
+            width: 220px; }
           main .main-content .content-top .content-t-righht .content-right-name .radio {
             width: 55px;
             position: relative; }
@@ -154,41 +158,50 @@ main {
               height: 30px;
               float: right; }
         main .main-content .content-top .content-t-righht .content-right-hj {
-          width: 50%;
+          width: 100%;
           margin-bottom: 30px;
           float: left;
           overflow: hidden; }
+          main .main-content .content-top .content-t-righht .content-right-hj span {
+            width: 90px;
+            text-align: justify;
+            text-align-last: justify; }
           main .main-content .content-top .content-t-righht .content-right-hj .content-hj {
-            width: 186px;
+            width: 100%;
             margin-right: 106px;
             overflow: hidden; }
             main .main-content .content-top .content-t-righht .content-right-hj .content-hj input {
-              width: 100px;
+              width: 220px;
               height: 30px;
-              float: right; }
+              float: left; }
           main .main-content .content-top .content-t-righht .content-right-hj .content-lxfs {
-            width: 333px;
+            width: 100%;
             margin: 0;
             overflow: hidden; }
             main .main-content .content-top .content-t-righht .content-right-hj .content-lxfs input {
               width: 220px;
               height: 30px;
-              float: right; }
+              float: left; }
         main .main-content .content-top .content-t-righht .content-right-yx {
           width: 100%;
           margin-bottom: 30px;
           overflow: hidden; }
+          main .main-content .content-top .content-t-righht .content-right-yx span {
+            width: 90px;
+            text-align: justify;
+            text-align-last: justify; }
           main .main-content .content-top .content-t-righht .content-right-yx .content-hj {
-            width: 50%;
-            margin: 0;
+            width: 100%;
+            margin-bottom: 30px;
             overflow: hidden; }
             main .main-content .content-top .content-t-righht .content-right-yx .content-hj input {
               width: 220px;
               height: 30px;
               float: left; }
           main .main-content .content-top .content-t-righht .content-right-yx .content-lxfs {
-            width: 50%;
+            width: 100%;
             margin: 0;
+            margin-bottom: 30px;
             overflow: hidden; }
             main .main-content .content-top .content-t-righht .content-right-yx .content-lxfs input {
               width: 220px;
@@ -216,10 +229,9 @@ main {
         color: #555555;
         float: right; }
     main .main-content .main-button {
-      width: 100px;
-      height: 30px;
-      float: right;
-      margin-right: 60px; }
+      width: 150px;
+      height: 40px;
+      margin: 0 auto; }
       main .main-content .main-button input {
         width: 100%;
         height: 100%;
