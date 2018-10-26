@@ -43,11 +43,11 @@
 <div class="daohang">
     <nav>
         <a href="{:url('/')}">首页</a>
-        <a href="{:url('home/index/custom')}">产品定制</a>
-        <a href="{:url('home/index/stickacard')}">贴牌专区</a>
-        <a href="{:url('home/index/inspection')}">优选验厂</a>
-        <a href="{:url('home/index/shebeitransfer')}">设备转让</a>
-        <a href="{:url('home/index/documentary')}">跟单专家</a>
+        <a href="{:url('home/custom/custom')}">产品定制</a>
+        <a href="{:url('home/stickacard/stickacard')}">贴牌专区</a>
+        <a href="{:url('home/inspection/inspection')}">优选验厂</a>
+        <a href="{:url('home/shebeitransfer/shebeitransfer')}">设备转让</a>
+        <a href="{:url('home/documentary/documentary')}">跟单专家</a>
         <a href="javascript:;">网络批发</a>
     </nav>
 </div>
@@ -70,41 +70,19 @@
         <div class="main-fenlei class_fenlei1">
             <div class="main-fenlei-title">所有类目</div>
             <div class="main-fenlei-content">
-                <span class="fenlei-click-css">卫生巾</span>
-                <span>纸尿裤</span>
-                <span>湿纸巾</span>
-                <span>生活用纸</span>
-                <span>产妇经期裤</span>
-                <span>护理垫</span>
-                <span>宠物垫</span>
-                <span>乳垫</span>
+                {volist name='type' id='v1'}
+                {eq name="v1.pid" value="0" }
+                <span>{$v1.name}</span>
+                {/eq}
+                {/volist}
             </div>
         </div>
         <div class="main-fenlei class_fenlei2">
             <div class="main-fenlei-title">所有地区</div>
             <div class="main-fenlei-content">
-                <span class="fenlei-click-css">卫生巾</span>
-                <span>纸尿裤</span>
-                <span>湿纸巾</span>
-                <span>生活用纸</span>
-                <span>产妇经期裤</span>
-                <span>护理垫</span>
-                <span>宠物垫</span>
-                <span>乳垫</span><span>卫生巾</span>
-                <span>纸尿裤</span>
-                <span>湿纸巾</span>
-                <span>生活用纸</span>
-                <span>产妇经期裤</span>
-                <span>护理垫</span>
-                <span>宠物垫</span>
-                <span>乳垫</span><span>卫生巾</span>
-                <span>纸尿裤</span>
-                <span>湿纸巾</span>
-                <span>生活用纸</span>
-                <span>产妇经期裤</span>
-                <span>护理垫</span>
-                <span>宠物垫</span>
-                <span>乳垫</span>
+                {volist name='info' id='v'}
+                <span>{$v.Name}</span>
+                {/volist}
             </div>
             <div class="main-fenlei-gengduo" id="main-gengduo">更多</div>
         </div>
