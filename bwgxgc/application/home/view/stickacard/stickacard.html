@@ -265,7 +265,7 @@
     <!--加工工厂-->
     {volist name='type' id='v1'}
     <div class="main-jggc-box">
-        <div class="jggc-title">{$v1.name} <a href="{:url('home/stickacard/tiepaigengduo')}" class="jggc-gd">更多 <i class="iconfont icon-shuangjiantouyou"></i></a></div>
+        <div class="jggc-title">{$v1.type_name} <a href="{:url('home/stickacard/tiepaigengduo')}" class="jggc-gd">更多 <i class="iconfont icon-shuangjiantouyou"></i></a></div>
         <div class="jggc-content-box">
             <div class="jggc-content">
                 <a href="{:url('home/stickacard/tiepaixiangqing')}" class="jggc-content-img">
@@ -344,7 +344,7 @@
     </div>
     <ul>
         {volist name='type' id='v1'}
-        <li class="guding-louceng">{$v1.name}</li>
+        <li class="guding-louceng">{$v1.type_name}</li>
         {/volist}
     </ul>
 
