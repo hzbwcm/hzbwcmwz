@@ -5,7 +5,7 @@ namespace app\home\model;
 use think\Model;
 use traits\model\SoftDelete;
 
-class company_info extends Model
+class Company_info extends Model
 {
 
     use SoftDelete;
