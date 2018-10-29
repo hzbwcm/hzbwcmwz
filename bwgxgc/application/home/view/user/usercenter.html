@@ -25,14 +25,20 @@
                 <div class="content-t-righht">
                     <div class="content-right1">
                         <div class="content-right-name">
-                            <label><span>用户名 ：</span><input type="text" value="{$shuju.nickname|default=''}" class="nc-name"></label>
+                            <label><span>昵称 ：</span><input type="text" value="{$user_data.nickname|default=''}" class="nc-name"></label>
+                            <span style="color:red;">{$errorinfo.nickname|default=''}</span>
                         </div>
                         <div class="content-right-hj">
-                            <label class="content-lxfs"><span>联系方式 ：</span><input type="text" name="tel" value="{$shuju.tel|default=''}"></label>
+                            <label class="content-lxfs"><span>联系方式 ：</span><input type="text" name="tel" value="{$user_data.tel|default=''}"></label>
+                            <span style="color:red;">{$errorinfo.tel|default=''}</span>
                         </div>
                         <div class="content-right-yx">
-                            <label class="content-hj"><span>邮箱 ：</span><input type="text" value="{$shuju.user_email|default=''}"></label>
-                            <label class="content-lxfs"><span>QQ ：</span><input type="text" value="{$shuju.user_qq|default=''}"></label>
+                            <label class="content-hj"><span>邮箱 ：</span><input type="text" value="{$user_data.user_email|default=''}"></label>
+                            <span style="color:red;">{$errorinfo.user_email|default=''}</span>
+                        </div>
+                        <div class="content-right-qq">
+                            <label class="content-lxfs"><span>QQ ：</span><input type="text" value="{$user_data.user_qq|default=''}"></label>
+                            <span style="color:red;">{$errorinfo.user_qq|default=''}</span>
                         </div>
                     </div>
                 </div>

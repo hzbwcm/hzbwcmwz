@@ -32,11 +32,47 @@ class UserController extends Controller
         return $this->fetch();
     }
     //个人信息
-    public function usercenter()
+    public function usercenter(Request $request)
     {
-        $info = User_person::select();
-        $this -> assign('info',$info);
-        return $this->fetch();
+        $user_id = session('user_id');
+        if(empty($user_id)){
+            return $this->error('请先登录');
+        }
+        if($request->isPost()){
+            $data = $request->param();
+            $rules = [
+                'nickname'      =>'require|unique:user_person,username|max:25',
+                'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],
+                'user_email'    =>'require|email',
+                'user_qq'       =>'require',
+            ];
+            $msg = [
+                'nickname.require'      => '昵称必填',
+                'nickname.unique'       => '昵称已经被使用',
+                'nickname.max'          => '昵称长度不能超过25位',
+                'tel.require'           => '手机号码必填',
+                'tel.regex'             => '手机号码规则不正确',
+                'user_email.require'    => '邮箱必填',
+                'user_email.email'      => '邮箱格式不正确',
+                'user_qq.require'       => 'qq必填',
+            ];
+            $validate = new Validate($rules,$msg);
+            if($validate->batch()->check($data)){
+                $user_person = new user_person();
+                $res = User_person::where('id', $user_id)->update($data);
+                if ($res) {
+                    echo "<script>alert('保存成功');</script>";
+                }else{
+                    return '失败';
+		        }
+            }else{
+                $errorinfo= $validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                $user_data = User_person::where('id', $user_id)->find();
+                $this->assign('user_data', $user_data);
+                return $this->fetch();
+            }
+        }
     }
     //首页页首个人中心
     public function accountcenter()

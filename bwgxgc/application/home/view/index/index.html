@@ -35,7 +35,7 @@
             </a></li>
             {notempty name='$Request.session.username'}
             【{$Request.session.username}】
-            <span><a href="{:url('home/user/logout')}">退出网站</a></span>
+            <span><a href="{:url('home/user/loginout')}">退出登录</a></span>
             {else /}
             <li><a href="{:url('home/user/login')}">
                 <div class="h-l-t">请登陆 |</div>

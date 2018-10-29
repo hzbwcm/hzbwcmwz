@@ -12,7 +12,8 @@ Route::get('home/user/register','home/user/register');//注册1
 Route::any('home/user/gerenzhuce','home/user/gerenzhuce',['method'=>'get|post']);//个人注册
 Route::get('home/user/zhuceshibai','home/user/zhuceshibai');//个人注册失败
 Route::any('home/user/qiyezhuce','home/user/qiyezhuce',['method'=>'get|post']);//企业注册
-Route::any('home/user/login','home/user/login',['method'=>'get|post']);//登陆
+Route::any('home/user/login','home/user/login',['method'=>'get|post']);//登录
+Route::any('home/user/loginout','home/user/loginout',['method'=>'get|post']);//退出登录
 Route::get('home/user/accountcenter','home/user/accountcenter');//个人中心
 Route::any('home/user/usercenter','home/user/usercenter',['method'=>'get|post']);//个人信息
 Route::get('home/user/fabuxinxi','home/user/fabuxinxi');//发布信息
