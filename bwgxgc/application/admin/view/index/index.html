@@ -55,7 +55,7 @@
                         <a href="#" class="dropDown_A">{$Request.session.company_name}<i
                                 class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
-                            <li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
+                            <li><a href="javascript:;" onclick="creatIframe('{:url(\'admin/user/gerenxinxi\')}','个人信息')">个人信息</a></li>
                             <li><a href="#">切换账户</a></li>
                             <li><a href="javascript:void(0); "><span
                                     onclick="layer.confirm('确定要退出系统吗？',function(){window.location.href='{:url(\'admin/user/logout\')}'});">退出</span></a>
