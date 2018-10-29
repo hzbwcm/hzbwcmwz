@@ -57,8 +57,7 @@
                         <ul class="dropDown-menu menu radius box-shadow">
                             <li><a href="javascript:;" onclick="creatIframe('{:url(\'admin/user/gerenxinxi\')}','工厂信息')">工厂信息</a></li>
                             <li><a href="#">切换账户</a></li>
-                            <li><a href="javascript:void(0); "><span
-                                    onclick="layer.confirm('确定要退出系统吗？',function(){window.location.href='{:url(\'admin/user/logout\')}'});">退出</span></a>
+                            <li><a href="javascript:void(0);" onclick="layer.confirm('确定要退出系统吗？',function(){window.location.href='{:url(\'admin/user/logout\')}'});"><span>退出</span></a>
                             </li>
                         </ul>
                     </li>
