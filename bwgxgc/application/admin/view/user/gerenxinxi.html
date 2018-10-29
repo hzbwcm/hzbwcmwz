@@ -107,6 +107,16 @@
         color: #ffffff;
         background: #3074ff;
     }
+
+    .GsjsButton{
+        background: #6cc2ff;
+        color: #ffffff;
+        text-align: center;
+        line-height: 30px;
+        margin-top: 30px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
 </style>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 工厂入驻信息 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
@@ -200,6 +210,7 @@
         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 gerenxinxi-fwbbjq-box">
             <h3>公司介绍：</h3>
             <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
+            <div href="javascript:;" class="GsjsButton col-xs-1 col-sm-1 col-md-10 col-lg-1  col-md-offset-10" onclick="setEnabled()">编辑</div>
         </div>
         <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5">
             <input type="submit" value="提交">
@@ -278,9 +289,13 @@
     //实例化编辑器
     //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
     var ue = UE.getEditor('editor',{
-        elementPathEnabled: false //删除元素路径
+        elementPathEnabled: false, //删除元素路径
+        readonly : true
     });
-
+    //富文本编辑器初始内容
+    ue.ready(function() {
+        ue.setContent('<p>hello!</p>');
+    });
 
     function isFocus(e) {
         alert(UE.getEditor('editor').isFocus());
@@ -296,7 +311,6 @@
         var value = prompt('插入html代码', '');
         UE.getEditor('editor').execCommand('insertHtml', value)
     }
-
     function getContent() {
         var arr = [];
         arr.push("使用editor.getContent()方法可以获得编辑器的内容");
@@ -305,6 +319,9 @@
         alert(arr.join("\n"));
     }
 
+    function setEnabled() {
+        UE.getEditor('editor').setEnabled();
+    }
 </script>
 </body>
 </html>
