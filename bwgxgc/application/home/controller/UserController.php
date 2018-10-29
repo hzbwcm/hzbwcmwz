@@ -1,12 +1,14 @@
 <?php
 namespace app\home\controller;
 
+use app\admin\model\User;
 use app\home\model\Company_info;
 use app\home\model\User_person;
 use think\Controller;
 use think\Request;
 use think\Session;
 use think\Validate;
+use think\Db;
 
 use Flc\Dysms\Client;
 use Flc\Dysms\Request\SendSms;
@@ -14,27 +16,53 @@ use Flc\Dysms\Request\SendSms;
 class UserController extends Controller
 {
 
+    //信息管理
+    public function xinxiguanli()
+    {
+        return $this->fetch();
+    }
+    //信息管理首页
+    public function xinxiguanlishouye()
+    {
+        return $this->fetch();
+    }
+    //发布信息
+    public function fabuxinxi()
+    {
+        return $this->fetch();
+    }
+    //个人信息
+    public function usercenter()
+    {
+        $info = User_person::select();
+        $this -> assign('info',$info);
+        return $this->fetch();
+    }
+    //首页页首个人中心
+    public function accountcenter()
+    {
+        return $this->fetch();
+    }
+
      //个人用户登录
     public function login(Request $request)
     {
-        if($request->ispost()){
+        if($request->ispost())
+        {
             $username = $request->param('username');
             $password  = md5($request->param('password'));
-            //判断
-            $exists = User_person::where(['username'=>$username,'password'=>$password])
-                ->find();//返回object null
-//                ->join('company_info c','u.query_id=c.query_id')
-            if(exists){
+            $exists = User_person::where(['username'=>$username,'password'=>$password])->find();
+
+            if($exists){
                 //持久化用户信息Session
                 Session::set('user_id',$exists->user_id);
                 Session::set('username',$exists->username);
-                //登录系统（页面跳转）
-                return $this->redirect('home/user/register');
+                //登录系统(页面跳转)
+                $this -> redirect('home/index/index');
             }else{
-                $this->assign('errorinfo','用户名或密码不正确');
+                $this -> assign('errorinfo','用户名或密码不正确');
             }
         }
-        //展示 登录的表单页面
         return $this->fetch();
     }
 

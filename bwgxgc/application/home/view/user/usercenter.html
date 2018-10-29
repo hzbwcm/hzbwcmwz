@@ -20,19 +20,19 @@
 <body>
 <main>
     <div class="main-content">
-        <form method="post">
+        <form action="{$Request.url}" method="post">
             <div class="content-top">
                 <div class="content-t-righht">
                     <div class="content-right1">
                         <div class="content-right-name">
-                            <label><span>用户名 ：</span><input type="text" value="" class="nc-name"></label>
+                            <label><span>用户名 ：</span><input type="text" value="{$shuju.nickname|default=''}" class="nc-name"></label>
                         </div>
                         <div class="content-right-hj">
-                            <label class="content-lxfs"><span>联系方式 ：</span><input type="text"></label>
+                            <label class="content-lxfs"><span>联系方式 ：</span><input type="text" name="tel" value="{$shuju.tel|default=''}"></label>
                         </div>
                         <div class="content-right-yx">
-                            <label class="content-hj"><span>邮箱 ：</span><input type="text"></label>
-                            <label class="content-lxfs"><span>QQ ：</span><input type="text"></label>
+                            <label class="content-hj"><span>邮箱 ：</span><input type="text" value="{$shuju.user_email|default=''}"></label>
+                            <label class="content-lxfs"><span>QQ ：</span><input type="text" value="{$shuju.user_qq|default=''}"></label>
                         </div>
                     </div>
                 </div>

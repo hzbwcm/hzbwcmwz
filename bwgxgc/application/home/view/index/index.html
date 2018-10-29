@@ -33,18 +33,23 @@
             <li><a href="">
                 <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
             </a></li>
+            {notempty name='$Request.session.username'}
+            【{$Request.session.username}】
+            <span><a href="{:url('home/user/logout')}">退出网站</a></span>
+            {else /}
             <li><a href="{:url('home/user/login')}">
                 <div class="h-l-t">请登陆 |</div>
             </a></li>
             <li><a href="{:url('home/user/register')}">
                 <div class="h-l-t">免费注册</div>
             </a></li>
+            {/notempty}
         </ul>
         <ul class="header-right">
             <li><a href="/">
                 <div class="h-l-t">工厂首页 |</div>
             </a></li>
-            <li><a href="{:url('home/index/accountcenter')}">
+            <li><a href="{:url('home/user/accountcenter')}">
                 <div class="h-l-t">个人中心 |</div>
             </a></li>
             <li><a href="{:url('home/index/shoucangjia')}">
