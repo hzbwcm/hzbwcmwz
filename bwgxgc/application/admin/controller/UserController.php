@@ -45,4 +45,9 @@ class UserController extends Controller
         $this -> assign('info',$info);
         return $this->fetch();
     }
+
+    public function gerenxinxi(){
+        return $this->fetch();
+    }
+
 }

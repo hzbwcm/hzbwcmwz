@@ -56,6 +56,8 @@ Route::any('admin/role/gai','admin/role/gai',['method'=>'get|post']);//角色修
 Route::get('admin/permission/index','admin/permission/index');//权限表
 Route::any('admin/permission/addition','admin/permission/addition',['method'=>'get|post']);//权限添加
 
+Route::get('admin/user/gerenxinxi','admin/user/gerenxinxi');//管理员表
+
 
 
 Route::group('admin',function (){
