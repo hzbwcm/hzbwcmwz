@@ -34,7 +34,8 @@ return [
     'admin_static'      =>       '/admin/static',
     'admin_temp'        =>       '/admin/temp',
 
-
+    //插件引用路径
+    'plugin'     => '/plugin/',
 
     //
     // 应用命名空间
