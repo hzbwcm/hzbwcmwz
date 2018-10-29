@@ -9,6 +9,12 @@
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <link rel="Bookmark" href="/favicon.ico">
     <link rel="Shortcut Icon" href="/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="{:config('admin_static')}/HUI/css/gerenxinxi.css"/>
+    <script type="text/javascript" charset="utf-8" src="{:config('plugin')}ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="{:config('plugin')}ueditor/ueditor.all.min.js"></script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="{:config('plugin')}ueditor/lang/zh-cn/zh-cn.js"></script>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="{:config('admin_lib')}/html5shiv.js"></script>
     <script type="text/javascript" src="{:config('admin_lib')}/respond.min.js"></script>
@@ -22,43 +28,42 @@
     <script type="text/javascript" src="{:config('admin_lib')}/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>管理员表</title>
+    <title>工厂入驻信息</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 权限管理 <span
-        class="c-gray en">&gt;</span> 管理员表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 工厂入驻信息 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
                                               href="javascript:location.replace(location.href);" title="刷新"><i
         class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <div class="gerenxinxi-title"><h2>个 人 信 息</h2></div>
+    <div class="gerenxinxi-title"><h2>工 厂 入 驻 信 息</h2></div>
     <form action="">
-        <div class="gerenxinxi-input-box col-xs-8 col-sm-8 col-md-8 col-lg-8  col-md-offset-2">
+        <div class="gerenxinxi-input-box col-xs-8 col-sm-8 col-md-8 col-lg-8  col-md-offset-2 col-xs-offset-2">
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2">公司名称：</label>
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">公司名称：</label>
                 <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2">公司地址：</label>
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">公司地址：</label>
                 <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2">Email：</label>
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">Email：</label>
                 <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2">联系人：</label>
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">联系人：</label>
                 <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2">电 话：</label>
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">电 话：</label>
                 <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2">QQ：</label>
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">QQ：</label>
                 <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2">主要生产类型：</label>
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">主要生产类型：</label>
                 <div class="col-xs-3 col-sm-4 col-md-4 col-lg-5" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="demo1">
@@ -71,106 +76,61 @@
                 </div>
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2">公司创立时间：</label>
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">公司创立时间：</label>
                 <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5">
             </div>
         </div>
         <!--工厂Logo图片上传预览-->
-        <div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1" id="lacalImag1">
-            <div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2">工厂Logo：</div>
-            <span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1">
+        <div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1" id="lacalImag1">
+            <div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2 col-xs-offset-2">工厂Logo：</div>
+            <span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1 col-xs-offset-1">
                 <img data-original="" alt="" class="img-responsive" id="preview1">
             </span>
-            <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 geren-logo-image-input">上传<input type="file" value="" id="doc1" name="pic1" onclick="inputimg('pic1','lacalImag1','preview1','doc1')"></label>
+            <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 col-xs-offset-1 geren-logo-image-input">上传Logo<input
+                    type="file" value="" id="doc1" name="pic1"
+                    onclick="inputimg('pic1','lacalImag1','preview1','doc1')"></label>
         </div>
         <!--工厂生产环境图片上传预览-->
-        <div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1" id="lacalImag2">
-            <div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2">工厂生产环境：</div>
-            <span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1">
+        <div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1" id="lacalImag2">
+            <div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2 col-xs-offset-2">工厂生产环境：</div>
+            <span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1 col-xs-offset-1">
                 <img data-original="" alt="" class="img-responsive" id="preview2">
             </span>
-            <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 geren-logo-image-input">上传<input type="file" value="" id="doc2" name="pic2" onclick="inputimg('pic2','lacalImag2','preview2','doc2')"></label>
+            <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 col-xs-offset-1 geren-logo-image-input">上传图片<input
+                    type="file" value="" id="doc2" name="pic2"
+                    onclick="inputimg('pic2','lacalImag2','preview2','doc2')"></label>
         </div>
-        <div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1" id="lacalImag3">
-            <div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2"></div>
-            <span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1">
+        <div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1" id="lacalImag3">
+            <div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2 col-xs-offset-2"></div>
+            <span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1 col-xs-offset-1">
                 <img data-original="" alt="" class="img-responsive" id="preview3">
             </span>
-            <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 geren-logo-image-input">上传<input type="file" value="" id="doc3" name="pic3" onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
+            <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 col-xs-offset-1 geren-logo-image-input">上传图片<input
+                    type="file" value="" id="doc3" name="pic3"
+                    onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
         </div>
-        <div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1" id="lacalImag4">
-            <div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2"></div>
-            <span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1">
+        <div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1" id="lacalImag4">
+            <div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2 col-xs-offset-2"></div>
+            <span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1 col-xs-offset-1">
                 <img data-original="" alt="" class="img-responsive" id="preview4">
             </span>
-            <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 geren-logo-image-input">上传<input type="file" value="" id="doc4" name="pic4" onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
+            <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 col-xs-offset-1 geren-logo-image-input">上传图片<input
+                    type="file" value="" id="doc4" name="pic4"
+                    onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
         </div>
         <!--公司介绍富文本编辑器-->
-        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 gerenxinxi-fwbbjq-box">
-            123132
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1 gerenxinxi-fwbbjq-box">
+            <h3>公司介绍：</h3>
+            <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
+            <div href="javascript:;" class="GsjsButton col-xs-1 col-sm-1 col-md-1 col-lg-1  col-md-offset-10 col-xs-offset-10" onclick="setEnabled()">编辑</div>
+        </div>
+        <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5 col-xs-offset-5">
+            <input type="submit" value="提交">
         </div>
     </form>
 </div>
 
-<style>
-    form{
-        overflow: hidden;
-        padding-bottom: 150px;
-    }
-    .gerenxinxi-input-box label {
-        height: 30px;
-        font-size: 14px;
-        color: #555555;
-        line-height: 30px;
-        text-align: justify;
-        text-align-last: justify;
-    }
-    input {
-        height: 30px;
-        border: 1px solid #c1c1c1;
-    }
-    .gerenxinxi-input-box{
-        margin-bottom: 80px;
-    }
-    .gerenxinxi-title {
-        font-size: 30px;
-        color: #555555;
-        text-align: center;
-        margin-bottom: 60px;
-    }
-    .grxx-title-input {
-        margin-bottom: 40px;
-    }
 
-    .geren-logo-image-box{
-        font-size: 18px;
-        color: #555555;
-        text-align: justify;
-        text-align-last: justify;
-    }
-    .geren-logo-image{
-        height: 220px;
-        border: 1px solid #cccccc;
-    }
-    .geren-logo-image-input{
-        height: 30px;
-        color: #ffffff;
-        background: #1f76ff;
-        border: none;
-        border-radius: 5px;
-        text-align: center;
-        line-height: 30px;
-    }
-    .geren-logo-image-input input{
-        display: none;
-    }
-    .gerenxinxi-image-box{
-        margin-bottom: 30px;
-    }
-    .gerenxinxi-fwbbjq-box{
-        margin-top: 50px;
-    }
-</style>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="{:config('admin_lib')}/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="{:config('admin_lib')}/layer/2.4/layer.js"></script>
@@ -190,7 +150,7 @@
 <script>
     $(function () {
         //实现实时预览的函数
-        function setImagePreview(avalue,localimag,preview,doc) {
+        function setImagePreview(avalue, localimag, preview, doc) {
             var docObj = document.getElementById(doc);
             //img
             var imgObjPreview = document.getElementById(preview);
@@ -227,14 +187,53 @@
         }
 
         //绑定更换头像实现预览的效果
-        inputimg=function (pic1,localimag,preview,doc){
+        inputimg = function (pic1, localimag, preview, doc) {
             console.log(pic1);
-            $("input[name='"+pic1+"']").on('change', function () {
+            $("input[name='" + pic1 + "']").on('change', function () {
                 var file = $(this).val();
-                setImagePreview(file,localimag,preview,doc);
+                setImagePreview(file, localimag, preview, doc);
             });
         }
     })
+</script>
+<script type="text/javascript">
+
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor',{
+        elementPathEnabled: false, //删除元素路径
+        readonly : true
+    });
+    //富文本编辑器初始内容
+    ue.ready(function() {
+        ue.setContent('<p>hello!</p>');
+    });
+
+    function isFocus(e) {
+        alert(UE.getEditor('editor').isFocus());
+        UE.dom.domUtils.preventDefault(e)
+    }
+
+    function setblur(e) {
+        UE.getEditor('editor').blur();
+        UE.dom.domUtils.preventDefault(e)
+    }
+
+    function insertHtml() {
+        var value = prompt('插入html代码', '');
+        UE.getEditor('editor').execCommand('insertHtml', value)
+    }
+    function getContent() {
+        var arr = [];
+        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getContent());
+        alert(arr.join("\n"));
+    }
+
+    function setEnabled() {
+        UE.getEditor('editor').setEnabled();
+    }
 </script>
 </body>
 </html>
