@@ -25,7 +25,7 @@
                 <div class="content-t-righht">
                     <div class="content-right1">
                         <div class="content-right-name">
-                            <label><span>昵称 ：</span><input type="text" value="{$user_data.nickname|default=''}" class="nc-name"></label>
+                            <label><span>昵称 ：</span><input type="text" name="nickname" value="{$user_data.nickname|default=''}" class="nc-name"></label>
                             <span style="color:red;">{$errorinfo.nickname|default=''}</span>
                         </div>
                         <div class="content-right-hj">
@@ -33,17 +33,17 @@
                             <span style="color:red;">{$errorinfo.tel|default=''}</span>
                         </div>
                         <div class="content-right-yx">
-                            <label class="content-hj"><span>邮箱 ：</span><input type="text" value="{$user_data.user_email|default=''}"></label>
+                            <label class="content-hj"><span>邮箱 ：</span><input type="text" name="user_email" value="{$user_data.user_email|default=''}"></label>
                             <span style="color:red;">{$errorinfo.user_email|default=''}</span>
                         </div>
                         <div class="content-right-qq">
-                            <label class="content-lxfs"><span>QQ ：</span><input type="text" value="{$user_data.user_qq|default=''}"></label>
+                            <label class="content-lxfs"><span>QQ ：</span><input type="text" name="user_qq" value="{$user_data.user_qq|default=''}"></label>
                             <span style="color:red;">{$errorinfo.user_qq|default=''}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="main-button"><input type="button" value="保存信息"></div>
+            <div class="main-button"><input type="submit" value="保存信息"></div>
         </form>
     </div>
 </main>

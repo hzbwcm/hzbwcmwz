@@ -7,6 +7,7 @@ namespace app\home\controller;
 
 use think\Controller;
 use think\Request;
+use think\Session;
 use app\home\model\Area;
 use app\home\model\Type;
 use app\home\model\Custom;

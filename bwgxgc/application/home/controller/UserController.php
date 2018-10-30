@@ -35,17 +35,27 @@ class UserController extends Controller
     public function usercenter(Request $request)
     {
         $user_id = session('user_id');
+
+        //验证用户是否登录
         if(empty($user_id)){
-            return $this->error('请先登录');
+            $this->error('请先登录');
         }
+
+
+        //表单数据
         if($request->isPost()){
-            $data = $request->param();
+            //获取用户更新数据
+            $data = $request->post();
+
+            //表单验证规则
             $rules = [
                 'nickname'      =>'require|unique:user_person,username|max:25',
                 'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],
                 'user_email'    =>'require|email',
                 'user_qq'       =>'require',
             ];
+
+            //表单验证错误信息
             $msg = [
                 'nickname.require'      => '昵称必填',
                 'nickname.unique'       => '昵称已经被使用',
@@ -56,22 +66,33 @@ class UserController extends Controller
                 'user_email.email'      => '邮箱格式不正确',
                 'user_qq.require'       => 'qq必填',
             ];
+
             $validate = new Validate($rules,$msg);
-            if($validate->batch()->check($data)){
-                $user_person = new user_person();
-                $res = User_person::where('id', $user_id)->update($data);
-                if ($res) {
-                    echo "<script>alert('保存成功');</script>";
-                }else{
-                    return '失败';
-		        }
-            }else{
-                $errorinfo= $validate->getError();
+
+            //验证表单
+            if(!$validate->batch()->check($data)){
+                $errorinfo=$validate->getError();
                 $this -> assign('errorinfo',$errorinfo);
-                $user_data = User_person::where('id', $user_id)->find();
-                $this->assign('user_data', $user_data);
-                return $this->fetch();
+                return $this -> fetch();
             }
+
+            //更新数据
+            $user_person = new user_person();
+            $res = $user_person->where('user_id', $user_id)->update($data);
+
+            //返回结果
+            if ($res) {
+                $this->success('信息更新成功!');  //TODO 更新成功页面跳转
+            }else{
+                $this->error('信息更新失败!');
+            }
+        }else{
+            //获取用户个人信息
+            $user_data = User_person::where('user_id', $user_id)->find();
+
+            //数据渲染
+            $this->assign('user_data', $user_data);
+            return $this->fetch();
         }
     }
     //首页页首个人中心
@@ -227,7 +248,7 @@ class UserController extends Controller
     {
         return $this->fetch();
     }
-    
+
     //企业注册
     public function qiyezhuce(Request $request)
     {
