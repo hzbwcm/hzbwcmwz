@@ -2,148 +2,123 @@
 /*初始化css*/
 html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 html, body {
   width: 100%;
-  height: 100%;
-}
+  height: 100%; }
 
 input {
   outline: none;
-  color: #fff;
-}
+  color: #fff; }
 
 body {
-  background: none;
-}
+  background: none; }
 
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: '微软雅黑';
-}
+  font-family: '微软雅黑'; }
 
 a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 li {
-  list-style-type: none;
-}
+  list-style-type: none; }
 
 img {
-  border: none;
-}
+  border: none; }
 
 /*form*/
 form {
-  width: 100%;
-  height: 800px;
-}
-form .control-group {
-  width: auto;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-form .control-group .control-label {
-  width: 95px;
-  float: right;
-  margin-bottom: 0;
-  color: #fff;
-}
-form .control-group .control-label .iconfont {
-  font-size: 28px;
-  color: #fff;
-  margin-right: 18px;
-  float: right;
-}
-form .control-group .controls {
-  float: right;
-  width: 334px;
-  position: relative;
-}
-form .control-group .controls ::-webkit-input-placeholder {
-  color: #a7a7a7;
-  font-size: 14px;
-}
-form .control-group .controls .form-control {
-  width: 72px;
-  height: 26px;
-  line-height: 26px;
-  padding: 0;
-  font-size: 12px;
-  outline: none;
-  background: none;
-  border-radius: 0;
-  color: #fff;
-  float: left;
-}
-form .control-group .controls .form-control option {
-  color: #555;
-}
-form .control-group .controls span {
-  display: block;
-  margin-right: 6px;
-  margin-left: 6px;
-  font-size: 14px;
-  color: #fff;
-  float: left;
-}
-form .control-group .controls input {
-  width: 100%;
-  background: none;
-  border: none;
-  border: 1px solid #fff;
-  padding-left: 4px;
-}
-form .control-group .controls .checkbox {
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-form .control-group .controls .checkbox input {
-  width: 12px;
-  height: 12px;
-  background: none;
-  border: 1px solid #fff;
-  margin-right: 10px;
-}
-form .control-group .controls .zhuce-button {
-  width: 260px;
-  margin: 0 auto;
-}
-form .control-group .controls .zhuce-button .btn {
-  width: 260px;
-  padding-bottom: 6px;
-  padding-top: 6px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  text-align: center;
-  background: rgba(74, 147, 255, 0.7);
-  font-size: 14px;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-}
-form .control-group .controls .hqyzm {
-  width: 76px;
-  height: 25px;
-  border: none;
-  color: #fff;
-  font-size: 14px;
-  background: #4a93ff;
-  border-radius: 3px;
-  position: absolute;
-  right: 5px;
-  top: 0;
-}
-form .control-group .zc-controls {
-  width: 100%;
-}
+  width: 100%; }
+  form .control-group {
+    width: auto;
+    margin-bottom: 20px;
+    overflow: hidden; }
+    form .control-group .control-label {
+      width: 95px;
+      float: right;
+      margin-bottom: 0;
+      color: #fff; }
+      form .control-group .control-label .iconfont {
+        font-size: 28px;
+        color: #fff;
+        margin-right: 18px;
+        float: right; }
+    form .control-group .controls {
+      float: right;
+      width: 334px;
+      position: relative; }
+      form .control-group .controls ::-webkit-input-placeholder {
+        color: #a7a7a7;
+        font-size: 14px; }
+      form .control-group .controls .form-control {
+        width: 72px;
+        height: 26px;
+        line-height: 26px;
+        padding: 0;
+        font-size: 12px;
+        outline: none;
+        background: none;
+        border-radius: 0;
+        color: #fff;
+        float: left; }
+        form .control-group .controls .form-control option {
+          color: #555; }
+      form .control-group .controls span {
+        display: block;
+        margin-right: 6px;
+        margin-left: 6px;
+        font-size: 14px;
+        color: #fff;
+        float: left; }
+      form .control-group .controls input {
+        width: 100%;
+        background: none;
+        border: none;
+        border: 1px solid #fff;
+        padding-left: 4px; }
+      form .control-group .controls .checkbox {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #fff; }
+        form .control-group .controls .checkbox input {
+          width: 12px;
+          height: 12px;
+          background: none;
+          border: 1px solid #fff;
+          margin-right: 10px; }
+      form .control-group .controls .zhuce-button {
+        width: 260px;
+        margin: 0 auto; }
+        form .control-group .controls .zhuce-button .btn {
+          width: 260px;
+          padding-bottom: 6px;
+          padding-top: 6px;
+          margin: 0 auto;
+          margin-bottom: 10px;
+          text-align: center;
+          background: rgba(74, 147, 255, 0.7);
+          font-size: 14px;
+          color: #fff;
+          border-radius: 5px;
+          cursor: pointer; }
+      form .control-group .controls .hqyzm {
+        width: 76px;
+        height: 25px;
+        border: none;
+        color: #fff;
+        font-size: 14px;
+        background: #4a93ff;
+        border-radius: 3px;
+        position: absolute;
+        right: 5px;
+        top: 0; }
+    form .control-group .zc-controls {
+      width: 100%; }
 
 /*返回按钮*/
 .fanhui-button {
@@ -157,13 +132,13 @@ form .control-group .zc-controls {
   font-size: 14px;
   color: #fff;
   border-radius: 5px;
-  cursor: pointer;
-}
-.fanhui-button a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-}
+  cursor: pointer; }
+  .fanhui-button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff; }
 
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInFpeWV6aHVjZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLFVBQVU7QUFDVjtFQUNFLFVBQVU7RUFDVixXQUFXO0NBQ1o7O0FBRUQ7RUFDRSxZQUFZO0VBQ1osYUFBYTtDQUNkO0FBQ0Q7RUFDRSxjQUFjO0VBQ2QsWUFBWTtDQUNiOztBQUVEO0VBQ0UsaUJBQWlCO0NBQ2xCOztBQUVEO0VBQ0UsK0JBQXVCO0tBQXZCLDRCQUF1QjtVQUF2Qix1QkFBdUI7RUFDdkIsb0JBQW9CO0NBQ3JCOztBQUVEO0VBQ0Usc0JBQXNCO0NBQ3ZCOztBQUVEO0VBQ0Usc0JBQXNCO0NBQ3ZCOztBQUVEO0VBQ0UsYUFBYTtDQUNkO0FBQ0QsUUFBUTtBQUNSO0VBQ0UsWUFBWTtFQUNaLGNBQWM7RUFDZDtJQUNFLFlBQVk7SUFDWixvQkFBb0I7SUFDcEIsaUJBQWlCO0lBQ2pCO01BQ0UsWUFBWTtNQUNaLGFBQWE7TUFDYixpQkFBaUI7TUFDakIsWUFBWTtNQUNaO1FBQ0UsZ0JBQWdCO1FBQ2hCLFlBQVk7UUFDWixtQkFBbUI7UUFDbkIsYUFBYTtPQUNkO0tBQ0Y7SUFDRDtNQUNFLGFBQWE7TUFDYixhQUFhO01BQ2IsbUJBQW1CO01BQ25CO1FBQ0UsZUFBZTtRQUNmLGdCQUFnQjtPQUNqQjtNQUNEO1FBQ0UsWUFBWTtRQUNaLGFBQWE7UUFDYixrQkFBa0I7UUFDbEIsV0FBVztRQUNYLGdCQUFnQjtRQUNoQixjQUFjO1FBQ2QsaUJBQWlCO1FBQ2pCLGlCQUFpQjtRQUNqQixZQUFZO1FBQ1osWUFBWTtRQUNaO1VBQ0UsWUFBWTtTQUNiO09BQ0Y7TUFDRDtRQUNFLGVBQWU7UUFDZixrQkFBa0I7UUFDbEIsaUJBQWlCO1FBQ2pCLGdCQUFnQjtRQUNoQixZQUFZO1FBQ1osWUFBWTtPQUNiO01BQ0Q7UUFDRSxZQUFZO1FBQ1osaUJBQWlCO1FBQ2pCLGFBQWE7UUFDYix1QkFBdUI7UUFDdkIsa0JBQWtCO09BQ25CO01BQ0Q7UUFDRSxZQUFZO1FBQ1osbUJBQW1CO1FBQ25CLGdCQUFnQjtRQUNoQixZQUFZO1FBQ1o7VUFDRSxZQUFZO1VBQ1osYUFBYTtVQUNiLGlCQUFpQjtVQUNqQix1QkFBdUI7VUFDdkIsbUJBQW1CO1NBQ3BCO09BQ0Y7TUFDRDtRQUNFLGFBQWE7UUFDYixlQUFlO1FBQ2Y7VUFDRSxhQUFhO1VBQ2Isb0JBQW9CO1VBQ3BCLGlCQUFpQjtVQUNqQixlQUFlO1VBQ2Ysb0JBQW9CO1VBQ3BCLG1CQUFtQjtVQUNuQixvQ0FBb0M7VUFDcEMsZ0JBQWdCO1VBQ2hCLFlBQVk7VUFDWixtQkFBbUI7VUFDbkIsZ0JBQWdCO1NBQ2pCO09BQ0Y7TUFDRDtRQUNFLFlBQVk7UUFDWixhQUFhO1FBQ2IsYUFBYTtRQUNiLFdBQVc7UUFDWCxnQkFBZ0I7UUFDaEIsb0JBQW9CO1FBQ3BCLG1CQUFtQjtRQUNuQixtQkFBbUI7UUFDbkIsV0FBVztRQUNYLE9BQU87T0FDUjtLQUNGO0lBQ0Q7TUFDRSxZQUFZO0tBQ2I7R0FDRjtDQUNGO0FBQ0QsUUFBUTtBQUNSO0VBQ0UsYUFBYTtFQUNiLG9CQUFvQjtFQUNwQixpQkFBaUI7RUFDakIsZUFBZTtFQUNmLG9CQUFvQjtFQUNwQixtQkFBbUI7RUFDbkIsb0NBQW9DO0VBQ3BDLGdCQUFnQjtFQUNoQixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQjtJQUNFLGVBQWU7SUFDZixZQUFZO0lBQ1osYUFBYTtJQUNiLFlBQVk7R0FDYjtDQUNGIiwiZmlsZSI6InFpeWV6aHVjZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyrliJ3lp4vljJZjc3MqL1xyXG5odG1sLCBib2R5LCBkaXYsIHVsLCBsaSwgaDEsIGgyLCBoMywgaDQsIGg1LCBoNiwgcCwgZGwsIGR0LCBkZCwgb2wsIGZvcm0sIGlucHV0LCB0ZXh0YXJlYSwgdGgsIHRkLCBzZWxlY3Qge1xyXG4gIG1hcmdpbjogMDtcclxuICBwYWRkaW5nOiAwO1xyXG59XHJcblxyXG5odG1sLCBib2R5IHtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuaW5wdXR7XHJcbiAgb3V0bGluZTogbm9uZTtcclxuICBjb2xvcjogI2ZmZjtcclxufVxyXG5cclxuYm9keSB7XHJcbiAgYmFja2dyb3VuZDogbm9uZTtcclxufVxyXG5cclxuKiB7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICBmb250LWZhbWlseTogJ+W+rui9r+mbhem7kSc7XHJcbn1cclxuXHJcbmEge1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG5cclxubGkge1xyXG4gIGxpc3Qtc3R5bGUtdHlwZTogbm9uZTtcclxufVxyXG5cclxuaW1ne1xyXG4gIGJvcmRlcjogbm9uZTtcclxufVxyXG4vKmZvcm0qL1xyXG5mb3JtIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDgwMHB4O1xyXG4gIC5jb250cm9sLWdyb3VwIHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAuY29udHJvbC1sYWJlbCB7XHJcbiAgICAgIHdpZHRoOiA5NXB4O1xyXG4gICAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICAgIG1hcmdpbi1ib3R0b206IDA7XHJcbiAgICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgICAuaWNvbmZvbnQge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjhweDtcclxuICAgICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgICBtYXJnaW4tcmlnaHQ6IDE4cHg7XHJcbiAgICAgICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgICAuY29udHJvbHMge1xyXG4gICAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICAgIHdpZHRoOiAzMzRweDtcclxuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICA6Oi13ZWJraXQtaW5wdXQtcGxhY2Vob2xkZXIge1xyXG4gICAgICAgIGNvbG9yOiAjYTdhN2E3O1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgICAgfVxyXG4gICAgICAuZm9ybS1jb250cm9se1xyXG4gICAgICAgIHdpZHRoOiA3MnB4O1xyXG4gICAgICAgIGhlaWdodDogMjZweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMjZweDtcclxuICAgICAgICBwYWRkaW5nOiAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgICAgIGJhY2tncm91bmQ6IG5vbmU7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMDtcclxuICAgICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgICBmbG9hdDogbGVmdDtcclxuICAgICAgICBvcHRpb257XHJcbiAgICAgICAgICBjb2xvcjogIzU1NTtcclxuICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgICAgc3BhbntcclxuICAgICAgICBkaXNwbGF5OiBibG9jaztcclxuICAgICAgICBtYXJnaW4tcmlnaHQ6IDZweDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogNnB4O1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgICBmbG9hdDogbGVmdDtcclxuICAgICAgfVxyXG4gICAgICBpbnB1dCB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgYmFja2dyb3VuZDogbm9uZTtcclxuICAgICAgICBib3JkZXI6IG5vbmU7XHJcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI2ZmZjtcclxuICAgICAgICBwYWRkaW5nLWxlZnQ6IDRweDtcclxuICAgICAgfVxyXG4gICAgICAuY2hlY2tib3gge1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgY29sb3I6ICNmZmY7XHJcbiAgICAgICAgaW5wdXQge1xyXG4gICAgICAgICAgd2lkdGg6IDEycHg7XHJcbiAgICAgICAgICBoZWlnaHQ6IDEycHg7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kOiBub25lO1xyXG4gICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI2ZmZjtcclxuICAgICAgICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxuICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgICAgLnpodWNlLWJ1dHRvbntcclxuICAgICAgICB3aWR0aDogMjYwcHg7XHJcbiAgICAgICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICAgICAgLmJ0bntcclxuICAgICAgICAgIHdpZHRoOiAyNjBweDtcclxuICAgICAgICAgIHBhZGRpbmctYm90dG9tOiA2cHg7XHJcbiAgICAgICAgICBwYWRkaW5nLXRvcDogNnB4O1xyXG4gICAgICAgICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG4gICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgICAgYmFja2dyb3VuZDogcmdiYSg3NCwgMTQ3LCAyNTUsIDAuNyk7XHJcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgICAgLmhxeXpte1xyXG4gICAgICAgIHdpZHRoOiA3NnB4O1xyXG4gICAgICAgIGhlaWdodDogMjVweDtcclxuICAgICAgICBib3JkZXI6IG5vbmU7XHJcbiAgICAgICAgY29sb3I6I2ZmZjtcclxuICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgYmFja2dyb3VuZDogIzRhOTNmZjtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAzcHg7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHJpZ2h0OiA1cHg7XHJcbiAgICAgICAgdG9wOiAwO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgICAuemMtY29udHJvbHN7XHJcbiAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG4vKui/lOWbnuaMiemSriovXHJcbi5mYW5odWktYnV0dG9uIHtcclxuICB3aWR0aDogMjYwcHg7XHJcbiAgcGFkZGluZy1ib3R0b206IDZweDtcclxuICBwYWRkaW5nLXRvcDogNnB4O1xyXG4gIG1hcmdpbjogMCBhdXRvO1xyXG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGJhY2tncm91bmQ6IHJnYmEoNzQsIDE0NywgMjU1LCAwLjcpO1xyXG4gIGZvbnQtc2l6ZTogMTRweDtcclxuICBjb2xvcjogI2ZmZjtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGEge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gIH1cclxufSJdfQ== */
+
+/*# sourceMappingURL=qiyezhuce.css.map */
