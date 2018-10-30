@@ -192,7 +192,6 @@ main {
             text-align-last: justify; }
           main .main-content .content-top .content-t-righht .content-right-yx .content-hj {
             width: 100%;
-            margin-bottom: 30px;
             overflow: hidden; }
             main .main-content .content-top .content-t-righht .content-right-yx .content-hj input {
               width: 220px;
@@ -201,7 +200,6 @@ main {
           main .main-content .content-top .content-t-righht .content-right-yx .content-lxfs {
             width: 100%;
             margin: 0;
-            margin-bottom: 30px;
             overflow: hidden; }
             main .main-content .content-top .content-t-righht .content-right-yx .content-lxfs input {
               width: 220px;
