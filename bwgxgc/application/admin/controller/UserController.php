@@ -29,7 +29,7 @@ class UserController extends Controller
                 }
 
             }
-        return $this->fetch();
+       return $this->fetch();
     }
     //后台推出
     public function logout()
