@@ -7,7 +7,10 @@ use app\admin\behavior\CheckLogin;
 
 class GoodsController extends Controller
 {
-
+    public function tiepaishangpingshangchuan()
+    {
+        return $this->fetch();
+    }
 
 
 
