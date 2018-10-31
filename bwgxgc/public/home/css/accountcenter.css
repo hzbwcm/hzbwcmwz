@@ -30,60 +30,84 @@ img {
 }
 
 /*页眉*/
-header {
-  min-width: 1200px;
-  height: 75px;
-  background: #fff;
-  padding-top: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  -webkit-box-shadow: 0px -5px 20px 1px;
-  box-shadow: 0px -5px 20px 1px;
-  margin-bottom: 20px;
-}
-header .header-img {
-  width: 216px;
-  height: 52px;
-  float: left;
-}
-header .header-img img {
+.header-box {
   width: 100%;
+  min-width: 1200px;
+  height: 30px;
+  color: #555555;
+  background: #ffffff;
 }
-header .header-right {
-  height: 52px;
-  float: right;
-}
-header .header-right .header-r-img {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  float: left;
-  background: #ad6fc8;
-  margin-right: 20px;
-  position: relative;
-}
-header .header-right .header-r-img img {
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-}
-header .header-right .header-name {
+.header-box .header-centre {
+  width: 1200px;
   height: 100%;
-  line-height: 52px;
-  font-size: 16px;
-  color: #555555;
-  float: left;
-  margin-right: 20px;
+  margin: 0 auto;
 }
-header .header-right .iconfont {
-  font-size: 16px;
-  line-height: 52px;
-  color: #555555;
+.header-box .header-left {
+  width: auto;
+  height: 100%;
+  float: left;
+  font-size: 12px;
+  line-height: 30px;
+}
+.header-box .header-left .h-f-i {
+  width: 80px;
+}
+.header-box .header-left li {
+  float: left;
+}
+.header-box .header-left li a {
+  display: block;
+  height: 100%;
+}
+.header-box .header-left li a .h-l-t {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 12px;
+  color: #1b1b1b;
+}
+.header-box .header-left .header-img {
+  float: left;
+}
+.header-box .header-left .h-f-i {
+  float: left;
+}
+.header-box .header-left img {
+  margin-top: 7px;
+  margin-right: 5px;
+}
+.header-box .header-right {
+  width: auto;
+  height: 100%;
+  float: right;
+  font-size: 12px;
+  line-height: 30px;
+}
+.header-box .header-right li {
+  width: auto;
+  float: left;
+}
+.header-box .header-right li a {
+  display: block;
+  height: 100%;
+}
+.header-box .header-right li a .h-l-t {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 12px;
+  color: #1b1b1b;
+}
+.header-box .header-right .h-f-i {
+  float: left;
+}
+.header-box .header-right img {
+  margin-top: 7px;
+  margin-right: 5px;
 }
 
 /*主体*/
@@ -94,6 +118,7 @@ main .main-content-title {
   width: 100%;
   height: 92px;
   background: #dcdcdc;
+  margin-top: 2px;
 }
 main .main-content-title .content-title {
   width: 100%;

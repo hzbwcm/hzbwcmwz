@@ -29,38 +29,36 @@ img {
 }
 
 /*页眉*/
-.header {
+.header-box {
   width: 100%;
-  height: 30px;
   min-width: 1200px;
-  color: #383838;
+  height: 30px;
+  color: #555555;
   background: #ffffff;
-  -webkit-box-shadow: darkgrey -16px 0px 40px -3px;
-  box-shadow: darkgrey -16px 0px 40px -3px;
 }
-.header .header-centre {
+.header-box .header-centre {
   width: 1200px;
   height: 100%;
   margin: 0 auto;
 }
-.header .header-left {
+.header-box .header-left {
   width: auto;
   height: 100%;
   float: left;
   font-size: 12px;
   line-height: 30px;
 }
-.header .header-left .h-f-i {
+.header-box .header-left .h-f-i {
   width: 80px;
 }
-.header .header-left li {
+.header-box .header-left li {
   float: left;
 }
-.header .header-left li a {
+.header-box .header-left li a {
   display: block;
   height: 100%;
 }
-.header .header-left li a .h-l-t {
+.header-box .header-left li a .h-l-t {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -69,32 +67,32 @@ img {
   font-size: 12px;
   color: #1b1b1b;
 }
-.header .header-left .header-img {
+.header-box .header-left .header-img {
   float: left;
 }
-.header .header-left .h-f-i {
+.header-box .header-left .h-f-i {
   float: left;
 }
-.header .header-left img {
+.header-box .header-left img {
   margin-top: 7px;
   margin-right: 5px;
 }
-.header .header-right {
+.header-box .header-right {
   width: auto;
   height: 100%;
   float: right;
   font-size: 12px;
   line-height: 30px;
 }
-.header .header-right li {
+.header-box .header-right li {
   width: auto;
   float: left;
 }
-.header .header-right li a {
+.header-box .header-right li a {
   display: block;
   height: 100%;
 }
-.header .header-right li a .h-l-t {
+.header-box .header-right li a .h-l-t {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -103,10 +101,10 @@ img {
   font-size: 12px;
   color: #1b1b1b;
 }
-.header .header-right .h-f-i {
+.header-box .header-right .h-f-i {
   float: left;
 }
-.header .header-right img {
+.header-box .header-right img {
   margin-top: 7px;
   margin-right: 5px;
 }
