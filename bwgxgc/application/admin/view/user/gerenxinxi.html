@@ -62,6 +62,11 @@
                 <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="qq" value="">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">工厂规模：</label>
+                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="size" value="">
+                <input type="text" class="col-xs-2 col-sm-1 col-md-1 col-lg-1" value="(亩)" style="font-size: 16px; color: #888888;border: none" readonly="value">
+            </div>
+            <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">主要生产类型：</label>
                 <div class="col-xs-3 col-sm-4 col-md-4 col-lg-5" style="padding: 0">
                     <span class="select-box">
@@ -243,6 +248,14 @@
 $(function () {
     function InputSubmit() {
         var company_name=$("input[name='company_name']").val();
+        var address=$("input[name='address']").val();
+        var email=$("input[name='email']").val();
+        var man=$("input[name='man']").val();
+        var tel=$("input[name='tel']").val();
+        var qq=$("input[name='qq']").val();
+        var type=$("select[name='type']").val();
+        var address=$("input[name='address']").val();
+
     }
 })
 </script>
