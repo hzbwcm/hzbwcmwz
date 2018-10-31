@@ -6,19 +6,30 @@ Route::get('/','home/index/index');//首页
 Route::get('home/index/index','home/index/index');//首页
 Route::get('home/index/foot_base','home/index/foot_base');//页脚
 
-Route::get('home/user/sms','home/user/sms');//短信个人测试
-Route::post('home/user/sendsms','home/user/sendsms');//发送短信
-Route::get('home/user/register','home/user/register');//注册1
-Route::any('home/user/gerenzhuce','home/user/gerenzhuce',['method'=>'get|post']);//个人注册
-Route::get('home/user/zhuceshibai','home/user/zhuceshibai');//个人注册失败
-Route::any('home/user/qiyezhuce','home/user/qiyezhuce',['method'=>'get|post']);//企业注册
-Route::any('home/user/login','home/user/login',['method'=>'get|post']);//登录
-Route::any('home/user/loginout','home/user/loginout',['method'=>'get|post']);//退出登录
-Route::get('home/user/accountcenter','home/user/accountcenter');//个人中心
-Route::any('home/user/usercenter','home/user/usercenter',['method'=>'get|post']);//个人信息
-Route::get('home/user/fabuxinxi','home/user/fabuxinxi');//发布信息
-Route::get('home/user/xinxiguanlishouye','home/user/xinxiguanlishouye');//信息管理首页
-Route::get('home/user/xinxiguanli','home/user/xinxiguanli');//信息管理
+
+
+
+    Route::get('home/user/sms','home/user/sms');//短信个人测试
+    Route::post('home/user/sendsms','home/user/sendsms');//发送短信
+    Route::get('home/user/register','home/user/register');//注册1
+
+
+
+    Route::any('home/user/gerenzhuce','home/user/gerenzhuce',['method'=>'get|post']);//个人注册
+    Route::get('home/user/zhuceshibai','home/user/zhuceshibai');//个人注册失败
+    Route::any('home/user/qiyezhuce','home/user/qiyezhuce',['method'=>'get|post']);//企业注册
+    Route::any('home/user/login','home/user/login',['method'=>'get|post']);//登录
+    Route::any('home/user/loginout','home/user/loginout',['method'=>'get|post']);//退出登录
+
+
+
+
+    Route::get('home/user/accountcenter','home/user/accountcenter');//个人中心
+    Route::any('home/user/usercenter','home/user/usercenter',['method'=>'get|post']);//个人信息
+    Route::get('home/user/fabuxinxi','home/user/fabuxinxi');//发布信息
+    Route::get('home/user/xinxiguanlishouye','home/user/xinxiguanlishouye');//信息管理首页
+    Route::get('home/user/xinxiguanli','home/user/xinxiguanli');//信息管理
+
 
 
 //admin分组
@@ -52,17 +63,12 @@ Route::any('admin/type/addition','admin/type/addition',['method'=>'get|post']);/
 Route::get('admin/attribute/index','admin/attribute/index');//商品属性
 Route::any('admin/attribute/addition','admin/attribute/addition',['method'=>'get|post']);//商品属性添加
 Route::get('admin/attribute/getAttributeByType','admin/attribute/getAttributeByType');//商品属性添加
-
 Route::get('admin/user/guanliyuan','admin/user/guanliyuan');//管理员表
 Route::get('admin/role/index','admin/role/index');//角色表
 Route::any('admin/role/gai','admin/role/gai',['method'=>'get|post']);//角色修改
 Route::get('admin/permission/index','admin/permission/index');//权限表
 Route::any('admin/permission/addition','admin/permission/addition',['method'=>'get|post']);//权限添加
-
-Route::get('admin/user/gerenxinxi','admin/user/gerenxinxi');//管理员表
-
-
-
+Route::get('admin/user/gerenxinxi','admin/user/gerenxinxi');//个人信息
 Route::group('admin',function (){
     Route::get('user/logout','admin/user/logout');//admin退出
     Route::get('index/index','admin/index/index');//admin首页
