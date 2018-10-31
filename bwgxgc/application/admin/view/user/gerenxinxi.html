@@ -233,11 +233,9 @@
         UE.getEditor('editor').execCommand('insertHtml', value)
     }
     function getContent() {
-        var arr = [];
-        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
-        arr.push("内容为：");
-        arr.push(UE.getEditor('editor').getContent());
-        alert(arr.join("\n"));
+        var arr = '';
+        arr += UE.getEditor('editor').getContent();
+        return arr;
     }
 
     function setEnabled() {
@@ -245,7 +243,6 @@
     }
 </script>
 <script>
-$(function () {
     function InputSubmit() {
         var company_name=$("input[name='company_name']").val();
         var address=$("input[name='address']").val();
@@ -253,11 +250,24 @@ $(function () {
         var man=$("input[name='man']").val();
         var tel=$("input[name='tel']").val();
         var qq=$("input[name='qq']").val();
+        var size=$("input[name='size']").val();
         var type=$("select[name='type']").val();
-        var address=$("input[name='address']").val();
+        var time=$("input[name='time']").val();
+        var introduce=getContent();
+        // console.log(company_name,address,email,man,tel,qq,size,type,time,introduce)
+        $.ajax({
+            type:"get",
+            url:"",
+            data:{company_name,address,email,man,tel,qq,size,type,time,introduce},
+            dataType:"json",
+            success:function (val) {
+                
+            },
+            error:function () {
 
+            }
+        })
     }
-})
 </script>
 </body>
 </html>
