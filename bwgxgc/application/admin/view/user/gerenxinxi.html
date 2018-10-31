@@ -36,34 +36,36 @@
         class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container" style="padding-bottom: 150px;overflow: hidden">
     <div class="gerenxinxi-title"><h2>工 厂 入 驻 信 息</h2></div>
+
         <div class="gerenxinxi-input-box col-xs-8 col-sm-8 col-md-8 col-lg-8  col-md-offset-2 col-xs-offset-2">
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">公司名称：</label>
-                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="company_name" value="">
+                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="company_name" value="{$info.company_name|default=''}">
+
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">公司地址：</label>
-                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="address" value="">
+                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="address" value="{$info.address|default=''}">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">Email：</label>
-                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="email" value="">
+                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="email" value="{$info.email|default=''}">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">联系人：</label>
-                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="man" value="">
+                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="man" value="{$info.man|default=''}">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">电 话：</label>
-                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="tel" value="">
+                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="tel" value="{$info.tel|default=''}">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">QQ：</label>
-                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="qq" value="">
+                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="qq" value="{$info.qq|default=''}">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">工厂规模：</label>
-                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="size" value="">
+                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="size" value="{$info.size|default=''}">
                 <input type="text" class="col-xs-2 col-sm-1 col-md-1 col-lg-1" value="(亩)" style="font-size: 16px; color: #888888;border: none" readonly="value">
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -71,25 +73,23 @@
                 <div class="col-xs-3 col-sm-4 col-md-4 col-lg-5" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="type">
-                            <option value="卫生巾" selected>卫生巾</option>
-                            <option value="婴儿纸尿裤">婴儿纸尿裤</option>
-                            <option value="成人纸尿裤">成人纸尿裤</option>
-                            <option value="湿纸巾">湿纸巾</option>
-                            <option value="生活用纸">生活用纸</option>
-                            <option value="产妇巾">产妇巾</option>
-                            <option value="经期裤">经期裤</option>
-                            <option value="护理垫">护理垫</option>
-                            <option value="宠物垫">宠物垫</option>
-                            <option value="乳垫">乳垫</option>
+                            {volist name='type' id ='v'}
+                            {eq name='$v' value='$info.type'}
+                            <option value="{$v}" selected>{$v}</option>
+                            {else/}
+                            <option value="{$v}">{$v}</option>
+                            {/eq}
+                            {/volist}
                         </select>
                     </span>
                 </div>
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">公司创立时间：</label>
-                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="time" value="">
+                <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="time" value="{$info.time|default=''}">
             </div>
         </div>
+
         <!--&lt;!&ndash;工厂Logo图片上传预览&ndash;&gt;-->
         <!--<div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1" id="lacalImag1">-->
             <!--<div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2 col-xs-offset-2">工厂Logo：</div>-->
@@ -215,7 +215,7 @@
     });
     //富文本编辑器初始内容
     ue.ready(function() {
-        ue.setContent('');
+        ue.setContent('{$info.introduce}');
     });
 
     function isFocus(e) {
