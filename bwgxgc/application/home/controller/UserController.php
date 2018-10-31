@@ -38,10 +38,8 @@ class UserController extends Controller
 
         //验证用户是否登录
         if(empty($user_id)){
-            $this->error('请先登录');
+            $this->error('请用个人账户登录');
         }
-
-
         //表单数据
         if($request->isPost()){
             //获取用户更新数据
@@ -114,6 +112,7 @@ class UserController extends Controller
                 //持久化用户信息Session
                 Session::set('user_id',$exists->user_id);
                 Session::set('username',$exists->username);
+                Session::set('nickname',$exists->nickname);
                 //登录系统(页面跳转)
                 $this -> redirect('home/index/index');
             }else{
