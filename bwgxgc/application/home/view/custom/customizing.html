@@ -60,11 +60,65 @@
     </style>
 </head>
 <body>
-<header>
-    <div class="header-box">
+<header class="header-box">
+    <div class="header-centre">
+        <ul class="header-left">
+            <li>
+                <a href="">
+                    <div class="h-f-i">
+                        <div class="header-img">
+                            <img data-original="{:config('home_img')}/asjgc.jpg" alt="">
+                        </div>
+                        <div class="h-l-t">手机工厂 |</div>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
+            </a></li>
+            {notempty name='$Request.session.username'}
+            【{$Request.session.username}】
+            <span><a href="{:url('home/user/loginout')}">退出登录</a></span>
+            {else /}
+            <li><a href="{:url('home/user/login')}">
+                <div class="h-l-t">请登陆 |</div>
+            </a></li>
+            <li><a href="{:url('home/user/register')}">
+                <div class="h-l-t">免费注册</div>
+            </a></li>
+            {/notempty}
+        </ul>
+        <ul class="header-right">
+            <li><a href="/">
+                <div class="h-l-t">工厂首页 |</div>
+            </a></li>
+            <li><a href="{:url('home/user/accountcenter')}">
+                <div class="h-l-t">个人中心 |</div>
+            </a></li>
+            <li><a href="{:url('home/index/shoucangjia')}">
+                <div class="h-l-t">收藏夹 |</div>
+            </a>
+            </li>
+            <li><a href="">
+                <div class="h-l-t">实力商家 |</div>
+            </a></li>
+            <li><a href="{:url('admin/user/login')}">
+                <div class="h-l-t">工厂后台 |</div>
+            </a></li>
+            <li><a href="">
+                <div class="h-l-t">客服中心 |</div>
+            </a></li>
+            <li><a href="">
+                <div class="h-l-t">网站导航</div>
+            </a></li>
+        </ul>
+    </div>
+</header>
+<div class="header">
+    <div class="header-box-box">
         <div class="header-logo">
             <a href="{:url('/')}">
-            <img data-original="{:config('home_img')}/a0.png" alt="">
+                <img data-original="{:config('home_img')}/a0.png" alt="">
         </div>
         <div class="header-right-box">
             <a href="" class="header-shoucangjia">
@@ -81,7 +135,7 @@
             </a>
         </div>
     </div>
-</header>
+</div>
 <!--导航-->
 <div class="daohang">
     <div class="daohang">
@@ -148,8 +202,8 @@
                     <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
                 </div>
                 <!-- Add Arrows -->
-                <div class="swiper-button-next swiper-button-white"></div>
-                <div class="swiper-button-prev swiper-button-white"></div>
+                <!--<div class="swiper-button-next swiper-button-white"></div>-->
+                <!--<div class="swiper-button-prev swiper-button-white"></div>-->
             </div>
             <div class="swiper-container gallery-thumbs">
                 <div class="swiper-wrapper">
@@ -311,6 +365,14 @@
             alert('商家联系方式：'+'123456789')
         })
     })
+</script>
+<script>
+    $(function() {
+        $("img").lazyload({
+            threshold : 200,
+            skip_invisible : false
+        });
+    });
 </script>
 </body>
 </html>

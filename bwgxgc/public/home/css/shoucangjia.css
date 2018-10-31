@@ -28,25 +28,105 @@ li {
   list-style-type: none;
 }
 
-/*头部*/
-header {
+/*页眉*/
+.header-box {
   width: 100%;
-  background: #f8f8f8;
+  min-width: 1200px;
+  height: 30px;
+  color: #555555;
+  background: #ffffff;
 }
-header .header-box {
+.header-box .header-centre {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+.header-box .header-left {
+  width: auto;
+  height: 100%;
+  float: left;
+  font-size: 12px;
+  line-height: 30px;
+}
+.header-box .header-left .h-f-i {
+  width: 80px;
+}
+.header-box .header-left li {
+  float: left;
+}
+.header-box .header-left li a {
+  display: block;
+  height: 100%;
+}
+.header-box .header-left li a .h-l-t {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 12px;
+  color: #1b1b1b;
+}
+.header-box .header-left .header-img {
+  float: left;
+}
+.header-box .header-left .h-f-i {
+  float: left;
+}
+.header-box .header-left img {
+  margin-top: 7px;
+  margin-right: 5px;
+}
+.header-box .header-right {
+  width: auto;
+  height: 100%;
+  float: right;
+  font-size: 12px;
+  line-height: 30px;
+}
+.header-box .header-right li {
+  width: auto;
+  float: left;
+}
+.header-box .header-right li a {
+  display: block;
+  height: 100%;
+}
+.header-box .header-right li a .h-l-t {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 12px;
+  color: #1b1b1b;
+}
+.header-box .header-right .h-f-i {
+  float: left;
+}
+.header-box .header-right img {
+  margin-top: 7px;
+  margin-right: 5px;
+}
+
+/*头部*/
+.header {
+  width: 100%;
+}
+.header .header-box-box {
   width: 1200px;
   height: 90px;
   padding-top: 20px;
   margin: 0 auto;
 }
-header .header-box .header-logo {
+.header .header-box-box .header-logo {
   float: left;
 }
-header .header-box .header-right-box {
+.header .header-box-box .header-right-box {
   float: right;
   height: 50px;
 }
-header .header-box .header-right-box .header-shoucangjia {
+.header .header-box-box .header-right-box .header-shoucangjia {
   display: block;
   height: 100%;
   line-height: 50px;
@@ -56,7 +136,7 @@ header .header-box .header-right-box .header-shoucangjia {
   text-decoration: none;
   float: left;
 }
-header .header-box .header-right-box .header-shoucangjia .iconfont {
+.header .header-box-box .header-right-box .header-shoucangjia .iconfont {
   font-size: 16px;
   color: #cbdff9;
   margin-right: 5px;

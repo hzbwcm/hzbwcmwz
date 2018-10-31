@@ -20,7 +20,7 @@
     <![endif]-->
 </head>
 <body>
-<header class="header">
+<header class="header-box">
     <div class="header-centre">
         <ul class="header-left">
             <li>
@@ -36,12 +36,17 @@
             <li><a href="">
                 <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
             </a></li>
+            {notempty name='$Request.session.username'}
+            【{$Request.session.username}】
+            <span><a href="{:url('home/user/loginout')}">退出登录</a></span>
+            {else /}
             <li><a href="{:url('home/user/login')}">
                 <div class="h-l-t">请登陆 |</div>
             </a></li>
             <li><a href="{:url('home/user/register')}">
                 <div class="h-l-t">免费注册</div>
             </a></li>
+            {/notempty}
         </ul>
         <ul class="header-right">
             <li><a href="/">
@@ -68,7 +73,8 @@
             </a></li>
         </ul>
     </div>
-</header><!--搜索-->
+</header>
+<!--搜索-->
 <div class="search-box">
     <div class="search-centre">
         <div class="sear-logo">
