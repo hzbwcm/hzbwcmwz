@@ -44,10 +44,15 @@ class UserController extends Controller
     }
 
       //个人信息
-    public function gerenxinxi()
+    public function gerenxinxi(Request $request)
     {
-        $info = Company_info::select();
-        $this->assign('info', $info);
+        $type = ['纸尿裤','卫生巾','湿纸巾'];
+        $com_id = session('com_id');
+        $info = Company_info::where('com_id', $com_id)->find();
+        $this->assign([
+            'info'  => $info,
+            'type' => $type
+        ]);
         return $this->fetch();
     }
 
