@@ -44,16 +44,63 @@ class UserController extends Controller
     }
 
       //个人信息
-    public function gerenxinxi(Request $request)
+    public function gerenxinxi()
     {
-        $type = ['纸尿裤','卫生巾','湿纸巾'];
+        $type = ['卫生巾','婴儿纸尿裤','成人纸尿裤','湿纸巾','生活用纸','产妇巾','经期裤','护理垫','宠物垫','乳垫'];
+        $zjnum = ['1-5','6-10','11-15','16-20','20以上'];
+        $znum = ['1-50','51-100','101-150','151-200','200以上'];
         $com_id = session('com_id');
         $info = Company_info::where('com_id', $com_id)->find();
         $this->assign([
             'info'  => $info,
-            'type' => $type
+            'type' => $type,
+            'zjnum'=>$zjnum,
+            'znum'=>$znum
         ]);
+
         return $this->fetch();
     }
+    //更改企业信息
+    public function tjgrxx(Request $request)
+    {
+        $type = ['卫生巾','婴儿纸尿裤','成人纸尿裤','湿纸巾','生活用纸','产妇巾','经期裤','护理垫','宠物垫','乳垫'];
+        $zjnum = ['1-5','6-10','11-15','16-20','20以上'];
+        $znum = ['1-50','51-100','101-150','151-200','200以上'];
+        $com_id = session('com_id');
+        $info = Company_info::where('com_id', $com_id)->find();
+        $this->assign([
+            'info'  => $info,
+            'type' => $type,
+            'zjnum'=>$zjnum,
+            'znum'=>$znum
+        ]);
+     $shuju = [];
+     $shuju['company_name'] = $request->param('company_name');
+     $shuju['address'] = $request->param('address');
+     $shuju['email'] = $request->param('email');
+     $shuju['man'] = $request->param('man');
+     $shuju['tel'] = $request->param('tel');
+     $shuju['qq'] = $request->param('qq');
+     $shuju['size'] = $request->param('size');
+     $shuju['type'] = $request->param('type');
+     $shuju['time'] = $request->param('time');
+     $shuju['introduce'] = $request->param('introduce');
+     $shuju['zjnum'] = $request->param('zjnum');
+     $shuju['znum'] = $request->param('znum');
 
+        $com_id = session('com_id');
+        $company_info = new company_info();
+        $res = $company_info->where('com_id', $com_id)->update($shuju);
+
+        //返回结果
+        if ($res) {
+            return 1;
+        }else{
+            return 0;
+        }
+
+
+        return $this->fetch();
+
+    }
 }
