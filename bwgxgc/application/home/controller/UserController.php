@@ -38,7 +38,7 @@ class UserController extends Controller
 
         //验证用户是否登录
         if(empty($user_id)){
-            $this->error('请先登录');
+            $this->error('请用个人账户登陆');
         }
 
 

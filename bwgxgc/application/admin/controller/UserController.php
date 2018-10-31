@@ -43,8 +43,11 @@ class UserController extends Controller
         return $this->fetch();
     }
 
+      //个人信息
     public function gerenxinxi()
     {
+        $info = Company_info::select();
+        $this->assign('info', $info);
         return $this->fetch();
     }
 
