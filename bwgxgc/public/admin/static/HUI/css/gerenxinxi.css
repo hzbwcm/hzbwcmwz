@@ -1,7 +1,3 @@
-form {
-    overflow: hidden;
-}
-
 .gerenxinxi-input-box label {
     height: 30px;
     font-size: 14px;
@@ -67,7 +63,7 @@ input {
 }
 .formButton{
     height: 30px;
-    margin-top: 50px;
+    margin-top: 150px;
 }
 .formButton>input{
     width: 100%;
