@@ -19,7 +19,7 @@ class UserController extends Controller
             $exists = Company_info::where(['username' => $name, 'pwd' => $pwd])->find();
             if ($exists) {
                 Session::set('com_id', $exists->com_id);
-                Session::set('username', $exists->username);
+                //Session::set('username', $exists->username);
                 Session::set('company_name', $exists->company_name);
                 $this->redirect('admin/index/index');
             } else {
