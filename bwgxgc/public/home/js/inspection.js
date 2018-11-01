@@ -93,7 +93,7 @@ $(function () {
     $('.mainLeftSpan').on('click',function () {
         $('.mainLeftSpan').removeClass('mainLeftSpan-active');
         $(this).addClass('mainLeftSpan-active');
-        
+
         // $.ajax({
         //     url:'',
         //     type:post,

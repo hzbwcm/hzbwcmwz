@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>信息管理</title>
     <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
-    <link rel="stylesheet" href="{:config('home_css')}/fabuxinxi.css">
+    <link rel="stylesheet" href="{:config('home_css')}/xinxiguanli.css">
     <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
     <script src="{:config('home_js')}/jquery.js"></script>
     <script src="{:config('home_js')}/jquery.lazyload.js"></script>
@@ -70,30 +70,6 @@
                         <label class="lacalLabel"><input type='file' id='doc5' name='pic5' value="" onclick="inputimg('pic5','lacalImag5','preview5','doc5')"></label>
                         <img data-original="" id="preview5" alt="">
                     </div>
-                    <div id="localImag6" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc6' name='pic6' value="" onclick="inputimg('pic6','lacalImag6','preview6','doc6')"></label>
-                        <img data-original="" id="preview6" alt="">
-                    </div>
-                    <div id="localImag7" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc7' name='pic7' value="" onclick="inputimg('pic7','lacalImag7','preview7','doc7')"></label>
-                        <img data-original="" id="preview7" alt="">
-                    </div>
-                    <div id="localImag8" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc8' name='pic8' value="" onclick="inputimg('pic8','lacalImag8','preview8','doc8')"></label>
-                        <img data-original="" id="preview8" alt="">
-                    </div>
-                    <div id="localImag1" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc1' name='pic1' value="" onclick="inputimg('pic1','lacalImag1','preview1','doc1')"></label>
-                        <img data-original="" id="preview1" alt="">
-                    </div>
                 </div>
             </div>
             <!--上传产品信息-->
@@ -104,101 +80,73 @@
                     </select>
                 </div>
                 <ul class="form-text-ul">
-                    <li class="form-text-li li-you-biankuang">
+                    <li class="form-text-li">
                         <label for="">产品名称</label>
                         <input type="text" value="" placeholder="点击输入">
                     </li>
-                    <li class="form-text-li">
-                        <label for="">建议零售价</label>
+                    <li class="form-text-li-1">
+                        <label for="">产品长度(mm)</label>
                         <input type="text" value="" placeholder="点击输入">
                     </li>
-                    <li class="form-text-li-1 li-you-biankuang">
-                        <label for="">卫生巾长度</label>
+                    <li class="form-text-li">
+                        <label for="">产品宽度(mm)</label>
                         <input type="text" value="" placeholder="点击输入">
                     </li>
                     <li class="form-text-li-1">
-                        <label for="">是否进口</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li li-you-biankuang">
                         <label for="">产地</label>
                         <input type="text" value="" placeholder="点击输入">
                     </li>
                     <li class="form-text-li">
-                        <label for="">是否有护翼</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li-1 li-you-biankuang">
-                        <label for="">材质</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <label for="">芯体</label>
+                        <select name="" id="1">
+                            <option value="-1">- 请选择 -</option>
+                            <option value="吸水纸">吸水纸</option>
+                            <option value="木浆+高分子">木浆+高分子</option>
+                        </select>
                     </li>
                     <li class="form-text-li-1">
-                        <label for="">卫生厚度</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li li-you-biankuang">
-                        <label for="">表面类型</label>
+                        <label for="">供货时间</label>
                         <input type="text" value="" placeholder="点击输入">
                     </li>
                     <li class="form-text-li">
-                        <label for="">是否有香味</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li-1 li-you-biankuang">
-                        <label for="">加工定制</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <label for="">订单量</label>
+                        <input type="text" value="" placeholder="请根据实际情况填写并自带单位">
                     </li>
                     <li class="form-text-li-1">
-                        <label for="">多少件起</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li li-you-biankuang">
-                        <label for="">保质期</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <label for="">设备新旧程度</label>
+                        <select name="">
+                            <option value="-1">- 请选择 -</option>
+                            <option value="9成新">9成新</option>
+                            <option value="8成新">8成新</option>
+                            <option value="7成新">7成新</option>
+                            <option value="6成新">6成新</option>
+                            <option value="5成新">5成新</option>
+                        </select>
                     </li>
                     <li class="form-text-li">
-                        <label for="">单价</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li-1 li-you-biankuang">
-                        <label for="">纸品等级</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li-1">
-                        <label for="">生产数量</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li li-you-biankuang">
-                        <label for="">重量</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li">
-                        <label for="">建议零售价</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li-1 li-you-biankuang">
-                        <label for="">预估生产周期</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <label for="">金属检测</label>
+                        <select name="">
+                            <option value="-1">- 请选择 -</option>
+                            <option value="有">有</option>
+                            <option value="无">无</option>
+                        </select>
                     </li>
                     <li class="form-text-li-1">
-                        <label for="">是否进口</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li li-you-biankuang">
-                        <label for="">产品名称</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <label for="">视觉检测</label>
+                        <select name="">
+                            <option value="-1">- 请选择 -</option>
+                            <option value="有">有</option>
+                            <option value="无">无</option>
+                        </select>
                     </li>
                     <li class="form-text-li">
                         <label for="">包装形式</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li-1 li-you-biankuang">
-                        <label for="">包装规格</label>
-                        <input type="text" value="" placeholder="点击输入">
-                    </li>
-                    <li class="form-text-li-1">
-                        <label for=""></label>
-                        <input type="text" value="" placeholder="">
+                        <select name="">
+                            <option value="-1">- 请选择 -</option>
+                            <option value="全自动包装">全自动包装</option>
+                            <option value="半自动包装">半自动包装</option>
+                            <option value="手工包装">手工包装</option>
+                        </select>
                     </li>
                 </ul>
             </div>
