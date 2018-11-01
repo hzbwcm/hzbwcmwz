@@ -39,7 +39,6 @@ class PermissionController extends Controller
         if($request -> isPost()){
 
             $shuju = $request->post();
-
             $rules = [
                 'ps_name' => 'require',
             ];

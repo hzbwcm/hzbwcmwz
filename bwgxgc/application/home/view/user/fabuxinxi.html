@@ -12,10 +12,12 @@
     <script src="{:config('home_js')}/jquery.js"></script>
     <script src="{:config('home_js')}/jquery.lazyload.js"></script>
     <script src="{:config('home_js')}/bootstrap.js"></script>
+
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
     <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <style type="text/css">
     #divUL div {
@@ -46,15 +48,16 @@
         </div>
     </div>
     <div class="main-form-box">
-        <form action="">
+        <form action="" method="post" enctype="multipart/form-data">
             <!--上传图片-->
             <div class="form-img-big-box">
                 <div class="form-img-box-right">
                     <div id="localImag1" class="localImag">
                         图片(点击上传)
                         <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc1' name='pic1' value=""
-                                                         onclick="inputimg('pic1','lacalImag1','preview1','doc1')"></label>
+                        <label class="lacalLabel">
+                            <input type='file' id='doc1' name='pic1' value="" onclick="inputimg('pic1','lacalImag1','preview1','doc1')" />
+                        </label>
                         <img data-original="" id="preview1" alt="">
                     </div>
                     <div id="localImag2" class="localImag">
@@ -74,8 +77,7 @@
                     <div id="localImag4" class="localImag">
                         图片(点击上传)
                         <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc4' name='pic4' value=""
-                                                         onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
+                        <label class="lacalLabel"><input type='file' id='doc4' name='pic4' onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
                         <img data-original="" id="preview4" alt="">
                     </div>
                 </div>

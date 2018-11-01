@@ -12,9 +12,9 @@ class IndexController extends Controller
     public function index()
     {
         $com_id = session('com_id');
-        $username = session('username');
+//        $username = session('username');
 
-        if($username==='admin'){
+        if($com_id===1){
             $ps_infoA = Permission::where('ps_level','0')->select();
             $ps_infoB = Permission::where('ps_level','1')->select();
         }else{

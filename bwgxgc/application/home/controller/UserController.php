@@ -4,6 +4,7 @@ namespace app\home\controller;
 use app\admin\model\User;
 use app\home\model\Company_info;
 use app\home\model\User_person;
+use app\admin\model\Type;
 use think\Controller;
 use think\Request;
 use think\Session;
@@ -26,34 +27,58 @@ class UserController extends Controller
     {
         return $this->fetch();
     }
+    /*
+     * 接收uploadify上传附件并处理添加到服务器上
+     * 图片最终保存在public/uploads/custom/
+    */
+    public function pic_up(Request $request)
+    {
+        $file = $request->file('');
+        $path = "./uploads/cudtompertmp/";
+        $result = $file->move($path);
+        if($result){
+            $picpathname = $path.$result->getSaveName();
+            $picpathname = str_replace("\\","/",$picpathname);
+            $info = ['status'=>'success','picpathname'=>$picpathname];
+            echo json_encode($info);
+        }else{
+            $info = ['status'=>'failure','errorinfo'=>$result->getError()];
+            echo json_encode($info);
+        }
+        exit;
+    }
     //发布信息
     public function fabuxinxi()
     {
+        $user_id = session('user_id');
+        if(request()->isPost()){
+            $shuju = request()->param();
+            $customgood = new customgood();
+            $result = $customgood->allowField(true)->save($shuju);
+            if($result){
+                return ['status'=>'success'];
+            }else{
+                return ['status'=>'failure','errorinfo'=>'数据写入失败，请联系管理员'];
+            }
+        }
         return $this->fetch();
     }
     //个人信息
     public function usercenter(Request $request)
     {
         $user_id = session('user_id');
-
-        //验证用户是否登录
         if(empty($user_id)){
             $this->error('请用个人账户登录');
         }
-        //表单数据
         if($request->isPost()){
-            //获取用户更新数据
-            $data = $request->post();
 
-            //表单验证规则
+            $data = $request->post();
             $rules = [
                 'nickname'      =>'require|unique:user_person,username|max:25',
                 'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],
                 'user_email'    =>'require|email',
                 'user_qq'       =>'require',
             ];
-
-            //表单验证错误信息
             $msg = [
                 'nickname.require'      => '昵称必填',
                 'nickname.unique'       => '昵称已经被使用',
@@ -64,31 +89,21 @@ class UserController extends Controller
                 'user_email.email'      => '邮箱格式不正确',
                 'user_qq.require'       => 'qq必填',
             ];
-
             $validate = new Validate($rules,$msg);
-
-            //验证表单
             if(!$validate->batch()->check($data)){
                 $errorinfo=$validate->getError();
                 $this -> assign('errorinfo',$errorinfo);
                 return $this -> fetch();
             }
-
-            //更新数据
             $user_person = new user_person();
             $res = $user_person->where('user_id', $user_id)->update($data);
-
-            //返回结果
             if ($res) {
                 $this->success('信息更新成功!');  //TODO 更新成功页面跳转
             }else{
                 $this->error('信息更新失败!');
             }
         }else{
-            //获取用户个人信息
             $user_data = User_person::where('user_id', $user_id)->find();
-
-            //数据渲染
             $this->assign('user_data', $user_data);
             return $this->fetch();
         }

@@ -18,7 +18,8 @@ Route::group('home',function (){
     Route::any('user/loginout','home/user/loginout',['method'=>'get|post']);//退出登录
     Route::get('user/accountcenter','home/user/accountcenter');//个人中心
     Route::any('user/usercenter','home/user/usercenter',['method'=>'get|post']);//个人信息
-    Route::get('user/fabuxinxi','home/user/fabuxinxi');//发布信息
+    Route::any('user/fabuxinxi','home/user/fabuxinxi',['method'=>'get|post']);//发布信息
+    Route::any('user/pic_up','home/user/pic_up',['method'=>'get|post']);//图片上传
     Route::get('user/xinxiguanlishouye','home/user/xinxiguanlishouye');//信息管理首页
     Route::get('user/xinxiguanli','home/user/xinxiguanli');//信息管理
     Route::get('index/shoucangjia','home/index/shoucangjia');//收藏夹
