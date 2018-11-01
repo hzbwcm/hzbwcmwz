@@ -206,9 +206,9 @@
         <div class="main-left">
             <div class="main-left-title">卫生用品系列工厂</div>
             <div class="main-left-content">
-                <div class="main-content" style="width:100%"><span>全部</span></div><br>
+                <div class="main-content" style="width:100%"><span class="mainLeftSpan mainLeftSpan-active">全部</span></div><br>
                 {volist name='type' id='v1'}
-                <div class="main-content"><span>{$v1.type_name}</span></div>
+                <div class="main-content"><span class="mainLeftSpan">{$v1.type_name}</span></div>
                 {/volist}
             </div>
         </div>
@@ -230,20 +230,19 @@
         <div class="main-right-bottom">
 
             <div class="main-right-b-c">
-                {volist name = "com" id = 'v' }
                 <div class="main-right-li">
                     <div class="main-li-img">
                         <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
-                            <a href="{:url('home/shangpu/index',['id'=>$v.com_id])}">{$v.company_name}</a>
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
                         </div>
                         <div class="main-li-r-b">
-                            <div class="main-li-gsclsj">公司成立时间：<span>{$v.time}</span></div>
-                            <div class="main-li-gsclsj">公司规模：<span>{$v.size}亩</span></div>
-                            <div class="main-li-sclb">生产类别：<span>{$v.type}</span></div>
-                            <div class="main-li-sclb">公司地址：<span>{$v.address}</span></div>
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
                         </div>
                         <div class="main-button">
                             <a href="{:url('home/shangpu/index')}">进入工厂</a>
@@ -251,7 +250,186 @@
                         </div>
                     </div>
                 </div>
-                {/volist}
+                <div class="main-right-li">
+                    <div class="main-li-img">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
+                    </div>
+                    <div class="main-li-content">
+                        <div class="main-li-title">
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
+                        </div>
+                        <div class="main-li-r-b">
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
+                        </div>
+                        <div class="main-button">
+                            <a href="inspectiondetails">进入工厂</a>
+                            <a href="">点击关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-right-li">
+                    <div class="main-li-img">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
+                    </div>
+                    <div class="main-li-content">
+                        <div class="main-li-title">
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
+                        </div>
+                        <div class="main-li-r-b">
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
+                        </div>
+                        <div class="main-button">
+                            <a href="inspectiondetails">进入工厂</a>
+                            <a href="">点击关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-right-li">
+                    <div class="main-li-img">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
+                    </div>
+                    <div class="main-li-content">
+                        <div class="main-li-title">
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
+                        </div>
+                        <div class="main-li-r-b">
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
+                        </div>
+                        <div class="main-button">
+                            <a href="inspectiondetails">进入工厂</a>
+                            <a href="">点击关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-right-li">
+                    <div class="main-li-img">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
+                    </div>
+                    <div class="main-li-content">
+                        <div class="main-li-title">
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
+                        </div>
+                        <div class="main-li-r-b">
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
+                        </div>
+                        <div class="main-button">
+                            <a href="inspectiondetails">进入工厂</a>
+                            <a href="">点击关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-right-li">
+                    <div class="main-li-img">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
+                    </div>
+                    <div class="main-li-content">
+                        <div class="main-li-title">
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
+                        </div>
+                        <div class="main-li-r-b">
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
+                        </div>
+                        <div class="main-button">
+                            <a href="inspectiondetails">进入工厂</a>
+                            <a href="">点击关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-right-li">
+                    <div class="main-li-img">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
+                    </div>
+                    <div class="main-li-content">
+                        <div class="main-li-title">
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
+                        </div>
+                        <div class="main-li-r-b">
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
+                        </div>
+                        <div class="main-button">
+                            <a href="inspectiondetails">进入工厂</a>
+                            <a href="">点击关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-right-li">
+                    <div class="main-li-img">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
+                    </div>
+                    <div class="main-li-content">
+                        <div class="main-li-title">
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
+                        </div>
+                        <div class="main-li-r-b">
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
+                        </div>
+                        <div class="main-button">
+                            <a href="inspectiondetails">进入工厂</a>
+                            <a href="">点击关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-right-li">
+                    <div class="main-li-img">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
+                    </div>
+                    <div class="main-li-content">
+                        <div class="main-li-title">
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
+                        </div>
+                        <div class="main-li-r-b">
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
+                        </div>
+                        <div class="main-button">
+                            <a href="inspectiondetails">进入工厂</a>
+                            <a href="">点击关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-right-li">
+                    <div class="main-li-img">
+                        <img data-original="{:config('home_img')}/inspection/ct1.png" alt="">
+                    </div>
+                    <div class="main-li-content">
+                        <div class="main-li-title">
+                            <a href="{:url('home/shangpu/index')}" >某某某卫生用品有限公司</a>
+                        </div>
+                        <div class="main-li-r-b">
+                            <div class="main-li-gsclsj">公司成立时间：<span>2010年12月30日</span></div>
+                            <div class="main-li-gsclsj">公司规模：<span>2000m<sup>2</sup></span></div>
+                            <div class="main-li-sclb">生产类别：<span>某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,某某某,</span></div>
+                            <div class="main-li-sclb">公司地址：<span>浙江省杭州市某某区某某路201号</span></div>
+                        </div>
+                        <div class="main-button">
+                            <a href="inspectiondetails">进入工厂</a>
+                            <a href="">点击关注</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!--分页-->
             <div class="main-fenye-box">
