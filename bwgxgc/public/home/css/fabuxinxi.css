@@ -80,21 +80,23 @@ main {
       width: 1200px;
       margin-bottom: 242px; }
       main .main-form-box form .form-img-big-box {
-        width: 100%;
+        width: 90%;
+        overflow: hidden;
+        margin: 0 auto;
         margin-bottom: 60px; }
         main .main-form-box form .form-img-big-box .form-img-box-left {
-          width: 457px;
+          width: 300px;
           height: 100%;
-          padding-left: 70px;
+          padding-left: 60px;
           float: left; }
           main .main-form-box form .form-img-big-box .form-img-box-left #localImag {
-            width: 280px;
-            height: 280px;
+            width: 200px;
+            height: 200px;
             background: #fff;
             color: #e6e6e6;
             font-size: 20px;
             position: relative;
-            line-height: 280px;
+            line-height: 200px;
             text-align: center;
             border: 1px solid #bfbfbf; }
             main .main-form-box form .form-img-big-box .form-img-box-left #localImag img {
@@ -126,11 +128,11 @@ main {
                 bottom: 0; }
         main .main-form-box form .form-img-big-box .form-img-box-right {
           width: 680px;
-          margin: 0 auto;
-          overflow: hidden; }
+          height: 100%;
+          float: left; }
           main .main-form-box form .form-img-big-box .form-img-box-right .localImag {
             width: 150px;
-            height: 150px;
+            height: 140px;
             margin-left: 20px;
             margin-bottom: 10px;
             background: #fff;
@@ -169,8 +171,9 @@ main {
                 top: 0;
                 bottom: 0; }
       main .main-form-box form .form-text-big-box {
-        width: 100%;
+        width: 90%;
         border: 2px solid #dcdcdc;
+        margin: 0 auto;
         margin-bottom: 60px;
         background: #fff; }
         main .main-form-box form .form-text-big-box .select-div {
@@ -192,52 +195,72 @@ main {
           overflow: hidden; }
           main .main-form-box form .form-text-big-box .form-text-ul .form-text-li {
             float: left;
-            width: 50%;
+            width: 100%;
             height: 44px;
             background: #eeeeee; }
             main .main-form-box form .form-text-big-box .form-text-ul .form-text-li label {
               float: left;
-              width: 197px;
+              width: 20%;
               height: 100%;
               border-right: 2px solid #fff;
               margin: 0;
               font-size: 14px;
               color: #555555;
               line-height: 44px;
-              padding-left: 40px; }
+              text-align: center; }
             main .main-form-box form .form-text-big-box .form-text-ul .form-text-li input {
-              width: 393px;
+              width: 50%;
               height: 100%;
               border: none;
               background: none;
               float: left;
               font-size: 12px;
-              color: #999999;
+              color: #555555;
+              outline: none;
+              padding-left: 42px; }
+            main .main-form-box form .form-text-big-box .form-text-ul .form-text-li select {
+              width: 20%;
+              height: 100%;
+              border: none;
+              background: none;
+              float: left;
+              font-size: 12px;
+              color: #555555;
               outline: none;
               padding-left: 42px; }
           main .main-form-box form .form-text-big-box .form-text-ul .form-text-li-1 {
             float: left;
-            width: 50%;
+            width: 100%;
             height: 44px;
             background: #ffffff; }
             main .main-form-box form .form-text-big-box .form-text-ul .form-text-li-1 label {
               float: left;
-              width: 197px;
+              width: 20%;
               height: 100%;
               border-right: 2px solid #eeeeee;
               margin: 0;
               font-size: 14px;
               color: #555555;
               line-height: 44px;
-              padding-left: 40px; }
+              text-align: center; }
             main .main-form-box form .form-text-big-box .form-text-ul .form-text-li-1 input {
-              width: 393px;
+              width: 50%;
               height: 100%;
               border: none;
               background: none;
               float: left;
               font-size: 12px;
-              color: #999999;
+              color: #555555;
+              outline: none;
+              padding-left: 42px; }
+            main .main-form-box form .form-text-big-box .form-text-ul .form-text-li-1 select {
+              width: 20%;
+              height: 100%;
+              border: none;
+              background: none;
+              float: left;
+              font-size: 12px;
+              color: #555555;
               outline: none;
               padding-left: 42px; }
           main .main-form-box form .form-text-big-box .form-text-ul .li-you-biankuang {

@@ -87,6 +87,26 @@ $(function () {
         //
         // })
     })
+
+
+//产品类别选择
+    $('.mainLeftSpan').on('click',function () {
+        $('.mainLeftSpan').removeClass('mainLeftSpan-active');
+        $(this).addClass('mainLeftSpan-active');
+
+        // $.ajax({
+        //     url:'',
+        //     type:post,
+        //     data:{},
+        //     dataType:JSON,
+        //     success:function (str) {
+        //
+        //     }
+        //
+        // })
+    })
+
+
 //点击首页
     $('.main-sy').on('click',function () {
         // $.ajax({
