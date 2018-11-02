@@ -67,8 +67,7 @@ Route::group('admin',function (){
     Route::get('user/logout','admin/user/logout');//admin退出
     Route::get('index/index','admin/index/index');//admin首页
     Route::get('index/welcome','admin/index/welcome');//admin首页welcome
-
-    //Route::post('user/login','admin/user/login');//admin登陆
+    Route::post('user/tjgrxx','admin/user/tjgrxx');
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
 
 

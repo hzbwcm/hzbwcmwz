@@ -85,6 +85,40 @@
                 </div>
             </div>
             <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">质检人数：</label>
+                <div class="col-xs-3 col-sm-4 col-md-4 col-lg-5" style="padding: 0">
+                    <span class="select-box">
+                        <select class="select" size="1" name="zjnum">
+                            {volist name='zjnum' id ='v'}
+                            {eq name='$v' value='$info.zjnum'}
+                            <option value="{$v}" selected>{$v}</option>
+                            {else/}
+                            <option value="{$v}">{$v}</option>
+                            {/eq}
+                            {/volist}
+                        </select>
+                    </span>
+                </div>
+                <input type="text" class="col-xs-2 col-sm-1 col-md-1 col-lg-1" value="(人)" style="font-size: 16px; color: #888888;border: none" readonly="value">
+            </div>
+            <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">工厂总人数：</label>
+                <div class="col-xs-3 col-sm-4 col-md-4 col-lg-5" style="padding: 0">
+                    <span class="select-box">
+                        <select class="select" size="1" name="znum">
+                            {volist name='znum' id ='v'}
+                            {eq name='$v' value='$info.znum'}
+                            <option value="{$v}" selected>{$v}</option>
+                            {else/}
+                            <option value="{$v}">{$v}</option>
+                            {/eq}
+                            {/volist}
+                        </select>
+                    </span>
+                </div>
+                <input type="text" class="col-xs-2 col-sm-1 col-md-1 col-lg-1" value="(人)" style="font-size: 16px; color: #888888;border: none" readonly="value">
+            </div>
+            <div class="grxx-title-input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">公司创立时间：</label>
                 <input type="text" class="col-xs-3 col-sm-4 col-md-4 col-lg-5" name="time" value="{$info.time|default=''}">
             </div>
@@ -253,15 +287,21 @@
         var size=$("input[name='size']").val();
         var type=$("select[name='type']").val();
         var time=$("input[name='time']").val();
+        var zjnum=$("select[name='zjnum']").val();
+        var znum=$("select[name='znum']").val();
         var introduce=getContent();
         // console.log(company_name,address,email,man,tel,qq,size,type,time,introduce)
         $.ajax({
-            type:"get",
-            url:"",
-            data:{company_name,address,email,man,tel,qq,size,type,time,introduce},
+            type:"post",
+            url:"{:url('admin/user/tjgrxx')}",
+            data:{company_name,address,email,man,tel,qq,size,type,time,introduce,zjnum,znum},
             dataType:"json",
             success:function (val) {
-                
+                    if (val){
+                        alert('修改成功')
+                    }else{
+                        alert('修改失败')
+                    }
             },
             error:function () {
 

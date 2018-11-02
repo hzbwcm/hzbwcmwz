@@ -10,4 +10,5 @@ class Type extends Model
     {
         $id = request()->param('type_id');
         return self::get($id);
+    }
 }

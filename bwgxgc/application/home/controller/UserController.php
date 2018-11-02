@@ -4,6 +4,7 @@ namespace app\home\controller;
 use app\admin\model\User;
 use app\home\model\Company_info;
 use app\home\model\User_person;
+use app\home\model\Customgood;
 use app\admin\model\Type;
 use think\Controller;
 use think\Request;
@@ -48,15 +49,38 @@ class UserController extends Controller
         exit;
     }
     //发布信息
-    public function fabuxinxi()
+    public function fabuxinxi(Request $request)
     {
         $user_id = session('user_id');
         if(request()->isPost()){
-            $shuju = request()->param();
+            $shuju = Request::instance()->post();
+            $rules = [
+                'cus_proname'          =>'require',
+                'cus_length'           =>'require',
+                'cus_width'            =>'require',
+                'cus_place'            =>'require',
+                'cus_supply'           =>'require',
+                'cus_orders'           =>'require',
+            ];
+            $msg = [
+                'cus_proname.require'      => '必填',
+                'cus_length.require'       => '必填',
+                'cus_width.require'        => '必填',
+                'cus_place.require'        => '必填',
+                'cus_supply.require'       => '必填',
+                'cus_orders.require'       => '必填',
+
+            ];
+            $validate = new Validate($rules,$msg);
+            if(!$validate->batch()->check($shuju)){
+                $errorinfo=$validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                return $this -> fetch();
+            }
             $customgood = new customgood();
             $result = $customgood->allowField(true)->save($shuju);
             if($result){
-                return ['status'=>'success'];
+                return $this->success('发布成功','user/fabuxinxi');
             }else{
                 return ['status'=>'failure','errorinfo'=>'数据写入失败，请联系管理员'];
             }
