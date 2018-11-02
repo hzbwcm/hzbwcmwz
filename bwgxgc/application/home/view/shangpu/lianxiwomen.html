@@ -46,7 +46,7 @@
     </div>
     <nav>
         <ul class="daohang-ul">
-            <li class="daohang-li"><a href="{:url('home/shangpu/index')}">首页</a></li>
+            <li class="daohang-li"><a href="{:url('home/shangpu/index',['id'=>$c_id])}">首页</a></li>
             <li class="daohang-li"><a href="{:url('home/shangpu/gongsijianjie')}">公司简介</a></li>
             <li class="daohang-li"><a href="{:url('home/shangpu/qiyetiepai')}">贴牌专区</a></li>
             <li class="daohang-li"><a href="{:url('home/shangpu/shipinzhanshi')}">视频展示</a></li>
@@ -78,31 +78,31 @@
                     <i class="iconfont icon-lianxirenguanli"></i>
                     <span class="lxwm-lianxiren">联系人</span>
                     <span class="lxwm-maohao">：</span>
-                    <span></span>
+                    <span>{$info.man}</span>
                 </li>
                 <li class="lxwm-content-li">
                     <i class="iconfont icon-dianhua"></i>
                     <span class="lxwm-lianxiren">电话</span>
                     <span class="lxwm-maohao">：</span>
-                    <span>123456789</span>
+                    <span>{$info.tel}</span>
                 </li>
                 <li class="lxwm-content-li">
                     <i class="iconfont icon-dianziyoujian"></i>
                     <span class="lxwm-lianxiren">电子邮箱</span>
                     <span class="lxwm-maohao">：</span>
-                    <span>123123132@123.com</span>
+                    <span>{$info.tel}</span>
                 </li>
                 <li class="lxwm-content-li">
                     <i class="iconfont icon-chuanzhen"></i>
-                    <span class="lxwm-lianxiren">传真</span>
+                    <span class="lxwm-lianxiren">QQ</span>
                     <span class="lxwm-maohao">：</span>
-                    <span>861231223</span>
+                    <span>{$info.qq}</span>
                 </li>
                 <li class="lxwm-content-li">
                     <i class="iconfont icon-iconfontdizhi"></i>
                     <span class="lxwm-lianxiren">地址</span>
                     <span class="lxwm-maohao">：</span>
-                    <span>中国福建泉州市洛江区前阳片区</span>
+                    <span>{$info.address}</span>
                 </li>
             </ul>
             <div class="lxwm-ditu--box">
@@ -177,7 +177,7 @@
     // 创建地址解析器实例
     var myGeo = new BMap.Geocoder();
     // 将地址解析结果显示在地图上,并调整地图视野
-    myGeo.getPoint("iot未来城", function(point){
+    myGeo.getPoint('{$info.address}', function(point){
         if (point) {
             map.centerAndZoom(point, 16);
             map.addOverlay(new BMap.Marker(point));
@@ -187,11 +187,11 @@
         var opts = {
             width : 250,     // 信息窗口宽度
             height: 100,     // 信息窗口高度
-            title : "iot未来城"  // 信息窗口标题
+            title : "{$info.address}"  // 信息窗口标题
         }
-        var infoWindow = new BMap.InfoWindow("地址："+"中国福建泉州市洛江区前阳片区", opts);  // 创建信息窗口对象
+        var infoWindow = new BMap.InfoWindow("地址："+"{$info.address}", opts);  // 创建信息窗口对象
         map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
-    }, "杭州");
+    }, "");
 
 </script>
 
