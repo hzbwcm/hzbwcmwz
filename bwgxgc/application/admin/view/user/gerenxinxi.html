@@ -124,16 +124,16 @@
             </div>
         </div>
 
-        <!--&lt;!&ndash;工厂Logo图片上传预览&ndash;&gt;-->
-        <!--<div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1" id="lacalImag1">-->
-            <!--<div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2 col-xs-offset-2">工厂Logo：</div>-->
-            <!--<span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1 col-xs-offset-1">-->
-                <!--<img data-original="" alt="" class="img-responsive" id="preview1">-->
-            <!--</span>-->
-            <!--<label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 col-xs-offset-1 geren-logo-image-input">上传Logo<input-->
-                    <!--type="file" value="" id="doc1" name="pic1"-->
-                    <!--onclick="inputimg('pic1','lacalImag1','preview1','doc1')"></label>-->
-        <!--</div>-->
+        <!--工厂Logo图片上传预览-->
+        <div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1" id="lacalImag1">
+            <div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2 col-xs-offset-2">工厂Logo：</div>
+            <span class="geren-logo-image col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1 col-xs-offset-1">
+                <img data-original="" alt="" class="img-responsive" id="preview1">
+            </span>
+            <label class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-md-offset-1 col-xs-offset-1 geren-logo-image-input">上传Logo<input
+                    type="file" value="" id="doc1" name="pic1"
+                    onclick="inputimg('pic1','lacalImag1','preview1','doc1')"></label>
+        </div>
         <!--&lt;!&ndash;工厂生产环境图片上传预览&ndash;&gt;-->
         <!--<div class="gerenxinxi-image-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1" id="lacalImag2">-->
             <!--<div class="geren-logo-image-box col-xs-4 col-sm-3 col-md-2 col-lg-2 col-md-offset-2 col-xs-offset-2">工厂生产环境：</div>-->
@@ -231,7 +231,6 @@
 
         //绑定更换头像实现预览的效果
         inputimg = function (pic1, localimag, preview, doc) {
-            console.log(pic1);
             $("input[name='" + pic1 + "']").on('change', function () {
                 var file = $(this).val();
                 setImagePreview(file, localimag, preview, doc);

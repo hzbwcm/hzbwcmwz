@@ -9,7 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <link rel="Bookmark" href="/favicon.ico">
     <link rel="Shortcut Icon" href="/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="{:config('admin_static')}/HUI/css/gerenxinxi.css">
+    <link rel="stylesheet" type="text/css" href="{:config('admin_static')}/HUI/css/gerentupian.css">
     <script type="text/javascript" charset="utf-8" src="{:config('plugin')}ueditor/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="{:config('plugin')}ueditor/ueditor.all.min.js"></script>
     <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
@@ -30,13 +30,6 @@
     <![endif]-->
     <title>工厂图片管理</title>
 </head>
-<style>
-    .formTitle{
-        color: #555555;
-        font-size: 14px;
-        
-    }
-</style>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 工厂图片管理 <a
         class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
@@ -46,8 +39,135 @@
     <div class="gerenxinxi-title"><h2>工 厂 图 片 管 理</h2></div>
     <form action="">
         <div class="gerenxinxi-input-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1">
-            <div class="formImgBox col-xs-10 col-sm-4 col-md-4 col-lg-2 col-xs-offset-1">
+            <div class="formImgBox col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1"  id="lacalImag1">
                 <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">企业名称背景图片：</div>
+                <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview1">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc1" name="pic1" onclick="inputimg('pic1','lacalImag1','preview1','doc1')"></label>
+                    </label>
+                </div>
+            </div>
+            <div class="formImgBox col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1"  id="lacalImag2">
+                <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">LOGO+公司名称图：</div>
+                <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview2">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc2" name="pic2" onclick="inputimg('pic2','lacalImag2','preview2','doc2')"></label>
+                    </label>
+                </div>
+            </div>
+            <div class="formImgBox col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1"  id="lacalImag3">
+                <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">店铺轮播背景图<br>(PNG格式)：</div>
+                <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview3">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc3" name="pic3" onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
+                    </label>
+                </div>
+            </div>
+            <div class="formImgBox col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1"  id="lacalImag4">
+                <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">店铺轮播内容图<br>(PNG格式1200px)：</div>
+                <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview4">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc4" name="pic4" onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
+                    </label>
+                </div>
+            </div>
+            <div class="formImgBox col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1"  id="lacalImag5">
+                <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">企业简介背景图：</div>
+                <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview5">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc5" name="pic5" onclick="inputimg('pic5','lacalImag5','preview5','doc5')"></label>
+                    </label>
+                </div>
+            </div>
+            <div class="formImgBox col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1"  id="lacalImag6">
+                <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">公司大门图：</div>
+                <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview6">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc6" name="pic6" onclick="inputimg('pic6','lacalImag6','preview6','doc6')"></label>
+                    </label>
+                </div>
+            </div>
+            <div class="formImgBox col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1"  id="lacalImag7">
+                <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">企业二维码图(PNG格式)：</div>
+                <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview7">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc7" name="pic7" onclick="inputimg('pic7','lacalImag7','preview7','doc7')"></label>
+                    </label>
+                </div>
+            </div>
+            <div class="formImgBox col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1"  id="lacalImag8">
+                <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">LOGO图片：</div>
+                <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview8">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc8" name="pic8" onclick="inputimg('pic8','lacalImag8','preview8','doc8')"></label>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="gerenxinxi-input-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1">
+            <div class="formImgBox col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1"  id="lacalImag19">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="formTitle col-xs-10 col-sm-5 col-md-5 col-lg-2">生产环境图片：</div>
+                </div>
+                <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview9">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc9" name="pic9" onclick="inputimg('pic9','lacalImag9','preview9','doc9')"></label>
+                    </label>
+                </div>
+                <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview10">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc10" name="pic10" onclick="inputimg('pic10','lacalImag9','preview10','doc10')"></label>
+                    </label>
+                </div>
+                <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1">
+                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="" alt="" id="preview11">
+                    </div>
+                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
+                        选择图片
+                        <input type="file" value="" id="doc11" name="pic11" onclick="inputimg('pic11','lacalImag9','preview11','doc11')"></label>
+                    </label>
+                </div>
             </div>
         </div>
         <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5 col-xs-offset-5">
@@ -65,6 +185,57 @@
 <!--/_footer 作为公共模版分离出去-->
 <script src="{:config('home_js')}/jquery.lazyload.js"></script>
 <!--请在下方写此页面业务相关的脚本-->
+<script>
+    $(function () {
+        $(function () {
+            //实现实时预览的函数
+            function setImagePreview(avalue, localimag, preview, doc) {
+                var docObj = document.getElementById(doc);
+                //img
+                var imgObjPreview = document.getElementById(preview);
+                //div
+                var divs = document.getElementById(localimag);
+                if (docObj.files && docObj.files[0]) {
+                    //火狐下，直接设img属性
+                    imgObjPreview.style.display = 'block';
+                    imgObjPreview.style.maxWidth = "100%";
+                    imgObjPreview.style.maxHeight = "100%";
+                    //imgObjPreview.src = docObj.files[0].getAsDataURL();
+                    //火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
+                    imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+                } else {
+                    //IE下，使用滤镜
+                    docObj.select();
+                    var imgSrc = document.selection.createRange().text;
+                    var localImagId = document.getElementById(localimag);
+                    //必须设置初始大小
+                    localImagId.style.maxWidth = "100%";
+                    localImagId.style.maxHeight = "100%";
+                    //图片异常的捕捉，防止用户修改后缀来伪造图片
+                    try {
+                        localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)"
+                        localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+                    } catch (e) {
+                        alert("您上传的图片格式不正确，请重新选择!");
+                        return false;
+                    }
+                    imgObjPreview.style.display = 'none';
+                    document.selection.empty();
+                }
+                return true;
+            }
 
+            //绑定更换头像实现预览的效果
+            inputimg = function (pic1, localimag, preview, doc) {
+                console.log(pic1);
+                $("input[name='" + pic1 + "']").on('change', function () {
+                    var file = $(this).val();
+                    setImagePreview(file, localimag, preview, doc);
+                });
+            }
+        })
+    })
+
+</script>
 </body>
 </html>
