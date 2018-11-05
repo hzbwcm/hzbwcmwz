@@ -30,8 +30,13 @@ class GoodsController extends Controller
         if (request()->isPost()){
 
             $shuju = request()->param();
-            dump($shuju);
-            die;
+            $file = request()->file('image1');
+
+            $info = $file->rule('uniqid')->move( ROOT_PATH . 'public' . DS . 'uploads'. DS .'card');
+            echo $info->getSaveName();
+            die();
+            dump($info);
+            die();
         }
         return $this->fetch();
     }

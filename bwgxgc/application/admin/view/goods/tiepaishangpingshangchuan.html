@@ -86,7 +86,7 @@
                                                 href="javascript:location.replace(location.href);" title="刷新"><i
         class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="tiepaiTitle">贴牌专区商品上传</div>
-<form style="padding-bottom: 150px;" method="post" action="{$Request.url}">
+<form style="padding-bottom: 150px;" method="post" action="{$Request.url}" enctype="multipart/form-data">
     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-xs-offset-2">
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品类型 ：</label>
@@ -249,7 +249,7 @@
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelTwo col-xs-10 col-sm-10 col-md-10 col-lg-10">贴牌产品图片 ：</label>
             <div class="InputDiv col-xs-5 col-sm-5 col-md-5 col-lg-5 col-md-offset-1">
-                <input type="file" value="选择图片">
+                <input type="file" value="选择图片" name="image1">
             </div>
             <div class="InputDiv col-xs-5 col-sm-5 col-md-5 col-lg-5 col-md-offset-1">
                 <input type="file" value="选择图片">
