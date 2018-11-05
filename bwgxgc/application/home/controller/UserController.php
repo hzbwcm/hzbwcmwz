@@ -34,8 +34,8 @@ class UserController extends Controller
     */
     public function pic_up(Request $request)
     {
-        $file = $request->file('');
-        $path = "./uploads/cudtompertmp/";
+        $file = $request->file('Filedata');
+        $path = "./uploads/custompertmp/";
         $result = $file->move($path);
         if($result){
             $picpathname = $path.$result->getSaveName();
@@ -52,34 +52,57 @@ class UserController extends Controller
     public function fabuxinxi(Request $request)
     {
         $user_id = session('user_id');
+        $type = Type::where('type_id','<',11)->select();
+        $this -> assign('type',$type);
+        $typeer = type::where('type_id','>',10)->select();
+        $this -> assign('typeer',$typeer);
         if(request()->isPost()){
             $shuju = Request::instance()->post();
-            $rules = [
-                'cus_proname'          =>'require',
-                'cus_length'           =>'require',
-                'cus_width'            =>'require',
-                'cus_place'            =>'require',
-                'cus_supply'           =>'require',
-                'cus_orders'           =>'require',
-            ];
-            $msg = [
-                'cus_proname.require'      => '必填',
-                'cus_length.require'       => '必填',
-                'cus_width.require'        => '必填',
-                'cus_place.require'        => '必填',
-                'cus_supply.require'       => '必填',
-                'cus_orders.require'       => '必填',
+            dump($shuju);
+            die();
+//            $rules = [
+//                'cus_proname'          =>'require',
+//                'cus_length'           =>'require',
+//                'cus_width'            =>'require',
+//                'cus_place'            =>'require',
+//                'cus_supply'           =>'require',
+//                'cus_orders'           =>'require',
+//            ];
+//            $msg = [
+//                'cus_proname.require'      => '必填',
+//                'cus_length.require'       => '必填',
+//                'cus_width.require'        => '必填',
+//                'cus_place.require'        => '必填',
+//                'cus_supply.require'       => '必填',
+//                'cus_orders.require'       => '必填',
+//
+//            ];
+//            $validate = new Validate($rules,$msg);
+//            if(!$validate->batch()->check($shuju)){
+//                $errorinfo=$validate->getError();
+//                $this -> assign('errorinfo',$errorinfo);
+//                return $this -> fetch();
+//            }
 
-            ];
-            $validate = new Validate($rules,$msg);
-            if(!$validate->batch()->check($shuju)){
-                $errorinfo=$validate->getError();
-                $this -> assign('errorinfo',$errorinfo);
-                return $this -> fetch();
+            if(!empty($shuju['cus_pic'])){
+
+                //判断"年月日"目录没有就创建
+                $dir = "./uploads/customper/".date('Ymd');
+                if (!file_exists($dir)){
+                    mkdir ($dir,0777,true);
+                }
+
+                $truepath = str_replace('custompertmp','customper',$shuju['cus_pic']);
+                rename($shuju['cus_pic'],$truepath);
+
+                $shuju['cus_pic'] = $truepath; //修改为真实的图片路径名
             }
+
             $customgood = new customgood();
+            $shuju['user_id'] = $user_id;
             $result = $customgood->allowField(true)->save($shuju);
             if($result){
+//                return ['status'=>'success'];
                 return $this->success('发布成功','user/fabuxinxi');
             }else{
                 return ['status'=>'failure','errorinfo'=>'数据写入失败，请联系管理员'];

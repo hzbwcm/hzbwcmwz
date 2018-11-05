@@ -3,6 +3,7 @@ $(function () {
     $('.cedaohang-li').on('click', function (e) {
         $('.cedaohang-li').removeClass('cedaohang-active');
         $(e.target).addClass('cedaohang-active');
+        var type_name=$(e.target).attr('type_name');
     });
     //实现实时预览的函数
     function setImagePreview(avalue,localimag,preview,doc) {
