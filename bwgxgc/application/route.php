@@ -69,6 +69,7 @@ Route::group('admin',function (){
     Route::get('index/index','admin/index/index');//admin首页
     Route::get('index/welcome','admin/index/welcome');//admin首页welcome
     Route::post('user/tjgrxx','admin/user/tjgrxx');
+    Route::post('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan');
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
 
 
