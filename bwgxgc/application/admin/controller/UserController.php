@@ -60,8 +60,14 @@ class UserController extends Controller
         return $this->fetch();
     }
 
-    //个人信息
+    //个人图片上传
     public function gerentupian()
+    {
+        return $this->fetch();
+    }
+
+    //企业资质
+    public function qiyezizhi()
     {
         return $this->fetch();
     }
