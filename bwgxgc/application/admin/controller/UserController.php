@@ -59,6 +59,13 @@ class UserController extends Controller
 
         return $this->fetch();
     }
+
+    //个人信息
+    public function gerentupian()
+    {
+        return $this->fetch();
+    }
+
     //更改企业信息
     public function tjgrxx(Request $request)
     {
