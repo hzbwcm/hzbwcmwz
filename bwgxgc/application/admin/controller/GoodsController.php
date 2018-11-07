@@ -41,6 +41,11 @@ class GoodsController extends Controller
         return $this->fetch();
     }
 
+    public function dingzspsc()
+    {
+        return $this->fetch();
+    }
+
 
 
 }
