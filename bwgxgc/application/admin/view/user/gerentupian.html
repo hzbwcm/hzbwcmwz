@@ -37,13 +37,14 @@
         class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container" style="padding-bottom: 150px;overflow: hidden">
     <div class="gerenxinxi-title"><h2>工 厂 图 片 管 理</h2></div>
-    <form action="">
+
+    <form action="{$Request.url}" method="post" enctype="multipart/form-data">
         <div class="gerenxinxi-input-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1">
             <div class="formImgBox col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1"  id="lacalImag1">
                 <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">企业名称背景图片：</div>
                 <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview1">
+                        <img src="{:config('public_uploads')}/{$pics.pic1}" alt="" id="preview1">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -55,7 +56,7 @@
                 <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">LOGO+公司名称图：</div>
                 <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview2">
+                        <img src="{:config('public_uploads')}/{$pics.pic2}" alt="" id="preview2">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -67,7 +68,7 @@
                 <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">店铺轮播背景图<br>(PNG格式)：</div>
                 <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview3">
+                        <img src="{:config('public_uploads')}/{$pics.pic3}" alt="" id="preview3">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -79,7 +80,7 @@
                 <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">店铺轮播内容图<br>(PNG格式1200px)：</div>
                 <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview4">
+                        <img src="{:config('public_uploads')}/{$pics.pic4}" alt="" id="preview4">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -91,7 +92,7 @@
                 <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">企业简介背景图：</div>
                 <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview5">
+                        <img src="{:config('public_uploads')}/{$pics.pic5}" alt="" id="preview5">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -103,7 +104,7 @@
                 <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">公司大门图：</div>
                 <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview6">
+                        <img src="{:config('public_uploads')}/{$pics.pic6}" alt="" id="preview6">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -115,7 +116,7 @@
                 <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">企业二维码图(PNG格式)：</div>
                 <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview7">
+                        <img src="{:config('public_uploads')}/{$pics.pic7}" alt="" id="preview7">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -127,7 +128,7 @@
                 <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">LOGO图片：</div>
                 <div class="formImgOne col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview8">
+                        <img src="{:config('public_uploads')}/{$pics.pic8}" alt="" id="preview8">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -143,7 +144,7 @@
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview9">
+                        <img src="{:config('public_uploads')}/{$pics.pic9}" alt="" id="preview9">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -152,7 +153,7 @@
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview10">
+                        <img src="{:config('public_uploads')}/{$pics.pic10}" alt="" id="preview10">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -161,7 +162,7 @@
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2 col-xs-offset-1">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview11">
+                        <img src="{:config('public_uploads')}/{$pics.pic11}" alt="" id="preview11">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
@@ -174,6 +175,7 @@
             <input type="submit" value="提交" onclick="InputSubmit()">
         </div>
     </form>
+
 </div>
 
 

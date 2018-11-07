@@ -2,6 +2,7 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\Com_pic;
 use think\Controller;
 use think\Request;
 use app\admin\model\Company_info;
@@ -27,6 +28,7 @@ class UserController extends Controller
         }
         return $this->fetch();
     }
+
     //后台推出
     public function logout()
     {
@@ -42,57 +44,114 @@ class UserController extends Controller
         return $this->fetch();
     }
 
-      //个人信息
+    //个人信息
     public function gerenxinxi()
     {
-        $type = ['卫生巾','婴儿纸尿裤','成人纸尿裤','湿纸巾','生活用纸','产妇巾','经期裤','护理垫','宠物垫','乳垫'];
-        $zjnum = ['1-5','6-10','11-15','16-20','20以上'];
-        $znum = ['1-50','51-100','101-150','151-200','200以上'];
+        $type = ['卫生巾', '婴儿纸尿裤', '成人纸尿裤', '湿纸巾', '生活用纸', '产妇巾', '经期裤', '护理垫', '宠物垫', '乳垫'];
+        $zjnum = ['1-5', '6-10', '11-15', '16-20', '20以上'];
+        $znum = ['1-50', '51-100', '101-150', '151-200', '200以上'];
         $com_id = session('com_id');
         $info = Company_info::where('com_id', $com_id)->find();
         $this->assign([
-            'info'  => $info,
+            'info' => $info,
             'type' => $type,
-            'zjnum'=>$zjnum,
-            'znum'=>$znum
+            'zjnum' => $zjnum,
+            'znum' => $znum
         ]);
 
         return $this->fetch();
     }
 
-    //个人信息
-    public function gerentupian()
+
+    //企业图片
+    public function gerentupian(Request $request)
     {
+        $com_id = Session::get('com_id');
+        if (request()->isPost()) {
+            $info5 = [];
+            for ($x = 1; $x < 12; $x++) {
+                $file = request()->file('pic' . $x);
+                if($file){
+                    $info = $file->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'com_pic');
+                    $info2 = $info->getSaveName();
+                    $info3 = 'com_pic' . "/" . $info2;
+                   // array_push($info5, $info3);
+                    $info5['pic'.$x]
+                         = $info3;
+
+                }else{
+                    $info5['pic'.$x]
+                        = '';
+                }
+
+            }
+            $info5['com_id']=$com_id;
+            $com_pic = new Com_pic();
+            $cs = Com_pic::where('com_id',$com_id)->select();
+            if($cs){
+                $info5=array_filter($info5);
+                $com_pic->update($info5);
+            }else{
+                $com_pic->save([
+                    'com_id'  =>  $info5['com_id'],
+                    'pic1' =>  $info5['pic1'],
+                    'pic2' =>  $info5['pic2'],
+                    'pic3' =>  $info5['pic3'],
+                    'pic4' =>  $info5['pic4'],
+                    'pic5' =>  $info5['pic5'],
+                    'pic6' =>  $info5['pic6'],
+                    'pic7' =>  $info5['pic7'],
+                    'pic8' =>  $info5['pic8'],
+                    'pic9' =>  $info5['pic9'],
+                    'pic10' =>  $info5['pic10'],
+                    'pic11' =>  $info5['pic11']
+                ]);
+            };
+
+
+
+            if ($com_pic) {
+                return $this->success('成功了');
+            } else {
+                return $this->error('失败了，请重新上传');
+            }
+        }
+        $pics = Com_pic::where("com_id" , $com_id )->find();
+//        $pics=implode($pics);
+        $this->assign('pics',$pics);
+//        dump($pics);
+//        die;
         return $this->fetch();
     }
+
 
     //更改企业信息
     public function tjgrxx(Request $request)
     {
-        $type = ['卫生巾','婴儿纸尿裤','成人纸尿裤','湿纸巾','生活用纸','产妇巾','经期裤','护理垫','宠物垫','乳垫'];
-        $zjnum = ['1-5','6-10','11-15','16-20','20以上'];
-        $znum = ['1-50','51-100','101-150','151-200','200以上'];
+        $type = ['卫生巾', '婴儿纸尿裤', '成人纸尿裤', '湿纸巾', '生活用纸', '产妇巾', '经期裤', '护理垫', '宠物垫', '乳垫'];
+        $zjnum = ['1-5', '6-10', '11-15', '16-20', '20以上'];
+        $znum = ['1-50', '51-100', '101-150', '151-200', '200以上'];
         $com_id = session('com_id');
         $info = Company_info::where('com_id', $com_id)->find();
         $this->assign([
-            'info'  => $info,
+            'info' => $info,
             'type' => $type,
-            'zjnum'=>$zjnum,
-            'znum'=>$znum
+            'zjnum' => $zjnum,
+            'znum' => $znum
         ]);
-     $shuju = [];
-     $shuju['company_name'] = $request->param('company_name');
-     $shuju['address'] = $request->param('address');
-     $shuju['email'] = $request->param('email');
-     $shuju['man'] = $request->param('man');
-     $shuju['tel'] = $request->param('tel');
-     $shuju['qq'] = $request->param('qq');
-     $shuju['size'] = $request->param('size');
-     $shuju['type'] = $request->param('type');
-     $shuju['time'] = $request->param('time');
-     $shuju['introduce'] = $request->param('introduce');
-     $shuju['zjnum'] = $request->param('zjnum');
-     $shuju['znum'] = $request->param('znum');
+        $shuju = [];
+        $shuju['company_name'] = $request->param('company_name');
+        $shuju['address'] = $request->param('address');
+        $shuju['email'] = $request->param('email');
+        $shuju['man'] = $request->param('man');
+        $shuju['tel'] = $request->param('tel');
+        $shuju['qq'] = $request->param('qq');
+        $shuju['size'] = $request->param('size');
+        $shuju['type'] = $request->param('type');
+        $shuju['time'] = $request->param('time');
+        $shuju['introduce'] = $request->param('introduce');
+        $shuju['zjnum'] = $request->param('zjnum');
+        $shuju['znum'] = $request->param('znum');
 
         $com_id = session('com_id');
         $company_info = new company_info();
@@ -101,7 +160,7 @@ class UserController extends Controller
         //返回结果
         if ($res) {
             return 1;
-        }else{
+        } else {
             return 0;
         }
 
@@ -109,4 +168,6 @@ class UserController extends Controller
         return $this->fetch();
 
     }
+
+
 }

@@ -6,6 +6,7 @@ use app\home\model\Company_info;
 use think\Controller;
 use think\Request;
 use think\Session;
+use app\admin\model\Com_pic;
 
 class ShangpuController extends Controller
 {
@@ -15,8 +16,11 @@ class ShangpuController extends Controller
     {
 
         Session::set('c_id',$id);
-        $c_id=Session::get('c_id');
-        $this->assign('c_id',$id);
+       $c_id=Session::get('c_id');
+        $info = Company_info::where('com_id',$c_id)->find();
+        $pics = Com_pic::where("com_id" , $c_id )->find();
+
+        $this->assign(['c_id'=>$id,'info'=>$info,'pics'=>$pics]);
 
         return $this->fetch();
     }
@@ -25,9 +29,11 @@ class ShangpuController extends Controller
     {
         $c_id = Session::get('c_id');
         $info = Company_info::where('com_id',$c_id)->find();
+        $pics = Com_pic::where("com_id" , $c_id )->find();
         $this->assign([
             'info'=>$info,
-            'c_id'=>$c_id
+            'c_id'=>$c_id,
+            'pics'=>$pics
         ]);
         return $this->fetch();
     }

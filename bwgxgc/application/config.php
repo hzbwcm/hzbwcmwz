@@ -14,7 +14,7 @@ return [
     // | 应用设置
     // +----------------------------------------------------------------------
 
-    'home_uploads' => '../public/uploads',
+    'public_uploads' => '/uploads',
     //给静态资源设置访问路径【home分组】
     'home_css'              => '/home/css',
     'home_img'              => '/home/img',

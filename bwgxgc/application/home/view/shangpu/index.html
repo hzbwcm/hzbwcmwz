@@ -39,9 +39,9 @@
             </a>
         </div>
     </div>
-    <div class="sp-header-box" style="background-image: url('{:config('home_shangpu_img')}/index/beijingtupian.png')">
+    <div class="sp-header-box" style="background-image: url('{:config('public_uploads')}/{$pics.pic1}')">
         <div class="sp-header-img">
-            <img src="" alt="">
+            <img src="{:config('public_uploads')}/{$pics.pic2}" alt="">
         </div>
     </div>
     <nav>
@@ -56,9 +56,9 @@
     </nav>
 </header>
 <main>
-    <div class="banner-box" style="background-image: url('{:config('home_shangpu_img')}/index/58fab560f34f1.png')">
+    <div class="banner-box" style="background-image: url('{:config('public_uploads')}/{$pics.pic3}')">
         <div class="banner-img">
-            <img src="{:config('home_shangpu_img')}/index/58fab560f34f1.png" alt="">
+            <img src="{:config('public_uploads')}/{$pics.pic4}" alt="">
         </div>
     </div>
     <!--公司介绍-->
@@ -69,23 +69,20 @@
         </div>
         <div class="gsjs-content-box">
             <div class="gsjs-content-down-img">
-                <img src="{:config('home_shangpu_img')}/index/aa1.png" alt="">
+                <img src="{:config('public_uploads')}/{$pics.pic5}" alt="">
             </div>
             <div class="gsjs-content-up-box">
                 <div class="gsjs-content-up-left">
-                    <img src="{:config('home_shangpu_img')}/index/dalou.png" alt="">
+                    <img src="{:config('public_uploads')}/{$pics.pic6}" alt="">
                 </div>
                 <div class="gsjs-content-up-right">
                     <div class="gsjs-content-title-top">About Us</div>
                     <div class="gsjs-content-title-center">公司简介</div>
                     <div class="gsjs-content-title-bottom">
-                        川田卫生用品（浙江）有限公司成立于2010年10月，是一家主要从事妇幼一次性卫生用品的研发、生产、销售、OEM及ODM加工的川田联盟企业。公司位于湖州市德清县禹越镇镇西南路188号，主要以卫生巾加工、产妇巾加工、乳垫加工、护垫加工为主，可承接来样加工、来料加工、新产品研发业务。
-                        川田卫生用品（浙江）有限公司成立于2010年10月，是一家主要从事妇幼一次性卫生用品的研发、生产、销售、OEM及ODM加工的川田联盟企业。公司位于湖州市德清县禹越镇镇西南路188号，主要以卫生巾加工、产妇巾加工、乳垫加工、护垫加工为主，可承接来样加工、来料加工、新产品研发业务。
-                        川田卫生用品（浙江）有限公司成立于2010年10月，是一家主要从事妇幼一次性卫生用品的研发、生产、销售、OEM及ODM加工的川田联盟企业。公司位于湖州市德清县禹越镇镇西南路188号，主要以卫生巾加工、产妇巾加工、乳垫加工、护垫加工为主，可承接来样加工、来料加工、新产品研发业务。
-                        川田卫生用品（浙江）有限公司成立于2010年10月，是一家主要从事妇幼一次性卫生用品的研发、生产、销售、OEM及ODM加工的川田联盟企业。公司位于湖州市德清县禹越镇镇西南路188号，主要以卫生巾加工、产妇巾加工、乳垫加工、护垫加工为主，可承接来样加工、来料加工、新产品研发业务。
+                       {$info.introduce}
                     </div>
                     <div class="gsjs-content-a">
-                        <a href="">Learn More About Us</a>
+                        <a href="{:url('home/shangpu/gongsijianjie')}">Learn More About Us</a>
                     </div>
                 </div>
             </div>
@@ -102,13 +99,13 @@
                 <div class="poster-btn poster-prev-btn" style="display: none"></div>
                 <ul class="poster-list">
                     <li class="poster-item">
-                        <img src="{:config('home_shangpu_img')}/shiyanshi.png" class="poster-img">
+                        <img src="{:config('public_uploads')}/{$pics.pic9}" class="poster-img">
                     </li>
                     <li class="poster-item">
-                        <img src="{:config('home_shangpu_img')}/wsj.png" class="poster-img">
+                        <img src="{:config('public_uploads')}/{$pics.pic10}" class="poster-img">
                     </li>
                     <li class="poster-item">
-                        <img src="{:config('home_shangpu_img')}/aa1.png" class="poster-img">
+                        <img src="{:config('public_uploads')}/{$pics.pic11}" class="poster-img">
                     </li>
                 </ul>
                 <div class="poster-btn poster-next-btn" style="display: none"></div>
@@ -730,7 +727,7 @@
             </li>
             <li class="weixin-li">
                 <div class="weixin-img">
-                    <img src="{:config('home_shangpu_img')}/f26f5ed0d000c3413c9a4250f2c22bcb86a9494e2b2a-Gw0bYT_fw658.png" alt="">
+                    <img src="{:config('public_uploads')}/{$pics.pic7}" alt="">
                 </div>
                 <div class="weixin-text-box">
                     <div class="weixin-text">商家微信</div>
