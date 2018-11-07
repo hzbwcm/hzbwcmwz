@@ -4,75 +4,90 @@
   width: 1200px;
   margin: 10px auto;
   overflow: hidden;
-  margin-bottom: 52px; }
-  .wylj-big-box .wylj-box {
-    float: right; }
-    .wylj-big-box .wylj-box .iconfont {
-      font-size: 12px;
-      color: #555555; }
-    .wylj-big-box .wylj-box .icon-location {
-      font-size: 20px; }
-    .wylj-big-box .wylj-box span {
-      font-size: 14px;
-      color: #555555; }
+  margin-bottom: 52px;
+}
+.wylj-big-box .wylj-box {
+  float: right;
+}
+.wylj-big-box .wylj-box .iconfont {
+  font-size: 12px;
+  color: #555555;
+}
+.wylj-big-box .wylj-box .icon-location {
+  font-size: 20px;
+}
+.wylj-big-box .wylj-box span {
+  font-size: 14px;
+  color: #555555;
+}
 
 /*主体*/
 main {
   width: 100%;
-  margin-bottom: 100px; }
-  main .lxwm-box {
-    width: 1200px;
-    margin: 0 auto;
-    /*视频展示内容*/ }
-    main .lxwm-box .lxwm-title-img {
-      width: 100%;
-      height: 150px;
-      position: relative; }
-      main .lxwm-box .lxwm-title-img img {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto; }
-    main .lxwm-box .spzs-content-box {
-      width: 100%;
-      overflow: hidden; }
-      main .lxwm-box .spzs-content-box .spzs-content {
-        float: left;
-        width: 570px;
-        background: #ffffff;
-        margin-right: 52px;
-        margin-bottom: 66px;
-        padding: 8px; }
-        main .lxwm-box .spzs-content-box .spzs-content .spzs-video-box {
-          width: 100%;
-          height: 312px;
-          margin-bottom: 30px;
-          position: relative; }
-          main .lxwm-box .spzs-content-box .spzs-content .spzs-video-box .spzs-video {
-            width: 100%;
-            height: 100%; }
-          main .lxwm-box .spzs-content-box .spzs-content .spzs-video-box .spzs-zhezhao {
-            width: 100%;
-            height: 100%;
-            display: none;
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 1; }
-        main .lxwm-box .spzs-content-box .spzs-content .spzs-title {
-          width: 100%;
-          text-align: center;
-          font-size: 24px;
-          color: #555555; }
-        main .lxwm-box .spzs-content-box .spzs-content .spzs-time {
-          width: 100%;
-          margin-bottom: 10px;
-          font-size: 16px;
-          color: #777777;
-          text-align: right; }
-      main .lxwm-box .spzs-content-box .spzs-content:nth-child(2n) {
-        margin-right: 0; }
-
-/*# sourceMappingURL=shipinzhanshi.css.map */
+  margin-bottom: 100px;
+}
+main .lxwm-box {
+  width: 1200px;
+  margin: 0 auto;
+  /*视频展示内容*/
+}
+main .lxwm-box .lxwm-title-img {
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+main .lxwm-box .lxwm-title-img img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+main .lxwm-box .spzs-content-box {
+  width: 100%;
+  overflow: hidden;
+}
+main .lxwm-box .spzs-content-box .spzs-content {
+  float: left;
+  width: 570px;
+  background: #ffffff;
+  margin-right: 52px;
+  margin-bottom: 66px;
+  padding: 8px;
+}
+main .lxwm-box .spzs-content-box .spzs-content .spzs-video-box {
+  width: 100%;
+  height: 312px;
+  margin-bottom: 30px;
+  position: relative;
+}
+main .lxwm-box .spzs-content-box .spzs-content .spzs-video-box .spzs-video {
+  width: 100%;
+  height: 100%;
+}
+main .lxwm-box .spzs-content-box .spzs-content .spzs-video-box .spzs-zhezhao {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+main .lxwm-box .spzs-content-box .spzs-content .spzs-title {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: #555555;
+}
+main .lxwm-box .spzs-content-box .spzs-content .spzs-time {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #777777;
+  text-align: right;
+}
+main .lxwm-box .spzs-content-box .spzs-content:nth-child(2n) {
+  margin-right: 0;
+}

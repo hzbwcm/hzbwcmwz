@@ -1,4 +1,5 @@
 <?php
+
 namespace app\home\controller;
 
 use app\admin\model\User;
@@ -22,51 +23,53 @@ class UserController extends Controller
     public function xinxiguanli()
     {
         $user_id = session('user_id');
-        if($request->isPost()){
+        if ($request->isPost()) {
 
             $data = $request->post();
             $rules = [
-                'nickname'      =>'require|unique:user_person,username|max:25',
-                'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],
-                'user_email'    =>'require|email',
-                'user_qq'       =>'require',
+                'nickname' => 'require|unique:user_person,username|max:25',
+                'tel' => ['require', 'regex' => '/^1[358]\d{9}$/'],
+                'user_email' => 'require|email',
+                'user_qq' => 'require',
             ];
             $msg = [
-                'nickname.require'      => '昵称必填',
-                'nickname.unique'       => '昵称已经被使用',
-                'nickname.max'          => '昵称长度不能超过25位',
-                'tel.require'           => '手机号码必填',
-                'tel.regex'             => '手机号码规则不正确',
-                'user_email.require'    => '邮箱必填',
-                'user_email.email'      => '邮箱格式不正确',
-                'user_qq.require'       => 'qq必填',
+                'nickname.require' => '昵称必填',
+                'nickname.unique' => '昵称已经被使用',
+                'nickname.max' => '昵称长度不能超过25位',
+                'tel.require' => '手机号码必填',
+                'tel.regex' => '手机号码规则不正确',
+                'user_email.require' => '邮箱必填',
+                'user_email.email' => '邮箱格式不正确',
+                'user_qq.require' => 'qq必填',
             ];
-            $validate = new Validate($rules,$msg);
-            if(!$validate->batch()->check($data)){
-                $errorinfo=$validate->getError();
-                $this -> assign('errorinfo',$errorinfo);
-                return $this -> fetch();
+            $validate = new Validate($rules, $msg);
+            if (!$validate->batch()->check($data)) {
+                $errorinfo = $validate->getError();
+                $this->assign('errorinfo', $errorinfo);
+                return $this->fetch();
             }
             $user_person = new user_person();
             $res = $user_person->where('user_id', $user_id)->update($data);
             if ($res) {
                 $this->success('信息更新成功!');  //TODO 更新成功页面跳转
-            }else{
+            } else {
                 $this->error('信息更新失败!');
             }
-        }else{
+        } else {
             $user_data = User_person::where('user_id', $user_id)->find();
             $this->assign('user_data', $user_data);
             return $this->fetch();
         }
     }
+
     //信息管理首页
     public function xinxiguanlishouye()
     {
         $info = Customgood::select();
-        $this->assign('info',$info);
+        $this->assign('info', $info);
         return $this->fetch();
     }
+
     /*
      * 接收uploadify上传附件并处理添加到服务器上
      * 图片最终保存在public/uploads/custom/
@@ -76,171 +79,171 @@ class UserController extends Controller
         $file = $request->file('Filedata');
         $path = "./uploads/custompertmp/";
         $result = $file->move($path);
-        if($result){
-            $picpathname = $path.$result->getSaveName();
-            $picpathname = str_replace("\\","/",$picpathname);
-            $info = ['status'=>'success','picpathname'=>$picpathname];
+        if ($result) {
+            $picpathname = $path . $result->getSaveName();
+            $picpathname = str_replace("\\", "/", $picpathname);
+            $info = ['status' => 'success', 'picpathname' => $picpathname];
             echo json_encode($info);
-        }else{
-            $info = ['status'=>'failure','errorinfo'=>$result->getError()];
+        } else {
+            $info = ['status' => 'failure', 'errorinfo' => $result->getError()];
             echo json_encode($info);
         }
         exit;
     }
+
     //发布信息
     public function fabuxinxi(Request $request)
     {
         $user_id = session('user_id');
 
-        $type = Type::where('type_id','<',11)->select();
+        $type = Type::where('type_id', '<', 11)->select();
 
-        //$this -> assign('type',$type);
+//        $this->assign('type', $type);
 
         $typeid = $request->get('type_id');
 
 
-            $typeer = Type::where('type_pid',$typeid)->select();
-            dump($typeer);
-            die();
-           // $this -> assign('typeer',$typeer);
-        $this->assign([
-            'type' =>$type,
-            'typeer'=>$typeer
-        ]);
-        return $this -> fetch();
-
-//        if($typeid){
-//            return $typeer;
-
-//            $this->success('asdasd','home/index/index');
-//            dump($type_name);
-//            die();
-        //}
-
-
-
-        if(request()->isPost()){
-            $shuju = Request::instance()->post();
-
-//            $rules = [
-//                'cus_proname'          =>'require',
-//                'cus_length'           =>'require',
-//                'cus_width'            =>'require',
-//                'cus_place'            =>'require',
-//                'cus_supply'           =>'require',
-//                'cus_orders'           =>'require',
-//            ];
-//            $msg = [
-//                'cus_proname.require'      => '必填',
-//                'cus_length.require'       => '必填',
-//                'cus_width.require'        => '必填',
-//                'cus_place.require'        => '必填',
-//                'cus_supply.require'       => '必填',
-//                'cus_orders.require'       => '必填',
-//
-//            ];
-//            $validate = new Validate($rules,$msg);
-//            if(!$validate->batch()->check($shuju)){
-//                $errorinfo=$validate->getError();
-//                $this -> assign('errorinfo',$errorinfo);
-//                return $this -> fetch();
-//            }
-
-            if(!empty($shuju['cus_pic'])){
-
-                //判断"年月日"目录没有就创建
-                $dir = "./uploads/customper/".date('Ymd');
-                if (!file_exists($dir)){
-                    mkdir ($dir,0777,true);
-                }
-
-                $truepath = str_replace('custompertmp','customper',$shuju['cus_pic']);
-                rename($shuju['cus_pic'],$truepath);
-
-                $shuju['cus_pic'] = $truepath; //修改为真实的图片路径名
-            }
-
-            $customgood = new customgood();
-            $shuju['user_id'] = $user_id;
-            $result = $customgood->allowField(true)->save($shuju);
-            if($result){
-//                return ['status'=>'success'];
-                return $this->success('发布成功','user/fabuxinxi');
-            }else{
-                return ['status'=>'failure','errorinfo'=>'数据写入失败，请联系管理员'];
-            }
+        if($request->isAjax('typeid')){
+            $typeer =Type::where('type_pid','=', $typeid)->select();
+//            $content = '{$type}-{$typeer}';
+            $this->assign('type', $type);
+            $this->assign('typeer', $typeer);
+            return $typeer;
+//            return $this->fetch();
+        }else{
+            $this->assign('type', $type);
+            $this->assign('typeer',[]);
+            return $this->fetch();
         }
-        return $this->fetch();
+
+//        if ($typeid) {
+//            return $typeer;
+//        }
+
+
+//        if (request()->isPost()) {
+//            $shuju = Request::instance()->post();
+//
+////            $rules = [
+////                'cus_proname'          =>'require',
+////                'cus_length'           =>'require',
+////                'cus_width'            =>'require',
+////                'cus_place'            =>'require',
+////                'cus_supply'           =>'require',
+////                'cus_orders'           =>'require',
+////            ];
+////            $msg = [
+////                'cus_proname.require'      => '必填',
+////                'cus_length.require'       => '必填',
+////                'cus_width.require'        => '必填',
+////                'cus_place.require'        => '必填',
+////                'cus_supply.require'       => '必填',
+////                'cus_orders.require'       => '必填',
+////
+////            ];
+////            $validate = new Validate($rules,$msg);
+////            if(!$validate->batch()->check($shuju)){
+////                $errorinfo=$validate->getError();
+////                $this -> assign('errorinfo',$errorinfo);
+////                return $this -> fetch();
+////            }
+//
+//            if (!empty($shuju['cus_pic'])) {
+//
+//                //判断"年月日"目录没有就创建
+//                $dir = "./uploads/customper/" . date('Ymd');
+//                if (!file_exists($dir)) {
+//                    mkdir($dir, 0777, true);
+//                }
+//
+//                $truepath = str_replace('custompertmp', 'customper', $shuju['cus_pic']);
+//                rename($shuju['cus_pic'], $truepath);
+//
+//                $shuju['cus_pic'] = $truepath; //修改为真实的图片路径名
+//            }
+//
+//            $customgood = new customgood();
+//            $shuju['user_id'] = $user_id;
+//            $result = $customgood->allowField(true)->save($shuju);
+//            if ($result) {
+////                return ['status'=>'success'];
+//                return $this->success('发布成功', 'user/fabuxinxi');
+//            } else {
+//                return ['status' => 'failure', 'errorinfo' => '数据写入失败，请联系管理员'];
+//            }
+//        }
+//        return $this->fetch();
     }
+
     //个人信息
     public function usercenter(Request $request)
     {
         $user_id = session('user_id');
-        if(empty($user_id)){
+        if (empty($user_id)) {
             $this->error('请用个人账户登录');
         }
-        if($request->isPost()){
+        if ($request->isPost()) {
 
             $data = $request->post();
             $rules = [
-                'nickname'      =>'require|unique:user_person,username|max:25',
-                'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],
-                'user_email'    =>'require|email',
-                'user_qq'       =>'require',
+                'nickname' => 'require|unique:user_person,username|max:25',
+                'tel' => ['require', 'regex' => '/^1[358]\d{9}$/'],
+                'user_email' => 'require|email',
+                'user_qq' => 'require',
             ];
             $msg = [
-                'nickname.require'      => '昵称必填',
-                'nickname.unique'       => '昵称已经被使用',
-                'nickname.max'          => '昵称长度不能超过25位',
-                'tel.require'           => '手机号码必填',
-                'tel.regex'             => '手机号码规则不正确',
-                'user_email.require'    => '邮箱必填',
-                'user_email.email'      => '邮箱格式不正确',
-                'user_qq.require'       => 'qq必填',
+                'nickname.require' => '昵称必填',
+                'nickname.unique' => '昵称已经被使用',
+                'nickname.max' => '昵称长度不能超过25位',
+                'tel.require' => '手机号码必填',
+                'tel.regex' => '手机号码规则不正确',
+                'user_email.require' => '邮箱必填',
+                'user_email.email' => '邮箱格式不正确',
+                'user_qq.require' => 'qq必填',
             ];
-            $validate = new Validate($rules,$msg);
-            if(!$validate->batch()->check($data)){
-                $errorinfo=$validate->getError();
-                $this -> assign('errorinfo',$errorinfo);
-                return $this -> fetch();
+            $validate = new Validate($rules, $msg);
+            if (!$validate->batch()->check($data)) {
+                $errorinfo = $validate->getError();
+                $this->assign('errorinfo', $errorinfo);
+                return $this->fetch();
             }
             $user_person = new user_person();
             $res = $user_person->where('user_id', $user_id)->update($data);
             if ($res) {
                 $this->success('信息更新成功!');  //TODO 更新成功页面跳转
-            }else{
+            } else {
                 $this->error('信息更新失败!');
             }
-        }else{
+        } else {
             $user_data = User_person::where('user_id', $user_id)->find();
             $this->assign('user_data', $user_data);
             return $this->fetch();
         }
     }
+
     //首页页首个人中心
     public function accountcenter()
     {
         return $this->fetch();
     }
 
-     //个人用户登录
+    //个人用户登录
     public function login(Request $request)
     {
-        if($request->ispost())
-        {
+        if ($request->ispost()) {
             $username = $request->param('username');
-            $password  = md5($request->param('password'));
-            $exists = User_person::where(['username'=>$username,'password'=>$password])->find();
+            $password = md5($request->param('password'));
+            $exists = User_person::where(['username' => $username, 'password' => $password])->find();
 
-            if($exists){
+            if ($exists) {
                 //持久化用户信息Session
-                Session::set('user_id',$exists->user_id);
-                Session::set('username',$exists->username);
-                Session::set('nickname',$exists->nickname);
+                Session::set('user_id', $exists->user_id);
+                Session::set('username', $exists->username);
+                Session::set('nickname', $exists->nickname);
                 //登录系统(页面跳转)
-                $this -> redirect('home/index/index');
-            }else{
-                $this -> assign('errorinfo','用户名或密码不正确');
+                $this->redirect('home/index/index');
+            } else {
+                $this->assign('errorinfo', '用户名或密码不正确');
             }
         }
         return $this->fetch();
@@ -257,11 +260,11 @@ class UserController extends Controller
     {
         //密钥配置
         $config = [
-            'accessKeyId'    => 'LTAI1sFXgKSjS0Bn',
+            'accessKeyId' => 'LTAI1sFXgKSjS0Bn',
             'accessKeySecret' => 'lOHNoTSM5m9kOsJaiADfyDIC2gaXho',
         ];
 
-        $client  = new Client($config);  //实例化对象
+        $client = new Client($config);  //实例化对象
         $sendSms = new SendSms;             //实例化对象
         $sendSms->setPhoneNumbers('15735178144'); //接收短信手机号码
         $sendSms->setSignName('博卫传媒');  //短信签名设置
@@ -269,11 +272,12 @@ class UserController extends Controller
         //短信内容变量设置
         $code = mt_rand(100000, 999999);
         $time = 3; //有效验证时间为3分钟
-        $sendSms->setTemplateParam(['code' => $code,'time'=>$time]);
-        $sendSms->setOutId('demo'.time()); //发送短信序号
+        $sendSms->setTemplateParam(['code' => $code, 'time' => $time]);
+        $sendSms->setOutId('demo' . time()); //发送短信序号
 
         print_r($client->execute($sendSms));//发送短信
     }
+
     /*
      * 用户登录网站发送验证码短信
      */
@@ -281,34 +285,34 @@ class UserController extends Controller
     {
         $tel = $request->post('tel');
         $config = [
-            'accessKeyId'    => 'LTAI1sFXgKSjS0Bn',
+            'accessKeyId' => 'LTAI1sFXgKSjS0Bn',
             'accessKeySecret' => 'lOHNoTSM5m9kOsJaiADfyDIC2gaXho',
         ];
 
-        $client  = new Client($config);
+        $client = new Client($config);
         $sendSms = new SendSms;
         $sendSms->setPhoneNumbers($tel);  //接收人
         $sendSms->setSignName('博卫传媒');//签名
         $sendSms->setTemplateCode('SMS_137840067');//模板
 
         //模板内容变量
-        $code = mt_rand(100000,999999);  //6位数的验证码
+        $code = mt_rand(100000, 999999);  //6位数的验证码
         $time = 3; //有效验证时间为3分钟
         //为了后期校验，要把"验证码"  和  "时间"存到session中，用户后期比较
-        session('tel_code',$code);
-        session('tel_time',time()); //存储发送短信的时间戳信息
+        session('tel_code', $code);
+        session('tel_time', time()); //存储发送短信的时间戳信息
 
 
-        $sendSms->setTemplateParam(['code' => $code,'time'=>$time]);
+        $sendSms->setTemplateParam(['code' => $code, 'time' => $time]);
         //发送短信的序号
-        $sendSms->setOutId('demo'.time());
+        $sendSms->setOutId('demo' . time());
 
         //正式发送短信
         $obj = $client->execute($sendSms);
-        if($obj->Message=='OK'){
-            return ['status'=>'success'];
-        }else{
-            return ['status'=>'failure'];
+        if ($obj->Message == 'OK') {
+            return ['status' => 'success'];
+        } else {
+            return ['status' => 'failure'];
         }
 
     }
@@ -319,48 +323,49 @@ class UserController extends Controller
     {
         return $this->fetch();
     }
-     //个人注册
+
+    //个人注册
     public function gerenzhuce(Request $request)
     {
-        if(request()->ispost()){
+        if (request()->ispost()) {
             $shuju = request()->param();
             $rules = [
-                'username'  =>'require|unique:user_person,username|max:25',
-                'password'  =>'require|length:6,15',
-                'password2' =>'require|confirm:password',
-                'tel'       =>['require','regex'=>'/^1[358]\d{9}$/'],
+                'username' => 'require|unique:user_person,username|max:25',
+                'password' => 'require|length:6,15',
+                'password2' => 'require|confirm:password',
+                'tel' => ['require', 'regex' => '/^1[358]\d{9}$/'],
             ];
             $msg = [
-                'username.require'      => '名称必填',
-                'username.unique'       => '用户名已经被使用',
-                'username.max'          => '用户名长度不能超过25位',
-                'password.require'       => '密码必填',
-                'password.length'       => '密码长度须在6到15之间',
-                'password2.require'      => '确认密码必填',
-                'password2.confirm'     => '两次密码不一致',
-                'tel.require'           => '手机号码必填',
-                'tel.regex'             => '手机号码规则不正确',
+                'username.require' => '名称必填',
+                'username.unique' => '用户名已经被使用',
+                'username.max' => '用户名长度不能超过25位',
+                'password.require' => '密码必填',
+                'password.length' => '密码长度须在6到15之间',
+                'password2.require' => '确认密码必填',
+                'password2.confirm' => '两次密码不一致',
+                'tel.require' => '手机号码必填',
+                'tel.regex' => '手机号码规则不正确',
             ];
-            $validate = new Validate($rules,$msg);
-            if($validate ->batch()-> check($shuju)){
+            $validate = new Validate($rules, $msg);
+            if ($validate->batch()->check($shuju)) {
                 $user_person = new user_person();
                 $shuju['password'] = md5($shuju['password']);
                 $result = $user_person->allowField(true)->save($shuju);
-                if($result){
+                if ($result) {
                     echo "<script>alert('恭喜您注册成功');</script>";
                     echo "<script>parent.location.href = \"../index/index\";</script>";
 //                    $this->success('添加成功',('index'));
 //                    return ['status'=>'success'];
-                }else{
+                } else {
                     return $this->redirect('home/uer/zhuceshibai');
                 }
-            }else{
-                $errorinfo= $validate->getError();
-                $this -> assign('errorinfo',$errorinfo);
-                $this -> assign('shuju',$shuju);
-                return $this -> fetch();
+            } else {
+                $errorinfo = $validate->getError();
+                $this->assign('errorinfo', $errorinfo);
+                $this->assign('shuju', $shuju);
+                return $this->fetch();
             }
-        }else{
+        } else {
             return $this->fetch();
         }
 
@@ -375,61 +380,58 @@ class UserController extends Controller
     //企业注册
     public function qiyezhuce(Request $request)
     {
-        if($request->isPost()){
-            $shuju = $request -> post();
+        if ($request->isPost()) {
+            $shuju = $request->post();
             $rules = [
-                'username'=>'require|unique:company_info',
-                'pwd'=>'require',
-                'pwd2'=>'require|confirm:pwd',
-                'company_name'=>'require',
-                'address'=>'require',
-                'email'=>'require|email',
+                'username' => 'require|unique:company_info',
+                'pwd' => 'require',
+                'pwd2' => 'require|confirm:pwd',
+                'company_name' => 'require',
+                'address' => 'require',
+                'email' => 'require|email',
             ];
             $notices = [
-                'username.require'=>'用户名必填',
-                'username.unique'=>'用户名已被占用',
-                'pwd.require'=>'密码必填',
-                'pwd2.require'=>'确认密码必填',
-                'pwd2.confirm'=>'两次密码不一致',
-                'company_name.require'=>'公司名称必填',
-                'address.require'=>'公司地址必填',
-                'email.require'=>'邮箱必填',
-                'email.email'=>'邮箱格式不正确',
+                'username.require' => '用户名必填',
+                'username.unique' => '用户名已被占用',
+                'pwd.require' => '密码必填',
+                'pwd2.require' => '确认密码必填',
+                'pwd2.confirm' => '两次密码不一致',
+                'company_name.require' => '公司名称必填',
+                'address.require' => '公司地址必填',
+                'email.require' => '邮箱必填',
+                'email.email' => '邮箱格式不正确',
             ];
-            $validate   = new Validate($rules,$notices);
-            if($validate->batch()->check($shuju)){
+            $validate = new Validate($rules, $notices);
+            if ($validate->batch()->check($shuju)) {
                 $company = new company_info();
                 $shuju['pwd'] = md5($shuju['pwd']);
-                $result = $company ->allowField(true)->save($shuju);
-                if($result){
+                $result = $company->allowField(true)->save($shuju);
+                if ($result) {
                     //注册成功
-                    $aa ='注册成功';
-                    $this->assign('aa',$aa);
+                    $aa = '注册成功';
+                    $this->assign('aa', $aa);
                     return $this->fetch();
-                }else{
+                } else {
                     //失败
-                    $aa ='注册失败';
-                    $this->assign('aa',$aa);
+                    $aa = '注册失败';
+                    $this->assign('aa', $aa);
                     return $this->fetch();
                 }
-            }else{
-            $errorinfo= $validate->getError();
-            $this->assign('errorinfo',$errorinfo);
-            $this->assign('shuju',$shuju);
-            return $this->fetch();
+            } else {
+                $errorinfo = $validate->getError();
+                $this->assign('errorinfo', $errorinfo);
+                $this->assign('shuju', $shuju);
+                return $this->fetch();
             }
 
-    }else
-        {
+        } else {
             return $this->fetch();
         }
     }
     //登陆
 
 
-
-
-    }
+}
 
 
 
