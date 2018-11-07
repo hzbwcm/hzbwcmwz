@@ -93,21 +93,19 @@ class UserController extends Controller
         $user_id = session('user_id');
 
         $type = Type::where('type_id','<',11)->select();
-
-        //$this -> assign('type',$type);
-
+//
+        $this -> assign('type',$type);
+//
         $typeid = $request->get('type_id');
-
-
-            $typeer = Type::where('type_pid',$typeid)->select();
-            dump($typeer);
-            die();
-           // $this -> assign('typeer',$typeer);
+        $typeer = Type::where('type_pid',$typeid)->select();
+//
+//            $this -> assign('typeer',$typeer);
         $this->assign([
             'type' =>$type,
+            'typeid'=>$typeid,
             'typeer'=>$typeer
         ]);
-        return $this -> fetch();
+////
 
 //        if($typeid){
 //            return $typeer;
@@ -122,29 +120,29 @@ class UserController extends Controller
         if(request()->isPost()){
             $shuju = Request::instance()->post();
 
-//            $rules = [
-//                'cus_proname'          =>'require',
-//                'cus_length'           =>'require',
-//                'cus_width'            =>'require',
-//                'cus_place'            =>'require',
-//                'cus_supply'           =>'require',
-//                'cus_orders'           =>'require',
-//            ];
-//            $msg = [
-//                'cus_proname.require'      => '必填',
-//                'cus_length.require'       => '必填',
-//                'cus_width.require'        => '必填',
-//                'cus_place.require'        => '必填',
-//                'cus_supply.require'       => '必填',
-//                'cus_orders.require'       => '必填',
-//
-//            ];
-//            $validate = new Validate($rules,$msg);
-//            if(!$validate->batch()->check($shuju)){
-//                $errorinfo=$validate->getError();
-//                $this -> assign('errorinfo',$errorinfo);
-//                return $this -> fetch();
-//            }
+            $rules = [
+                'cus_proname'          =>'require',
+                'cus_length'           =>'require',
+                'cus_width'            =>'require',
+                'cus_place'            =>'require',
+                'cus_supply'           =>'require',
+                'cus_orders'           =>'require',
+            ];
+            $msg = [
+                'cus_proname.require'      => '必填',
+                'cus_length.require'       => '必填',
+                'cus_width.require'        => '必填',
+                'cus_place.require'        => '必填',
+                'cus_supply.require'       => '必填',
+                'cus_orders.require'       => '必填',
+
+            ];
+            $validate = new Validate($rules,$msg);
+            if(!$validate->batch()->check($shuju)){
+                $errorinfo=$validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                return $this -> fetch();
+            }
 
             if(!empty($shuju['cus_pic'])){
 
@@ -153,6 +151,10 @@ class UserController extends Controller
                 if (!file_exists($dir)){
                     mkdir ($dir,0777,true);
                 }
+
+
+
+
 
                 $truepath = str_replace('custompertmp','customper',$shuju['cus_pic']);
                 rename($shuju['cus_pic'],$truepath);
