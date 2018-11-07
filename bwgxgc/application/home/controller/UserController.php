@@ -120,29 +120,29 @@ class UserController extends Controller
         if(request()->isPost()){
             $shuju = Request::instance()->post();
 
-            $rules = [
-                'cus_proname'          =>'require',
-                'cus_length'           =>'require',
-                'cus_width'            =>'require',
-                'cus_place'            =>'require',
-                'cus_supply'           =>'require',
-                'cus_orders'           =>'require',
-            ];
-            $msg = [
-                'cus_proname.require'      => '必填',
-                'cus_length.require'       => '必填',
-                'cus_width.require'        => '必填',
-                'cus_place.require'        => '必填',
-                'cus_supply.require'       => '必填',
-                'cus_orders.require'       => '必填',
-
-            ];
-            $validate = new Validate($rules,$msg);
-            if(!$validate->batch()->check($shuju)){
-                $errorinfo=$validate->getError();
-                $this -> assign('errorinfo',$errorinfo);
-                return $this -> fetch();
-            }
+//            $rules = [
+//                'cus_proname'          =>'require',
+//                'cus_length'           =>'require',
+//                'cus_width'            =>'require',
+//                'cus_place'            =>'require',
+//                'cus_supply'           =>'require',
+//                'cus_orders'           =>'require',
+//            ];
+//            $msg = [
+//                'cus_proname.require'      => '必填',
+//                'cus_length.require'       => '必填',
+//                'cus_width.require'        => '必填',
+//                'cus_place.require'        => '必填',
+//                'cus_supply.require'       => '必填',
+//                'cus_orders.require'       => '必填',
+//
+//            ];
+//            $validate = new Validate($rules,$msg);
+//            if(!$validate->batch()->check($shuju)){
+//                $errorinfo=$validate->getError();
+//                $this -> assign('errorinfo',$errorinfo);
+//                return $this -> fetch();
+//            }
 
             if(!empty($shuju['cus_pic'])){
 
