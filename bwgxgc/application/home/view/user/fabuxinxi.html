@@ -134,11 +134,11 @@
                 <div class="select-div">
                     <select name="cus_proname" id="" class="select-box">
 
+                                {volist name='typeer' id='vv'}
 
-                                {volist name='typeid' id='v'}
-                                <option value="" class="select-option">{$v}</option>
+                                <option value="" class="select-option">{$vv.type_name}</option>
+
                                 {/volist}
-
 
                     </select>
                 </div>
@@ -165,10 +165,11 @@
                     </li>
                     <li class="form-text-li">
                         <label for="">芯体</label>
-                        <select name="cus_core" id="1">
+                        <select name="cus_core" id="1" onchange="selectQiTa(this)">
                             <option value="-1">- 请选择 -</option>
                             <option value="吸水纸">吸水纸</option>
                             <option value="木浆+高分子">木浆+高分子</option>
+                            <option value="-2">其他</option>
                         </select>
                     </li>
                     <li class="form-text-li-1">
@@ -227,7 +228,6 @@
 </main>
 
 <script src="{:config('home_js')}/fabuxinxi.js"></script>
-\
 <script>
 
     $(function () {
@@ -258,5 +258,17 @@
         })
     });
 </script>
+<script>
+    function selectQiTa(lay) {
+        var option_name=$(lay).val();
+        var str='<label for="">芯体</label><input type="text" name="cus_core" value="" placeholder="点击输入">'
+        console.log(option_name)
+        if(option_name=='-2'){
+            $(lay).parent().html(str);
+            console.log($(lay).parent())
+        }
+    }
+</script>
+
 </body>
 </html>
