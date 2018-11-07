@@ -32,7 +32,7 @@
     <ul class="cedaohang-dingwei">
         <li class="cedaohang-li cedaohang-active">全部</li>
         {volist name='type' id='ty'}
-        <li class="cedaohang-li" type_name="{$ty.type_name}" >{$ty.type_name}加工</li>
+        <li class="cedaohang-li" type_id="{$ty.type_id}">{$ty.type_name}加工</li>
         {/volist}
     </ul>
     <div class="main-title-box">
@@ -54,46 +54,46 @@
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>商品图片：</label>
                     <div class="formControls col-xs-8 col-sm-9">
-                        <input type="file" id="doc1" name="doc1" />{/*uploadify使用的*/}
+                        <input type="file" id="doc1" name="doc1"/>{/*uploadify使用的*/}
                         {/*form表单使用，用于添加数据到mysql用的*/}
-                        <input type="hidden" id="cus_pic" name="cus_pic" />
+                        <input type="hidden" id="cus_pic" name="cus_pic"/>
                     </div>
                     <label class="form-label col-xs-4 col-sm-3"></label>
                     <div class="formControls col-xs-8 col-sm-9">
                         {/*显示上传完毕的图片*/}
-                        <img src="" alt="" width="200" height="100" id="logo_show" />
+                        <img src="" alt="" width="200" height="100" id="logo_show"/>
                     </div>
                 </div>
 
 
                 <!--<div class="form-img-box-left">-->
-                    <!--&lt;!&ndash;这是要展示上传图片的div以及img标签&ndash;&gt;-->
-                    <!--<div id="localImag">-->
-                        <!--主图图片(点击上传)-->
-                        <!--&lt;!&ndash;这是图片上传的input框&ndash;&gt;-->
-                        <!--<label class="lacalLabel">-->
-                            <!--<input type='file' id='doc1' name='pic1' />-->
-                            <!--<input type="hidden" id="cus_pic" name="cus_pic" />-->
-                        <!--</label>-->
-                        <!--<img data-original="" id="preview1" alt="">-->
-                    <!--</div>-->
+                <!--&lt;!&ndash;这是要展示上传图片的div以及img标签&ndash;&gt;-->
+                <!--<div id="localImag">-->
+                <!--主图图片(点击上传)-->
+                <!--&lt;!&ndash;这是图片上传的input框&ndash;&gt;-->
+                <!--<label class="lacalLabel">-->
+                <!--<input type='file' id='doc1' name='pic1' />-->
+                <!--<input type="hidden" id="cus_pic" name="cus_pic" />-->
+                <!--</label>-->
+                <!--<img data-original="" id="preview1" alt="">-->
+                <!--</div>-->
                 <!--</div>-->
 
                 <script type="text/javascript">
                     <?php $timestamp = time();?>
-                    $(function() {
+                    $(function () {
                         $('#doc1').uploadify({
-                            'formData'     : {
-                                'timestamp' : '<?php echo $timestamp;?>',
-                                'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+                            'formData': {
+                                'timestamp': '<?php echo $timestamp;?>',
+                                'token': '<?php echo md5('unique_salt' . $timestamp);?>'
                             },
-                            'buttonImage' : '/plugin/uploadify/browse-btn.png',
-                            'swf'      : '/plugin/uploadify/uploadify.swf',
-                            'uploader' : '{:url("home/user/pic_up")}',
-                            'onUploadSuccess' : function(file, data, response) {
+                            'buttonImage': '/plugin/uploadify/browse-btn.png',
+                            'swf': '/plugin/uploadify/uploadify.swf',
+                            'uploader': '{:url("home/user/pic_up")}',
+                            'onUploadSuccess': function (file, data, response) {
                                 // alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
                                 var obj = JSON.parse(data);
-                                $('#logo_show').attr('src',obj.picpathname.substring(1));
+                                $('#logo_show').attr('src', obj.picpathname.substring(1));
                                 $('#cus_pic').val(obj.picpathname);
 
                             }
@@ -132,16 +132,20 @@
             <!--上传产品信息-->
             <div class="form-text-big-box">
                 <div class="select-div">
-                    <select name="" id="" class="select-box">
+                    <select name="cus_proname" id="" class="select-box">
 
-                        <option value="-1" class="select-option">卫生巾加工 &nbsp;(点击分类)</option>
+                                {volist name='typeer' id='vv'}
+
+                                <option value="" class="select-option">{$vv.type_name}</option>
+
+                                {/volist}
 
                     </select>
                 </div>
                 <ul class="form-text-ul">
                     <li class="form-text-li">
                         <label for="">产品名称</label>
-                        <input type="text"  name="cus_proname" value="" placeholder="点击输入">
+                        <input type="text" name="cus_proname" value="" placeholder="点击输入">
                         <span style="color:red; line-height: 44px;">{$errorinfo.cus_proname|default=''}</span>
                     </li>
                     <li class="form-text-li-1">
@@ -216,53 +220,42 @@
                 </ul>
             </div>
             <div class="form-button">
-                <input type="submit" value="发布" name="submit">
+                <input type="submit" value="发布" >
             </div>
         </form>
     </div>
 </main>
 
-<script src="{:config('home_js')}/fabuxinxi.js"></script>\
+<script src="{:config('home_js')}/fabuxinxi.js"></script>
+\
 <script>
 
-    var type_name = $('.cedaohang-li').val();
-    $.post("{:url('home/user/fabuxinxi')}", {type_name:type_name}, function(data, textStatus, xhr) {
-        这里是后台成功或失败后的处理操作
-    });
-
-    // 给form表单设置submit注册事件
-    // $('.form-custom-up').submit(function(evt){
-    //     //evt（自定义）是当前submit的时间对象
-    //     //阻止真实的form表单浏览器提交执行
-    //     evt.preventDefault();
-    //     //序列化收集form表单的信息
-    //     var shuju = $(this).serialize();
-    //     $.ajax({
-    //         url:"{:url('home/user/fabuxinxi')}",
-    //         data:shuju,
-    //         datatype:'json',
-    //         type:'post',
-    //         success:function(msg){
-    //             if(msg.status=='success'){
-    //                 layer.alert('添加成功', {icon: 6},function(){
-    //                     //主页面刷新
-    //                     parent.window.location.href=parent.window.location.href;
-    //                     //当前窗口关闭
-    //                     //我们本身的hui.admin对该layer有封装，关闭当前窗口可以像如下这样设置
-    //                     layer_close();//本身的H-ui.admin.js封装的
-    //                 });
-    //             }else{
-    //                 layer.alert('添加失败，【'+msg.errorinfo+'】', {icon: 5});
-    //             }
-    //         }
-    //     });
-    // });
-
-    $(function() {
+    $(function () {
         $("img").lazyload({
-            threshold : 200,
-            skip_invisible : false
+            threshold: 200,
+            skip_invisible: false
         });
+    });
+</script>
+<script>
+    //侧导航点击
+    $('.cedaohang-li').on('click', function (e) {
+        $('.cedaohang-li').removeClass('cedaohang-active');
+        $(e.target).addClass('cedaohang-active');
+        var type_id = $(e.target).attr('type_id');
+        type_id=parseInt(type_id)
+
+        $.ajax({
+            dataType:'json',
+            type: "get",
+            url: "{:url('home/user/fabuxinxi')}",
+            data: {type_id},
+            success:function (str) {
+                var aa=JSON.stringify(str);
+               // alert(aa);
+                // console.log(str,'1',2)
+            }
+        })
     });
 </script>
 </body>

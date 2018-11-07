@@ -62,9 +62,9 @@ class UserController extends Controller
         return $this->fetch();
     }
 
-
     //企业图片
     public function gerentupian(Request $request)
+
     {
         $com_id = Session::get('com_id');
         if (request()->isPost()) {
@@ -124,6 +124,12 @@ class UserController extends Controller
         return $this->fetch();
     }
 
+
+    //企业资质
+    public function qiyezizhi()
+    {
+        return $this->fetch();
+    }
 
     //更改企业信息
     public function tjgrxx(Request $request)

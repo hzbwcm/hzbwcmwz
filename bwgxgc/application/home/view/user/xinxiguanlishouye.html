@@ -47,6 +47,7 @@
     </div>
     <div class="main-form-box">
         <ul class="form-ul">
+            {volist name='info' id='proname'}
             <li class="form-li">
                 <div class="form-img">
                     <img data-original="{:config('home_img')}/a2.png" alt="">
@@ -54,71 +55,9 @@
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
                 </div>
-                <div class="form-li-title">发布名称</div>
+                <div class="form-li-title">{$proname.cus_proname}</div>
             </li>
-            <li class="form-li">
-                <div class="form-img">
-                    <img data-original="{:config('home_img')}/a2.png" alt="">
-                    <a href="" class="img-zhezhao">
-                        <div class="img-zhezhao-text">点击进入编辑</div>
-                    </a>
-                </div>
-                <div class="form-li-title">发布名称</div>
-            </li>
-            <li class="form-li">
-                <div class="form-img">
-                    <img data-original="{:config('home_img')}/a2.png" alt="">
-                    <a href="" class="img-zhezhao">
-                        <div class="img-zhezhao-text">点击进入编辑</div>
-                    </a>
-                </div>
-                <div class="form-li-title">发布名称</div>
-            </li>
-            <li class="form-li">
-                <div class="form-img">
-                    <img data-original="{:config('home_img')}/a2.png" alt="">
-                    <a href="" class="img-zhezhao">
-                        <div class="img-zhezhao-text">点击进入编辑</div>
-                    </a>
-                </div>
-                <div class="form-li-title">发布名称</div>
-            </li>
-            <li class="form-li">
-                <div class="form-img">
-                    <img data-original="{:config('home_img')}/a2.png" alt="">
-                    <a href="" class="img-zhezhao">
-                        <div class="img-zhezhao-text">点击进入编辑</div>
-                    </a>
-                </div>
-                <div class="form-li-title">发布名称</div>
-            </li>
-            <li class="form-li">
-                <div class="form-img">
-                    <img data-original="{:config('home_img')}/a2.png" alt="">
-                    <a href="" class="img-zhezhao">
-                        <div class="img-zhezhao-text">点击进入编辑</div>
-                    </a>
-                </div>
-                <div class="form-li-title">发布名称</div>
-            </li>
-            <li class="form-li">
-                <div class="form-img">
-                    <img data-original="{:config('home_img')}/a2.png" alt="">
-                    <a href="" class="img-zhezhao">
-                        <div class="img-zhezhao-text">点击进入编辑</div>
-                    </a>
-                </div>
-                <div class="form-li-title">发布名称</div>
-            </li>
-            <li class="form-li">
-                <div class="form-img">
-                    <img data-original="{:config('home_img')}/a2.png" alt="">
-                    <a href="" class="img-zhezhao">
-                        <div class="img-zhezhao-text">点击进入编辑</div>
-                    </a>
-                </div>
-                <div class="form-li-title">发布名称</div>
-            </li>
+            {/volist}
         </ul>
 
 

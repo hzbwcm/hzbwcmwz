@@ -63,7 +63,9 @@ Route::any('admin/role/gai','admin/role/gai',['method'=>'get|post']);//角色修
 Route::get('admin/permission/index','admin/permission/index');//权限表
 Route::any('admin/permission/addition','admin/permission/addition',['method'=>'get|post']);//权限添加
 Route::get('admin/user/gerenxinxi','admin/user/gerenxinxi');//个人信息
-//Route::get('admin/user/gerentupian','admin/user/gerentupian');//个人信息图片上传
+
+Route::get('admin/user/gerentupian','admin/user/gerentupian');//个人信息图片上传
+Route::get('admin/user/qiyezizhi','admin/user/qiyezizhi');//企业资质
 Route::group('admin',function (){
     Route::get('user/logout','admin/user/logout');//admin退出
     Route::get('index/index','admin/index/index');//admin首页

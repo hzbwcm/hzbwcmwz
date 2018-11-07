@@ -21,11 +21,50 @@ class UserController extends Controller
     //信息管理
     public function xinxiguanli()
     {
-        return $this->fetch();
+        $user_id = session('user_id');
+        if($request->isPost()){
+
+            $data = $request->post();
+            $rules = [
+                'nickname'      =>'require|unique:user_person,username|max:25',
+                'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],
+                'user_email'    =>'require|email',
+                'user_qq'       =>'require',
+            ];
+            $msg = [
+                'nickname.require'      => '昵称必填',
+                'nickname.unique'       => '昵称已经被使用',
+                'nickname.max'          => '昵称长度不能超过25位',
+                'tel.require'           => '手机号码必填',
+                'tel.regex'             => '手机号码规则不正确',
+                'user_email.require'    => '邮箱必填',
+                'user_email.email'      => '邮箱格式不正确',
+                'user_qq.require'       => 'qq必填',
+            ];
+            $validate = new Validate($rules,$msg);
+            if(!$validate->batch()->check($data)){
+                $errorinfo=$validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                return $this -> fetch();
+            }
+            $user_person = new user_person();
+            $res = $user_person->where('user_id', $user_id)->update($data);
+            if ($res) {
+                $this->success('信息更新成功!');  //TODO 更新成功页面跳转
+            }else{
+                $this->error('信息更新失败!');
+            }
+        }else{
+            $user_data = User_person::where('user_id', $user_id)->find();
+            $this->assign('user_data', $user_data);
+            return $this->fetch();
+        }
     }
     //信息管理首页
     public function xinxiguanlishouye()
     {
+        $info = Customgood::select();
+        $this->assign('info',$info);
         return $this->fetch();
     }
     /*
@@ -52,14 +91,37 @@ class UserController extends Controller
     public function fabuxinxi(Request $request)
     {
         $user_id = session('user_id');
+
         $type = Type::where('type_id','<',11)->select();
-        $this -> assign('type',$type);
-        $typeer = type::where('type_id','>',10)->select();
-        $this -> assign('typeer',$typeer);
+
+        //$this -> assign('type',$type);
+
+        $typeid = $request->get('type_id');
+
+
+            $typeer = Type::where('type_pid',$typeid)->select();
+            dump($typeer);
+            die();
+           // $this -> assign('typeer',$typeer);
+        $this->assign([
+            'type' =>$type,
+            'typeer'=>$typeer
+        ]);
+        return $this -> fetch();
+
+//        if($typeid){
+//            return $typeer;
+
+//            $this->success('asdasd','home/index/index');
+//            dump($type_name);
+//            die();
+        //}
+
+
+
         if(request()->isPost()){
             $shuju = Request::instance()->post();
-            dump($shuju);
-            die();
+
 //            $rules = [
 //                'cus_proname'          =>'require',
 //                'cus_length'           =>'require',
