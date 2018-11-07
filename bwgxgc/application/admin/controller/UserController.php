@@ -62,6 +62,7 @@ class UserController extends Controller
         return $this->fetch();
     }
 
+
     //企业图片
     public function gerentupian(Request $request)
 
@@ -123,7 +124,6 @@ class UserController extends Controller
 //        die;
         return $this->fetch();
     }
-
 
     //企业资质
     public function qiyezizhi()
