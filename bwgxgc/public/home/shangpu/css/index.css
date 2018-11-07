@@ -98,17 +98,9 @@ main .main-gsjs-box .gsjs-content-box .gsjs-content-up-box .gsjs-content-up-left
   width: 576px;
   height: 428px;
   float: left;
-  position: relative;
 }
 main .main-gsjs-box .gsjs-content-box .gsjs-content-up-box .gsjs-content-up-left img {
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+  width: 100%;
 }
 main .main-gsjs-box .gsjs-content-box .gsjs-content-up-box .gsjs-content-up-right {
   float: right;

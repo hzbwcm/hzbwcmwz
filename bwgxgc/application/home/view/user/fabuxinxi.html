@@ -133,9 +133,13 @@
             <div class="form-text-big-box">
                 <div class="select-div">
                     <select name="cus_proname" id="" class="select-box">
-                        {volist name='typeer' id='vv'}
-                        <option value="" class="select-option">{$vv.type_name}</option>
-                        {/volist}
+
+                                {volist name='typeer' id='vv'}
+
+                                <option value="" class="select-option">{$vv.type_name}</option>
+
+                                {/volist}
+
                     </select>
                 </div>
                 <ul class="form-text-ul">
@@ -248,11 +252,6 @@
             data: {type_id},
             success:function (str) {
                 var aa=JSON.stringify(str);
-                JSON.parse(aa)
-               //  for(var i=0;i<=aa.length;i++){
-               //      var bb=aa[i].type_name;
-               //      console.log(bb)
-               //  }
                // alert(aa);
                 // console.log(str,'1',2)
             }
