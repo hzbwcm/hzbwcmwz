@@ -76,21 +76,22 @@
     <div class="search-centre">
         <div class="sear-logo">
             <a href="{:url('/')}">
-            <img data-original="{:config('home_img')}/a0.png" alt="">
+                <img data-original="{:config('home_img')}/a0.png" alt="">
+            </a>
         </div>
 
         <div class="search-c-b">
-            <div class="search">
-                <div class="search-fram">
-                    <div class="s-f-i-i">
-                        <img data-original="{:config('home_img')}/aa.png" alt="">
+            <form action="">
+                <div class="search">
+                    <div class="search-fram">
+                        <div class="s-f-i-i">
+                            <img data-original="{:config('home_img')}/aa.png" alt="">
+                        </div>
+                        <input type="text" placeholder="" value="">
                     </div>
-                    <input type="text" placeholder="" value="">
+                    <button class="search-button" style="border: none"><i class="iconfont icon-fangdajing"></i></button>
                 </div>
-                <div class="search-button">
-                    <i class="iconfont icon-fangdajing"></i>
-                </div>
-            </div>
+            </form>
             <div class="re-search">
                 <span>热门搜索:</span>
                 <a href="">卫生巾</a>
@@ -144,11 +145,14 @@
         <a href="{:url('home/documentary/documentary')}">
             <li>跟单专家</li>
         </a>
-        <a href="{:url('home/wlpf/wlpf')}">
+        <a href="{:url('home/index/wlpf')}">
             <li>网络批发</li>
         </a>
         <a href="">
-            <li class="daohang-fabu"><div class="daohang-yuan"></div>我的工厂>></li>
+            <li class="daohang-fabu">
+                <div class="daohang-yuan"></div>
+                我的工厂>>
+            </li>
         </a>
     </ul>
 </div>
@@ -215,93 +219,93 @@
 </div>
 <!--工厂入住-->
 <!--<div class="ruzhu-box">-->
-    <!--<div class="ruzhu-c-t">-->
-        <!--<div class="ruzhu-c-l">-->
-            <!--<div class="ruzhu-s-j">-->
-                <!--卫品加工入<span class="ruzhu-zhu">驻</span>合作商家-->
-            <!--</div>-->
-            <!--<div class="ruzhu-sh-l">已有<span>2000</span>家卫品商家入驻</div>-->
-        <!--</div>-->
-        <!--<div class="ruzhu-c-r">-->
-            <!--<div class="gongchang-ch-x">-->
-                <!--<div class="cp-l-b">-->
-                    <!--<div class="cp-xl-title"><span dqdj="a1">产品类别</span> <i class="iconfont icon-iconfontarrows1"-->
-                                                                            <!--dqdj="a1"></i></div>-->
-                    <!--<div class="cp-xl-box">-->
-                        <!--<div class="cp-xl">卫生巾</div>-->
-                        <!--<div class="cp-xl">纸尿裤</div>-->
-                        <!--<div class="cp-xl">卫生纸</div>-->
-                        <!--<div class="cp-xl">生活用品</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="cp-p-p">-->
-                    <!--<div class="cp-xl-title"><span dqdj="a1">产品规格</span> <i class="iconfont icon-iconfontarrows1"-->
-                                                                            <!--dqdj="a1"></i></div>-->
-                    <!--<div class="cp-xl-box">-->
-                        <!--<div class="cp-xl">卫生巾</div>-->
-                        <!--<div class="cp-xl">纸尿裤</div>-->
-                        <!--<div class="cp-xl">卫生纸</div>-->
-                        <!--<div class="cp-xl">生活用品</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="gc-p-y">-->
-                    <!--<div class="cp-xl-title"><span dqdj="a1">工厂区域 </span><i class="iconfont icon-iconfontarrows1"-->
-                                                                            <!--dqdj="a1"></i></div>-->
-                    <!--<div class="cp-xl-box">-->
-                        <!--<div class="cp-xl">卫生巾</div>-->
-                        <!--<div class="cp-xl">纸尿裤</div>-->
-                        <!--<div class="cp-xl">卫生纸</div>-->
-                        <!--<div class="cp-xl">生活用品</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="tongyi-l-x">-->
-                    <!--<div>-->
-                        <!--<input type="checkbox">-->
-                        <!--同意联系工厂-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="yijian-x-z"><span>一键寻找</span></div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="ruzhu-c-b">-->
-        <!--<a href="" class="ruzhu-za-z">-->
-            <!--<div class="zazhi-img">-->
-                <!--<img data-original="{:config('home_img')}/cs1.png" alt="">-->
-            <!--</div>-->
-            <!--<div class="zazhi-text">-->
-                <!--<div class="zazhi-t-t"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
-                <!--<div class="zazhi-t-b">了解更多卫品信息</div>-->
-            <!--</div>-->
-        <!--</a>-->
-        <!--<a href="" class="ruzhu-za-z">-->
-            <!--<div class="zazhi-img">-->
-                <!--<img data-original="{:config('home_img')}/cs2.png" alt="">-->
-            <!--</div>-->
-            <!--<div class="zazhi-text">-->
-                <!--<div class="zazhi-t-t-1"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
-                <!--<div class="zazhi-t-b-1">了解更多卫品信息</div>-->
-            <!--</div>-->
-        <!--</a>-->
-        <!--<a href="" class="ruzhu-za-z">-->
-            <!--<div class="zazhi-img">-->
-                <!--<img data-original="{:config('home_img')}/cs3.png" alt="">-->
-            <!--</div>-->
-            <!--<div class="zazhi-text">-->
-                <!--<div class="zazhi-t-t-2"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
-                <!--<div class="zazhi-t-b-2">了解更多卫品信息</div>-->
-            <!--</div>-->
-        <!--</a>-->
-        <!--<a href="" class="ruzhu-za-z">-->
-            <!--<div class="zazhi-img">-->
-                <!--<img data-original="{:config('home_img')}/cs4.png" alt="">-->
-            <!--</div>-->
-            <!--<div class="zazhi-text">-->
-                <!--<div class="zazhi-t-t-3"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
-                <!--<div class="zazhi-t-b-3">了解更多卫品信息</div>-->
-            <!--</div>-->
-        <!--</a>-->
-    <!--</div>-->
+<!--<div class="ruzhu-c-t">-->
+<!--<div class="ruzhu-c-l">-->
+<!--<div class="ruzhu-s-j">-->
+<!--卫品加工入<span class="ruzhu-zhu">驻</span>合作商家-->
+<!--</div>-->
+<!--<div class="ruzhu-sh-l">已有<span>2000</span>家卫品商家入驻</div>-->
+<!--</div>-->
+<!--<div class="ruzhu-c-r">-->
+<!--<div class="gongchang-ch-x">-->
+<!--<div class="cp-l-b">-->
+<!--<div class="cp-xl-title"><span dqdj="a1">产品类别</span> <i class="iconfont icon-iconfontarrows1"-->
+<!--dqdj="a1"></i></div>-->
+<!--<div class="cp-xl-box">-->
+<!--<div class="cp-xl">卫生巾</div>-->
+<!--<div class="cp-xl">纸尿裤</div>-->
+<!--<div class="cp-xl">卫生纸</div>-->
+<!--<div class="cp-xl">生活用品</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="cp-p-p">-->
+<!--<div class="cp-xl-title"><span dqdj="a1">产品规格</span> <i class="iconfont icon-iconfontarrows1"-->
+<!--dqdj="a1"></i></div>-->
+<!--<div class="cp-xl-box">-->
+<!--<div class="cp-xl">卫生巾</div>-->
+<!--<div class="cp-xl">纸尿裤</div>-->
+<!--<div class="cp-xl">卫生纸</div>-->
+<!--<div class="cp-xl">生活用品</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="gc-p-y">-->
+<!--<div class="cp-xl-title"><span dqdj="a1">工厂区域 </span><i class="iconfont icon-iconfontarrows1"-->
+<!--dqdj="a1"></i></div>-->
+<!--<div class="cp-xl-box">-->
+<!--<div class="cp-xl">卫生巾</div>-->
+<!--<div class="cp-xl">纸尿裤</div>-->
+<!--<div class="cp-xl">卫生纸</div>-->
+<!--<div class="cp-xl">生活用品</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="tongyi-l-x">-->
+<!--<div>-->
+<!--<input type="checkbox">-->
+<!--同意联系工厂-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="yijian-x-z"><span>一键寻找</span></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="ruzhu-c-b">-->
+<!--<a href="" class="ruzhu-za-z">-->
+<!--<div class="zazhi-img">-->
+<!--<img data-original="{:config('home_img')}/cs1.png" alt="">-->
+<!--</div>-->
+<!--<div class="zazhi-text">-->
+<!--<div class="zazhi-t-t"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
+<!--<div class="zazhi-t-b">了解更多卫品信息</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--<a href="" class="ruzhu-za-z">-->
+<!--<div class="zazhi-img">-->
+<!--<img data-original="{:config('home_img')}/cs2.png" alt="">-->
+<!--</div>-->
+<!--<div class="zazhi-text">-->
+<!--<div class="zazhi-t-t-1"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
+<!--<div class="zazhi-t-b-1">了解更多卫品信息</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--<a href="" class="ruzhu-za-z">-->
+<!--<div class="zazhi-img">-->
+<!--<img data-original="{:config('home_img')}/cs3.png" alt="">-->
+<!--</div>-->
+<!--<div class="zazhi-text">-->
+<!--<div class="zazhi-t-t-2"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
+<!--<div class="zazhi-t-b-2">了解更多卫品信息</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--<a href="" class="ruzhu-za-z">-->
+<!--<div class="zazhi-img">-->
+<!--<img data-original="{:config('home_img')}/cs4.png" alt="">-->
+<!--</div>-->
+<!--<div class="zazhi-text">-->
+<!--<div class="zazhi-t-t-3"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
+<!--<div class="zazhi-t-b-3">了解更多卫品信息</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
 <!--</div>-->
 
 <!--推荐工厂-->
@@ -312,7 +316,7 @@
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img data-original="{:config('public_uploads' )}/com_pic/5be00c1c0db25.jpg" alt="" >
+                        <img data-original="{:config('public_uploads' )}/com_pic/5be00c1c0db25.jpg" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
@@ -729,7 +733,7 @@
     <div class="jiagong-b-box">
         <div class="wsjjg-bt-box">
             <span>贴牌专区</span>
-            <a href="{:url('home/index/stickacard')}">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
+            <a href="{:url('home/stickacard/stickacard')}">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
         </div>
         <div class="dj-wsjgg-box">
             <div class="dj-gg">
@@ -928,9 +932,9 @@
                     <div class="youxuan-gc-num"><span></span></div>
                 </div>
                 <div class="youxuan-right">
-                    价格行情
+
                 </div>
-                <a href="" class="youxuan_gengduo">更多<i class="iconfont icon-shuangjiantouyou"></i></a>
+                <a href="" class="youxuan_gengduo"></a>
             </div>
             <!--优选新闻内容-->
             <div class="youxuan-xw-box">
@@ -990,7 +994,8 @@
 <div class="sbzr-big-box">
     <div class="sbzr-title">
         <span class="sbzr-title-l">设备转让</span>
-        <a href="{:url('home/index/shebeitransfer')}" class="sbzr-title-r">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
+        <a href="{:url('home/shebeitransfer/shebeitransfer')}" class="sbzr-title-r">更多 <i
+                class="iconfont icon-shuangjiantouyou"></i></a>
     </div>
     <div class="sbzr-box">
         <!--设备转让内容div-->
@@ -1266,93 +1271,93 @@
 </div>
 <!--底部工厂入驻-->
 <!--<div class="ruzhu-box-1">-->
-    <!--<div class="ruzhu-c-t">-->
-        <!--<div class="ruzhu-c-l">-->
-            <!--<div class="ruzhu-s-j">-->
-                <!--卫品加工入<span class="ruzhu-zhu">驻</span>合作商家-->
-            <!--</div>-->
-            <!--<div class="ruzhu-sh-l">已有<span>2000</span>家卫品商家入驻</div>-->
-        <!--</div>-->
-        <!--<div class="ruzhu-c-r">-->
-            <!--<div class="gongchang-ch-x">-->
-                <!--<div class="cp-l-b">-->
-                    <!--<div class="cp-xl-title"><span dqdj="a1">产品类别</span> <i class="iconfont icon-iconfontarrows1"-->
-                                                                            <!--dqdj="a1"></i></div>-->
-                    <!--<div class="cp-xl-box">-->
-                        <!--<div class="cp-xl">卫生巾</div>-->
-                        <!--<div class="cp-xl">纸尿裤</div>-->
-                        <!--<div class="cp-xl">卫生纸</div>-->
-                        <!--<div class="cp-xl">生活用品</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="cp-p-p">-->
-                    <!--<div class="cp-xl-title"><span dqdj="a1">产品规格</span> <i class="iconfont icon-iconfontarrows1"-->
-                                                                            <!--dqdj="a1"></i></div>-->
-                    <!--<div class="cp-xl-box">-->
-                        <!--<div class="cp-xl">卫生巾</div>-->
-                        <!--<div class="cp-xl">纸尿裤</div>-->
-                        <!--<div class="cp-xl">卫生纸</div>-->
-                        <!--<div class="cp-xl">生活用品</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="gc-p-y">-->
-                    <!--<div class="cp-xl-title"><span dqdj="a1">工厂区域 </span><i class="iconfont icon-iconfontarrows1"-->
-                                                                            <!--dqdj="a1"></i></div>-->
-                    <!--<div class="cp-xl-box">-->
-                        <!--<div class="cp-xl">卫生巾</div>-->
-                        <!--<div class="cp-xl">纸尿裤</div>-->
-                        <!--<div class="cp-xl">卫生纸</div>-->
-                        <!--<div class="cp-xl">生活用品</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="tongyi-l-x">-->
-                    <!--<div>-->
-                        <!--<input type="checkbox">-->
-                        <!--同意联系工厂-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="yijian-x-z"><span>一键寻找</span></div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="ruzhu-c-b">-->
-        <!--<a href="" class="ruzhu-za-z">-->
-            <!--<div class="zazhi-img">-->
-                <!--<img data-original="{:config('home_img')}/cs1.png" alt="">-->
-            <!--</div>-->
-            <!--<div class="zazhi-text">-->
-                <!--<div class="zazhi-t-t"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
-                <!--<div class="zazhi-t-b">了解更多卫品信息</div>-->
-            <!--</div>-->
-        <!--</a>-->
-        <!--<a href="" class="ruzhu-za-z">-->
-            <!--<div class="zazhi-img">-->
-                <!--<img data-original="{:config('home_img')}/cs2.png" alt="">-->
-            <!--</div>-->
-            <!--<div class="zazhi-text">-->
-                <!--<div class="zazhi-t-t-1"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
-                <!--<div class="zazhi-t-b-1">了解更多卫品信息</div>-->
-            <!--</div>-->
-        <!--</a>-->
-        <!--<a href="" class="ruzhu-za-z">-->
-            <!--<div class="zazhi-img">-->
-                <!--<img data-original="{:config('home_img')}/cs3.png" alt="">-->
-            <!--</div>-->
-            <!--<div class="zazhi-text">-->
-                <!--<div class="zazhi-t-t-2"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
-                <!--<div class="zazhi-t-b-2">了解更多卫品信息</div>-->
-            <!--</div>-->
-        <!--</a>-->
-        <!--<a href="" class="ruzhu-za-z">-->
-            <!--<div class="zazhi-img">-->
-                <!--<img data-original="{:config('home_img')}/cs4.png" alt="">-->
-            <!--</div>-->
-            <!--<div class="zazhi-text">-->
-                <!--<div class="zazhi-t-t-3"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
-                <!--<div class="zazhi-t-b-3">了解更多卫品信息</div>-->
-            <!--</div>-->
-        <!--</a>-->
-    <!--</div>-->
+<!--<div class="ruzhu-c-t">-->
+<!--<div class="ruzhu-c-l">-->
+<!--<div class="ruzhu-s-j">-->
+<!--卫品加工入<span class="ruzhu-zhu">驻</span>合作商家-->
+<!--</div>-->
+<!--<div class="ruzhu-sh-l">已有<span>2000</span>家卫品商家入驻</div>-->
+<!--</div>-->
+<!--<div class="ruzhu-c-r">-->
+<!--<div class="gongchang-ch-x">-->
+<!--<div class="cp-l-b">-->
+<!--<div class="cp-xl-title"><span dqdj="a1">产品类别</span> <i class="iconfont icon-iconfontarrows1"-->
+<!--dqdj="a1"></i></div>-->
+<!--<div class="cp-xl-box">-->
+<!--<div class="cp-xl">卫生巾</div>-->
+<!--<div class="cp-xl">纸尿裤</div>-->
+<!--<div class="cp-xl">卫生纸</div>-->
+<!--<div class="cp-xl">生活用品</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="cp-p-p">-->
+<!--<div class="cp-xl-title"><span dqdj="a1">产品规格</span> <i class="iconfont icon-iconfontarrows1"-->
+<!--dqdj="a1"></i></div>-->
+<!--<div class="cp-xl-box">-->
+<!--<div class="cp-xl">卫生巾</div>-->
+<!--<div class="cp-xl">纸尿裤</div>-->
+<!--<div class="cp-xl">卫生纸</div>-->
+<!--<div class="cp-xl">生活用品</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="gc-p-y">-->
+<!--<div class="cp-xl-title"><span dqdj="a1">工厂区域 </span><i class="iconfont icon-iconfontarrows1"-->
+<!--dqdj="a1"></i></div>-->
+<!--<div class="cp-xl-box">-->
+<!--<div class="cp-xl">卫生巾</div>-->
+<!--<div class="cp-xl">纸尿裤</div>-->
+<!--<div class="cp-xl">卫生纸</div>-->
+<!--<div class="cp-xl">生活用品</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="tongyi-l-x">-->
+<!--<div>-->
+<!--<input type="checkbox">-->
+<!--同意联系工厂-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="yijian-x-z"><span>一键寻找</span></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="ruzhu-c-b">-->
+<!--<a href="" class="ruzhu-za-z">-->
+<!--<div class="zazhi-img">-->
+<!--<img data-original="{:config('home_img')}/cs1.png" alt="">-->
+<!--</div>-->
+<!--<div class="zazhi-text">-->
+<!--<div class="zazhi-t-t"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
+<!--<div class="zazhi-t-b">了解更多卫品信息</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--<a href="" class="ruzhu-za-z">-->
+<!--<div class="zazhi-img">-->
+<!--<img data-original="{:config('home_img')}/cs2.png" alt="">-->
+<!--</div>-->
+<!--<div class="zazhi-text">-->
+<!--<div class="zazhi-t-t-1"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
+<!--<div class="zazhi-t-b-1">了解更多卫品信息</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--<a href="" class="ruzhu-za-z">-->
+<!--<div class="zazhi-img">-->
+<!--<img data-original="{:config('home_img')}/cs3.png" alt="">-->
+<!--</div>-->
+<!--<div class="zazhi-text">-->
+<!--<div class="zazhi-t-t-2"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
+<!--<div class="zazhi-t-b-2">了解更多卫品信息</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--<a href="" class="ruzhu-za-z">-->
+<!--<div class="zazhi-img">-->
+<!--<img data-original="{:config('home_img')}/cs4.png" alt="">-->
+<!--</div>-->
+<!--<div class="zazhi-text">-->
+<!--<div class="zazhi-t-t-3"><span>杂志阅读</span><i class="iconfont icon-yousanjiao"></i></div>-->
+<!--<div class="zazhi-t-b-3">了解更多卫品信息</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
 <!--</div>-->
 <!--页脚-->
 <div class="footer">
@@ -1404,10 +1409,10 @@
 </body>
 <script src="{:config('home_js')}/index.js"></script>
 <script>
-    $(function() {
+    $(function () {
         $("img").lazyload({
-            threshold : 200,
-            skip_invisible : false
+            threshold: 200,
+            skip_invisible: false
         });
     });
 </script>
