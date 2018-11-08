@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 
+use app\admin\model\Company_info;
 use app\admin\model\Card;
 use think\Controller;
 use think\Request;
@@ -41,8 +42,50 @@ class GoodsController extends Controller
         return $this->fetch();
     }
 
-    public function dingzspsc()
+    public function dingzspsc(Request $request)
     {
+        $com_id = Session::get('com_id');
+
+        if($request->isPost()){
+            $shuju = Request::instance()->post();
+
+//            $rules = [
+//                'cus_proname'          =>'require',
+//                'cus_length'           =>'require',
+//                'cus_width'            =>'require',
+//                'cus_place'            =>'require',
+//                'cus_supply'           =>'require',
+//                'cus_orders'           =>'require',
+//            ];
+//            $msg = [
+//                'cus_proname.require'      => '必填',
+//                'cus_length0.require'       => '必填',
+//                'cus_width.require'        => '必填',
+//                'cus_place.require'        => '必填',
+//                'cus_supply.require'       => '必填',
+//                'cus_orders.require'       => '必填',
+//
+//            ];
+//            $validate = new Validate($rules,$msg);
+//            if(!$validate->batch()->check($shuju)){
+//                $errorinfo=$validate->getError();
+//                $this -> assign('errorinfo',$errorinfo);
+//                return $this -> fetch();
+//            }
+
+
+            $customgood = new customgood();
+            $shuju['com_id'] = $com_id;
+            $result = $customgood->allowField(true)->save($shuju);
+            if($result){
+//                return ['status'=>'success'];
+                return $this->success('发布成功','user/fabuxinxi');
+            }else{
+                return ['status'=>'failure','errorinfo'=>'数据写入失败，请联系管理员'];
+            }
+        }
+        return $this->fetch();
+
         return $this->fetch();
     }
 
