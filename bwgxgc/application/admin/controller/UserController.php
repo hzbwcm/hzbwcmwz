@@ -2,6 +2,7 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\Book;
 use app\admin\model\Com_pic;
 use think\Controller;
 use think\Request;
@@ -76,7 +77,6 @@ class UserController extends Controller
                     $info = $file->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'com_pic');
                     $info2 = $info->getSaveName();
                     $info3 = 'com_pic' . "/" . $info2;
-                   // array_push($info5, $info3);
                     $info5['pic'.$x]
                          = $info3;
 
@@ -118,16 +118,43 @@ class UserController extends Controller
             }
         }
         $pics = Com_pic::where("com_id" , $com_id )->find();
-//        $pics=implode($pics);
         $this->assign('pics',$pics);
-//        dump($pics);
-//        die;
         return $this->fetch();
     }
 
     //企业资质
-    public function qiyezizhi()
+    public function qiyezizhi(Request $request)
     {
+        $com_id = Session::get('com_id');
+        $this->assign('com_id',$com_id);
+        if($request->isPost())
+        {
+            if(request()->file('pic')){
+                $info =request()->file('pic')->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'book');
+            $info=$info->getSaveName();
+            $info = 'book' . "/" . $info;
+            }else{
+                return $this->error('请上传图片');
+            }
+            $shuju = [];
+            $shuju['com_id'] = $request->param('com_id');
+            $shuju['book_name'] = $request->param('book_name');
+            $shuju['book_palace'] = $request->param('book_palace');
+            $shuju['book_time'] = $request->param('book_time');
+            $shuju['pic'] = $info;
+            $book = new book();
+            $res=$book ->save($shuju);
+            if($res)
+            {
+                return $this->success('上传成功');
+            }else{
+                return $this->error('上传失败');
+            }
+
+
+        }
+
+
         return $this->fetch();
     }
 

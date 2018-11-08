@@ -39,6 +39,7 @@
         class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="tiepaiTitle">贴牌专区商品上传</div>
 <form style="padding-bottom: 150px;" method="post" action="{$Request.url}" enctype="multipart/form-data">
+    <input type="hidden" name="com_id" value="{$com_id}">
     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-xs-offset-2">
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品类型 ：</label>
@@ -190,18 +191,18 @@
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">加印Logo ：</label>
             <div class="radio-box">
-                <input type="radio" id="radio-7" name="logo" value="有">
-                <label for="radio-7">有</label>
+                <input type="radio" id="radio-7" name="logo" value="是">
+                <label for="radio-7">是</label>
             </div>
             <div class="radio-box">
-                <input type="radio" id="radio-8" name="logo" checked value="有">
-                <label for="radio-8">无</label>
+                <input type="radio" id="radio-8" name="logo" checked value="否">
+                <label for="radio-8">否</label>
             </div>
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="formImgBox col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1"  id="lacalImag19">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="formTitle col-xs-10 col-sm-5 col-md-5 col-lg-2">生产环境图片：</div>
+                    <div class="formTitle col-xs-10 col-sm-5 col-md-5 col-lg-2">产品贴牌图片：</div>
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -209,7 +210,7 @@
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
-                        <input type="file" value="" id="doc9" name="pic9" onclick="inputimg('pic9','lacalImag9','preview9','doc9')"></label>
+                        <input type="file" value="" id="doc9" name="pic1" onclick="inputimg('pic1','lacalImag9','preview9','doc9')"></label>
                     </label>
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1">
@@ -218,7 +219,7 @@
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
-                        <input type="file" value="" id="doc10" name="pic10" onclick="inputimg('pic10','lacalImag9','preview10','doc10')"></label>
+                        <input type="file" value="" id="doc10" name="pic2" onclick="inputimg('pic2','lacalImag9','preview10','doc10')"></label>
                     </label>
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1">
@@ -227,7 +228,7 @@
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
-                        <input type="file" value="" id="doc11" name="pic11" onclick="inputimg('pic11','lacalImag9','preview11','doc11')"></label>
+                        <input type="file" value="" id="doc11" name="pic3" onclick="inputimg('pic3','lacalImag9','preview11','doc11')"></label>
                     </label>
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1">
@@ -236,7 +237,7 @@
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
-                        <input type="file" value="" id="doc12" name="pic12" onclick="inputimg('pic12','lacalImag9','preview12','doc12')"></label>
+                        <input type="file" value="" id="doc12" name="pic4" onclick="inputimg('pic4','lacalImag9','preview12','doc12')"></label>
                     </label>
                 </div>
             </div>
@@ -280,7 +281,7 @@
                 });
                 //富文本编辑器初始内容
                 ue.ready(function() {
-                    ue.setContent('<p>hello!</p>');
+                    ue.setContent('<p></p>');
                 });
 
                 function isFocus(e) {

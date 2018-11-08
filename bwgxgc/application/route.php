@@ -8,6 +8,7 @@ Route::get('home/index/foot_base','home/index/foot_base');//页脚
 Route::get('home/user/sms','home/user/sms');//短信个人测试
 Route::post('home/user/sendsms','home/user/sendsms');//发送短信
 Route::get('home/user/register','home/user/register');//注册1
+Route::get('home/index/sousuo','home/index/sousuo');//搜索
 
 Route::any('home/user/gerenzhuce','home/user/gerenzhuce',['method'=>'get|post']);//个人注册
 Route::get('home/user/zhuceshibai','home/user/zhuceshibai');//个人注册失败
@@ -73,6 +74,7 @@ Route::group('admin',function (){
     Route::get('index/index','admin/index/index');//admin首页
     Route::get('index/welcome','admin/index/welcome');//admin首页welcome
     Route::post('user/tjgrxx','admin/user/tjgrxx');
+    Route::post('user/qiyezizhi','admin/user/qiyezizhi');
     Route::any('user/gerentupian','admin/user/gerentupian',['method'=>'get|post']);//个人图片上传
     Route::post('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan');
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);

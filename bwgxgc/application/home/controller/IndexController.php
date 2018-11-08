@@ -33,5 +33,10 @@ class IndexController extends Controller
     {
         return $this->fetch();
     }
+    //收藏夹
+    public function sousuo()
+    {
+        return $this->fetch();
+    }
 
 }

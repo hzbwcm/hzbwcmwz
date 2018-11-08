@@ -31,22 +31,36 @@
     <title>企业资质管理</title>
 </head>
 <style>
-    .formTitle{
+    .formTitle {
         font-size: 20px;
     }
-    .qiyezizhiLabel{
+
+    .qiyezizhiLabel {
         height: 30px;
         font-size: 16px;
         color: #555555;
         text-align: center;
         line-height: 30px;
     }
-    .qiyezizhiInput{
+
+    .qiyezizhiInput {
         height: 30px;
         border: 1px solid #9a9a9a;
     }
-    .qiyezizhiDiv{
+
+    .qiyezizhiDiv {
         margin-bottom: 30px;
+    }
+
+    .formSubmit {
+        background: #0077ff;
+        color: #ffffff;
+        font-size: 16px;
+        height: 36px;
+        text-align: center;
+        line-height: 36px;
+        border: none;
+        border-radius: 3px;
     }
 </style>
 <body>
@@ -55,114 +69,41 @@
         href="javascript:location.replace(location.href);" title="刷新"><i
         class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container" style="padding-bottom: 150px;overflow: hidden">
-    <div class="gerenxinxi-title"><h2>企业资质 管 理</h2></div>
-    <form action="">
+    <div class="gerenxinxi-title"><h2>企 业 资 质 上 传</h2></div>
+    <form action="{$Request.url}" method="post" enctype="multipart/form-data">
         <div class="gerenxinxi-input-box col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1">
-            <div class="formImgBox col-xs-12 col-sm-12 col-md-12 col-lg-12"  id="lacalImag1">
-                <div class="formTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-10 col-sm-5 col-md-5 col-lg-2">
-                        企业资质：
-                    </div>
-                </div>
+            <div class="formImgBox col-xs-12 col-sm-12 col-md-12 col-lg-12" id="lacalImag1">
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2">
                     <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <img src="" alt="" id="preview1">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
                         选择图片
-                        <input type="file" value="" id="doc1" name="pic1" onclick="inputimg('pic1','lacalImag1','preview1','doc1')"></label>
+                        <input type="file" value="" id="doc1" name="pic"
+                               onclick="inputimg('pic','lacalImag1','preview1','doc1')"></label>
                     </label>
                 </div>
                 <div class="formTextBox col-xs-10 col-sm-6 col-md-6 col-lg-9 col-sm-offset-1">
+                    <input type="hidden" name="com_id" value="{$com_id}">
                     <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">证书名称:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
+                        <input type="text" value="" name="book_name"
+                               class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
                     </div>
                     <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">发证机构:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
+                        <input type="text" value="" name="book_palace"
+                               class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
                     </div>
                     <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">有效期:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
+                        <input type="text" value="" name="book_time"
+                               class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
                     </div>
                 </div>
             </div>
-            <div class="formImgBox col-xs-12 col-sm-12 col-md-12 col-lg-12"  id="lacalImag2">
-                <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2">
-                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview2">
-                    </div>
-                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
-                        选择图片
-                        <input type="file" value="" id="doc2" name="pic2" onclick="inputimg('pic2','lacalImag2','preview2','doc2')"></label>
-                    </label>
-                </div>
-                <div class="formTextBox col-xs-10 col-sm-6 col-md-6 col-lg-9 col-sm-offset-1">
-                    <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">证书名称:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
-                    </div>
-                    <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">发证机构:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
-                    </div>
-                    <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">有效期:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
-                    </div>
-                </div>
-            </div>
-            <div class="formImgBox col-xs-12 col-sm-12 col-md-12 col-lg-12"  id="lacalImag3">
-                <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2">
-                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview3">
-                    </div>
-                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
-                        选择图片
-                        <input type="file" value="" id="doc3" name="pic3" onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
-                    </label>
-                </div>
-                <div class="formTextBox col-xs-10 col-sm-6 col-md-6 col-lg-9 col-sm-offset-1">
-                    <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">证书名称:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
-                    </div>
-                    <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">发证机构:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
-                    </div>
-                    <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">有效期:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
-                    </div>
-                </div>
-            </div>
-            <div class="formImgBox col-xs-12 col-sm-12 col-md-12 col-lg-12"  id="lacalImag4">
-                <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-2">
-                    <div class="formImg col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="" alt="" id="preview4">
-                    </div>
-                    <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
-                        选择图片
-                        <input type="file" value="" id="doc4" name="pic4" onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
-                    </label>
-                </div>
-                <div class="formTextBox col-xs-10 col-sm-6 col-md-6 col-lg-9 col-sm-offset-1">
-                    <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">证书名称:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
-                    </div>
-                    <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">发证机构:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
-                    </div>
-                    <div class="qiyezizhiDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label class="qiyezizhiLabel col-xs-12 col-sm-4 col-md-4 col-lg-2">有效期:</label>
-                        <input type="text" value="" class="qiyezizhiInput col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-1">
-                    </div>
-                </div>
-            </div>
+            <input type="submit" class="formSubmit col-xs-3 col-sm-1 col-md-1 col-lg-1 col-xs-offset-5" value="提交">
+
         </div>
     </form>
 </div>
