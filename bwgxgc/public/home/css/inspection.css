@@ -418,10 +418,17 @@ img {
           .main .main-right-box .main-right-bottom .main-right-b-c .main-right-li .main-li-img {
             width: 145px;
             height: 97px;
-            float: left; }
+            float: left;
+            position: relative; }
             .main .main-right-box .main-right-bottom .main-right-b-c .main-right-li .main-li-img img {
               max-height: 97px;
-              max-width: 145px; }
+              max-width: 145px;
+              position: absolute;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              margin: auto; }
           .main .main-right-box .main-right-bottom .main-right-b-c .main-right-li .main-li-content {
             width: 690px;
             padding-top: 4px;
