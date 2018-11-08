@@ -170,16 +170,17 @@
         </div>
         <!--内容-->
         <div class="qytp-content-big-box">
+            {volist name='card' id='v'}
             <div class="qytp-content-box">
                 <div class="qytp-content">
                     <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
+                        <img src="{:config('public_uploads')}/{$v.pic1}" alt="">
                     </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
+                    <div class="qytp-content-gsmc">{$v.carname}</div>
                     <div class="qytp-content-text-box">
                         <div class="qytp-content-text-num">
                             <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
+                            <span class="qytp-content-num-r">{$v.qdl}</span>
                         </div>
                         <div class="qytp-content-myd-box">
                             <div class="qytp-icon">
@@ -191,195 +192,7 @@
                     </div>
                 </div>
             </div>
-            <div class="qytp-content-box">
-                <div class="qytp-content">
-                    <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                    </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
-                    <div class="qytp-content-text-box">
-                        <div class="qytp-content-text-num">
-                            <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
-                        </div>
-                        <div class="qytp-content-myd-box">
-                            <div class="qytp-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="qytp-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="qytp-content-box">
-                <div class="qytp-content">
-                    <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                    </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
-                    <div class="qytp-content-text-box">
-                        <div class="qytp-content-text-num">
-                            <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
-                        </div>
-                        <div class="qytp-content-myd-box">
-                            <div class="qytp-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="qytp-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="qytp-content-box">
-                <div class="qytp-content">
-                    <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                    </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
-                    <div class="qytp-content-text-box">
-                        <div class="qytp-content-text-num">
-                            <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
-                        </div>
-                        <div class="qytp-content-myd-box">
-                            <div class="qytp-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="qytp-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="qytp-content-box">
-                <div class="qytp-content">
-                    <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                    </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
-                    <div class="qytp-content-text-box">
-                        <div class="qytp-content-text-num">
-                            <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
-                        </div>
-                        <div class="qytp-content-myd-box">
-                            <div class="qytp-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="qytp-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="qytp-content-box">
-                <div class="qytp-content">
-                    <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                    </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
-                    <div class="qytp-content-text-box">
-                        <div class="qytp-content-text-num">
-                            <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
-                        </div>
-                        <div class="qytp-content-myd-box">
-                            <div class="qytp-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="qytp-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="qytp-content-box">
-                <div class="qytp-content">
-                    <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                    </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
-                    <div class="qytp-content-text-box">
-                        <div class="qytp-content-text-num">
-                            <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
-                        </div>
-                        <div class="qytp-content-myd-box">
-                            <div class="qytp-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="qytp-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="qytp-content-box">
-                <div class="qytp-content">
-                    <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                    </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
-                    <div class="qytp-content-text-box">
-                        <div class="qytp-content-text-num">
-                            <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
-                        </div>
-                        <div class="qytp-content-myd-box">
-                            <div class="qytp-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="qytp-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="qytp-content-box">
-                <div class="qytp-content">
-                    <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                    </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
-                    <div class="qytp-content-text-box">
-                        <div class="qytp-content-text-num">
-                            <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
-                        </div>
-                        <div class="qytp-content-myd-box">
-                            <div class="qytp-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="qytp-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="qytp-content-box">
-                <div class="qytp-content">
-                    <a href="" class="qytp-content-img">
-                        <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                    </a>
-                    <div class="qytp-content-gsmc">某某产品名称</div>
-                    <div class="qytp-content-text-box">
-                        <div class="qytp-content-text-num">
-                            <span class="qytp-content-num-l">起订量:</span>
-                            <span class="qytp-content-num-r">10000片</span>
-                        </div>
-                        <div class="qytp-content-myd-box">
-                            <div class="qytp-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="qytp-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {/volist}
         </div>
         <!--更多-->
         <a href="" class="qytp-gengduo">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
@@ -699,46 +512,18 @@
                     <div class="qyzz-content-title4">有效期</div>
                 </div>
                 <ul class="qyzz-content-box">
+                        {volist name='book' id='v'}
                     <li class="qyzz-li">
                         <div class="qyzz-content-li1">
                             <div class="qyzz-li1-img">
-                                <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
+                                <img src="{:config('public_uploads')}/{$v.pic}" alt="">
                             </div>
                         </div>
-                        <div class="qyzz-content-li2">营业执照</div>
-                        <div class="qyzz-content-li3">泉州市丰泽区工商行政管理局</div>
-                        <div class="qyzz-content-li4">2004-07-02 至 2025-07-01</div>
+                        <div class="qyzz-content-li2">{$v.book_name}</div>
+                        <div class="qyzz-content-li3">{$v.book_palace}</div>
+                        <div class="qyzz-content-li4">{$v.book_time}</div>
                     </li>
-                    <li class="qyzz-li">
-                        <div class="qyzz-content-li1">
-                            <div class="qyzz-li1-img">
-                                <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                            </div>
-                        </div>
-                        <div class="qyzz-content-li2">营业执照</div>
-                        <div class="qyzz-content-li3">泉州市丰泽区工商行政管理局</div>
-                        <div class="qyzz-content-li4">2004-07-02 至 2025-07-01</div>
-                    </li>
-                    <li class="qyzz-li">
-                        <div class="qyzz-content-li1">
-                            <div class="qyzz-li1-img">
-                                <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                            </div>
-                        </div>
-                        <div class="qyzz-content-li2">营业执照</div>
-                        <div class="qyzz-content-li3">泉州市丰泽区工商行政管理局</div>
-                        <div class="qyzz-content-li4">2004-07-02 至 2025-07-01</div>
-                    </li>
-                    <li class="qyzz-li">
-                        <div class="qyzz-content-li1">
-                            <div class="qyzz-li1-img">
-                                <img src="{:config('home_shangpu_img')}/index/wsj.png" alt="">
-                            </div>
-                        </div>
-                        <div class="qyzz-content-li2">营业执照</div>
-                        <div class="qyzz-content-li3">泉州市丰泽区工商行政管理局</div>
-                        <div class="qyzz-content-li4">2004-07-02 至 2025-07-01</div>
-                    </li>
+                    {/volist}
                 </ul>
             </div>
             <img class="qyzz-bj-img" src="{:config('home_shangpu_img')}/index/qyzzbjtp.png" alt="">

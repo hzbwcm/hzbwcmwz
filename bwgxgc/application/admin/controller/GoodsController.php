@@ -36,22 +36,22 @@ class GoodsController extends Controller
             $pic2 = request()->file('pic2');
             $pic3 = request()->file('pic3');
             $pic4 = request()->file('pic4');
-            $info1 = $pic1->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card');
+            $info1 = $pic1?$pic1->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card'):'';
 
-            $info2 = $pic2->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card');
+            $info2 = $pic2?$pic2->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card'):'';
 
-            $info3 = $pic3->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card');
+            $info3 =$pic3?$pic3->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card'):'';
 
-            $info4 = $pic4->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card');
+            $info4 =$pic4?$pic4->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card'):'';
 
-            $info1 = $info1->getSaveName();
-            $info2 = $info2->getSaveName();
-            $info3 = $info3->getSaveName();
-            $info4 = $info4->getSaveName();
-            $info4 = 'com_pic' . "/" . $info4;
-            $info3 = 'com_pic' . "/" . $info3;
-            $info1 = 'com_pic' . "/" . $info1;
-            $info2 = 'com_pic' . "/" . $info2;
+            $info1 = $info1?$info1->getSaveName():'';
+            $info2 = $info2?$info2->getSaveName():'';
+            $info3 = $info3?$info3->getSaveName():'';
+            $info4 = $info4?$info4->getSaveName():'';
+            $info4 = $info4?'card' . "/" . $info4:'';
+            $info3 = $info3?'card' . "/" . $info3:'';
+            $info1 = $info1?'card' . "/" . $info1:'';
+            $info2 = $info2?'card' . "/" . $info2:'';
             $data = ['com_id' => $shuju['com_id'],
                 'type' => $shuju['type'],
                 'carname' => $shuju['carname'],
@@ -80,7 +80,17 @@ class GoodsController extends Controller
 
             ];
             $data = array_filter($data);
-            Db::name('card')->insert($data);
+
+
+
+            $res=Db::name('card')->insert($data);
+            if($res)
+            {
+                return $this->success('上传成功');
+            }else
+                {
+                return $this->error('上传失败');
+            }
 
         }
         return $this->fetch();
