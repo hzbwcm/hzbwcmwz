@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="main-form-box">
-        <form action="">
+        <form action="{$Request.url}" method="post">
             <!--上传图片-->
             <div class="form-img-big-box">
                 <div class="form-img-box-left">
@@ -41,7 +41,7 @@
                     <div id="localImag">
                         主图图片(点击上传)
                         <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc' name='pic' value="" onclick="inputimg('pic','lacalImag','preview','doc')"></label>
+                        <label class="lacalLabel"><input type='file' id='doc' name='' value="" onclick="inputimg('pic','lacalImag','preview','doc')"></label>
                         <img data-original="" id="preview" alt="">
                     </div>
                 </div>
@@ -49,26 +49,20 @@
                     <div id="localImag2" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc2' name='pic2' value="" onclick="inputimg('pic2','lacalImag2','preview2','doc2')"></label>
+                        <label class="lacalLabel"><input type='file' id='doc2' name='' value="" onclick="inputimg('pic2','lacalImag2','preview2','doc2')"></label>
                         <img data-original="{:config('home_img')}/banner.jpg" id="preview2" alt="">
                     </div>
                     <div id="localImag3" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc3' name='pic3' value="" onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
+                        <label class="lacalLabel"><input type='file' id='doc3' name='' value="" onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
                         <img data-original="" id="preview3" alt="">
                     </div>
                     <div id="localImag4" class="localImag">
                         附图图片(点击上传)
                         <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc4' name='pic4' value="" onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
+                        <label class="lacalLabel"><input type='file' id='doc4' name='' value="" onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
                         <img data-original="" id="preview4" alt="">
-                    </div>
-                    <div id="localImag5" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc5' name='pic5' value="" onclick="inputimg('pic5','lacalImag5','preview5','doc5')"></label>
-                        <img data-original="" id="preview5" alt="">
                     </div>
                 </div>
             </div>
@@ -76,46 +70,53 @@
             <div class="form-text-big-box">
                 <div class="select-div">
                     <select name="" id="" class="select-box">
+
                         <option value="-1" class="select-option">卫生巾加工 &nbsp;(点击分类)</option>
                     </select>
                 </div>
                 <ul class="form-text-ul">
                     <li class="form-text-li">
                         <label for="">产品名称</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <input type="text" name="cus_proname" value="{$user_data.cus_proname|default=''}" placeholder="点击输入">
+                        <span style="color:red;">{$errorinfo.cus_proname|default=''}</span>
                     </li>
                     <li class="form-text-li-1">
                         <label for="">产品长度(mm)</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <input type="text" name="cus_length" value="{$user_data.cus_length|default=''}" placeholder="点击输入">
+                        <span style="color:red;">{$errorinfo.cus_length|default=''}</span>
                     </li>
                     <li class="form-text-li">
                         <label for="">产品宽度(mm)</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <input type="text" name="cus_width" value="{$user_data.cus_width|default=''}" placeholder="点击输入">
+                        <span style="color:red;">{$errorinfo.cus_width|default=''}</span>
                     </li>
                     <li class="form-text-li-1">
                         <label for="">产地</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <input type="text" name="cus_place" value="{$user_data.cus_place|default=''}" placeholder="点击输入">
+                        <span style="color:red;">{$errorinfo.cus_place|default=''}</span>
                     </li>
                     <li class="form-text-li">
                         <label for="">芯体</label>
-                        <select name="" id="1">
-                            <option value="-1">- 请选择 -</option>
+                        <select name="cus_core" id="1">
+                            <option name="cus_core" value="{$user_data.cus_core|default=''}">{$user_data.cus_core|default=''}-</option>
                             <option value="吸水纸">吸水纸</option>
                             <option value="木浆+高分子">木浆+高分子</option>
                         </select>
                     </li>
                     <li class="form-text-li-1">
                         <label for="">供货时间</label>
-                        <input type="text" value="" placeholder="点击输入">
+                        <input type="text" name="cus_supply" value="{$user_data.cus_supply|default=''}" placeholder="点击输入">
+                        <span style="color:red;">{$errorinfo.cus_supply|default=''}</span>
                     </li>
                     <li class="form-text-li">
                         <label for="">订单量</label>
-                        <input type="text" value="" placeholder="请根据实际情况填写并自带单位">
+                        <input type="text" name="cus_orders" value="{$user_data.cus_orders|default=''}" placeholder="请根据实际情况填写并自带单位">
+                        <span style="color:red;">{$errorinfo.cus_orders|default=''}</span>
                     </li>
                     <li class="form-text-li-1">
                         <label for="">设备新旧程度</label>
-                        <select name="">
-                            <option value="-1">- 请选择 -</option>
+                        <select name="cus_condition" value="">
+                            <option name="cus_condition" value="{$user_data.cus_condition|default=''}">{$user_data.cus_condition|default=''}-</option>
                             <option value="9成新">9成新</option>
                             <option value="8成新">8成新</option>
                             <option value="7成新">7成新</option>
@@ -125,24 +126,25 @@
                     </li>
                     <li class="form-text-li">
                         <label for="">金属检测</label>
-                        <select name="">
-                            <option value="-1">- 请选择 -</option>
+                        <select name="cus_metal">
+                            <option name="cus_metal" value="{$user_data.cus_metal|default=''}">{$user_data.cus_metal|default=''}-</option>
+                            <!--<option value="-1">- 请选择 -</option>-->
                             <option value="有">有</option>
                             <option value="无">无</option>
                         </select>
                     </li>
                     <li class="form-text-li-1">
                         <label for="">视觉检测</label>
-                        <select name="">
-                            <option value="-1">- 请选择 -</option>
+                        <select name="cus_vision">
+                            <option name="cus_vision" value="{$user_data.cus_vision|default=''}">{$user_data.cus_vision|default=''}-</option>
                             <option value="有">有</option>
                             <option value="无">无</option>
                         </select>
                     </li>
                     <li class="form-text-li">
                         <label for="">包装形式</label>
-                        <select name="">
-                            <option value="-1">- 请选择 -</option>
+                        <select name="cus_pack">
+                            <option name="cus_pack" value="{$user_data.cus_pack|default=''}">{$user_data.cus_pack|default=''}-</option>
                             <option value="全自动包装">全自动包装</option>
                             <option value="半自动包装">半自动包装</option>
                             <option value="手工包装">手工包装</option>

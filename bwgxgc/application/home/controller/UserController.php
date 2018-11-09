@@ -19,107 +19,13 @@ class UserController extends Controller
 {
 
     //信息管理
-    public function xinxiguanli()
+    public function xinxiguanli($id,Request $request)
     {
         $user_id = session('user_id');
+        Session::get($id);
         if($request->isPost()){
 
             $data = $request->post();
-            $rules = [
-                'nickname'      =>'require|unique:user_person,username|max:25',
-                'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],
-                'user_email'    =>'require|email',
-                'user_qq'       =>'require',
-            ];
-            $msg = [
-                'nickname.require'      => '昵称必填',
-                'nickname.unique'       => '昵称已经被使用',
-                'nickname.max'          => '昵称长度不能超过25位',
-                'tel.require'           => '手机号码必填',
-                'tel.regex'             => '手机号码规则不正确',
-                'user_email.require'    => '邮箱必填',
-                'user_email.email'      => '邮箱格式不正确',
-                'user_qq.require'       => 'qq必填',
-            ];
-            $validate = new Validate($rules,$msg);
-            if(!$validate->batch()->check($data)){
-                $errorinfo=$validate->getError();
-                $this -> assign('errorinfo',$errorinfo);
-                return $this -> fetch();
-            }
-            $user_person = new user_person();
-            $res = $user_person->where('user_id', $user_id)->update($data);
-            if ($res) {
-                $this->success('信息更新成功!');  //TODO 更新成功页面跳转
-            }else{
-                $this->error('信息更新失败!');
-            }
-        }else{
-            $user_data = User_person::where('user_id', $user_id)->find();
-            $this->assign('user_data', $user_data);
-            return $this->fetch();
-        }
-    }
-    //信息管理首页
-    public function xinxiguanlishouye()
-    {
-        $info = Customgood::select();
-        $this->assign('info',$info);
-        return $this->fetch();
-    }
-    /*
-     * 接收uploadify上传附件并处理添加到服务器上
-     * 图片最终保存在public/uploads/custom/
-    */
-    public function pic_up(Request $request)
-    {
-        $file = $request->file('Filedata');
-        $path = "./uploads/custompertmp/";
-        $result = $file->move($path);
-        if($result){
-            $picpathname = $path.$result->getSaveName();
-            $picpathname = str_replace("\\","/",$picpathname);
-            $info = ['status'=>'success','picpathname'=>$picpathname];
-            echo json_encode($info);
-        }else{
-            $info = ['status'=>'failure','errorinfo'=>$result->getError()];
-            echo json_encode($info);
-        }
-        exit;
-    }
-    //发布信息
-    public function fabuxinxi(Request $request)
-    {
-        $user_id = session('user_id');
-
-        $type = Type::where('type_id','<',11)->select();
-//
-        $this -> assign('type',$type);
-//
-        $typeid = $request->get('type_id');
-        $typeer = Type::where('type_pid',$typeid)->select();
-//
-//            $this -> assign('typeer',$typeer);
-        $this->assign([
-            'type' =>$type,
-            'typeid'=>$typeid,
-            'typeer'=>$typeer
-        ]);
-////
-
-//        if($typeid){
-//            return $typeer;
-
-//            $this->success('asdasd','home/index/index');
-//            dump($type_name);
-//            die();
-        //}
-
-
-
-        if(request()->isPost()){
-            $shuju = Request::instance()->post();
-
 //            $rules = [
 //                'cus_proname'          =>'require',
 //                'cus_length'           =>'require',
@@ -143,24 +49,100 @@ class UserController extends Controller
 //                $this -> assign('errorinfo',$errorinfo);
 //                return $this -> fetch();
 //            }
-
-            if(!empty($shuju['cus_pic'])){
-
-                //判断"年月日"目录没有就创建
-                $dir = "./uploads/customper/".date('Ymd');
-                if (!file_exists($dir)){
-                    mkdir ($dir,0777,true);
-                }
-
-
-
-
-
-                $truepath = str_replace('custompertmp','customper',$shuju['cus_pic']);
-                rename($shuju['cus_pic'],$truepath);
-
-                $shuju['cus_pic'] = $truepath; //修改为真实的图片路径名
+            $Customgood = new Customgood();
+            $res = $Customgood->where('cus_id',$id)->update($data);
+            if ($res) {
+                return $this->success('发布成功',"user/xinxiguanlishouye");
+            }else{
+                $this->error('信息更新失败!');
             }
+        }else{
+            $user_data = Customgood::where('user_id', $user_id)->where('cus_id',$id)->find();
+            $this->assign('user_data', $user_data);
+            return $this->fetch();
+        }
+    }
+    //信息管理首页
+    public function xinxiguanlishouye()
+    {
+
+        $info = Customgood::select();
+
+        $this->assign('info',$info);
+        return $this->fetch();
+    }
+    /*
+     * 接收uploadify上传附件并处理添加到服务器上
+     * 图片最终保存在public/uploads/custom/
+    */
+    public function pic_up(Request $request)
+    {
+        $file = $request->file('Filedata');
+        $path = "./uploads/custompertmp/";
+        $result = $file->move($path);
+        if($result){
+            $picpathname = $path.$result->getSaveName();
+            $picpathname = str_replace("\\","/",$picpathname);
+            $info = ['status'=>'success','picpathname'=>$picpathname];
+            echo json_encode($info);
+        }else{
+            $info = ['status'=>'failure','errorinfo'=>$result->getError()];
+            echo json_encode($info);
+        }
+        exit;
+    }
+    public function typeer(Request $request){
+        $typid = $request->get('type_id');
+        $typezj = Type::where('type_pid',$typid)
+            ->field('type_id,type_name,type_pid')
+            ->select();
+        return $typezj;
+    }
+    //发布信息
+    public function fabuxinxi(Request $request)
+    {
+        $user_id = session('user_id');
+//        $typeid = $request->get('type_id');
+//        $typeer = Type::where('type_pid',$typeid)->select();
+////
+////            $this -> assign('typeer',$typeer);
+//        $this->assign([
+//            'typeid'=>$typeid,
+//            'typeer'=>$typeer
+//        ]);
+////
+//        if($typeid){
+//            return $typeer;
+//            $this->success('asdasd','home/index/index');
+//            dump($type_name);
+//            die();
+        //}
+
+        if(request()->isPost()){
+            $shuju = Request::instance()->post();
+//            $rules = [
+//                'cus_proname'          =>'require',
+//                'cus_length'           =>'require',
+//                'cus_width'            =>'require',
+//                'cus_place'            =>'require',
+//                'cus_supply'           =>'require',
+//                'cus_orders'           =>'require',
+//            ];
+//            $msg = [
+//                'cus_proname.require'      => '必填',
+//                'cus_length.require'       => '必填',
+//                'cus_width.require'        => '必填',
+//                'cus_place.require'        => '必填',
+//                'cus_supply.require'       => '必填',
+//                'cus_orders.require'       => '必填',
+//            ];
+//            $validate = new Validate($rules,$msg);
+//            if(!$validate->batch()->check($shuju)){
+//                $errorinfo=$validate->getError();
+//                $this -> assign('errorinfo',$errorinfo);
+//                return $this -> fetch();
+//            }
+
 
             $customgood = new customgood();
             $shuju['user_id'] = $user_id;

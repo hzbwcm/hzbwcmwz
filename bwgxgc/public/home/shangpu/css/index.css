@@ -494,23 +494,25 @@ main {
             main .main-qyzz-box .qyzz-content-big-box .qyzz-content .qyzz-content-box .qyzz-li .qyzz-content-li2 {
               width: 135px;
               text-align: center;
-              line-height: 100px;
               font-size: 14px;
               color: #3a8425;
               float: left;
-              margin-right: 58px; }
+              margin-right: 58px;
+              margin-top: 30px;
+              position: relative;
+              top: 50%; }
             main .main-qyzz-box .qyzz-content-big-box .qyzz-content .qyzz-content-box .qyzz-li .qyzz-content-li3 {
               width: 300px;
               text-align: center;
-              line-height: 100px;
               font-size: 14px;
               color: #3a8425;
               float: left;
-              margin-right: 18px; }
+              margin-right: 18px;
+              margin-top: 30px; }
             main .main-qyzz-box .qyzz-content-big-box .qyzz-content .qyzz-content-box .qyzz-li .qyzz-content-li4 {
               width: 210px;
               text-align: center;
-              line-height: 100px;
+              margin-top: 30px;
               font-size: 14px;
               color: #3a8425;
               float: left; }

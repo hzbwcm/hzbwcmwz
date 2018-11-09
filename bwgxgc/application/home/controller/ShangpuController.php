@@ -21,9 +21,10 @@ class ShangpuController extends Controller
         $info = Company_info::where('com_id',$c_id)->find();
         $pics = Com_pic::where("com_id" , $c_id )->find();
         $card = Card::where('com_id',$c_id)->limit(10)->select();
+        $card2 = Card::where('com_id','>',22)->select();
         $book = Book::where('com_id',$c_id)->select();
 
-        $this->assign(['c_id'=>$id,'info'=>$info,'pics'=>$pics,'card'=>$card,'book'=>$book]);
+        $this->assign(['c_id'=>$id,'info'=>$info,'pics'=>$pics,'card'=>$card,'book'=>$book,'card2'=>$card2]);
 
         return $this->fetch();
     }
