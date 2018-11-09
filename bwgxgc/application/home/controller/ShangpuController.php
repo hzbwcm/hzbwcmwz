@@ -9,6 +9,7 @@ use think\Controller;
 use think\Request;
 use think\Session;
 use app\admin\model\Com_pic;
+use think\Db;
 
 class ShangpuController extends Controller
 {
@@ -21,7 +22,7 @@ class ShangpuController extends Controller
         $info = Company_info::where('com_id',$c_id)->find();
         $pics = Com_pic::where("com_id" , $c_id )->find();
         $card = Card::where('com_id',$c_id)->limit(10)->select();
-        $card2 = Card::where('com_id','>',22)->select();
+        $card2= Card::where('com_id',$c_id)->order('id', 'desc')->limit(8)->select();
         $book = Book::where('com_id',$c_id)->select();
 
         $this->assign(['c_id'=>$id,'info'=>$info,'pics'=>$pics,'card'=>$card,'book'=>$book,'card2'=>$card2]);
@@ -47,7 +48,7 @@ class ShangpuController extends Controller
         $c_id=Session::get('c_id');
         $info = Company_info::where('com_id',$c_id)->find();
         $pics = Com_pic::where("com_id" , $c_id )->find();
-        $card = Card::where('com_id',$c_id)->select();
+        $card = Card::where('com_id',$c_id)->limit(10)->select();
         $this->assign(['c_id'=>$c_id,'pics'=>$pics,'info'=>$info,'card'=>$card]);
         return $this->fetch();
     }
@@ -66,7 +67,8 @@ class ShangpuController extends Controller
         $c_id=Session::get('c_id');
         $info = Company_info::where('com_id',$c_id)->find();
         $pics = Com_pic::where("com_id" , $c_id )->find();
-        $this->assign(['c_id'=>$c_id,'pics'=>$pics,'info'=>$info]);
+        $card2= Card::where('com_id',$c_id)->order('id', 'desc')->limit(8)->select();
+        $this->assign(['c_id'=>$c_id,'pics'=>$pics,'info'=>$info,'card2'=>$card2]);
         return $this->fetch();
     }
     //联系我们

@@ -203,8 +203,8 @@
             <div class="cpzs-title-top">产品展示</div>
             <div class="cpzs-title-bottom">Product display</div>
         </div>
-        {volist name='card2' id='v'}
         <div class="cpzs-content-box">
+            {volist name='card2' id='v'}
             <a href="" class="cpzs-content">
                 <div class="cpzs-content-img">
                     <img src="{:config('public_uploads')}/{$v.pic1}" alt="">
@@ -221,12 +221,7 @@
                     </div>
                 </div>
                 <div class="cpzs-title">
-                    厂家批发女性用品.清爽空间卫生巾10片
-                    260MM,全国招商代理
-                    厂家批发女性用品.清爽空间卫生巾10片
-                    260MM,全国招商代理
-                    厂家批发女性用品.清爽空间卫生巾10片
-                    260MM,全国招商代理
+                    {$v.carname}
                 </div>
                 <div class="cpzs-jiage-box">
                     <div class="cpzs-jiage">
@@ -236,13 +231,14 @@
                     </div>
                     <div class="cpzs-qdl">
                         <span>起订量：</span>
-                        <span></span>
-                        <span>件</span>
+                        <span>{$v.qdl}</span>
+
                     </div>
                 </div>
             </a>
+            {/volist}
         </div>
-        {/volist}
+
         <!--更多-->
         <a href="" class="cpzs-gengduo">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
     </div>
