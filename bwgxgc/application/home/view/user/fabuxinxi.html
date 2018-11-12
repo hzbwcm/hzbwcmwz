@@ -35,9 +35,11 @@
     <ul class="cedaohang-dingwei">
         <!--<li class="cedaohang-li cedaohang-active">全部</li>-->
         {volist name='left_data' id='ty'}
-        <a style="text-decoration:none; color: white" href="{:url('/home/user/fabuxinxi',['pid' => $ty.type_id])}">
-            <li class="cedaohang-li {if condition='$ty.type_id eq $pid'}cedaohang-active{/if}" id="{$ty.type_id}">{$ty.type_name}加工</li>
-        </a>
+            <li class="cedaohang-li {if condition='$ty.type_id eq $pid'}cedaohang-active{/if}" id="{$ty.type_id}">
+                <a style="text-decoration:none; color: white" href="{:url('/home/user/fabuxinxi',['pid' => $ty.type_id])}">
+                {$ty.type_name}加工
+                </a>
+            </li>
         {/volist}
     </ul>
     <div class="main-title-box">
