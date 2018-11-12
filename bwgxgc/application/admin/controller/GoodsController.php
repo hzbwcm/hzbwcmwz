@@ -144,5 +144,8 @@ class GoodsController extends Controller
         return $this->fetch();
     }
 
-
+    public function cpdzgl()
+    {
+        return $this->fetch();
+    }
 }
