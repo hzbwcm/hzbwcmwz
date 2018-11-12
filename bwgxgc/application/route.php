@@ -68,7 +68,7 @@ Route::get('admin/user/gerenxinxi','admin/user/gerenxinxi');//个人信息
 
 Route::get('admin/user/gerentupian','admin/user/gerentupian');//个人信息图片上传
 Route::get('admin/user/qiyezizhi','admin/user/qiyezizhi');//企业资质
-Route::get('admin/goods/dingzspsc','admin/goods/dingzspsc');//产品定制商品信息上传
+Route::any('admin/goods/dingzspsc','admin/goods/dingzspsc',['method'=>'get|post']);//产品定制商品信息上传
 Route::group('admin',function (){
     Route::get('user/logout','admin/user/logout');//admin退出
     Route::get('index/index','admin/index/index');//admin首页

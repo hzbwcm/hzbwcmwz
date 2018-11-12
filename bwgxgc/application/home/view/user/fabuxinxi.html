@@ -28,13 +28,16 @@
 
 <body>
 <main>
+
+
+
     <!--侧导航-->
     <ul class="cedaohang-dingwei">
-        <li class="cedaohang-li cedaohang-active">全部</li>
-        {volist name=':get_type_info()' id='ty'}
-        {lt name='ty.type_id' value='11'}
-        <li class="cedaohang-li" type_id="{$ty.type_id}">{$ty.type_name}加工</li>
-        {/lt}
+        <!--<li class="cedaohang-li cedaohang-active">全部</li>-->
+        {volist name='left_data' id='ty'}
+        <a style="text-decoration:none; color: white" href="{:url('/home/user/fabuxinxi',['pid' => $ty.type_id])}">
+            <li class="cedaohang-li {if condition='$ty.type_id eq $pid'}cedaohang-active{/if}" id="{$ty.type_id}">{$ty.type_name}加工</li>
+        </a>
         {/volist}
     </ul>
     <div class="main-title-box">
@@ -45,58 +48,16 @@
     </div>
     <div class="main-form-box">
         <form class="form-custom-up" action="{$Request.url}" method="post" enctype="multipart/form-data">
-            <!--上传图片-->
-
-            <div class="form-img-big-box">
-                <div class="form-img-box-left">
-                <!--这是要展示上传图片的div以及img标签-->
-                <div id="localImag">
-                主图图片(点击上传)
-                <!--这是图片上传的input框-->
-                <label class="lacalLabel">
-                    <input type='file' id='doc1' name='pic1' onclick="inputimg('pic1','localImag','preview1','doc1')"/>
-                </label>
-                <img data-original="" id="preview1" alt="">
-                </div>
-                </div>
-
-                <div class="form-img-box-right">
-                    <div id="localImag2" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel">
-                            <input type='file' id='doc2' name='pic2' value="" onclick="inputimg('pic2','lacalImag2','preview2','doc2')">
-                        </label>
-                        <img data-original="{:config('public_upload')}" id="preview2" alt="">
-                    </div>
-                    <div id="localImag3" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc3' name='pic3' value="" onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
-                        <img data-original="" id="preview3" alt="">
-                    </div>
-                    <div id="localImag4" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc4' name='pic4' onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
-                        <img data-original="" id="preview4" alt="">
-                    </div>
-                </div>
-            </div>
             <!--上传产品信息-->
             <div class="form-text-big-box">
                 <div class="select-div">
-                    <select name="" id="" class="select-box" onclick="show_xj(this)">
-
-                                <option value="" class="select-option">234</option>
-
+                    <select name="classify_id" id="" class="select-box">
+                        <option value="" class="select-option">请选择</option>
+                                {foreach name="classify" item="val"}
+                                    <option value="{$val.type_id}" class="select-option">{$val.type_name}</option>
+                                {/foreach}
                     </select>
                 </div>
-                <script  type="text/javascript">
-                    function show_xj() {
-                        $.get(app/home/GoodsController);
-                    }
-                </script>
                 <ul class="form-text-ul">
                     <li class="form-text-li">
                         <label for="">产品名称</label>
@@ -175,7 +136,51 @@
                     </li>
                 </ul>
             </div>
+            <!--上传图片-->
+            <!--<div id="uploader-demo">-->
+            <!--&lt;!&ndash;用来存放item&ndash;&gt;-->
+            <!--<div id="fileList" class="uploader-list">-->
+            <!--</div>-->
+            <!--<div id="filePicker">选择图片</div>-->
+            <!--</div>-->
+            <div class="form-img-big-box">
+                <div class="form-img-box-left">
+                    <!--这是要展示上传图片的div以及img标签-->
+                    <div id="localImag">
+                        主图图片(点击上传)
+                        <!--这是图片上传的input框-->
+                        <label class="lacalLabel">
+                            <input type='file' id='doc1' name='pic1'  onclick="inputimg('pic1','localImag','preview1','doc1')"/>
+                        </label>
+                        <img data-original="" id="preview1" alt="">
+                    </div>
+                </div>
+
+                <div class="form-img-box-right">
+                    <div id="localImag2" class="localImag">
+                        附图图片(点击上传)
+                        <!--这是图片上传的input框-->
+                        <label class="lacalLabel">
+                            <input type='file' id='doc2' name='pic2' value="" onclick="inputimg('pic2','lacalImag2','preview2','doc2')">
+                        </label>
+                        <img data-original="{:config('public_upload')}" id="preview2" alt="">
+                    </div>
+                    <div id="localImag3" class="localImag">
+                        附图图片(点击上传)
+                        <!--这是图片上传的input框-->
+                        <label class="lacalLabel"><input type='file' id='doc3' name='pic3' value="" onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
+                        <img data-original="" id="preview3" alt="">
+                    </div>
+                    <div id="localImag4" class="localImag">
+                        附图图片(点击上传)
+                        <!--这是图片上传的input框-->
+                        <label class="lacalLabel"><input type='file' id='doc4' name='pic4' onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
+                        <img data-original="" id="preview4" alt="">
+                    </div>
+                </div>
+            </div>
             <div class="form-button">
+                <input type="hidden" name="pid" value="{$pid}" >
                 <input type="submit" value="发布" >
             </div>
         </form>
@@ -193,27 +198,27 @@
     });
 </script>
 <script>
-    //侧导航点击
-    $('.cedaohang-li').on('click', function (e) {
-        $('.cedaohang-li').removeClass('cedaohang-active');
-        $(e.target).addClass('cedaohang-active');
-        var type_id = $(e.target).attr('type_id');
-        type_id=parseInt(type_id)
-
-
-        $.ajax({
-            dataType:'json',
-            type: "get",
-            url: "{:url('home/user/typeer')}",
-            data: {type_id},
-            success:function (str) {
-
-                var aa=JSON.stringify(str);
-               // alert(aa);
-                // console.log(str,'1',2)
-            }
-        })
-    });
+//    //侧导航点击
+//    $('.cedaohang-li').on('click', function () {
+//        var obj = this;
+//        $('#type_id').attr('value', obj.id);
+//        console.log(obj.id);
+//        return;
+//
+//
+//        $.ajax({
+//            dataType:'json',
+//            type: "get",
+//            url: "{:url('home/user/fabuxinxi')}",
+//            data: {type_id},
+//            success:function (str) {
+//
+//                var aa=JSON.stringify(str);
+//                alert(aa);
+//                // console.log(str,'1',2)
+//            }
+//        })
+//    });
 </script>
 <script>
     function selectQiTa(lay) {
@@ -235,6 +240,11 @@
             '                        </select>'
         $(lay).parent().html(str);
     }
+
+    function inputimg() {
+        console.log(1)
+    }
+
 </script>
 
 </body>

@@ -28,16 +28,12 @@
 <main>
     <!--侧导航-->
     <ul class="cedaohang-dingwei">
-        <li class="cedaohang-li cedaohang-active">卫生巾加工</li>
-        <li class="cedaohang-li">婴儿尿裤加工</li>
-        <li class="cedaohang-li">成人尿裤加工</li>
-        <li class="cedaohang-li">产妇巾加工</li>
-        <li class="cedaohang-li">护理垫加工</li>
-        <li class="cedaohang-li">生活用纸加工</li>
-        <li class="cedaohang-li">湿纸巾加工</li>
-        <li class="cedaohang-li">经期裤加工</li>
-        <li class="cedaohang-li">宠物垫加工</li>
-        <li class="cedaohang-li">乳垫加工</li>
+        {volist name='left_data' id='ty'}
+
+
+        <li class="cedaohang-li" id="{$ty.type_id}">{$ty.type_name}加工</li>
+
+        {/volist}
     </ul>
     <div class="main-title-box">
         <div class="main-title">
@@ -51,6 +47,9 @@
             <li class="form-li">
                 <div class="form-img">
                     <img data-original="{:config('home_img')}/a2.png" alt="">
+                    <a href="{:url('home/user/xinxiguanli',['id'=>$proname.cus_id])}" class="img-zhezhao">
+                        <div class="img-zhezhao-text">点击进入编辑</div>
+                    </a>
                     <a href="{:url('home/user/xinxiguanli',['id'=>$proname.cus_id])}" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>

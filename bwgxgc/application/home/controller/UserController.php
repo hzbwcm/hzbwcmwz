@@ -1,10 +1,10 @@
 <?php
 namespace app\home\controller;
 
+use app\admin\model\Customgood;
 use app\admin\model\User;
 use app\home\model\Company_info;
 use app\home\model\User_person;
-use app\home\model\Customgood;
 use app\admin\model\Type;
 use think\Controller;
 use think\Request;
@@ -26,29 +26,29 @@ class UserController extends Controller
         if($request->isPost()){
 
             $data = $request->post();
-//            $rules = [
-//                'cus_proname'          =>'require',
-//                'cus_length'           =>'require',
-//                'cus_width'            =>'require',
-//                'cus_place'            =>'require',
-//                'cus_supply'           =>'require',
-//                'cus_orders'           =>'require',
-//            ];
-//            $msg = [
-//                'cus_proname.require'      => '必填',
-//                'cus_length.require'       => '必填',
-//                'cus_width.require'        => '必填',
-//                'cus_place.require'        => '必填',
-//                'cus_supply.require'       => '必填',
-//                'cus_orders.require'       => '必填',
-//
-//            ];
-//            $validate = new Validate($rules,$msg);
-//            if(!$validate->batch()->check($shuju)){
-//                $errorinfo=$validate->getError();
-//                $this -> assign('errorinfo',$errorinfo);
-//                return $this -> fetch();
-//            }
+            $rules = [
+                'cus_proname'          =>'require',
+                'cus_length'           =>'require',
+                'cus_width'            =>'require',
+                'cus_place'            =>'require',
+                'cus_supply'           =>'require',
+                'cus_orders'           =>'require',
+            ];
+            $msg = [
+                'cus_proname.require'      => '必填',
+                'cus_length.require'       => '必填',
+                'cus_width.require'        => '必填',
+                'cus_place.require'        => '必填',
+                'cus_supply.require'       => '必填',
+                'cus_orders.require'       => '必填',
+
+            ];
+            $validate = new Validate($rules,$msg);
+            if(!$validate->batch()->check($data)){
+                $errorinfo=$validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                return $this -> fetch();
+            }
             $Customgood = new Customgood();
             $res = $Customgood->where('cus_id',$id)->update($data);
             if ($res) {
@@ -63,92 +63,73 @@ class UserController extends Controller
         }
     }
     //信息管理首页
-    public function xinxiguanlishouye()
+    public function xinxiguanlishouye(Request $request)
     {
+        $user_id = session('user_id');
 
-        $info = Customgood::select();
+        //获取侧导航元素
+        $type= new Type();
+        $left_data = $type->where('type_pid',0)->select();
 
+        //遍历定制产品信息根据user_id
+        $type_pid = empty($request->param('pid')) ? 1 : $request->param('pid');
+        $info = Customgood::where('user_id',$user_id)->select();
+
+        $this->assign('left_data',$left_data);
         $this->assign('info',$info);
         return $this->fetch();
     }
-    /*
-     * 接收uploadify上传附件并处理添加到服务器上
-     * 图片最终保存在public/uploads/custom/
-    */
-    public function pic_up(Request $request)
-    {
-        $file = $request->file('Filedata');
-        $path = "./uploads/custompertmp/";
-        $result = $file->move($path);
-        if($result){
-            $picpathname = $path.$result->getSaveName();
-            $picpathname = str_replace("\\","/",$picpathname);
-            $info = ['status'=>'success','picpathname'=>$picpathname];
-            echo json_encode($info);
-        }else{
-            $info = ['status'=>'failure','errorinfo'=>$result->getError()];
-            echo json_encode($info);
-        }
-        exit;
-    }
-    public function typeer(Request $request){
-        $typid = $request->get('type_id');
-        $typezj = Type::where('type_pid',$typid)
-            ->field('type_id,type_name,type_pid')
-            ->select();
-        return $typezj;
-    }
-    //发布信息
+    //发布信息get_type_info
     public function fabuxinxi(Request $request)
     {
+        //获取用户id
         $user_id = session('user_id');
-//        $typeid = $request->get('type_id');
-//        $typeer = Type::where('type_pid',$typeid)->select();
-////
-////            $this -> assign('typeer',$typeer);
-//        $this->assign([
-//            'typeid'=>$typeid,
-//            'typeer'=>$typeer
-//        ]);
-////
-//        if($typeid){
-//            return $typeer;
-//            $this->success('asdasd','home/index/index');
-//            dump($type_name);
-//            die();
-        //}
+        //获取一级元素
+        $type = new Type();
+        $left_data = $type->where('type_pid', 0)->select();
+
+        //获取二级分类
+        $type_pid = empty($request->param('pid')) ? 1 : $request->param('pid');
+        $classify_data = $type->where('type_pid', $type_pid)->select();
+
+
+
+        $this->assign('left_data', $left_data);
+        $this->assign('pid', $type_pid);
+        $this->assign('classify', $classify_data);
 
         if(request()->isPost()){
             $shuju = Request::instance()->post();
-//            $rules = [
-//                'cus_proname'          =>'require',
-//                'cus_length'           =>'require',
-//                'cus_width'            =>'require',
-//                'cus_place'            =>'require',
-//                'cus_supply'           =>'require',
-//                'cus_orders'           =>'require',
-//            ];
-//            $msg = [
-//                'cus_proname.require'      => '必填',
-//                'cus_length.require'       => '必填',
-//                'cus_width.require'        => '必填',
-//                'cus_place.require'        => '必填',
-//                'cus_supply.require'       => '必填',
-//                'cus_orders.require'       => '必填',
-//            ];
-//            $validate = new Validate($rules,$msg);
-//            if(!$validate->batch()->check($shuju)){
-//                $errorinfo=$validate->getError();
-//                $this -> assign('errorinfo',$errorinfo);
-//                return $this -> fetch();
-//            }
+            $rules = [
+                'cus_proname'          =>'require',
+                'cus_length'           =>'require',
+                'cus_width'            =>'require',
+                'cus_place'            =>'require',
+                'cus_supply'           =>'require',
+                'cus_orders'           =>'require',
+            ];
+            $msg = [
+                'cus_proname.require'      => '必填',
+                'cus_length.require'       => '必填',
+                'cus_width.require'        => '必填',
+                'cus_place.require'        => '必填',
+                'cus_supply.require'       => '必填',
+                'cus_orders.require'       => '必填',
+            ];
+            $validate = new Validate($rules,$msg);
+            if(!$validate->batch()->check($shuju)){
+                $errorinfo=$validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                return $this -> fetch();
+            }
 
 
-            $customgood = new customgood();
+            $customgood = new Customgood();
             $shuju['user_id'] = $user_id;
+            $shuju['type_id'] = $shuju['pid'];
+            $shuju['type_xj'] = $shuju['classify_id'];
             $result = $customgood->allowField(true)->save($shuju);
             if($result){
-//                return ['status'=>'success'];
                 return $this->success('发布成功','user/fabuxinxi');
             }else{
                 return ['status'=>'failure','errorinfo'=>'数据写入失败，请联系管理员'];

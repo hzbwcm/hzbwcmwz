@@ -53,25 +53,25 @@
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品名称 ：</label>
-            <input type="text" value="" name="carname" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
+            <input type="text" value="" name="cus_proname" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产地 ：</label>
-            <input type="text" value="" name="pro" class="InputOne col-xs-2 col-sm-3 col-md-3 col-lg-4">
+            <input type="text" value="" name="cus_place" class="InputOne col-xs-2 col-sm-3 col-md-3 col-lg-4">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品长度 ：</label>
-            <input type="text" value="" name="length" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" value="" name="cus_length" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
             <input type="text" class="InputThree col-xs-3 col-sm-3 col-md-3 col-lg-3" value="(mm)" readonly="value">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品宽度 ：</label>
-            <input type="text" value="" name="width" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" value="" name="cus_width" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
             <input type="text" class="InputThree col-xs-3 col-sm-3 col-md-3 col-lg-3" value="(mm)" readonly="value">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">供货时间 ：</label>
-            <input type="text" value="" name="cdgpp" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" value="" name="cus_supply" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">订单量 ：</label>
@@ -79,14 +79,19 @@
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">芯体 ：</label>
-            <input type="text" value="" name="xinti" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" value="" name="cus_orders" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">设备新旧程度 ：</label>
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
-                        <select class="select" size="1" name="new">
-                            <option value="0">1</option>
+                        <select class="select" size="1" name="cus_condition">
+                            <option value="-1">请选择</option>
+                            <option value="0">9</option>
+                            <option value="1">8</option>
+                            <option value="2">7</option>
+                            <option value="3">6</option>
+                            <option value="4">5</option>
                         </select>
                     </span>
             </div>
@@ -95,22 +100,22 @@
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">金属检测 ：</label>
             <div class="radio-box">
-                <input type="radio" id="radio-3" name="jsjc" value="有">
+                <input type="radio" id="radio-3" name="cus_metal" value="有">
                 <label for="radio-3">有</label>
             </div>
             <div class="radio-box">
-                <input type="radio" id="radio-4" name="jsjc" checked value="无">
+                <input type="radio" id="radio-4" name="cus_metal" checked value="无">
                 <label for="radio-4">无</label>
             </div>
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视觉检测 ：</label>
             <div class="radio-box">
-                <input type="radio" id="radio-5" name="sjjc" value="有">
+                <input type="radio" id="radio-5" name="cus_vision" value="有">
                 <label for="radio-5">有</label>
             </div>
             <div class="radio-box">
-                <input type="radio" id="radio-6" name="sjjc" checked value="无">
+                <input type="radio" id="radio-6" name="cus_vision" checked value="无">
                 <label for="radio-6">无</label>
             </div>
         </div>
@@ -118,8 +123,11 @@
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">包装形式 ：</label>
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
-                        <select class="select" size="1" name="bzxs">
-                            <option value="0">1</option>
+                        <select class="select" size="1" name="cus_pack">
+                            <option value="-1">请选择</option>
+                            <option value="全自动包装">全自动包装</option>
+                            <option value="半自动包装">半自动包装</option>
+                            <option value="手工包装">手工包装</option>
                         </select>
                     </span>
             </div>
@@ -175,7 +183,7 @@
         <!--公司介绍富文本编辑器-->
         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-1 col-xs-offset-1 gerenxinxi-fwbbjq-box">
             <h3>说明：</h3>
-            <script id="editor" type="text/plain" style="width:100%;height:500px;" name="instruction"></script>
+            <script id="editor" type="text/plain" style="width:100%;height:500px;" name="cus_explain"></script>
             <div href="javascript:;"
             class="GsjsButton col-xs-1 col-sm-1 col-md-1 col-lg-1  col-md-offset-10 col-xs-offset-10"
             onclick="setEnabled()">编辑
