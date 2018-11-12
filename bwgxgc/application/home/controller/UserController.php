@@ -62,6 +62,7 @@ class UserController extends Controller
             return $this->fetch();
         }
     }
+
     //信息管理首页
     public function xinxiguanlishouye(Request $request)
     {
@@ -71,14 +72,16 @@ class UserController extends Controller
         $type= new Type();
         $left_data = $type->where('type_pid',0)->select();
 
-        //遍历定制产品信息根据user_id
+        //遍历定制产品信息根据user_id及type_id
         $type_pid = empty($request->param('pid')) ? 1 : $request->param('pid');
-        $info = Customgood::where('user_id',$user_id)->select();
+        $info = Customgood::where('user_id',$user_id)->where('type_id',$type_pid)->select();
 
         $this->assign('left_data',$left_data);
+        $this->assign('pid',$type_pid);
         $this->assign('info',$info);
         return $this->fetch();
     }
+
     //发布信息get_type_info
     public function fabuxinxi(Request $request)
     {
@@ -91,8 +94,6 @@ class UserController extends Controller
         //获取二级分类
         $type_pid = empty($request->param('pid')) ? 1 : $request->param('pid');
         $classify_data = $type->where('type_pid', $type_pid)->select();
-
-
 
         $this->assign('left_data', $left_data);
         $this->assign('pid', $type_pid);

@@ -29,10 +29,9 @@
     <!--侧导航-->
     <ul class="cedaohang-dingwei">
         {volist name='left_data' id='ty'}
-
-
-        <li class="cedaohang-li" id="{$ty.type_id}">{$ty.type_name}加工</li>
-
+        <a style="text-decoration:none; color: white" href="{:url('/home/user/xinxiguanlishouye',['pid' => $ty.type_id])}">
+        <li class="cedaohang-li {if condition='$ty.type_id eq $pid'}cedaohang-active{/if}" id="{$ty.type_id}">{$ty.type_name}加工</li>
+        </a>
         {/volist}
     </ul>
     <div class="main-title-box">
@@ -47,9 +46,6 @@
             <li class="form-li">
                 <div class="form-img">
                     <img data-original="{:config('home_img')}/a2.png" alt="">
-                    <a href="{:url('home/user/xinxiguanli',['id'=>$proname.cus_id])}" class="img-zhezhao">
-                        <div class="img-zhezhao-text">点击进入编辑</div>
-                    </a>
                     <a href="{:url('home/user/xinxiguanli',['id'=>$proname.cus_id])}" class="img-zhezhao">
                         <div class="img-zhezhao-text">点击进入编辑</div>
                     </a>
