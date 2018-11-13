@@ -3,6 +3,7 @@
 namespace app\admin\controller;
 
 use app\admin\model\Company_info;
+use app\admin\model\Customgood;
 use app\admin\model\Card;
 use think\Controller;
 use think\Request;
@@ -103,7 +104,8 @@ class GoodsController extends Controller
 
         if($request->isPost()){
             $shuju = Request::instance()->post();
-
+//            dump($shuju);
+//            die();
 //            $rules = [
 //                'cus_proname'          =>'require',
 //                'cus_length'           =>'require',
@@ -129,20 +131,26 @@ class GoodsController extends Controller
 //            }
 
 
-            $customgood = new customgood();
+            $customgood = new Customgood();
             $shuju['com_id'] = $com_id;
             $result = $customgood->allowField(true)->save($shuju);
             if($result){
 //                return ['status'=>'success'];
-                return $this->success('发布成功','user/fabuxinxi');
+                return $this->success('发布成功','index/index');
             }else{
                 return ['status'=>'failure','errorinfo'=>'数据写入失败，请联系管理员'];
             }
         }
         return $this->fetch();
-
+    }
+    //产品定制管理
+    public function cpdzgl()
+    {
         return $this->fetch();
     }
-
-
+    //产品展示商品上传
+    public function cpzsspsc()
+    {
+        return $this->fetch();
+    }
 }

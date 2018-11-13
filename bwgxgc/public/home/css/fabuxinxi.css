@@ -38,15 +38,18 @@ main {
       height: 45px;
       line-height: 45px;
       text-align: center;
-      color: #fff;
       cursor: pointer; }
+      main .cedaohang-dingwei .cedaohang-li a {
+        text-decoration: none;
+        color: #fff; }
     main .cedaohang-dingwei .cedaohang-li:nth-child(n) {
       background: #b786e5; }
     main .cedaohang-dingwei .cedaohang-li:nth-child(2n) {
       background: #a260de; }
     main .cedaohang-dingwei .cedaohang-active {
-      background: #fff !important;
-      color: #555555; }
+      background: #fff !important; }
+      main .cedaohang-dingwei .cedaohang-active a {
+        color: #555555; }
   main .main-title-box {
     width: 100%;
     height: 54px;
