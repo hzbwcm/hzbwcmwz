@@ -16,6 +16,8 @@ class IndexController extends Controller
 
         if($com_id===1){
             $ps_infoA = Permission::where('ps_level','0')->select();
+
+
             $ps_infoB = Permission::where('ps_level','1')->select();
         }else{
             $ps_ids = Company_info::alias('c')

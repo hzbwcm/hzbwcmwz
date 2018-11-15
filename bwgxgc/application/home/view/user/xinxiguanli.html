@@ -34,44 +34,17 @@
     </div>
     <div class="main-form-box">
         <form action="{$Request.url}" method="post">
-            <!--上传图片-->
-            <div class="form-img-big-box">
-                <div class="form-img-box-left">
-                    <!--这是要展示上传图片的div以及img标签-->
-                    <div id="localImag">
-                        主图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc' name='' value="" onclick="inputimg('pic','lacalImag','preview','doc')"></label>
-                        <img data-original="" id="preview" alt="">
-                    </div>
-                </div>
-                <div class="form-img-box-right">
-                    <div id="localImag2" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc2' name='' value="" onclick="inputimg('pic2','lacalImag2','preview2','doc2')"></label>
-                        <img data-original="{:config('home_img')}/banner.jpg" id="preview2" alt="">
-                    </div>
-                    <div id="localImag3" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc3' name='' value="" onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
-                        <img data-original="" id="preview3" alt="">
-                    </div>
-                    <div id="localImag4" class="localImag">
-                        附图图片(点击上传)
-                        <!--这是图片上传的input框-->
-                        <label class="lacalLabel"><input type='file' id='doc4' name='' value="" onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
-                        <img data-original="" id="preview4" alt="">
-                    </div>
-                </div>
-            </div>
             <!--上传产品信息-->
             <div class="form-text-big-box">
+                <div class="select-div" style="padding-left: 40px;color: #7b7b7b;font-size: 16px;height: 44px;line-height: 44px;">
+                    {$type_data1.type_name}
+                </div>
                 <div class="select-div">
-                    <select name="" id="" class="select-box">
-
-                        <option value="-1" class="select-option">卫生巾加工 &nbsp;(点击分类)</option>
+                    <select name="type_xj" id="" class="select-box">
+                        <option value="{$type_data2.type_name}" class="select-option">{$type_data2.type_name}</option>
+                        {volist name='type_data22' id='data22'}
+                        <option value="{$data22.type_name}" class="select-option">{$data22.type_name}</option>
+                        {/volist}
                     </select>
                 </div>
                 <ul class="form-text-ul">
@@ -151,6 +124,38 @@
                         </select>
                     </li>
                 </ul>
+            </div>
+            <!--上传图片-->
+            <div class="form-img-big-box">
+                <div class="form-img-box-left">
+                    <!--这是要展示上传图片的div以及img标签-->
+                    <div id="localImag">
+                        主图图片(点击上传)
+                        <!--这是图片上传的input框-->
+                        <label class="lacalLabel"><input type='file' id='doc' name='' value="" onclick="inputimg('pic','lacalImag','preview','doc')"></label>
+                        <img data-original="" id="preview" alt="">
+                    </div>
+                </div>
+                <div class="form-img-box-right">
+                    <div id="localImag2" class="localImag">
+                        附图图片(点击上传)
+                        <!--这是图片上传的input框-->
+                        <label class="lacalLabel"><input type='file' id='doc2' name='' value="" onclick="inputimg('pic2','lacalImag2','preview2','doc2')"></label>
+                        <img data-original="{:config('home_img')}/banner.jpg" id="preview2" alt="">
+                    </div>
+                    <div id="localImag3" class="localImag">
+                        附图图片(点击上传)
+                        <!--这是图片上传的input框-->
+                        <label class="lacalLabel"><input type='file' id='doc3' name='' value="" onclick="inputimg('pic3','lacalImag3','preview3','doc3')"></label>
+                        <img data-original="" id="preview3" alt="">
+                    </div>
+                    <div id="localImag4" class="localImag">
+                        附图图片(点击上传)
+                        <!--这是图片上传的input框-->
+                        <label class="lacalLabel"><input type='file' id='doc4' name='' value="" onclick="inputimg('pic4','lacalImag4','preview4','doc4')"></label>
+                        <img data-original="" id="preview4" alt="">
+                    </div>
+                </div>
             </div>
             <div class="form-button">
                 <input type="submit" value="保存">
