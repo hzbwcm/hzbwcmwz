@@ -143,8 +143,13 @@ class GoodsController extends Controller
         }
         return $this->fetch();
     }
-
+    //产品定制管理
     public function cpdzgl()
+    {
+        return $this->fetch();
+    }
+    //产品展示商品上传
+    public function cpzsspsc()
     {
         return $this->fetch();
     }
