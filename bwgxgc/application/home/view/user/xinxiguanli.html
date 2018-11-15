@@ -40,10 +40,10 @@
                     {$type_data1.type_name}
                 </div>
                 <div class="select-div">
-                    <select name="type_xj" id="" class="select-box">
-                        <option value="{$type_data2.type_name}" class="select-option">{$type_data2.type_name}</option>
+                    <select name="type_xj" id="" class="select-box" >
+                        <option value="{$type_data2.type_id}" class="select-option">{$type_data2.type_name}</option>
                         {volist name='type_data22' id='data22'}
-                        <option value="{$data22.type_name}" class="select-option">{$data22.type_name}</option>
+                        <option value="{$data22.type_id}" class="select-option">{$data22.type_name}</option>
                         {/volist}
                     </select>
                 </div>

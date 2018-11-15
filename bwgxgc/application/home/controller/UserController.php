@@ -24,7 +24,6 @@ class UserController extends Controller
         $user_id = session('user_id');
         Session::get($id);
         if($request->isPost()){
-
             $data = $request->post();
             $rules = [
                 'cus_proname'          =>'require',

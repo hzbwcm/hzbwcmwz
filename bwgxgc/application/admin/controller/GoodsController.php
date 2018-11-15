@@ -105,6 +105,8 @@ class GoodsController extends Controller
         if($request->isPost()){
             $shuju = Request::instance()->post();
 //            dump($shuju);
+//            die;
+//            dump($shuju);
 //            die();
 //            $rules = [
 //                'cus_proname'          =>'require',
@@ -146,6 +148,9 @@ class GoodsController extends Controller
     //产品定制管理
     public function cpdzgl()
     {
+        $com_id = Session('com_id');
+        $cpdzgl = Customgood::where('com_id',$com_id)->select();
+        $this->assign('cpdzgl',$cpdzgl);
         return $this->fetch();
     }
     //产品展示商品上传
