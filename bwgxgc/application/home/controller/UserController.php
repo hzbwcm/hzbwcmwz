@@ -70,7 +70,6 @@ class UserController extends Controller
 
             $this->assign('user_data', $user_data);
             $this->assign('type_data1',$type_data1);
-            $this->assign('type_data11',$type_data11);
             $this->assign('type_data2',$type_data2);
             $this->assign('type_data22',$type_data22);
             return $this->fetch();
