@@ -75,6 +75,18 @@ class UserController extends Controller
         }
     }
 
+    //产品定制删除
+    public function delcpdz($cusid,Request $request)
+    {
+        Session::get($cusid);
+        $res = Customgood::where('cus_id',$cusid)->delete();
+        if ($res) {
+            $this->success('删除成功','user/xinxiguanlishouye');
+        } else {
+            $this->error('删除失败','user/xinxiguanlishouye');
+        }
+    }
+
     //信息管理首页
     public function xinxiguanlishouye(Request $request)
     {

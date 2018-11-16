@@ -23,6 +23,7 @@ Route::group('home',function (){
     Route::any('user/typeer','home/user/typeer',['method'=>'get|post']);//发布信息
     Route::any('user/pic_up','home/user/pic_up',['method'=>'get|post']);//图片上传
     Route::get('user/xinxiguanlishouye','home/user/xinxiguanlishouye');//信息管理首页
+    Route::get('user/delcpdz','home/user/delcpdz');//产品定制删除
     Route::any('user/xinxiguanli','home/user/xinxiguanli',['method'=>'get|post']);//信息管理
     Route::get('index/shoucangjia','home/index/shoucangjia');//收藏夹
 },['after_behavior'=>'\app\home\behavior\CheckLogin']);
@@ -65,12 +66,16 @@ Route::any('admin/role/gai','admin/role/gai',['method'=>'get|post']);//角色修
 Route::get('admin/permission/index','admin/permission/index');//权限表
 Route::any('admin/permission/addition','admin/permission/addition',['method'=>'get|post']);//权限添加
 Route::get('admin/user/gerenxinxi','admin/user/gerenxinxi');//个人信息
-Route::get('admin/goods/cpdzgl','admin/goods/cpdzgl');//个人信息
-Route::get('admin/goods/cpzsspsc','admin/goods/cpzsspsc');//产品展示商品上传
+Route::any('admin/goods/dingzspsc','admin/goods/dingzspsc',['method'=>'get|post']);//产品定制商品信息上传
+Route::get('admin/goods/cpdzgl','admin/goods/cpdzgl');//产品定制管理
+Route::get('admin/goods/cpdzxg','admin/goods/cpdzxg');//产品定制修改
 
+Route::get('admin/goods/cpzsspsc','admin/goods/cpzsspsc');//产品展示商品上传
 Route::get('admin/user/gerentupian','admin/user/gerentupian');//个人信息图片上传
 Route::get('admin/user/qiyezizhi','admin/user/qiyezizhi');//企业资质
-Route::any('admin/goods/dingzspsc','admin/goods/dingzspsc',['method'=>'get|post']);//产品定制商品信息上传
+
+
+
 Route::group('admin',function (){
     Route::get('user/logout','admin/user/logout');//admin退出
     Route::get('index/index','admin/index/index');//admin首页

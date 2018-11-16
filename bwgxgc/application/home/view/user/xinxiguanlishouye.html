@@ -49,9 +49,10 @@
                     <div class="img-zhezhao">
                         <div class="img-zhezhao-text" style="">
                             <a href="{:url('home/user/xinxiguanli',['id'=>$proname.cus_id])}">点击进入编辑</a>
-                            <a href="">点击删除</a>
+                            <a href="{:url('home/user/delcpdz',['cusid'=>$proname.cus_id])}">点击删除</a>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="form-li-title">{$proname.cus_proname}</div>
             </li>
