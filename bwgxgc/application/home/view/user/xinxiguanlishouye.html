@@ -95,19 +95,20 @@
 </script>
 <script>
     function shanchu(cusid) {
-        var flag=confirm('是否确认删除')
-        alert(cusid)
+        var flag=confirm('是否确认删除');
         if(flag){
             $.ajax({
                 url: "{:url('home/user/delcpdz')}",
                 type: 'get',
                 data: {cusid},
-                dataType: JSON,
+                dataType: 'json',
                 success: function (res) {
-                    alert('删除成功')
-                },
-                error:function (res) {
-                    alert('删除失败');
+                    if(res){
+                        alert('删除成功');
+                        history.go(0);
+                    }else{
+                        alert('删除失败');
+                    }
                 }
             })
         }
