@@ -76,9 +76,9 @@ class UserController extends Controller
     }
 
     //产品定制删除
-    public function delcpdz($cusid,Request $request)
+    public function delcpdz(Request $request)
     {
-        Session::get($cusid);
+        $cusid = Request::get('cusid');
         $res = Customgood::where('cus_id',$cusid)->delete();
         if ($res) {
             $this->success('删除成功','user/xinxiguanlishouye');
