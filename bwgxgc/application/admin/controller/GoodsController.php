@@ -13,6 +13,10 @@ use think\Db;
 
 class GoodsController extends Controller
 {
+    public function tpgl()
+    {
+        return $this-> fetch();
+    }
     public function tiepaishangpingshangchuan(Request $request)
     {
         $com_id = Session::get('com_id');

@@ -29,13 +29,13 @@ Route::group('home',function (){
 },['after_behavior'=>'\app\home\behavior\CheckLogin']);
 
 
-//admin分组
+//home分组
 Route::get('home/custom/custom','home/custom/custom');//产品定制
 Route::get('home/custom/get_area','home/custom/get_area');//产品定制
 Route::get('home/stickacard/stickacard','home/stickacard/stickacard');//贴牌专区
 Route::get('home/stickacard/tiepaixiangqing','home/stickacard/tiepaixiangqing');//贴牌详情
 Route::get('home/stickacard/tiepaigengduo','home/stickacard/tiepaigengduo');//贴牌更多
-Route::get('admin/goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan');//贴牌更多
+//Route::get('admin/goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan');//贴牌更多
 Route::get('home/inspection/inspection','home/inspection/inspection');//优选验厂
 Route::get('home/documentary/documentary','home/documentary/documentary');//跟单专家
 Route::get('home/index/wlpf','home/index/wlpf');//网络批发
@@ -82,8 +82,9 @@ Route::group('admin',function (){
     Route::get('index/welcome','admin/index/welcome');//admin首页welcome
     Route::post('user/tjgrxx','admin/user/tjgrxx');
     Route::post('user/qiyezizhi','admin/user/qiyezizhi');
+    Route::get('goods/tpgl','admin/user/tpgl');
     Route::any('user/gerentupian','admin/user/gerentupian',['method'=>'get|post']);//个人图片上传
-    Route::post('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan');
+    Route::any('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan',['method'=>'get|post']);
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
 
 
