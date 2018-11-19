@@ -331,7 +331,7 @@
                         <i class="iconfont icon-icon_location"></i>
                         {$v.company_name}
                     </div>
-                    <a href="" class="wsj-ljdz">进入工厂</a>
+                    <a href="{:url('home/shangpu/index',['id'=>$v.com_id])}" class="wsj-ljdz">进入工厂</a>
                 </div>
             </div>
         </div>
@@ -551,7 +551,7 @@
                             <i class="iconfont icon-icon_location"></i>
                             {$v.company_name}
                         </div>
-                        <a href="" class="wsj-ljdz">立即定制</a>
+                        <a href="{:url('home/stickacard/tiepaixiangqing',['id'=>$v.id])}" class="wsj-ljdz">立即定制</a>
                     </div>
                 </div>
                 {/volist}
@@ -764,24 +764,14 @@
         <div class="sjrz-gcrz"><a href="">工厂入驻</a></div>
     </div>
     <div class="sjrz-img-xy-box">
-        <a href="" class="sjrz-img-box">
+        {volist name='com' id='v'}
+        <a href="{:url('home/shangpu/index',['id'=>$v.com_id])}" class="sjrz-img-box">
             <div class="sjrz-img">
-                <img data-original="" alt="">
+                <img data-original="{:config('public_uploads' )}/{$v.pic8}" alt="">
             </div>
-            <div class="sjrz-img-title">某某卫生用品公司</div>
+            <div class="sjrz-img-title">{$v.company_name}</div>
         </a>
-        <a href="" class="sjrz-img-box">
-            <div class="sjrz-img">
-                <img data-original="" alt="">
-            </div>
-            <div class="sjrz-img-title">某某卫生用品公司</div>
-        </a>
-        <a href="" class="sjrz-img-box">
-            <div class="sjrz-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-            </div>
-            <div class="sjrz-img-title">某某卫生用品公司</div>
-        </a>
+        {/volist}
     </div>
 </div>
 <!--底部工厂入驻-->

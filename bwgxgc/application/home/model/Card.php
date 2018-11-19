@@ -6,5 +6,5 @@ use think\Model;
 
 class Card extends Model
 {
-    //
+
 }

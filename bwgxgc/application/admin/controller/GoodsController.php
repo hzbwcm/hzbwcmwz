@@ -91,8 +91,8 @@ class GoodsController extends Controller
 
             ];
             $data = array_filter($data);
-
-            $res=Db::name('card')->insert($data);
+            $card = new Card();
+            $res=$card ->allowField(true)->save($data);
             if($res)
             {
                 return $this->success('上传成功');

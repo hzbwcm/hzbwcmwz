@@ -20,11 +20,12 @@ class IndexController extends Controller
             $com[$x]['pic6'] =$pics['pic6'];
             $com[$x]['pic5'] =$pics['pic5'];
             $com[$x]['pic9'] =$pics['pic9'];
+            $com[$x]['pic8'] =$pics['pic8'];
         }
         $card = Card::where('id','>','1')->order('id', 'asc')->limit(6)->select();
+
         $info = Company_info::where('com_id',16)->find();
         $pic = Com_pic::where('com_id',16)->column('pic6');
-
         $this->assign([
             'com'=>$com,
             'card'=>$card,
