@@ -767,10 +767,17 @@ main {
             main .jiagong-b-box .wsjcp-z-sh .wsjcp-right .wsj-tu-box .wsj-tu-zs .wsj-tu-l {
               width: 180px;
               height: 100%;
-              float: left; }
+              float: left;
+              position: relative; }
               main .jiagong-b-box .wsjcp-z-sh .wsjcp-right .wsj-tu-box .wsj-tu-zs .wsj-tu-l img {
-                width: 100%;
-                height: 100%; }
+                max-width: 100%;
+                max-height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto; }
             main .jiagong-b-box .wsjcp-z-sh .wsjcp-right .wsj-tu-box .wsj-tu-zs .wsj-tu-r {
               width: 100px;
               height: 100%;
@@ -1390,10 +1397,17 @@ main {
           .cnxh-b-box .wsjcp-z-sh-1 .wsjcp-right-1 .wsj-tu-box-1 .wsj-tu-zs-1 .wsj-tu-l-1 {
             width: 180px;
             height: 100%;
-            float: left; }
+            float: left;
+            position: relative; }
             .cnxh-b-box .wsjcp-z-sh-1 .wsjcp-right-1 .wsj-tu-box-1 .wsj-tu-zs-1 .wsj-tu-l-1 img {
-              width: 100%;
-              height: 100%; }
+              max-width: 100%;
+              max-height: 100%;
+              position: absolute;
+              left: 0;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              margin: auto; }
           .cnxh-b-box .wsjcp-z-sh-1 .wsjcp-right-1 .wsj-tu-box-1 .wsj-tu-zs-1 .wsj-tu-r-1 {
             width: 100px;
             height: 100%;
