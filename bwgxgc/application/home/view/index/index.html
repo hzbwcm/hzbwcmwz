@@ -522,177 +522,41 @@
             <div class="wsjcp-left">
                 <img data-original="{:config('home_img')}/dznk.jpg" alt="">
             </div>
+
             <div class="wsjcp-right">
                 <!---->
+                {volist name='card' id='v'}
                 <div class="wsj-tu-box">
                     <div class="wsj-tu-zs">
                         <div class="wsj-tu-l">
-                            <img data-original="" alt="">
+                            <img data-original="{:config('public_uploads' )}/{$v.pic1}" alt="">
                         </div>
                         <div class="wsj-tu-r">
                             <div class="wsj-tu-r-t">
-                                <img data-original="" alt="">
+                                <img data-original="{:config('public_uploads' )}/{$v.pic2}" alt="">
                             </div>
                             <div class="wsj-tu-r-b">
-                                <img data-original="" alt="">
+                                <img data-original="{:config('public_uploads' )}/{$v.pic3}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="wsj-xx">
                         <div class="wsj-name"><span>代工品牌</span>
-                            <div>苏菲,某某</div>
+                            <div>{$v.carname}</div>
                         </div>
                         <div class="wsj-name"><span>起订量</span>
-                            <div>1000</div>
+                            <div>{$v.qdl}</div>
                         </div>
                         <div class="gongsi-dizhi">
                             <i class="iconfont icon-icon_location"></i>
-                            浙江省某某卫生用品有限公司
+                            {$v.company_name}
                         </div>
                         <a href="" class="wsj-ljdz">立即定制</a>
                     </div>
                 </div>
-                <div class="wsj-tu-box">
-                    <div class="wsj-tu-zs">
-                        <div class="wsj-tu-l">
-                            <img data-original="" alt="">
-                        </div>
-                        <div class="wsj-tu-r">
-                            <div class="wsj-tu-r-t">
-                                <img data-original="" alt="">
-                            </div>
-                            <div class="wsj-tu-r-b">
-                                <img data-original="" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wsj-xx">
-                        <div class="wsj-name"><span>代工品牌</span>
-                            <div>苏菲,某某</div>
-                        </div>
-                        <div class="wsj-name"><span>起订量</span>
-                            <div>1000</div>
-                        </div>
-                        <div class="gongsi-dizhi">
-                            <i class="iconfont icon-icon_location"></i>
-                            浙江省某某卫生用品有限公司
-                        </div>
-                        <a href="" class="wsj-ljdz">立即定制</a>
-                    </div>
-                </div>
-                <div class="wsj-tu-box">
-                    <div class="wsj-tu-zs">
-                        <div class="wsj-tu-l">
-                            <img data-original="" alt="">
-                        </div>
-                        <div class="wsj-tu-r">
-                            <div class="wsj-tu-r-t">
-                                <img data-original="" alt="">
-                            </div>
-                            <div class="wsj-tu-r-b">
-                                <img data-original="" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wsj-xx">
-                        <div class="wsj-name"><span>代工品牌</span>
-                            <div>苏菲,某某</div>
-                        </div>
-                        <div class="wsj-name"><span>起订量</span>
-                            <div>1000</div>
-                        </div>
-                        <div class="gongsi-dizhi">
-                            <i class="iconfont icon-icon_location"></i>
-                            浙江省某某卫生用品有限公司
-                        </div>
-                        <a href="" class="wsj-ljdz">立即定制</a>
-                    </div>
-                </div>
-                <div class="wsj-tu-box">
-                    <div class="wsj-tu-zs">
-                        <div class="wsj-tu-l">
-                            <img data-original="" alt="">
-                        </div>
-                        <div class="wsj-tu-r">
-                            <div class="wsj-tu-r-t">
-                                <img data-original="" alt="">
-                            </div>
-                            <div class="wsj-tu-r-b">
-                                <img data-original="" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wsj-xx">
-                        <div class="wsj-name"><span>代工品牌</span>
-                            <div>苏菲,某某</div>
-                        </div>
-                        <div class="wsj-name"><span>起订量</span>
-                            <div>1000</div>
-                        </div>
-                        <div class="gongsi-dizhi">
-                            <i class="iconfont icon-icon_location"></i>
-                            浙江省某某卫生用品有限公司
-                        </div>
-                        <a href="" class="wsj-ljdz">立即定制</a>
-                    </div>
-                </div>
-                <div class="wsj-tu-box">
-                    <div class="wsj-tu-zs">
-                        <div class="wsj-tu-l">
-                            <img data-original="" alt="">
-                        </div>
-                        <div class="wsj-tu-r">
-                            <div class="wsj-tu-r-t">
-                                <img data-original="" alt="">
-                            </div>
-                            <div class="wsj-tu-r-b">
-                                <img data-original="" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wsj-xx">
-                        <div class="wsj-name"><span>代工品牌</span>
-                            <div>苏菲,某某</div>
-                        </div>
-                        <div class="wsj-name"><span>起订量</span>
-                            <div>1000</div>
-                        </div>
-                        <div class="gongsi-dizhi">
-                            <i class="iconfont icon-icon_location"></i>
-                            浙江省某某卫生用品有限公司
-                        </div>
-                        <a href="" class="wsj-ljdz">立即定制</a>
-                    </div>
-                </div>
-                <div class="wsj-tu-box">
-                    <div class="wsj-tu-zs">
-                        <div class="wsj-tu-l">
-                            <img data-original="" alt="">
-                        </div>
-                        <div class="wsj-tu-r">
-                            <div class="wsj-tu-r-t">
-                                <img data-original="" alt="">
-                            </div>
-                            <div class="wsj-tu-r-b">
-                                <img data-original="" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wsj-xx">
-                        <div class="wsj-name"><span>代工品牌</span>
-                            <div>苏菲,某某</div>
-                        </div>
-                        <div class="wsj-name"><span>起订量</span>
-                            <div>1000</div>
-                        </div>
-                        <div class="gongsi-dizhi">
-                            <i class="iconfont icon-icon_location"></i>
-                            浙江省某某卫生用品有限公司
-                        </div>
-                        <a href="" class="wsj-ljdz">立即定制</a>
-                    </div>
-                </div>
+                {/volist}
             </div>
+
         </div>
 
     </div>
@@ -716,18 +580,17 @@
             <div class="youxuan-xw-box">
                 <div class="youxuan-xw-left">
                     <a href="" class="youxuan-xw-img">
-                        <img data-original="{:config('home_img')}/ect.jpg" alt="">
-                        <div class="youxuan-img-title">某某省某某卫生用品有限公司</div>
-                        <div class="youxuan-left-jt youxuan-jt"><i class="iconfont icon-zuojiantou"></i></div>
-                        <div class="youxuan-right-jt youxuan-jt"><i class="iconfont icon-iconfontjiantou6"></i></div>
+                        <img data-original="{:config('public_uploads' )}/{$pic[0]}" alt="">
+                        <div class="youxuan-img-title">{$info.company_name}</div>
+                        <!--<div class="youxuan-left-jt youxuan-jt"><i class="iconfont icon-zuojiantou"></i></div>-->
+                        <!--<div class="youxuan-right-jt youxuan-jt"><i class="iconfont icon-iconfontjiantou6"></i></div>-->
                     </a>
                     <div class="youxuan-xw-right">
-                        <div class="youxuan-xw-title">某某某卫生用品有限公司</div>
-                        <div class="xw-gongsi-zl">公司规模 : <span>2000m<sup>2</sup></span></div>
-                        <div class="xw-gongsi-zl">产品分类 : <span>某某某，某某某，某某某</span></div>
-                        <div class="xw-gongsi-zl">公司成立时间 : <span>2010年12月30日</span></div>
-                        <div class="xw-gongsi-zl">公司地址 : <span>浙江省杭州市某某区某某路201号</span></div>
-                        <div class="xw-gongsi-zl">公司简介 : <span>*********************************</span></div>
+                        <div class="youxuan-xw-title">{$info.company_name}</div>
+                        <div class="xw-gongsi-zl">公司规模 : <span>{$info.size}</span></div>
+                        <div class="xw-gongsi-zl">产品分类 : <span>{$info.type}</span></div>
+                        <div class="xw-gongsi-zl">公司成立时间 : <span>{$info.time}</span></div>
+                        <div class="xw-gongsi-zl">公司地址 : <span>{$info.address}</span></div>
                         <div class="youxuan-yyc"><img data-original="{:config('home_img')}/eyyz.png" alt=""></div>
                     </div>
                 </div>
@@ -736,10 +599,6 @@
                         <img data-original="{:config('home_img')}/ebt.jpg" alt="">
                     </div>
                     <div class="yx-xw-yo-text">
-                        <div><span>[7-15]</span>做网站,多年网站经验承接各种</div>
-                        <div><span>[7-15]</span>做网站,多年网站经验承接各种</div>
-                        <div><span>[7-15]</span>做网站,多年网站经验承接各种</div>
-                        <div><span>[7-15]</span>做网站,多年网站经验承接各种</div>
                         <div><span>[7-15]</span>做网站,多年网站经验承接各种</div>
                     </div>
                 </div>
