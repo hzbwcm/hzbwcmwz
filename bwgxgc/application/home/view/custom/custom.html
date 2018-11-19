@@ -218,9 +218,11 @@
                         </div>
                         {volist name='type' id='v1'}
                         {eq name="v1.type_pid" value="$v.type_id"}
-                        <div class="accordion-inner">
-                            {$v1.type_name}
-                        </div>
+                        <a href="" style="text-decoration:none">
+                            <div class="accordion-inner">
+                                {$v1.type_name}
+                            </div>
+                        </a>
                         {/eq}
                         {/volist}
                     </div>

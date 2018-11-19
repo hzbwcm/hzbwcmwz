@@ -15,9 +15,14 @@ use think\Db;
 
 class GoodsController extends Controller
 {
+    public function tpgl()
+    {
+        return $this-> fetch();
+    }
     public function tiepaishangpingshangchuan(Request $request)
     {
         $com_id = Session::get('com_id');
+        $com = Company_info::where('com_id',$com_id)->find();
         $info = Card::where('com_id', $com_id)->find();
         $type = ['卫生巾', '婴儿纸尿裤', '成人纸尿裤', '湿纸巾', '生活用纸', '产妇巾', '经期裤', '护理垫', '宠物垫', '乳垫'];
         $new = ['5', '6', '7', '8', '9'];
@@ -31,7 +36,8 @@ class GoodsController extends Controller
             'znum' => $znum,
             'bzxs' => $bzxs,
             'com_id' => $com_id,
-            'info' => $info
+            'info' => $info,
+            'com' => $com
         ]);
         if (request()->isPost()) {
 
@@ -57,6 +63,7 @@ class GoodsController extends Controller
             $info1 = $info1?'card' . "/" . $info1:'';
             $info2 = $info2?'card' . "/" . $info2:'';
             $data = ['com_id' => $shuju['com_id'],
+                'company_name'=>$shuju['company_name'],
                 'type' => $shuju['type'],
                 'carname' => $shuju['carname'],
                 'pro' => $shuju['pro'],
