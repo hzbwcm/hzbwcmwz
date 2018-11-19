@@ -1155,9 +1155,18 @@ main {
               color: #fff;
               text-align: center;
               line-height: 30px; }
+            .youxuan-box .youxuan-neirong .wenben-neirong .youxuan-xw-box .youxuan-xw-left .youxuan-xw-img img {
+              max-height: 100%;
+              max-width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              margin: auto; }
         .youxuan-box .youxuan-neirong .wenben-neirong .youxuan-xw-box .youxuan-xw-right {
           width: 410px;
-          padding-top: 8px;
+          padding-top: 50px;
           float: left;
           margin-left: 30px;
           position: relative; }
