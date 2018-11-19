@@ -29,15 +29,16 @@
     <script type="text/javascript" src="{:config('admin_lib')}/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>贴牌商品上传</title>
+    <title>产品定制修改</title>
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理<span
-        class="c-gray en">&gt;</span> 产品定制品上传 <a class="btn btn-success radius r"
+        class="c-gray en">&gt;</span> 产品定制管理<span
+        class="c-gray en">&gt;</span> 产品定制修改 <a class="btn btn-success radius r"
                                                  style="line-height:1.6em;margin-top:3px"
                                                  href="javascript:location.replace(location.href);" title="刷新"><i
         class="Hui-iconfont">&#xe68f;</i></a></nav>
-<div class="tiepaiTitle">产品定制商品上传</div>
+<div class="tiepaiTitle">产品定制修改</div>
 <form style="padding-bottom: 150px;overflow: hidden" method="post" action="{$Request.url}" enctype="multipart/form-data">
     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-xs-offset-2">
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -45,60 +46,113 @@
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品类别 ：</label>
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
-                        <select class="select" size="1" name="type">
-                            <option value="0" >1</option>
+                        <select class="select" size="1" name="typeid" id="typeid" onchange="get_xj(this)">
+                            <option value="" >--请选择--</option>
+                            {volist name='type_data1' id='ty1'}
+                            <option value="{$ty1.type_id}" >
+                                {$ty1.type_name}
+                            </option>
+                            {/volist}
                         </select>
                     </span>
             </div>
+            <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
+                    <span class="select-box">
+                        <select class="select" size="1" name="type_xj" id="type_xj">
+                            <option value="0" >--请选择--</option>
+                        </select>
+                    </span>
+            </div>
+            <script>
+                function get_xj(lay) {
+                    var typeid=$(lay).val();
+
+                    if (typeid == '') {
+                        var html = '<option value="" >--请选择--</option>';
+                        $('#type_xj').html(html);
+                        return false;
+                    }
+                    $.ajax({
+                        url: "{:url('admin/goods/dingzspsc')}",
+                        type: 'get',
+                        data: {typeid},
+                        dataType: 'json',
+                        success: function (res) {
+
+                            if(res.code == 200){
+                                console.log(res.data)
+                                var type_data = res.data;
+                                var html = '<option value="" >--请选择--</option>';
+                                $.each(type_data, function(k,v){
+                                    html = html + '<option value="'+v.type_id+'" >'+v.type_name+'</option>';
+                                })
+                                $('#type_xj').html(html);
+
+                            }else{
+                                //错误信息
+                                var html = '<option value="" >暂无分类</option>';
+                                $('#type_xj').html(html);
+                            }
+                        }
+                    })
+                }
+
+            </script>
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品名称 ：</label>
-            <input type="text" value="" name="cus_proname" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
+            <input type="text" value="{$cus_data.cus_proname|default=''}" name="cus_proname" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
+            <span style="color:red;">{$errorinfo.cus_proname|default=''}</span>
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产地 ：</label>
-            <input type="text" value="" name="cus_place" class="InputOne col-xs-2 col-sm-3 col-md-3 col-lg-4">
+            <input type="text" value="{$cus_data.cus_place|default=''}" name="cus_place" class="InputOne col-xs-2 col-sm-3 col-md-3 col-lg-4">
+            <span style="color:red;">{$errorinfo.cus_place|default=''}</span>
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品长度 ：</label>
-            <input type="text" value="" name="cus_length" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" value="{$cus_data.cus_length|default=''}" name="cus_length" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <span style="color:red;">{$errorinfo.cus_length|default=''}</span>
             <input type="text" class="InputThree col-xs-3 col-sm-3 col-md-3 col-lg-3" value="(mm)" readonly="value">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品宽度 ：</label>
-            <input type="text" value="" name="cus_width" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" value="{$cus_data.cus_width|default=''}" name="cus_width" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <span style="color:red;">{$errorinfo.cus_width|default=''}</span>
             <input type="text" class="InputThree col-xs-3 col-sm-3 col-md-3 col-lg-3" value="(mm)" readonly="value">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">供货时间 ：</label>
-            <input type="text" value="" name="cus_supply" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" value="{$cus_data.cus_supply|default=''}" name="cus_supply" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <span style="color:red;">{$errorinfo.cus_supply|default=''}</span>
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">订单量 ：</label>
-            <input type="text" value="" name="cus_orders" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" value="{$cus_data.cus_orders|default=''}" name="cus_orders" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <span style="color:red;">{$errorinfo.cus_orders|default=''}</span>
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">芯体 ：</label>
-            <input type="text" value="" name="cus_core" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <input type="text" value="{$cus_data.cus_core|default=''}" name="cus_core" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">设备新旧程度 ：</label>
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="cus_condition">
-                            <option value="-1">请选择</option>
-                            <option value="0">9</option>
-                            <option value="1">8</option>
-                            <option value="2">7</option>
-                            <option value="3">6</option>
-                            <option value="4">5</option>
+                            <option value="{$cus_data.cus_condition|default=''}">{$cus_data.cus_condition|default=''}</option>
+                            <option value="9成新">9成新</option>
+                            <option value="8成新">8成新</option>
+                            <option value="7成新">7成新</option>
+                            <option value="6成新">6成新</option>
+                            <option value="5成新">5成新</option>
                         </select>
                     </span>
             </div>
-            <input type="text" class="InputThree col-xs-3 col-sm-3 col-md-3 col-lg-3" value="(成新)" readonly="value">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">金属检测 ：</label>
+            {eq name='{$cus_data.cus_metal|default=''}' value='无'}
             <div class="radio-box">
                 <input type="radio" id="radio-3" name="cus_metal" value="有">
                 <label for="radio-3">有</label>
@@ -107,15 +161,25 @@
                 <input type="radio" id="radio-4" name="cus_metal" checked value="无">
                 <label for="radio-4">无</label>
             </div>
+            {else/}
+            <div class="radio-box">
+                <input type="radio" id="radio-3" name="cus_metal" checked value="有">
+                <label for="radio-3">有</label>
+            </div>
+            <div class="radio-box">
+                <input type="radio" id="radio-4" name="cus_metal" value="无">
+                <label for="radio-4">无</label>
+            </div>
+            {/eq}
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视觉检测 ：</label>
             <div class="radio-box">
-                <input type="radio" id="radio-5" name="cus_vision" value="有">
+                <input type="radio" id="radio-5" name="cus_vision" value="{$cus_data.cus_vision|default=''}">
                 <label for="radio-5">有</label>
             </div>
             <div class="radio-box">
-                <input type="radio" id="radio-6" name="cus_vision" checked value="无">
+                <input type="radio" id="radio-6" name="cus_vision" checked value="{$cus_data.cus_vision|default=''}">
                 <label for="radio-6">无</label>
             </div>
         </div>
@@ -124,7 +188,7 @@
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="cus_pack">
-                            <option value="-1">请选择</option>
+                            <option value="{$cus_data.cus_pack|default=''}">{$cus_data.cus_pack|default=''}</option>
                             <option value="全自动包装">全自动包装</option>
                             <option value="半自动包装">半自动包装</option>
                             <option value="手工包装">手工包装</option>
@@ -244,6 +308,14 @@
                     UE.getEditor('editor').setEnabled();
                 }
             </script>
+
+            <script>
+
+            </script>
+
+
+
+
             <script>
                 $(function () {
                     $(function () {
@@ -296,5 +368,6 @@
                 })
 
             </script>
+
 </body>
 </html>

@@ -90,6 +90,7 @@ class UserController extends Controller
     //信息管理首页
     public function xinxiguanlishouye(Request $request)
     {
+
         $user_id = session('user_id');
 
         //获取侧导航元素

@@ -4,9 +4,11 @@ namespace app\admin\controller;
 
 use app\admin\model\Company_info;
 use app\admin\model\Customgood;
+use app\admin\model\Type;
 use app\admin\model\Card;
 use think\Controller;
 use think\Request;
+use think\Validate;
 use app\admin\behavior\CheckLogin;
 use think\Session;
 use think\Db;
@@ -83,8 +85,6 @@ class GoodsController extends Controller
             ];
             $data = array_filter($data);
 
-
-
             $res=Db::name('card')->insert($data);
             if($res)
             {
@@ -101,44 +101,65 @@ class GoodsController extends Controller
     public function dingzspsc(Request $request)
     {
         $com_id = Session::get('com_id');
-
+        //获取一级元素
+        $type = new type();
+        $type_data1 = $type->where('type_pid',0)->select();
+        $this->assign('type_data1',$type_data1);
+        //获取二级元素
+        $res = $request->get('typeid');
+        $type_data2 = $type->where('type_pid',$res)->select();
+        if($request->isAjax()){
+            if ($type_data2) {
+                return ['code' => 200, 'data' => $type_data2];
+            }else{
+                return ['code' => 0, 'msg' => '获取二级分类失败'];
+            }
+        }
         if($request->isPost()){
-            $shuju = Request::instance()->post();
-//            dump($shuju);
-//            die;
-//            dump($shuju);
-//            die();
-//            $rules = [
-//                'cus_proname'          =>'require',
-//                'cus_length'           =>'require',
-//                'cus_width'            =>'require',
-//                'cus_place'            =>'require',
-//                'cus_supply'           =>'require',
-//                'cus_orders'           =>'require',
-//            ];
-//            $msg = [
-//                'cus_proname.require'      => '必填',
-//                'cus_length0.require'       => '必填',
-//                'cus_width.require'        => '必填',
-//                'cus_place.require'        => '必填',
-//                'cus_supply.require'       => '必填',
-//                'cus_orders.require'       => '必填',
-//
-//            ];
-//            $validate = new Validate($rules,$msg);
-//            if(!$validate->batch()->check($shuju)){
-//                $errorinfo=$validate->getError();
-//                $this -> assign('errorinfo',$errorinfo);
-//                return $this -> fetch();
-//            }
+            $shuju = $request->post();
+            $rules = [
+                'cus_proname'          =>'require',
+                'cus_length'           =>'require',
+                'cus_width'            =>'require',
+                'cus_place'            =>'require',
+                'cus_supply'           =>'require',
+                'cus_orders'           =>'require',
+            ];
+            $msg = [
+                'cus_proname.require'      => '必填',
+                'cus_length.require'       => '必填',
+                'cus_width.require'        => '必填',
+                'cus_place.require'        => '必填',
+                'cus_supply.require'       => '必填',
+                'cus_orders.require'       => '必填',
 
+            ];
+            $validate = new Validate($rules,$msg);
+            if(!$validate->batch()->check($shuju)){
+                $errorinfo=$validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                return $this -> fetch();
+            }
 
             $customgood = new Customgood();
             $shuju['com_id'] = $com_id;
+            $shuju['type_id'] = $shuju['typeid'];
             $result = $customgood->allowField(true)->save($shuju);
             if($result){
-//                return ['status'=>'success'];
-                return $this->success('发布成功','index/index');
+                $request = Request::instance();
+                $ip = $request->ip();
+                $acc = Session::get('company_name');
+                $data = [
+                    'ope_cat' => '企业',
+                    'ope_id' => $com_id,
+                    'ope_acc'=> $acc,
+                    'ope_ip'=> $ip,
+                    'ope_tab'=> 'customgood',
+                    'ope_act' => '添加',
+                ];
+                Db::table('ope_log')->insert($data);
+
+                return $this->success('发布成功','goods/dingzspsc');
             }else{
                 return ['status'=>'failure','errorinfo'=>'数据写入失败，请联系管理员'];
             }
@@ -154,8 +175,65 @@ class GoodsController extends Controller
         return $this->fetch();
     }
     //产品定制修改
-    public function cpdzxg(){
+    public function cpdzxg($dataid,Request $request){
+        $com_id = Session::get('com_id');
+        Session::get($dataid);
+        //获取一级元素
+        $type = new type();
+        $type_data1 = $type->where('type_pid',0)->select();
+        $this->assign('type_data1',$type_data1);
+        //获取二级元素
+        $res = $request->get('typeid');
+        $type_data2 = $type->where('type_pid',$res)->select();
+        if($request->isAjax()){
+            if ($type_data2) {
+                return ['code' => 200, 'data' => $type_data2];
+            }else{
+                return ['code' => 0, 'msg' => '获取二级分类失败'];
+            }
+        }
+        if($request->isPost()){
 
+            $shuju = $request->post();
+            $rules = [
+                'cus_proname'          =>'require',
+                'cus_length'           =>'require',
+                'cus_width'            =>'require',
+                'cus_place'            =>'require',
+                'cus_supply'           =>'require',
+                'cus_orders'           =>'require',
+            ];
+            $msg = [
+                'cus_proname.require'      => '必填',
+                'cus_length.require'       => '必填',
+                'cus_width.require'        => '必填',
+                'cus_place.require'        => '必填',
+                'cus_supply.require'       => '必填',
+                'cus_orders.require'       => '必填',
+
+            ];
+            $validate = new Validate($rules,$msg);
+            if(!$validate->batch()->check($shuju)){
+                $errorinfo=$validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                return $this -> fetch();
+            }
+            $customgood = new customgood();
+            $res = $customgood->where('user_id', $user_id)->update($shjuju);
+            if ($res) {
+                $this->success('信息更新成功!');  //TODO 更新成功页面跳转
+            }else{
+                $this->error('信息更新失败!');
+            }
+        }else{
+            $cus_data = Customgood::where('cus_id', $dataid)->where('com_id',$com_id)->find();
+            //获取侧导航默认信息
+//            $type = new type();
+//            $type1 = $type->
+
+            $this->assign('cus_data', $cus_data);
+            return $this->fetch();
+        }
 
         return $this->fetch();
     }
