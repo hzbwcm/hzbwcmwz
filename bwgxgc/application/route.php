@@ -82,7 +82,7 @@ Route::group('admin',function (){
     Route::get('index/welcome','admin/index/welcome');//admin首页welcome
     Route::post('user/tjgrxx','admin/user/tjgrxx');
     Route::post('user/qiyezizhi','admin/user/qiyezizhi');
-    Route::get('goods/tpgl','admin/user/tpgl');
+    Route::get('goods/tpgl','admin/goods/tpgl');
     Route::any('user/gerentupian','admin/user/gerentupian',['method'=>'get|post']);//个人图片上传
     Route::any('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan',['method'=>'get|post']);
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);

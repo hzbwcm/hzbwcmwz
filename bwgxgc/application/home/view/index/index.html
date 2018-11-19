@@ -302,37 +302,40 @@
 <div class="cnxh-b-box">
     <div class="cnxh-title">推荐工厂</div>
     <div class="wsjcp-z-sh-1">
+        {volist name='com' id='v'}
         <div class="wsjcp-right-1">
             <div class="wsj-tu-box-1">
                 <div class="wsj-tu-zs-1">
                     <div class="wsj-tu-l-1">
-                        <img data-original="{:config('public_uploads' )}/com_pic/5be00c1c0db25.jpg" alt="">
+                        <img data-original="{:config('public_uploads' )}/{$v.pic6}" alt="">
                     </div>
                     <div class="wsj-tu-r-1">
                         <div class="wsj-tu-r-t-1">
-                            <img data-original="" alt="">
+                            <img data-original="{:config('public_uploads' )}/{$v.pic5}" alt="">
                         </div>
                         <div class="wsj-tu-r-b-1">
-                            <img data-original="" alt="">
+                            <img data-original="{:config('public_uploads' )}/{$v.pic9}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="wsj-xx">
-                    <div class="wsj-name"><span>代工品牌</span>
-                        <div>苏菲,某某</div>
+                    <div class="wsj-name"><span>地址</span>
+                        <div>
+                            {$v.address}
+                        </div>
                     </div>
-                    <div class="wsj-name"><span>员工数</span>
-                        <div></div>
+                    <div class="wsj-name"><span>总人数</span>
+                        <div>{$v.znum}</div>
                     </div>
                     <div class="gongsi-dizhi">
                         <i class="iconfont icon-icon_location"></i>
-                        浙江省某某卫生用品有限公司
+                        {$v.company_name}
                     </div>
                     <a href="" class="wsj-ljdz">进入工厂</a>
                 </div>
             </div>
         </div>
-
+        {/volist}
     </div>
 </div>
 <!--加工-->
