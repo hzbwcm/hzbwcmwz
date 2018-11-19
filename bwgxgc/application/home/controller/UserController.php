@@ -78,9 +78,24 @@ class UserController extends Controller
     //产品定制删除
     public function delcpdz(Request $request)
     {
+        $user_id = Session::get('user_id');
         $cusid = $request ->get('cusid');
-        $res = Customgood::where('cus_id',$cusid)->delete();
+        $res = Customgood::where('cus_id',$cusid)->find()->delete();
         if ($res) {
+
+            $request = Request::instance();
+            $ip = $request->ip();
+            $acc = Session::get('username');
+            $data = [
+                'ope_cat' => '个人',
+                'ope_id' => $user_id,
+                'ope_acc'=> $acc,
+                'ope_ip'=> $ip,
+                'ope_tab'=> 'customgood',
+                'ope_act' => '删除',
+            ];
+            Db::table('ope_log')->insert($data);
+
             return true;
         } else {
             return false;

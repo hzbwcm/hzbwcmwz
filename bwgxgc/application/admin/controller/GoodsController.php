@@ -200,7 +200,6 @@ class GoodsController extends Controller
             }
         }
         if($request->isPost()){
-
             $shuju = $request->post();
             $rules = [
                 'cus_proname'          =>'require',
@@ -226,7 +225,7 @@ class GoodsController extends Controller
                 return $this -> fetch();
             }
             $customgood = new customgood();
-            $res = $customgood->where('user_id', $user_id)->update($shjuju);
+            $res = $customgood->where('com_id', $com_id)->update($shuju);
             if ($res) {
                 $this->success('信息更新成功!');  //TODO 更新成功页面跳转
             }else{
@@ -235,15 +234,51 @@ class GoodsController extends Controller
         }else{
             $cus_data = Customgood::where('cus_id', $dataid)->where('com_id',$com_id)->find();
             //获取侧导航默认信息
-//            $type = new type();
-//            $type1 = $type->
+            $type = new type();
+            $type1 = $type->where('type_id',$cus_data['type_id'])->find();
 
+            $type2 = $type->where('type_pid',$cus_data['type_id'])->select();
+            $type2_data=$type->where('type_id',$cus_data['type_xj'])->find();
+
+
+
+            $this->assign('type1',$type1);
+            $this->assign('type2',$type2);
+            $this->assign('type2_data',$type2_data);
             $this->assign('cus_data', $cus_data);
             return $this->fetch();
         }
 
         return $this->fetch();
     }
+
+    //产品定制删除
+    public function delcpdz(Request $request){
+        $com_id = Session::get('com_id');
+        $cusid = $request ->get('cusid');
+        $res = Customgood::where('cus_id',$cusid)->find()->delete();
+        if ($res) {
+
+            $request = Request::instance();
+            $ip = $request->ip();
+            $acc = Session::get('company_name');
+            $data = [
+                'ope_cat' => '企业',
+                'ope_id' => $com_id,
+                'ope_acc'=> $acc,
+                'ope_ip'=> $ip,
+                'ope_tab'=> 'customgood',
+                'ope_act' => '删除',
+            ];
+            Db::table('ope_log')->insert($data);
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     //产品展示商品上传
     public function cpzsspsc()
     {

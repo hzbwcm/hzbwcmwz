@@ -1,7 +1,12 @@
 <?php
+
 namespace app\home\controller;
 
-class GoodsController
+
+use think\Controller;
+
+class GoodsController extends Controller
 {
+
 
 }

@@ -31,7 +31,8 @@ Route::group('home',function (){
 
 //home分组
 Route::get('home/custom/custom','home/custom/custom');//产品定制
-Route::get('home/custom/get_area','home/custom/get_area');//产品定制
+Route::get('home/custom/customizing','home/custom/customizing');//产品定制详情详情页
+Route::get('home/custom/get_area','home/custom/get_area');//产品定制地区
 Route::get('home/stickacard/stickacard','home/stickacard/stickacard');//贴牌专区
 Route::get('home/stickacard/tiepaixiangqing','home/stickacard/tiepaixiangqing');//贴牌详情
 Route::get('home/stickacard/tiepaigengduo','home/stickacard/tiepaigengduo');//贴牌更多
@@ -41,7 +42,6 @@ Route::get('home/documentary/documentary','home/documentary/documentary');//跟�
 Route::get('home/index/wlpf','home/index/wlpf');//网络批发
 Route::get('home/shebeitransfer/shebeitransfer','home/shebeitransfer/shebeitransfer');//设备转让
 Route::get('home/shebeitransfer/shebeizhuanrang','home/shebeitransfer/shebeizhuanrang');//设备转让详情
-Route::get('home/custom/customizing','home/custom/customizing');//产品定制详情详情页
 Route::get('home/index/shoucangjia','home/index/shoucangjia');//收藏夹
 
 //企业商铺
@@ -68,7 +68,8 @@ Route::any('admin/permission/addition','admin/permission/addition',['method'=>'g
 Route::get('admin/user/gerenxinxi','admin/user/gerenxinxi');//个人信息
 Route::any('admin/goods/dingzspsc','admin/goods/dingzspsc',['method'=>'get|post']);//发布产品定制
 Route::get('admin/goods/cpdzgl','admin/goods/cpdzgl');//产品定制管理
-Route::get('admin/goods/cpdzxg','admin/goods/cpdzxg');//产品定制修改
+Route::any('admin/goods/cpdzxg','admin/goods/cpdzxg',['method'=>'get|post']);//产品定制修改
+Route::any('admin/goods/delcpdz','admin/goods/delcpdz',['method'=>'get|post']);//产品定制删除
 
 Route::get('admin/goods/cpzsspsc','admin/goods/cpzsspsc');//产品展示商品上传
 Route::get('admin/user/gerentupian','admin/user/gerentupian');//个人信息图片上传
