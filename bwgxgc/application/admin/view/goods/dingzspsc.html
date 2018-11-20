@@ -79,7 +79,6 @@
                         success: function (res) {
 
                             if(res.code == 200){
-                                console.log(res.data)
                                 var type_data = res.data;
                                 var html = '<option value="" >--请选择--</option>';
                                 $.each(type_data, function(k,v){

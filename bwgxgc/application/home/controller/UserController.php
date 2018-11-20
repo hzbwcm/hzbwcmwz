@@ -139,6 +139,7 @@ class UserController extends Controller
         $this->assign('pid', $type_pid);
         $this->assign('classify', $classify_data);
 
+        $name = User_person::where('user_id',$user_id)->value('nickname');
         if(request()->isPost()){
             $shuju = Request::instance()->post();
             $rules = [
@@ -169,6 +170,7 @@ class UserController extends Controller
             $shuju['user_id'] = $user_id;
             $shuju['type_id'] = $shuju['pid'];
             $shuju['type_xj'] = $shuju['classify_id'];
+            $shuju['issue_name'] = $name;
             $result = $customgood->allowField(true)->save($shuju);
             if($result){
                 return $this->success('发布成功','user/fabuxinxi');

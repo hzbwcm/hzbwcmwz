@@ -3,6 +3,8 @@ namespace app\home\controller;
 
 use app\home\model\Card;
 use app\home\model\Com_pic;
+use app\home\model\Customgood;
+use app\home\model\Type;
 use think\Controller;
 use app\home\model\Area;
 use app\home\model\Company_info;
@@ -32,6 +34,16 @@ class IndexController extends Controller
             'info'=>$info,
             'pic'=>$pic
             ]);
+
+        $customgood = new customgood();
+        $data = $customgood->select();
+        $this->assign('data',$data);
+
+
+
+
+
+
         return $this->fetch();
     }
 

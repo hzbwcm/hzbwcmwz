@@ -122,6 +122,7 @@ class GoodsController extends Controller
                 return ['code' => 0, 'msg' => '获取二级分类失败'];
             }
         }
+        $name = Company_info::where('com_id',$com_id)->value('company_name');
         if($request->isPost()){
             $shuju = $request->post();
             $rules = [
@@ -151,6 +152,7 @@ class GoodsController extends Controller
             $customgood = new Customgood();
             $shuju['com_id'] = $com_id;
             $shuju['type_id'] = $shuju['typeid'];
+            $shuju['issue_name'] = $name;
             $result = $customgood->allowField(true)->save($shuju);
             if($result){
                 $request = Request::instance();
@@ -179,20 +181,30 @@ class GoodsController extends Controller
         $com_id = Session('com_id');
         $cpdzgl = Customgood::where('com_id',$com_id)->select();
         $this->assign('cpdzgl',$cpdzgl);
+
+        $type = new type();
+        $type = $type->select();
+        $this->assign('type',$type);
         return $this->fetch();
     }
+
     //产品定制修改
-    public function cpdzxg($dataid,Request $request){
+    public function cpdzxg(Request $request){
         $com_id = Session::get('com_id');
-        Session::get($dataid);
+
+        $dataid = $request->param('dataid');
+
+        $customgood = new customgood();
+
         //获取一级元素
         $type = new type();
         $type_data1 = $type->where('type_pid',0)->select();
         $this->assign('type_data1',$type_data1);
         //获取二级元素
-        $res = $request->get('typeid');
-        $type_data2 = $type->where('type_pid',$res)->select();
+
         if($request->isAjax()){
+            $res = $request->get('type_id');
+            $type_data2 = $type->where('type_pid',$res)->select();
             if ($type_data2) {
                 return ['code' => 200, 'data' => $type_data2];
             }else{
@@ -225,9 +237,9 @@ class GoodsController extends Controller
                 return $this -> fetch();
             }
             $customgood = new customgood();
-            $res = $customgood->where('com_id', $com_id)->update($shuju);
+            $res = $customgood->where('cus_id', $dataid)->update($shuju);
             if ($res) {
-                $this->success('信息更新成功!');  //TODO 更新成功页面跳转
+                $this->success('信息更新成功!','admin/goods/cpdzgl');  //TODO 更新成功页面跳转
             }else{
                 $this->error('信息更新失败!');
             }
