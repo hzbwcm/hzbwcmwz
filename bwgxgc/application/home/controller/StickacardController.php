@@ -78,7 +78,7 @@ class StickacardController extends Controller
             if ($type) {
                 return ['code' => 200, 'data' => $type,'type_name'=>$type_name];
             }else{
-                return ['code' => 0, 'msg' => '获取二级分类失败'];
+                return ['code' => 0, 'msg' => '暂无数据'];
             }
         }
     }
