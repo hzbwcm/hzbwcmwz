@@ -70,6 +70,7 @@ class StickacardController extends Controller
 
         return $this->fetch();
     }
+    //贴牌更多ajax
     public function tpajax(Request $request)
     {
         if($request->isAjax()){
