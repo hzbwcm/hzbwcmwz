@@ -70,4 +70,16 @@ class StickacardController extends Controller
 
         return $this->fetch();
     }
+    public function tpajax(Request $request)
+    {
+        if($request->isAjax()){
+            $type_name = $request->get('type_name');
+            $type = Card::where('type',$type_name)->select();
+            if ($type) {
+                return ['code' => 200, 'data' => $type,'type_name'=>$type_name];
+            }else{
+                return ['code' => 0, 'msg' => '获取二级分类失败'];
+            }
+        }
+    }
 }

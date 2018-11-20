@@ -104,7 +104,7 @@
             <div class="main-fenlei-content">
                 {volist name='type' id='v1'}
                 {eq name="v1.type_pid" value="0" }
-                <span>{$v1.type_name}</span>
+                <span onclick="tpxq('{$v1.type_name}')">{$v1.type_name}</span>
                 {/eq}
                 {/volist}
             </div>
@@ -229,6 +229,56 @@
             skip_invisible : false
         });
     });
+</script>
+<script>
+    function tpxq(type_name) {
+        $.ajax({
+            url: "{:url('home/stickacard/tpajax')}",
+            type: 'get',
+            data: {'type_name':type_name},
+            dataType: 'json',
+            success: function (res) {
+                var type=res.data;
+                if(res.code == 200){
+                    var str='<div class="main-content-title-box">\n' +
+                        '            <span class="main-content-title">'+res.type_name+'加工</span>\n' +
+                        '        </div>\n' +
+                        '        <div class="content-content-box">\n'
+
+                    $.each(type, function(k,v){
+                        str+='            <div class="jggc-content-box">\n' +
+                            '                <div class="jggc-content">\n' +
+                            '                    <a href="/home/stickacard/tiepaixiangqing/id/'+v.id+'.html" class="jggc-content-img">\n' +
+                            '                        <img src="{:config(\'public_uploads\' )}/'+v.pic1+'" alt="">\n' +
+                            '                    </a>\n' +
+                            '                    <div class="jggc-content-gsmc">'+v.company_name+'</div>\n' +
+                            '                    <div class="jggc-content-cppp">'+v.carname+'</div>\n' +
+                            '                    <div class="jggc-content-text-box">\n' +
+                            '                        <div class="jggc-content-text-num">\n' +
+                            '                            <span class="jggc-content-num-l">起订量:</span>\n' +
+                            '                            <span class="jggc-content-num-r">'+v.qdl+'</span>\n' +
+                            '                        </div>\n' +
+                            '                        <div class="jggc-content-myd-box">\n' +
+                            '                            <div class="jggc-icon">\n' +
+                            '                                <i class="iconfont icon-xin"></i><!--未收藏-->\n' +
+                            '                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->\n' +
+                            '                                <span class="jggc-icon-sc">收藏</span>\n' +
+                            '                            </div>\n' +
+                            '                        </div>\n' +
+                            '                    </div>\n' +
+                            '                </div>\n' +
+                            '            </div>\n'
+                    })
+
+                    str+= '</div>'
+                    $('.main-content-box').html(str);
+                }else{
+                    //错误信息
+
+                }
+            }
+        })
+    }
 </script>
 </body>
 </html>
