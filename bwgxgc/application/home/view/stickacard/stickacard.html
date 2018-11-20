@@ -268,20 +268,23 @@
         </a>
     </div>
     <!--加工工厂-->
-    {volist name='type' id='v1'}
+    {volist name='type' id='v1' key='k'}
+    {volist name='info' id='vv' key='j'}
+    {eq name='$j' value='$k'}
     <div class="main-jggc-box">
         <div class="jggc-title">{$v1.type_name} <a href="{:url('home/stickacard/tiepaigengduo')}" class="jggc-gd">更多 <i class="iconfont icon-shuangjiantouyou"></i></a></div>
+        {volist name='$vv' id='v' offset='0' length='5'}
         <div class="jggc-content-box">
             <div class="jggc-content">
                 <a href="{:url('home/stickacard/tiepaixiangqing')}" class="jggc-content-img">
                     <img data-original="{:config('home_img')}/stickacard/tpw(7).jpg" alt="">
                 </a>
-                <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                <div class="jggc-content-cppp">某某品牌</div>
+                <div class="jggc-content-gsmc">{$v.company_name}</div>
+                <div class="jggc-content-cppp">{$v.carname}</div>
                 <div class="jggc-content-text-box">
                     <div class="jggc-content-text-num">
                         <span class="jggc-content-num-l">起订量:</span>
-                        <span class="jggc-content-num-r">10000片</span>
+                        <span class="jggc-content-num-r">{$v.qdl}</span>
                     </div>
                     <div class="jggc-content-myd-box">
                         <div class="jggc-icon">
@@ -293,7 +296,10 @@
                 </div>
             </div>
         </div>
+        {/volist}
     </div>
+    {/eq}
+    {/volist}
     {/volist}
 </main>
 <!--页脚-->

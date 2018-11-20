@@ -17,7 +17,22 @@ class StickacardController extends Controller
     public function stickacard()
     {
         $type = Type::where('type_pid',0)->select();
-        $this->assign('type',$type);
+        $info = Card::where('id','>',0)->select();
+        $info_obj=[];
+        for ($i=0;$i < sizeof($type);$i++){
+            $info_arr=[];
+            for ($j=0;$j < sizeof($info);$j++){
+                if($type[$i]['type_name']==$info[$j]['type']){
+                    array_push($info_arr,$info[$j]);
+                }
+            }
+            $info_obj[$type[$i]['type_name']] = $info_arr;
+        }
+
+        $this->assign([
+            'type'=>$type,
+            'info'=>$info_obj
+        ]);
         return $this->fetch();
     }
 
