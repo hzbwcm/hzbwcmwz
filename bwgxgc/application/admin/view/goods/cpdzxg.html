@@ -47,7 +47,7 @@
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品类别 ：</label>
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
-                        <select class="select" size="1" name="typeid" id="typeid" onchange="get_xj(this)">
+                        <select class="select" size="1" name="type_id" id="type_id" onchange="get_xj(this)">
                             <option value="">--请选择--</option>
                             {volist name='type_data1' id='ty1'}
                             {eq name='$ty1.type_id' value='$type1.type_id'}
@@ -312,17 +312,16 @@
 
 <script>
     function get_xj(lay) {
-        var typeid=$(lay).val();
-
-        if (typeid == '') {
+        var type_id=$(lay).val();
+        if (type_id == '') {
             var html = '<option value="" >--请选择--</option>';
             $('#type_xj').html(html);
             return false;
         }
         $.ajax({
-            url: "{:url('admin/goods/dingzspsc')}",
+            url: "{:url('admin/goods/cpdzxg')}",
             type: 'get',
-            data: {typeid},
+            data: {type_id},
             dataType: 'json',
             success: function (res) {
 

@@ -51,14 +51,21 @@ class StickacardController extends Controller
     }
 
     //贴牌更多
-    public function tiepaigengduo()
+    public function tiepaigengduo($ypeame,$yped)
     {
-        $info = Area::where('Pid',0)->select();
-
+        $tname =$ypeame;
+        $tid = $yped;
+        $info = Type::where('type_pid',0)->select();
+        $tinfo = Type::where('type_pid',$tid)->select();
+        $cinfo = Card::where('type',$tname)->select();
         $type = Type::select();
+
         $this->assign([
-            'info'  => $info,
-            'type' => $type
+            'info' => $info,
+            'cinfo'  => $cinfo,
+            'type' => $type,
+            'tinfo'=>$tinfo,
+            'tname'=>$tname
         ]);
 
         return $this->fetch();

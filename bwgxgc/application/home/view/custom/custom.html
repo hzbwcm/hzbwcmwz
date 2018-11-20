@@ -253,50 +253,37 @@
             </div>
             <div class="main-bottom-content">
                 <!--内容-->
-                <a href="{:url('home/custom/customizing')}" class="bottom-content-box">
+                {volist name='data' id='da'}
+                <a href="{:url('home/custom/customizing',['cusid'=>$da.cus_id])}" class="bottom-content-box">
                     <div class="content-xx">
                         <div class="content-img">
                             <img data-original="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
                         </div>
                         <div class="content-title">
-                            <span>某某品牌</span>
+                            <span>{$da.cus_proname}</span>
                         </div>
                         <div class="coontent-cplb-box">
-                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
-                            <div class="cpgg"><span>规格：</span>290-330</div>
+                            {volist name='type2' id='ty2'}
+                            {eq name='$ty2.type_id' value='$da.type_xj'}
+                            <div class="cplb">{$ty2.type_name}</div>
+                            {else/}
+                            <div class="cplb"></div>
+                            {/eq}
+                            {/volist}
                         </div>
                     </div>
                     <div class="content-qy">
                         <ul>
-                            <li>福建</li>
+                            <li>{$da.cus_place}</li>
                         </ul>
                     </div>
-                    <div class="content-fb">杭州博卫传媒</div>
-                    <div class="content-time">2011年11月3日</div>
+                    <div class="content-fb">{$da.issue_name}</div>
+                    <div class="content-time">{$da.create_time}</div>
                 </a>
-                <!--内容-->
-                <a href="{:url('home/custom/customizing')}" class="bottom-content-box">
-                    <div class="content-xx">
-                        <div class="content-img">
-                            <img data-original="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
-                        </div>
-                        <div class="content-title">
-                            <span>某某品牌</span>
-                        </div>
-                        <div class="coontent-cplb-box">
-                            <div class="cplb">护理垫/宠物垫 - 护理垫</div>
-                            <div class="cpgg"><span>规格：</span>290-330</div>
-                        </div>
-                    </div>
-                    <div class="content-qy">
-                        <ul>
-                            <li>福建</li>
-                        </ul>
-                    </div>
-                    <div class="content-fb">杭州博卫传媒</div>
-                    <div class="content-time">2011年11月3日</div>
-                </a>
-                <!--内容-->
+                {/volist}
+
+
+
             </div>
         </div>
         <!--分页-->
@@ -316,6 +303,7 @@
         </div>
     </div>
 </main>
+
 <!--页脚-->
 <div class="footer">
     <footer>

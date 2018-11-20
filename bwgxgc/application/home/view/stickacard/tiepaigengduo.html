@@ -103,40 +103,43 @@
             <div class="main-fenlei-title">所有类目</div>
             <div class="main-fenlei-content">
                 {volist name='type' id='v1'}
-                {eq name="v1.pid" value="0" }
-                <span>{$v1.name}</span>
+                {eq name="v1.type_pid" value="0" }
+                <span>{$v1.type_name}</span>
                 {/eq}
                 {/volist}
             </div>
         </div>
-        <div class="main-fenlei class_fenlei2">
-            <div class="main-fenlei-title">所有地区</div>
-            <div class="main-fenlei-content">
-                {volist name='info' id='v'}
-                <span>{$v.Name}</span>
-                {/volist}
-            </div>
-            <div class="main-fenlei-gengduo" id="main-gengduo">更多</div>
-        </div>
+        <!--<div class="main-fenlei class_fenlei2">-->
+            <!--<div class="main-fenlei-title">所有地区</div>-->
+            <!--<div class="main-fenlei-content">-->
+                <!--{volist name='info' id='v'}-->
+                <!--<span style="white-space:nowrap;"> { $v.Name} </span>-->
+                <!--{/volist}-->
+            <!--</div>-->
+            <!--<div class="main-fenlei-gengduo" id="main-gengduo">更多</div>-->
+        <!--</div>-->
     </div>
     <div class="main-content-box">
         <div class="main-content-title-box">
-            <span class="main-content-title">卫生巾加工</span>
-            <span class="content-title-gg content-title-gg-active">全部</span>
-            <span class="content-title-gg">小于150</span>
+            <span class="main-content-title">{$tname}加工</span>
+            <!--<span class="content-title-gg content-title-gg-active">全部</span>-->
+            <!--{volist name='tinfo' id='v'}-->
+            <!--<span class="content-title-gg">{$v.type_name}</span>-->
+            <!--{/volist}-->
         </div>
         <div class="content-content-box">
+            {volist name='cinfo' id='v'}
             <div class="jggc-content-box">
                 <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
+                    <a href="{:url('home/stickacard/tiepaixiangqing',['id'=>$v.id])}" class="jggc-content-img">
+                        <img data-original="{:config('public_uploads' )}/{$v.pic1}" alt="">
                     </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
+                    <div class="jggc-content-gsmc">{$v.company_name}</div>
+                    <div class="jggc-content-cppp">{$v.carname}</div>
                     <div class="jggc-content-text-box">
                         <div class="jggc-content-text-num">
                             <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
+                            <span class="jggc-content-num-r">{$v.qdl}</span>
                         </div>
                         <div class="jggc-content-myd-box">
                             <div class="jggc-icon">
@@ -148,424 +151,7 @@
                     </div>
                 </div>
             </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jggc-content-box">
-                <div class="jggc-content">
-                    <a href="" class="jggc-content-img">
-                        <img data-original="{:config('home_img')}/stickacard/tpw(7).png" alt="">
-                    </a>
-                    <div class="jggc-content-gsmc">某某省某某卫生用品有限公司</div>
-                    <div class="jggc-content-cppp">某某品牌</div>
-                    <div class="jggc-content-text-box">
-                        <div class="jggc-content-text-num">
-                            <span class="jggc-content-num-l">起订量:</span>
-                            <span class="jggc-content-num-r">10000片</span>
-                        </div>
-                        <div class="jggc-content-myd-box">
-                            <div class="jggc-icon">
-                                <i class="iconfont icon-xin"></i><!--未收藏-->
-                                <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                                <span class="jggc-icon-sc">收藏</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {/volist}
         </div>
     </div>
     <!--分页-->

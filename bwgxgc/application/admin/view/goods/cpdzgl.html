@@ -62,8 +62,14 @@
 				<tr class="text-c">
 					<td><input name="" type="checkbox" value=""></td>
 					<td>{$data.cus_id}</td>
-					<td>{$data.type_id}</td>
-					<td>{$data.type_xj}</td>
+					{volist name='type' id='ty'}
+					{eq name='$ty.type_id' value='$data.type_id'}
+					<td>{$ty.type_name}</td>
+					{/eq}
+					{eq name='$ty.type_id' value='$data.type_xj'}
+					<td>{$ty.type_name}</td>
+					{/eq}
+					{/volist}
 					<td>{$data.cus_proname}</td>
 					<td>{$data.cus_length}</td>
 					<td>{$data.cus_width}</td>
