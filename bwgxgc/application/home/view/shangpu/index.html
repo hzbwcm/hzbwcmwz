@@ -63,7 +63,7 @@
     <div class="header-box">
         <div class="header-logo">
             <a href="{:url('/')}">
-                <img src="{:config('home_shangpu_img')}/a0.png" alt="">
+                <img data-original="{:config('home_shangpu_img')}/a0.png" alt="">
             </a>
         </div>
         <div class="header-sousuo-box">
@@ -85,7 +85,7 @@
     </div>
     <div class="sp-header-box" style="background-image: url('{:config('public_uploads')}/{$pics.pic1}')">
         <div class="sp-header-img">
-            <img src="{:config('public_uploads')}/{$pics.pic2}" alt="">
+            <img data-original="{:config('public_uploads')}/{$pics.pic2}" alt="">
         </div>
     </div>
     <nav>
@@ -102,7 +102,7 @@
 <main>
     <div class="banner-box" style="background-image: url('{:config('public_uploads')}/{$pics.pic3}')">
         <div class="banner-img">
-            <img src="{:config('public_uploads')}/{$pics.pic4}" alt="">
+            <img data-original="{:config('public_uploads')}/{$pics.pic4}" alt="">
         </div>
     </div>
     <!--公司介绍-->
@@ -113,11 +113,11 @@
         </div>
         <div class="gsjs-content-box">
             <div class="gsjs-content-down-img">
-                <img src="{:config('public_uploads')}/{$pics.pic5}" alt="">
+                <img data-original="{:config('public_uploads')}/{$pics.pic5}" alt="">
             </div>
             <div class="gsjs-content-up-box">
                 <div class="gsjs-content-up-left">
-                    <img src="{:config('public_uploads')}/{$pics.pic6}" alt="">
+                    <img data-original="{:config('public_uploads')}/{$pics.pic6}" alt="">
                 </div>
                 <div class="gsjs-content-up-right">
                     <div class="gsjs-content-title-top">About Us</div>
@@ -143,13 +143,13 @@
                 <div class="poster-btn poster-prev-btn" style="display: none"></div>
                 <ul class="poster-list">
                     <li class="poster-item">
-                        <img src="{:config('public_uploads')}/{$pics.pic9}" class="poster-img">
+                        <img data-original="{:config('public_uploads')}/{$pics.pic9}" class="poster-img">
                     </li>
                     <li class="poster-item">
-                        <img src="{:config('public_uploads')}/{$pics.pic10}" class="poster-img">
+                        <img data-original="{:config('public_uploads')}/{$pics.pic10}" class="poster-img">
                     </li>
                     <li class="poster-item">
-                        <img src="{:config('public_uploads')}/{$pics.pic11}" class="poster-img">
+                        <img data-original="{:config('public_uploads')}/{$pics.pic11}" class="poster-img">
                     </li>
                 </ul>
                 <div class="poster-btn poster-next-btn" style="display: none"></div>
@@ -169,7 +169,7 @@
             <div class="qytp-content-box">
                 <div class="qytp-content">
                     <a href="{:url('home/stickacard/tiepaixiangqing',['id'=>$v.id])}" class="qytp-content-img">
-                        <img src="{:config('public_uploads')}/{$v.pic1}" alt="">
+                        <img data-original="{:config('public_uploads')}/{$v.pic1}" alt="">
                     </a>
                     <div class="qytp-content-gsmc">{$v.carname}</div>
                     <div class="qytp-content-text-box">
@@ -202,17 +202,17 @@
             {volist name='card2' id='v'}
             <a href="" class="cpzs-content">
                 <div class="cpzs-content-img">
-                    <img src="{:config('public_uploads')}/{$v.pic1}" alt="">
+                    <img data-original="{:config('public_uploads')}/{$v.pic1}" alt="">
                 </div>
                 <div class="cpzs-img-mousemove-box">
                     <div class="cpzs-img-mousemove">
-                        <img src="{:config('public_uploads')}/{$v.pic2}" alt="">
+                        <img data-original="{:config('public_uploads')}/{$v.pic2}" alt="">
                     </div>
                     <div class="cpzs-img-mousemove">
-                        <img src="{:config('public_uploads')}/{$v.pic3}" alt="">
+                        <img data-original="{:config('public_uploads')}/{$v.pic3}" alt="">
                     </div>
                     <div class="cpzs-img-mousemove">
-                        <img src="{:config('public_uploads')}/{$v.pic4}" alt="">
+                        <img data-original="{:config('public_uploads')}/{$v.pic4}" alt="">
                     </div>
                 </div>
                 <div class="cpzs-title">
@@ -244,7 +244,7 @@
             <div class="qyzz-title-bottom">Enterprise qualification</div>
         </div>
         <div class="qyzz-content-big-box">
-            <img src="{:config('home_shangpu_img')}/index/qyzzbjtp.png" alt="">
+            <img data-original="{:config('home_shangpu_img')}/index/qyzzbjtp.png" alt="">
             <div class="qyzz-content">
                 <div class="qyzz-content-title-box">
                     <div class="qyzz-content-title1">证书照</div>
@@ -257,7 +257,7 @@
                     <li class="qyzz-li">
                         <div class="qyzz-content-li1">
                             <div class="qyzz-li1-img">
-                                <img src="{:config('public_uploads')}/{$v.pic}" alt="">
+                                <img data-original="{:config('public_uploads')}/{$v.pic}" alt="">
                             </div>
                         </div>
                         <div class="qyzz-content-li2">{$v.book_name}</div>
@@ -271,7 +271,7 @@
         </div>
         <div class="qyzz-big-img">
             <div class="qyzz-img-off">×</div>
-            <img src="" alt="">
+            <img data-original="" alt="">
         </div>
     </div>
 </main>
@@ -282,7 +282,7 @@
         <ul class="weixin-big-box">
             <li class="weixin-li">
                 <div class="weixin-img">
-                    <img src="{:config('home_shangpu_img')}/gradient.png" alt="">
+                    <img data-original="{:config('home_shangpu_img')}/gradient.png" alt="">
                 </div>
                 <div class="weixin-text-box">
                     <a href="" class="weixin-text-a">《卫生用品》下载</a>
@@ -292,7 +292,7 @@
             </li>
             <li class="weixin-li">
                 <div class="weixin-img">
-                    <img src="{:config('home_shangpu_img')}/f26f5ed0d000c3413c9a4250f2c22bcb86a9494e2b2a-Gw0bYT_fw658.png" alt="">
+                    <img data-original="{:config('home_shangpu_img')}/f26f5ed0d000c3413c9a4250f2c22bcb86a9494e2b2a-Gw0bYT_fw658.png" alt="">
                 </div>
                 <div class="weixin-text-box">
                     <div class="weixin-text">官方微信</div>
@@ -302,7 +302,7 @@
             </li>
             <li class="weixin-li">
                 <div class="weixin-img">
-                    <img src="{:config('public_uploads')}/{$pics.pic7}" alt="">
+                    <img data-original="{:config('public_uploads')}/{$pics.pic7}" alt="">
                 </div>
                 <div class="weixin-text-box">
                     <div class="weixin-text">商家微信</div>
@@ -331,10 +331,19 @@
 </footer>
 
 <script src="{:config('home_shangpu_js')}/jquery-1.11.3.min.js"></script>
+<script src="{:config('home_js')}/jquery.lazyload.js"></script>
 <script src="{:config('home_shangpu_js')}/index.js"></script>
 <script src="{:config('home_shangpu_js')}/PicCarousel.js"></script>
 <script>
     $(".A_Demo").PicCarousel("init");
+</script>
+<script>
+    $(function () {
+        $("img").lazyload({
+            threshold: 200,
+            skip_invisible: false
+        });
+    });
 </script>
 </body>
 </html>

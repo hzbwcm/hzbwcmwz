@@ -62,7 +62,7 @@
     <div class="header-box">
         <div class="header-logo">
             <a href="{:url('/')}">
-                <img src="{:config('home_shangpu_img')}/a0.png" alt="">
+                <img data-original="{:config('home_shangpu_img')}/a0.png" alt="">
             </a>
         </div>
         <div class="header-sousuo-box">
@@ -84,7 +84,7 @@
     </div>
     <!--<div class="sp-header-box" style="background-image: url('{:config('home_shangpu_img')}/index/beijingtupian.png')">-->
         <!--<div class="sp-header-img">-->
-            <!--<img src="" alt="">-->
+            <!--<img data-original="" alt="">-->
         <!--</div>-->
     <!--</div>-->
     <nav>
@@ -114,23 +114,23 @@
 <main>
     <div class="lxwm-box">
         <div class="lxwm-title-img">
-            <img src="{:config('home_shangpu_img')}/chanpinzhanshi/chanpinzhanting.png" alt="">
+            <img data-original="{:config('home_shangpu_img')}/chanpinzhanshi/chanpinzhanting.png" alt="">
         </div>
         <div class="cpzs-content-box">
             {volist name='card2' id='v'}
             <a href="" class="cpzs-content">
                 <div class="cpzs-content-img">
-                    <img src="{:config('public_uploads')}/{$v.pic1}" alt="">
+                    <img data-original="{:config('public_uploads')}/{$v.pic1}" alt="">
                 </div>
                 <div class="cpzs-img-mousemove-box">
                     <div class="cpzs-img-mousemove">
-                        <img src="{:config('public_uploads')}/{$v.pic2}" alt="">
+                        <img data-original="{:config('public_uploads')}/{$v.pic2}" alt="">
                     </div>
                     <div class="cpzs-img-mousemove">
-                        <img src="{:config('public_uploads')}/{$v.pic3}" alt="">
+                        <img data-original="{:config('public_uploads')}/{$v.pic3}" alt="">
                     </div>
                     <div class="cpzs-img-mousemove">
-                        <img src="{:config('public_uploads')}/{$v.pic4}" alt="">
+                        <img data-original="{:config('public_uploads')}/{$v.pic4}" alt="">
                     </div>
                 </div>
                 <div class="cpzs-title">
@@ -159,7 +159,7 @@
         <ul class="weixin-big-box">
             <li class="weixin-li">
                 <div class="weixin-img">
-                    <img src="{:config('home_shangpu_img')}/gradient.png" alt="">
+                    <img data-original="{:config('home_shangpu_img')}/gradient.png" alt="">
                 </div>
                 <div class="weixin-text-box">
                     <a href="" class="weixin-text-a">《卫生用品》下载</a>
@@ -169,7 +169,7 @@
             </li>
             <li class="weixin-li">
                 <div class="weixin-img">
-                    <img src="{:config('home_shangpu_img')}/f26f5ed0d000c3413c9a4250f2c22bcb86a9494e2b2a-Gw0bYT_fw658.png" alt="">
+                    <img data-original="{:config('home_shangpu_img')}/f26f5ed0d000c3413c9a4250f2c22bcb86a9494e2b2a-Gw0bYT_fw658.png" alt="">
                 </div>
                 <div class="weixin-text-box">
                     <div class="weixin-text">官方微信</div>
@@ -179,7 +179,7 @@
             </li>
             <li class="weixin-li">
                 <div class="weixin-img">
-                    <img src="{:config('public_uploads')}/{$pics.pic7}" alt="">
+                    <img data-original="{:config('public_uploads')}/{$pics.pic7}" alt="">
                 </div>
                 <div class="weixin-text-box">
                     <div class="weixin-text">商家微信</div>
@@ -209,6 +209,15 @@
 
 
 <script src="{:config('home_shangpu_js')}/jquery.js"></script>
+<script src="{:config('home_js')}/jquery.lazyload.js"></script>
 <script src="{:config('home_shangpu_js')}/chanpinzhanshi.js"></script>
+<script>
+    $(function () {
+        $("img").lazyload({
+            threshold: 200,
+            skip_invisible: false
+        });
+    });
+</script>
 </body>
 </html>
