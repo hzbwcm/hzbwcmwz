@@ -85,6 +85,7 @@ Route::group('admin',function (){
     Route::post('user/tjgrxx','admin/user/tjgrxx');
     Route::post('user/qiyezizhi','admin/user/qiyezizhi');
     Route::get('goods/tpgl','admin/goods/tpgl');
+    Route::get('goods/tpglxg','admin/goods/tpglxg');
     Route::any('user/gerentupian','admin/user/gerentupian',['method'=>'get|post']);//个人图片上传
     Route::any('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan',['method'=>'get|post']);
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);

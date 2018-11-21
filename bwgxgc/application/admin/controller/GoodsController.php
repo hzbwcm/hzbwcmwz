@@ -17,8 +17,19 @@ class GoodsController extends Controller
 {
     public function tpgl()
     {
+        $com_id = Session::get('com_id');
+        $info = Card::where('com_id', $com_id)->select();
+        $this->assign('info',$info);
         return $this-> fetch();
     }
+    public function tpglxg()
+    {
+        $com_id = Session::get('com_id');
+        $info = Card::where('com_id', $com_id)->select();
+        $this->assign('info',$info);
+        return $this-> fetch();
+    }
+
     public function tiepaishangpingshangchuan(Request $request)
     {
         $com_id = Session::get('com_id');
