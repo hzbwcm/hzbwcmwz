@@ -84,8 +84,9 @@ Route::group('admin',function (){
     Route::get('index/welcome','admin/index/welcome');//admin首页welcome
     Route::post('user/tjgrxx','admin/user/tjgrxx');
     Route::post('user/qiyezizhi','admin/user/qiyezizhi');
-    Route::get('goods/tpgl','admin/goods/tpgl');
-    Route::get('goods/tpglxg','admin/goods/tpglxg');
+    Route::get('goods/tpgl','admin/goods/tpgl');//贴牌管理
+    Route::get('goods/tpdel','admin/goods/tpdel');//贴牌删除
+    Route::any('goods/tpbj','admin/goods/tpbj',['method'=>'get|post']);//贴牌编辑
     Route::any('user/gerentupian','admin/user/gerentupian',['method'=>'get|post']);//个人图片上传
     Route::any('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan',['method'=>'get|post']);
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
