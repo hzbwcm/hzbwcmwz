@@ -224,7 +224,7 @@
                 {volist name='com' id='v'}
                 <div class="main-right-li">
                     <div class="main-li-img">
-                        <img src="{:config('public_uploads')}/{$v.pic6}" alt="">
+                        <img data-original="{:config('public_uploads')}/{$v.pic6}" alt="">
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
@@ -319,7 +319,8 @@
     $(function() {
         $("img").lazyload({
             threshold : 200,
-            skip_invisible : false
+            skip_invisible : false,
+            failurelimit :
         });
     });
 </script>
