@@ -23,7 +23,7 @@
 <header class="header-box">
     <div class="header-centre">
         <ul class="header-left">
-            
+
             <li><a href="">
                 <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
             </a></li>
@@ -43,25 +43,16 @@
             <li><a href="/">
                 <div class="h-l-t">工厂首页 |</div>
             </a></li>
+            <li><a href="{:url('admin/user/login')}">
+                <div class="h-l-t">工厂登陆 |</div>
+            </a></li>
             <li><a href="{:url('home/user/accountcenter')}">
                 <div class="h-l-t">个人中心 |</div>
             </a></li>
             <li><a href="{:url('home/index/shoucangjia')}">
-                <div class="h-l-t">收藏夹 |</div>
+                <div class="h-l-t">收藏夹</div>
             </a>
             </li>
-            <li><a href="">
-                <div class="h-l-t">实力商家 |</div>
-            </a></li>
-            <li><a href="{:url('admin/user/login')}">
-                <div class="h-l-t">工厂后台 |</div>
-            </a></li>
-            <li><a href="">
-                <div class="h-l-t">客服中心 |</div>
-            </a></li>
-            <li><a href="">
-                <div class="h-l-t">网站导航</div>
-            </a></li>
         </ul>
     </div>
 </header>
@@ -70,9 +61,9 @@
     <div class="search-centre">
         <div class="sear-logo">
             <a href="{:url('/')}">
-            <img data-original="{:config('home_img')}/a0.png" alt="">
+                <img data-original="{:config('home_img')}/a0.png" alt="">
+            </a>
         </div>
-
         <div class="search-c-b">
             <div class="search">
                 <div class="search-fram">
@@ -84,11 +75,6 @@
                 <div class="search-button">
                     <i class="iconfont icon-fangdajing"></i>
                 </div>
-            </div>
-            <div class="re-search">
-                <span>热门搜索:</span>
-                <a href="">卫生巾</a>
-                <a href="">纸尿裤</a>
             </div>
         </div>
 
@@ -154,33 +140,33 @@
                 <img data-original="{:config('home_img')}/5.png" alt="">
             </a>
             <!--<ul class="banner-dian-box">-->
-                <!--<li class="banner-dian" banner_id="0"></li>-->
+            <!--<li class="banner-dian" banner_id="0"></li>-->
             <!--</ul>-->
         </div>
         <ul class="ce-daohang">
             <!--<a href="javascript:;">-->
-                <!--<li><i class="iconfont icon-daohang"></i>工厂产品分类</li>-->
+            <!--<li><i class="iconfont icon-daohang"></i>工厂产品分类</li>-->
             <!--</a>-->
             <!--<a href="">-->
-                <!--<li>卫生用品定制</li>-->
+            <!--<li>卫生用品定制</li>-->
             <!--</a>-->
             <!--<a href="">-->
-                <!--<li>纸尿裤加工</li>-->
+            <!--<li>纸尿裤加工</li>-->
             <!--</a>-->
             <!--<a href="">-->
-                <!--<li>经期裤加工</li>-->
+            <!--<li>经期裤加工</li>-->
             <!--</a>-->
             <!--<a href="">-->
-                <!--<li>湿纸巾加工</li>-->
+            <!--<li>湿纸巾加工</li>-->
             <!--</a>-->
             <!--<a href="">-->
-                <!--<li>卫生巾加工</li>-->
+            <!--<li>卫生巾加工</li>-->
             <!--</a>-->
             <!--<a href="">-->
-                <!--<li>护理垫加工</li>-->
+            <!--<li>护理垫加工</li>-->
             <!--</a>-->
             <!--<a href="">-->
-                <!--<li>生活用纸加工</li>-->
+            <!--<li>生活用纸加工</li>-->
             <!--</a>-->
         </ul>
     </div>
@@ -274,7 +260,6 @@
                 {/volist}
 
 
-
             </div>
         </div>
         <!--分页-->
@@ -343,10 +328,10 @@
 <div class="footer-beian">版权2018-2028 @ 杭州博卫传媒有限公司 闽ICP备16026715号</div>
 <script src="{:config('home_js')}/custom.js"></script>
 <script>
-    $(function() {
+    $(function () {
         $("img").lazyload({
-            threshold : 200,
-            skip_invisible : false
+            threshold: 200,
+            skip_invisible: false
         });
     });
 </script>

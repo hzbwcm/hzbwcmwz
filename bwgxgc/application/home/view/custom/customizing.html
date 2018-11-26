@@ -27,24 +27,29 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .swiper-slide {
             background-size: cover;
             background-position: center;
         }
+
         .gallery-top {
             height: 380px;
             width: 380px;
             border: 1px solid #a260de;
         }
-        .gallery-top .swiper-slide{
+
+        .gallery-top .swiper-slide {
             background-size: 100%;
             background-repeat: no-repeat;
         }
+
         .gallery-thumbs {
             height: 60px;
             box-sizing: border-box;
             padding: 10px 0;
         }
+
         .gallery-thumbs .swiper-slide {
             height: 100%;
             width: 40px;
@@ -52,6 +57,7 @@
             background-repeat: no-repeat;
             opacity: 0.4;
         }
+
         .gallery-thumbs .swiper-slide-active {
             border: 1px solid #a260de;
             opacity: 1;
@@ -63,7 +69,7 @@
 <header class="header-box">
     <div class="header-centre">
         <ul class="header-left">
-            
+
             <li><a href="">
                 <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
             </a></li>
@@ -83,25 +89,17 @@
             <li><a href="/">
                 <div class="h-l-t">工厂首页 |</div>
             </a></li>
+            <li><a href="{:url('admin/user/login')}">
+                <div class="h-l-t">工厂登陆 |</div>
+            </a></li>
             <li><a href="{:url('home/user/accountcenter')}">
                 <div class="h-l-t">个人中心 |</div>
             </a></li>
             <li><a href="{:url('home/index/shoucangjia')}">
-                <div class="h-l-t">收藏夹 |</div>
+                <div class="h-l-t">收藏夹</div>
             </a>
             </li>
-            <li><a href="">
-                <div class="h-l-t">实力商家 |</div>
-            </a></li>
-            <li><a href="{:url('admin/user/login')}">
-                <div class="h-l-t">工厂后台 |</div>
-            </a></li>
-            <li><a href="">
-                <div class="h-l-t">客服中心 |</div>
-            </a></li>
-            <li><a href="">
-                <div class="h-l-t">网站导航</div>
-            </a></li>
+
         </ul>
     </div>
 </header>
@@ -110,6 +108,7 @@
         <div class="header-logo">
             <a href="{:url('/')}">
                 <img data-original="{:config('home_img')}/a0.png" alt="">
+            </a>
         </div>
         <div class="header-right-box">
             <a href="" class="header-shoucangjia">
@@ -333,14 +332,14 @@
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         spaceBetween: 10,
-        loop:true,
+        loop: true,
         loopedSlides: 5, //looped slides should be the same
     });
     var galleryThumbs = new Swiper('.gallery-thumbs', {
         spaceBetween: 10,
         slidesPerView: 4,
         touchRatio: 0.2,
-        loop:true,
+        loop: true,
         loopedSlides: 5, //looped slides should be the same
         slideToClickedSlide: true
     });
@@ -350,16 +349,16 @@
 </script>
 <script>
     $(function () {
-        $('.main-bottom-lxkf').on('click',function () {
-            alert('商家联系方式：'+'123456789')
+        $('.main-bottom-lxkf').on('click', function () {
+            alert('商家联系方式：' + '123456789')
         })
     })
 </script>
 <script>
-    $(function() {
+    $(function () {
         $("img").lazyload({
-            threshold : 200,
-            skip_invisible : false
+            threshold: 200,
+            skip_invisible: false
         });
     });
 </script>
