@@ -13,9 +13,7 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    
     'hostname'        => '127.0.0.1',
-
     // 数据库名
     'database'        => 'bwcm2018',
     // 用户名
