@@ -40,25 +40,16 @@
             <li><a href="/">
                 <div class="h-l-t">工厂首页 |</div>
             </a></li>
+            <li><a href="{:url('admin/user/login')}">
+                <div class="h-l-t">工厂登陆 |</div>
+            </a></li>
             <li><a href="{:url('home/user/accountcenter')}">
                 <div class="h-l-t">个人中心 |</div>
             </a></li>
             <li><a href="{:url('home/index/shoucangjia')}">
-                <div class="h-l-t">收藏夹 |</div>
+                <div class="h-l-t">收藏夹</div>
             </a>
             </li>
-            <li><a href="">
-                <div class="h-l-t">实力商家 |</div>
-            </a></li>
-            <li><a href="{:url('admin/user/login')}">
-                <div class="h-l-t">工厂后台 |</div>
-            </a></li>
-            <li><a href="">
-                <div class="h-l-t">客服中心 |</div>
-            </a></li>
-            <li><a href="">
-                <div class="h-l-t">网站导航</div>
-            </a></li>
         </ul>
     </div>
 </header>
@@ -66,7 +57,9 @@
 <div class="header">
     <div class="header-box-box">
         <div class="header-logo">
-            <img data-original="{:config('home_img')}/a0.png" alt="">
+            <a href="{:url('/')}">
+                <img data-original="{:config('home_img')}/a0.png" alt="">
+            </a>
         </div>
         <div class="header-right-box">
             <a href="" class="header-shoucangjia">
@@ -76,10 +69,6 @@
             <a href="" class="header-shoucangjia">
                 <i class="iconfont icon-guanzhuzuozheyiguanzhu"></i>
                 <span class="header-text">已关注</span>
-            </a>
-            <a href="" class="header-shoucangjia">
-                <i class="iconfont icon-dinghuodan"></i>
-                <span class="header-text">订货单</span>
             </a>
         </div>
     </div>

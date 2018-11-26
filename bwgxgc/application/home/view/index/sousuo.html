@@ -21,39 +21,36 @@
 <header class="header-box">
     <div class="header-centre">
         <ul class="header-left">
+
             <li><a href="">
                 <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
             </a></li>
-            <li><a href="">
+            {notempty name='$Request.session.username'}
+            【{$Request.session.username}】
+            <span><a href="{:url('home/user/loginout')}">退出登录</a></span>
+            {else /}
+            <li><a href="{:url('home/user/login')}">
                 <div class="h-l-t">请登陆 |</div>
             </a></li>
-            <li><a href="">
+            <li><a href="{:url('home/user/register')}">
                 <div class="h-l-t">免费注册</div>
             </a></li>
+            {/notempty}
         </ul>
         <ul class="header-right">
-            <li><a href="">
+            <li><a href="/">
                 <div class="h-l-t">工厂首页 |</div>
             </a></li>
-            <li><a href="">
-                <div class="h-l-t">我的工厂 |</div>
+            <li><a href="{:url('admin/user/login')}">
+                <div class="h-l-t">工厂登陆 |</div>
             </a></li>
-            <li><a href="">
-                <div class="h-l-t">收藏夹(<span>0</span>) |</div>
+            <li><a href="{:url('home/user/accountcenter')}">
+                <div class="h-l-t">个人中心 |</div>
+            </a></li>
+            <li><a href="{:url('home/index/shoucangjia')}">
+                <div class="h-l-t">收藏夹</div>
             </a>
             </li>
-            <li><a href="">
-                <div class="h-l-t">实力商家 |</div>
-            </a></li>
-            <li><a href="">
-                <div class="h-l-t">我是供应商 |</div>
-            </a></li>
-            <li><a href="">
-                <div class="h-l-t">客服中心 |</div>
-            </a></li>
-            <li><a href="">
-                <div class="h-l-t">网站导航</div>
-            </a></li>
         </ul>
     </div>
 </header>
@@ -61,7 +58,9 @@
 <div class="header">
     <div class="header-box-box">
         <div class="header-logo">
-            <img data-original="{:config('home_img')}/a0.png" alt="">
+            <a href="{:url('/')}">
+                <img data-original="{:config('home_img')}/a0.png" alt="">
+            </a>
         </div>
         <div class="header-right-box">
             <form action="">
