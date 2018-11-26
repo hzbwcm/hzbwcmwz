@@ -71,19 +71,26 @@ $(function () {
 
 //楼层跳转
     var flag=true;
+    var key=true;
     $('.gudingdaohang-box ul li').on('click',function (e) {
-        var num=$(e.target).index()//当前点击的第n个li
-        var hdnum=$('.main-jggc-box')[num].offsetTop;
-        // $('.gudingdaohang-box ul li').removeAttr('id','acttive')
-        // $(this).attr('id','active')
-        $('html,body').animate({scrollTop:hdnum-100})
+        if(key){
+            key=false;
+            var num=$(e.target).index();//当前点击的第n个li
+            var hdnum=$('.main-jggc-box')[num].offsetTop;
+            $('html,body').animate({scrollTop:hdnum-200},function () {
+                key=true;
+            });
+        }
     })
     $('.guding-foot').on('click',function () {
-        $('html,body').animate({scrollTop:0},function () {
-            $('.gudingdaohang-box').animate({height:0},function () {
-                flag=true;
+        if(key){
+            key=false;
+            $('html,body').animate({scrollTop:0},function () {
+                $('.gudingdaohang-box').animate({height:0},function () {
+                    key=true;
+                })
             })
-        })
+        }
     })
     $(window).on('scroll',function () {
         var height=$(window).scrollTop();
@@ -104,7 +111,7 @@ $(function () {
             }
         }
         $('.main-jggc-box').each(function (index,val) {
-            if( $('.main-jggc-box')[index].offsetTop-250<=$(window).scrollTop()){
+            if( $('.main-jggc-box')[index].offsetTop-200<=$(window).scrollTop()){
                 $('.gudingdaohang-box ul li').removeAttr('id','acttive')
                 $('.gudingdaohang-box ul li').eq(index).attr('id','active')
             }
