@@ -441,8 +441,8 @@
                     <a href="" class="youxuan-xw-img">
                         <img data-original="{:config('public_uploads' )}/{$pic[0]}" alt="">
                         <div class="youxuan-img-title">{$info.company_name}</div>
-                        <!--<div class="youxuan-left-jt youxuan-jt"><i class="iconfont icon-zuojiantou"></i></div>-->
-                        <!--<div class="youxuan-right-jt youxuan-jt"><i class="iconfont icon-iconfontjiantou6"></i></div>-->
+                        <div class="youxuan-left-jt youxuan-jt"><i class="iconfont icon-zuojiantou"></i></div>
+                        <div class="youxuan-right-jt youxuan-jt"><i class="iconfont icon-iconfontjiantou6"></i></div>
                     </a>
                     <div class="youxuan-xw-right">
                         <div class="youxuan-xw-title">{$info.company_name}</div>
@@ -617,10 +617,12 @@
 
 <!--入驻商家-->
 <div class="shangjiaruzhu-box">
-    <div class="shangjiaruzhu-title">入驻商家</div>
-    <div class="sjrz-gdgc-box">
-        <div class="sjrz-gdgc"><a href="">更多工厂</a></div>
-        <div class="sjrz-gcrz"><a href="">工厂入驻</a></div>
+    <div class="shangjiaruzhu-title">
+        入驻商家
+        <div class="sjrz-gdgc-box">
+            <div class="sjrz-gdgc"><a href="">更多工厂</a></div>
+            <div class="sjrz-gcrz"><a href="">工厂入驻</a></div>
+        </div>
     </div>
     <div class="sjrz-img-xy-box">
         {volist name='com' id='v'}
@@ -628,7 +630,6 @@
             <div class="sjrz-img">
                 <img data-original="{:config('public_uploads' )}/{$v.pic8}" alt="">
             </div>
-            <div class="sjrz-img-title">{$v.company_name}</div>
         </a>
         {/volist}
     </div>

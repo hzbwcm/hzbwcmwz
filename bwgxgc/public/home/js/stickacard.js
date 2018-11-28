@@ -95,7 +95,7 @@ $(function () {
     $(window).on('scroll',function () {
         var height=$(window).scrollTop();
         var ce_heights=$('.guding-title').height()+$('.gudingdaohang-box ul').height()+$('.guding-foot').height();
-        if(height>=700){
+        if(height>=800){
             if(flag){
                 flag=false;
                 $('.gudingdaohang-box').animate({height:ce_heights+'px'},function () {

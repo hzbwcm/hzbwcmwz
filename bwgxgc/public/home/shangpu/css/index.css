@@ -69,7 +69,11 @@ main {
         right: 0;
         top: 0; }
         main .main-gsjs-box .gsjs-content-box .gsjs-content-down-img img {
-          width: 100%; }
+          width: 100%;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto; }
       main .main-gsjs-box .gsjs-content-box .gsjs-content-up-box {
         width: 1022px;
         height: 448px;
