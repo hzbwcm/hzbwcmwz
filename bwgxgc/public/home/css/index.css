@@ -1556,14 +1556,14 @@ main {
         position: relative;
         border: 1px solid #dca3ff; }
         .shangjiaruzhu-box .sjrz-img-xy-box .sjrz-img-box .sjrz-img img {
+          max-width: 95%;
+          max-height: 95%;
           position: absolute;
           left: 0;
           right: 0;
           bottom: 0;
           top: 0;
-          margin: auto;
-          max-width: 100%;
-          max-height: 100%; }
+          margin: auto; }
       .shangjiaruzhu-box .sjrz-img-xy-box .sjrz-img-box .sjrz-img-title {
         width: 100%;
         text-align: center;
