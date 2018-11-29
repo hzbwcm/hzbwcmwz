@@ -173,6 +173,19 @@ class UserController extends Controller
             $shuju['issue_name'] = $name;
             $result = $customgood->allowField(true)->save($shuju);
             if($result){
+                $request = Request::instance();
+                $ip = $request->ip();
+                $acc = Session::get('username');
+                $data = [
+                    'ope_cat' => '个人',
+                    'ope_id' => $user_id,
+                    'ope_acc'=> $acc,
+                    'ope_ip'=> $ip,
+                    'ope_tab'=> 'customgood',
+                    'ope_act' => '添加',
+                ];
+                Db::table('ope_log')->insert($data);
+
                 return $this->success('发布成功','user/fabuxinxi');
             }else{
                 return ['status'=>'failure','errorinfo'=>'数据写入失败，请联系管理员'];
