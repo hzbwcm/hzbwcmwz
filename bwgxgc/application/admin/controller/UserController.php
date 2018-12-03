@@ -30,7 +30,7 @@ class UserController extends Controller
         return $this->fetch();
     }
 
-    //后台推出
+    //后台退出
     public function logout()
     {
         Session::clear();
@@ -73,8 +73,14 @@ class UserController extends Controller
             $info5 = [];
             for ($x = 1; $x < 12; $x++) {
                 $file = request()->file('pic' . $x);
+               
                 if($file){
-                    $info = $file->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'com_pic');
+
+                    $info = $file->validate(['size'=>512000])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'com_pic');
+                    if($info==false)
+                    {
+                        return $this->error('上传失败,请确保图片在大小在500k以下');
+                    }
                     $info2 = $info->getSaveName();
                     $info3 = 'com_pic' . "/" . $info2;
                     $info5['pic'.$x]
@@ -130,7 +136,8 @@ class UserController extends Controller
         if($request->isPost())
         {
             if(request()->file('pic')){
-                $info =request()->file('pic')->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'book');
+                $info =request()->file('pic')->validate(['size'=>512000])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'book');
+                if($info==false){return $this->error('上传失败,请确保图片在大小在500k以下');}
             $info=$info->getSaveName();
             $info = 'book' . "/" . $info;
             }else{

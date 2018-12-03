@@ -4,6 +4,7 @@ namespace app\admin\controller;
 
 use app\admin\model\Company_info;
 use app\admin\model\Customgood;
+use app\admin\model\Prodis;
 use app\admin\model\Type;
 use app\admin\model\Card;
 use think\Controller;
@@ -11,6 +12,7 @@ use think\Request;
 use think\Validate;
 use app\admin\behavior\CheckLogin;
 use think\Session;
+use app\admin\model\Com_pic;
 use think\Db;
 
 class GoodsController extends Controller
@@ -141,66 +143,75 @@ class GoodsController extends Controller
                 'com' => $com
             ]);
             if (request()->isPost()) {
+                $info5 = request()->param();
+//                $info5 = [];
+                for ($x = 1; $x < 5; $x++) {
+                    $file = request()->file('pic' . $x);
 
-                $shuju = request()->param();
-                $pic1 = request()->file('pic1');
-                $pic2 = request()->file('pic2');
-                $pic3 = request()->file('pic3');
-                $pic4 = request()->file('pic4');
-                $info1 = $pic1 ? $pic1->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+                    if($file){
 
-                $info2 = $pic2 ? $pic2->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+                        $info = $file->validate(['size'=>512000])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card');
+                        if($info==false)
+                        {
+                            return $this->error('上传失败,请确保图片在大小在500k以下');
+                        }
+                        $info2 = $info->getSaveName();
+                        $info3 = 'card' . "/" . $info2;
+                        $info5['pic'.$x]
+                            = $info3;
 
-                $info3 = $pic3 ? $pic3->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+                    }else{
+                        $info5['pic'.$x]
+                            = '';
+                    }
 
-                $info4 = $pic4 ? $pic4->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-
-                $info1 = $info1 ? $info1->getSaveName() : '';
-                $info2 = $info2 ? $info2->getSaveName() : '';
-                $info3 = $info3 ? $info3->getSaveName() : '';
-                $info4 = $info4 ? $info4->getSaveName() : '';
-                $info4 = $info4 ? 'card' . "/" . $info4 : '';
-                $info3 = $info3 ? 'card' . "/" . $info3 : '';
-                $info1 = $info1 ? 'card' . "/" . $info1 : '';
-                $info2 = $info2 ? 'card' . "/" . $info2 : '';
-                $data = ['com_id' => $shuju['com_id'],
-                    'company_name' => $shuju['company_name'],
-                    'type' => $shuju['type'],
-                    'carname' => $shuju['carname'],
-                    'pro' => $shuju['pro'],
-                    'length' => $shuju['length'],
-                    'width' => $shuju['width'],
-                    'xinti' => $shuju['xinti'],
-                    'cdgpp' => $shuju['cdgpp'],
-                    'new' => $shuju['new'],
-                    'jsjc' => $shuju['jsjc'],
-                    'vender' => $shuju['vender'],
-                    'zjnum' => $shuju['zjnum'],
-                    'size' => $shuju['size'],
-                    'sjjc' => $shuju['sjjc'],
-                    'pnum' => $shuju['znum'],
-                    'bzxs' => $shuju['bzxs'],
-                    'bzgg' => $shuju['bzgg'],
-                    'sbbh' => $shuju['sbbh'],
-                    'qdl' => $shuju['qdl'],
-                    'logo' => $shuju['logo'],
-                    'instruction' => $shuju['instruction'],
-                    'pic1' => $info1,
-                    'pic2' => $info2,
-                    'pic3' => $info3,
-                    'pic4' => $info4
-
-                ];
-                $data = array_filter($data);
-                $card = new Card();
-                $res = $card->allowField(true)->save($data);
-                if ($res) {
-                    return $this->success('上传成功');
-                } else {
-                    return $this->error('上传失败');
                 }
+                $info5['com_id']=$com_id;
+                $com_pic = new Card();
+                $cs = Com_pic::where('com_id',$com_id)->select();
+                    $com_pic->save([
+                        'com_id'  =>  $info5['com_id'],
+                        'pic1' =>  $info5['pic1'],
+                        'pic2' =>  $info5['pic2'],
+                        'pic3' =>  $info5['pic3'],
+                        'pic4' =>  $info5['pic4'],
+                        'company_name' =>  $info5['company_name'],
+                        'type' =>  $info5['type'],
+                        'carname' =>  $info5['carname'],
+                        'pro' =>  $info5['pro'],
+                        'length' =>  $info5['length'],
+                        'width' => $info5['width'],
+                        'xinti' => $info5['xinti'],
+                        'cdgpp' => $info5['cdgpp'],
+                        'new' => $info5['new'],
+                        'jsjc' => $info5['jsjc'],
+                        'vender' =>$info5['vender'],
+                        'zjnum' => $info5['zjnum'],
+                        'size' => $info5['size'],
+                        'sjjc' => $info5['sjjc'],
+                        'pnum' => $info5['znum'],
+                        'bzxs' =>$info5['bzxs'],
+                        'bzgg' => $info5['bzgg'],
+                        'sbbh' => $info5['sbbh'],
+                        'qdl' => $info5['qdl'],
+                        'logo' => $info5['logo'],
+                        'instruction' => $info5['instruction'],
 
+                    ]);
+
+
+
+
+                if ($com_pic) {
+                    return $this->success('成功了');
+                } else {
+                    return $this->error('失败了，请重新上传');
+                }
             }
+
+
+
+
             return $this->fetch();
         }
 
@@ -391,10 +402,73 @@ class GoodsController extends Controller
                 return false;
             }
         }
-
-        //产品展示商品上传
-         public function cpzsspsc()
+        //产品展示管理
+         public function progl()
         {
+        return $this->fetch();
+        }
+        //产品展示商品上传
+         public function cpzsspsc(Request $request)
+        {
+            $com_id = Session::get('com_id');
+            $com = Company_info::where('com_id', $com_id)->find();
+            $this->assign([
+                'com_id'=>$com_id,
+                'com'=>$com
+            ]);
+            if (request()->isPost()) {
+
+                $shuju = request()->param();
+                $pic1 = request()->file('pic1');
+                $pic2 = request()->file('pic2');
+                $pic3 = request()->file('pic3');
+                $pic4 = request()->file('pic4');
+                $info1 = $pic1 ? $pic1->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+
+                $info2 = $pic2 ? $pic2->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+
+                $info3 = $pic3 ? $pic3->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+
+                $info4 = $pic4 ? $pic4->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+
+
+
+
+
+
+                $info1 = $info1 ? $info1->getSaveName() : '';
+                $info2 = $info2 ? $info2->getSaveName() : '';
+                $info3 = $info3 ? $info3->getSaveName() : '';
+                $info4 = $info4 ? $info4->getSaveName() : '';
+                $info4 = $info4 ? 'prodis' . "/" . $info4 : '';
+                $info3 = $info3 ? 'prodis' . "/" . $info3 : '';
+                $info1 = $info1 ? 'prodis' . "/" . $info1 : '';
+                $info2 = $info2 ? 'prodis' . "/" . $info2 : '';
+
+
+                $data = ['com_id' => $shuju['com_id'],
+                    'company_name' => $shuju['company_name'],
+                    'proname'=>$shuju['proname'],
+                    'qdl'=>$shuju['qdl'],
+                    'price'=>$shuju['price'],
+                    'pic1' => $info1,
+                    'pic2' => $info2,
+                    'pic3' => $info3,
+                    'pic4' => $info4
+
+                ];
+
+                $data = array_filter($data);
+                $card = new Prodis();
+                $res = $card->allowField(true)->save($data);
+                if ($res) {
+                    return $this->success('上传成功');
+                } else {
+                    return $this->error('上传失败,请确保图片在大小在500k以下');
+                }
+
+            }
+
             return $this->fetch();
         }
     }
