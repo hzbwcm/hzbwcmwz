@@ -543,6 +543,6 @@ main {
         line-height: 25px;
         cursor: pointer; }
       main .main-qyzz-box .qyzz-big-img img {
-        width: 100%; }
+        max-width: 100%; }
 
 /*# sourceMappingURL=index.css.map */
