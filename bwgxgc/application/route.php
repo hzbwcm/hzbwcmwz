@@ -72,8 +72,6 @@ Route::get('admin/goods/cpdzgl','admin/goods/cpdzgl');//产品定制管理
 Route::any('admin/goods/cpdzxg','admin/goods/cpdzxg',['method'=>'get|post']);//产品定制修改
 Route::any('admin/goods/delcpdz','admin/goods/delcpdz',['method'=>'get|post']);//产品定制删除
 
-Route::get('admin/goods/cpzsspsc','admin/goods/cpzsspsc');//产品展示商品上传
-Route::get('admin/user/gerentupian','admin/user/gerentupian');//个人信息图片上传
 Route::get('admin/user/qiyezizhi','admin/user/qiyezizhi');//企业资质
 
 
@@ -85,9 +83,11 @@ Route::group('admin',function (){
     Route::post('user/tjgrxx','admin/user/tjgrxx');
     Route::post('user/qiyezizhi','admin/user/qiyezizhi');
     Route::get('goods/tpgl','admin/goods/tpgl');//贴牌管理
+    Route::get('goods/progl','admin/goods/progl');//贴牌管理
     Route::get('goods/tpdel','admin/goods/tpdel');//贴牌删除
     Route::any('goods/tpbj','admin/goods/tpbj',['method'=>'get|post']);//贴牌编辑
     Route::any('user/gerentupian','admin/user/gerentupian',['method'=>'get|post']);//个人图片上传
+    Route::any('goods/cpzsspsc','admin/goods/cpzsspsc',['method'=>'get|post']);//产品展示上传
     Route::any('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan',['method'=>'get|post']);
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
 
