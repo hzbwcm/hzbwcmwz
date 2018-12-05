@@ -194,11 +194,9 @@
                         </div>
                         {volist name='type' id='v1'}
                         {eq name="v1.type_pid" value="$v.type_id"}
-                        <a href="" style="text-decoration:none">
-                            <div class="accordion-inner">
-                                {$v1.type_name}
-                            </div>
-                        </a>
+                        <div class="accordion-inner">
+                            {$v1.type_name}
+                        </div>
                         {/eq}
                         {/volist}
                     </div>
@@ -329,8 +327,7 @@
 <script>
     $(function () {
         $("img").lazyload({
-            threshold: 200,
-            skip_invisible: false
+            threshold: 200
         });
     });
 </script>

@@ -1543,7 +1543,8 @@ main {
     background: #fff;
     padding-left: 6px;
     padding-top: 10px;
-    padding-bottom: 10px; }
+    padding-bottom: 10px;
+    overflow: hidden; }
     .shangjiaruzhu-box .sjrz-img-xy-box .sjrz-img-box {
       width: 135px;
       height: 90px;
