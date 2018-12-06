@@ -59,6 +59,7 @@ class UserController extends Controller
             //获取所点击的产品定制信息
             $user_data = Customgood::where('user_id', $user_id)->where('cus_id',$id)->find();
 
+
             //根据所点击定制产品的type_id,type_xj获取到TYPE中的type_name
             //获取父类
             $type_data1 = Type::where('type_id',$user_data['type_id'])->find();
@@ -141,22 +142,49 @@ class UserController extends Controller
 
         $name = User_person::where('user_id',$user_id)->value('nickname');
         if(request()->isPost()){
-            $shuju = Request::instance()->post();
+            $shuju = Request::instance()->param();
+            $cus_pic = request()->file('cus_pic');
+            $data  = $cus_pic  ? $cus_pic->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
+            $cus_pic1 = request()->file('cus_pic1');
+            $data1 = $cus_pic1 ? $cus_pic1->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
+            $cus_pic2 = request()->file('cus_pic2');
+            $data2 = $cus_pic2 ? $cus_pic2->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
+            $cus_pic3 = request()->file('cus_pic3');
+            $data3 = $cus_pic3 ? $cus_pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
+            if($data){
+                $data = $data ? $data->getSaveName() : '';
+                $data = $data ? 'customgood' . "/" .  $data : '';
+            }else if($cus_pic){
+                $this->error('主图上传失败' . '：' . $cus_pic->getError(),'user/fabuxinxi');
+            }
+
+            if($data1){
+                $data1 = $data1 ? $data1->getSaveName() : '';
+                $data1 = $data1 ? 'customgood' . "/" .  $data1 : '';
+            }else if($cus_pic1){
+                $this->error('主图上传失败' . '：' . $cus_pic1->getError(),'user/fabuxinxi');
+            }
+
+            if($data
+            ){
+                $data2 = $data2 ? $data2->getSaveName() : '';
+                $data2 = $data2 ? 'customgood' . "/" . $data2 : '';
+            }else if($cus_pic2){
+                $this->error('副图2上传失败' . '：' . $cus_pic2->getError(),'user/fabuxinxi');
+            }
+            if($data3){
+                $data3 = $data3 ? $data3->getSaveName() : '';
+                $data3 = $data3 ? 'customgood' . "/" .  $data3 : '';
+            }else if($cus_pic3){
+                $this->error('副图3上传失败' . '：' . $cus_pic3->getError(),'user/fabuxinxi');
+            }
+
             $rules = [
                 'cus_proname'          =>'require',
-                'cus_length'           =>'require',
-                'cus_width'            =>'require',
-                'cus_place'            =>'require',
-                'cus_supply'           =>'require',
-                'cus_orders'           =>'require',
             ];
             $msg = [
                 'cus_proname.require'      => '必填',
-                'cus_length.require'       => '必填',
-                'cus_width.require'        => '必填',
-                'cus_place.require'        => '必填',
-                'cus_supply.require'       => '必填',
-                'cus_orders.require'       => '必填',
+
             ];
             $validate = new Validate($rules,$msg);
             if(!$validate->batch()->check($shuju)){
@@ -164,13 +192,28 @@ class UserController extends Controller
                 $this -> assign('errorinfo',$errorinfo);
                 return $this -> fetch();
             }
-
-
-            $customgood = new Customgood();
+            $rules = [
+                'cus_proname'          =>'require',
+            ];
+            $msg = [
+                'cus_proname.require'      => '必填',
+            ];
+            $validate = new Validate($rules,$msg);
+            if(!$validate->batch()->check($shuju)){
+                $errorinfo=$validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                return $this -> fetch();
+            }
             $shuju['user_id'] = $user_id;
             $shuju['type_id'] = $shuju['pid'];
             $shuju['type_xj'] = $shuju['classify_id'];
             $shuju['issue_name'] = $name;
+            $shuju['cus_pic'] = $data;
+            $shuju['cus_pic1'] = $data1;
+            $shuju['cus_pic2'] = $data2;
+            $shuju['cus_pic3'] = $data3;
+            $shuju = array_filter($shuju);
+            $customgood = new Customgood();
             $result = $customgood->allowField(true)->save($shuju);
             if($result){
                 $request = Request::instance();
