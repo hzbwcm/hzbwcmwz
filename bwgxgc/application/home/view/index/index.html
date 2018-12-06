@@ -282,6 +282,57 @@
         </div>
 
     </div>
+    <!--加工专区-->
+    <div class="jiagong-b-box">
+        <div class="wsjjg-bt-box">
+            <span></span>
+            <a href="{:url('home/stickacard/stickacard')}">更多 <i class="iconfont icon-shuangjiantouyou"></i></a>
+        </div>
+        <div class="dj-wsjgg-box">
+
+        </div>
+        <div class="wsjcp-z-sh">
+            <div class="wsjcp-left">
+                <img data-original="{:config('home_img')}/dwsj.jpg" alt="">
+            </div>
+
+            <div class="wsjcp-right">
+                <!---->
+                {volist name='card' id='v'}
+                <div class="wsj-tu-box">
+                    <div class="wsj-tu-zs">
+                        <div class="wsj-tu-l">
+                            <img data-original="{:config('public_uploads')}/{$v.pic1}" alt="">
+                        </div>
+                        <div class="wsj-tu-r">
+                            <div class="wsj-tu-r-t">
+                                <img data-original="{:config('public_uploads')}/{$v.pic2}" alt="">
+                            </div>
+                            <div class="wsj-tu-r-b">
+                                <img data-original="{:config('public_uploads')}/{$v.pic3}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wsj-xx">
+                        <div class="wsj-name"><span>代工品牌</span>
+                            <div>{$v.carname}</div>
+                        </div>
+                        <div class="wsj-name"><span>起订量</span>
+                            <div>{$v.qdl}</div>
+                        </div>
+                        <div class="gongsi-dizhi">
+                            <i class="iconfont icon-icon_location"></i>
+                            {$v.company_name}
+                        </div>
+                        <a href="{:url('home/stickacard/tiepaixiangqing',['id'=>$v.id])}" class="wsj-ljdz">立即加工</a>
+                    </div>
+                </div>
+                {/volist}
+            </div>
+
+        </div>
+
+    </div>
 </main>
 <!--优选新闻-->
 <div class="youxuan-box">
