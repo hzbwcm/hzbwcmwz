@@ -20,7 +20,14 @@
 <form class="form-horizontal" method="post" action="{$Request.url}">
     <div class="control-group">
         <div class="controls">
-            <input type="text" name="username" value="{$shuju.username|default=''}" placeholder="请输入你的用户名" >
+            <input type="text" name="username" value="{$shuju.nickname|default=''}" placeholder="请输入你的用户名" >
+            <span style="color:red;">{$errorinfo.nickname|default=''}</span>
+        </div>
+        <label class="control-label"><i class="iconfont icon-mingcheng"></i></label>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="text" name="username" value="{$shuju.username|default=''}" placeholder="请输入你的账号" >
             <span style="color:red;">{$errorinfo.username|default=''}</span>
         </div>
         <label class="control-label"><i class="iconfont icon-ren111"></i></label>
