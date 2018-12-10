@@ -37,10 +37,12 @@ class UserController extends Controller
                 $data = $data ? $data->getSaveName() : '';
                 $data = $data ? 'customgood' . "/" .  $data : '';
                 $pic = Customgood::where('cus_id',$id)->value('cus_pic');
-                dump($data);
-                dump($pic);
-                die;
-//                $filename = ROOT_PATH . 'public/uploads' . '/' .
+                $filename = ROOT_PATH . 'public/uploads' . '/' . $pic;
+                if(file_exists($filename)){
+                    unlink($filename);
+                }else{
+                    return  '我已经被删除了哦！';
+                }
 
             }else if($cus_pic){
                 $this->error('主图上传失败' . '：' . $cus_pic->getError(),'user/fabuxinxi');
@@ -68,9 +70,11 @@ class UserController extends Controller
 
             $rules = [
                 'cus_proname'          =>'require',
+                'cus_length'           =>'require',
             ];
             $msg = [
                 'cus_proname.require'      => '必填',
+                'cus_length.require'       => '必填',
             ];
             $validate = new Validate($rules,$msg);
             if(!$validate->batch()->check($info)){
@@ -116,7 +120,7 @@ class UserController extends Controller
                 Db::table('ope_log')->insert($da);
                 return $this->success('发布成功',"user/xinxiguanlishouye");
             }else{
-                $this->error('信息更新失败!');
+                $this->error('信息更新失败!','user/xinxiguanlishouye');
             }
         }else{
             //获取所点击的产品定制信息
@@ -309,6 +313,8 @@ class UserController extends Controller
             ];
             $validate = new Validate($rules,$msg);
             if(!$validate->batch()->check($data)){
+                $user_data = User_person::where('user_id', $user_id)->find();
+                $this->assign('user_data', $user_data);
                 $errorinfo=$validate->getError();
                 $this -> assign('errorinfo',$errorinfo);
                 return $this -> fetch();
