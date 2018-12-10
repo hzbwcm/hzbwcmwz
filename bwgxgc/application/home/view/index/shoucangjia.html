@@ -22,8 +22,8 @@
             <li><a href="">
                 <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
             </a></li>
-            {notempty name='$Request.session.username'}
-            【{$Request.session.username}】
+            {notempty name='$Request.session.nickname'}
+            【{$Request.session.nickname}】
             <span><a href="{:url('home/user/loginout')}">退出登录</a></span>
             {else /}
             <li><a href="{:url('home/user/login')}">
