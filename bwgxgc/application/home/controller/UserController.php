@@ -103,10 +103,6 @@ class UserController extends Controller
         }else{
             //获取所点击的产品定制信息
             $user_data = Customgood::where('user_id', $user_id)->where('cus_id',$id)->find();
-            $pic = $user_data['cus_pic'];
-            $pic1 = $user_data['cus_pic1'];
-            $pic2 = $user_data['cus_pic2'];
-            $pic3 = $user_data['cus_pic3'];
             //根据所点击定制产品的type_id,type_xj获取到TYPE中的type_name
             //获取父类
             $type_data1 = Type::where('type_id',$user_data['type_id'])->find();
@@ -205,38 +201,27 @@ class UserController extends Controller
             }else if($cus_pic){
                 $this->error('主图上传失败' . '：' . $cus_pic->getError(),'user/fabuxinxi');
             }
+
             if($data1){
                 $data1 = $data1 ? $data1->getSaveName() : '';
                 $data1 = $data1 ? 'customgood' . "/" .  $data1 : '';
             }else if($cus_pic1){
-                $this->error('主图上传失败' . '：' . $cus_pic1->getError(),'user/fabuxinxi');
+                $this->error('副图一上传失败' . '：' . $cus_pic1->getError(),'user/fabuxinxi');
             }
-            if($data){
+            if($data2){
                 $data2 = $data2 ? $data2->getSaveName() : '';
                 $data2 = $data2 ? 'customgood' . "/" . $data2 : '';
+
             }else if($cus_pic2){
-                $this->error('副图2上传失败' . '：' . $cus_pic2->getError(),'user/fabuxinxi');
+                $this->error('副图二上传失败' . '：' . $cus_pic2->getError(),'user/fabuxinxi');
             }
             if($data3){
                 $data3 = $data3 ? $data3->getSaveName() : '';
                 $data3 = $data3 ? 'customgood' . "/" .  $data3 : '';
             }else if($cus_pic3){
-                $this->error('副图3上传失败' . '：' . $cus_pic3->getError(),'user/fabuxinxi');
+                $this->error('副图三上传失败' . '：' . $cus_pic3->getError(),'user/fabuxinxi');
             }
 
-            $rules = [
-                'cus_proname'          =>'require',
-            ];
-            $msg = [
-                'cus_proname.require'      => '必填',
-
-            ];
-            $validate = new Validate($rules,$msg);
-            if(!$validate->batch()->check($shuju)){
-                $errorinfo=$validate->getError();
-                $this -> assign('errorinfo',$errorinfo);
-                return $this -> fetch();
-            }
             $rules = [
                 'cus_proname'          =>'require',
             ];
@@ -295,7 +280,6 @@ class UserController extends Controller
                 'nickname'      =>'require|unique:user_person,username|max:25',
                 'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],
                 'user_email'    =>'require|email',
-                'user_qq'       =>'require',
             ];
             $msg = [
                 'nickname.require'      => '用户名必填',
@@ -305,7 +289,6 @@ class UserController extends Controller
                 'tel.regex'             => '手机号码规则不正确',
                 'user_email.require'    => '邮箱必填',
                 'user_email.email'      => '邮箱格式不正确',
-                'user_qq.require'       => 'qq必填',
             ];
             $validate = new Validate($rules,$msg);
             if(!$validate->batch()->check($data)){

@@ -66,17 +66,12 @@
 
 				{eq name='$ty.type_id' value='$data.type_id'}
 				<td>{$ty.type_name}</td>
+				{/eq}
 
 				{eq name='$ty.type_id' value='$data.type_xj'}
 				<td>{$ty.type_name}</td>
-				{else/}
-				<td>1111</td>
 				{/eq}
 
-				{else/}
-				<td>2222</td>
-				<td>3333</td>
-				{/eq}
 				{/volist}
 				<td>{$data.cus_proname}</td>
 				<td>{$data.cus_length}</td>
