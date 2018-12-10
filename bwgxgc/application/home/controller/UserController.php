@@ -201,6 +201,7 @@ class UserController extends Controller
             if($data){
                 $data = $data ? $data->getSaveName() : '';
                 $data = $data ? 'customgood' . "/" .  $data : '';
+                
             }else if($cus_pic){
                 $this->error('主图上传失败' . '：' . $cus_pic->getError(),'user/fabuxinxi');
             }
@@ -297,9 +298,9 @@ class UserController extends Controller
                 'user_qq'       =>'require',
             ];
             $msg = [
-                'nickname.require'      => '昵称必填',
-                'nickname.unique'       => '昵称已经被使用',
-                'nickname.max'          => '昵称长度不能超过25位',
+                'nickname.require'      => '用户名必填',
+                'nickname.unique'       => '用户名已经被使用',
+                'nickname.max'          => '用户名长度不能超过25位',
                 'tel.require'           => '手机号码必填',
                 'tel.regex'             => '手机号码规则不正确',
                 'user_email.require'    => '邮箱必填',
@@ -437,11 +438,15 @@ class UserController extends Controller
                 'password'  =>'require|length:6,15',
                 'password2' =>'require|confirm:password',
                 'tel'       =>['require','regex'=>'/^1[358]\d{9}$/'],
+                'nickname'      =>'require|unique:user_person,username|max:25',
             ];
             $msg = [
-                'username.require'      => '名称必填',
-                'username.unique'       => '用户名已经被使用',
-                'username.max'          => '用户名长度不能超过25位',
+                'nickname.require'      => '用户名必填',
+                'nickname.unique'       => '用户名已经被使用',
+                'nickname.max'          => '用户名长度不能超过25位',
+                'username.require'      => '账号必填',
+                'username.unique'       => '账号已经被使用',
+                'username.max'          => '账号长度不能超过25位',
                 'password.require'       => '密码必填',
                 'password.length'       => '密码长度须在6到15之间',
                 'password2.require'      => '确认密码必填',
