@@ -399,6 +399,19 @@ class GoodsController extends Controller
             ];
             $validate = new Validate($rules, $msg);
             if (!$validate->batch()->check($shuju)) {
+                $cus_data = Customgood::where('cus_id', $dataid)->where('com_id', $com_id)->find();
+                //获取侧导航默认信息
+                $type = new type();
+                $type1 = $type->where('type_id', $cus_data['type_id'])->find();
+
+                $type2 = $type->where('type_pid', $cus_data['type_id'])->select();
+                $type2_data = $type->where('type_id', $cus_data['type_xj'])->find();
+
+
+                $this->assign('type1', $type1);
+                $this->assign('type2', $type2);
+                $this->assign('type2_data', $type2_data);
+                $this->assign('cus_data', $cus_data);
                 $errorinfo = $validate->getError();
                 $this->assign('errorinfo', $errorinfo);
                 return $this->fetch();
@@ -504,11 +517,6 @@ class GoodsController extends Controller
             $info3 = $pic3 ? $pic3->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
 
             $info4 = $pic4 ? $pic4->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
-
-
-
-
-
 
             $info1 = $info1 ? $info1->getSaveName() : '';
             $info2 = $info2 ? $info2->getSaveName() : '';

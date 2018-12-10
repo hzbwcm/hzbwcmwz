@@ -36,6 +36,11 @@ class UserController extends Controller
             if($data){
                 $data = $data ? $data->getSaveName() : '';
                 $data = $data ? 'customgood' . "/" .  $data : '';
+                $pic = Customgood::where('cus_id',$id)->value('cus_pic');
+                dump($data);
+                dump($pic);
+                die;
+//                $filename = ROOT_PATH . 'public/uploads' . '/' .
 
             }else if($cus_pic){
                 $this->error('主图上传失败' . '：' . $cus_pic->getError(),'user/fabuxinxi');
@@ -69,6 +74,19 @@ class UserController extends Controller
             ];
             $validate = new Validate($rules,$msg);
             if(!$validate->batch()->check($info)){
+                $user_data = Customgood::where('user_id', $user_id)->where('cus_id',$id)->find();
+                //根据所点击定制产品的type_id,type_xj获取到TYPE中的type_name
+                //获取父类
+                $type_data1 = Type::where('type_id',$user_data['type_id'])->find();
+                //获取子类
+                $type_data2 = Type::where('type_id',$user_data['type_xj'])->find();
+                //子类下拉框
+                $type_data22 = Type::where('type_pid',$user_data['type_id'])->select();
+
+                $this->assign('user_data', $user_data);
+                $this->assign('type_data1',$type_data1);
+                $this->assign('type_data2',$type_data2);
+                $this->assign('type_data22',$type_data22);
                 $errorinfo=$validate->getError();
                 $this -> assign('errorinfo',$errorinfo);
                 return $this -> fetch();
@@ -197,7 +215,6 @@ class UserController extends Controller
             if($data){
                 $data = $data ? $data->getSaveName() : '';
                 $data = $data ? 'customgood' . "/" .  $data : '';
-                
             }else if($cus_pic){
                 $this->error('主图上传失败' . '：' . $cus_pic->getError(),'user/fabuxinxi');
             }
