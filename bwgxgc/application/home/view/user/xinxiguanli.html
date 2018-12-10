@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="main-form-box">
-        <form action="{$Request.url}" method="post">
+        <form action="{$Request.url}" method="post" enctype="multipart/form-data">
             <!--上传产品信息-->
             <div class="form-text-big-box">
                 <div class="select-div" style="padding-left: 40px;color: #7b7b7b;font-size: 16px;height: 44px;line-height: 44px;">
@@ -168,8 +168,7 @@
 <script>
     $(function() {
         $("img").lazyload({
-            threshold: 200,
-            skip_invisible : false
+            threshold : 200
         });
     });
 </script>

@@ -178,16 +178,10 @@
             <!-- Swiper -->
             <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a1.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a2.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic1})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic2})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic3})"></div>
                 </div>
                 <!-- Add Arrows -->
                 <!--<div class="swiper-button-next swiper-button-white"></div>-->
@@ -195,16 +189,10 @@
             </div>
             <div class="swiper-container gallery-thumbs">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a1.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a2.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
-                    <div class="swiper-slide" style="background-image:url({:config('home_img')}/a0.png)"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic1})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic2})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic3})"></div>
                 </div>
             </div>
         </div>
@@ -357,8 +345,7 @@
 <script>
     $(function () {
         $("img").lazyload({
-            threshold: 200,
-            skip_invisible : false
+            threshold: 200
         });
     });
 </script>

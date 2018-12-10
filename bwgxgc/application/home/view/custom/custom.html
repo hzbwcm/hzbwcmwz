@@ -231,7 +231,7 @@
                 <a href="{:url('home/custom/customizing',['cusid'=>$da.cus_id])}" class="bottom-content-box">
                     <div class="content-xx">
                         <div class="content-img">
-                            <img data-original="{:config('home_img')}/custom/20170514163647_02700_s.png" alt="">
+                            <img data-original="{:config('public_uploads')}/{$da.cus_pic}" alt="">
                         </div>
                         <div class="content-title">
                             <span>{$da.cus_proname}</span>
@@ -327,8 +327,7 @@
 <script>
     $(function () {
         $("img").lazyload({
-            threshold: 200,
-            skip_invisible : false
+            threshold: 200
         });
     });
 </script>

@@ -34,8 +34,8 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理<span
         class="c-gray en">&gt;</span> 产品定制品上传 <a class="btn btn-success radius r"
-                                                style="line-height:1.6em;margin-top:3px"
-                                                href="javascript:location.replace(location.href);" title="刷新"><i
+                                                 style="line-height:1.6em;margin-top:3px"
+                                                 href="javascript:location.replace(location.href);" title="刷新"><i
         class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="tiepaiTitle">产品定制商品上传</div>
 <form style="padding-bottom: 150px;overflow: hidden" method="post" action="{$Request.url}" enctype="multipart/form-data">
@@ -138,7 +138,7 @@
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="cus_condition">
-                            <option value="-1">请选择</option>
+                            <option value="">请选择</option>
                             <option value="0">9</option>
                             <option value="1">8</option>
                             <option value="2">7</option>
@@ -152,22 +152,22 @@
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">金属检测 ：</label>
             <div class="radio-box">
-                <input type="radio" id="radio-3" name="cus_metal" value="有">
+                <input type="radio" id="radio-3" name="cus_metal" value="">
                 <label for="radio-3">有</label>
             </div>
             <div class="radio-box">
-                <input type="radio" id="radio-4" name="cus_metal" checked value="无">
+                <input type="radio" id="radio-4" name="cus_metal" checked value="">
                 <label for="radio-4">无</label>
             </div>
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视觉检测 ：</label>
             <div class="radio-box">
-                <input type="radio" id="radio-5" name="cus_vision" value="有">
+                <input type="radio" id="radio-5" name="cus_vision" value="">
                 <label for="radio-5">有</label>
             </div>
             <div class="radio-box">
-                <input type="radio" id="radio-6" name="cus_vision" checked value="无">
+                <input type="radio" id="radio-6" name="cus_vision" checked value="">
                 <label for="radio-6">无</label>
             </div>
         </div>
@@ -176,7 +176,7 @@
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="cus_pack">
-                            <option value="-1">请选择</option>
+                            <option value="">请选择</option>
                             <option value="全自动包装">全自动包装</option>
                             <option value="半自动包装">半自动包装</option>
                             <option value="手工包装">手工包装</option>
@@ -195,8 +195,8 @@
                         <img src="" alt="" id="preview9">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
-                        选择图片
-                        <input type="file" value="" id="doc9" name="pic9" onclick="inputimg('pic9','lacalImag9','preview9','doc9')"></label>
+                        主图上传
+                        <input type="file" value="" id="doc9" name="cus_pic" onclick="inputimg('cus_pic','lacalImag9','preview9','doc9')"></label>
                     </label>
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1">
@@ -204,8 +204,8 @@
                         <img src="" alt="" id="preview10">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
-                        选择图片
-                        <input type="file" value="" id="doc10" name="pic10" onclick="inputimg('pic10','lacalImag9','preview10','doc10')"></label>
+                        副图一上传
+                        <input type="file" value="" id="doc10" name="cus_pic1" onclick="inputimg('cus_pic1','lacalImag9','preview10','doc10')"></label>
                     </label>
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1">
@@ -213,8 +213,8 @@
                         <img src="" alt="" id="preview11">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
-                        选择图片
-                        <input type="file" value="" id="doc11" name="pic11" onclick="inputimg('pic11','lacalImag9','preview11','doc11')"></label>
+                        副图二上传
+                        <input type="file" value="" id="doc11" name="cus_pic2" onclick="inputimg('cus_pic2','lacalImag9','preview11','doc11')"></label>
                     </label>
                 </div>
                 <div class="formImgOne col-xs-10 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1">
@@ -222,8 +222,8 @@
                         <img src="" alt="" id="preview12">
                     </div>
                     <label class="formLabelOne col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-xs-offset-1">
-                        选择图片
-                        <input type="file" value="" id="doc12" name="pic12" onclick="inputimg('pic12','lacalImag9','preview12','doc12')"></label>
+                        副图三上传
+                        <input type="file" value="" id="doc12" name="cus_pic3" onclick="inputimg('cus_pic3','lacalImag9','preview12','doc12')"></label>
                     </label>
                 </div>
             </div>
