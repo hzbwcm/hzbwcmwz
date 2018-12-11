@@ -53,10 +53,10 @@ class GoodsController extends Controller
             $pic2 = request()->file('pic2');
             $pic3 = request()->file('pic3');
             $pic4 = request()->file('pic4');
-            $info1 = $pic1 ? $pic1->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info2 = $pic2 ? $pic2->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info3 = $pic3 ? $pic3->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info4 = $pic4 ? $pic4->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info1 = $pic1 ? $pic1->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info2 = $pic2 ? $pic2->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info3 = $pic3 ? $pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info4 = $pic4 ? $pic4->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
             $info1 = $info1 ? $info1->getSaveName() : '';
             $info2 = $info2 ? $info2->getSaveName() : '';
             $info3 = $info3 ? $info3->getSaveName() : '';
@@ -100,7 +100,7 @@ class GoodsController extends Controller
             if ($res) {
                 return $this->success('修改成功');
             } else {
-                return $this->error('修改失败');
+                return $this->error('修改失败,请确保图片大小在500K以下，并为正规图片文件');
             }
         }
         return $this->fetch();
@@ -150,10 +150,10 @@ class GoodsController extends Controller
 
                 if($file){
 
-                    $info = $file->validate(['size'=>512000])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card');
+                    $info = $file->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card');
                     if($info==false)
                     {
-                        return $this->error('上传失败,请确保图片在大小在500k以下');
+                        return $this->error('上传失败,请确保图片在大小在500k以下，并为正规图片文件');
                     }
                     $info2 = $info->getSaveName();
                     $info3 = 'card' . "/" . $info2;
@@ -205,7 +205,7 @@ class GoodsController extends Controller
             if ($com_pic) {
                 return $this->success('成功了');
             } else {
-                return $this->error('失败了，请重新上传');
+                return $this->error('失败了，请确保图片大小在500K以下，并为正规图片文件');
             }
         }
 
@@ -510,13 +510,13 @@ class GoodsController extends Controller
             $pic2 = request()->file('pic2');
             $pic3 = request()->file('pic3');
             $pic4 = request()->file('pic4');
-            $info1 = $pic1 ? $pic1->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+            $info1 = $pic1 ? $pic1->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
 
-            $info2 = $pic2 ? $pic2->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+            $info2 = $pic2 ? $pic2->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
 
-            $info3 = $pic3 ? $pic3->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+            $info3 = $pic3 ? $pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
 
-            $info4 = $pic4 ? $pic4->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+            $info4 = $pic4 ? $pic4->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
 
             $info1 = $info1 ? $info1->getSaveName() : '';
             $info2 = $info2 ? $info2->getSaveName() : '';
@@ -546,7 +546,7 @@ class GoodsController extends Controller
             if ($res) {
                 return $this->success('上传成功');
             } else {
-                return $this->error('上传失败,请确保图片在大小在500k以下');
+                return $this->error('上传失败,请确保图片大小在500K以下，并为正规图片文件');
             }
 
         }

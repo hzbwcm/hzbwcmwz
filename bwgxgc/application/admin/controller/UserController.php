@@ -79,7 +79,7 @@ class UserController extends Controller
                     $info = $file->validate(['size'=>512000])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'com_pic');
                     if($info==false)
                     {
-                        return $this->error('上传失败,请确保图片在大小在500k以下');
+                        return $this->error('上传失败,请确保图片大小在500K以下，并为正规图片文件');
                     }
                     $info2 = $info->getSaveName();
                     $info3 = 'com_pic' . "/" . $info2;
@@ -120,7 +120,7 @@ class UserController extends Controller
             if ($com_pic) {
                 return $this->success('成功了');
             } else {
-                return $this->error('失败了，请重新上传');
+                return $this->error('失败了，请确保图片大小在500K以下，并为正规图片文件');
             }
         }
         $pics = Com_pic::where("com_id" , $com_id )->find();
@@ -137,7 +137,7 @@ class UserController extends Controller
         {
             if(request()->file('pic')){
                 $info =request()->file('pic')->validate(['size'=>512000])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'book');
-                if($info==false){return $this->error('上传失败,请确保图片在大小在500k以下');}
+                if($info==false){return $this->error('上传失败,请确保图片大小在500K以下，并为正规图片文件');}
             $info=$info->getSaveName();
             $info = 'book' . "/" . $info;
             }else{
@@ -155,7 +155,7 @@ class UserController extends Controller
             {
                 return $this->success('上传成功');
             }else{
-                return $this->error('上传失败');
+                return $this->error('请确保图片大小在500K以下，并为正规图片文件');
             }
 
 
