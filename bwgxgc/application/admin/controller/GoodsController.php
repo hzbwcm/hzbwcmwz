@@ -492,6 +492,10 @@ class GoodsController extends Controller
     //产品展示管理
     public function progl()
     {
+        $com_id = Session::get('com_id');
+        $info = Prodis::where('com_id', $com_id)->select();
+        $this->assign('info',$info);
+        return $this-> fetch();
         return $this->fetch();
     }
     //产品展示商品上传
@@ -552,5 +556,68 @@ class GoodsController extends Controller
         }
 
         return $this->fetch();
+    }
+    //产品展示修改
+    public function progai($id)
+    {
+        //$com_id = Session::get('com_id');
+        $info = Prodis::where('id', $id)->find();
+        $this->assign('info',$info);
+        if (request()->isPost()) {
+
+            $shuju = request()->param();
+            $pic1 = request()->file('pic1');
+            $pic2 = request()->file('pic2');
+            $pic3 = request()->file('pic3');
+            $pic4 = request()->file('pic4');
+            $info1 = $pic1 ? $pic1->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info2 = $pic2 ? $pic2->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info3 = $pic3 ? $pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info4 = $pic4 ? $pic4->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info1 = $info1 ? $info1->getSaveName() : '';
+            $info2 = $info2 ? $info2->getSaveName() : '';
+            $info3 = $info3 ? $info3->getSaveName() : '';
+            $info4 = $info4 ? $info4->getSaveName() : '';
+            $info4 = $info4 ? 'card' . "/" . $info4 : '';
+            $info3 = $info3 ? 'card' . "/" . $info3 : '';
+            $info1 = $info1 ? 'card' . "/" . $info1 : '';
+            $info2 = $info2 ? 'card' . "/" . $info2 : '';
+            $data = [
+                'com_id' => $shuju['com_id'],
+                'company_name' => $shuju['company_name'],
+                'proname' => $shuju['proname'],
+                'qdl'=> $shuju['qdl'],
+                'pic1' => $info1,
+                'pic2' => $info2,
+                'pic3' => $info3,
+                'pic4' => $info4
+            ];
+            $data = array_filter($data);
+
+            $prodis = new Prodis();
+            $res = $prodis->allowField(true)->where('id',$id)->update($data);
+
+            if ($res) {
+                return $this->success('修改成功');
+            } else {
+                return $this->error('修改失败,请确保图片大小在500K以下，并为正规图片文件');
+            }
+        }
+        return $this->fetch();
+    }
+    //产品展示删除
+    public function  prodel(Request $request)
+    {
+        if ($request->isAjax())
+        {
+            $id = $request->get('id');
+            $res = Prodis::where('id',$id)->find()->delete();
+            if($res)
+            {
+                return ['code'=> 200, 'data'=> '删除成功'];
+            }else{
+                return ['code'=> 0, 'msg'=> '删除失败'];
+            }
+        }
     }
 }

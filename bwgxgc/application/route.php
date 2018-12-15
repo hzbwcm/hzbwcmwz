@@ -83,8 +83,10 @@ Route::group('admin',function (){
     Route::post('user/tjgrxx','admin/user/tjgrxx');
     Route::post('user/qiyezizhi','admin/user/qiyezizhi');
     Route::get('goods/tpgl','admin/goods/tpgl');//贴牌管理
-    Route::get('goods/progl','admin/goods/progl');//贴牌管理
+    Route::get('goods/progl','admin/goods/progl');//产品展示管理
+    Route::any('goods/progai','admin/goods/progai',['method'=>'get|post']);//产品展示修改
     Route::get('goods/tpdel','admin/goods/tpdel');//贴牌删除
+    Route::get('goods/prodel','admin/goods/prodel');//产品展示删除
     Route::any('goods/tpbj','admin/goods/tpbj',['method'=>'get|post']);//贴牌编辑
     Route::any('user/gerentupian','admin/user/gerentupian',['method'=>'get|post']);//个人图片上传
     Route::any('goods/cpzsspsc','admin/goods/cpzsspsc',['method'=>'get|post']);//产品展示上传
