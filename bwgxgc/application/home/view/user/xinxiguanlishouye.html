@@ -26,16 +26,16 @@
 <style type="text/css">
     .pagination li{list-style:none;float:left;margin-left:10px;
         padding:0 10px;
-        background-color:#5a98de;
+        background-color:white;
         border:1px solid #ccc;
         height:26px;
         line-height:26px;
         cursor:pointer;
         color:#fff;
     }
-    .pagination li a{color:white;}
-    .pagination li.active{background-color:white;color:gray;}
-    .pagination li.disabled{background-color:white;color:gray;}
+    .pagination li a{color:#5a98de;}
+    .pagination li.active{background-color:#5a98de;color:#fff;}
+    .pagination li.disabled{background-color: #969696;color:#fff;}
 </style>
 <body>
 <main>
@@ -92,9 +92,7 @@
                 <!--<span>页</span>-->
             <!--</div>-->
             <!--<span class="main-wy">尾页</span>-->
-            <tr>
-                <td colspan="100">{$pagelist}</td>
-            </tr>
+            {$pagelist}
         </div>
     </div>
 </main>
