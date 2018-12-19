@@ -53,10 +53,10 @@ class GoodsController extends Controller
             $pic2 = request()->file('pic2');
             $pic3 = request()->file('pic3');
             $pic4 = request()->file('pic4');
-            $info1 = $pic1 ? $pic1->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info2 = $pic2 ? $pic2->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info3 = $pic3 ? $pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info4 = $pic4 ? $pic4->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info1 = $pic1 ? $pic1->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info2 = $pic2 ? $pic2->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info3 = $pic3 ? $pic3->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
+            $info4 = $pic4 ? $pic4->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
             $info1 = $info1 ? $info1->getSaveName() : '';
             $info2 = $info2 ? $info2->getSaveName() : '';
             $info3 = $info3 ? $info3->getSaveName() : '';
@@ -100,7 +100,7 @@ class GoodsController extends Controller
             if ($res) {
                 return $this->success('修改成功');
             } else {
-                return $this->error('修改失败,请确保图片大小在500K以下，并为正规图片文件');
+                return $this->error('修改失败');
             }
         }
         return $this->fetch();
@@ -150,10 +150,10 @@ class GoodsController extends Controller
 
                 if($file){
 
-                    $info = $file->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card');
+                    $info = $file->validate(['size'=>512000])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card');
                     if($info==false)
                     {
-                        return $this->error('上传失败,请确保图片在大小在500k以下，并为正规图片文件');
+                        return $this->error('上传失败,请确保图片在大小在500k以下');
                     }
                     $info2 = $info->getSaveName();
                     $info3 = 'card' . "/" . $info2;
@@ -205,7 +205,7 @@ class GoodsController extends Controller
             if ($com_pic) {
                 return $this->success('成功了');
             } else {
-                return $this->error('失败了，请确保图片大小在500K以下，并为正规图片文件');
+                return $this->error('失败了，请重新上传');
             }
         }
 
@@ -321,12 +321,16 @@ class GoodsController extends Controller
     public function cpdzgl()
     {
         $com_id = Session('com_id');
-        $cpdzgl = Customgood::where('com_id', $com_id)->select();
-        $this->assign('cpdzgl', $cpdzgl);
+//        $cpdzgl = Customgood::where('com_id', $com_id)->select();
+//        $this->assign('cpdzgl', $cpdzgl);
 
-        $type = new type();
-        $type = $type->select();
-        $this->assign('type', $type);
+        $page = Customgood::where('com_id',$com_id)->order('cus_id desc')->paginate(10);
+        //获得分页的页码列表信息 并传递给模板
+        $pagelist = $page->render();
+
+        $this->assign('pagelist',$pagelist);
+        $this->assign('info',$page);
+
         return $this->fetch();
     }
 
@@ -334,10 +338,7 @@ class GoodsController extends Controller
     public function cpdzxg(Request $request)
     {
         $com_id = Session::get('com_id');
-
         $dataid = $request->param('dataid');
-
-        $customgood = new customgood();
 
         //获取一级元素
         $type = new type();
@@ -356,40 +357,6 @@ class GoodsController extends Controller
         }
         if ($request->isPost()) {
             $shuju = $request->post();
-
-            $cus_pic = request()->file('cus_pic');
-            $data  = $cus_pic  ? $cus_pic->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
-            $cus_pic1 = request()->file('cus_pic1');
-            $data1 = $cus_pic1 ? $cus_pic1->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
-            $cus_pic2 = request()->file('cus_pic2');
-            $data2 = $cus_pic2 ? $cus_pic2->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
-            $cus_pic3 = request()->file('cus_pic3');
-            $data3 = $cus_pic3 ? $cus_pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
-            if($data){
-                $data = $data ? $data->getSaveName() : '';
-                $data = $data ? 'customgood' . "/" .  $data : '';
-
-            }else if($cus_pic){
-                $this->error('主图上传失败' . '：' . $cus_pic->getError(),'admin/goods/cpdzgl');
-            }
-            if($data1){
-                $data1 = $data1 ? $data1->getSaveName() : '';
-                $data1 = $data1 ? 'customgood' . "/" .  $data1 : '';
-            }else if($cus_pic1){
-                $this->error('副图1上传失败' . '：' . $cus_pic1->getError(),'admin/goods/cpdzgl');
-            }
-            if($data2){
-                $data2 = $data2 ? $data2->getSaveName() : '';
-                $data2 = $data2 ? 'customgood' . "/" . $data2 : '';
-            }else if($cus_pic2){
-                $this->error('副图2上传失败' . '：' . $cus_pic2->getError(),'admin/goods/cpdzgl');
-            }
-            if($data3){
-                $data3 = $data3 ? $data3->getSaveName() : '';
-                $data3 = $data3 ? 'customgood' . "/" .  $data3 : '';
-            }else if($cus_pic3){
-                $this->error('副图3上传失败' . '：' . $cus_pic3->getError(),'admin/goods/cpdzgl');
-            }
 
             $rules = [
                 'cus_proname' => 'require',
@@ -416,6 +383,70 @@ class GoodsController extends Controller
                 $this->assign('errorinfo', $errorinfo);
                 return $this->fetch();
             }
+
+            $cus_pic = request()->file('cus_pic');
+            $data  = $cus_pic  ? $cus_pic->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
+            $cus_pic1 = request()->file('cus_pic1');
+            $data1 = $cus_pic1 ? $cus_pic1->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
+            $cus_pic2 = request()->file('cus_pic2');
+            $data2 = $cus_pic2 ? $cus_pic2->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
+            $cus_pic3 = request()->file('cus_pic3');
+            $data3 = $cus_pic3 ? $cus_pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
+            if($data){
+                $data = $data ? $data->getSaveName() : '';
+                $data = $data ? 'customgood' . "/" .  $data : '';
+
+                $pic = Customgood::where('cus_id',$dataid)->value('cus_pic');
+                $filename = ROOT_PATH . 'public/uploads' . '/' . $pic;
+                if(file_exists($filename)){
+                    unlink($filename);
+                }
+
+            }else if($cus_pic){
+                $this->error('主图上传失败' . '：' . $cus_pic->getError(),'admin/goods/cpdzgl');
+            }
+            if($data1){
+                $data1 = $data1 ? $data1->getSaveName() : '';
+                $data1 = $data1 ? 'customgood' . "/" .  $data1 : '';
+
+                $pic1 = Customgood::where('cus_id',$dataid)->value('cus_pic1');
+                $filename1 = ROOT_PATH . 'public/uploads' . '/' . $pic1;
+                if(file_exists($filename1)){
+                    dump($filename1);
+                    die;
+                    unlink($filename1);
+                }
+
+            }else if($cus_pic1){
+                $this->error('副图1上传失败' . '：' . $cus_pic1->getError(),'admin/goods/cpdzgl');
+            }
+            if($data2){
+                $data2 = $data2 ? $data2->getSaveName() : '';
+                $data2 = $data2 ? 'customgood' . "/" . $data2 : '';
+
+                $pic2 = Customgood::where('cus_id',$dataid)->value('cus_pic2');
+                $filename2 = ROOT_PATH . 'public/uploads' . '/' . $pic2;
+                if(file_exists($filename2)){
+                    unlink($filename2);
+                }
+
+            }else if($cus_pic2){
+                $this->error('副图2上传失败' . '：' . $cus_pic2->getError(),'admin/goods/cpdzgl');
+            }
+            if($data3){
+                $data3 = $data3 ? $data3->getSaveName() : '';
+                $data3 = $data3 ? 'customgood' . "/" .  $data3 : '';
+
+                $pic3 = Customgood::where('cus_id',$dataid)->value('cus_pic3');
+                $filename3 = ROOT_PATH . 'public/uploads' . '/' . $pic3;
+                if(file_exists($filename3)){
+                    unlink($filename3);
+                }
+
+            }else if($cus_pic3){
+                $this->error('副图3上传失败' . '：' . $cus_pic3->getError(),'admin/goods/cpdzgl');
+            }
+
             $customgood = new customgood();
 
             $shuju['cus_pic'] = $data;
@@ -451,7 +482,6 @@ class GoodsController extends Controller
 
             $type2 = $type->where('type_pid', $cus_data['type_id'])->select();
             $type2_data = $type->where('type_id', $cus_data['type_xj'])->find();
-
 
             $this->assign('type1', $type1);
             $this->assign('type2', $type2);
@@ -492,10 +522,6 @@ class GoodsController extends Controller
     //产品展示管理
     public function progl()
     {
-        $com_id = Session::get('com_id');
-        $info = Prodis::where('com_id', $com_id)->select();
-        $this->assign('info',$info);
-        return $this-> fetch();
         return $this->fetch();
     }
     //产品展示商品上传
@@ -514,13 +540,13 @@ class GoodsController extends Controller
             $pic2 = request()->file('pic2');
             $pic3 = request()->file('pic3');
             $pic4 = request()->file('pic4');
-            $info1 = $pic1 ? $pic1->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+            $info1 = $pic1 ? $pic1->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
 
-            $info2 = $pic2 ? $pic2->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+            $info2 = $pic2 ? $pic2->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
 
-            $info3 = $pic3 ? $pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+            $info3 = $pic3 ? $pic3->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
 
-            $info4 = $pic4 ? $pic4->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
+            $info4 = $pic4 ? $pic4->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'prodis') : '';
 
             $info1 = $info1 ? $info1->getSaveName() : '';
             $info2 = $info2 ? $info2->getSaveName() : '';
@@ -550,74 +576,11 @@ class GoodsController extends Controller
             if ($res) {
                 return $this->success('上传成功');
             } else {
-                return $this->error('上传失败,请确保图片大小在500K以下，并为正规图片文件');
+                return $this->error('上传失败,请确保图片在大小在500k以下');
             }
 
         }
 
         return $this->fetch();
-    }
-    //产品展示修改
-    public function progai($id)
-    {
-        //$com_id = Session::get('com_id');
-        $info = Prodis::where('id', $id)->find();
-        $this->assign('info',$info);
-        if (request()->isPost()) {
-
-            $shuju = request()->param();
-            $pic1 = request()->file('pic1');
-            $pic2 = request()->file('pic2');
-            $pic3 = request()->file('pic3');
-            $pic4 = request()->file('pic4');
-            $info1 = $pic1 ? $pic1->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info2 = $pic2 ? $pic2->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info3 = $pic3 ? $pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info4 = $pic4 ? $pic4->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif','ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'card') : '';
-            $info1 = $info1 ? $info1->getSaveName() : '';
-            $info2 = $info2 ? $info2->getSaveName() : '';
-            $info3 = $info3 ? $info3->getSaveName() : '';
-            $info4 = $info4 ? $info4->getSaveName() : '';
-            $info4 = $info4 ? 'card' . "/" . $info4 : '';
-            $info3 = $info3 ? 'card' . "/" . $info3 : '';
-            $info1 = $info1 ? 'card' . "/" . $info1 : '';
-            $info2 = $info2 ? 'card' . "/" . $info2 : '';
-            $data = [
-                'com_id' => $shuju['com_id'],
-                'company_name' => $shuju['company_name'],
-                'proname' => $shuju['proname'],
-                'qdl'=> $shuju['qdl'],
-                'pic1' => $info1,
-                'pic2' => $info2,
-                'pic3' => $info3,
-                'pic4' => $info4
-            ];
-            $data = array_filter($data);
-
-            $prodis = new Prodis();
-            $res = $prodis->allowField(true)->where('id',$id)->update($data);
-
-            if ($res) {
-                return $this->success('修改成功');
-            } else {
-                return $this->error('修改失败,请确保图片大小在500K以下，并为正规图片文件');
-            }
-        }
-        return $this->fetch();
-    }
-    //产品展示删除
-    public function  prodel(Request $request)
-    {
-        if ($request->isAjax())
-        {
-            $id = $request->get('id');
-            $res = Prodis::where('id',$id)->find()->delete();
-            if($res)
-            {
-                return ['code'=> 200, 'data'=> '删除成功'];
-            }else{
-                return ['code'=> 0, 'msg'=> '删除失败'];
-            }
-        }
     }
 }

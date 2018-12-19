@@ -21,6 +21,20 @@
 	<![endif]-->
 	<title>图片列表</title>
 </head>
+<style type="text/css">
+	.pagination li{list-style:none;float:left;margin-left:10px;
+		padding:0 10px;
+		background-color:#5a98de;
+		border:1px solid #ccc;
+		height:26px;
+		line-height:26px;
+		cursor:pointer;
+		color:#fff;
+	}
+	.pagination li a{color:white;}
+	.pagination li.active{background-color:white;color:gray;}
+	.pagination li.disabled{background-color:white;color:gray;}
+</style>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> 图片列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
@@ -36,8 +50,6 @@
 			<tr class="text-c">
 				<th width="40"><input name="" type="checkbox" value=""></th>
 				<th width="80">定制产品ID</th>
-				<th width="100">类型一</th>
-				<th width="100">类型二</th>
 				<th width="100">产品名称</th>
 				<th width="100">产品长度</th>
 				<th width="100">产品宽度</th>
@@ -58,21 +70,10 @@
 			</tr>
 			</thead>
 			<tbody>
-			{volist name='cpdzgl' id='data'}
+			{volist name='info' id='data'}
 			<tr class="text-c">
 				<td><input name="" type="checkbox" value=""></td>
 				<td>{$data.cus_id}</td>
-				{volist name='type' id='ty'}
-
-				{eq name='$ty.type_id' value='$data.type_id'}
-				<td>{$ty.type_name}</td>
-				{/eq}
-
-				{eq name='$ty.type_id' value='$data.type_xj'}
-				<td>{$ty.type_name}</td>
-				{/eq}
-
-				{/volist}
 				<td>{$data.cus_proname}</td>
 				<td>{$data.cus_length}</td>
 				<td>{$data.cus_width}</td>
@@ -98,6 +99,9 @@
 				</td>
 			</tr>
 			{/volist}
+			<tr>
+				<td colspan="100">{$pagelist}</td>
+			</tr>
 			</tbody>
 		</table>
 	</div>
@@ -114,14 +118,14 @@
 <script type="text/javascript" src="{:config('admin_lib')}/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="{:config('admin_lib')}/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-    $('.table-sort').dataTable({
-        "aaSorting": [[ 1, "desc" ]],//默认第几个排序
-        "bStateSave": true,//状态保存
-        "aoColumnDefs": [
-            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-            {"orderable":false,"aTargets":[0,8]}// 制定列不参与排序
-        ]
-    });
+    // $('.table-sort').dataTable({
+    //     "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+    //     "bStateSave": true,//状态保存
+    //     "aoColumnDefs": [
+    //         //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+    //         {"orderable":false,"aTargets":[0,8]}// 制定列不参与排序
+    //     ]
+    // });
 
     /*图片-添加*/
     function picture_add(title,url){
