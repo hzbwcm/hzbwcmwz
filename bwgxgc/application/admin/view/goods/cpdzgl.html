@@ -24,16 +24,16 @@
 <style type="text/css">
 	.pagination li{list-style:none;float:left;margin-left:10px;
 		padding:0 10px;
-		background-color:#5a98de;
+		background-color:white;
 		border:1px solid #ccc;
 		height:26px;
 		line-height:26px;
 		cursor:pointer;
 		color:#fff;
 	}
-	.pagination li a{color:white;}
-	.pagination li.active{background-color:white;color:gray;}
-	.pagination li.disabled{background-color:white;color:gray;}
+	.pagination li a{color:#5a98de;}
+	.pagination li.active{background-color:#5a98de;color:#fff;}
+	.pagination li.disabled{background-color: #969696;color:#fff;}
 </style>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> 图片列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
@@ -99,11 +99,11 @@
 				</td>
 			</tr>
 			{/volist}
-			<tr>
-				<td colspan="100">{$pagelist}</td>
-			</tr>
 			</tbody>
 		</table>
+		<div style="margin-top: 30px;">
+			{$pagelist}
+		</div>
 	</div>
 </div>
 

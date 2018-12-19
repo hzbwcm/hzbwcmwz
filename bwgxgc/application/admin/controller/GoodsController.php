@@ -470,7 +470,7 @@ class GoodsController extends Controller
                 ];
                 Db::table('ope_log')->insert($data);
 
-                $this->success('信息更新成功!', 'admin/goods/cpdzgl');  //TODO 更新成功页面跳转
+                $this->success('信息更新成功!', '/admin/goods/cpdzxg/dataid/'.$dataid.'.html');  //TODO 更新成功页面跳转
             } else {
                 $this->error('信息更新失败!');
             }

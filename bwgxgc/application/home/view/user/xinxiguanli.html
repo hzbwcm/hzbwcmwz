@@ -40,10 +40,18 @@
                     {$type_data1.type_name}
                 </div>
                 <div class="select-div">
-                    <select name="type_xj" id="" class="select-box" >
-                        <option value="{$type_data2.type_id}" class="select-option">{$type_data2.type_name}</option>
+                    <select  name="type_xj" id="" class="select-box" >
+                        {eq name="$type_data2.type_name" value="$MZ"}
+                        <option value="{$type_data2.type_id}" class="select-option" selected>请选择</option>
+                        {else/}
+                        <option value="-1" class="select-option">请选择</option>
+                        <option value="{$type_data2.type_id}" class="select-option" selected>{$type_data2.type_name}</option>
+                        {/eq}
                         {volist name='type_data22' id='data22'}
+                        {eq name='$data22.type_name' value='$type_data2.type_name'}
+                        {else/}
                         <option value="{$data22.type_id}" class="select-option">{$data22.type_name}</option>
+                        {/eq}
                         {/volist}
                     </select>
                 </div>

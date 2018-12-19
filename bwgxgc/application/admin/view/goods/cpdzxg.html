@@ -48,7 +48,7 @@
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="type_id" id="type_id" onchange="get_xj(this)">
-                            <option value="">--请选择--</option>
+                            <option value="">--请选择类别一</option>
                             {volist name='type_data1' id='ty1'}
                             {eq name='$ty1.type_id' value='$type1.type_id'}
                             <option value="{$ty1.type_id}" selected>
@@ -66,7 +66,7 @@
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="type_xj" id="type_xj">
-                            <option value="">--请选择--</option>
+                            <option value="">--请选择类别二</option>
                             {volist name='type2' id='t2'}
                             {eq name='$t2.type_id' value='$type2_data.type_id'}
                             <option value="{$t2.type_id}" selected>{$t2.type_name}</option>
@@ -314,7 +314,7 @@
                 function get_xj(lay) {
                     var type_id=$(lay).val();
                     if (type_id == '') {
-                        var html = '<option value="" >--请选择--</option>';
+                        var html = '<option value="" >--请选择类别二</option>';
                         $('#type_xj').html(html);
                         return false;
                     }
@@ -328,7 +328,7 @@
                             if(res.code == 200){
                                 console.log(res.data)
                                 var type_data = res.data;
-                                var html = '<option value="" >--请选择--</option>';
+                                var html = '<option value="" >--请选择类别二</option>';
                                 $.each(type_data, function(k,v){
                                     html = html + '<option value="'+v.type_id+'" >'+v.type_name+'</option>';
                                 })
