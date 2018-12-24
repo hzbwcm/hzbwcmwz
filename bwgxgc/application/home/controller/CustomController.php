@@ -30,18 +30,19 @@ class CustomController extends Controller
         Session::set('Zid',$Zid);
         $Dname = $request->param('dname')?$request->param('dname'):Session('Dname');
         Session::set('Dname',$Dname);
-        if($Zid===-1){
+        if($Zid==-1){
             session('Zid',null);
-        }
-        if($Dname===-1){
-            session('Dname',null);
-            dump($Dname);
-        }
+            $Zid = null;
 
+        }
+        if($Dname==-1){
+            session('Dname',null);
+            $Dname = null;
+        }
+        dump($Zid);
+        dump($Dname);
         if(!empty($Zid)){
             if(!empty($Dname)){
-//                $Zid = Session('Zid');
-//                $Dname = Session('Dname');
                 $page = Customgood::where('type_xj',$Zid)->where('cus_place','like','%'.$Dname.'%')->order('cus_id desc')->paginate(6);
                 if(!empty($page)){
                     for($i=mb_strlen($Dname);$i>=0;){
