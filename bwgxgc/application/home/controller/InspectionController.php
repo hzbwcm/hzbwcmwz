@@ -16,7 +16,8 @@ class InspectionController extends Controller
     {   //地区
         $info = Area::where('Pid',0)->select();
         $type = Type::where('type_pid',0)->select();
-        $com = Company_info::where('role_id',30)->select();
+        $com = Company_info::where('role_id',30)->order('com_id desc')->paginate(5);
+        $pagelist = $com->render();
         //$com1 = Company_info::where('role_id',30)->column('com_id');
         for($x=0;$x<count($com);$x++)
         {
@@ -30,6 +31,7 @@ class InspectionController extends Controller
             'info'  => $info,
             'type' => $type,
             'com' => $com,
+            'pagelist'=>$pagelist
 
         ]);
         return $this->fetch();

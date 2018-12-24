@@ -16,6 +16,20 @@
     <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+<style type="text/css">
+    .pagination li{list-style:none;float:left;margin-left:10px;
+        padding:0 10px;
+        background-color:white;
+        border:1px solid #ccc;
+        height:26px;
+        line-height:26px;
+        cursor:pointer;
+        color:#fff;
+    }
+    .pagination li a{color: #a260de;}
+    .pagination li.active{background-color:#a260de;color:#fff;}
+    .pagination li.disabled{background-color: #969696;color:#fff;}
+</style>
 <body>
 <header class="header-box">
     <div class="header-centre">
@@ -209,24 +223,27 @@
                 {/volist}
             </div>
             <!--分页-->
-            <div class="main-fenye-box">
-                <span class="main-sy">首页</span>
-                <div class="main-syy">上一页</div>
-                <ul>
-                    <li class="right-bottom-click">1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                </ul>
-                <div class="main-xyy">下一页</div>
-                <div class="main-tiaozhuan">
-                    <span class="tiaozhuan">跳转</span>
-                    <input type="text" value="">
-                    <span>页</span>
-                </div>
-                <span class="main-wy">尾页</span>
+            <!--<div class="main-fenye-box">-->
+                <!--<span class="main-sy">首页</span>-->
+                <!--<div class="main-syy">上一页</div>-->
+                <!--<ul>-->
+                    <!--<li class="right-bottom-click">1</li>-->
+                    <!--<li>2</li>-->
+                    <!--<li>3</li>-->
+                    <!--<li>4</li>-->
+                    <!--<li>5</li>-->
+                    <!--<li>6</li>-->
+                <!--</ul>-->
+                <!--<div class="main-xyy">下一页</div>-->
+                <!--<div class="main-tiaozhuan">-->
+                    <!--<span class="tiaozhuan">跳转</span>-->
+                    <!--<input type="text" value="">-->
+                    <!--<span>页</span>-->
+                <!--</div>-->
+                <!--<span class="main-wy">尾页</span>-->
+            <!--</div>-->
+            <div style="margin-top: 30px;">
+                {$pagelist}
             </div>
         </div>
     </div>

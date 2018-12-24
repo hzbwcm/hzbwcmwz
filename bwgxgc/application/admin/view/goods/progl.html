@@ -22,6 +22,20 @@
     <![endif]-->
     <title>产品展示列表</title>
 </head>
+<style type="text/css">
+    .pagination li{list-style:none;float:left;margin-left:10px;
+        padding:0 10px;
+        background-color:white;
+        border:1px solid #ccc;
+        height:26px;
+        line-height:26px;
+        cursor:pointer;
+        color:#fff;
+    }
+    .pagination li a{color:#5a98de;}
+    .pagination li.active{background-color:#5a98de;color:#fff;}
+    .pagination li.disabled{background-color: #969696;color:#fff;}
+</style>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品展示管理 <span
         class="c-gray en">&gt;</span> 产品展示列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
@@ -65,6 +79,9 @@
             </tbody>
 
         </table>
+        <div style="margin-top: 30px;">
+            {$pagelist}
+        </div>
     </div>
 </div>
 

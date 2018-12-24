@@ -20,8 +20,10 @@ class GoodsController extends Controller
     public function tpgl()
     {
         $com_id = Session::get('com_id');
-        $info = Card::where('com_id', $com_id)->select();
+        $info = Card::where('com_id', $com_id)->order('id desc')->paginate(10);
+        $pagelist = $info->render();
         $this->assign('info',$info);
+        $this->assign('pagelist',$pagelist);
         return $this-> fetch();
     }
 
@@ -523,10 +525,11 @@ class GoodsController extends Controller
     public function progl()
     {
         $com_id = Session::get('com_id');
-        $info = Prodis::where('com_id', $com_id)->select();
+        $info = Prodis::where('com_id', $com_id)->order('id desc')->paginate(10);
         $this->assign('info',$info);
+        $pagelist = $info->render();
+        $this->assign('pagelist',$pagelist);
         return $this-> fetch();
-        return $this->fetch();
     }
     //产品展示商品上传
     public function cpzsspsc(Request $request)

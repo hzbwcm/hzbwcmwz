@@ -62,15 +62,14 @@
                 <img data-original="{:config('home_img')}/a0.png" alt="">
             </a>
         </div>
-
         <div class="search-c-b">
-            <form action="">
+            <form action="{:url('home/index/tpsousuo')}" method="get" name="form">
                 <div class="search">
                     <div class="search-fram">
                         <div class="s-f-i-i">
                             <img data-original="{:config('home_img')}/aa.png" alt="">
                         </div>
-                        <input type="text" placeholder="" value="">
+                        <input type="text" placeholder="" value="" name="keywords">
                     </div>
                     <button class="search-button" style="border: none"><i class="iconfont icon-fangdajing"></i></button>
                 </div>

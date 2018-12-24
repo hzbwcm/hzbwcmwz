@@ -57,7 +57,9 @@ class StickacardController extends Controller
         $tid = $yped;
         $info = Type::where('type_pid',0)->select();
         $tinfo = Type::where('type_pid',$tid)->select();
-        $cinfo = Card::where('type',$tname)->select();
+        $cinfo = Card::where('type',$tname)->order('id desc')->paginate(1,false,['query'=>['ypeame'=>$tname,'yped'=>$tid]]);
+        $pagelist = $cinfo->render();
+        $this->assign('pagelist',$pagelist);
         $type = Type::select();
 
         $this->assign([

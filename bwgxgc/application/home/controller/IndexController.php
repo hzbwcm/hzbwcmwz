@@ -8,6 +8,7 @@ use app\home\model\Type;
 use think\Controller;
 use app\home\model\Area;
 use app\home\model\Company_info;
+use think\Request;
 use think\Session;
 class IndexController extends Controller
 {
@@ -47,11 +48,7 @@ class IndexController extends Controller
 
         return $this->fetch();
     }
-
-
-
-
-
+    
     //前台页脚
     public function foot_base()
     {
@@ -75,10 +72,106 @@ class IndexController extends Controller
     {
         return $this->fetch();
     }
-    //收藏夹
-    public function sousuo()
-    {
-        return $this->fetch();
-    }
 
+
+    //贴牌搜索
+    public function tpsousuo(Request $request)
+    {
+        if($request->isGet())
+        {
+            $kwds = $request->get('keywords');
+            Session::set('key',$kwds);
+            $ks=Session::get('key');
+           if($kwds){
+               if($card = Card::where('type','like','%'.$ks.'%')
+                   ->whereOr('carname','like','%'.$ks.'%')
+                   ->whereOr('company_name','like','%'.$ks.'%')
+                   ->select())
+               {
+                   $this->assign([ 'card'=>$card,
+                                    'ks'=>$ks
+                           ]
+
+                   );
+               }else{
+                   return $this->redirect('{:url(\'home/index/gcsousuo\',[\'keywords\'=>$ks])}');
+               }
+
+
+           }else{
+               return $this->error('请输入查询条件');
+           }
+
+
+        }
+
+        return $this->fetch();
+
+    }
+    //定制搜索
+    public function dzsousuo(Request $request)
+    {
+        if($request->isGet())
+        {
+            $kwds = $request->get('keywords');
+            Session::set('key',$kwds);
+            $ks=Session::get('key');
+            if( $custom = Customgood::where('cus_proname','like','%'.$ks.'%')->select()){
+                $this->assign(
+                    [
+                        'custom'=>$custom,'ks'=>$ks]);
+            }else{
+                return $this->redirect('{:url(\'home/index/gcsousuo\',[\'keywords\'=>$ks])}');
+            }
+
+        }
+
+        return $this->fetch();
+
+    }
+    //工厂搜索
+    public function gcsousuo(Request $request)
+    {
+        if($request->isGet())
+        {
+            $kwds = $request->get('keywords');
+            Session::set('key',$kwds);
+            $ks=Session::get('key');
+
+            if(
+                $com = Company_info::where('company_name','like','%'.$ks.'%')
+                ->whereOr('address','like','%'.$ks.'%')
+                ->select()
+            )
+            {
+
+                for($x=0;$x<count($com);$x++)
+                {
+
+                    $pics = Com_pic::where('com_id',$com[$x]['com_id'])->find();
+                    $com[$x]['pic6'] =$pics['pic6'];
+                    $com[$x]['pic5'] =$pics['pic5'];
+                    $com[$x]['pic9'] =$pics['pic9'];
+                    $com[$x]['pic8'] =$pics['pic8'];
+                }
+                $this->assign(['com'=>$com,
+
+                        'ks'=>$ks
+                    ]
+                );
+
+            }else{
+                return $this->error('暂无相关数据');
+        }
+
+
+
+
+
+
+        }
+
+        return $this->fetch();
+
+    }
 }
