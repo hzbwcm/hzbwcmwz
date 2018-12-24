@@ -39,8 +39,6 @@ class CustomController extends Controller
             session('Dname',null);
             $Dname = null;
         }
-        dump($Zid);
-        dump($Dname);
         if(!empty($Zid)){
             if(!empty($Dname)){
                 $page = Customgood::where('type_xj',$Zid)->where('cus_place','like','%'.$Dname.'%')->order('cus_id desc')->paginate(6);
@@ -77,13 +75,18 @@ class CustomController extends Controller
             }
         }
 
-//        $customgood = new customgood();
-//        $data = $customgood->select();
+        $type1 = Type::where('type_id',$Zid)->find();
+        $this->assign('type1',$type1);
+
         //获得分页的页码列表信息 并传递给模板
         $pagelist = $page->render();
         $this->assign('pagelist',$pagelist);
         $this->assign('data',$page);
 
+        $Dna = '';
+        $this->assign('Dna',$Dna);
+        $this->assign('Zid',$Zid);
+        $this->assign('Dname',$Dname);
 
 
 

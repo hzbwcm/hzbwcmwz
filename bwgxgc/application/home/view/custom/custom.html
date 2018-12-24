@@ -191,6 +191,13 @@
         <div class="main-left-title">产品定制</div>
         <div class="main-bootstrap">
             <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" href="{:url('home/custom/custom',['zid'=>'-1'])}">
+                            全部
+                        </a>
+                    </div>
+                </div>
                 {volist name='type' id='v'}
                 {eq name="v.type_pid" value="0" }
                 <div class="accordion-group">
@@ -202,12 +209,30 @@
                         </a>
                     </div>
 
-                    <div id={$v.type_id} class="accordion-body collapse in">
-                        <div class="accordion-inner left-click">
-                            <a href="{:url('home/custom/custom',['zid'=>'-1'])}">
-                                全部
+                    {eq name='$type1.type_pid' value='$v.type_id'}
+                    <div id={$v.type_id} class="accordion-body in collapse show">
+
+
+                        {volist name='type' id='v1'}
+                        {eq name="v1.type_pid" value="$v.type_id"}
+                            {eq name='$v1.type_id' value='$Zid'}
+                            <div class="accordion-inner left-click">
+                                <a href="{:url('home/custom/custom',['zid'=>$v1.type_id])}">
+                                    {$v1.type_name}
+                                </a>
+                            </div>
+                            {else/}
+                        <div class="accordion-inner">
+                            <a href="{:url('home/custom/custom',['zid'=>$v1.type_id])}">
+                                {$v1.type_name}
                             </a>
                         </div>
+                            {/eq}
+                        {/eq}
+                        {/volist}
+                    </div>
+                    {else/}
+                    <div id={$v.type_id} class="accordion-body collapse in">
                         {volist name='type' id='v1'}
                         {eq name="v1.type_pid" value="$v.type_id"}
                         <div class="accordion-inner">
@@ -219,6 +244,8 @@
                         {/eq}
                         {/volist}
                     </div>
+                    {/eq}
+
                 </div>
                 {/eq}
                 {/volist}
@@ -232,18 +259,33 @@
                 <ul>
                     {volist name='info' id='v'}
                     {eq name="$v.Id" value="0"}
-                    <li class="right-click">
-                        <a href="{:url('home/custom/custom',['dname'=>'-1'])}">
-                            全部
-                        </a>
-                    </li>
+                        {eq name='$Dname' value='$Dna'}
+                        <li class="right-click">
+                            <a href="{:url('home/custom/custom',['dname'=>'-1'])}">
+                                全部
+                            </a>
+                        </li>
+                        {else/}
+                        <li>
+                            <a href="{:url('home/custom/custom',['dname'=>'-1'])}">
+                                全部
+                            </a>
+                        </li>
+                        {/eq}
                     {else/}
-                    <li>
-                        <a href="{:url('home/custom/custom',['dname'=>$v.Name])}">
-                            {$v.Name}
-                        </a>
-
-                    </li>
+                        {eq name='$v.Name' value='$Dname'}
+                        <li class="right-click">
+                            <a href="{:url('home/custom/custom',['dname'=>$v.Name])}">
+                                {$v.Name}
+                            </a>
+                        </li>
+                        {else/}
+                        <li>
+                            <a href="{:url('home/custom/custom',['dname'=>$v.Name])}">
+                                {$v.Name}
+                            </a>
+                        </li>
+                        {/eq}
                     {/eq}
                     {/volist}
                 </ul>
