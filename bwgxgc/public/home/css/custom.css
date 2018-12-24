@@ -586,7 +586,8 @@ main {
         background: #ebebeb;
         color: #555555; }
         main .main-left .accordion-group .accordion-inner a {
-          color: #555555; }
+          color: #555555;
+          text-decoration: none; }
       main .main-left .accordion-group .left-click {
         color: #8c3ab8;
         font-weight: bold; }
@@ -629,7 +630,8 @@ main {
             border-radius: 3px;
             cursor: pointer; }
             main .main-right .main-right-top .main-top-sx ul li a, main .main-right .main-right-top .main-top-qy ul li a, main .main-right .main-right-top .main-top-qx ul li a {
-              color: #555555; }
+              color: #555555;
+              text-decoration: none; }
           main .main-right .main-right-top .main-top-sx ul .right-click, main .main-right .main-right-top .main-top-qy ul .right-click, main .main-right .main-right-top .main-top-qx ul .right-click {
             background: #a560c8;
             color: #fff; }
@@ -752,7 +754,6 @@ main {
         float: left;
         font-size: 12px;
         margin-right: 14px;
-        padding-top: 3px;
         cursor: pointer; }
       main .main-right .main-fenye-box .right-bottom-click {
         font-weight: bold;
