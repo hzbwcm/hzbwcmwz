@@ -16,15 +16,21 @@ use app\home\model\Type;
 
 class CustomController extends Controller
 {
-
     public function Custom(Request $request)
     {
+
         $info = Area::where('Pid',0)->select();
         $type = Type::select();
         $this->assign([
             'info'  => $info,
             'type' => $type
         ]);
+
+        $bzid = $request->param('bzid') ? $request->param('bzid') : null;
+        if(empty($bzid)){
+            session('Zid',null);
+            session('Dname',null);
+        }
 
         $Zid = $request->param('zid')?$request->param('zid'):Session('Zid');
         Session::set('Zid',$Zid);
@@ -88,10 +94,8 @@ class CustomController extends Controller
         $this->assign('Zid',$Zid);
         $this->assign('Dname',$Dname);
 
-
-
-
         return $this->fetch();
+
     }
 
     public function Customizing(Request $request)

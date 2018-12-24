@@ -193,7 +193,7 @@
             <div class="accordion" id="accordion2">
                 <div class="accordion-group">
                     <div class="accordion-heading">
-                        <a class="accordion-toggle" href="{:url('home/custom/custom',['zid'=>'-1'])}">
+                        <a class="accordion-toggle" href="{:url('home/custom/custom',['zid'=>'-1','bzid'=>'bz'])}">
                             全部
                         </a>
                     </div>
@@ -217,13 +217,13 @@
                         {eq name="v1.type_pid" value="$v.type_id"}
                             {eq name='$v1.type_id' value='$Zid'}
                             <div class="accordion-inner left-click">
-                                <a href="{:url('home/custom/custom',['zid'=>$v1.type_id])}">
+                                <a href="{:url('home/custom/custom',['zid'=>$v1.type_id,'bzid'=>'bz'])}">
                                     {$v1.type_name}
                                 </a>
                             </div>
                             {else/}
                         <div class="accordion-inner">
-                            <a href="{:url('home/custom/custom',['zid'=>$v1.type_id])}">
+                            <a href="{:url('home/custom/custom',['zid'=>$v1.type_id,'bzid'=>'bz'])}">
                                 {$v1.type_name}
                             </a>
                         </div>
@@ -236,7 +236,7 @@
                         {volist name='type' id='v1'}
                         {eq name="v1.type_pid" value="$v.type_id"}
                         <div class="accordion-inner">
-                            <a href="{:url('home/custom/custom',['zid'=>$v1.type_id])}">
+                            <a href="{:url('home/custom/custom',['zid'=>$v1.type_id,'bzid'=>'bz'])}">
                                 {$v1.type_name}
                             </a>
 
@@ -261,13 +261,13 @@
                     {eq name="$v.Id" value="0"}
                         {eq name='$Dname' value='$Dna'}
                         <li class="right-click">
-                            <a href="{:url('home/custom/custom',['dname'=>'-1'])}">
+                            <a href="{:url('home/custom/custom',['dname'=>'-1','bzid'=>'bz'])}">
                                 全部
                             </a>
                         </li>
                         {else/}
                         <li>
-                            <a href="{:url('home/custom/custom',['dname'=>'-1'])}">
+                            <a href="{:url('home/custom/custom',['dname'=>'-1','bzid'=>'bz'])}">
                                 全部
                             </a>
                         </li>
@@ -275,13 +275,13 @@
                     {else/}
                         {eq name='$v.Name' value='$Dname'}
                         <li class="right-click">
-                            <a href="{:url('home/custom/custom',['dname'=>$v.Name])}">
+                            <a href="{:url('home/custom/custom',['dname'=>$v.Name,'bzid'=>'bz'])}">
                                 {$v.Name}
                             </a>
                         </li>
                         {else/}
                         <li>
-                            <a href="{:url('home/custom/custom',['dname'=>$v.Name])}">
+                            <a href="{:url('home/custom/custom',['dname'=>$v.Name,'bzid'=>'bz'])}">
                                 {$v.Name}
                             </a>
                         </li>
