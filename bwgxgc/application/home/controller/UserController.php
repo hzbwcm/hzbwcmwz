@@ -214,9 +214,6 @@ class UserController extends Controller
         $this->assign('info',$info);
 
         return $this->fetch();
-
-
-        return $this->fetch();
     }
 
     //发布信息get_type_info

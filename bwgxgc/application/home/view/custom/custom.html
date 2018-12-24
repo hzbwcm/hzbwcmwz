@@ -18,6 +18,20 @@
     <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+<style type="text/css">
+    .pagination li{list-style:none;float:left;margin-left:10px;
+        padding:0 10px;
+        background-color:white;
+        border:1px solid #ccc;
+        height:26px;
+        line-height:26px;
+        cursor:pointer;
+        color:#fff;
+    }
+    .pagination li a{color:#5a98de;}
+    .pagination li.active{background-color:#5a98de;color:#fff;}
+    .pagination li.disabled{background-color: #969696;color:#fff;}
+</style>
 <body>
 <header class="header-box">
     <div class="header-centre">
@@ -190,12 +204,17 @@
 
                     <div id={$v.type_id} class="accordion-body collapse in">
                         <div class="accordion-inner left-click">
-                            全部
+                            <a href="{:url('home/custom/custom',['zid'=>'-1'])}">
+                                全部
+                            </a>
                         </div>
                         {volist name='type' id='v1'}
                         {eq name="v1.type_pid" value="$v.type_id"}
                         <div class="accordion-inner">
-                            {$v1.type_name}
+                            <a href="{:url('home/custom/custom',['zid'=>$v1.type_id])}">
+                                {$v1.type_name}
+                            </a>
+
                         </div>
                         {/eq}
                         {/volist}
@@ -211,9 +230,21 @@
             <div class="main-top-qy">
                 <span>地区：</span>
                 <ul>
-                    <li class="right-click">全部</li>
                     {volist name='info' id='v'}
-                    <li>{$v.Name}</li>
+                    {eq name="$v.Id" value="0"}
+                    <li class="right-click">
+                        <a href="{:url('home/custom/custom',['dname'=>'-1'])}">
+                            全部
+                        </a>
+                    </li>
+                    {else/}
+                    <li>
+                        <a href="{:url('home/custom/custom',['dname'=>$v.Name])}">
+                            {$v.Name}
+                        </a>
+
+                    </li>
+                    {/eq}
                     {/volist}
                 </ul>
             </div>
@@ -237,9 +268,9 @@
                             <span>{$da.cus_proname}</span>
                         </div>
                         <div class="coontent-cplb-box">
-                            {volist name='type2' id='ty2'}
-                            {eq name='$ty2.type_id' value='$da.type_xj'}
-                            <div class="cplb">{$ty2.type_name}</div>
+                            {volist name='type' id='ty'}
+                            {eq name='$ty.type_id' value='$da.type_xj'}
+                            <div class="cplb">{$ty.type_name}</div>
                             {else/}
                             <div class="cplb"></div>
                             {/eq}
@@ -261,18 +292,7 @@
         </div>
         <!--分页-->
         <div class="main-fenye-box">
-            <span class="main-sy">首页</span>
-            <div class="main-syy">上一页</div>
-            <ul>
-                <li class="right-bottom-click">1</li>
-            </ul>
-            <div class="main-xyy">下一页</div>
-            <div class="main-tiaozhuan">
-                <span class="tiaozhuan">跳转</span>
-                <input type="text" value="">
-                <span>页</span>
-            </div>
-            <span class="main-wy">尾页</span>
+            {$pagelist}
         </div>
     </div>
 </main>
