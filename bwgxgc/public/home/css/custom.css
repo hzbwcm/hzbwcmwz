@@ -611,7 +611,6 @@ main {
         main .main-right .main-right-top .main-top-sx span, main .main-right .main-right-top .main-top-qy span, main .main-right .main-right-top .main-top-qx span {
           display: block;
           width: 60px;
-          height: 100%;
           font-size: 16px;
           color: #999999;
           padding-top: 5px;
