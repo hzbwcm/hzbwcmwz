@@ -584,11 +584,14 @@ main {
         padding-bottom: 10px;
         font-size: 14px;
         background: #ebebeb;
-        color: #555555;
-        cursor: pointer; }
+        color: #555555; }
+        main .main-left .accordion-group .accordion-inner a {
+          color: #555555; }
       main .main-left .accordion-group .left-click {
         color: #8c3ab8;
         font-weight: bold; }
+        main .main-left .accordion-group .left-click a {
+          color: #8c3ab8; }
   main .main-right {
     width: 968px;
     height: auto;
@@ -625,9 +628,13 @@ main {
             padding: 5px;
             border-radius: 3px;
             cursor: pointer; }
+            main .main-right .main-right-top .main-top-sx ul li a, main .main-right .main-right-top .main-top-qy ul li a, main .main-right .main-right-top .main-top-qx ul li a {
+              color: #555555; }
           main .main-right .main-right-top .main-top-sx ul .right-click, main .main-right .main-right-top .main-top-qy ul .right-click, main .main-right .main-right-top .main-top-qx ul .right-click {
             background: #a560c8;
             color: #fff; }
+            main .main-right .main-right-top .main-top-sx ul .right-click a, main .main-right .main-right-top .main-top-qy ul .right-click a, main .main-right .main-right-top .main-top-qx ul .right-click a {
+              color: #fff; }
     main .main-right .main-right-bottom {
       margin-bottom: 76px; }
       main .main-right .main-right-bottom .main-bottom-title {
