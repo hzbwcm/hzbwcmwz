@@ -60,16 +60,15 @@ class UserController extends Controller
             $cus_pic3 = request()->file('cus_pic3');
             $data3 = $cus_pic3 ? $cus_pic3->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
             if($data){
-
                 $data = $data ? $data->getSaveName() : '';
                 $data = $data ? 'customgood' . "/" .  $data : '';
-
                 $pic = Customgood::where('cus_id',$id)->value('cus_pic');
-                $filename = ROOT_PATH . 'public/uploads' . '/' . $pic;
-                if(file_exists($filename)){
-                    unlink($filename);
+                if(!empty($pic)){
+                    $filename = ROOT_PATH . 'public/uploads' . '/' . $pic;
+                    if(file_exists($filename)){
+                        unlink($filename);
+                    }
                 }
-
             }else if($cus_pic){
                 $this->error('主图上传失败' . '：' . $cus_pic->getError(),'user/fabuxinxi');
             }
@@ -77,39 +76,41 @@ class UserController extends Controller
             if($data1){
                 $data1 = $data1 ? $data1->getSaveName() : '';
                 $data1 = $data1 ? 'customgood' . "/" .  $data1 : '';
-
                 $pic1 = Customgood::where('cus_id',$id)->value('cus_pic1');
-                $filename1 = ROOT_PATH . 'public/uploads' . '/' . $pic1;
-                if(file_exists($filename1)){
-                    unlink($filename1);
+                if(!empty($pic1)){
+                    $filename1 = ROOT_PATH . 'public/uploads' . '/' . $pic1;
+                    if(file_exists($filename1)){
+                        unlink($filename1);
+                    }
                 }
-
             }else if($cus_pic1){
                 $this->error('副图1上传失败' . '：' . $cus_pic1->getError(),'user/fabuxinxi');
             }
+
             if($data2){
                 $data2 = $data2 ? $data2->getSaveName() : '';
                 $data2 = $data2 ? 'customgood' . "/" . $data2 : '';
-
                 $pic2 = Customgood::where('cus_id',$id)->value('cus_pic2');
-                $filename2 = ROOT_PATH . 'public/uploads' . '/' . $pic2;
-                if(file_exists($filename2)){
-                    unlink($filename2);
+                if(!empty($pic2)){
+                    $filename2 = ROOT_PATH . 'public/uploads' . '/' . $pic2;
+                    if(file_exists($filename2)){
+                        unlink($filename2);
+                    }
                 }
-
             }else if($cus_pic2){
                 $this->error('副图2上传失败' . '：' . $cus_pic2->getError(),'user/fabuxinxi');
             }
+
             if($data3){
                 $data3 = $data3 ? $data3->getSaveName() : '';
                 $data3 = $data3 ? 'customgood' . "/" .  $data3 : '';
-
                 $pic3 = Customgood::where('cus_id',$id)->value('cus_pic3');
-                $filename3 = ROOT_PATH . 'public/uploads' . '/' . $pic3;
-                if(file_exists($filename3)){
-                    unlink($filename3);
+                if(!empty($pic3)){
+                    $filename3 = ROOT_PATH . 'public/uploads' . '/' . $pic3;
+                    if(file_exists($filename3)){
+                        unlink($filename3);
+                    }
                 }
-
             }else if($cus_pic3){
                 $this->error('副图3上传失败' . '：' . $cus_pic3->getError(),'user/fabuxinxi');
             }
@@ -268,6 +269,7 @@ class UserController extends Controller
                 $data1 = $data1 ? $data1->getSaveName() : '';
                 $data1 = $data1 ? 'customgood' . "/" .  $data1 : '';
             }else if($cus_pic1){
+                
                 $this->error('副图一上传失败' . '：' . $cus_pic1->getError(),'user/fabuxinxi');
             }
             if($data2){
