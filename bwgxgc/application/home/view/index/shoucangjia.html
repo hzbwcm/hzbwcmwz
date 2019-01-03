@@ -67,10 +67,10 @@
                 <i class="iconfont icon-guanzhuzuozheyiguanzhu"></i>
                 <span class="header-text">已关注</span>
             </a>
-            <a href="" class="header-shoucangjia">
-                <i class="iconfont icon-dinghuodan"></i>
-                <span class="header-text">订货单</span>
-            </a>
+            <!--<a href="" class="header-shoucangjia">-->
+                <!--<i class="iconfont icon-dinghuodan"></i>-->
+                <!--<span class="header-text">订货单</span>-->
+            <!--</a>-->
         </div>
     </div>
 </div>
@@ -79,7 +79,7 @@
     <nav>
         <a href="/">首页</a>
         <a href="custom">产品定制</a>
-        <a href="stickacard">贴牌专区</a>
+        <a href="stickacard">加工专区</a>
         <a href="inspection">优选验厂</a>
         <a href="shebeitransfer">设备转让</a>
         <a href="documentary">跟单专家</a>
@@ -456,9 +456,10 @@
         //内容选择框图片切换
         $('.scj-cz-input').on('click',function () {
             if($(this).prop('checked')){
-                $(this).prev().attr('src','{:config('home_img')}/shoucangjia/a0.png')
+                $(this).prev().attr('src','{:config(\'home_img\')}/shoucangjia/a0.png')
             }else{
                 $(this).prev().attr('src','')
+                $('#quanxuan-input').prop('checked',false);
             }
         })
 
@@ -466,7 +467,7 @@
         $('#quanxuan-input').on('click',function () {
             if($(this).prop('checked')){
                 $('.scj-cz-input').prop('checked',true);
-                $('.scj-cz-div-img').attr('src','{:config('home_img')}/shoucangjia/a0.png')
+                $('.scj-cz-div-img').attr('src','{:config(\'home_img\')}/shoucangjia/a0.png')
             }else{
                 $('.scj-cz-input').prop('checked',false);
                 $('.scj-cz-div-img').attr('src','')
