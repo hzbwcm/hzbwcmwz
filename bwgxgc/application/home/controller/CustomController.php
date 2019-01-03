@@ -47,12 +47,12 @@ class CustomController extends Controller
         }
         if(!empty($Zid)){
             if(!empty($Dname)){
-                $page = Customgood::where('type_xj',$Zid)->where('cus_place','like','%'.$Dname.'%')->order('cus_id desc')->paginate(6);
+                $page = Customgood::where('type_xj',$Zid)->where('cus_place','like','%'.$Dname.'%')->order('cus_id desc')->paginate(8);
                 if(!empty($page)){
                     for($i=mb_strlen($Dname);$i>=0;){
                         $Dname1 = mb_substr($Dname,0,-1,'utf-8');
                         $i = mb_strlen($Dname1);
-                        $page = Customgood::where('type_xj',$Zid)->where('cus_place','like','%'.$Dname1.'%')->order('cus_id desc')->paginate(6);
+                        $page = Customgood::where('type_xj',$Zid)->where('cus_place','like','%'.$Dname1.'%')->order('cus_id desc')->paginate(8);
                         if(!empty($page)){
                             break;
                         }
@@ -60,24 +60,24 @@ class CustomController extends Controller
                 }
             }else{
                 $Zid = Session('Zid');
-                $page = Customgood::where('type_xj',$Zid)->order('cus_id desc')->paginate(6);
+                $page = Customgood::where('type_xj',$Zid)->order('cus_id desc')->paginate(8);
             }
         }else{
             if(!empty($Dname)){
                 $Dname = Session('Dname');
-                $page = Customgood::where('cus_place','like','%'.$Dname.'%')->order('cus_id desc')->paginate(6);
+                $page = Customgood::where('cus_place','like','%'.$Dname.'%')->order('cus_id desc')->paginate(8);
                 if(!empty($page)){
                     for($i=mb_strlen($Dname);$i>=0;){
                         $Dname1 = mb_substr($Dname,0,-1,'utf-8');
                         $i = mb_strlen($Dname1);
-                        $page = Customgood::where('cus_place','like','%'.$Dname1.'%')->order('cus_id desc')->paginate(6);
+                        $page = Customgood::where('cus_place','like','%'.$Dname1.'%')->order('cus_id desc')->paginate(8);
                         if(!empty($page)){
                             break;
                         }
                     }
                 }
             }else{
-                $page = Customgood::order('cus_id desc')->paginate(6);
+                $page = Customgood::order('cus_id desc')->paginate(8);
             }
         }
 
@@ -103,6 +103,8 @@ class CustomController extends Controller
         $cusid = $request->param('cusid');
         $customgood = new customgood();
         $data = $customgood->where('cus_id',$cusid)->find();
+
+
 
         $this->assign('data',$data);
 

@@ -46,7 +46,7 @@
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="typeid" id="typeid" onchange="get_xj(this)">
-                            <option value="" >--请选择类别一--</option>
+                            <option value="" >--请选择类别一</option>
                             {volist name='type_data1' id='ty1'}
                             <option value="{$ty1.type_id}" >
                                 {$ty1.type_name}
@@ -58,7 +58,7 @@
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
                         <select class="select" size="1" name="type_xj" id="type_xj">
-                            <option value="0" >--请选择类别二--</option>
+                            <option value="0" >--请选择类别二</option>
                         </select>
                     </span>
             </div>
@@ -67,7 +67,7 @@
                     var typeid=$(lay).val();
 
                     if (typeid == '') {
-                        var html = '<option value="" >--请选择--</option>';
+                        var html = '<option value="" >--请选择类别二</option>';
                         $('#type_xj').html(html);
                         return false;
                     }
@@ -80,7 +80,7 @@
 
                             if(res.code == 200){
                                 var type_data = res.data;
-                                var html = '<option value="" >--请选择--</option>';
+                                var html = '<option value="" >--请选择类别二</option>';
                                 $.each(type_data, function(k,v){
                                     html = html + '<option value="'+v.type_id+'" >'+v.type_name+'</option>';
                                 })
@@ -139,11 +139,11 @@
                     <span class="select-box">
                         <select class="select" size="1" name="cus_condition">
                             <option value="">请选择</option>
-                            <option value="0">9</option>
-                            <option value="1">8</option>
-                            <option value="2">7</option>
-                            <option value="3">6</option>
-                            <option value="4">5</option>
+                            <option value="9成新">9</option>
+                            <option value="8成新">8</option>
+                            <option value="7成新">7</option>
+                            <option value="6成新">6</option>
+                            <option value="5成新">5</option>
                         </select>
                     </span>
             </div>
@@ -152,7 +152,7 @@
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">金属检测 ：</label>
             <div class="radio-box">
-                <input type="radio" id="radio-3" name="cus_metal" value="">
+                <input type="radio" id="radio-3" name="cus_metal" value="有">
                 <label for="radio-3">有</label>
             </div>
             <div class="radio-box">
@@ -163,7 +163,7 @@
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视觉检测 ：</label>
             <div class="radio-box">
-                <input type="radio" id="radio-5" name="cus_vision" value="">
+                <input type="radio" id="radio-5" name="cus_vision" value="有">
                 <label for="radio-5">有</label>
             </div>
             <div class="radio-box">

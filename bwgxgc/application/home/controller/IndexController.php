@@ -68,7 +68,7 @@ class IndexController extends Controller
     }
 
     //收藏夹
-    public function shoucangjia()
+    public function shoucangjia(Request $request)
     {
         return $this->fetch();
     }
