@@ -101,16 +101,26 @@ class CustomController extends Controller
     public function Customizing(Request $request)
     {
         $cusid = $request->param('cusid');
+
         $customgood = new customgood();
         $data = $customgood->where('cus_id',$cusid)->find();
-
-
 
         $this->assign('data',$data);
 
         $type = new type();
         $type1 = $type->where('type_id',$data['type_id'])->value('type_name');
         $this->assign('type1',$type1);
+
+        $user_id = Session('user_id');
+        $user = User_person::where('user_id',$user_id)->find();
+        $this->assign('user',$user);
+
+        $cusid1 = array('1','2','3','4','5','6','7');
+        $loginid = $request->param('login_id');
+
+
+
+
         return $this->fetch();
     }
 }

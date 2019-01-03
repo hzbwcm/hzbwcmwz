@@ -45,7 +45,7 @@
 				{volist name='ps_infoA' id='v'}
 				<dl class="permission-list">
 					<dt>
-						<label><input type="checkbox" value="{$v.ps_id}" name="quanxian[]" {in name="v.ps_id" value="$role->role_ps_ids"}checked="checked"{/in} />{$v.ps_name}</label>
+						<label><input type="checkbox" value="{$v.ps_id}" name="quanxian[]" {in name="v.ps_id" value="$role->role_ps_ids"}checked="checked" {/in} />{$v.ps_name}</label>
 					</dt>
 					<dd>
 						{volist name='ps_infoB' id='vv'}

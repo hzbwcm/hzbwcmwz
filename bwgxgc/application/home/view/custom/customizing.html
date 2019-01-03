@@ -161,14 +161,24 @@
         <div class="main-t-t">
             <strong>已选类别：<span>{$type1}</span></strong>
             <div class="main-t-t-r">
-                {notempty name='$Request.session.nickname'}
+                {eq name='$user.login_id' value='1'}
+                    {in name='$data.cus_id' value='$user.cus_fav'}
+                    <div class="main-sc-box">
+                        <i class="iconfont icon-star"></i>
+                        <span class="main-t-sc">已收藏</span>
+                    </div>
+                    {else/}
+                    <div class="main-sc-box">
+                        <i class="iconfont icon-iconxingjikongxin"></i>
+                        <span class="main-t-sc">收藏</span>
+                    </div>
+                    {/in}
+                {else/}
                 <div class="main-sc-box">
                     <i class="iconfont icon-iconxingjikongxin"></i>
                     <span class="main-t-sc">收藏</span>
                 </div>
-                {/else}
-
-                {/notempty}
+                {/eq}
             </div>
         </div>
         <div class="main-t-b">

@@ -412,6 +412,8 @@ class UserController extends Controller
                 Session::set('user_id',$exists->user_id);
                 Session::set('username',$exists->username);
                 Session::set('nickname',$exists->nickname);
+                db('user_person')->where('user_id',$exists->user_id)->setField('login_id','1');
+
                 //登录系统(页面跳转)
                 $this -> redirect('home/index/index');
             }else{
@@ -424,6 +426,8 @@ class UserController extends Controller
     //个人用户退出登录
     public function loginout()
     {
+        $user_id = Session('user_id');
+        db('user_person')->where('user_id',$user_id)->setField('login_id','0');
         Session::clear();
         $this->redirect('/');
     }
