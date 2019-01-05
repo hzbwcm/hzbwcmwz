@@ -209,5 +209,30 @@ class UserController extends Controller
 
     }
 
+    public function qyzzgl()
+    {
+        $com_id = Session::get('com_id');
+        $book = Book::where('com_id',$com_id)->paginate(10);
+        $list = $book->render();
+        $this->assign('book',$book);
+        $this->assign('list',$list);
+        return $this->fetch();
+    }
+
+    public function qyzzdel(Request $request)
+    {
+        if ($request->isAjax())
+        {
+            $id = $request->get('id');
+            $res = Book::where('id',$id)->find()->delete();
+            if($res)
+            {
+                return ['code'=> 200, 'data'=> '删除成功'];
+            }else{
+                return ['code'=> 0, 'msg'=> '删除失败'];
+            }
+        }
+    }
+
 
 }

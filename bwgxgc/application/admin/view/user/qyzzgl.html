@@ -45,29 +45,29 @@
 
     <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l"><a
             class="btn btn-primary radius"
-            onclick="picture_add('添加图片','{:url(\'admin/goods/cpzsspsc\')}')" href="javascript:;"><i
-            class="Hui-iconfont">&#xe600;</i>添加产品</a></span> <span class="r"></div>
+            onclick="picture_add('添加图片','{:url(\'admin/user/qiyezizhi\')}')" href="javascript:;"><i
+            class="Hui-iconfont">&#xe600;</i>企业资质上传</a></span> <span class="r"></div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort">
             <thead>
             <tr class="text-c">
 
-                <th width="100">产品名称</th>
-                <th width="100">产品单价</th>
-                <th width="100">起订量</th>
+                <th width="100">证书名称</th>
+                <th width="100">发证单位</th>
+                <th width="100">有效期至</th>
+                <th width="100">图片</th>
+
                 <th width="100">操作</th>
             </tr>
             </thead>
             <tbody>
-            {volist name='info' id='v'}
+            {volist name='book' id='v'}
             <tr class="text-c">
-                <td>{$v.proname}</td>
-                <td>{$v.price}</td>
-                <td>{$v.qdl}</td>
-                <td class="td-manage"><a style="text-decoration:none" class="ml-5"
-                                         onClick="picture_edit('图库编辑','{:url(\'admin/goods/progai\',[\'id\'=>$v.id])}','10001')"
-                                         href="javascript:;" title="编辑">
-                    <i class="Hui-iconfont">&#xe6df;</i></a>
+                <td>{$v.book_name}</td>
+                <td>{$v.book_palace}</td>
+                <td>{$v.book_time}</td>
+                <td><img src="{:config('public_uploads')}/{$v.pic}" alt="" style="max-width: 100px;"></td>
+                <td class="td-manage">
                     <a style="text-decoration:none" class="ml-5"
                        onClick="picture_del(this,'{$v.id}')"
                        href="javascript:;" title="删除">
@@ -80,7 +80,7 @@
 
         </table>
         <div style="margin-top: 30px;">
-            {$pagelist}
+            {$list}
         </div>
     </div>
 </div>

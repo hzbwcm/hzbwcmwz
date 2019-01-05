@@ -57,7 +57,7 @@ class StickacardController extends Controller
         $tid = $yped;
         $info = Type::where('type_pid',0)->select();
         $tinfo = Type::where('type_pid',$tid)->select();
-        $cinfo = Card::where('type',$tname)->order('id desc')->paginate(1,false,['query'=>['ypeame'=>$tname,'yped'=>$tid]]);
+        $cinfo = Card::where('type',$tname)->order('id desc')->paginate(10,false,['query'=>['ypeame'=>$tname,'yped'=>$tid]]);
         $pagelist = $cinfo->render();
         $this->assign('pagelist',$pagelist);
         $type = Type::select();
@@ -78,6 +78,7 @@ class StickacardController extends Controller
         if($request->isAjax()){
             $type_name = $request->get('type_name');
             $type = Card::where('type',$type_name)->select();
+            $this->assign('type',$type);
             if ($type) {
                 return ['code' => 200, 'data' => $type,'type_name'=>$type_name];
             }else{

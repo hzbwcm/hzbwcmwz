@@ -71,6 +71,8 @@ Route::any('admin/permission/addition','admin/permission/addition',['method'=>'g
 Route::get('admin/user/gerenxinxi','admin/user/gerenxinxi');//个人信息
 Route::any('admin/goods/dingzspsc','admin/goods/dingzspsc',['method'=>'get|post']);//发布产品定制
 Route::get('admin/goods/cpdzgl','admin/goods/cpdzgl');//产品定制管理
+Route::get('admin/user/qyzzgl','admin/user/qyzzgl');//企业资质管理
+Route::get('admin/user/qyzzdel','admin/user/qyzzdel');//企业资质删除
 Route::any('admin/goods/cpdzxg','admin/goods/cpdzxg',['method'=>'get|post']);//产品定制修改
 Route::any('admin/goods/delcpdz','admin/goods/delcpdz',['method'=>'get|post']);//产品定制删除
 
