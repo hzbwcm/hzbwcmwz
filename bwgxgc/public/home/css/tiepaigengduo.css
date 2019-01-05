@@ -197,7 +197,9 @@ main {
         main .main-fenlei-box .main-fenlei .main-fenlei-content span {
           margin-right: 24px;
           cursor: pointer; }
-        main .main-fenlei-box .main-fenlei .main-fenlei-content .span-active {
+          main .main-fenlei-box .main-fenlei .main-fenlei-content span a {
+            color: #555555; }
+        main .main-fenlei-box .main-fenlei .main-fenlei-content .span-active a {
           color: #cc9dff; }
       main .main-fenlei-box .main-fenlei .main-fenlei-content-active {
         width: 1080px;

@@ -101,9 +101,9 @@
                 {volist name='type' id='v1'}
                 {eq name="v1.type_pid" value="0" }
                 {eq name="v1.type_name" value="$tname"}
-                <span onclick="tpxq(this,'{$v1.type_name}')" class="span-active">{$v1.type_name}</span>
+                <span class="span-active"><a href="{:url('home/stickacard/tiepaigengduo',['ypeame'=>$v1.type_name,'yped'=>$v1.type_id])}">{$v1.type_name}</a></span>
                 {else/}
-                <span onclick="tpxq(this,'{$v1.type_name}')">{$v1.type_name}</span>
+                <span><a href="{:url('home/stickacard/tiepaigengduo',['ypeame'=>$v1.type_name,'yped'=>$v1.type_id])}">{$v1.type_name}</a></span>
                 {/eq}
                 {/eq}
                 {/volist}
