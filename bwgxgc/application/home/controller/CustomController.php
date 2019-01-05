@@ -115,8 +115,36 @@ class CustomController extends Controller
         $user = User_person::where('user_id',$user_id)->find();
         $this->assign('user',$user);
 
-        $cusid1 = array('1','2','3','4','5','6','7');
-        $loginid = $request->param('login_id');
+        $user_person = new user_person;
+
+//        $loginid =str_split($cusid);
+//        print_r($user['cus_fav']);
+//        dump($user['cus_fav']);die;
+        if(empty($user['cus_fav'])){
+            $shuju['cus_fav'] = json($cusid);
+            $result = $user_person -> where('user_id',$user_id)->update($shuju);
+            if($result){
+//                return ['status'=>'200'];
+            }else{
+//                return ['status'=>'failure','errorinfo'=>'收藏失败'];
+            }
+        }elseif(in_array($cusid,str_split($user['cus_fav']))){
+//            return ['status'=>'200'];
+
+        }else{
+//            $cus_fav = implode(',',$user['cus_fav']);
+            $cus_fav = User_person::value("concat(cus_fav,',',$cusid)");
+//            $cus_fav = json($cus_fav);
+//            echo '<pre>';
+
+            $shuju['cus_fav'] = $cus_fav;
+            $result = $user_person->where('user_id',$user_id)->update($shuju);
+            if($result){
+//                return ['status'=>'200'];
+            }else{
+//                return ['status'=>'failure','errorinfo'=>'收藏失败'];
+            }
+        }
 
 
 
