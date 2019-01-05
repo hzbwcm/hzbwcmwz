@@ -100,7 +100,11 @@
             <div class="main-fenlei-content">
                 {volist name='type' id='v1'}
                 {eq name="v1.type_pid" value="0" }
-                <span onclick="tpxq('{$v1.type_name}')">{$v1.type_name}</span>
+                {eq name="v1.type_name" value="$tname"}
+                <span onclick="tpxq(this,'{$v1.type_name}')" class="span-active">{$v1.type_name}</span>
+                {else/}
+                <span onclick="tpxq(this,'{$v1.type_name}')">{$v1.type_name}</span>
+                {/eq}
                 {/eq}
                 {/volist}
             </div>
@@ -231,7 +235,7 @@
     });
 </script>
 <script>
-    function tpxq(type_name) {
+    function tpxq(lay,type_name) {
         $.ajax({
             url: "{:url('home/stickacard/tpajax')}",
             type: 'get',
@@ -240,6 +244,7 @@
             success: function (res) {
                 var type=res.data;
                 if(res.code == 200){
+                    $(lay).addClass('span-active').siblings().removeClass('span-active');
                     var str='<div class="main-content-title-box">\n' +
                         '            <span class="main-content-title">'+res.type_name+'加工</span>\n' +
                         '        </div>\n' +

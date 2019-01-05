@@ -182,7 +182,6 @@ main {
         background: #f6f6f6; }
       main .main-fenlei-box .main-fenlei .main-fenlei-content {
         width: 1080px;
-        height: 100%;
         float: left;
         padding-left: 40px;
         padding-right: 180px;
@@ -198,6 +197,8 @@ main {
         main .main-fenlei-box .main-fenlei .main-fenlei-content span {
           margin-right: 24px;
           cursor: pointer; }
+        main .main-fenlei-box .main-fenlei .main-fenlei-content .span-active {
+          color: #cc9dff; }
       main .main-fenlei-box .main-fenlei .main-fenlei-content-active {
         width: 1080px;
         float: left;
