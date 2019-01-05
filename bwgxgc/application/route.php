@@ -34,7 +34,7 @@ Route::group('home',function (){
 //home分组
 Route::get('home/custom/custom','home/custom/custom');//产品定制
 Route::any('home/custom/customizing','home/custom/customizing',['method'=>'get|post']);//产品定制详情详情页
-Route::get('home/custom/get_area','home/custom/get_area');//产品定制地区
+Route::get('home/custom/ge               t_area','home/custom/get_area');//产品定制地区
 Route::get('home/stickacard/stickacard','home/stickacard/stickacard');//贴牌专区
 Route::get('home/stickacard/tiepaixiangqing','home/stickacard/tiepaixiangqing');//贴牌详情
 Route::get('home/stickacard/tiepaigengduo','home/stickacard/tiepaigengduo');//贴牌更多
@@ -45,7 +45,6 @@ Route::get('home/documentary/documentary','home/documentary/documentary');//跟�
 Route::get('home/index/wlpf','home/index/wlpf');//网络批发
 Route::get('home/shebeitransfer/shebeitransfer','home/shebeitransfer/shebeitransfer');//设备转让
 Route::get('home/shebeitransfer/shebeizhuanrang','home/shebeitransfer/shebeizhuanrang');//设备转让详情
-Route::get('home/index/shoucangjia','home/index/shoucangjia');//收藏夹
 
 //企业商铺
 Route::get('home/shangpu/index','home/shangpu/index');//优选验厂商铺首页

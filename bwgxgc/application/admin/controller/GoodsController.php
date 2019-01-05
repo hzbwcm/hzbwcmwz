@@ -239,6 +239,20 @@ class GoodsController extends Controller
         if ($request->isPost()) {
             $shuju = $request->post();
 
+            $rules = [
+                'cus_proname' => 'require',
+            ];
+            $msg = [
+                'cus_proname.require' => '必填',
+
+            ];
+            $validate = new Validate($rules, $msg);
+            if (!$validate->batch()->check($shuju)) {
+                $errorinfo = $validate->getError();
+                $this->assign('errorinfo', $errorinfo);
+                return $this->fetch();
+            }
+
             $cus_pic = request()->file('cus_pic');
             $data  = $cus_pic  ? $cus_pic->validate(['size'=>512000,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move(ROOT_PATH . 'public' . "/" . 'uploads' . "/" . 'customgood') : '';
             $cus_pic1 = request()->file('cus_pic1');
@@ -258,34 +272,33 @@ class GoodsController extends Controller
                 $data1 = $data1 ? $data1->getSaveName() : '';
                 $data1 = $data1 ? 'customgood' . "/" .  $data1 : '';
             }else if($cus_pic1){
+                $schc = ROOT_PATH . 'public/uploads' . '/' . $data;
+                unlink($schc);
                 $this->error('副图1上传失败' . '：' . $cus_pic1->getError(),'goods/dingzspsc');
             }
             if($data2){
                 $data2 = $data2 ? $data2->getSaveName() : '';
                 $data2 = $data2 ? 'customgood' . "/" . $data2 : '';
             }else if($cus_pic2){
+                $schc = ROOT_PATH . 'public/uploads' . '/' . $data;
+                $schc1 = ROOT_PATH . 'public/uploads' . '/' . $data1;
+                unlink($schc);
+                unlink($schc1);
                 $this->error('副图2上传失败' . '：' . $cus_pic2->getError(),'goods/dingzspsc');
             }
             if($data3){
                 $data3 = $data3 ? $data3->getSaveName() : '';
                 $data3 = $data3 ? 'customgood' . "/" .  $data3 : '';
             }else if($cus_pic3){
+                $schc = ROOT_PATH . 'public/uploads' . '/' . $data;
+                $schc1 = ROOT_PATH . 'public/uploads' . '/' . $data1;
+                $schc2 = ROOT_PATH . 'public/uploads' . '/' . $data2;
+                unlink($schc);
+                unlink($schc1);
+                unlink($schc2);
                 $this->error('副图3上传失败' . '：' . $cus_pic3->getError(),'goods/dingzspsc');
             }
 
-            $rules = [
-                'cus_proname' => 'require',
-            ];
-            $msg = [
-                'cus_proname.require' => '必填',
-
-            ];
-            $validate = new Validate($rules, $msg);
-            if (!$validate->batch()->check($shuju)) {
-                $errorinfo = $validate->getError();
-                $this->assign('errorinfo', $errorinfo);
-                return $this->fetch();
-            }
 
             $shuju['com_id'] = $com_id;
             $shuju['type_id'] = $shuju['typeid'];
@@ -399,10 +412,6 @@ class GoodsController extends Controller
                 $data = $data ? 'customgood' . "/" .  $data : '';
 
                 $pic = Customgood::where('cus_id',$dataid)->value('cus_pic');
-                $filename = ROOT_PATH . 'public/uploads' . '/' . $pic;
-                if(file_exists($filename)){
-                    unlink($filename);
-                }
 
             }else if($cus_pic){
                 $this->error('主图上传失败' . '：' . $cus_pic->getError(),'admin/goods/cpdzgl');
@@ -412,14 +421,10 @@ class GoodsController extends Controller
                 $data1 = $data1 ? 'customgood' . "/" .  $data1 : '';
 
                 $pic1 = Customgood::where('cus_id',$dataid)->value('cus_pic1');
-                $filename1 = ROOT_PATH . 'public/uploads' . '/' . $pic1;
-                if(file_exists($filename1)){
-                    dump($filename1);
-                    die;
-                    unlink($filename1);
-                }
 
             }else if($cus_pic1){
+                $schc = ROOT_PATH . 'public/uploads' . '/' . $data;
+                unlink($schc);
                 $this->error('副图1上传失败' . '：' . $cus_pic1->getError(),'admin/goods/cpdzgl');
             }
             if($data2){
@@ -427,12 +432,12 @@ class GoodsController extends Controller
                 $data2 = $data2 ? 'customgood' . "/" . $data2 : '';
 
                 $pic2 = Customgood::where('cus_id',$dataid)->value('cus_pic2');
-                $filename2 = ROOT_PATH . 'public/uploads' . '/' . $pic2;
-                if(file_exists($filename2)){
-                    unlink($filename2);
-                }
 
             }else if($cus_pic2){
+                $schc = ROOT_PATH . 'public/uploads' . '/' . $data;
+                $schc1 = ROOT_PATH . 'public/uploads' . '/' . $data1;
+                unlink($schc);
+                unlink($schc1);
                 $this->error('副图2上传失败' . '：' . $cus_pic2->getError(),'admin/goods/cpdzgl');
             }
             if($data3){
@@ -440,13 +445,39 @@ class GoodsController extends Controller
                 $data3 = $data3 ? 'customgood' . "/" .  $data3 : '';
 
                 $pic3 = Customgood::where('cus_id',$dataid)->value('cus_pic3');
+
+            }else if($cus_pic3){
+                $schc = ROOT_PATH . 'public/uploads' . '/' . $data;
+                $schc1 = ROOT_PATH . 'public/uploads' . '/' . $data1;
+                $schc2 = ROOT_PATH . 'public/uploads' . '/' . $data2;
+                unlink($schc);
+                unlink($schc1);
+                unlink($schc2);
+                $this->error('副图3上传失败' . '：' . $cus_pic3->getError(),'admin/goods/cpdzgl');
+            }
+            if(!empty($pic)){
+                $filename = ROOT_PATH . 'public/uploads' . '/' . $pic;
+                if(file_exists($filename)){
+                    unlink($filename);
+                }
+            }
+            if(!empty($pic1)){
+                $filename1 = ROOT_PATH . 'public/uploads' . '/' . $pic1;
+                if(file_exists($filename1)){
+                    unlink($filename1);
+                }
+            }
+            if(!empty($pic2)){
+                $filename2 = ROOT_PATH . 'public/uploads' . '/' . $pic2;
+                if(file_exists($filename2)){
+                    unlink($filename2);
+                }
+            }
+            if(!empty($pic3)){
                 $filename3 = ROOT_PATH . 'public/uploads' . '/' . $pic3;
                 if(file_exists($filename3)){
                     unlink($filename3);
                 }
-
-            }else if($cus_pic3){
-                $this->error('副图3上传失败' . '：' . $cus_pic3->getError(),'admin/goods/cpdzgl');
             }
 
             $customgood = new customgood();
