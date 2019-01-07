@@ -133,9 +133,9 @@ class CustomController extends Controller
                 $result = $user_person -> where('user_id',$user_id)->update($shuju);
                 if($result){
 
-                    return ['status'=>'200','info'=>'收藏成功','cusid'=>$cusid1];
+                    return ['fhz'=>'200','info'=>'收藏成功','cusid'=>$cusid1];
                 }else{
-                    return ['status'=>'failure','errorinfo'=>'收藏失败'];
+                    return ['fhz'=>'failure','errorinfo'=>'收藏失败'];
                 }
                 //已有收藏，判断当前产品是否存在数据库
             }elseif(in_array($cusid,str_split($user['cus_fav']))){
@@ -154,9 +154,9 @@ class CustomController extends Controller
                     $result = $user_person->where('user_id',$user_id)->update($shuju);
                     if($result){
 
-                        return ['status'=>'200','info'=>'取消收藏成功','cusid'=>$cusid1];
+                        return ['fhz'=>'200','info'=>'取消收藏成功','cusid'=>$cusid1];
                     }else{
-                        return ['status'=>'failure','errorinfo'=>'取消收藏失败'];
+                        return ['fhz'=>'failure','errorinfo'=>'取消收藏失败'];
                     }
 
                 }
@@ -174,9 +174,9 @@ class CustomController extends Controller
                 $shuju['cus_fav'] = $cus_fav;
                 $result = $user_person->where('user_id',$user_id)->update($shuju);
                 if($result){
-                    return ['status'=>'200'];
+                    return ['fhz'=>'200'];
                 }else{
-                    return ['status'=>'failure','errorinfo'=>'收藏失败'];
+                    return ['fhz'=>'failure','errorinfo'=>'收藏失败'];
                 }
             }
 
