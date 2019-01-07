@@ -76,8 +76,15 @@ class IndexController extends Controller
         $user_id = Session('user_id');
         $user = User_person::where('user_id',$user_id)->find();
 
-        $bs = $request->param('bs')?$request->param('bs'):0;
-
+        $bs = $request->param('bs') || $request->param('bs')!=null?$request->param('bs'):2;
+        dump($bs);
+        if($bs==2){
+            $bs=session::get('scjbs')?session::get('scjbs'):'0';
+        }else{
+            session::set('scjbs',$bs);
+            $bs=session::get('scjbs');
+        }
+        dump($bs);
         if($bs==0){
             $data = array_reverse(explode(',',$user['cus_fav']));
             $this->assign('data',$data);
