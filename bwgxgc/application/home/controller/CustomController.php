@@ -123,15 +123,17 @@ class CustomController extends Controller
         //当用户登录成功，如果无收藏任一个产品，为空
         $cusid1 = $request->param('cusid1');
         $cusid2 = $request->param('cusid2');
+        $this->assign('cusib1',$cusid);
+        $this->assign('cusib2',$cusid);
         if(empty($user['cus_fav'])){
             print_r('aaa');
             //存储第一个收藏
             $shuju['cus_fav'] = $cusid1;
             $result = $user_person -> where('user_id',$user_id)->update($shuju);
             if($result){
-//                return ['status'=>'200'];
+                return ['status'=>'200'];
             }else{
-//                return ['status'=>'failure','errorinfo'=>'收藏失败'];
+                return ['status'=>'failure','errorinfo'=>'收藏失败'];
             }
             //已有收藏，判断当前产品是否存在数据库
         }elseif(in_array($cusid,str_split($user['cus_fav']))){
@@ -150,9 +152,9 @@ class CustomController extends Controller
                 $shuju['cus_fav'] = $data;
                 $result = $user_person->where('user_id',$user_id)->update($shuju);
                 if($result){
-//                return ['status'=>'200'];
+                return ['status'=>'200'];
                 }else{
-//                return ['status'=>'failure','errorinfo'=>'收藏失败'];
+                return ['status'=>'failure','errorinfo'=>'收藏失败'];
                 }
 
             }
@@ -170,9 +172,9 @@ class CustomController extends Controller
             $shuju['cus_fav'] = $cus_fav;
             $result = $user_person->where('user_id',$user_id)->update($shuju);
             if($result){
-//                return ['status'=>'200'];
+                return ['status'=>'200'];
             }else{
-//                return ['status'=>'failure','errorinfo'=>'收藏失败'];
+                return ['status'=>'failure','errorinfo'=>'收藏失败'];
             }
         }
 
