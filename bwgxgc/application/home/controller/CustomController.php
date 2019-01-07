@@ -131,7 +131,7 @@ class CustomController extends Controller
             $shuju['cus_fav'] = $cusid1;
             $result = $user_person -> where('user_id',$user_id)->update($shuju);
             if($result){
-                return ['status'=>'200'];
+                return ['status'=>'200','info'=>'收藏成功'];
             }else{
                 return ['status'=>'failure','errorinfo'=>'收藏失败'];
             }
@@ -139,7 +139,6 @@ class CustomController extends Controller
         }elseif(in_array($cusid,str_split($user['cus_fav']))){
             print_r('bbb');
             dump($user['cus_fav']);
-//            return ['status'=>'200'];
             //判断传值2是否为空，为空则不运行，不为空，则删除
             if(!empty($cusid2)){
                 $data = explode(',',$user['cus_fav']);
@@ -152,9 +151,9 @@ class CustomController extends Controller
                 $shuju['cus_fav'] = $data;
                 $result = $user_person->where('user_id',$user_id)->update($shuju);
                 if($result){
-                return ['status'=>'200'];
+                return ['status'=>'200','info'=>'取消收藏成功'];
                 }else{
-                return ['status'=>'failure','errorinfo'=>'收藏失败'];
+                return ['status'=>'failure','errorinfo'=>'取消收藏失败'];
                 }
 
             }
