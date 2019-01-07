@@ -4,6 +4,7 @@ namespace app\home\controller;
 use app\home\model\Card;
 use app\home\model\Com_pic;
 use app\home\model\Customgood;
+use app\home\model\User_person;
 use app\home\model\Type;
 use think\Controller;
 use app\home\model\Area;
@@ -70,6 +71,12 @@ class IndexController extends Controller
     //收藏夹
     public function shoucangjia(Request $request)
     {
+        $user_id = Session('user_id');
+        $user = User_person::where('user_id',$user_id)->find();
+
+        $data = implode(',',$user['cus_fav']);
+        $this->assign('data',$data);
+
         return $this->fetch();
     }
 
