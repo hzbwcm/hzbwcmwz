@@ -391,12 +391,21 @@
                 dataType:'JSON',
                 success:function (res) {
                     if(res.fhz==200){
-                        var str='<div class="main-sc-box" onclick="djsc(this,'+res.cusid+')">\n' +
-                            '                        <i class="iconfont icon-star"></i>\n' +
-                            '                        <span class="main-t-sc">已收藏</span>\n' +
-                            '                    </div>';
-                        $(lay).parent().html(str);
-                        alert(res.info);
+                        if(res.fhxx==1){
+                            var str='<div class="main-sc-box" onclick="djsc(this,'+res.cusid+')">\n' +
+                                '                        <i class="iconfont icon-star"></i>\n' +
+                                '                        <span class="main-t-sc">已收藏</span>\n' +
+                                '                    </div>';
+                            $(lay).parent().html(str);
+                            alert(res.info);
+                        }else if(res.fhxx==2){
+                            var str='<div class="main-sc-box" onclick="djsc(this,'+res.cusid+')">\n' +
+                                '                        <i class="iconfont icon-iconxingjikongxin"></i>\n' +
+                                '                        <span class="main-t-sc">收藏</span>\n' +
+                                '                    </div>';
+                            $(lay).parent().html(str);
+                            alert(res.info);
+                        }
                     }else{
                         console.log(res.errorinfo);
                         alert(res.errorinfo);
