@@ -72,7 +72,7 @@ class IndexController extends Controller
     public function shoucangjia(Request $request)
     {
         $user_id = Session('user_id');
-        $user = User_person::where('user_id',$user_id)->order('','esc')->find();
+        $user = User_person::where('user_id',$user_id)->find();
 
         $data = array_reverse(explode(',',$user['cus_fav']));
         $this->assign('data',$data);
@@ -81,6 +81,43 @@ class IndexController extends Controller
         $this->assign('info',$info);
 
         return $this->fetch();
+    }
+
+    //收藏夹删除收藏
+    public function delcollection(Request $request)
+    {
+        $user_id = Session('user_id');
+        $user = User_person::where('user_id',$user_id)->find();
+        $cusid = $request->param('cusid');
+        $data = explode(',',$user['cus_fav']);
+        foreach ($data as $k=>$v){
+            if($cusid == $v) unset($data[$k]);
+        }
+        $data = implode(',',$data);
+        $shuju['cus_fav'] = $data;
+        $result = User_person::where('user_id',$user_id)->update($shuju);
+        if ($result) {
+
+            $request = Request::instance();
+            $ip = $request->ip();
+            $acc = Session::get('nickname');
+            $data = [
+                'ope_cat' => '个人',
+                'ope_id' => $user_id,
+                'ope_acc' => $acc,
+                'ope_ip' => $ip,
+                'ope_tab' => 'user_person[cus_fav]',
+                'ope_act' => '真删除',
+            ];
+            Db::table('ope_log')->insert($data);
+
+            return true;
+        } else {
+            return false;
+        }
+
+//        $res = Customgood::where('cus_id', $cusid)->delete();
+
     }
 
 

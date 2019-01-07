@@ -137,10 +137,10 @@
         <!--内容-->
         <div class="scj-box">
             <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
+                <img data-original="{:config('public_uploads')}/{$in.cus_pic}" alt="">
                 <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
+                    <a href="{:url('home/custom/customizing',['cusid'=>$in.cus_id])}" class="scj-cz-jrgc">进入工厂</a>
+                    <span class="scj-cz-sc" gsmc="{'$in.cus_proname'}" id="{$in.cus_id}">删除</span>
                     <div class="scj-cz-xz">
                         <div class="scj-cz-div">
                             <img src="" alt="" class="scj-cz-div-img">
