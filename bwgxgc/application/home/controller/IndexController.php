@@ -4,6 +4,7 @@ namespace app\home\controller;
 use app\home\model\Card;
 use app\home\model\Com_pic;
 use app\home\model\Customgood;
+use app\home\model\Prodis;
 use app\home\model\User_person;
 use app\home\model\Type;
 use think\Controller;
@@ -75,14 +76,29 @@ class IndexController extends Controller
         $user_id = Session('user_id');
         $user = User_person::where('user_id',$user_id)->find();
 
-        $data = array_reverse(explode(',',$user['cus_fav']));
-        $this->assign('data',$data);
+        $bs = $request->param('bs');
 
-//        $datacount = count($data);
-//        $this->assign();
+        if($bs==0){
+            $data = array_reverse(explode(',',$user['cus_fav']));
+            $this->assign('data',$data);
 
-        $info =  Customgood::select();
-        $this->assign('info',$info);
+            $datacount = count($data);
+            $this->assign('datacount',$datacount);
+
+            $info =  Customgood::select();
+            $this->assign('info',$info);
+            $this->assign('bs',$bs);
+        }elseif($bs==1){
+            $data = array_reverse(explode(',',$user['prodis_fav']));
+            $this->assign('data',$data);
+
+            $datacount = count($data);
+            $this->assign('datacount',$datacount);
+
+            $info = Prodis::select();
+            $this->assign('info',$info);
+            $this->assign('bs',$bs);
+        }
 
         return $this->fetch();
     }
