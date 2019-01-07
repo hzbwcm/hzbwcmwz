@@ -85,7 +85,7 @@ class IndexController extends Controller
             $datacount = count($data);
             $this->assign('datacount',$datacount);
 
-            $info =  Customgood::paginate(2);
+            $info =  Customgood::paginate(3);
             //获得分页的页码列表信息 并传递给模板
             $pagelist = $info->render();
             $this->assign('pagelist',$pagelist);
@@ -99,7 +99,7 @@ class IndexController extends Controller
             $datacount = count($data);
             $this->assign('datacount',$datacount);
 
-            $info = Prodis::paginate(2);
+            $info = Prodis::paginate(3);
             //获得分页的页码列表信息 并传递给模板
             $pagelist = $info->render();
             $this->assign('pagelist',$pagelist);
