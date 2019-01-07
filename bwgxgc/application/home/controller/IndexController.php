@@ -11,6 +11,7 @@ use app\home\model\Area;
 use app\home\model\Company_info;
 use think\Request;
 use think\Session;
+use think\Db;
 class IndexController extends Controller
 {
     //前台首页
@@ -77,8 +78,8 @@ class IndexController extends Controller
         $data = array_reverse(explode(',',$user['cus_fav']));
         $this->assign('data',$data);
 
-        $datacount = count($data);
-        $this->assign();
+//        $datacount = count($data);
+//        $this->assign();
 
         $info =  Customgood::select();
         $this->assign('info',$info);

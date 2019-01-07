@@ -28,7 +28,7 @@ Route::group('home',function (){
     Route::get('user/delcpdz','home/user/delcpdz');//产品定制删除
     Route::any('user/xinxiguanli','home/user/xinxiguanli',['method'=>'get|post']);//信息管理
     Route::get('index/shoucangjia','home/index/shoucangjia');//收藏夹
-    Route::get('index/delcollection','home/index/delcollection');//收藏夹删除
+    Route::any('index/delcollection','home/index/delcollection',['method'=>'get|post']);//收藏夹删除
 },['after_behavior'=>'\app\home\behavior\CheckLogin']);
 
 

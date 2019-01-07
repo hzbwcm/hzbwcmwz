@@ -140,7 +140,7 @@
                 <img data-original="{:config('public_uploads')}/{$in.cus_pic}" alt="">
                 <div class="scj-cz-box scj-cz-active">
                     <a href="{:url('home/custom/customizing',['cusid'=>$in.cus_id])}" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="{'$in.cus_proname'}" id="{$in.cus_id}">删除</span>
+                    <span class="scj-cz-sc" gsmc="{$in.cus_proname}" id="{$in.cus_id}">删除</span>
                     <div class="scj-cz-xz">
                         <div class="scj-cz-div">
                             <img src="" alt="" class="scj-cz-div-img">
@@ -241,7 +241,18 @@
         //内容选择框图片切换
         $('.scj-cz-input').on('click',function () {
             if($(this).prop('checked')){
+                var flag=true;
                 $(this).prev().attr('src','{:config(\'home_img\')}/shoucangjia/a0.png')
+                var input_str=$('.scj-cz-div input');
+                for(var i=0;i<input_str.length;i++){
+                    var key=$('.scj-cz-div input').eq(i).prop('checked');
+                    if(!key){
+                        flag=false;
+                    }
+                }
+                if(flag){
+                    $('#quanxuan-input').prop('checked',true);
+                }
             }else{
                 $(this).prev().attr('src','')
                 $('#quanxuan-input').prop('checked',false);
@@ -258,6 +269,30 @@
                 $('.scj-cz-div-img').attr('src','')
             }
         })
+
+        //点击删除一条收藏
+        $('.scj-cz-sc').on('click',djsc);
+        function djsc() {
+            var gs_name=$(this).attr('gsmc');//公司名称
+            var flag=confirm('是否将'+gs_name+'从收藏夹中移除');
+            var cusid=$(this).attr('id');//当前要删除的数据的ID
+            if(flag){
+                $.ajax({
+                    url:"{:url('home/index/delcollection')}",
+                    type:'post',
+                    data:{cusid},
+                    dataType:'JSON',
+                    success:function (res) {
+                        if(res){
+                            alert('删除成功');
+                            window.history.go(0);
+                        }else{
+                            alert('删除失败');
+                        }
+                    }
+                })
+            }
+        }
     })
 </script>
 <script>
