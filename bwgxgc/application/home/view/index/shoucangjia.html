@@ -125,18 +125,18 @@
     <div class="scjSx">
         <div class="scjSxFl">分类：</div>
         <div class="scjFl">
-            {eq name='$bs' value='0'}
-            <a href="{:url('home/index/shoucangjia',['bs'=>0])}" class="aActive">产品定制</a>
+            {eq name='$bs' value='2'}
+            <a href="{:url('home/index/shoucangjia',['bs'=>2])}" class="aActive">产品定制</a>
             <a href="{:url('home/index/shoucangjia',['bs'=>1])}">加工专区</a>
             {else/}
-            <a href="{:url('home/index/shoucangjia',['bs'=>0])}">产品定制</a>
+            <a href="{:url('home/index/shoucangjia',['bs'=>2])}">产品定制</a>
             <a href="{:url('home/index/shoucangjia',['bs'=>1])}" class="aActive">加工专区</a>
             {/eq}
         </div>
     </div>
     <!--已收藏内容-->
     <div class="main-scj-box">
-        {eq name='$bs' value='0'}
+        {eq name='$bs' value='2'}
             {volist name='$data' id='da'}
             {volist name='$info' id='in'}
             {eq name='$in.cus_id' value='$da'}
