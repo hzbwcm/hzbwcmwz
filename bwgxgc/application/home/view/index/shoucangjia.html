@@ -131,7 +131,9 @@
     </div>
     <!--已收藏内容-->
     <div class="main-scj-box">
-        {}
+        {volist name='$data' id='da'}
+        {volist name='$info' id='in'}
+        {eq name='$in.cus_id' value='$da'}
         <!--内容-->
         <div class="scj-box">
             <div class="scj-img">
@@ -152,10 +154,12 @@
                 <div class="scj-logo-img">
                     <img data-original="{:config('home_img')}/a1.png" alt="">
                 </div>
-                <div class="scj-logo-title">品牌名称</div>
+                <div class="scj-logo-title">{$in.cus_proname}</div>
             </div>
         </div>
-        {}
+        {/eq}
+        {/volist}
+        {/volist}
 
     </div>
     <!--分页-->
