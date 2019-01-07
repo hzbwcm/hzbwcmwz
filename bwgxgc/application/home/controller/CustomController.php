@@ -127,29 +127,23 @@ class CustomController extends Controller
         $this->assign('cusid2',$cusid);
         if($request->isAjax()){
             if(empty($user['cus_fav'])){
-                print_r('aaa');
                 //存储第一个收藏
                 $shuju['cus_fav'] = $cusid1;
                 $result = $user_person -> where('user_id',$user_id)->update($shuju);
                 if($result){
-
                     return ['fhz'=>'200','info'=>'收藏成功','cusid'=>$cusid1];
                 }else{
                     return ['fhz'=>'failure','errorinfo'=>'收藏失败'];
                 }
                 //已有收藏，判断当前产品是否存在数据库
             }elseif(in_array($cusid,str_split($user['cus_fav']))){
-                print_r('bbb');
-                dump($user['cus_fav']);
                 //判断传值2是否为空，为空则不运行，不为空，则删除
                 if(!empty($cusid2)){
                     $data = explode(',',$user['cus_fav']);
                     foreach ($data as $k=>$v){
                         if($cusid == $v) unset($data[$k]);
                     }
-                    dump($data);
                     $data = implode(',',$data);
-                    dump($data);
                     $shuju['cus_fav'] = $data;
                     $result = $user_person->where('user_id',$user_id)->update($shuju);
                     if($result){

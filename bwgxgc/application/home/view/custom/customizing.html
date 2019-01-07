@@ -163,18 +163,18 @@
             <div class="main-t-t-r">
                 {eq name='$user.login_id' value='1'}
                     {in name='$data.cus_id' value='$user.cus_fav'}
-                    <div class="main-sc-box">
+                    <div class="main-sc-box" onclick="djsc(this,{$cusid2})">
                         <i class="iconfont icon-star"></i>
                         <span class="main-t-sc">已收藏</span>
                     </div>
                     {else/}
-                    <div class="main-sc-box">
+                    <div class="main-sc-box" onclick="djsc(this,{$cusid1})">
                         <i class="iconfont icon-iconxingjikongxin"></i>
                         <span class="main-t-sc">收藏</span>
                     </div>
                     {/in}
                 {else/}
-                <div class="main-sc-box">
+                <div class="main-sc-box" onclick="djsc(this,-1)">
                     <i class="iconfont icon-iconxingjikongxin"></i>
                     <span class="main-t-sc">收藏</span>
                 </div>
@@ -378,6 +378,31 @@
             threshold: 200
         });
     });
+</script>
+<script>
+    var djsc=function (lay,cusid) {
+        if(cusid==-1){
+            window.location.href="{:url('home/user/login')}";
+        }else{
+            $.ajax({
+                url:"{:url('home/custom/customizing')}",
+                type:'post',
+                data:{cusid},
+                dataType:JSON,
+                success:function (res) {
+                    alert(res)
+                    // if(res.fhz==200){
+                    //     console.log(res.info);
+                    //     alert(res.info);
+                    // }else{
+                    //     // alert('添加收藏失败')
+                    //     console.log(res.errorinfo);
+                    //     alert(res.errorinfo);
+                    // }
+                }
+            })
+        }
+    }
 </script>
 </body>
 </html>
