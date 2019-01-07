@@ -120,22 +120,52 @@ class CustomController extends Controller
 //        $loginid =str_split($cusid);
 //        print_r($user['cus_fav']);
 //        dump($user['cus_fav']);die;
+        //当用户登录成功，如果无收藏任一个产品，为空
+        $cusid1 = $request->param('cusid1');
+        $cusid2 = $request->param('cusid2');
         if(empty($user['cus_fav'])){
-            $shuju['cus_fav'] = json($cusid);
+            print_r('aaa');
+            //存储第一个收藏
+            $shuju['cus_fav'] = $cusid1;
             $result = $user_person -> where('user_id',$user_id)->update($shuju);
             if($result){
 //                return ['status'=>'200'];
             }else{
 //                return ['status'=>'failure','errorinfo'=>'收藏失败'];
             }
+            //已有收藏，判断当前产品是否存在数据库
         }elseif(in_array($cusid,str_split($user['cus_fav']))){
+            print_r('bbb');
+            dump($user['cus_fav']);
 //            return ['status'=>'200'];
+            //判断传值2是否为空，为空则不运行，不为空，则删除
+            if(!empty($cusid2)){
+                $data = explode(',',$user['cus_fav']);
+                foreach ($data as $k=>$v){
+                    if($cusid == $v) unset($data[$k]);
+                }
+                dump($data);
+                $data = implode(',',$data);
+                dump($data);
+                $shuju['cus_fav'] = $data;
+                $result = $user_person->where('user_id',$user_id)->update($shuju);
+                if($result){
+//                return ['status'=>'200'];
+                }else{
+//                return ['status'=>'failure','errorinfo'=>'收藏失败'];
+                }
 
+            }
+
+
+        //已有产品收藏，但当前页没有收藏过，
         }else{
+            print_r('ccc');
 //            $cus_fav = implode(',',$user['cus_fav']);
-            $cus_fav = User_person::value("concat(cus_fav,',',$cusid)");
+            $cus_fav = User_person::value("concat(cus_fav,',',$cusid1)");
 //            $cus_fav = json($cus_fav);
 //            echo '<pre>';
+            print_r($cus_fav);
 
             $shuju['cus_fav'] = $cus_fav;
             $result = $user_person->where('user_id',$user_id)->update($shuju);
