@@ -42,6 +42,8 @@ Route::get('home/stickacard/tiepaigengduo','home/stickacard/tiepaigengduo');//�
 Route::any('home/stickacard/tpajax','home/stickacard/tpajax',['method'=>'get|post']);//贴牌更多ajax
 //Route::get('admin/goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan');//贴牌更多
 Route::get('home/inspection/inspection','home/inspection/inspection');//优选验厂
+Route::get('home/inspection/lbsx','home/inspection/lbsx');//优选验厂
+Route::get('home/inspection/dqsx','home/inspection/dqsx');//优选验厂
 Route::get('home/documentary/documentary','home/documentary/documentary');//跟单专家
 Route::get('home/index/wlpf','home/index/wlpf');//网络批发
 Route::get('home/shebeitransfer/shebeitransfer','home/shebeitransfer/shebeitransfer');//设备转让

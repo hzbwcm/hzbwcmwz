@@ -177,13 +177,13 @@
             <div class="main-left-content">
                 <div class="main-content" style="width:100%">
                     <a href="{:url('home/inspection/inspection')}">
-                        <span class="mainLeftSpan mainLeftSpan-active">全部</span>
-                   </a>
+                    <span class="mainLeftSpan mainLeftSpan-active">全部</span>
+                        </a>
                 </div><br>
                 {volist name='type' id='v1'}
                 <div class="main-content">
 
-                    <a href="{:url('home/inspection/lbsx',['type'=>$v1.type_name])}"><span class="mainLeftSpan">
+                    <a href="{:url('home/inspection/lbsx',['type1'=>$v1.type_name])}"><span class="mainLeftSpan">
 
                    {$v1.type_name}
 
