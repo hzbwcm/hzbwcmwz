@@ -92,11 +92,12 @@ class IndexController extends Controller
 
             $info =  Customgood::paginate(3);
             //获得分页的页码列表信息 并传递给模板
-            $pagelist = $info->render();
-            $this->assign('pagelist',$pagelist);
+//            $pagelist = $info->render();
+//            $this->assign('pagelist',$pagelist);
 
             $this->assign('info',$info);
             $this->assign('bs',$bs);
+            dump($info);
         }elseif($bs==1){
             $data = array_reverse(explode(',',$user['prodis_fav']));
             $this->assign('data',$data);
@@ -111,6 +112,7 @@ class IndexController extends Controller
 
             $this->assign('info',$info);
             $this->assign('bs',$bs);
+            dump($data);
         }
 
         return $this->fetch();
