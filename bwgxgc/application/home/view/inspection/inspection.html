@@ -77,17 +77,17 @@
         </div>
 
         <div class="search-c-b">
-            <div class="search">
-                <div class="search-fram">
-                    <div class="s-f-i-i">
-                        <img data-original="{:config('home_img')}/aa.png" alt="">
+            <form action="{:url('home/index/tpsousuo')}" method="get" name="form">
+                <div class="search">
+                    <div class="search-fram">
+                        <div class="s-f-i-i">
+                            <img data-original="{:config('home_img')}/aa.png" alt="">
+                        </div>
+                        <input type="text" placeholder="" value="" name="keywords">
                     </div>
-                    <input type="text" placeholder="" value="">
+                    <button class="search-button" style="border: none"><i class="iconfont icon-fangdajing"></i></button>
                 </div>
-                <div class="search-button">
-                    <i class="iconfont icon-fangdajing"></i>
-                </div>
-            </div>
+            </form>
         </div>
 
         <div class="search-right-b">
@@ -175,9 +175,17 @@
         <div class="main-left">
             <div class="main-left-title">卫生用品系列工厂</div>
             <div class="main-left-content">
-                <div class="main-content" style="width:100%"><span class="mainLeftSpan mainLeftSpan-active">全部</span></div><br>
+                <div class="main-content" style="width:100%">
+                    <span class="mainLeftSpan mainLeftSpan-active">全部</span>
+                </div><br>
                 {volist name='type' id='v1'}
-                <div class="main-content"><span class="mainLeftSpan">{$v1.type_name}</span></div>
+                <div class="main-content">
+
+                    <a href="{:url('home/inspection/inspection',['ypeame'=>$v1.type_name,'yped'=>''])}"><span class="mainLeftSpan">
+
+                   {$v1.type_name}
+
+                </span></a></div>
                 {/volist}
             </div>
         </div>
@@ -187,10 +195,13 @@
             <div class="main-qy-sf">
                 <div class="main--right-t-l"><i class="iconfont icon-icon_location"></i>省份:</div>
                 <ul class="main-right-t-r">
+
                     <div class="main-right-text main-right-text1">全部区域</div>
 
                     {volist name='info' id='v'}
-                    <li class="main-right-text">{$v.Name}</li>
+                    <a href="{:url('home/inspectio/inspection',['ypeame'=>'','yped'=>$v.Name])}">
+                        <li class="main-right-text">{$v.Name}</li>
+                    </a>
                     {/volist}
                 </ul>
             </div>

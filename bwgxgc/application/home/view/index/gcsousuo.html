@@ -63,8 +63,8 @@
             </a>
         </div>
         <div class="header-right-box">
-            <form action="">
-                <input type="text" value="">
+            <form action="{:url('home/index/tpsousuo')}" method="get" name="form">
+                <input type="text" value="" name="keywords">
                 <div class="sousuoButton">
                     <button>搜索</button>
                 </div>
@@ -75,14 +75,13 @@
 <!--导航-->
 <div class="daohang">
     <nav>
-
-        <a href="">首页</a>
-        <a href="">产品定制</a>
-        <a href="">加工专区</a>
-        <a href="">优选验厂</a>
-        <a href="">设备转让</a>
-        <a href="">跟单专家</a>
-        <a href="">网络批发</a>
+        <a href="{:url('/')}">首页</a>
+        <a href="{:url('home/custom/custom')}">产品定制</a>
+        <a href="{:url('home/stickacard/stickacard')}">加工专区</a>
+        <a href="{:url('home/inspection/inspection')}">优选验厂</a>
+        <a href="{:url('home/shebeitransfer/shebeitransfer')}">设备转让</a>
+        <a href="{:url('home/documentary/documentary')}">跟单专家</a>
+        <a href="javascript:;">网络批发</a>
     </nav>
 </div>
 
@@ -96,7 +95,7 @@
                 <span class="main-sbmc"><a href="{:url('home/index/tpsousuo',['keywords'=>$ks])}">加工专区</a></span>
                 <span class="main-sbmc"><a href="{:url('home/index/dzsousuo',['keywords'=>$ks])}">产品定制</a></span>
                 <span class="main-sbmc"><a href="{:url('home/index/gcsousuo',['keywords'=>$ks])}">优选验厂</a></span>
-                <span class="main-sbmc"><a href="{:url('home/index/sbsousuo',['keywords'=>$ks])}">设备转让</a></span>
+                <!--<span class="main-sbmc"><a href="{:url('home/index/sbsousuo',['keywords'=>$ks])}">设备转让</a></span>-->
 
             </div>
         </div>
@@ -128,10 +127,15 @@
 
 
     <!--设备转让内容-->
-    <div class="sbzr-content-box">
-        <!--设备转让内容div-->
 
-        <!--商铺内容div-->
+    {eq name='com' value='1'}
+    <div class="sbzr-content-box">
+        暂无相关数据
+    </div>
+
+    {else/}
+
+    <div class="sbzr-content-box">
         {volist name='com' id='v'}
         <a href="{:url('home/shangpu/index',['id'=>$v.com_id])}" class="sbzr-content-box">
             <div class="sbzr-img">
@@ -154,25 +158,10 @@
         </a>
         {/volist}
     </div>
+    {/eq}
     <!--分页-->
     <div class="main-fenye-box">
-        <span class="main-sy">首页</span>
-        <div class="main-syy">上一页</div>
-        <ul>
-            <li class="right-bottom-click">1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-        </ul>
-        <div class="main-xyy">下一页</div>
-        <div class="main-tiaozhuan">
-            <span class="tiaozhuan">跳转</span>
-            <input type="text" value="">
-            <span>页</span>
-        </div>
-        <span class="main-wy">尾页</span>
+       {$page}
     </div>
 </main>
 <!--页脚-->

@@ -83,19 +83,19 @@ class IndexController extends Controller
             Session::set('key',$kwds);
             $ks=Session::get('key');
            if($kwds){
-               if($card = Card::where('type','like','%'.$ks.'%')
+               $card = Card::where('type','like','%'.$ks.'%')
                    ->whereOr('carname','like','%'.$ks.'%')
                    ->whereOr('company_name','like','%'.$ks.'%')
-                   ->select())
-               {
+                   ->paginate(10,false,['query'=>['keywords'=>$ks]]);
+
+
+                   $page=$card->render();
                    $this->assign([ 'card'=>$card,
-                                    'ks'=>$ks
-                           ]
+                           'ks'=>$ks,
+                           'page'=>$page
+                       ]
 
                    );
-               }else{
-                   return $this->redirect('{:url(\'home/index/gcsousuo\',[\'keywords\'=>$ks])}');
-               }
 
 
            }else{
@@ -116,14 +116,23 @@ class IndexController extends Controller
             $kwds = $request->get('keywords');
             Session::set('key',$kwds);
             $ks=Session::get('key');
-            if( $custom = Customgood::where('cus_proname','like','%'.$ks.'%')->select()){
-                $this->assign(
-                    [
-                        'custom'=>$custom,'ks'=>$ks]);
-            }else{
-                return $this->redirect('{:url(\'home/index/gcsousuo\',[\'keywords\'=>$ks])}');
-            }
+            $custom = Customgood::where('cus_proname','like','%'.$ks.'%')
+                ->paginate(10,false,['query'=>['keywords'=>$ks]]);
+                $page=$custom->render();
+                $this->assign([ 'custom'=>$custom,
+                        'ks'=>$ks,
+                        'page'=>$page
+                    ]
 
+                );
+
+
+
+
+
+
+        }else{
+            return $this->error('请输入查询条件');
         }
 
         return $this->fetch();
@@ -137,38 +146,33 @@ class IndexController extends Controller
             $kwds = $request->get('keywords');
             Session::set('key',$kwds);
             $ks=Session::get('key');
-
-            if(
-                $com = Company_info::where('company_name','like','%'.$ks.'%')
+            $com = Company_info::where('company_name','like','%'.$ks.'%')
                 ->whereOr('address','like','%'.$ks.'%')
-                ->select()
-            )
+                ->whereOr('type','like','%'.$ks.'%')
+                ->paginate(10,false,['query'=>['keywords'=>$ks]]);
+            for($x=0;$x<count($com);$x++)
             {
 
-                for($x=0;$x<count($com);$x++)
-                {
+                $pics = Com_pic::where('com_id',$com[$x]['com_id'])->find();
+                $com[$x]['pic6'] =$pics['pic6'];
+                $com[$x]['pic5'] =$pics['pic5'];
+                $com[$x]['pic9'] =$pics['pic9'];
+                $com[$x]['pic8'] =$pics['pic8'];
+            }
 
-                    $pics = Com_pic::where('com_id',$com[$x]['com_id'])->find();
-                    $com[$x]['pic6'] =$pics['pic6'];
-                    $com[$x]['pic5'] =$pics['pic5'];
-                    $com[$x]['pic9'] =$pics['pic9'];
-                    $com[$x]['pic8'] =$pics['pic8'];
-                }
-                $this->assign(['com'=>$com,
-
-                        'ks'=>$ks
+                $page=$com->render();
+                $this->assign([ 'com'=>$com,
+                        'ks'=>$ks,
+                        'page'=>$page
                     ]
+
                 );
 
-            }else{
-                return $this->error('暂无相关数据');
-        }
 
 
 
-
-
-
+        }else{
+            return $this->error('请输入查询条件');
         }
 
         return $this->fetch();

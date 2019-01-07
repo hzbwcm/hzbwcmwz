@@ -78,17 +78,17 @@
             </a>
         </div>
         <div class="search-c-b">
-            <div class="search">
-                <div class="search-fram">
-                    <div class="s-f-i-i">
-                        <img data-original="{:config('home_img')}/aa.png" alt="">
+            <form action="{:url('home/index/tpsousuo')}" method="get" name="form">
+                <div class="search">
+                    <div class="search-fram">
+                        <div class="s-f-i-i">
+                            <img data-original="{:config('home_img')}/aa.png" alt="">
+                        </div>
+                        <input type="text" placeholder="" value="" name="keywords">
                     </div>
-                    <input type="text" placeholder="" value="">
+                    <button class="search-button" style="border: none"><i class="iconfont icon-fangdajing"></i></button>
                 </div>
-                <div class="search-button">
-                    <i class="iconfont icon-fangdajing"></i>
-                </div>
-            </div>
+            </form>
         </div>
 
         <div class="search-right-b">
