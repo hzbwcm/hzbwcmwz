@@ -85,7 +85,11 @@ class IndexController extends Controller
             $datacount = count($data);
             $this->assign('datacount',$datacount);
 
-            $info =  Customgood::select();
+            $info =  Customgood::paginate(2);
+            //获得分页的页码列表信息 并传递给模板
+            $pagelist = $info->render();
+            $this->assign('pagelist',$pagelist);
+
             $this->assign('info',$info);
             $this->assign('bs',$bs);
         }elseif($bs==1){
@@ -95,7 +99,11 @@ class IndexController extends Controller
             $datacount = count($data);
             $this->assign('datacount',$datacount);
 
-            $info = Prodis::select();
+            $info = Prodis::paginate(2);
+            //获得分页的页码列表信息 并传递给模板
+            $pagelist = $info->render();
+            $this->assign('pagelist',$pagelist);
+
             $this->assign('info',$info);
             $this->assign('bs',$bs);
         }
