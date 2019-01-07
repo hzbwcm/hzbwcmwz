@@ -72,10 +72,13 @@ class IndexController extends Controller
     public function shoucangjia(Request $request)
     {
         $user_id = Session('user_id');
-        $user = User_person::where('user_id',$user_id)->find();
+        $user = User_person::where('user_id',$user_id)->order('','esc')->find();
 
-        $data = implode(',',$user['cus_fav']);
+        $data = array_reverse(explode(',',$user['cus_fav']));
         $this->assign('data',$data);
+
+        $info =  Customgood::select();
+        $this->assign('info',$info);
 
         return $this->fetch();
     }
