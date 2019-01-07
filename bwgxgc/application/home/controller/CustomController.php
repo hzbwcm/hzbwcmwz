@@ -125,12 +125,14 @@ class CustomController extends Controller
         $cusid2 = $request->param('cusid2');
         $this->assign('cusib1',$cusid);
         $this->assign('cusib2',$cusid);
+
         if(empty($user['cus_fav'])){
             print_r('aaa');
             //存储第一个收藏
             $shuju['cus_fav'] = $cusid1;
             $result = $user_person -> where('user_id',$user_id)->update($shuju);
             if($result){
+                $this->assign('cusib1',$cusid);
                 return ['status'=>'200','info'=>'收藏成功'];
             }else{
                 return ['status'=>'failure','errorinfo'=>'收藏失败'];
@@ -151,9 +153,10 @@ class CustomController extends Controller
                 $shuju['cus_fav'] = $data;
                 $result = $user_person->where('user_id',$user_id)->update($shuju);
                 if($result){
-                return ['status'=>'200','info'=>'取消收藏成功'];
+                    $this->assign('cusib2',$cusid);
+                    return ['status'=>'200','info'=>'取消收藏成功'];
                 }else{
-                return ['status'=>'failure','errorinfo'=>'取消收藏失败'];
+                    return ['status'=>'failure','errorinfo'=>'取消收藏失败'];
                 }
 
             }
