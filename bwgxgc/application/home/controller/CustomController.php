@@ -131,7 +131,7 @@ class CustomController extends Controller
                 $shuju['cus_fav'] = $cusid1;
                 $result = $user_person -> where('user_id',$user_id)->update($shuju);
                 if($result){
-                    return ['fhz'=>'200','info'=>'收藏成功','cusid'=>$cusid1];
+                    return ['fhz'=>200,'info'=>'收藏成功','cusid'=>$cusid1];
                 }else{
                     return ['fhz'=>'failure','errorinfo'=>'收藏失败'];
                 }
@@ -148,7 +148,7 @@ class CustomController extends Controller
                     $result = $user_person->where('user_id',$user_id)->update($shuju);
                     if($result){
 
-                        return ['fhz'=>'200','info'=>'取消收藏成功','cusid'=>$cusid1];
+                        return ['fhz'=>200,'info'=>'取消收藏成功','cusid'=>$cusid1];
                     }else{
                         return ['fhz'=>'failure','errorinfo'=>'取消收藏失败'];
                     }
@@ -168,7 +168,7 @@ class CustomController extends Controller
                 $shuju['cus_fav'] = $cus_fav;
                 $result = $user_person->where('user_id',$user_id)->update($shuju);
                 if($result){
-                    return ['fhz'=>'200'];
+                    return ['fhz'=>200];
                 }else{
                     return ['fhz'=>'failure','errorinfo'=>'收藏失败'];
                 }
