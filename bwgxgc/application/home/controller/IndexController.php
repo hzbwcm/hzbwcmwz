@@ -77,6 +77,9 @@ class IndexController extends Controller
         $data = array_reverse(explode(',',$user['cus_fav']));
         $this->assign('data',$data);
 
+        $datacount = count($data);
+        $this->assign();
+
         $info =  Customgood::select();
         $this->assign('info',$info);
 
