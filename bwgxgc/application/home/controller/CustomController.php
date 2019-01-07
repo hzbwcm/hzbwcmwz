@@ -123,8 +123,8 @@ class CustomController extends Controller
         //当用户登录成功，如果无收藏任一个产品，为空
         $cusid1 = $request->param('cusid1');
         $cusid2 = $request->param('cusid2');
-        $this->assign('cusib1',$cusid);
-        $this->assign('cusib2',$cusid);
+        $this->assign('cusid1',$cusid);
+        $this->assign('cusid2',$cusid);
         if($request->isAjax()){
             if(empty($user['cus_fav'])){
                 print_r('aaa');
@@ -132,8 +132,8 @@ class CustomController extends Controller
                 $shuju['cus_fav'] = $cusid1;
                 $result = $user_person -> where('user_id',$user_id)->update($shuju);
                 if($result){
-                    $this->assign('cusib1',$cusid);
-                    return ['status'=>'200','info'=>'收藏成功'];
+
+                    return ['status'=>'200','info'=>'收藏成功','cusid'=>$cusid1];
                 }else{
                     return ['status'=>'failure','errorinfo'=>'收藏失败'];
                 }
@@ -153,8 +153,8 @@ class CustomController extends Controller
                     $shuju['cus_fav'] = $data;
                     $result = $user_person->where('user_id',$user_id)->update($shuju);
                     if($result){
-                        $this->assign('cusib2',$cusid);
-                        return ['status'=>'200','info'=>'取消收藏成功'];
+
+                        return ['status'=>'200','info'=>'取消收藏成功','cusid'=>$cusid1];
                     }else{
                         return ['status'=>'failure','errorinfo'=>'取消收藏失败'];
                     }
