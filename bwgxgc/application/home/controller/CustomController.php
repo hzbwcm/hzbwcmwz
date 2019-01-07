@@ -121,8 +121,8 @@ class CustomController extends Controller
 //        print_r($user['cus_fav']);
 //        dump($user['cus_fav']);die;
         //当用户登录成功，如果无收藏任一个产品，为空
-        $cusid1 = $request->param('cusid1');
-        $cusid2 = $request->param('cusid2');
+        $cusid1 = $request->param('cusid');
+        $cusid2 = $request->param('cusid');
         $this->assign('cusid1',$cusid);
         $this->assign('cusid2',$cusid);
         if($request->isAjax()){
