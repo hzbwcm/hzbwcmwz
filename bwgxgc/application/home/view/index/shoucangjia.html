@@ -78,12 +78,12 @@
 <div class="daohang">
     <nav>
         <a href="/">首页</a>
-        <a href="custom">产品定制</a>
-        <a href="stickacard">加工专区</a>
-        <a href="inspection">优选验厂</a>
-        <a href="shebeitransfer">设备转让</a>
-        <a href="documentary">跟单专家</a>
-        <a href="javascript:;">网络批发</a>
+        <a href="{:url('custom/custom')}">产品定制</a>
+        <a href="{:url('stickacard/stickacard')}">加工专区</a>
+        <a href="{:url('inspection/inspection')}">优选验厂</a>
+        <a href="{:url('shebeitransfer/shebeitransfer')}">设备转让</a>
+        <a href="{:url('documentary/documentary')}">跟单专家</a>
+        <a href="{:url('index/wlpf')}">网络批发</a>
     </nav>
 </div>
 
@@ -103,7 +103,7 @@
 <main>
     <!--搜索,操作行-->
     <div class="caozuo-big-box">
-        <div class="caozuo-qb"><span>全部关注：</span><span class="caozuo-qb-num">10</span></div>
+        <div class="caozuo-qb"><span>全部关注：</span><span class="caozuo-qb-num">{$datacount}</span></div>
         <div class="caozuo-sousuo-box">
             <div class="quanxuan-box piliangcaozuo">
                 <input type="checkbox" id="quanxuan-input">
@@ -121,15 +121,57 @@
             </div>
         </div>
     </div>
+    <!--分类-->
+    <div class="scjSx">
+        <div class="scjSxFl">分类：</div>
+        <div class="scjFl">
+            <a href="{:url('home/index/shoucangjia',['bs'=>0])}" class="aActive">产品定制</a>
+            <a href="{:url('home/index/shoucangjia',['bs'=>1])}">加工专区</a>
+        </div>
+    </div>
     <!--已收藏内容-->
     <div class="main-scj-box">
+        {eq name='$bs' value='0'}
+            {volist name='$data' id='da'}
+            {volist name='$info' id='in'}
+            {eq name='$in.cus_id' value='$da'}
+            <!--内容-->
+            <div class="scj-box">
+                <div class="scj-img">
+                    <img data-original="{:config('public_uploads')}/{$in.cus_pic}" alt="">
+                    <div class="scj-cz-box scj-cz-active">
+                        <a href="{:url('home/custom/customizing',['cusid'=>$in.cus_id])}" class="scj-cz-jrgc">进入工厂</a>
+                        <span class="scj-cz-sc" gsmc="{$in.cus_proname}" id="{$in.cus_id}">删除</span>
+                        <div class="scj-cz-xz">
+                            <div class="scj-cz-div">
+                                <img src="" alt="" class="scj-cz-div-img">
+                                <input type="checkbox" class="scj-cz-input">
+                            </div>
+                            <label>选择</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="scj-logo-box">
+                    <div class="scj-logo-img">
+                        <img data-original="{:config('home_img')}/a1.png" alt="">
+                    </div>
+                    <div class="scj-logo-title">{$in.cus_proname}</div>
+                </div>
+            </div>
+            {/eq}
+            {/volist}
+            {/volist}
+        {else/}
+        {volist name='$data' id='da'}
+        {volist name='$info' id='in'}
+        {eq name='$in.id' value='$da'}
         <!--内容-->
         <div class="scj-box">
             <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
+                <img data-original="{:config('public_uploads')}/{$in.pic1}" alt="">
                 <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
+                    <a href="{:url('home/custom/customizing',['cusid'=>$in.id])}" class="scj-cz-jrgc">进入工厂</a>
+                    <span class="scj-cz-sc" gsmc="{$in.proname}" id="{$in.id}">删除</span>
                     <div class="scj-cz-xz">
                         <div class="scj-cz-div">
                             <img src="" alt="" class="scj-cz-div-img">
@@ -143,239 +185,14 @@
                 <div class="scj-logo-img">
                     <img data-original="{:config('home_img')}/a1.png" alt="">
                 </div>
-                <div class="scj-logo-title">品牌名称</div>
+                <div class="scj-logo-title">{$in.proname}</div>
             </div>
         </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
-        <!--内容-->
-        <div class="scj-box">
-            <div class="scj-img">
-                <img data-original="{:config('home_img')}/a0.png" alt="">
-                <div class="scj-cz-box scj-cz-active">
-                    <a href="" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="品牌名称">删除</span>
-                    <div class="scj-cz-xz">
-                        <div class="scj-cz-div">
-                            <img src="" alt="" class="scj-cz-div-img">
-                            <input type="checkbox" class="scj-cz-input">
-                        </div>
-                        <label>选择</label>
-                    </div>
-                </div>
-            </div>
-            <div class="scj-logo-box">
-                <div class="scj-logo-img">
-                    <img data-original="{:config('home_img')}/a1.png" alt="">
-                </div>
-                <div class="scj-logo-title">品牌名称</div>
-            </div>
-        </div>
+        {/eq}
+        {/volist}
+        {/volist}
+        {/eq}
+
     </div>
     <!--分页-->
     <div class="main-fenye-box">
@@ -456,7 +273,18 @@
         //内容选择框图片切换
         $('.scj-cz-input').on('click',function () {
             if($(this).prop('checked')){
+                var flag=true;
                 $(this).prev().attr('src','{:config(\'home_img\')}/shoucangjia/a0.png')
+                var input_str=$('.scj-cz-div input');
+                for(var i=0;i<input_str.length;i++){
+                    var key=$('.scj-cz-div input').eq(i).prop('checked');
+                    if(!key){
+                        flag=false;
+                    }
+                }
+                if(flag){
+                    $('#quanxuan-input').prop('checked',true);
+                }
             }else{
                 $(this).prev().attr('src','')
                 $('#quanxuan-input').prop('checked',false);
@@ -473,6 +301,30 @@
                 $('.scj-cz-div-img').attr('src','')
             }
         })
+
+        //点击删除一条收藏
+        $('.scj-cz-sc').on('click',djsc);
+        function djsc() {
+            var gs_name=$(this).attr('gsmc');//公司名称
+            var flag=confirm('是否将'+gs_name+'从收藏夹中移除');
+            var cusid=$(this).attr('id');//当前要删除的数据的ID
+            if(flag){
+                $.ajax({
+                    url:"{:url('home/index/delcollection')}",
+                    type:'post',
+                    data:{cusid},
+                    dataType:'JSON',
+                    success:function (res) {
+                        if(res){
+                            alert('删除成功');
+                            window.history.go(0);
+                        }else{
+                            alert('删除失败');
+                        }
+                    }
+                })
+            }
+        }
     })
 </script>
 <script>

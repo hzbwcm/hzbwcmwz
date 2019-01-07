@@ -4,12 +4,15 @@ namespace app\home\controller;
 use app\home\model\Card;
 use app\home\model\Com_pic;
 use app\home\model\Customgood;
+use app\home\model\Prodis;
+use app\home\model\User_person;
 use app\home\model\Type;
 use think\Controller;
 use app\home\model\Area;
 use app\home\model\Company_info;
 use think\Request;
 use think\Session;
+use think\Db;
 class IndexController extends Controller
 {
     //前台首页
@@ -70,7 +73,71 @@ class IndexController extends Controller
     //收藏夹
     public function shoucangjia(Request $request)
     {
+        $user_id = Session('user_id');
+        $user = User_person::where('user_id',$user_id)->find();
+
+        $bs = $request->param('bs');
+
+        if($bs==0){
+            $data = array_reverse(explode(',',$user['cus_fav']));
+            $this->assign('data',$data);
+
+            $datacount = count($data);
+            $this->assign('datacount',$datacount);
+
+            $info =  Customgood::select();
+            $this->assign('info',$info);
+            $this->assign('bs',$bs);
+        }elseif($bs==1){
+            $data = array_reverse(explode(',',$user['prodis_fav']));
+            $this->assign('data',$data);
+
+            $datacount = count($data);
+            $this->assign('datacount',$datacount);
+
+            $info = Prodis::select();
+            $this->assign('info',$info);
+            $this->assign('bs',$bs);
+        }
+
         return $this->fetch();
+    }
+
+    //收藏夹删除收藏
+    public function delcollection(Request $request)
+    {
+        $user_id = Session('user_id');
+        $user = User_person::where('user_id',$user_id)->find();
+        $cusid = $request->param('cusid');
+        $data = explode(',',$user['cus_fav']);
+        foreach ($data as $k=>$v){
+            if($cusid == $v) unset($data[$k]);
+        }
+        $data = implode(',',$data);
+        $shuju['cus_fav'] = $data;
+        $result = User_person::where('user_id',$user_id)->update($shuju);
+        if ($result) {
+
+            $request = Request::instance();
+            $ip = $request->ip();
+            $acc = Session::get('nickname');
+            $data = [
+                'ope_cat' => '个人',
+                'ope_id' => $user_id,
+                'ope_acc' => $acc,
+                'ope_ip' => $ip,
+                'ope_tab' => 'user_person[cus_fav]',
+                'ope_act' => '真删除',
+            ];
+            Db::table('ope_log')->insert($data);
+
+            return true;
+        } else {
+            return false;
+        }
+
+//        $res = Customgood::where('cus_id', $cusid)->delete();
+
     }
 
 

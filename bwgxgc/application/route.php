@@ -28,13 +28,14 @@ Route::group('home',function (){
     Route::get('user/delcpdz','home/user/delcpdz');//产品定制删除
     Route::any('user/xinxiguanli','home/user/xinxiguanli',['method'=>'get|post']);//信息管理
     Route::get('index/shoucangjia','home/index/shoucangjia');//收藏夹
+    Route::any('index/delcollection','home/index/delcollection',['method'=>'get|post']);//收藏夹删除
 },['after_behavior'=>'\app\home\behavior\CheckLogin']);
 
 
 //home分组
 Route::get('home/custom/custom','home/custom/custom');//产品定制
 Route::any('home/custom/customizing','home/custom/customizing',['method'=>'get|post']);//产品定制详情详情页
-Route::get('home/custom/ge               t_area','home/custom/get_area');//产品定制地区
+Route::get('home/custom/get_area','home/custom/get_area');//产品定制地区
 Route::get('home/stickacard/stickacard','home/stickacard/stickacard');//贴牌专区
 Route::get('home/stickacard/tiepaixiangqing','home/stickacard/tiepaixiangqing');//贴牌详情
 Route::get('home/stickacard/tiepaigengduo','home/stickacard/tiepaigengduo');//贴牌更多
