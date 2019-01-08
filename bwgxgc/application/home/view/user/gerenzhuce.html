@@ -57,7 +57,8 @@
     <div class="control-group">
         <div class="controls">
             <input name='tel_code' type="text" value="{$shuju.tel_code|default=''}" placeholder="请输入验证码">
-            <span style="color:red;">{$errorinfo|default=''}</span>
+            <span style="color:red;">{$errorinfo.tel_code|default=''}</span>
+
         </div>
         <label class="control-label"><i class="iconfont icon-yanzhengyanzhengma"></i></label>
     </div>
@@ -84,7 +85,7 @@
             dataType:'json',
             type:'post',
             success:function(msg){
-                if(msg.status=='success'){
+                if(msg.status=='success'){a
                     $('#sms_result').html('发送成功');
                 }else{
                     $('#sms_result').html('发送失败');

@@ -472,7 +472,7 @@ class UserController extends Controller
 
         //模板内容变量
         $code = mt_rand(100000,999999);  //6位数的验证码
-        $time = 3; //有效验证时间为3分钟
+        $time = 1; //有效验证时间为3分钟
         //为了后期校验，要把"验证码"  和  "时间"存到session中，用户后期比较
         session('tel_code',$code);
         session('tel_time',time()); //存储发送短信的时间戳信息
@@ -503,12 +503,19 @@ class UserController extends Controller
     {
         if(request()->ispost()){
             $shuju = request()->param();
+
+            $tel_code = $request->post('tel_code');
+            $ses_code = Session('tel_code');
+            $code_time = Session('tel_time');
+            $now_time = time();
+
             $rules = [
                 'username'  =>'require|unique:user_person,username|max:25',
                 'password'  =>'require|length:6,15',
                 'password2' =>'require|confirm:password',
-                'tel'       =>['require','regex'=>'/^1[358]\d{9}$/'],
+                'tel'       =>['require','regex'=>'/^1[3587]\d{9}$/'],
                 'nickname'      =>'require|unique:user_person,username|max:25',
+                'tel_code'  =>'require',
             ];
             $msg = [
                 'nickname.require'      => '用户名必填',
@@ -523,20 +530,35 @@ class UserController extends Controller
                 'password2.confirm'     => '两次密码不一致',
                 'tel.require'           => '手机号码必填',
                 'tel.regex'             => '手机号码规则不正确',
+                'tel_code.require'              => '验证码不能为空',
             ];
             $validate = new Validate($rules,$msg);
             if($validate ->batch()-> check($shuju)){
                 $user_person = new user_person();
                 $shuju['password'] = md5($shuju['password']);
-                $result = $user_person->allowField(true)->save($shuju);
-                if($result){
-                    echo "<script>alert('恭喜您注册成功');</script>";
-                    echo "<script>parent.location.href = \"../index/index\";</script>";
-//                    $this->success('添加成功',('index'));
-//                    return ['status'=>'success'];
+
+                if($tel_code!=$ses_code){
+                    echo "<script>alert('手机校验码不正确');</script>";
+                    echo "<script>window.history.go(-1);</script>";
+//                    $this->assign('shuju',$request->post());
+//                    $this->assign('errorinfo','手机校验码已经失效');
+                }else if(($now_time-$code_time)>1*60){
+                    echo "<script>alert('手机校验码已经失效');</script>";
+                    echo "<script>window.history.go(-1);</script>";
+//                    $this->assign('shuju',$request->post());
+//                    $this->assign('errorinfo','手机校验码不正确');
                 }else{
-                    return $this->redirect('home/uer/zhuceshibai');
+                    dump('ccc');
+                    $result = $user_person->allowField(true)->save($shuju);
+                    if($result){
+                        echo "<script>alert('恭喜您注册成功');</script>";
+                        echo "<script>parent.location.href = \"../index/index\";</script>";
+                    }else{
+                        return $this->redirect('home/uer/zhuceshibai');
+                    }
+
                 }
+
             }else{
                 $errorinfo= $validate->getError();
                 $this -> assign('errorinfo',$errorinfo);
