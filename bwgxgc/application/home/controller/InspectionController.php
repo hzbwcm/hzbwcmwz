@@ -58,6 +58,7 @@ class InspectionController extends Controller
         $this->assign([
             'info'  => $info,
             'type' => $type,
+            'type1' => $type1,
             'com' => $com,
             'pagelist'=>$pagelist
 
@@ -85,6 +86,7 @@ class InspectionController extends Controller
         $this->assign([
             'info'  => $info,
             'type' => $type,
+            'area'=>$area,
             'com' => $com,
             'pagelist'=>$pagelist
 

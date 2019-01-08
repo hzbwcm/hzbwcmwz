@@ -17,18 +17,32 @@
     <![endif]-->
 </head>
 <style type="text/css">
-    .pagination li{list-style:none;float:left;margin-left:10px;
-        padding:0 10px;
-        background-color:white;
-        border:1px solid #ccc;
-        height:26px;
-        line-height:26px;
-        cursor:pointer;
-        color:#fff;
+    .pagination li {
+        list-style: none;
+        float: left;
+        margin-left: 10px;
+        padding: 0 10px;
+        background-color: white;
+        border: 1px solid #ccc;
+        height: 26px;
+        line-height: 26px;
+        cursor: pointer;
+        color: #fff;
     }
-    .pagination li a{color: #a260de;}
-    .pagination li.active{background-color:#a260de;color:#fff;}
-    .pagination li.disabled{background-color: #d6d6d6;color:#fff;}
+
+    .pagination li a {
+        color: #a260de;
+    }
+
+    .pagination li.active {
+        background-color: #a260de;
+        color: #fff;
+    }
+
+    .pagination li.disabled {
+        background-color: #d6d6d6;
+        color: #fff;
+    }
 </style>
 <body>
 <header class="header-box">
@@ -72,7 +86,7 @@
     <div class="search-centre">
         <div class="sear-logo">
             <a href="{:url('/')}">
-            <img data-original="{:config('home_img')}/a0.png" alt="">
+                <img data-original="{:config('home_img')}/a0.png" alt="">
             </a>
         </div>
 
@@ -154,14 +168,20 @@
     <div class="banner-box-box">
         <div class="banner-box-img">
             <ul class="banner-img-box">
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/1.jpg" alt=""></a></li>
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/ct2.jpg" alt=""></a></li>
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/banner.jpg" alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/1.jpg" alt=""></a>
+                </li>
+                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/ct2.jpg"
+                                                                   alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/banner.jpg"
+                                                                   alt=""></a></li>
             </ul>
             <ul class="banner-img-box">
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/1.jpg" alt=""></a></li>
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/ct2.jpg" alt=""></a></li>
-                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/banner.jpg" alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/1.jpg" alt=""></a>
+                </li>
+                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/ct2.jpg"
+                                                                   alt=""></a></li>
+                <li class="banner-img"><a href="javascript:;"><img src="{:config('home_img')}/inspection/banner.jpg"
+                                                                   alt=""></a></li>
             </ul>
         </div>
     </div>
@@ -178,16 +198,20 @@
                 <div class="main-content" style="width:100%">
                     <a href="{:url('home/inspection/inspection')}">
                         <span class="mainLeftSpan mainLeftSpan-active">全部</span>
-                   </a>
-                </div><br>
+                    </a>
+                </div>
+                <br>
                 {volist name='type' id='v1'}
                 <div class="main-content">
 
-                    <a href="{:url('home/inspection/lbsx',['type'=>$v1.type_name])}"><span class="mainLeftSpan">
+
+                    <a href="{:url('home/inspection/lbsx',['type1'=>$v1.type_name])}"><span
+                            class="mainLeftSpan ">
 
                    {$v1.type_name}
+                </span></a>
 
-                </span></a></div>
+                </div>
                 {/volist}
             </div>
         </div>
@@ -198,7 +222,7 @@
                 <div class="main--right-t-l"><i class="iconfont icon-icon_location"></i>省份:</div>
                 <ul class="main-right-t-r">
                     <a href="{:url('home/inspection/inspection')}">
-                    <div class="main-right-text main-right-text1">全部区域</div>
+                        <div class="main-right-text main-right-text1">全部区域</div>
                     </a>
                     {volist name='info' id='v'}
                     <a href="{:url('home/inspection/dqsx',['area'=>$v.Name])}">
@@ -219,7 +243,7 @@
                     </div>
                     <div class="main-li-content">
                         <div class="main-li-title">
-                            <a href="{:url('home/shangpu/index',['id'=>$v.com_id])}" >{$v.company_name}</a>
+                            <a href="{:url('home/shangpu/index',['id'=>$v.com_id])}">{$v.company_name}</a>
                         </div>
                         <div class="main-li-r-b">
                             <div class="main-li-gsclsj">公司成立时间：<span>{$v.time}</span></div>
@@ -237,23 +261,23 @@
             </div>
             <!--分页-->
             <!--<div class="main-fenye-box">-->
-                <!--<span class="main-sy">首页</span>-->
-                <!--<div class="main-syy">上一页</div>-->
-                <!--<ul>-->
-                    <!--<li class="right-bottom-click">1</li>-->
-                    <!--<li>2</li>-->
-                    <!--<li>3</li>-->
-                    <!--<li>4</li>-->
-                    <!--<li>5</li>-->
-                    <!--<li>6</li>-->
-                <!--</ul>-->
-                <!--<div class="main-xyy">下一页</div>-->
-                <!--<div class="main-tiaozhuan">-->
-                    <!--<span class="tiaozhuan">跳转</span>-->
-                    <!--<input type="text" value="">-->
-                    <!--<span>页</span>-->
-                <!--</div>-->
-                <!--<span class="main-wy">尾页</span>-->
+            <!--<span class="main-sy">首页</span>-->
+            <!--<div class="main-syy">上一页</div>-->
+            <!--<ul>-->
+            <!--<li class="right-bottom-click">1</li>-->
+            <!--<li>2</li>-->
+            <!--<li>3</li>-->
+            <!--<li>4</li>-->
+            <!--<li>5</li>-->
+            <!--<li>6</li>-->
+            <!--</ul>-->
+            <!--<div class="main-xyy">下一页</div>-->
+            <!--<div class="main-tiaozhuan">-->
+            <!--<span class="tiaozhuan">跳转</span>-->
+            <!--<input type="text" value="">-->
+            <!--<span>页</span>-->
+            <!--</div>-->
+            <!--<span class="main-wy">尾页</span>-->
             <!--</div>-->
             <div style="margin-top: 30px;">
                 {$pagelist}
@@ -311,14 +335,14 @@
 <script src="{:config('home_js')}/inspection.js"></script>
 <script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="src/kkpager.min.js"></script>
-<link rel="stylesheet" type="text/css" href="src/kkpager_orange.css" />
+<link rel="stylesheet" type="text/css" href="src/kkpager_orange.css"/>
 
 <script>
-    $(function() {
+    $(function () {
         $("img").lazyload({
             threshold: 200,
-            skip_invisible : false,
-            failurelimit :4
+            skip_invisible: false,
+            failurelimit: 4
         });
     });
 </script>

@@ -183,11 +183,16 @@
                 {volist name='type' id='v1'}
                 <div class="main-content">
 
-                    <a href="{:url('home/inspection/lbsx',['type1'=>$v1.type_name])}"><span class="mainLeftSpan">
+
+                    <a href="{:url('home/inspection/lbsx',['type1'=>$v1.type_name])}"><span
+                            class="mainLeftSpan ">
 
                    {$v1.type_name}
 
-                </span></a></div>
+                </span></a>
+
+
+                </div>
                 {/volist}
             </div>
         </div>
@@ -198,13 +203,23 @@
                 <div class="main--right-t-l"><i class="iconfont icon-icon_location"></i>省份:</div>
                 <ul class="main-right-t-r">
                     <a href="{:url('home/inspection/inspection')}">
-                    <div class="main-right-text main-right-text1">全部区域</div>
+                    <div class="main-right-text ">全部区域</div>
                     </a>
+
                     {volist name='info' id='v'}
+                    {eq name='$v.Name' value='$area'}
                     <a href="{:url('home/inspection/dqsx',['area'=>$v.Name])}">
-                        <li class="main-right-text">{$v.Name}</li>
+                        <li class="main-right-text main-right-text1 ">{$v.Name}</li>
                     </a>
+                    {else/}
+                    <a href="{:url('home/inspection/dqsx',['area'=>$v.Name])}">
+                        <li class="main-right-text  ">{$v.Name}</li>
+                    </a>
+
+                    {/eq}
                     {/volist}
+
+
                 </ul>
             </div>
 

@@ -177,17 +177,27 @@
             <div class="main-left-content">
                 <div class="main-content" style="width:100%">
                     <a href="{:url('home/inspection/inspection')}">
-                    <span class="mainLeftSpan mainLeftSpan-active">全部</span>
+                    <span class="mainLeftSpan ">全部</span>
                     </a>
                 </div><br>
                 {volist name='type' id='v1'}
                 <div class="main-content">
 
+                    {eq name='$v1.type_name' value='$type1'}
+                    <a href="{:url('home/inspection/lbsx',['type1'=>$v1.type_name])}"><span
+                            class="mainLeftSpan mainLeftSpan-active">
+
+                   {$v1.type_name}
+
+                </span></a>
+                    {else/}
                     <a href="{:url('home/inspection/lbsx',['type1'=>$v1.type_name])}"><span class="mainLeftSpan">
 
                    {$v1.type_name}
 
-                </span></a></div>
+                </span></a>
+                    {/eq}
+                </div>
                 {/volist}
             </div>
         </div>
@@ -201,7 +211,7 @@
                     <div class="main-right-text main-right-text1">全部区域</div>
                     </a>
                     {volist name='info' id='v'}
-                    <a href="{:url('home/inspection/inspection',['ypeame'=>'','yped'=>$v.Name])}">
+                    <a href="{:url('home/inspection/dqsx',['area'=>$v.Name])}">
                         <li class="main-right-text">{$v.Name}</li>
                     </a>
                     {/volist}
