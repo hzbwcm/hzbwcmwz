@@ -79,23 +79,34 @@ class StickacardController extends Controller
         $type = Type::where('type_pid',0)->select();
         $info = Card::where('id','>',0)->select();
         $info_obj=[];
-        if($user['login_id']==1){
-            $card_fav = User_person::where('user_id',$user_id)->value('card_fav');
-            $this->assign('scbz',$card_fav);
-        }
+
         for ($i=0;$i < sizeof($type);$i++){
             $info_arr=[];
             for ($j=0;$j < sizeof($info);$j++){
                 if($type[$i]['type_name']==$info[$j]['type']){
-                    array_push($info_arr,$info[$j]);
+                    if($user['login_id']==1){
+                        $card_fav = User_person::where('user_id',$user_id)->value('card_fav');
+                        foreach (explode(',',$card_fav) as $vv){
+                            if($info[$j]['id']==$vv){
+                                $info[$j]['scbz']=1;
+                                break;
+                            }else{
+                                $info[$j]['scbz']=0;
+                            }
+                        }
+                        array_push($info_arr,$info[$j]);
+                    }else{
+                        $info[$j]['scbz']=0;
+                        array_push($info_arr,$info[$j]);
+                    }
                 }
             }
             $info_obj[$type[$i]['type_name']] = $info_arr;
         }
+//        dump($info_obj);
         $this->assign([
             'type'=>$type,
-            'info'=>$info_obj,
-            'user'=>$user['login_id']
+            'info'=>$info_obj
         ]);
 
 

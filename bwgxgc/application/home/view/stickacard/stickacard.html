@@ -264,29 +264,27 @@
                         <span class="jggc-content-num-l">起订量:</span>
                         <span class="jggc-content-num-r">{$v.qdl}</span>
                     </div>
-                    <!--<div class="jggc-content-myd-box">-->
-                        <!--{eq name='$user' value='1'}-->
-                        <!--{volist name='scbz' id='bz'}-->
-                            <!--{eq name='$vv.id' value='$bz'}-->
-                            <!--<div class="jggc-icon"  onclick="djsc(this,{$vv.id})">-->
-                                <!--<i class="iconfont icon-xin1">已收藏</i>&lt;!&ndash;已收藏&ndash;&gt;-->
-                            <!--</div>-->
-                            <!--{else/}-->
-                            <!--<div class="jggc-icon"  onclick="djsc(this,{$vv.id})">-->
-                                <!--<i class="iconfont icon-xin"></i>&lt;!&ndash;未收藏&ndash;&gt;-->
-                                <!--&lt;!&ndash;<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;&ndash;&gt;-->
-                                <!--<span class="jggc-icon-sc">收藏</span>-->
-                            <!--</div>-->
-                            <!--{/eq}-->
-                        <!--{/volist}-->
-                        <!--{else/}-->
-                        <!--<div class="jggc-icon"  onclick="djsc(this,-1)">-->
-                            <!--<i class="iconfont icon-xin"></i>&lt;!&ndash;未收藏&ndash;&gt;-->
-                            <!--&lt;!&ndash;<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;&ndash;&gt;-->
-                            <!--<span class="jggc-icon-sc">收藏</span>-->
-                        <!--</div>-->
-                        <!--{/eq}-->
-                    <!--</div>-->
+                    <div class="jggc-content-myd-box">
+                        {eq name='$user.user_id' value='1'}
+                        {eq name='$v.scbz' value='1'}
+                        <div class="jggc-icon"  onclick="djsc(this,{$v.id})">
+                            <i class="iconfont icon-xin1"></i><!--已收藏-->
+                            <span class="jggc-icon-sc">已收藏</span>
+                        </div>
+                        {else/}
+                        <div class="jggc-icon"  onclick="djsc(this,{$v.id})">
+                            <i class="iconfont icon-xin"></i><!--未收藏-->
+                            <span class="jggc-icon-sc">收藏</span>
+                        </div>
+                        {/eq}
+                        {else/}
+                        <div class="jggc-icon"  onclick="djsc(this,-1)">
+                            <i class="iconfont icon-xin"></i><!--未收藏-->
+                            <!--<i class="iconfont icon-xin1"></i>&lt;!&ndash;已收藏&ndash;&gt;-->
+                            <span class="jggc-icon-sc">收藏</span>
+                        </div>
+                        {/eq}
+                    </div>
                 </div>
             </div>
         </div>
@@ -366,6 +364,42 @@
             skip_invisible : false
         });
     });
+</script>
+<script>
+    var djsc=function (lay,id) {
+        if(id==-1){
+            window.location.href="{:url('home/user/login')}";
+        }else{
+            $.ajax({
+                url:"{:url('home/stickacard/tpcollect')}",
+                type:'post',
+                data:{id},
+                dataType:'JSON',
+                success:function (res) {
+                    if(res.fhz==200){
+                        if(res.fhxx==1){
+                            var str='<div class="jggc-icon"  onclick="djsc(this,'+res.cusid+')">\n' +
+                                '                            <i class="iconfont icon-xin1"></i><!--已收藏-->\n' +
+                                '                            <span class="jggc-icon-sc">已收藏</span>\n' +
+                                '                        </div>';
+                            $(lay).parent().html(str);
+                            alert(res.info);
+                        }else if(res.fhxx==2){
+                            var str='<div class="jggc-icon"  onclick="djsc(this,'+res.cusid+')">\n' +
+                                '                            <i class="iconfont icon-xin"></i><!--未收藏-->\n' +
+                                '                            <span class="jggc-icon-sc">收藏</span>\n' +
+                                '                        </div>';
+                            $(lay).parent().html(str);
+                            alert(res.info);
+                        }
+                    }else{
+                        console.log(res.errorinfo);
+                        alert(res.errorinfo);
+                    }
+                }
+            })
+        }
+    }
 </script>
 </body>
 </html>
