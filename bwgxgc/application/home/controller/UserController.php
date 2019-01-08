@@ -586,9 +586,8 @@ class UserController extends Controller
                 $result = $company ->allowField(true)->save($shuju);
                 if($result){
                     //注册成功
-                    $aa ='注册成功';
-                    $this->assign('aa',$aa);
-                    return $this->fetch();
+                    echo "<script>alert('恭喜您注册成功');</script>";
+                    echo "<script>parent.location.href = \"../index/index\";</script>";
                 }else{
                     //失败
                     $aa ='注册失败';
