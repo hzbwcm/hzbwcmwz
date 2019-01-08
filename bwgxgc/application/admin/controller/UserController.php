@@ -7,11 +7,21 @@ use app\admin\model\Com_pic;
 use think\Controller;
 use think\Request;
 use app\admin\model\Company_info;
+use app\admin\model\User_person;
 use think\Session;
 
 
 class UserController extends Controller
 {
+    //查询在线人数
+    public function onlinecount()
+    {
+        $info = User_person::where('login_id','1')->select();
+        $info = count($info);
+        $this->assign('info',$info);
+        return $this->fetch();
+    }
+
     //后台登陆页面
     public function login(Request $request)
     {

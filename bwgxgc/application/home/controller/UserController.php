@@ -590,9 +590,8 @@ class UserController extends Controller
                     echo "<script>parent.location.href = \"../index/index\";</script>";
                 }else{
                     //失败
-                    $aa ='注册失败';
-                    $this->assign('aa',$aa);
-                    return $this->fetch();
+                    echo "<script>alert('恭喜您注册成功');</script>";
+                    echo "<script>parent.location.href = \"../index/index\";</script>";
                 }
             }else{
                 $errorinfo= $validate->getError();

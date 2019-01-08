@@ -4,7 +4,6 @@ namespace app\home\controller;
 use app\home\model\Card;
 use app\home\model\Com_pic;
 use app\home\model\Customgood;
-use app\home\model\Prodis;
 use app\home\model\User_person;
 use app\home\model\Type;
 use think\Controller;
@@ -76,43 +75,82 @@ class IndexController extends Controller
         $user_id = Session('user_id');
         $user = User_person::where('user_id',$user_id)->find();
 
-        $bs = $request->param('bs')?$request->param('bs'):'';
-        if(!$bs){
-            $bs=session::get('scjbs')?session::get('scjbs'):2;
-        }else{
-            session::set('scjbs',$bs);
-        }
+        $bs = $request->param('bs')?$request->param('bs'):'2';
+//        if(!$bs){
+//            $bs=session::get('scjbs')?session::get('scjbs'):2;
+//        }else{
+//            session::set('scjbs',$bs);
+//        }
 
         if($bs==2){
             $data = array_reverse(explode(',',$user['cus_fav']));
             $this->assign('data',$data);
 
             $datacount = count($data);
+
             $this->assign('datacount',$datacount);
 
-            $info =  Customgood::paginate(3);
+            $info =  Customgood::select();
             //获得分页的页码列表信息 并传递给模板
 //            $pagelist = $info->render();
 //            $this->assign('pagelist',$pagelist);
 
             $this->assign('info',$info);
             $this->assign('bs',$bs);
-            dump($info);
+
+
+//            $data = array_reverse(explode(',',$user['cus_fav']));
+//            $this->assign('data',$data);
+//
+//            $datacount = count($data);
+//            $this->assign('datacount',$datacount);
+//
+//            $info =  Customgood::select();
+//
+//            foreach ($info as $k=>$v){
+//                foreach ($data as $k1=>$v1){
+//                    if($v['cus_id'] == $v1){
+//                        $shuju = $info[$k];
+//                    }
+//                }
+//            }
+//            dump(get_object_vars($shuju));
+//            dump((array)$shuju);
+//
+//            $json = json_encode((array)$shuju);
+//            $json = urldecode($json);
+//            $shuju = (array)$shuju->paginate(3);
+//            $shuju = get_object_vars($shuju)->paginate(3);
+//            $shuju = to_array($shuju)->paginate(3);
+
+//            $pagelist = $shuju->render();
+//            echo '<pre>';
+//            print_r($shuju);
+////            dump($pagelist);
+//            $this->assign('pagelist',$pagelist);
+
+//            $this->assign('shuju',$shuju);
+
+//            $this->assign('info',$info);
+//            $this->assign('bs',$bs);
+
         }elseif($bs==1){
-            $data = array_reverse(explode(',',$user['prodis_fav']));
+            $data = array_reverse(explode(',',$user['card_fav']));
             $this->assign('data',$data);
 
             $datacount = count($data);
             $this->assign('datacount',$datacount);
 
-            $info = Prodis::paginate(3);
+            $info = Card::select();
+//            dump($info);
+//            $info = Prodis::paginate(3);
             //获得分页的页码列表信息 并传递给模板
-            $pagelist = $info->render();
-            $this->assign('pagelist',$pagelist);
+//            $pagelist = $info->render();
+//            $this->assign('pagelist',$pagelist);
 
             $this->assign('info',$info);
             $this->assign('bs',$bs);
-            dump($data);
+//            dump($data);
         }
 
         return $this->fetch();

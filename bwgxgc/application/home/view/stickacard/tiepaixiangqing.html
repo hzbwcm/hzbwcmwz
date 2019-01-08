@@ -147,16 +147,32 @@
     <div class="main-top-box">
         <div class="main-t-t">
             <strong>已选类别：<span>{$info.type}</span></strong>
+
+
             <div class="main-t-t-r">
-                <div class="main-sc-box">
+                {eq name='$user.login_id' value='1'}
+
+                {in name='$info.id' value='$user.card_fav'}
+                <div class="main-sc-box" onclick="djsc(this,{$info.id})">
+                    <i class="iconfont icon-star"></i>
+                    <span class="main-t-sc">已收藏</span>
+                </div>
+                {else/}
+                <div class="main-sc-box" onclick="djsc(this,{$info.id})">
                     <i class="iconfont icon-iconxingjikongxin"></i>
                     <span class="main-t-sc">收藏</span>
                 </div>
-                <div class="main-fenxiang">
-                    <!--<i class="iconfont icon-Share"></i>-->
-                    <!--<span class="main-t-sc">分享</span>-->
+                {/in}
+                {else/}
+                <div class="main-sc-box" onclick="djsc(this,-1)">
+                    <i class="iconfont icon-iconxingjikongxin"></i>
+                    <span class="main-t-sc">收藏</span>
                 </div>
+
+                {/eq}
             </div>
+
+
         </div>
         <div class="main-t-b">
             <span class="main-t-b-fb">{$info.company_name}发布</span><span>{$info.create_time} <i class="iconfont icon-biao"></i></span>
@@ -361,6 +377,42 @@
             skip_invisible : false
         });
     });
+</script>
+<script>
+    var djsc=function (lay,id) {
+        if(id==-1){
+            window.location.href="{:url('home/user/login')}";
+        }else{
+            $.ajax({
+                url:"{:url('home/stickacard/tpcollect')}",
+                type:'post',
+                data:{id},
+                dataType:'JSON',
+                success:function (res) {
+                    if(res.fhz==200){
+                        if(res.fhxx==1){
+                            var str='<div class="main-sc-box" onclick="djsc(this,'+res.cusid+')">\n' +
+                                '                        <i class="iconfont icon-star"></i>\n' +
+                                '                        <span class="main-t-sc">已收藏</span>\n' +
+                                '                    </div>';
+                            $(lay).parent().html(str);
+                            alert(res.info);
+                        }else if(res.fhxx==2){
+                            var str='<div class="main-sc-box" onclick="djsc(this,'+res.cusid+')">\n' +
+                                '                        <i class="iconfont icon-iconxingjikongxin"></i>\n' +
+                                '                        <span class="main-t-sc">收藏</span>\n' +
+                                '                    </div>';
+                            $(lay).parent().html(str);
+                            alert(res.info);
+                        }
+                    }else{
+                        console.log(res.errorinfo);
+                        alert(res.errorinfo);
+                    }
+                }
+            })
+        }
+    }
 </script>
 </body>
 </html>

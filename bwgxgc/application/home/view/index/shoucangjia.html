@@ -153,7 +153,6 @@
         {eq name='$bs' value='2'}
             {volist name='$data' id='da'}
             {volist name='$info' id='in'}
-            {$in.cus_id,$da}
             {eq name='$in.cus_id' value='$da'}
             <!--内容-->
             <div class="scj-box">
@@ -191,7 +190,7 @@
                 <img data-original="{:config('public_uploads')}/{$in.pic1}" alt="">
                 <div class="scj-cz-box scj-cz-active">
                     <a href="{:url('home/custom/customizing',['cusid'=>$in.id])}" class="scj-cz-jrgc">进入工厂</a>
-                    <span class="scj-cz-sc" gsmc="{$in.proname}" id="{$in.id}">删除</span>
+                    <span class="scj-cz-sc" gsmc="{$in.carname}" id="{$in.id}">删除</span>
                     <div class="scj-cz-xz">
                         <div class="scj-cz-div">
                             <img src="" alt="" class="scj-cz-div-img">
@@ -205,7 +204,7 @@
                 <div class="scj-logo-img">
                     <img data-original="{:config('home_img')}/a1.png" alt="">
                 </div>
-                <div class="scj-logo-title">{$in.proname}</div>
+                <div class="scj-logo-title">{$in.carname}</div>
             </div>
         </div>
         {/eq}
@@ -216,7 +215,7 @@
     </div>
     <!--分页-->
     <div class="main-fenye-box">
-        {$pagelist}
+
     </div>
 </main>
 
