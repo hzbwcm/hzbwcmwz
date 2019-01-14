@@ -20,14 +20,14 @@
 <form class="form-horizontal" method="post" action="{$Request.url}">
     <div class="control-group">
         <div class="controls">
-            <input type="text" name="nickname" value="{$shuju.nickname|default=''}" placeholder="请输入你的用户名" >
+            <input type="text" name="nickname" value="{$shuju.nickname|default=''}" placeholder="请输入你的用户名">
             <span style="color:red;">{$errorinfo.nickname|default=''}</span>
         </div>
         <label class="control-label"><i class="iconfont icon-mingcheng"></i></label>
     </div>
     <div class="control-group">
         <div class="controls">
-            <input type="text" name="username" value="{$shuju.username|default=''}" placeholder="请输入你的账号" >
+            <input type="text" name="username" value="{$shuju.username|default=''}" placeholder="请输入你的账号">
             <span style="color:red;">{$errorinfo.username|default=''}</span>
         </div>
         <label class="control-label"><i class="iconfont icon-ren111"></i></label>
@@ -48,9 +48,9 @@
     </div>
     <div class="control-group">
         <div class="controls">
-            <input name="tel" type="text"  value="{$shuju.tel|default=''}" placeholder="请输入11位手机号">
+            <input name="tel" type="text" value="{$shuju.tel|default=''}" placeholder="请输入11位手机号">
             <span style="color:red;">{$errorinfo.tel|default=''}</span>
-            <input type="button" value="获取验证码" class="hqyzm" onclick="send_sms()">
+            <input type="button" value="获取验证码" class="hqyzm" onclick="send_sms(this)">
         </div>
         <label class="control-label"><i class="iconfont icon-shouji"></i></label>
     </div>
@@ -68,7 +68,7 @@
                 <input type="checkbox">同意并已阅读《用户协议》
             </label>
             <div class="zhuce-button">
-                <button type="submit" class="btn" >完成注册</button>
+                <button type="submit" class="btn">完成注册</button>
                 <div class="fanhui-button"><a onclick=window.top.location="{:url('/')}">返回</a></div>
             </div>
 
@@ -77,22 +77,37 @@
 </form>
 <script>
     //ajax请求服务器端给手机发送短信
-    function send_sms(){
+    var num = 60;
+    function send_sms(lay) {
         var tel = $('[name=tel]').val();
-        $.ajax({
-            url:"{:url('home/user/sendsms')}",
-            data:{tel:tel},
-            dataType:'json',
-            type:'post',
-            success:function(msg){
-                if(msg.status=='success'){a
-                    $('#sms_result').html('发送成功');
-                }else{
-                    $('#sms_result').html('发送失败');
+        if (num >= 59) {
+            $.ajax({
+                url: "{:url('home/user/sendsms')}",
+                data: {tel: tel},
+                dataType: 'json',
+                type: 'post',
+                success: function (msg) {
+                    if (msg.status == 'success') {
+                        var t = setInterval(function () {
+                            if (num <= 0) {
+                                num = 60;
+                                $(lay).val('获取验证码').css({'width': '76px', 'height': '23px'});
+                                clearInterval(t);
+                            } else {
+                                $(lay).val('(' + num-- + ')秒后可重新发送').css({'width': '140px', 'height': '23px'});
+
+                            }
+                        }, 1000)
+                    } else {
+                        alert('验证码发送失败');
+                    }
                 }
-            }
-        });
+            });
+        }else{
+            alert('请'+num+'秒后再试');
+        }
     }
+
     // 给form表单设置submit注册事件
     // $('.form-horizontal').submit(function(evt){
     //     //evt（自定义）是当前submit的时间对象
