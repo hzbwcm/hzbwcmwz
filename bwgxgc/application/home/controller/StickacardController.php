@@ -103,7 +103,6 @@ class StickacardController extends Controller
             }
             $info_obj[$type[$i]['type_name']] = $info_arr;
         }
-//        dump($info_obj);
         $this->assign([
             'type'=>$type,
             'info'=>$info_obj
@@ -145,6 +144,24 @@ class StickacardController extends Controller
         $pagelist = $cinfo->render();
         $this->assign('pagelist',$pagelist);
         $type = Type::select();
+        //获取登陆信息
+        $user_id = Session('user_id');
+        $user = User_person::where('user_id',$user_id)->find();
+        $this->assign('user',$user);
+        if($user['login_id']==1){
+            foreach ($cinfo as $k=>$v){
+                $card_fav = User_person::where('user_id',$user_id)->value('card_fav');
+                foreach (explode(',',$card_fav) as $vv){
+                    if($v['id']==$vv){
+                        $v['scbz']=1;
+                        break;
+                    }else{
+                        $v['scbz']=0;
+                    }
+                }
+            }
+        }
+
 
         $this->assign([
             'info' => $info,
@@ -153,7 +170,6 @@ class StickacardController extends Controller
             'tinfo'=>$tinfo,
             'tname'=>$tname
         ]);
-
         return $this->fetch();
     }
 }
