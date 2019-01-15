@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/*初始化css*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+  margin: 0;
+  padding: 0; }
+
+body, html {
+  width: 100%;
+  height: 100%; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: '微软雅黑'; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style-type: none; }
+
+img {
+  border: none; }
+
+/*header*/
+header {
+  width: 100%;
+  height: 80px;
+  padding: 0 140px 0 90px;
+  background: #ffffff;
+  overflow: hidden; }
+  header .headerLogo {
+    width: 216px;
+    height: 52px;
+    margin-top: 16px;
+    float: left; }
+  header .headerTitle {
+    height: 100%;
+    line-height: 80px;
+    float: right;
+    font-size: 24px;
+    color: #555555; }
+
+main {
+  width: 100%; }
+  main .mainFormBox {
+    width: 1200px;
+    margin: 60px auto; }
+    main .mainFormBox .mainFormLogo {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto;
+      margin-bottom: 8px; }
+      main .mainFormBox .mainFormLogo img {
+        width: 100%; }
+    main .mainFormBox .mainFormTextOne {
+      width: 100%;
+      text-align: center;
+      color: #ffffff;
+      font-size: 18px; }
+    main .mainFormBox .mainFormTextTwo {
+      width: 100%;
+      text-align: center;
+      color: #ffffff;
+      font-size: 16px; }
+    main .mainFormBox .mainForm {
+      width: 420px;
+      margin: 0 auto;
+      margin-top: 76px; }
+      main .mainFormBox .mainForm form .labelInputBox {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 50px; }
+        main .mainFormBox .mainForm form .labelInputBox label {
+          display: block;
+          float: left;
+          width: 96px;
+          height: 100%;
+          font-size: 18px;
+          color: #ffffff;
+          text-align: right;
+          line-height: 30px; }
+        main .mainFormBox .mainForm form .labelInputBox input {
+          height: 100%;
+          width: 300px;
+          outline: none; }
+      main .mainFormBox .mainForm form .mainSubmit {
+        margin-right: 35px;
+        float: right; }
+        main .mainFormBox .mainForm form .mainSubmit input {
+          height: 26px;
+          border: none;
+          border-radius: 10px;
+          padding: 0 10px 0 10px;
+          background: #0f93f0;
+          font-size: 16px;
+          color: #ffffff; }
+
+/*# sourceMappingURL=htwjmm.css.map */
