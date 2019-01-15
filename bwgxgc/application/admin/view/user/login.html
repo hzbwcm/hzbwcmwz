@@ -46,17 +46,17 @@
             <div class="tishi_span" style="text-align: center;font-size: 20px;color: red" >{$errorinfo|default=""}</div>
 
             <div class="row cl">
-                <div class="formControls col-xs-6 col-xs-offset-4">
+                <div class="formControls col-xs-8 col-xs-offset-3" style="margin-top: -16px;">
+                    <!--&nbsp;&nbsp;-->
+                    <a href="{:url('home/user/register')}" style="color: #ffffff;font-size: 16px;" class="col-xs-offset-2">还未注册？</a>
+                    <!--&nbsp;&nbsp;-->
+                    <a href="{:url('admin/user/sendmail')}" style="color: #ffffff;font-size: 16px;" class="col-xs-offset-2">忘记密码</a>
+                </div>
+                <div class="formControls col-xs-6 col-xs-offset-4" style="margin-top: 30px;">
                     <input name="" type="submit" class="btn btn-success radius size-L"
                            value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
                     <input name="" type="reset" class="btn btn-default radius size-L col-xs-offset-2"
                            value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;" onclick=window.location.href="{:url('/')}">
-                </div>
-                <div class="formControls col-xs-6 col-xs-offset-4" style="margin-top: 20px;">
-                    &nbsp;&nbsp;
-                    <a href="" style="color: #ffffff;font-size: 16px;">还未注册？</a>
-                    &nbsp;&nbsp;
-                    <a href="" style="color: #ffffff;font-size: 16px;" class="col-xs-offset-2">忘记密码!!</a>
                 </div>
             </div>
         </form>

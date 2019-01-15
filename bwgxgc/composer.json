@@ -23,7 +23,8 @@
         "topthink/think-mongo": "1.*",
         "topthink/think-queue": "1.*",
         "topthink/think-image": "1.*",
-        "flc/dysms": "^1.0"
+        "flc/dysms": "^1.0",
+        "yuan1994/tp-mailer": "^0.2.4"
     },
     "autoload": {
         "psr-4": {

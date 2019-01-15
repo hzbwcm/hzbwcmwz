@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit7c950fbd40b4c558ee021d1c9e30280f
 {
     public static $files = array (
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
         '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
         'ddc3cd2a04224f9638c5d0de6a69c7e3' => __DIR__ . '/..' . '/topthink/think-migration/src/config.php',
@@ -22,6 +23,10 @@ class ComposerStaticInit7c950fbd40b4c558ee021d1c9e30280f
             'think\\composer\\' => 15,
             'think\\captcha\\' => 14,
             'think\\' => 6,
+        ),
+        'm' => 
+        array (
+            'mailer\\' => 7,
         ),
         'a' => 
         array (
@@ -63,6 +68,10 @@ class ComposerStaticInit7c950fbd40b4c558ee021d1c9e30280f
             0 => __DIR__ . '/../..' . '/thinkphp/library/think',
             1 => __DIR__ . '/..' . '/topthink/think-image/src',
             2 => __DIR__ . '/..' . '/topthink/think-queue/src',
+        ),
+        'mailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yuan1994/tp-mailer/src/mailer',
         ),
         'app\\' => 
         array (

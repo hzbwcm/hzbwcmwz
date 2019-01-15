@@ -243,6 +243,14 @@ class UserController extends Controller
             }
         }
     }
-
+    //发邮件
+    public function sendmail()
+    {
+        $to = "774540106@qq.com";
+        $title = "修改密码";
+        $msg = "http://www.bwcm.com";
+        sendmail($to,$title,$msg);
+        return $this->success();
+    }
 
 }

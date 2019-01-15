@@ -12,13 +12,29 @@
 use app\admin\model\Type;
 use app\admin\model\Category;
 use app\home\model\Attribute;
-
+use mailer\tp5\Mailer;
 
 // 应用公共文件
 
 /**
  * 获得全部可供选取的类型信息
  */
+
+//发邮件的函数
+function sendmail($to,$title,$msg){
+    $mailer = Mailer::instance();
+    $mailer->to($to)
+        ->subject($title)
+        ->html($msg)
+        ->send();
+
+}
+
+
+
+
+
+
 function get_type_info(){
     return Type::select();
 }
