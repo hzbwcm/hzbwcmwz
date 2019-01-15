@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=yes, initial-scale=0.3, maximum-scale=2.0, minimum-scale=0.3">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>忘记密码</title>
-    <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
-    <link rel="stylesheet" href="{:config('home_css')}/wangjimimayanzheng.css">
-    <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
-    <script src="{:config('home_js')}/jquery.js"></script>
-    <script src="{:config('home_js')}/bootstrap.js"></script>
+    <link rel="stylesheet" href="../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/css/wangjimimayanzheng.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_688641_t22yxngd6g.css">
+    <script src="../public/js/jquery.js"></script>
+    <script src="../public/js/jquery.lazyload.js"></script>
+    <script src="../public/js/bootstrap.js"></script>
     <!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
-    <script src="http://apps.b8dimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
 <header>
     <div class="header-box">
         <div class="header-logo">
-            <img data-original="{:config('home_img')}/a0.png" alt="">
+            <img data-original="../public/img/a0.png" alt="">
         </div>
         <strong class="wjmm-title">忘记密码</strong>
         <strong class="zc-dl-wdgc">
@@ -37,17 +38,17 @@
             <div class="control-group">
                 <label class="control-label" for="inputEmail">账号:</label>
                 <div class="controls">
-                    <input type="text" id="inputEmail" placeholder="" value="">
+                    <input type="text" id="inputEmail" placeholder="请输入账号" value="">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputPassword">手机:</label>
                 <div class="controls">
-                    <input type="text" id="inputPassword" placeholder="" value="">
+                    <input type="text" id="inputPassword" placeholder="请输入绑定的手机号" value="">
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputyzm"></label>
+                <label class="control-label" for="inputyzm" style="margin-right: 10px;">验证码:</label>
                 <div class="controls">
                     <input type="password" id="inputyzm" placeholder="" class="main-yzm" value="">
                     <div class="main-yzm-fasong">发送验证码</div><!--ajax发送-->
@@ -62,6 +63,14 @@
 
 
 
-<script src="{:config('home_js')}/wangjimimayanzheng.js"></script>
+<script src="../public/js/wangjimimayanzheng.js"></script>
+<script>
+    $(function () {
+        $("img").lazyload({
+            threshold: 200,
+            skip_invisible: false
+        });
+    });
+</script>
 </body>
 </html>
