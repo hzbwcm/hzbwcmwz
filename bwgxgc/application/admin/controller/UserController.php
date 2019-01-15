@@ -22,7 +22,7 @@ class UserController extends Controller
         return $this->fetch();
     }
 
-    //后台登陆页面
+    //后台登陆
     public function login(Request $request)
     {
         if ($request->isPost()) {
@@ -218,7 +218,7 @@ class UserController extends Controller
         return $this->fetch();
 
     }
-
+    //企业资质管理
     public function qyzzgl()
     {
         $com_id = Session::get('com_id');
@@ -228,7 +228,7 @@ class UserController extends Controller
         $this->assign('list',$list);
         return $this->fetch();
     }
-
+    //企业资质删除
     public function qyzzdel(Request $request)
     {
         if ($request->isAjax())

@@ -43,11 +43,6 @@ class IndexController extends Controller
         $data = $customgood->select();
         $this->assign('data',$data);
 
-
-
-
-
-
         return $this->fetch();
     }
     
