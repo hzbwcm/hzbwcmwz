@@ -257,22 +257,22 @@
             <div class="main-top-qy">
                 <span>地区：</span>
                 <ul>
-                    {volist name='info' id='v'}
-                    {eq name="$v.Id" value="0"}
-                        {eq name='$Dname' value='$Dna'}
-                        <li class="right-click">
-                            <a href="{:url('home/custom/custom',['dname'=>'-1','bzid'=>'bz'])}">
-                                全部
-                            </a>
-                        </li>
-                        {else/}
-                        <li>
-                            <a href="{:url('home/custom/custom',['dname'=>'-1','bzid'=>'bz'])}">
-                                全部
-                            </a>
-                        </li>
-                        {/eq}
+                    {eq name='$Dname' value='$Dna'}
+                    <li class="right-click">
+                        <a href="{:url('home/custom/custom',['dname'=>'-1','bzid'=>'bz'])}">
+                            全部
+                        </a>
+                    </li>
                     {else/}
+                    <li>
+                        <a href="{:url('home/custom/custom',['dname'=>'-1','bzid'=>'bz'])}">
+                            全部
+                        </a>
+                    </li>
+                    {/eq}
+
+                    {volist name='info' id='v'}
+
                         {eq name='$v.Name' value='$Dname'}
                         <li class="right-click">
                             <a href="{:url('home/custom/custom',['dname'=>$v.Name,'bzid'=>'bz'])}">
@@ -286,7 +286,7 @@
                             </a>
                         </li>
                         {/eq}
-                    {/eq}
+
                     {/volist}
                 </ul>
             </div>
