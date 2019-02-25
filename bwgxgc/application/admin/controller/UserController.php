@@ -253,4 +253,8 @@ class UserController extends Controller
         return $this->success();
     }
 
+    public function htwjmm()
+    {
+        return $this->fetch();
+    }
 }

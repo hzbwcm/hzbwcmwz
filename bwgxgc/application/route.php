@@ -61,6 +61,7 @@ Route::get('home/shangpu/lianxiwomen','home/shangpu/lianxiwomen');//优选验厂
 
 //admin 分组
 Route::get('admin/user/onlinecount','admin/user/onlinecount');//查询在线人数
+Route::get('admin/user/htwjmm','admin/user/htwjmm');//企业忘记密码
 Route::any('admin/user/login','admin/user/login');//admin登陆
 Route::get('admin/type/index','admin/type/index');//商品类型
 Route::any('admin/type/addition','admin/type/addition',['method'=>'get|post']);//商品类型添加
