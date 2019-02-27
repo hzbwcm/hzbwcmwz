@@ -300,7 +300,7 @@
             <div class="main-bottom-content">
                 <!--内容-->
                 {volist name='data' id='da'}
-                <a href="{:url('home/custom/customizing',['cusid'=>$da.cus_id])}" class="bottom-content-box">
+                <a href="{:url('home/custom/customizing',['cusid'=>$da.cus_id])}" target="_blank" class="bottom-content-box">
                     <div class="content-xx">
                         <div class="content-img">
                             <img data-original="{:config('public_uploads')}/{$da.cus_pic}" alt="">

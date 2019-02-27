@@ -82,7 +82,7 @@
         <ul class="daohang-ul">
             <li class="daohang-li"><a href="{:url('home/shangpu/index',['id'=>$c_id])}">首页</a></li>
             <li class="daohang-li"><a href="{:url('home/shangpu/gongsijianjie')}">公司简介</a></li>
-            <li class="daohang-li"><a href="{:url('home/shangpu/qiyetiepai')}">贴牌专区</a></li>
+            <li class="daohang-li"><a href="{:url('home/shangpu/qiyetiepai')}">企业贴牌</a></li>
             <li class="daohang-li"><a class="daohang-li-active" href="{:url('home/shangpu/shipinzhanshi')}">视频展示</a></li>
             <li class="daohang-li"><a href="{:url('home/shangpu/chanpinzhanting')}">产品展厅</a></li>
             <li class="daohang-li"><a href="{:url('home/shangpu/lianxiwomen')}">联系我们</a></li>
@@ -95,7 +95,7 @@
     <div class="wylj-box">
         <i class="iconfont icon-location"></i>
         <span>当前位置：</span>
-        <span>首页</span>
+        <span><a href="{:url('home/shangpu/index',['id'=>$c_id])}" style="color: #555555;text-decoration: none;">首页</a></span>
         <i class="iconfont icon-shuangjiantouyou"></i>
         <span>视频展示</span>
     </div>
@@ -180,12 +180,12 @@
             </li>
             <li class="weixin-li">
                 <div class="weixin-img">
-                    <img data-original="{:config('home_shangpu_img')}/f26f5ed0d000c3413c9a4250f2c22bcb86a9494e2b2a-Gw0bYT_fw658.png" alt="">
+                    <img data-original="{:config('home_img')}/weikefu.png" alt="">
                 </div>
                 <div class="weixin-text-box">
                     <div class="weixin-text">官方微信</div>
                     <div class="weixin-text">手机扫描二维码</div>
-                    <div class="weixin-text">加wypzz微信好友</div>
+                    <div class="weixin-text">加客服微信好友</div>
                 </div>
             </li>
             <li class="weixin-li">
