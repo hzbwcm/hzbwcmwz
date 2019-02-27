@@ -161,7 +161,7 @@
         <div class="main-t-t">
             <strong>已选类别：<span>{$type1}</span></strong>
             <div class="main-t-t-r">
-                {eq name='$user.login_id' value='1'}
+                {notempty name='$Request.session.nickname'}
                     {in name='$data.cus_id' value='$user.cus_fav'}
                     <div class="main-sc-box" onclick="djsc(this,{$cusid2})">
                         <i class="iconfont icon-star"></i>
@@ -178,7 +178,7 @@
                     <i class="iconfont icon-iconxingjikongxin"></i>
                     <span class="main-t-sc">收藏</span>
                 </div>
-                {/eq}
+                {/notempty}
             </div>
         </div>
         <div class="main-t-b">
@@ -192,17 +192,25 @@
             <!-- Swiper -->
             <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">
-                    {neq name='$data.cus_pic' value=''}
+                    {neq name='$data.cus_pic' value='$lbt'}
                     <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic})"></div>
+                    {else/}
+
                     {/neq}
-                    {neq name='$data.cus_pic1' value=''}
+                    {neq name='$data.cus_pic1' value='$lbt'}
                     <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic1})"></div>
+                    {else/}
+
                     {/neq}
-                    {neq name='$data.cus_pic2' value=''}
+                    {neq name='$data.cus_pic2' value='$lbt'}
                     <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic2})"></div>
+                    {else/}
+
                     {/neq}
-                    {neq name='$data.cus_pic3' value=''}
+                    {neq name='$data.cus_pic3' value='$lbt'}
                     <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic3})"></div>
+                    {else/}
+
                     {/neq}
                 </div>
                 <!-- Add Arrows -->
@@ -211,17 +219,25 @@
             </div>
             <div class="swiper-container gallery-thumbs">
                 <div class="swiper-wrapper">
-                    {neq name='$data.cus_pic' value=''}
+                    {neq name='$data.cus_pic' value='$lbt'}
                     <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic})"></div>
+                    {else/}
+
                     {/neq}
-                    {neq name='$data.cus_pic1' value=''}
+                    {neq name='$data.cus_pic1' value='$lbt'}
                     <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic1})"></div>
+                    {else/}
+
                     {/neq}
-                    {neq name='$data.cus_pic2' value=''}
+                    {neq name='$data.cus_pic2' value='$lbt'}
                     <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic2})"></div>
+                    {else/}
+
                     {/neq}
-                    {neq name='$data.cus_pic3' value=''}
+                    {neq name='$data.cus_pic3' value='$lbt'}
                     <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$data.cus_pic3})"></div>
+                    {else/}
+
                     {/neq}
                 </div>
             </div>

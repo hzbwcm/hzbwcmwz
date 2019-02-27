@@ -115,8 +115,11 @@ class CustomController extends Controller
         $user = User_person::where('user_id',$user_id)->find();
         $this->assign('user',$user);
 
+        $lbt = '';
+        $this->assign('lbt',$lbt);
+        
+        
         $user_person = new user_person;
-
 //        $loginid =str_split($cusid);
 //        print_r($user['cus_fav']);
 //        dump($user['cus_fav']);die;
