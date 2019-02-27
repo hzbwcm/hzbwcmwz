@@ -90,10 +90,12 @@ class ShangpuController extends Controller
         //获取加工产品
         $c_info = Card::where('id',$c_id)->find();
         $tel = Company_info::where('com_id',$c_info['com_id'])->column('tel');
+        $pics = Com_pic::where("com_id" , $c_info['com_id'] )->find();
 
         $this->assign(['info'=>$c_info,
             'tel'=>$tel,
-
+            'c_id'=>$c_id,
+            'pics'=>$pics,
         ]);
 
         $user_id = Session('user_id');
