@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b8ae946e-0d2b-4fce-84be-3d415e999b94" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/bwgxgc/application/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/custom/custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/custom/custom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/custom/customizing.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/custom/customizing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/stickacard.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/stickacard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaigengduo.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaigengduo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaixiangqing.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaixiangqing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/inspection/inspection.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/inspection/inspection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/chanpinzhanting.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/chanpinzhanting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/lianxiwomen.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/lianxiwomen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,38 +23,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tiepaixiangqing.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaixiangqing.html">
+      <file leaf-file-name="chanpinzhanting.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/chanpinzhanting.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="139" column="22" selection-start-line="139" selection-start-column="22" selection-end-line="139" selection-end-column="22" />
+            <state relative-caret-position="575">
+              <caret line="97" column="84" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qiyetiepai.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="113" column="81" selection-start-line="113" selection-start-column="81" selection-end-line="113" selection-end-column="81" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tiepaigengduo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaigengduo.html">
+      <file leaf-file-name="gongsijianjie.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="133" column="125" selection-start-line="133" selection-start-column="125" selection-end-line="133" selection-end-column="125" />
+            <state relative-caret-position="931">
+              <caret line="100" column="84" selection-start-line="100" selection-start-column="84" selection-end-line="100" selection-end-column="84" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stickacard.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/stickacard.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="256" column="121" selection-start-line="256" selection-start-column="121" selection-end-line="256" selection-end-column="121" />
+            <state relative-caret-position="304">
+              <caret line="292" column="48" selection-start-line="292" selection-start-column="48" selection-end-line="292" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lianxiwomen.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/lianxiwomen.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1098">
+              <caret line="98" column="84" selection-start-line="98" selection-start-column="84" selection-end-line="98" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shipinzhanshi.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1843">
+              <caret line="97" column="84" selection-start-line="97" selection-start-column="84" selection-end-line="97" selection-end-column="84" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>&lt;img data-original=&quot;{:config('home_shangpu_img')}/f26f5ed0d000c3413c9a4250f2c22bcb86a9494e2b2a-Gw0bYT_fw658.png&quot; alt=&quot;&quot;&gt;</find>
+      <find>贴牌专区</find>
+      <find>&lt;span&gt;首页&lt;/span&gt;</find>
+      <find>&lt;span&gt;&lt;a href=&quot;&quot; style=&quot;color: #555555;text-decoration: none;&quot;&gt;首页&lt;/a&gt;&lt;/span&gt;</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&lt;img data-original=&quot;{:config('home_img')}/weikefu.png&quot; alt=&quot;&quot;&gt;</replace>
+      <replace>企业贴牌</replace>
+      <replace>&lt;span&gt;&lt;a href=&quot;&quot; style=&quot;color: #555555;text-decoration: none;&quot;&gt;首页&lt;/a&gt;&lt;/span&gt;</replace>
+      <replace>&lt;span&gt;&lt;a href=&quot;{:url('home/shangpu/index',['id'=&gt;$c_id])}&quot; style=&quot;color: #555555;text-decoration: none;&quot;&gt;首页&lt;/a&gt;&lt;/span&gt;</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,13 +103,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/bwgxgc/application/admin/view/index/htwjmm.html" />
-        <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html" />
         <option value="$PROJECT_DIR$/bwgxgc/application/admin/view/user/htwjmm.html" />
         <option value="$PROJECT_DIR$/bwgxgc/application/home/view/custom/customizing.html" />
         <option value="$PROJECT_DIR$/bwgxgc/application/home/view/custom/custom.html" />
         <option value="$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaixiangqing.html" />
         <option value="$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaigengduo.html" />
         <option value="$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/stickacard.html" />
+        <option value="$PROJECT_DIR$/bwgxgc/application/home/view/inspection/inspection.html" />
+        <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/index.html" />
+        <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/chanpinzhanting.html" />
+        <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html" />
+        <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/lianxiwomen.html" />
+        <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html" />
+        <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html" />
       </list>
     </option>
   </component>
@@ -151,7 +199,7 @@
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
@@ -166,10 +214,14 @@
               <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
               <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
               <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
+              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="stickacard" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -205,12 +257,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551235032945</updated>
-      <workItem from="1551235034746" duration="2005000" />
+      <workItem from="1551235034746" duration="3808000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2005000" />
+    <option name="totallyTimeSpent" value="3808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -255,13 +307,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="737">
           <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -317,6 +362,63 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="256" column="121" selection-start-line="256" selection-start-column="121" selection-end-line="256" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/inspection/inspection.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="254" column="99" selection-start-line="254" selection-start-column="99" selection-end-line="254" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10576" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1843">
+          <caret line="97" column="84" selection-start-line="97" selection-start-column="84" selection-end-line="97" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/lianxiwomen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1098">
+          <caret line="98" column="84" selection-start-line="98" selection-start-column="84" selection-end-line="98" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="292" column="48" selection-start-line="292" selection-start-column="48" selection-end-line="292" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="100" column="84" selection-start-line="100" selection-start-column="84" selection-end-line="100" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/chanpinzhanting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="97" column="84" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="113" column="81" selection-start-line="113" selection-start-column="81" selection-end-line="113" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
