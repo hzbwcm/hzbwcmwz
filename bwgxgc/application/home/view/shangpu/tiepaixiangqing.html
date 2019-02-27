@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=0.3, maximum-scale=2.0, minimum-scale=0.3">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加工商品详情</title>
+    <link rel="stylesheet" href="{:config('home_css')}/swiper.min.css">
+    <link rel="stylesheet" href="{:config('home_css')}/bootstrap.css">
+    <link rel="stylesheet" href="{:config('home_shangpu_css')}/tiepaixiangqing.css">
+    <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+    <link rel="stylesheet" href="{:config('home_shangpu_css')}/base.css">
+    <script src="{:config('home_js')}/jquery.js"></script>
+    <script src="{:config('home_js')}/jquery.lazyload.js"></script>
+    <script src="{:config('home_js')}/bootstrap.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Demo styles -->
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .swiper-slide {
+            background-size: contain;
+            background-position: center;
+        }
+        .gallery-top {
+            height: 380px;
+            width: 380px;
+            border: 1px solid #a260de;
+        }
+        .gallery-top .swiper-slide{
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .gallery-thumbs {
+            height: 60px;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+        .gallery-thumbs .swiper-slide {
+            height: 100%;
+            width: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+        }
+        .gallery-thumbs .swiper-slide-active {
+            border: 1px solid #a260de;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+<header class="header-box-box">
+    <div class="header-centre">
+        <ul class="header-left">
+            <li><a href="">
+                <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
+            </a></li>
+            {notempty name='$Request.session.nickname'}
+            【{$Request.session.nickname}】
+            <span><a href="{:url('home/user/loginout')}">退出登录</a></span>
+            {else /}
+            <li><a href="{:url('home/user/login')}">
+                <div class="h-l-t">请登陆 |</div>
+            </a></li>
+            <li><a href="{:url('home/user/register')}">
+                <div class="h-l-t">免费注册</div>
+            </a></li>
+            {/notempty}
+        </ul>
+        <ul class="header-right">
+            <li><a href="/">
+                <div class="h-l-t">工厂首页 |</div>
+            </a></li>
+            <li><a href="{:url('admin/user/login')}">
+                <div class="h-l-t">工厂登陆 |</div>
+            </a></li>
+            <li><a href="{:url('home/user/accountcenter')}">
+                <div class="h-l-t">个人中心 |</div>
+            </a></li>
+            <li><a href="{:url('home/index/shoucangjia')}">
+                <div class="h-l-t">收藏夹</div>
+            </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<div class="header">
+    <div class="header-box">
+        <div class="header-logo">
+            <a href="{:url('/')}">
+                <img data-original="{:config('home_shangpu_img')}/a0.png" alt="">
+            </a>
+        </div>
+        <div class="header-sousuo-box">
+            <div class="header-sousuo">
+                <form action="{:url('home/index/tpsousuo')}" method="get" name="form">
+                    <input type="text" value="" name="keywords" class="sousuo-input">
+                    <input type="submit" value="搜索" class="sousuo-submit">
+                </form>
+            </div>
+            <a href="" class="header-guanzhu">
+                <i class="iconfont icon-iconxingjikongxin"></i>
+                <span>收藏夹</span>
+            </a>
+            <a href="" class="header-guanzhu">
+                <i class="iconfont icon-guanzhuzuozheyiguanzhu"></i>
+                <span>已关注</span>
+            </a>
+        </div>
+    </div>
+    <!--<div class="sp-header-box" style="background-image: url('{:config('home_shangpu_img')}/index/beijingtupian.png')">-->
+    <!--<div class="sp-header-img">-->
+    <!--<img data-original="" alt="">-->
+    <!--</div>-->
+    <!--</div>-->
+    <nav>
+        <ul class="daohang-ul">
+            <li class="daohang-li"><a href="{:url('home/shangpu/index',['id'=>$c_id])}">首页</a></li>
+            <li class="daohang-li"><a href="{:url('home/shangpu/gongsijianjie')}">公司简介</a></li>
+            <li class="daohang-li"><a class="daohang-li-active" href="{:url('home/shangpu/qiyetiepai')}">企业贴牌</a></li>
+            <li class="daohang-li"><a href="{:url('home/shangpu/shipinzhanshi')}">视频展示</a></li>
+            <li class="daohang-li"><a href="{:url('home/shangpu/chanpinzhanting')}">产品展厅</a></li>
+            <li class="daohang-li"><a href="{:url('home/shangpu/lianxiwomen')}">联系我们</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!--网页路径-->
+<div class="wylj-big-box">
+    <div class="wylj-box">
+        <i class="iconfont icon-location"></i>
+        <span>当前位置：</span>
+        <span><a href="{:url('home/shangpu/index',['id'=>$c_id])}" style="color: #555555;text-decoration: none;">首页</a></span>
+        <i class="iconfont icon-shuangjiantouyou"></i>
+        <span><a href="{:url('home/shangpu/qiyetiepai')}"></a>企业贴牌</span>
+        <i class="iconfont icon-shuangjiantouyou"></i>
+        <span>贴牌商品详情</span>
+    </div>
+</div>
+
+<!--主体-->
+<main>
+    <div class="main-top-box">
+        <div class="main-t-t">
+            <strong>已选类别：<span>{$info.type}</span></strong>
+
+
+            <div class="main-t-t-r">
+                {eq name='$user.login_id' value='1'}
+
+                {in name='$info.id' value='$user.card_fav'}
+                <div class="main-sc-box" onclick="djsc(this,{$info.id})">
+                    <i class="iconfont icon-star"></i>
+                    <span class="main-t-sc">已收藏</span>
+                </div>
+                {else/}
+                <div class="main-sc-box" onclick="djsc(this,{$info.id})">
+                    <i class="iconfont icon-iconxingjikongxin"></i>
+                    <span class="main-t-sc">收藏</span>
+                </div>
+                {/in}
+                {else/}
+                <div class="main-sc-box" onclick="djsc(this,-1)">
+                    <i class="iconfont icon-iconxingjikongxin"></i>
+                    <span class="main-t-sc">收藏</span>
+                </div>
+
+                {/eq}
+            </div>
+
+
+        </div>
+        <div class="main-t-b">
+            <span class="main-t-b-fb">{$info.company_name}发布</span><span>{$info.create_time} <i class="iconfont icon-biao"></i></span>
+        </div>
+    </div>
+    <div class="main-bottom-box">
+        <div class="main-bottom-left">
+            <!-- Swiper -->
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$info.pic1})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$info.pic2})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$info.pic3})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$info.pic4})"></div>
+
+                </div>
+                <!-- Add Arrows -->
+                <!--<div class="swiper-button-next swiper-button-white"></div>-->
+                <!--<div class="swiper-button-prev swiper-button-white"></div>-->
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$info.pic1})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$info.pic2})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$info.pic3})"></div>
+                    <div class="swiper-slide" style="background-image:url({:config('public_uploads')}/{$info.pic4})"></div>
+                </div>
+            </div>
+        </div>
+        <div class="main-bottom-right">
+            <div class="main-bootom-top-box">
+                <div class="main-bottom-t-t-b">
+                    <div class="main-bottom-top-right">
+                        <div class="main-bottom-top-dizhi"><strong style="color: #555555;">产品名称：</strong>{$info.carname}</div>
+                    </div>
+                </div>
+                <div class="main-content-box">
+                    <div class="main-content">
+                        <div class="main-content-left">产能</div>
+                        <div class="main-content-right">{$info.pro}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">设备厂家</div>
+                        <div class="main-content-right">{$info.vender}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">产品长度(mm)</div>
+                        <div class="main-content-right">{$info.length}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">产品宽度(mm)</div>
+                        <div class="main-content-right">{$info.width}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">芯体</div>
+                        <div class="main-content-right">{$info.xinti}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">曾经代工品牌</div>
+                        <div class="main-content-right">{$info.cdgpp}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">设备新旧程度</div>
+                        <div class="main-content-right">{$info.new}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">工厂规模</div>
+                        <div class="main-content-right">{$info.size}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">金属检测</div>
+                        <div class="main-content-right">{$info.jsjc}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">视觉检测</div>
+                        <div class="main-content-right">{$info.sjjc}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">包装形式</div>
+                        <div class="main-content-right">{$info.bzxs}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">工厂总人数</div>
+                        <div class="main-content-right">{$info.pnum}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">质检人数</div>
+                        <div class="main-content-right">{$info.zjnum}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">设备编号</div>
+                        <div class="main-content-right">{$info.sbbh}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">起订量</div>
+                        <div class="main-content-right">{$info.qdl}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">加印LOGO</div>
+                        <div class="main-content-right">{$info.logo}</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="main-content-left">规格</div>
+                        <div class="main-content-right">{$info.bzgg}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-bottom-sm-box">
+                <div class="main-bottom-sm-top">
+                    <div class="main-bottom-sm-title">说明</div>
+                </div>
+                <div class="main-bottom-sm-bottom">
+                    {$info.instruction}
+                </div>
+            </div>
+            <div class="main-lxsj" tel="{$tel[0]}"><i class="iconfont icon-kefu"></i>联系商家</div>
+        </div>
+    </div>
+</main>
+
+
+<!--页脚-->
+<footer>
+    <div class="footer-box">
+        <ul class="weixin-big-box">
+            <li class="weixin-li">
+                <div class="weixin-img">
+                    <img data-original="{:config('home_shangpu_img')}/gradient.png" alt="">
+                </div>
+                <div class="weixin-text-box">
+                    <a href="" class="weixin-text-a">《卫生用品》下载</a>
+                    <a href="" class="weixin-text-a">《卫生用品》在线下载</a>
+                    <a href="" class="weixin-text-jinru">进入</a>
+                </div>
+            </li>
+            <li class="weixin-li">
+                <div class="weixin-img">
+                    <img data-original="{:config('home_img')}/weikefu.png" alt="">
+                </div>
+                <div class="weixin-text-box">
+                    <div class="weixin-text">官方微信</div>
+                    <div class="weixin-text">手机扫描二维码</div>
+                    <div class="weixin-text">加客服微信好友</div>
+                </div>
+            </li>
+            <li class="weixin-li">
+                <div class="weixin-img">
+                    <img data-original="{:config('public_uploads')}/{$pics.pic7}" alt="">
+                </div>
+                <div class="weixin-text-box">
+                    <div class="weixin-text">商家微信</div>
+                    <div class="weixin-text">手机扫描二维码</div>
+                    <div class="weixin-text">加商家微信好友</div>
+                </div>
+            </li>
+        </ul>
+        <ul class="footer-xieyi-daohang">
+            <li class="footer-xieyi-li"><a href="">网站首页</a></li>
+            <li class="footer-xieyi-li"><a href="">版权隐私</a></li>
+            <li class="footer-xieyi-li"><a href="">使用协议</a></li>
+            <li class="footer-xieyi-li"><a href="">联系方式</a></li>
+            <li class="footer-xieyi-li"><a href="">关于我们</a></li>
+            <li class="footer-xieyi-li"><a href="">网站地图</a></li>
+            <li class="footer-xieyi-li"><a href="">排名推广</a></li>
+            <li class="footer-xieyi-li"><a href="">广告服务</a></li>
+            <li class="footer-xieyi-li"><a href="">网站留言</a></li>
+            <li class="footer-xieyi-li"><a href="">RSS订阅</a></li>
+        </ul>
+        <div class="footer-beianhao">
+            <p>闽ICP备16026715号</p>
+            <p>版权2018-2028 @ 杭州博卫传媒有限公司</p>
+        </div>
+    </div>
+</footer>
+
+<script src="{:config('home_js')}/swiper.min.js"></script>
+<script src="{:config('home_js')}/tiepaixiangqing.js"></script>
+<script>
+    var galleryTop = new Swiper('.gallery-top', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 10,
+        loop:true,
+        loopedSlides: 5, //looped slides should be the same
+    });
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        touchRatio: 0.2,
+        loop:true,
+        loopedSlides: 5, //looped slides should be the same
+        slideToClickedSlide: true
+    });
+    galleryTop.params.control = galleryThumbs;
+    galleryThumbs.params.control = galleryTop;
+
+</script>
+<script>
+    $(function () {
+        $('.main-bottom-lxkf').on('click',function () {
+            alert('商家联系方式：'+'123456789')
+        })
+    })
+</script>
+<script>
+    $(function() {
+        $("img").lazyload({
+            threshold: 200,
+            skip_invisible : false
+        });
+    });
+</script>
+<script>
+    var djsc=function (lay,id) {
+        if(id==-1){
+            window.location.href="{:url('home/user/login')}";
+        }else{
+            $.ajax({
+                url:"{:url('home/stickacard/tpcollect')}",
+                type:'post',
+                data:{id},
+                dataType:'JSON',
+                success:function (res) {
+                    if(res.fhz==200){
+                        if(res.fhxx==1){
+                            var str='<div class="main-sc-box" onclick="djsc(this,'+res.cusid+')">\n' +
+                                '                        <i class="iconfont icon-star"></i>\n' +
+                                '                        <span class="main-t-sc">已收藏</span>\n' +
+                                '                    </div>';
+                            $(lay).parent().html(str);
+                            alert(res.info);
+                        }else if(res.fhxx==2){
+                            var str='<div class="main-sc-box" onclick="djsc(this,'+res.cusid+')">\n' +
+                                '                        <i class="iconfont icon-iconxingjikongxin"></i>\n' +
+                                '                        <span class="main-t-sc">收藏</span>\n' +
+                                '                    </div>';
+                            $(lay).parent().html(str);
+                            alert(res.info);
+                        }
+                    }else{
+                        console.log(res.errorinfo);
+                        alert(res.errorinfo);
+                    }
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>

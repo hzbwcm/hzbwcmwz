@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8ae946e-0d2b-4fce-84be-3d415e999b94" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/tiepaixiangqing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bwgxgc/public/home/shangpu/css/tiepaixiangqing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwgxgc/application/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/inspection/inspection.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/inspection/inspection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/chanpinzhanting.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/chanpinzhanting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/lianxiwomen.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/lianxiwomen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,50 +28,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="qiyetiepai.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="qiyetiepai.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="113" column="81" selection-start-line="113" selection-start-column="81" selection-end-line="113" selection-end-column="81" />
+            <state relative-caret-position="458">
+              <caret line="84" column="103" selection-start-line="84" selection-start-column="70" selection-end-line="84" selection-end-column="103" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gongsijianjie.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/gongsijianjie.html">
+      <file leaf-file-name="tiepaixiangqing.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/tiepaixiangqing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="931">
-              <caret line="100" column="84" selection-start-line="100" selection-start-column="84" selection-end-line="100" selection-end-column="84" />
+            <state relative-caret-position="262">
+              <caret line="145" column="56" selection-start-line="145" selection-start-column="56" selection-end-line="145" selection-end-column="56" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/index.html">
+      <file leaf-file-name="tiepaixiangqing.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/shangpu/css/tiepaixiangqing.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="tiepaixiangqing.scss" pinned="false" current-in-tab="false">
+        <entry file="file://E:/work/boweishangpu/sass/tiepaixiangqing.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="292" column="48" selection-start-line="292" selection-start-column="48" selection-end-line="292" selection-end-column="48" />
+            <state relative-caret-position="570">
+              <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+              <folding>
+                <element signature="e#427#726#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lianxiwomen.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/lianxiwomen.html">
+      <file leaf-file-name="qiyetiepai.scss" pinned="false" current-in-tab="false">
+        <entry file="file://E:/work/boweishangpu/sass/qiyetiepai.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1098">
-              <caret line="98" column="84" selection-start-line="98" selection-start-column="84" selection-end-line="98" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shipinzhanshi.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1843">
-              <caret line="97" column="84" selection-start-line="97" selection-start-column="84" selection-end-line="97" selection-end-column="84" />
+            <state>
+              <caret selection-end-line="20" selection-end-column="1" />
+              <folding>
+                <element signature="e#23#322#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,6 +122,8 @@
         <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/lianxiwomen.html" />
         <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html" />
         <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html" />
+        <option value="E:/work/boweishangpu/sass/tiepaixiangqing.scss" />
+        <option value="$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/tiepaixiangqing.html" />
       </list>
     </option>
   </component>
@@ -199,7 +207,7 @@
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="shangpu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
@@ -208,7 +216,7 @@
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="shangpu" type="462c0819:PsiDirectoryNode" />
+              <item name="stickacard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
@@ -222,6 +230,23 @@
               <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
+              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="shangpu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
+              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="shangpu" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -234,6 +259,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\hzbwcmwz\bwgxgc\public\home\shangpu\css" />
+      <recent name="F:\hzbwcmwz\bwgxgc\application\home\view\shangpu" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -257,16 +288,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551235032945</updated>
-      <workItem from="1551235034746" duration="3808000" />
+      <workItem from="1551235034746" duration="5089000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3808000" />
+    <option name="totallyTimeSpent" value="5089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -412,15 +442,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html">
+    <entry file="file://E:/work/bowei/sass/tiepaixiangqing.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="113" column="81" selection-start-line="113" selection-start-column="81" selection-end-line="113" selection-end-column="81" />
+        <state relative-caret-position="513">
+          <caret line="111" selection-start-line="111" selection-end-line="111" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#423#1843#0" />
+            <element signature="e#1860#2447#0" />
+            <element signature="e#2465#2772#0" />
+            <element signature="e#2793#3220#0" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://E:/work/boweishangpu/sass/qiyetiepai.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#23#322#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/work/boweishangpu/public/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3876" />
+      </provider>
+    </entry>
+    <entry file="file://E:/work/boweishangpu/sass/tiepaixiangqing.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+          <folding>
+            <element signature="e#427#726#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/qiyetiepai.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="84" column="103" selection-start-line="84" selection-start-column="70" selection-end-line="84" selection-end-column="103" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/tiepaixiangqing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="145" column="56" selection-start-line="145" selection-start-column="56" selection-end-line="145" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/shangpu/css/tiepaixiangqing.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
