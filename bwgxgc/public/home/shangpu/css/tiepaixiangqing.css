@@ -54,6 +54,7 @@ li {
 main {
   width: 100%;
   padding-top: 20px;
+  margin-bottom: 100px;
 }
 main .main-top-box {
   width: 1200px;
