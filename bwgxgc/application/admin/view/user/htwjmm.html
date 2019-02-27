@@ -39,14 +39,14 @@
             Hygiene Kits Sharing Factory
         </div>
         <div class="mainForm">
-            <form action="">
+            <form action="{:url('admin/user/sendmail')}" method="post" name="form">
                 <div class="labelInputBox">
                     <label>账号：</label>
-                    <input type="text" placeholder="请输入账号">
+                    <input type="text" name="username" placeholder="请输入账号">
                 </div>
                 <div class="labelInputBox">
                     <label>邮箱：</label>
-                    <input type="email" placeholder="请输入账号绑定的邮箱(验证信息将发送到此邮箱)">
+                    <input type="email" name="email" placeholder="请输入账号绑定的邮箱(验证信息将发送到此邮箱)">
                 </div>
                 <div class="mainSubmit">
                     <input type="submit" value="发送">

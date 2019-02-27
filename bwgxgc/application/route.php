@@ -82,7 +82,9 @@ Route::any('admin/goods/cpdzxg','admin/goods/cpdzxg',['method'=>'get|post']);//�
 Route::any('admin/goods/delcpdz','admin/goods/delcpdz',['method'=>'get|post']);//产品定制删除
 
 Route::get('admin/user/qiyezizhi','admin/user/qiyezizhi');//企业资质
-Route::get('admin/user/sendmail','admin/user/sendmail');//企业资质
+Route::get('admin/user/htxgmm','admin/user/htxgmm');//企业资质
+
+Route::any('admin/user/sendmail','admin/user/sendmail',['method'=>'get|post']);//发邮件
 
 
 

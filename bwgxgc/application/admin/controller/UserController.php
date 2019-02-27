@@ -244,16 +244,37 @@ class UserController extends Controller
         }
     }
     //发邮件
-    public function sendmail()
+    public function sendmail(Request $request)
     {
-        $to = "774540106@qq.com";
-        $title = "修改密码";
-        $msg = "http://www.bwcm.com";
-        sendmail($to,$title,$msg);
-        return $this->success();
+        if($request->isPost())
+            {
+                $name = $request->param('username');
+                $email = $request->param('email');
+                $exists = Company_info::where(['username' => $name, 'email' => $email])->find();
+
+                if($exists){
+                    $to = $email;
+                    $title = "修改密码";
+                    $msg = "请点击该网址进行修改密码
+                            http://www.bwcm.com/admin/user/htxgmm";
+                    sendmail($to,$title,$msg);
+                    return $this->success('发送邮件成功，请到邮箱进行验证');
+                }else{
+                    return $this->error('账号或邮箱不匹配');
+                }
+            }
+//        $to = "774540106@qq.com";
+//        $title = "修改密码";
+//        $msg = "http://www.bwcm.com";
+//        sendmail($to,$title,$msg);
+  //      return $this->success();
     }
 
     public function htwjmm()
+    {
+        return $this->fetch();
+    }
+    public function htxgmm()
     {
         return $this->fetch();
     }
