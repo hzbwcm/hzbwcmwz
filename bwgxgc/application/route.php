@@ -38,6 +38,7 @@ Route::any('home/custom/customizing','home/custom/customizing',['method'=>'get|p
 Route::get('home/custom/get_area','home/custom/get_area');//产品定制地区
 Route::get('home/stickacard/stickacard','home/stickacard/stickacard');//贴牌专区
 Route::get('home/stickacard/tiepaixiangqing','home/stickacard/tiepaixiangqing');//贴牌详情
+Route::get('home/shangpu/tpxq','home/shangpu/tpxq');//贴牌详情
 Route::any('home/stickacard/tpcollect','home/stickacard/tpcollect',['method'=>'get|post']);//贴牌详情收藏
 Route::get('home/stickacard/tiepaigengduo','home/stickacard/tiepaigengduo');//贴牌更多
 Route::any('home/stickacard/tpajax','home/stickacard/tpajax',['method'=>'get|post']);//贴牌更多ajax

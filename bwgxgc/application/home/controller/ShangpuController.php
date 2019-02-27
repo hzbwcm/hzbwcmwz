@@ -10,6 +10,7 @@ use think\Controller;
 use think\Request;
 use think\Session;
 use app\admin\model\Com_pic;
+use app\home\model\User_person;
 use think\Db;
 
 class ShangpuController extends Controller
@@ -81,5 +82,24 @@ class ShangpuController extends Controller
         $this->assign(['info'=>$info,'c_id'=>$c_id,'pics'=>$pics]);
         return $this->fetch();
     }
+    //贴牌详情
+    public function tpxq($id)
+    {
+        Session::set('id',$id);
+        $c_id=Session::get('id');
+        //获取加工产品
+        $c_info = Card::where('id',$c_id)->find();
+        $tel = Company_info::where('com_id',$c_info['com_id'])->column('tel');
 
+        $this->assign(['info'=>$c_info,
+            'tel'=>$tel,
+
+        ]);
+
+        $user_id = Session('user_id');
+        $user = User_person::where('user_id',$user_id)->find();
+        $this->assign('user',$user);
+
+        return $this->fetch();
+    }
 }
