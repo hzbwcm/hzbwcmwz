@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.3, maximum-scale=2.0, minimum-scale=0.3">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=0.3, maximum-scale=2.0, minimum-scale=0.3">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>店铺首页</title>
     <link rel="stylesheet" href="{:config('home_shangpu_css')}/base.css">
@@ -81,7 +82,8 @@
     </div>
     <nav>
         <ul class="daohang-ul">
-            <li class="daohang-li"><a class="daohang-li-active" href="{:url('home/shangpu/index',['id'=>$c_id])}">首页</a></li>
+            <li class="daohang-li"><a class="daohang-li-active" href="{:url('home/shangpu/index',['id'=>$c_id])}">首页</a>
+            </li>
             <li class="daohang-li"><a href="{:url('home/shangpu/gongsijianjie')}">公司简介</a></li>
             <li class="daohang-li"><a href="{:url('home/shangpu/qiyetiepai')}">企业贴牌</a></li>
             <li class="daohang-li"><a href="{:url('home/shangpu/shipinzhanshi')}">视频展示</a></li>
@@ -114,7 +116,7 @@
                     <div class="gsjs-content-title-top">About Us</div>
                     <div class="gsjs-content-title-center">公司简介</div>
                     <div class="gsjs-content-title-bottom">
-                       {$info.introduce}
+                        {$info.introduce}
                     </div>
                     <div class="gsjs-content-a">
                         <a href="{:url('home/shangpu/gongsijianjie')}">Learn More About Us</a>
@@ -152,7 +154,7 @@
         <!--标题-->
         <div class="qytp-title-box">
             <div class="qytp-title-top">企业贴牌</div>
-            <div class="qytp-title-bottom">The  company  stick  a  card</div>
+            <div class="qytp-title-bottom">The company stick a card</div>
         </div>
         <!--内容-->
         <div class="qytp-content-big-box">
@@ -191,13 +193,14 @@
         </div>
         <div class="cpzs-content-box">
             {volist name='card2' id='v'}
-            <a href="" class="cpzs-content">
-                <div class="cpzs-content-img">
+            <div class="cpzs-content">
+                <a href="" class="cpzs-content-img" style="display: block">
                     <img data-original="{:config('public_uploads')}/{$v.pic1}" alt="">
-                </div>
-                <div class="cpzs-img-mousemove-box"><div class="cpzs-img-mousemove">
-                    <img data-original="{:config('public_uploads')}/{$v.pic1}" alt="">
-                </div>
+                </a>
+                <div class="cpzs-img-mousemove-box">
+                    <div class="cpzs-img-mousemove">
+                        <img data-original="{:config('public_uploads')}/{$v.pic1}" alt="">
+                    </div>
                     <div class="cpzs-img-mousemove">
                         <img data-original="{:config('public_uploads')}/{$v.pic2}" alt="">
                     </div>
@@ -223,7 +226,7 @@
 
                     </div>
                 </div>
-            </a>
+            </div>
             {/volist}
         </div>
 
@@ -246,7 +249,7 @@
                     <div class="qyzz-content-title4">有效期</div>
                 </div>
                 <ul class="qyzz-content-box">
-                        {volist name='book' id='v'}
+                    {volist name='book' id='v'}
                     <li class="qyzz-li">
                         <div class="qyzz-content-li1">
                             <div class="qyzz-li1-img">
@@ -268,7 +271,8 @@
         </div>
     </div>
 </main>
-
+<!--访问量-->
+<div style="width: 1200px;margin: 0 auto;text-align: right;color: #bebebe;margin-bottom: 100px;">访问量：100次</div>
 <!--页脚-->
 <footer>
     <div class="footer-box">
@@ -322,15 +326,6 @@
         </div>
     </div>
 </footer>
-<!--浏览量-->
-<div style="position: fixed;right: 10px;bottom: 150px;color: #555555;text-align: center;border: #bbbbbb solid 1px;padding: 3px;">
-    <div style="margin-bottom: 10px;">
-        访问人数
-    </div>
-    <div>
-        100人
-    </div>
-</div>
 <!--结束-->
 
 <script src="{:config('home_shangpu_js')}/jquery-1.11.3.min.js"></script>
@@ -344,7 +339,7 @@
     $(function () {
         $("img").lazyload({
             threshold: 200,
-            skip_invisible : false
+            skip_invisible: false
         });
     });
 </script>
