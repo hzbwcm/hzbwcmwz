@@ -42,6 +42,7 @@ class IndexController extends Controller
         $customgood = new customgood();
         $data = $customgood->select();
         $this->assign('data',$data);
+        dump($data);
 
         return $this->fetch();
     }
