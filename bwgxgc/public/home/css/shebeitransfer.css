@@ -109,58 +109,153 @@ li {
   margin-right: 5px;
 }
 
-/*头部*/
-.header {
+/*搜索*/
+.search-box {
   width: 100%;
+  height: 151px;
+  margin-bottom: 12px;
 }
-.header .header-box-box {
+.search-box .search-centre {
   width: 1200px;
-  height: 90px;
-  padding-top: 20px;
-  margin: 0 auto;
-}
-.header .header-box-box .header-logo {
-  float: left;
-}
-.header .header-box-box .header-right-box {
-  float: right;
-  height: 50px;
-}
-.header .header-box-box .header-right-box .header-shoucangjia {
-  display: block;
   height: 100%;
-  line-height: 50px;
-  font-size: 14px;
-  color: #555555;
-  margin-right: 20px;
-  text-decoration: none;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.search-box .search-centre .sear-logo {
+  width: 151px;
+  height: 151px;
+  float: left;
+  position: relative;
+}
+.search-box .search-centre .sear-logo img {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.search-box .search-centre .search-c-b {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 160px;
+  margin-top: 52px;
   float: left;
 }
-.header .header-box-box .header-right-box .header-shoucangjia .iconfont {
-  font-size: 16px;
-  color: #cbdff9;
-  margin-right: 5px;
+.search-box .search-centre .search-c-b .search {
+  width: 450px;
+  height: 36px;
+}
+.search-box .search-centre .search-c-b .search .search-fram {
+  width: 386px;
+  height: 100%;
+  border: 1px solid #73d4fd;
+  border-radius: 5px;
+  float: left;
+}
+.search-box .search-centre .search-c-b .search .search-fram .s-f-i-i {
+  width: 24px;
+  height: 24px;
+  float: left;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.search-box .search-centre .search-c-b .search .search-fram input {
+  width: 90%;
+  height: 100%;
+  border: 0;
+  background: #f8f8f8;
+  color: #666;
+  outline: none;
+}
+.search-box .search-centre .search-c-b .search .search-button {
+  width: 64px;
+  height: 100%;
+  margin-left: -4px;
+  background-color: #ad6fc8;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  float: left;
+}
+.search-box .search-centre .search-c-b .search .search-button .iconfont {
+  font-size: 20px;
+}
+.search-box .search-centre .search-c-b .re-search {
+  font-size: 12px;
+  color: #a09f9f;
+}
+.search-box .search-centre .search-c-b .re-search a {
+  color: #a09f9f;
+  padding-left: 10px;
+}
+.search-box .search-centre .search-right-b {
+  float: right;
+}
+.search-box .search-centre .search-right-b .s-trademark {
+  margin-right: 15px;
+  font-size: 12px;
+  color: #a09f9f;
+  margin-top: 52px;
+  line-height: 36px;
+  float: left;
+}
+.search-box .search-centre .search-right-b .s-trademark div {
+  float: left;
+  margin-right: 15px;
 }
 
 /*导航*/
-.daohang {
+.daohang-box {
   width: 100%;
+  min-width: 1200px;
   height: 40px;
-  background: #a260de;
-  line-height: 40px;
 }
-.daohang nav {
+.daohang-box ul {
   width: 1200px;
   height: 100%;
   margin: 0 auto;
-  text-align: center;
+  padding-top: 3px;
+  padding-left: 150px;
 }
-.daohang nav a {
-  margin-left: 40px;
-  margin-right: 40px;
-  text-decoration: none;
-  color: #fff;
-  font-size: 14px;
+.daohang-box ul li {
+  float: left;
+  padding-left: 60px;
+}
+.daohang-box ul a {
+  display: block;
+  padding-right: 25px;
+  padding-left: 25px;
+  line-height: 40px;
+  text-align: center;
+  color: #555555;
+  font-size: 16px;
+}
+.daohang-box ul a:hover li {
+  font-weight: bold;
+  color: #9d5fd6;
+}
+.daohang-box ul a:first-child {
+  width: 150px;
+}
+.daohang-box ul .daohang-yuan {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid #9d5fd6;
+  float: left;
+  margin-top: 15px;
+  margin-right: 5px;
+}
+.daohang-box ul .daohang-fabu {
+  float: right;
+  font-size: 10px;
+  color: #a09f9f;
 }
 
 /*主体*/

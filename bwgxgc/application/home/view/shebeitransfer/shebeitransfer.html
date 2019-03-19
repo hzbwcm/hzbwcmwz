@@ -21,7 +21,6 @@
 <header class="header-box">
     <div class="header-centre">
         <ul class="header-left">
-            
             <li><a href="">
                 <div class="h-l-t">欢迎来到卫品共享工厂 |</div>
             </a></li>
@@ -42,7 +41,7 @@
                 <div class="h-l-t">工厂首页 |</div>
             </a></li>
             <li><a href="{:url('admin/user/login')}">
-                <div class="h-l-t">工厂后台 |</div>
+                <div class="h-l-t">工厂登陆 |</div>
             </a></li>
             <li><a href="{:url('home/user/accountcenter')}">
                 <div class="h-l-t">个人中心 |</div>
@@ -54,39 +53,83 @@
         </ul>
     </div>
 </header>
-
-<div class="header">
-    <div class="header-box-box">
-        <div class="header-logo">
+<!--搜索-->
+<div class="search-box">
+    <div class="search-centre">
+        <div class="sear-logo">
             <a href="{:url('/')}">
                 <img data-original="{:config('home_img')}/a0.png" alt="">
             </a>
         </div>
-        <div class="header-right-box">
-            <a href="" class="header-shoucangjia">
-                <i class="iconfont icon-iconxingjikongxin"></i>
-                <span class="header-text">收藏夹</span>
-            </a>
-            <a href="" class="header-shoucangjia">
-                <i class="iconfont icon-guanzhuzuozheyiguanzhu"></i>
-                <span class="header-text">已关注</span>
-            </a>
+        <div class="search-c-b">
+            <form action="{:url('home/index/tpsousuo')}" method="get" name="form">
+                <div class="search">
+                    <div class="search-fram">
+                        <div class="s-f-i-i">
+                            <img data-original="{:config('home_img')}/aa.png" alt="">
+                        </div>
+                        <input type="text" placeholder="" value="" name="keywords">
+                    </div>
+                    <button class="search-button" style="border: none"><i class="iconfont icon-fangdajing"></i></button>
+                </div>
+            </form>
+        </div>
+
+        <div class="search-right-b">
+            <div class="s-trademark">
+                <div>
+                    <img data-original="{:config('home_img')}/a1.png" alt="">
+                </div>
+                <span>海量工厂</span>
+            </div>
+            <div class="s-trademark">
+                <div>
+                    <img data-original="{:config('home_img')}/a2.png" alt="">
+                </div>
+                <span>产品定制</span>
+            </div>
+            <div class="s-trademark">
+                <div>
+                    <img data-original="{:config('home_img')}/a3.png" alt="">
+                </div>
+                <span>团购批发</span>
+            </div>
         </div>
     </div>
 </div>
 <!--导航-->
-<div class="daohang">
-    <div class="daohang">
-        <nav>
-            <a href="{:url('/')}">首页</a>
-            <a href="{:url('home/custom/custom')}">产品定制</a>
-            <a href="{:url('home/stickacard/stickacard')}">加工专区</a>
-            <a href="{:url('home/inspection/inspection')}">优选验厂</a>
-            <a href="{:url('home/shebeitransfer/shebeitransfer')}">设备转让</a>
-            <a href="{:url('home/documentary/documentary')}">跟单专家</a>
-            <a href="javascript:;">网络批发</a>
-        </nav>
-    </div>
+<div class="daohang-box">
+    <ul>
+        <a href="javascript:;">
+            <li class="daohang-f-li"></li>
+        </a>
+        <a href="{:url('/')}">
+            <li>首页</li>
+        </a>
+        <a href="{:url('home/custom/custom')}">
+            <li>产品定制</li>
+        </a>
+        <a href="{:url('home/stickacard/stickacard')}">
+            <li>加工专区</li>
+        </a>
+        <a href="{:url('home/inspection/inspection')}">
+            <li>优选验厂</li>
+        </a>
+        <a href="{:url('home/shebeitransfer/shebeitransfer')}">
+            <li>设备转让</li>
+        </a>
+        <a href="{:url('home/documentary/documentary')}">
+            <li>跟单专家</li>
+        </a>
+        <a href="{:url('home/index/wlpf')}">
+            <li>网络批发</li>
+        </a>
+        <a href="">
+            <li class="daohang-fabu">
+
+            </li>
+        </a>
+    </ul>
 </div>
 
 <!--主体-->
