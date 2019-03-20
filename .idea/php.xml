@@ -15,4 +15,5 @@
       <path value="$PROJECT_DIR$/bwgxgc/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
 </project>

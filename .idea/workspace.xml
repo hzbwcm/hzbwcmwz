@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8ae946e-0d2b-4fce-84be-3d415e999b94" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwgxgc/application/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/public/home/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/public/home/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/public/home/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/public/home/js/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,14 +23,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="21" selection-start-line="21" selection-end-line="133" selection-end-column="6" />
-              <folding>
-                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="380">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -47,9 +45,7 @@
       </file>
       <file leaf-file-name="shebeitransfer.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/css/shebeitransfer.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-684" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -124,7 +120,7 @@
       <path value="$PROJECT_DIR$/bwgxgc/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="307" />
     <option name="y" value="26" />
     <option name="width" value="1400" />
@@ -216,11 +212,12 @@
       <workItem from="1551399978285" duration="597000" />
       <workItem from="1552451323939" duration="2813000" />
       <workItem from="1552981546974" duration="466000" />
+      <workItem from="1553044921399" duration="595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14747000" />
+    <option name="totallyTimeSpent" value="15342000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -232,9 +229,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16311301" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16471216" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -264,14 +261,30 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10431">
-          <caret line="549" column="74" selection-start-line="549" selection-start-column="74" selection-end-line="549" selection-end-column="74" />
+        <state relative-caret-position="399">
+          <caret line="21" selection-start-line="21" selection-end-line="133" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shebeitransfer/shebeitransfer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2508">
+          <caret line="132" column="6" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/css/shebeitransfer.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10431">
+          <caret line="549" column="74" selection-start-line="549" selection-start-column="74" selection-end-line="549" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -459,14 +472,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="21" selection-start-line="21" selection-end-line="133" selection-end-column="6" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="380">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -483,9 +490,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/css/shebeitransfer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
