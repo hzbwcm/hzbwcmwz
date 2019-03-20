@@ -357,6 +357,7 @@ class UserController extends Controller
         if($request->isPost()){
 
             $data = $request->post();
+
             $rules = [
                 'nickname'      =>'require|unique:user_person,username|max:25',
                 'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],
@@ -548,7 +549,6 @@ class UserController extends Controller
 //                    $this->assign('shuju',$request->post());
 //                    $this->assign('errorinfo','手机校验码不正确');
                 }else{
-                    dump('ccc');
                     $result = $user_person->allowField(true)->save($shuju);
                     if($result){
                         echo "<script>alert('恭喜您注册成功');</script>";
