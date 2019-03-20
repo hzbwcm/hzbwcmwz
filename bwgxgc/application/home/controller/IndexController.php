@@ -27,6 +27,9 @@ class IndexController extends Controller
             $com[$x]['pic9'] =$pics['pic9'];
             $com[$x]['pic8'] =$pics['pic8'];
         }
+        $coml = count($com);
+        $coml = $coml-1;
+
         $card = Card::where('id','>','1')->order('id', 'asc')->limit(6)->select();
         $card2 = Card::where('id','>','1')->order('id', 'desc')->limit(6)->select();
         $info = Company_info::where('com_id',16)->find();
@@ -36,13 +39,14 @@ class IndexController extends Controller
             'card'=>$card,
             'card2'=>$card2,
             'info'=>$info,
-            'pic'=>$pic
+            'pic'=>$pic,
+            'coml'=>$coml
             ]);
 
         $customgood = new customgood();
         $data = $customgood->select();
         $this->assign('data',$data);
-        dump($data);
+        //dump($data);
 
         return $this->fetch();
     }

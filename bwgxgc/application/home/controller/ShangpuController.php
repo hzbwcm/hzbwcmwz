@@ -101,7 +101,6 @@ class ShangpuController extends Controller
         $user_id = Session('user_id');
         $user = User_person::where('user_id',$user_id)->find();
         $this->assign('user',$user);
-
         return $this->fetch();
     }
 }
