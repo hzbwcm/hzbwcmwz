@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8ae946e-0d2b-4fce-84be-3d415e999b94" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwgxgc/application/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/public/home/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/public/home/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/public/home/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/public/home/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/custom/custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/custom/custom.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -120,7 +117,7 @@
       <path value="$PROJECT_DIR$/bwgxgc/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="307" />
     <option name="y" value="26" />
     <option name="width" value="1400" />
@@ -229,7 +226,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16471216" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
