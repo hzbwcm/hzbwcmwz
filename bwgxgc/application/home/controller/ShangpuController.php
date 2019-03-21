@@ -7,6 +7,7 @@ use app\home\model\Book;
 use app\home\model\Company_info;
 use app\home\model\Prodis;
 use think\Controller;
+use app\home\model\Pageview;
 use think\Request;
 use think\Session;
 use app\admin\model\Com_pic;
@@ -21,6 +22,24 @@ class ShangpuController extends Controller
     {
         Session::set('c_id',$id);
         $c_id=Session::get('c_id');
+
+        //访问量
+        $data = Pageview::where('shop_id',$c_id)->select();
+        if(empty($data)){
+            $data['shop_id'] = $c_id;
+            (new Pageview())->allowField(true)->save($data);
+            $pvs = 1;
+            Db::name('pageview')->where('shop_id',$c_id)->update(['pv'=>$pvs]);
+        }else{
+            $pv = $data[0]['pv'];
+            $pv = $pv+1;
+            Db::name('pageview')->where('shop_id',$c_id)->update(['pv'=>$pv]);
+            $pvs = $data[0]['adjustpv']+$pv;
+        }
+        $this->assign('pvs',$pvs);
+
+
+
         $info = Company_info::where('com_id',$c_id)->find();
         $pics = Com_pic::where("com_id" , $c_id )->find();
         $card = Card::where('com_id',$c_id)->limit(10)->select();

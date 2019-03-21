@@ -23,22 +23,21 @@ class IndexController extends Controller
         /**
          * adjustpv:协调访问量,pv:真实访问量,pvs:总访问量
          */
-//        $adjustpv = Pageview::where('id',1)->value('adjustpv');
-//        $pv = Pageview::where('id',1)->value('pv');
-//        $pv = $pv+1;
-//        $pvs = $adjustpv+$pv;
-//        Db::name('pageview')->where('id',1)->data(['pv'=>$pv,'pvs'=>$pvs])->update();
-        $shuju = Pageview::where('id',1)->select();
-        $pv = $shuju[0]['pv'];
-        $pv = $pv+1;
-        Db::name('pageview')->where('id',1)->update(['pv'=>$pv]);
-
-//        $shuju[0]['pv'] = $pv;
-//        $pageview = new Pageview();
-//        $pageview->where('id',1)->save(['pv'=>$pv]);
-//        $result = Pageview::update($shuju);
-        $pvs = $shuju[0]['adjustpv']+$pv;
+        $shuju = Pageview::where('shop_id',0)->select();
+        if(empty($shuju)){
+            $shuju['shop_id'] = 0;
+            (new Pageview())->allowField(true)->save($shuju);
+            $pvs = 1;
+            Db::name('pageview')->where('shop_id',0)->update(['pv'=>$pvs]);
+        }else{
+            $pv = $shuju[0]['pv'];
+            $pv = $pv+1;
+            Db::name('pageview')->where('shop_id',0)->update(['pv'=>$pv]);
+            $pvs = $shuju[0]['adjustpv']+$pv;
+        }
         $this->assign('pvs',$pvs);
+
+
 
 
 
