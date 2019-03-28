@@ -352,7 +352,7 @@
 						<div class="youxuan-xw-left">
 							<div class="youxuan-xw-img" style="overflow: hidden;">
 								{volist name='com' id='v' key='k'}
-								<a href="">
+								<a href="{:url('home/shangpu/index',['id'=>$v.com_id])}" target="_blank">
 									{eq name='$k' value='$coml+1'}
 									<img src="{:config('public_uploads' )}/{$v.pic6}" alt="" style="left:0;" yxName="{$v.company_name}"
 									 yxGm="{$v.size}" yxFl="{$v.type}" yxTime="{$v.time}" yxDz="{$v.address}">

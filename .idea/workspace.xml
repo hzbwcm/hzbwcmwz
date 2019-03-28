@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b8ae946e-0d2b-4fce-84be-3d415e999b94" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/bwgxgc/application/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwgxgc/application/home/view/custom/custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/bwgxgc/application/home/view/custom/custom.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +19,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state>
               <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
@@ -29,7 +28,7 @@
       <file leaf-file-name="shebeitransfer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shebeitransfer/shebeitransfer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
+            <state relative-caret-position="19">
               <caret line="132" column="6" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
@@ -40,25 +39,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shebeitransfer.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/css/shebeitransfer.css">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="User_person.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/model/User_person.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+              <folding>
+                <element signature="e#34#50#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/thinkphp/library/think/Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+              <folding>
+                <element signature="e#613#640#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bwgxgc/application/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2" />
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;img data-original=&quot;{:config('home_shangpu_img')}/f26f5ed0d000c3413c9a4250f2c22bcb86a9494e2b2a-Gw0bYT_fw658.png&quot; alt=&quot;&quot;&gt;</find>
+      <find />
       <find>贴牌专区</find>
       <find>&lt;span&gt;首页&lt;/span&gt;</find>
-      <find>&lt;span&gt;&lt;a href=&quot;&quot; style=&quot;color: #555555;text-decoration: none;&quot;&gt;首页&lt;/a&gt;&lt;/span&gt;</find>
+      <find />
     </findStrings>
     <replaceStrings>
-      <replace>&lt;img data-original=&quot;{:config('home_img')}/weikefu.png&quot; alt=&quot;&quot;&gt;</replace>
+      <replace />
       <replace>企业贴牌</replace>
-      <replace>&lt;span&gt;&lt;a href=&quot;&quot; style=&quot;color: #555555;text-decoration: none;&quot;&gt;首页&lt;/a&gt;&lt;/span&gt;</replace>
-      <replace>&lt;span&gt;&lt;a href=&quot;{:url('home/shangpu/index',['id'=&gt;$c_id])}&quot; style=&quot;color: #555555;text-decoration: none;&quot;&gt;首页&lt;/a&gt;&lt;/span&gt;</replace>
+      <replace />
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -146,22 +171,60 @@
               <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
               <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
               <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
               <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
               <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
               <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
               <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
+              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
+              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
+              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
+              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
+              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
+              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="think" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
+              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
+              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="traits" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
+              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
+              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="traits" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,12 +272,12 @@
       <workItem from="1551399978285" duration="597000" />
       <workItem from="1552451323939" duration="2813000" />
       <workItem from="1552981546974" duration="466000" />
-      <workItem from="1553044921399" duration="595000" />
+      <workItem from="1553044921399" duration="1911000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15342000" />
+    <option name="totallyTimeSpent" value="16658000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -227,8 +290,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16471216" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -256,65 +320,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" selection-start-line="21" selection-end-line="133" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shebeitransfer/shebeitransfer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2508">
-          <caret line="132" column="6" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/css/shebeitransfer.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10431">
-          <caret line="549" column="74" selection-start-line="549" selection-start-column="74" selection-end-line="549" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5206">
-          <caret line="274" column="95" selection-start-line="274" selection-start-column="95" selection-end-line="274" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1501">
-          <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1501">
-          <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shangpu/shipinzhanshi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1501">
-          <caret line="79" column="10" lean-forward="true" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/admin/view/index/htxgmm.html" />
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/admin/view/index/htwjmm.html" />
     <entry file="file://$PROJECT_DIR$/bwgxgc/application/admin/view/user/htwjmm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="718">
@@ -403,13 +408,6 @@
         <state relative-caret-position="-456" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="65" column="36" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/shangpu/css/tiepaixiangqing.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -469,14 +467,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state>
           <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/thinkphp/library/think/db/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3692">
+          <caret line="1796" column="20" selection-start-line="1796" selection-start-column="20" selection-end-line="1796" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/css/shebeitransfer.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/admin/config.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1254">
+          <caret line="65" column="36" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/think">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/model/Area.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/model/Prodis.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/model/Book.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/model/Card.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-346" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/tags.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/command.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/build.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/runtime/log/201809/12.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/runtime/temp/64e3f8f7a251e14006bfc6f7e94fee2e.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/thinkphp/base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-327" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/LICENSE.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/phpunit.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/shebeitransfer/shebeitransfer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
+        <state relative-caret-position="19">
           <caret line="132" column="6" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
@@ -486,8 +575,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bwgxgc/public/home/css/shebeitransfer.css">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/bwgxgc/thinkphp/library/traits/model/SoftDelete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3006" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/model/User_person.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#34#50#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/thinkphp/library/think/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+          <folding>
+            <element signature="e#613#640#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bwgxgc/application/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2" />
+      </provider>
     </entry>
   </component>
 </project>
