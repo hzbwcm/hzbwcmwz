@@ -5,6 +5,7 @@ use app\home\model\Card;
 use app\home\model\Com_pic;
 use app\home\model\Customgood;
 use app\home\model\User_person;
+use app\home\model\Pageview;
 use app\home\model\Type;
 use think\Controller;
 use app\home\model\Area;
@@ -17,6 +18,29 @@ class IndexController extends Controller
     //前台首页
     public function index()
     {
+
+        //进入首页先增加访问量
+        /**
+         * adjustpv:协调访问量,pv:真实访问量,pvs:总访问量
+         */
+        $shuju = Pageview::where('shop_id',0)->select();
+        if(empty($shuju)){
+            $shuju['shop_id'] = 0;
+            (new Pageview())->allowField(true)->save($shuju);
+            $pvs = 1;
+            Db::name('pageview')->where('shop_id',0)->update(['pv'=>$pvs]);
+        }else{
+            $pv = $shuju[0]['pv'];
+            $pv = $pv+1;
+            Db::name('pageview')->where('shop_id',0)->update(['pv'=>$pv]);
+            $pvs = $shuju[0]['adjustpv']+$pv;
+        }
+        $this->assign('pvs',$pvs);
+
+
+
+
+
         $com = Company_info::where('role_id',30)->order('com_id', 'desc')->limit(8)->select();
         for($x=0;$x<count($com);$x++)
         {
@@ -46,7 +70,7 @@ class IndexController extends Controller
         $customgood = new customgood();
         $data = $customgood->select();
         $this->assign('data',$data);
-        //dump($data);
+
 
         return $this->fetch();
     }
