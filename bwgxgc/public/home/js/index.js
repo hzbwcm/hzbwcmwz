@@ -180,6 +180,8 @@ $(function() {
 				oldnum+=1;
 				yxflag=true;
 			});
+		}else if(num>=info.length-1){
+			alert('已经是第一个');
 		}
 	})
 	$('.youxuan-xw-img .youxuan-right-jt').on('click',function(){
@@ -187,6 +189,8 @@ $(function() {
 		if(num>0 && yxflag){
 			yxflag=false;
 			yxFunction();
+		}else if(num<=0){
+			alert('已经是最后一个');
 		}
 	})
 	// 结束
