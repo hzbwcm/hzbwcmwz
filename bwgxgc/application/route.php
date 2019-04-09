@@ -60,6 +60,7 @@ Route::get('home/shangpu/chanpinzhanting','home/shangpu/chanpinzhanting');//优�
 Route::get('home/shangpu/lianxiwomen','home/shangpu/lianxiwomen');//优选验厂联系我们
 
 
+
 //admin 分组
 Route::get('admin/user/onlinecount','admin/user/onlinecount');//查询在线人数
 Route::get('admin/user/htwjmm','admin/user/htwjmm');//企业忘记密码

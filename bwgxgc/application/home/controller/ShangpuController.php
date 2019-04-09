@@ -23,6 +23,8 @@ class ShangpuController extends Controller
         Session::set('c_id',$id);
         $c_id=Session::get('c_id');
 
+
+
         //访问量
         $data = Pageview::where('shop_id',$c_id)->select();
         if(empty($data)){

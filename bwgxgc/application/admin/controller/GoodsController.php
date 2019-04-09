@@ -675,6 +675,8 @@ class GoodsController extends Controller
         if ($request->isAjax())
         {
             $id = $request->get('id');
+
+
             $res = Prodis::where('id',$id)->find()->delete();
             if($res)
             {
