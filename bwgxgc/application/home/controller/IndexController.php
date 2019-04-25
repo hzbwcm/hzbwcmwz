@@ -322,4 +322,6 @@ class IndexController extends Controller
         return $this->fetch();
 
     }
+    //分页
+
 }

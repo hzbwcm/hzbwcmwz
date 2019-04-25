@@ -556,10 +556,10 @@ class GoodsController extends Controller
     public function progl()
     {
         $com_id = Session::get('com_id');
-        $info = Prodis::where('com_id', $com_id)->select();
+        $info = Prodis::where('com_id', $com_id)->order('com_id desc')->paginate(10);
         $this->assign('info',$info);
-        //$pagelist = $info->render();
-        //$this->assign('pagelist',$pagelist);
+        $pagelist = $info->render();
+        $this->assign('pagelist',$pagelist);
         return $this-> fetch();
     }
     //产品展示商品上传
@@ -675,6 +675,8 @@ class GoodsController extends Controller
         if ($request->isAjax())
         {
             $id = $request->get('id');
+
+
             $res = Prodis::where('id',$id)->find()->delete();
             if($res)
             {
