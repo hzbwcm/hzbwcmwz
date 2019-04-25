@@ -128,7 +128,7 @@ $(function() {
 								'<div class="xw-gongsi-zl">产品分类 : <span>'+yxFl+'</span></div>'+
 								'<div class="xw-gongsi-zl">公司成立时间 : <span>'+yxTime+'</span></div>'+
 								'<div class="xw-gongsi-zl">公司地址 : <span>'+yxDz+'</span></div>'+
-								'<div class="youxuan-yyc"><img data-original="../img/eyyz.png" alt=""></div>';
+								'<div class="youxuan-yyc"><img src="../home/img/eyyz.png" alt=""></div>';
 								
 		$('.youxuan-xw-right').html(str);
 		$('.youxuan-img-title').text(yxName);
@@ -167,12 +167,12 @@ $(function() {
 									'<div class="xw-gongsi-zl">产品分类 : <span>'+yxFl+'</span></div>'+
 									'<div class="xw-gongsi-zl">公司成立时间 : <span>'+yxTime+'</span></div>'+
 									'<div class="xw-gongsi-zl">公司地址 : <span>'+yxDz+'</span></div>'+
-									'<div class="youxuan-yyc"><img data-original="../img/eyyz.png" alt=""></div>';
+									'<div class="youxuan-yyc"><img src="../home/img/eyyz.png" alt=""></div>';
 									
 			$('.youxuan-xw-right').html(str);
 			$('.youxuan-img-title').text(yxName);
 			
-			$(info).eq(oldnum).css({left:"-100%"})
+			$(info).eq(oldnum).css({left:"-100%"});
 			$(info).eq(num).animate({left:"100%"});
 			$(info).eq(oldnum).animate({left:0},function(){
 				newnum=num;
