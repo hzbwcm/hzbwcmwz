@@ -41,7 +41,7 @@ class IndexController extends Controller
 
 
 
-        $com = Company_info::where('role_id',30)->order('com_id', 'desc')->limit(8)->select();
+        $com = Company_info::where('role_id',30)->order('com_id', 'asc')->limit(8)->select();
         for($x=0;$x<count($com);$x++)
         {
 
