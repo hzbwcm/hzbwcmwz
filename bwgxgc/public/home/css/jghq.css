@@ -1,0 +1,551 @@
+@charset "UTF-8";
+/*初始化css*/
+html,
+body,
+div,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ol,
+form,
+input,
+textarea,
+th,
+td,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f8f8f8;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  border: none;
+}
+
+/*页眉*/
+.header-box {
+  width: 100%;
+  min-width: 1200px;
+  height: 30px;
+  color: #555555;
+  background: #ffffff;
+}
+.header-box .header-centre {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+.header-box .header-left {
+  width: auto;
+  height: 100%;
+  float: left;
+  font-size: 12px;
+  line-height: 30px;
+}
+.header-box .header-left .h-f-i {
+  width: 80px;
+}
+.header-box .header-left li {
+  float: left;
+}
+.header-box .header-left li a {
+  display: block;
+  height: 100%;
+}
+.header-box .header-left li a .h-l-t {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 12px;
+  color: #1b1b1b;
+}
+.header-box .header-left .header-img {
+  float: left;
+}
+.header-box .header-left .h-f-i {
+  float: left;
+}
+.header-box .header-left img {
+  margin-top: 7px;
+  margin-right: 5px;
+}
+.header-box .header-right {
+  width: auto;
+  height: 100%;
+  float: right;
+  font-size: 12px;
+  line-height: 30px;
+}
+.header-box .header-right li {
+  width: auto;
+  float: left;
+}
+.header-box .header-right li a {
+  display: block;
+  height: 100%;
+}
+.header-box .header-right li a .h-l-t {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 12px;
+  color: #1b1b1b;
+}
+.header-box .header-right .h-f-i {
+  float: left;
+}
+.header-box .header-right img {
+  margin-top: 7px;
+  margin-right: 5px;
+}
+
+/*搜索*/
+.search-box {
+  width: 100%;
+  height: 151px;
+  margin-bottom: 12px;
+}
+.search-box .search-centre {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.search-box .search-centre .sear-logo {
+  width: 151px;
+  height: 151px;
+  float: left;
+  position: relative;
+}
+.search-box .search-centre .sear-logo img {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.search-box .search-centre .search-c-b {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 160px;
+  margin-top: 52px;
+  float: left;
+}
+.search-box .search-centre .search-c-b .search {
+  width: 450px;
+  height: 36px;
+}
+.search-box .search-centre .search-c-b .search .search-fram {
+  width: 386px;
+  height: 100%;
+  border: 1px solid #73d4fd;
+  border-radius: 5px;
+  float: left;
+}
+.search-box .search-centre .search-c-b .search .search-fram .s-f-i-i {
+  width: 24px;
+  height: 24px;
+  float: left;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.search-box .search-centre .search-c-b .search .search-fram input {
+  width: 90%;
+  height: 100%;
+  border: 0;
+  background: #f8f8f8;
+  color: #666;
+  outline: none;
+}
+.search-box .search-centre .search-c-b .search .search-button {
+  width: 64px;
+  height: 100%;
+  margin-left: -4px;
+  background-color: #ad6fc8;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  float: left;
+}
+.search-box .search-centre .search-c-b .search .search-button .iconfont {
+  font-size: 20px;
+}
+.search-box .search-centre .search-c-b .re-search {
+  font-size: 12px;
+  color: #a09f9f;
+}
+.search-box .search-centre .search-c-b .re-search a {
+  color: #a09f9f;
+  padding-left: 10px;
+}
+.search-box .search-centre .search-right-b {
+  float: right;
+}
+.search-box .search-centre .search-right-b .s-trademark {
+  margin-right: 15px;
+  font-size: 12px;
+  color: #a09f9f;
+  margin-top: 52px;
+  line-height: 36px;
+  float: left;
+}
+.search-box .search-centre .search-right-b .s-trademark div {
+  float: left;
+  margin-right: 15px;
+}
+
+/*导航*/
+.daohang-box {
+  width: 100%;
+  min-width: 1200px;
+  height: 40px;
+}
+.daohang-box ul {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding-left: 70px;
+}
+.daohang-box ul li {
+  float: left;
+  padding-left: 60px;
+}
+.daohang-box ul a {
+  display: block;
+  padding-right: 25px;
+  padding-left: 25px;
+  line-height: 40px;
+  text-align: center;
+  color: #555555;
+  font-size: 16px;
+}
+.daohang-box ul a:hover li {
+  font-weight: bold;
+  color: #9d5fd6;
+}
+.daohang-box ul a:first-child {
+  width: 150px;
+}
+.daohang-box ul .daohang-yuan {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid #9d5fd6;
+  float: left;
+  margin-top: 15px;
+  margin-right: 5px;
+}
+.daohang-box ul .daohang-fabu {
+  float: right;
+  font-size: 10px;
+  color: #a09f9f;
+}
+
+/*主体*/
+main {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  /* 左 */
+  /* 右 */
+}
+main .MainLeftBigBox {
+  width: 760px;
+  float: left;
+  /* banner */
+  /* 内容 */
+}
+main .MainLeftBigBox .BannerBox {
+  width: 100%;
+  height: 570px;
+  background: #ffffff;
+  padding: 0 20px 15px 20px;
+  margin-bottom: 20px;
+}
+main .MainLeftBigBox .BannerBox .BannerTitleBox {
+  width: 100%;
+  height: 52px;
+  font-size: 24px;
+  color: #555555;
+  line-height: 52px;
+  position: relative;
+}
+main .MainLeftBigBox .BannerBox .BannerTitleBox .BannerTitle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+main .MainLeftBigBox .BannerBox .BannerTitleBox .BannerTitleActive {
+  opacity: 1;
+}
+main .MainLeftBigBox .BannerBox .BannerImageBox {
+  width: 720px;
+  height: 430px;
+  position: relative;
+  /* banner圆圈 */
+}
+main .MainLeftBigBox .BannerBox .BannerImageBox .BannerImage0 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  display: none;
+}
+main .MainLeftBigBox .BannerBox .BannerImageBox .BannerImage0 img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+main .MainLeftBigBox .BannerBox .BannerImageBox .BannerImage0 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+main .MainLeftBigBox .BannerBox .BannerImageBox .BannerImage1 {
+  opacity: 1;
+  display: block;
+}
+main .MainLeftBigBox .BannerBox .BannerImageBox .BannerRoundBox {
+  position: absolute;
+  right: 26px;
+  bottom: 20px;
+}
+main .MainLeftBigBox .BannerBox .BannerImageBox .BannerRoundBox .BannerRound {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #ebebeb;
+  float: left;
+  font-size: 12px;
+  color: #555555;
+  line-height: 22px;
+  text-align: center;
+  cursor: default;
+}
+main .MainLeftBigBox .BannerBox .BannerImageBox .BannerRoundBox .BannerRoundActive {
+  background: #ad6fc8;
+  color: #ffffff;
+}
+main .MainLeftBigBox .BannerBox .BannerContentBox {
+  width: 100%;
+  height: 76px;
+  padding-top: 8px;
+  font-size: 16px;
+  color: #555555;
+  text-indent: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  position: relative;
+}
+main .MainLeftBigBox .BannerBox .BannerContentBox .BannerContent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+main .MainLeftBigBox .BannerBox .BannerContentBox .BannerContentActive {
+  opacity: 1;
+}
+main .MainLeftBigBox .MainLeftContentBox {
+  width: 100%;
+  overflow: hidden;
+  /* 分类 */
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentLeftTypeBox {
+  width: 200px;
+  background: #ffffff;
+  float: left;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentLeftTypeBox .LeftContentLeftTypeTitle {
+  width: 100%;
+  height: 38px;
+  border-bottom: #b3b3b3 dashed 1px;
+  font-size: 16px;
+  color: #555555;
+  line-height: 38px;
+  text-align: center;
+  font-weight: bold;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentLeftTypeBox .LeftContentLeftTypeTextBox {
+  width: 100%;
+  padding: 20px 18px 0 18px;
+  overflow: hidden;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentLeftTypeBox .LeftContentLeftTypeTextBox .TypeTextBox {
+  width: 100%;
+  margin-bottom: 20px;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentLeftTypeBox .LeftContentLeftTypeTextBox .TypeTextBox .TypeTextFirst {
+  width: 100%;
+  font-size: 16px;
+  color: #555555;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentLeftTypeBox .LeftContentLeftTypeTextBox .TypeTextBox .TypeTextFirstSecond {
+  width: 100%;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentLeftTypeBox .LeftContentLeftTypeTextBox .TypeTextBox .TypeTextFirstSecond li {
+  width: 100%;
+  margin-bottom: 4px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentLeftTypeBox .LeftContentLeftTypeTextBox .TypeTextBox .TypeTextFirstSecond li a {
+  color: #6e6e6e;
+  text-decoration: none;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentLeftTypeBox .LeftContentLeftTypeTextBox .TypeTextBox .TypeTextFirstSecond li .A_Active {
+  color: #b35dd8;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentRightBox {
+  width: 540px;
+  height: 740px;
+  float: right;
+  background: #ffffff;
+  padding: 20px;
+  /* 分页 */
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentRightBox .LeftContentRightUL {
+  width: 100%;
+  height: 646px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentRightBox .LeftContentRightUL li {
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentRightBox .LeftContentRightUL li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #555555;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentRightBox .LeftContentRightUL li a .LiContentTime {
+  float: left;
+  width: 80px;
+  margin-right: 10px;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentRightBox .LeftContentRightUL li a .LiContentText {
+  float: left;
+  width: 410px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+main .MainLeftBigBox .MainLeftContentBox .MainLeftContentRightBox .MainLeftFY {
+  width: 100%;
+}
+main .MainRightBigBox {
+  width: 420px;
+  height: 1328px;
+  float: right;
+  padding: 20px 16px 0 12px;
+  background: #ffffff;
+  overflow: hidden;
+}
+main .MainRightBigBox .MainRightTitle {
+  width: 100%;
+  font-size: 16px;
+  color: #555555;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+main .MainRightBigBox .MainRightContentBox {
+  width: 100%;
+}
+main .MainRightBigBox .MainRightContentBox li {
+  width: 100%;
+  height: 140px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+main .MainRightBigBox .MainRightContentBox li .MainRightImage {
+  float: left;
+  width: 200px;
+  height: 100%;
+  position: relative;
+}
+main .MainRightBigBox .MainRightContentBox li .MainRightImage img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+main .MainRightBigBox .MainRightContentBox li .MainRightContentBox {
+  float: right;
+  width: 180px;
+  height: 100%;
+}
+main .MainRightBigBox .MainRightContentBox li .MainRightContentBox .MainRightContentTitle {
+  width: 100%;
+  font-size: 16px;
+  color: #555555;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+main .MainRightBigBox .MainRightContentBox li .MainRightContentBox .MainRightContentText {
+  width: 100%;
+  font-size: 14px;
+  color: #555555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
