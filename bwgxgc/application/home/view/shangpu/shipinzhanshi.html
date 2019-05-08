@@ -108,58 +108,21 @@
             <img data-original="{:config('home_shangpu_img')}/shipinzhanshi/SHIPIN.png" alt="">
         </div>
         <div class="spzs-content-box">
+            {volist name='video' id='v'}
             <div class="spzs-content">
                 <div class="spzs-video-box">
-                    <iframe height="100%" width="100%" src='http://player.youku.com/embed/XNTc5MTQ3OTE2' frameborder="0"></iframe>
+                    <iframe height="100%" width="100%" src="{$v.vurl}" frameborder="0"></iframe>
                 </div>
                 <div class="spzs-title-time">
                     <div class="spzs-title">
-                        公司视频名称
+                        {$v.vname}
                     </div>
                     <div class="spzs-time">
-                        2018.08.09
+                        {$v.update_time}
                     </div>
                 </div>
             </div>
-            <div class="spzs-content">
-                <div class="spzs-video-box">
-                    <iframe height="100%" width="100%" src='http://player.youku.com/embed/XNTc5MTQ3OTE2' frameborder="0"></iframe>
-                </div>
-                <div class="spzs-title-time">
-                    <div class="spzs-title">
-                        公司视频名称
-                    </div>
-                    <div class="spzs-time">
-                        2018.08.09
-                    </div>
-                </div>
-            </div>
-            <div class="spzs-content">
-                <div class="spzs-video-box">
-                    <iframe height="100%" width="100%" src='http://player.youku.com/embed/XNTc5MTQ3OTE2' frameborder="0"></iframe>
-                </div>
-                <div class="spzs-title-time">
-                    <div class="spzs-title">
-                        公司视频名称
-                    </div>
-                    <div class="spzs-time">
-                        2018.08.09
-                    </div>
-                </div>
-            </div>
-            <div class="spzs-content">
-                <div class="spzs-video-box">
-                    <iframe height="100%" width="100%" src='http://player.youku.com/embed/XNTc5MTQ3OTE2' frameborder="0"></iframe>
-                </div>
-                <div class="spzs-title-time">
-                    <div class="spzs-title">
-                        公司视频名称
-                    </div>
-                    <div class="spzs-time">
-                        2018.08.09
-                    </div>
-                </div>
-            </div>
+            {/volist}
         </div>
     </div>
 </main>

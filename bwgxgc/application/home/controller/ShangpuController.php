@@ -3,6 +3,7 @@
 namespace app\home\controller;
 
 use app\admin\model\Card;
+use app\admin\model\Video;
 use app\home\model\Book;
 use app\home\model\Company_info;
 use app\home\model\Prodis;
@@ -82,6 +83,9 @@ class ShangpuController extends Controller
         $info = Company_info::where('com_id',$c_id)->find();
         $pics = Com_pic::where("com_id" , $c_id )->find();
         $this->assign(['c_id'=>$c_id,'pics'=>$pics,'info'=>$info]);
+        $video = Video::where('com_id',$c_id)->select();
+
+        $this->assign(['video'=>$video]);
         return $this->fetch();
     }
     //产品展厅
@@ -125,3 +129,5 @@ class ShangpuController extends Controller
         return $this->fetch();
     }
 }
+
+

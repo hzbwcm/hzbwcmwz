@@ -42,71 +42,91 @@
     <form style="padding-bottom: 150px;overflow: hidden" method="post" action="{$Request.url}"
         enctype="multipart/form-data">
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-xs-offset-2">
+            <input type="hidden" value="{$info[0]['id']|default=''}" name="hname">
             <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <input type="hidden" name="com_id" value="{$com_id}">
                 <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视频一名称
                     ：</label>
-                <input type="text" value="" name="vurl1name" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
-                <span style="color:red;">{$errorinfo.vurl1name|default=''}</span>
+                <input type="text" value="{$info[0]['vname']|default=''}" name="vname" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
+
             </div>
             <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视频一地址
                     ：</label>
-                <input type="text" value="" name="vurl1" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
-                <span style="color:red;">{$errorinfo.vurl1|default=''}</span>
-            </div>
-
-            <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <input type="text" value="{$info[0]['vurl']|default=''}" name="vurl" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
 
             </div>
+        </div>
+        <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5 col-xs-offset-5" style="margin-top: 20px;">
+            <input type="submit" value="提交">
+        </div>
+    </form>
 
+    <form style="padding-bottom: 150px;overflow: hidden" method="post" action="{$Request.url}"
+          enctype="multipart/form-data">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-xs-offset-2">
+            <input type="hidden" value="{$info[1]['id']|default=''}" name="hname">
             <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <input type="hidden" name="com_id" value="{$com_id}">
                 <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视频二名称
                     ：</label>
-                <input type="text" value="" name="vurl2name" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
-                <span style="color:red;">{$errorinfo.vurl2name|default=''}</span>
+                <input type="text" value="{$info[1]['vname']|default=''}" name="vname" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
+
             </div>
             <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视频二地址
                     ：</label>
-                <input type="text" value="" name="vurl2" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
-                <span style="color:red;">{$errorinfo.vurl2|default=''}</span>
-            </div>
+                <input type="text" value="{$info[1]['vurl']|default=''}" name="vurl" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
 
-            <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            
             </div>
+        </div>
+        <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5 col-xs-offset-5" style="margin-top: 20px;">
+            <input type="submit" value="提交">
+        </div>
+    </form>
 
+    <form style="padding-bottom: 150px;overflow: hidden" method="post" action="{$Request.url}"
+          enctype="multipart/form-data">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-xs-offset-2">
+            <input type="hidden" value="{$info[2]['id']|default=''}" name="hname">
             <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <input type="hidden" name="com_id" value="{$com_id}">
                 <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视频三名称
                     ：</label>
-                <input type="text" value="" name="vurl3name" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
-                <span style="color:red;">{$errorinfo.vurl3name|default=''}</span>
+                <input type="text" value="{$info[2]['vname']|default=''}" name="vname" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
+
             </div>
             <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视频三地址
                     ：</label>
-                <input type="text" value="" name="vurl3" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
-                <span style="color:red;">{$errorinfo.vurl3|default=''}</span>
-            </div>
+                <input type="text" value="{$info[2]['vurl']|default=''}" name="vurl" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
 
-            <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            
             </div>
+        </div>
+        <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5 col-xs-offset-5" style="margin-top: 20px;">
+            <input type="submit" value="提交">
+        </div>
+    </form>
 
+    <form style="padding-bottom: 150px;overflow: hidden" method="post" action="{$Request.url}"
+          enctype="multipart/form-data">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-xs-offset-2">
+            <input type="hidden" value="{$info[3]['id']|default=''}" name="hname">
             <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <input type="hidden" name="com_id" value="{$com_id}">
                 <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视频四名称
                     ：</label>
-                <input type="text" value="" name="vurl4name" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
-                <span style="color:red;">{$errorinfo.vurl4name|default=''}</span>
+                <input type="text" value="{$info[3]['vname']|default=''}" name="vname" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
+
             </div>
             <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">视频四地址
                     ：</label>
-                <input type="text" value="" name="vurl4" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
-                <span style="color:red;">{$errorinfo.vurl4|default=''}</span>
+                <input type="text" value="{$info[3]['vurl']|default=''}" name="vurl" class="InputOne col-xs-3 col-sm-4 col-md-4 col-lg-5">
+
             </div>
         </div>
-        <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5 col-xs-offset-5">
+        <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5 col-xs-offset-5" style="margin-top: 20px;">
             <input type="submit" value="提交">
         </div>
     </form>
