@@ -6,7 +6,7 @@ use think\Controller;
 
 class VideoController extends Controller
 {
-    public function VideoUp()
+    public function videoup()
     {
         return $this->fetch();
     }
