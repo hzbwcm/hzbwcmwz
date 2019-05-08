@@ -50,6 +50,7 @@ Route::get('home/documentary/documentary','home/documentary/documentary');//跟�
 Route::get('home/index/wlpf','home/index/wlpf');//网络批发
 Route::get('home/shebeitransfer/shebeitransfer','home/shebeitransfer/shebeitransfer');//设备转让
 Route::get('home/shebeitransfer/shebeizhuanrang','home/shebeitransfer/shebeizhuanrang');//设备转让详情
+Route::get('home/jghq/jghq','home/jghq/jghq');//价格行情
 
 //企业商铺
 Route::get('home/shangpu/index','home/shangpu/index');//优选验厂商铺首页
@@ -105,6 +106,8 @@ Route::group('admin',function (){
     Route::any('user/gerentupian','admin/user/gerentupian',['method'=>'get|post']);//个人图片上传
     Route::any('goods/cpzsspsc','admin/goods/cpzsspsc',['method'=>'get|post']);//产品展示上传
     Route::any('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan',['method'=>'get|post']);
+
+    Route::any('videoUp','admin/Video/Videoup');
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
 
 
