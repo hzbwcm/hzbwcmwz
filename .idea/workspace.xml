@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8ae946e-0d2b-4fce-84be-3d415e999b94" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b8ae946e-0d2b-4fce-84be-3d415e999b94" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,17 +13,7 @@
     <pharConfigPath>$PROJECT_DIR$/bwgxgc/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="think" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bwgxgc/think">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -99,7 +87,7 @@
       <path value="$PROJECT_DIR$/bwgxgc/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="355" />
     <option name="y" value="28" />
     <option name="width" value="1400" />
@@ -123,73 +111,6 @@
               <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
               <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
-              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
-              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
-              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
-              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
-              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
-              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
-              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="think" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
-              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="traits" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hzbwcmwz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hzbwcmwz" type="462c0819:PsiDirectoryNode" />
-              <item name="bwgxgc" type="462c0819:PsiDirectoryNode" />
-              <item name="thinkphp" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="traits" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -199,7 +120,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bwgxgc" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -240,12 +161,12 @@
       <workItem from="1553044921399" duration="1911000" />
       <workItem from="1557299614932" duration="231000" />
       <workItem from="1557302520495" duration="812000" />
-      <workItem from="1557303567586" duration="329000" />
+      <workItem from="1557303567586" duration="580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18030000" />
+    <option name="totallyTimeSpent" value="18281000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -257,8 +178,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="355" y="28" width="1400" height="811" extended-state="1" />
-    <editor active="true" />
+    <frame x="355" y="28" width="1400" height="811" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26506025" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -288,13 +208,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaixiangqing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="139" column="22" selection-start-line="139" selection-start-column="22" selection-end-line="139" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bwgxgc/application/home/view/stickacard/tiepaigengduo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -532,10 +445,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/think">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/bwgxgc/think">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
