@@ -8,6 +8,6 @@ class VideoController extends Controller
 {
     public function VideoUp()
     {
-        return $this->fecth();
+        return $this->fetch();
     }
 }
