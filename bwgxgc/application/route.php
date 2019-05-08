@@ -107,7 +107,7 @@ Route::group('admin',function (){
     Route::any('goods/cpzsspsc','admin/goods/cpzsspsc',['method'=>'get|post']);//产品展示上传
     Route::any('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan',['method'=>'get|post']);
 
-    Route::any('videoUp','admin/Video/Videoup');
+    Route::any('videoUp','admin/Video/VideoUp');
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
 
 
