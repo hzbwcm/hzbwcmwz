@@ -110,9 +110,19 @@ Route::group('admin',function (){
     Route::any('video/videoup','admin/video/videoup',['method'=>'get|post']);//视频上传
 
 
-    Route::any('market/marketclassification','admin/market/marketclassification',['method'=>'get|post']);//价格行情分类管理
+    Route::any('market/marketclassification','admin/market/marketclassification',['method'=>'get|post']); //价格行情分类管理
+    Route::any( 'market/pricelist', 'admin/market/pricelist', ['method' => 'get|post']); //价格行情列表
+    Route::any('market/hotlist', 'admin/market/hotlist', ['method' => 'get|post']);//热点行情列表
+
+
     Route::any('market/addmarketone','admin/market/addmarketone',['method'=>'get|post']);//添加价格行情一级分类
-    Route::any('market/addmarkettwo','admin/market/addmarkettwo',['method'=>'get|post']);//添加价格行情二级分类
+    Route::any('market/addmarkettwo','admin/market/addmarkettwo',['method'=>'get|post']); //添加价格行情二级分类
+
+    Route::any( 'market/publishhotmarket', 'admin/market/publishhotmarket', ['method' => 'get|post']); //发布热点格行情
+    Route::any( 'market/publishmarket', 'admin/market/publishmarket', ['method' => 'get|post']); //发布价格行情
+
+    Route::any('market/updatehotmarket', 'admin/market/updatehotmarket', ['method' => 'get|post']); //修改热点格行情
+    Route::any('market/updatemarket', 'admin/market/updatemarket', ['method' => 'get|post']);//修改价格行情
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
 
 
