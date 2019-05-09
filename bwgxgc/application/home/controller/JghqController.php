@@ -8,10 +8,10 @@ use app\home\model\Banner;
 class JghqController extends Controller
 {
     public function jghq(){
-        $data = json(Banner::getBanner());
+        $data = Banner::getBanner();
         $this->assign('data',$data);
 
-        return $this->fetch();
+        return $data;
 
 
         
