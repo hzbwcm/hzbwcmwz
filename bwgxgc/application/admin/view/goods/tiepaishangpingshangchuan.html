@@ -42,6 +42,8 @@
     <input type="hidden" name="com_id" value="{$com_id}">
     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-xs-offset-2">
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        </div>
+        <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">产品类型 ：</label>
             <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
                     <span class="select-box">
@@ -89,17 +91,9 @@
                    class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">设备新旧程度 ：</label>
-            <div class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding: 0">
-                    <span class="select-box">
-                        <select class="select" size="1" name="new">
-                            {volist name='new' id ='v'}
-                            <option value="{$v}" >{$v}</option>
-                            {/volist}
-                        </select>
-                    </span>
-            </div>
-            <input type="text" class="InputThree col-xs-3 col-sm-3 col-md-3 col-lg-3" value="(成新)" readonly="value">
+            <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">设备入场时间 ：</label>
+            <input type="text" value="" name="new"
+                   class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">金属检测 ：</label>
@@ -199,6 +193,11 @@
                 <input type="radio" id="radio-8" name="logo" checked value="否">
                 <label for="radio-8">否</label>
             </div>
+        </div>
+        <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">特殊结构 ：</label>
+            <input type="text" value="" name="tsjg"
+                   class="InputOne col-xs-2 col-sm-3 col-md-3 col-lg-4">
         </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="formImgBox col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1"  id="lacalImag19">
@@ -311,6 +310,7 @@
                     UE.getEditor('editor').setEnabled();
                 }
             </script>
+
             <script>
                 $(function () {
                     $(function () {
