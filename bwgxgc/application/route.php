@@ -108,7 +108,11 @@ Route::group('admin',function (){
     Route::any('goods/tiepaishangpingshangchuan','admin/goods/tiepaishangpingshangchuan',['method'=>'get|post']);
 
     Route::any('video/videoup','admin/video/videoup',['method'=>'get|post']);//视频上传
-    
+
+
+    Route::any('market/marketclassification','admin/market/marketclassification',['method'=>'get|post']);//价格行情分类管理
+    Route::any('market/addmarketone','admin/market/addmarketone',['method'=>'get|post']);//添加价格行情一级分类
+    Route::any('market/addmarkettwo','admin/market/addmarkettwo',['method'=>'get|post']);//添加价格行情二级分类
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
 
 
