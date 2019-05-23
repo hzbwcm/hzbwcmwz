@@ -1,6 +1,27 @@
 @charset "UTF-8";
 /*初始化css*/
-html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+html,
+body,
+div,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ol,
+form,
+input,
+textarea,
+th,
+td,
+select {
   margin: 0;
   padding: 0;
 }
@@ -13,7 +34,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: '微软雅黑';
+  font-family: "微软雅黑";
 }
 
 a {
@@ -224,8 +245,8 @@ img {
   padding-left: 70px;
 }
 .daohang-box ul li {
+  width: 16%;
   float: left;
-  padding-left: 60px;
 }
 .daohang-box ul a {
   display: block;
@@ -239,9 +260,6 @@ img {
 .daohang-box ul a:hover li {
   font-weight: bold;
   color: #9d5fd6;
-}
-.daohang-box ul a:first-child {
-  width: 150px;
 }
 .daohang-box ul .daohang-yuan {
   width: 11px;
@@ -708,7 +726,11 @@ img {
   height: 68px;
   border: 1px solid #989797;
 }
-.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z {
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z {
   width: 138px;
   height: 100%;
   text-align: center;
@@ -719,16 +741,28 @@ img {
   float: left;
   position: relative;
 }
-.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .iconfont, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .iconfont, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .iconfont, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .iconfont, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .iconfont {
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .iconfont,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .iconfont,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .iconfont,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .iconfont,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .iconfont {
   color: #9d5fd6;
   font-size: 12px;
   margin-left: 28px;
 }
-.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-title, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-title, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-title, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-title, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-title {
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-title,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-title,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-title,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-title,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-title {
   width: 100%;
   height: 100%;
 }
-.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-box, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-box, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-box, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-box, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-box {
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-box,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-box,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-box,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-box,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-box {
   width: 100%;
   max-height: 300px;
   background: #fff;
@@ -739,7 +773,11 @@ img {
   box-shadow: #dcdcdc 0px 0px 20px 0px;
   overflow: auto;
 }
-.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-box .cp-xl, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-box .cp-xl, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-box .cp-xl, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-box .cp-xl, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-box .cp-xl {
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-box .cp-xl,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-box .cp-xl,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-box .cp-xl,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-box .cp-xl,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-box .cp-xl {
   width: 100%;
   height: 35px;
   text-align: center;
@@ -747,7 +785,11 @@ img {
   color: #a09f9f;
   display: none;
 }
-.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b input, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p input, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y input, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x input, .ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z input {
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b input,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p input,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y input,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x input,
+.ruzhu-box .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z input {
   background: #fff;
   border: 1px solid #9d5fd6;
 }
@@ -1344,7 +1386,14 @@ main .jiagong-b-box-cpdz .wsjcp-z-sh .wsjcp-right .wsj-tu-box:hover .wsj-xx {
   line-height: 50px;
   display: none;
 }
-.youxuan-box .youxuan-neirong .wenben-neirong .youxuan-xw-box .youxuan-xw-left .youxuan-xw-img .youxuan-right-jt .iconfont {
+.youxuan-box
+  .youxuan-neirong
+  .wenben-neirong
+  .youxuan-xw-box
+  .youxuan-xw-left
+  .youxuan-xw-img
+  .youxuan-right-jt
+  .iconfont {
   color: #fff;
   font-size: 22px;
 }
@@ -1360,7 +1409,14 @@ main .jiagong-b-box-cpdz .wsjcp-z-sh .wsjcp-right .wsj-tu-box:hover .wsj-xx {
   line-height: 50px;
   display: none;
 }
-.youxuan-box .youxuan-neirong .wenben-neirong .youxuan-xw-box .youxuan-xw-left .youxuan-xw-img .youxuan-left-jt .iconfont {
+.youxuan-box
+  .youxuan-neirong
+  .wenben-neirong
+  .youxuan-xw-box
+  .youxuan-xw-left
+  .youxuan-xw-img
+  .youxuan-left-jt
+  .iconfont {
   color: #fff;
   font-size: 22px;
 }
@@ -1936,7 +1992,11 @@ main .jiagong-b-box-cpdz .wsjcp-z-sh .wsjcp-right .wsj-tu-box:hover .wsj-xx {
   height: 68px;
   border: 1px solid #989797;
 }
-.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z {
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z {
   width: 138px;
   height: 100%;
   text-align: center;
@@ -1947,16 +2007,28 @@ main .jiagong-b-box-cpdz .wsjcp-z-sh .wsjcp-right .wsj-tu-box:hover .wsj-xx {
   float: left;
   position: relative;
 }
-.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .iconfont, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .iconfont, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .iconfont, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .iconfont, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .iconfont {
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .iconfont,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .iconfont,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .iconfont,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .iconfont,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .iconfont {
   color: #9d5fd6;
   font-size: 12px;
   margin-left: 28px;
 }
-.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-title, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-title, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-title, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-title, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-title {
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-title,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-title,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-title,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-title,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-title {
   width: 100%;
   height: 100%;
 }
-.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-box, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-box, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-box, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-box, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-box {
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-box,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-box,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-box,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-box,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-box {
   width: 100%;
   max-height: 300px;
   background: #fff;
@@ -1967,7 +2039,11 @@ main .jiagong-b-box-cpdz .wsjcp-z-sh .wsjcp-right .wsj-tu-box:hover .wsj-xx {
   box-shadow: #dcdcdc 0px 0px 20px 0px;
   overflow: auto;
 }
-.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-box .cp-xl, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-box .cp-xl, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-box .cp-xl, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-box .cp-xl, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-box .cp-xl {
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b .cp-xl-box .cp-xl,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p .cp-xl-box .cp-xl,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y .cp-xl-box .cp-xl,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x .cp-xl-box .cp-xl,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z .cp-xl-box .cp-xl {
   width: 100%;
   height: 35px;
   text-align: center;
@@ -1975,7 +2051,11 @@ main .jiagong-b-box-cpdz .wsjcp-z-sh .wsjcp-right .wsj-tu-box:hover .wsj-xx {
   color: #a09f9f;
   display: none;
 }
-.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b input, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p input, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y input, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x input, .ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z input {
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-l-b input,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .cp-p-p input,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .gc-p-y input,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .tongyi-l-x input,
+.ruzhu-box-1 .ruzhu-c-t .ruzhu-c-r .gongchang-ch-x .yijian-x-z input {
   background: #fff;
   border: 1px solid #9d5fd6;
 }

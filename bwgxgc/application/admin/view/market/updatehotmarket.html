@@ -80,7 +80,7 @@
 
                                 if (res.code == 200) {
                                     var type_data = res.data;
-                                    var html = '<option value="" >--请选择类别二</option>';
+                                    var html = '<option value="" >--请选择类别二--</option>';
                                     $.each(type_data, function (k, v) {
                                         html = html + '<option value="' + v.type_id + '" >' + v.type_name + '</option>';
                                     })
@@ -108,7 +108,8 @@
                 <input type="text" value="" name="hmauthor" class="InputOne col-xs-2 col-sm-2 col-md-2 col-lg-2">
             </div>
 
-            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-2 col-xs-offset-2 gerenxinxi-fwbbjq-box" style="margin-bottom: 50px;">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10  col-md-offset-2 col-xs-offset-2 gerenxinxi-fwbbjq-box"
+                style="margin-bottom: 50px;">
                 <h4>热点简介：</h4>
                 <textarea name="hmessay" id="" cols="100" rows="10">
 

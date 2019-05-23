@@ -80,7 +80,7 @@
 
                                 if (res.code == 200) {
                                     var type_data = res.data;
-                                    var html = '<option value="" >--请选择类别二</option>';
+                                    var html = '<option value="" >--请选择类别二--</option>';
                                     $.each(type_data, function (k, v) {
                                         html = html + '<option value="' + v.type_id + '" >' + v.type_name + '</option>';
                                     })
