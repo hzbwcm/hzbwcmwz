@@ -207,9 +207,38 @@ class HotmarketController extends Controller
         return $this->fetch();
     }
     //资讯二级修改
-    public function altermarkettwo(){
-        
-        return $this->fetch();
+    public function altermarkettwo(Request $request){
+        $cbid = $request->param('id');
+        if($request->isPost()){
+            $cbs = $request->param();
+            $rules = [
+                'cbname' => 'require|unique:categoryb,cbname'
+            ];
+            $msg = [
+                'cbname.require' => '二级分类名称必填',
+                'cbname.unique' => '二级分类名称不能重复',
+            ];
+            $validate = new Validate($rules,$msg);
+            if(!$validate->batch()->check($cbs)){
+                $cbs_data = Categoryb::where('cbid','=',$cbid)->find();
+                $this->assign('cbs_data',$cbs_data);
+                $errorinfo=$validate->getError();
+                $this -> assign('errorinfo',$errorinfo);
+                return $this->fetch();
+            }
+            $data['cbname'] = $cbs['cbname'];
+            $categoryb = new Categoryb();
+            $result = $categoryb->where('cbid','=',$cbid)->update($data);
+            if($result){
+                $this->success('更新成功!');
+            }else{
+                $this->error('更新失败');
+            }
+        }else{
+            $cbs_data = Categoryb::where('cbid','=',$cbid)->find();
+            $this->assign('cbs_data',$cbs_data);
+            return $this->fetch();
+        }
     }
     //资讯二级分类删除
     public function delmarkettwo(Request $request){
