@@ -41,8 +41,8 @@ class BootstrapDetailed extends Paginator
     protected  function totalshow()
     {
 
-        $totalhtml="<li class=\"disabled\"><span>共".$this->total."条记录&nbsp&nbsp第".$this->currentPage()."页/共".$this->lastPage()."页</span></li>";
-        return $totalhtml;
+//        $totalhtml="<li class=\"disabled\"><span>共".$this->total."条记录&nbsp&nbsp第".$this->currentPage()."页/共".$this->lastPage()."页</span></li>";
+//        return $totalhtml;
 
     }
 
@@ -80,15 +80,15 @@ class BootstrapDetailed extends Paginator
     {
 
 
-        if($this->lastPage()<$this->currentPage()+5)
-        {
-            return $this->getDisabledTextWrapper($text);
-
-        }
-        $url = $this->url($this->currentPage()+5);
-
-
-        return $this->getPageLinkWrapper($url, $text);
+//        if($this->lastPage()<$this->currentPage()+5)
+//        {
+//            return $this->getDisabledTextWrapper($text);
+//
+//        }
+//        $url = $this->url($this->currentPage()+5);
+//
+//
+//        return $this->getPageLinkWrapper($url, $text);
     }
 
     //前五页
@@ -96,15 +96,15 @@ class BootstrapDetailed extends Paginator
     {
 
 
-        if($this->currentPage()<5)
-        {
-            return $this->getDisabledTextWrapper($text);
-
-        }
-        $url = $this->url($this->currentPage()-5);
-
-
-        return $this->getPageLinkWrapper($url, $text);
+//        if($this->currentPage()<5)
+//        {
+//            return $this->getDisabledTextWrapper($text);
+//
+//        }
+//        $url = $this->url($this->currentPage()-5);
+//
+//
+//        return $this->getPageLinkWrapper($url, $text);
     }
 
 

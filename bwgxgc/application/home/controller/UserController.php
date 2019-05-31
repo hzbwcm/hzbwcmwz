@@ -357,7 +357,6 @@ class UserController extends Controller
         if($request->isPost()){
 
             $data = $request->post();
-
             $rules = [
                 'nickname'      =>'require|unique:user_person,username|max:25',
                 'tel'           =>['require','regex'=>'/^1[358]\d{9}$/'],

@@ -13,7 +13,7 @@ class Banner extends BaseModel
     }
 
     public static function getBanner(){
-        $banner = self::with('items')->where('banid','=',8)->select();
-        return $banner;
+        $banner = self::where('banid','=',8)->find();
+        return json($banner);
     }
 }

@@ -372,7 +372,6 @@ class GoodsController extends Controller
         }
         if ($request->isPost()) {
             $shuju = $request->post();
-
             $rules = [
                 'cus_proname' => 'require',
             ];
