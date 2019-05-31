@@ -34,13 +34,13 @@ class GoodsController extends Controller
         $com = Company_info::where('com_id', $com_id)->find();
         $info = Card::where('id', $id)->find();
         $type = ['卫生巾', '婴儿纸尿裤', '成人纸尿裤', '湿纸巾', '生活用纸', '产妇巾', '经期裤', '护理垫', '宠物垫', '乳垫'];
-        //$new = ['2014年以前', '2014年', '2', '8', '9'];
+        $new = ['5', '6', '7', '8', '9'];
         $zjnum = ['1-5', '6-10', '11-15', '16-20', '20以上'];
         $znum = ['1-50', '51-100', '101-150', '151-200', '200以上'];
         $bzxs = ['全自动包装', '半自动包装', '手工包装'];
         $this->assign([
             'type' => $type,
-            //'new' => $new,
+            'new' => $new,
             'zjnum' => $zjnum,
             'znum' => $znum,
             'bzxs' => $bzxs,
@@ -88,7 +88,6 @@ class GoodsController extends Controller
                 'sbbh' => $shuju['sbbh'],
                 'qdl' => $shuju['qdl'],
                 'logo' => $shuju['logo'],
-                'tsjg'=> $shuju['tsjg'],
                 'instruction' => $shuju['instruction'],
                 'pic1' => $info1,
                 'pic2' => $info2,
@@ -103,7 +102,7 @@ class GoodsController extends Controller
             if ($res) {
                 return $this->success('修改成功');
             } else {
-                return $this->error('失败了，请核对产品信息并确保图片大小在500K以下，并为正规图片文件');
+                return $this->error('修改失败,请确保图片大小在500K以下，并为正规图片文件');
             }
         }
         return $this->fetch();
@@ -131,15 +130,13 @@ class GoodsController extends Controller
         $com = Company_info::where('com_id', $com_id)->find();
         $info = Card::where('com_id', $com_id)->find();
         $type = ['卫生巾', '婴儿纸尿裤', '成人纸尿裤', '湿纸巾', '生活用纸', '产妇巾', '经期裤', '护理垫', '宠物垫', '乳垫'];
-        //$new = ['5', '6', '7', '8', '9'];
+        $new = ['5', '6', '7', '8', '9'];
         $zjnum = ['1-5', '6-10', '11-15', '16-20', '20以上'];
         $znum = ['1-50', '51-100', '101-150', '151-200', '200以上'];
         $bzxs = ['全自动包装', '半自动包装', '手工包装'];
-
         $this->assign([
             'type' => $type,
-
-            //'new' => $new,
+            'new' => $new,
             'zjnum' => $zjnum,
             'znum' => $znum,
             'bzxs' => $bzxs,
@@ -200,7 +197,6 @@ class GoodsController extends Controller
                 'sbbh' => $info5['sbbh'],
                 'qdl' => $info5['qdl'],
                 'logo' => $info5['logo'],
-                'tsjg'=>$info5['tsjg'],
                 'instruction' => $info5['instruction'],
 
             ]);
@@ -211,7 +207,7 @@ class GoodsController extends Controller
             if ($com_pic) {
                 return $this->success('成功了');
             } else {
-                return $this->error('失败了，请核对产品信息并确保图片大小在500K以下，并为正规图片文件');
+                return $this->error('失败了，请确保图片大小在500K以下，并为正规图片文件');
             }
         }
 
