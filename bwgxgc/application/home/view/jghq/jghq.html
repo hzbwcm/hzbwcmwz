@@ -20,6 +20,21 @@
   <![endif]-->
 </head>
 
+<style type="text/css">
+    .pagination li{list-style:none;float:left;margin-left:5px;
+        padding:0 10px;
+        background-color:white;
+        border:1px solid #ccc;
+        height:26px;
+        line-height:26px;
+        cursor:pointer;
+        color:#fff;
+        font-size: 14px;
+    }
+    .pagination li a{color:#5a98de;}
+    .pagination li.active{background-color:#5a98de;color:#fff;}
+    .pagination li.disabled{background-color: #969696;color:#fff;}
+</style>
 <body>
   <header class="header-box">
     <div class="header-centre">
@@ -101,172 +116,180 @@
     </div>
   </div>
   <!--导航-->
-  <div class="daohang-box">
-    <ul>
-      <a href="{:url('/')}">
-        <li>首页</li>
-      </a>
-      <a href="{:url('home/custom/custom')}" target="_blank">
-        <li>产品定制</li>
-      </a>
-      <a href="{:url('home/stickacard/stickacard')}" target="_blank">
-        <li>加工专区</li>
-      </a>
-      <a href="{:url('home/inspection/inspection')}" target="_blank">
-        <li>优选验厂</li>
-      </a>
-      <a href="{:url('home/shebeitransfer/shebeitransfer')}" target="_blank">
-        <li>设备转让</li>
-      </a>
-      <a href="{:url('home/documentary/documentary')}" target="_blank">
-        <li>跟单专家</li>
-      </a>
-      <a href="{:url('home/index/wlpf')}" target="_blank">
-        <li>工厂直批</li>
-      </a>
-      <a href="{:url('home/jghq/jghq')}" target="_blank">
-        <li>价格行情</li>
-      </a>
-    </ul>
-  </div>
+    <div class="daohang-box">
+      <ul>
+        <a href="{:url('/')}">
+          <li>首页</li>
+        </a>
+        <!-- <a href="{:url('home/custom/custom')}"  target="_blank">
+    					<li>产品定制</li>
+    				</a> -->
+        <a href="{:url('home/stickacard/stickacard')}" target="_blank">
+          <li>成品专区</li>
+        </a>
+        <a href="" target="_blank">
+          <li>材料专区</li>
+        </a>
+        <a href="{:url('home/shebeitransfer/shebeitransfer')}" target="_blank">
+          <li>设备专区</li>
+        </a>
+        <a href="{:url('home/inspection/inspection')}" target="_blank">
+          <li>全部工厂</li>
+        </a>
+        <!-- <a href="{:url('home/documentary/documentary')}"  target="_blank">
+    					<li>跟单专家</li>
+    				</a> -->
+        <!-- <a href="{:url('home/index/wlpf')}"  target="_blank">
+    					<li>工厂直批</li>
+    				</a> -->
+        <a href="{:url('home/jghq/jghq')}" target="_blank">
+          <li>行业动态</li>
+        </a>
+      </ul>
+    </div>
 
   <!-- 主体 -->
   <main>
     <div class="MainLeftBigBox">
+
       <!-- banner_box  -->
+
       <div class="BannerBox">
         <!-- banner_title -->
         <div class="BannerTitleBox">
+          {volist name='banneritem' id='banitem' key='k'}
+          {eq name='$k' value='1'}
           <div class="BannerTitle BannerTitleActive">
-            中国队称霸花游世界系列赛集体技术自选比赛
+            {$banitem.bantitle}
           </div>
+          {else/}
           <div class="BannerTitle">
-            2
+            {$banitem.bantitle}
           </div>
-          <div class="BannerTitle">
-            3
-          </div>
-          <div class="BannerTitle">
-            4
-          </div>
-          <div class="BannerTitle">
-            5
-          </div>
+          {/eq}
+          {/volist}
         </div>
+
         <!-- banner -->
         <div class="BannerImageBox">
           <!-- banner图片 -->
+          {volist name='banneritem' id='banitem' key='k'}
+          {eq name='$k' value='1'}
           <div class="BannerImage0 BannerImage1">
-            <a href="">
-              <img src="{:config('home_img')}/a0.png" alt="">
+            <a href="{:url('/jghqdetails'.'/'.$banitem.hm_id)}">
+              <img src="{$banitem.bitem_img}" alt="">
             </a>
           </div>
+          {else/}
           <div class="BannerImage0">
-            <a href="">
-              <img src="{:config('home_img')}/a2.png" alt="">
+            <a href="{:url('/jghqdetails'.'/'.$banitem.hm_id)}">
+              <img src="{$banitem.bitem_img}" alt="">
             </a>
           </div>
-          <div class="BannerImage0">
-            <a href="">
-              <img src="{:config('home_img')}/a3.png" alt="">
-            </a>
-          </div>
-          <div class="BannerImage0">
-            <a href="">
-              <img src="{:config('home_img')}/aa.png" alt="">
-            </a>
-          </div>
-          <div class="BannerImage0">
-            <a href="">
-              <img src="{:config('home_img')}/asjgc.jpg" alt="">
-            </a>
-          </div>
+          {/eq}
+          {/volist}
+
           <!-- banner个数圆 -->
           <div class="BannerRoundBox">
-            <div class="BannerRound BannerRoundActive">1</div>
-            <div class="BannerRound">2</div>
-            <div class="BannerRound">3</div>
-            <div class="BannerRound">4</div>
-            <div class="BannerRound">5</div>
+            {volist name='banneritem' id='banitem' key='k'}
+            {eq name='$k' value='1'}
+            <div class="BannerRound BannerRoundActive">{$k}</div>
+            {else/}
+            <div class="BannerRound">{$k}</div>
+            {/eq}
+            {/volist}
           </div>
         </div>
+
         <!-- banner_text -->
         <div class="BannerContentBox">
+          {volist name='banneritem' id='banitem' key='k'}
+          {eq name='$k' value='1'}
           <div class="BannerContent BannerContentActive">
-            伴随着《我爱你中国》的背景音乐，中国姑娘们用激情和力量演绎《追梦》，以绝对优势赢得集体技术自选比赛冠军，在2019年国际泳联花样游泳世界系列赛暨全国花样游泳冠军赛开赛的第一天取得开门红。
+            {$banitem.banessay}
           </div>
+          {else/}
           <div class="BannerContent">
-            222222222222222222
+            {$banitem.banessay}
           </div>
-          <div class="BannerContent">
-            333333333333333333
-          </div>
-          <div class="BannerContent">
-            444444444444444444
-          </div>
-          <div class="BannerContent">
-            555555555555555555
-          </div>
+          {/eq}
+          {/volist}
         </div>
+
       </div>
+
       <!-- 内容盒子 -->
       <div class="MainLeftContentBox">
         <div class="MainLeftContentLeftTypeBox">
           <div class="LeftContentLeftTypeTitle">全部分类</div>
           <div class="LeftContentLeftTypeTextBox">
+            {volist name='categorygas' id='ca'}
             <div class="TypeTextBox">
-              <div class="TypeTextFirst">一级分类</div>
+              {eq name='$ca.cgall' value='-1'}
+              <div class="TypeTextFirst"><a href="{:url('home/jghq/jghq',['caflag'=>'-1','bzflag'=>'-2'])}">{$ca.caname}</a></div>
+              {else/}
+              <div class="TypeTextFirst">{$ca.caname}</div>
+              {/eq}
               <ul class="TypeTextFirstSecond">
-                <li><a href="" class="A_Active">二级分类</a></li>
-                <li><a href="">二级分类</a></li>
-                <li><a href="">二级分类</a></li>
-                <li><a href="">二级分类</a></li>
-                <li><a href="">二级分类</a></li>
+                {volist name='categorygbs' id='cb' key='k'}
+                {eq name='$cb.ca_id' value='$ca.caid'}
+                {eq name='$k' value='1'}
+                <li><a href="{:url('home/jghq/jghq',['cbflag'=>$cb.ca_id,'bzflag'=>$cb.cgall])}" class="A_Active">{$cb.cbname}</a></li>
+                {else/}
+                  {eq name='$cb.cgall' value='-1'}
+                  <li><a href="{:url('home/jghq/jghq',['cbflag'=>$cb.ca_id,'bzflag'=>$cb.cgall])} " class="">{$cb.cbname}</a></li>
+                  {else/}
+                  <li><a href="{:url('home/jghq/jghq',['cbflag'=>$cb.cbid,'bzflag'=>$cb.cgall])} " class="">{$cb.cbname}</a></li>
+                  {/eq}
+                {/eq}
+                {/eq}
+                {/volist}
               </ul>
             </div>
-            <div class="TypeTextBox">
-              <div class="TypeTextFirst">一级分类</div>
-              <ul class="TypeTextFirstSecond">
-                <li><a href="">二级分类</a></li>
-                <li><a href="">二级分类</a></li>
-                <li><a href="">二级分类</a></li>
-                <li><a href="">二级分类</a></li>
-                <li><a href="">二级分类</a></li>
-              </ul>
-            </div>
+            {/volist}
           </div>
         </div>
+
         <div class="MainLeftContentRightBox">
           <ul class="LeftContentRightUL">
             <li>
-              <a href="">
-                <div class="LiContentTime">2019-08-30</div>
+              {volist name='hotmarket' id='hm'}
+              <a href="{:url('/jghqdetails'.'/'.$hm.hmid)}">
+                <div class="LiContentTime">{$hm.create_time}</div>
                 <div class="LiContentText">
-                  中国队称霸花游世界系列赛集体技术自选比赛星火燎原中国队称霸花游世界系列赛集体技术自选比赛星火燎原中国队称霸花游世界系列赛集体技术自选比赛星火燎原中国队称霸花游世界系列赛集体技术自选比赛星火燎原</div>
+                  {$hm.hmtitle}
+                </div>
               </a>
+              {/volist}
             </li>
           </ul>
           <!-- 分页 -->
           <div class="MainLeftFY">
-            分页
+            {$pagelist}
           </div>
         </div>
       </div>
     </div>
+
     <div class="MainRightBigBox">
       <div class="MainRightTitle">热点行情</div>
       <ul class="MainRightContentBox">
+        {volist name='hotspot' id='hs'}
+        <a href="{:url('/jghqdetails'.'/'.$hs.hmid)}">
         <li>
           <div class="MainRightImage">
-            <img data-original="{:config('home_img')}/a0.png" alt="">
+            <img data-original="{$hs.hsimg}" alt="">
           </div>
           <div class="MainRightContentBox">
-            <div class="MainRightContentTitle">浙里12位奥运冠军正在进行重要对决</div>
-            <div class="MainRightContentText">奥运冠军视频“会议”，邀请您加入！奥运冠军视频“会议”，邀请您加入！</div>
+            <div class="MainRightContentTitle">{$hs.hmtitle}</div>
+            <div class="MainRightContentText">{$hs.hsessay}</div>
           </div>
         </li>
+        </a>
+        {/volist}
       </ul>
     </div>
+
   </main>
 
 

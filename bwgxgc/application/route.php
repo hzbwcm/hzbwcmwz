@@ -1,6 +1,8 @@
 <?php
 use think\Route;
 
+Route::get('materials','home/material/index');
+
 //home分组
 Route::get('/','home/index/index');//首页
 Route::get('home/index/index','home/index/index');//首页
@@ -51,6 +53,7 @@ Route::get('home/index/wlpf','home/index/wlpf');//网络批发
 Route::get('home/shebeitransfer/shebeitransfer','home/shebeitransfer/shebeitransfer');//设备转让
 Route::get('home/shebeitransfer/shebeizhuanrang','home/shebeitransfer/shebeizhuanrang');//设备转让详情
 Route::get('home/jghq/jghq','home/jghq/jghq');//价格行情
+Route::get('jghqdetails/:pqid','home/jghq/jghqdetails');//价格行情详情
 
 //企业商铺
 Route::get('home/shangpu/index','home/shangpu/index');//优选验厂商铺首页
@@ -110,19 +113,24 @@ Route::group('admin',function (){
     Route::any('video/videoup','admin/video/videoup',['method'=>'get|post']);//视频上传
 
 
-    Route::any('market/marketclassification','admin/market/marketclassification',['method'=>'get|post']); //价格行情分类管理
-    Route::any( 'market/pricelist', 'admin/market/pricelist', ['method' => 'get|post']); //价格行情列表
-    Route::any('market/hotlist', 'admin/market/hotlist', ['method' => 'get|post']);//热点行情列表
+    Route::any('hotmarket/marketclassificationa','admin/hotmarket/marketclassificationa',['method'=>'get|post']); //资讯一级分类
+    Route::any('hotmarket/addmarketone','admin/hotmarket/addmarketone',['method'=>'get|post']);//资讯一级分类添加
+    Route::any('hotmarket/altermarketone','admin/hotmarket/altermarketone',['method'=>'get|post']);//资讯一级分类修改
+    Route::any('hotmarket/delmarketone','admin/hotmarket/delmarketone',['method'=>'get|post']);//资讯一级分类删除
+    Route::any('hotmarket/marketclassificationb','admin/hotmarket/marketclassificationb',['method'=>'get|post']); //资讯二级分类
+    Route::any('hotmarket/addmarkettwo','admin/hotmarket/addmarkettwo',['method'=>'get|post']); //资讯二级分类添加
+    Route::any('hotmarket/altermarkettwo','admin/hotmarket/altermarkettwo',['method'=>'get|post']);//资讯二级分类修改
+    Route::any('hotmarket/delmarkettwo','admin/hotmarket/delmarkettwo',['method'=>'get|post']);//资讯二级分类删除
+    Route::any( 'hotmarket/pricelist', 'admin/hotmarket/pricelist', ['method' => 'get|post']); //资讯列表
+    Route::any('hotmarket/hotlist', 'admin/hotmarket/hotlist', ['method' => 'get|post']);//热点资讯列表
 
 
-    Route::any('market/addmarketone','admin/market/addmarketone',['method'=>'get|post']);//添加价格行情一级分类
-    Route::any('market/addmarkettwo','admin/market/addmarkettwo',['method'=>'get|post']); //添加价格行情二级分类
 
-    Route::any( 'market/publishhotmarket', 'admin/market/publishhotmarket', ['method' => 'get|post']); //发布热点格行情
-    Route::any( 'market/publishmarket', 'admin/market/publishmarket', ['method' => 'get|post']); //发布价格行情
+    Route::any( 'hotmarket/publishhotmarket', 'admin/hotmarket/publishhotmarket', ['method' => 'get|post']); //热点资讯发布
+    Route::any( 'hotmarket/publishmarket', 'admin/hotmarket/publishmarket', ['method' => 'get|post']); //资讯添加
 
-    Route::any('market/updatehotmarket', 'admin/market/updatehotmarket', ['method' => 'get|post']); //修改热点格行情
-    Route::any('market/updatemarket', 'admin/market/updatemarket', ['method' => 'get|post']);//修改价格行情
+    Route::any('hotmarket/updatehotmarket', 'admin/hotmarket/updatehotmarket', ['method' => 'get|post']); //修改热点格行情
+    Route::any('hotmarket/updatemarket', 'admin/hotmarket/updatemarket', ['method' => 'get|post']);//修改价格行情
 },['after_behavior'=>'\app\admin\behavior\CheckLogin']);
 
 

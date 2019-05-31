@@ -223,8 +223,8 @@ img {
   padding-left: 70px;
 }
 .daohang-box ul li {
+  width: 16%;
   float: left;
-  padding-left: 60px;
 }
 .daohang-box ul a {
   display: block;
@@ -238,9 +238,6 @@ img {
 .daohang-box ul a:hover li {
   font-weight: bold;
   color: #9d5fd6;
-}
-.daohang-box ul a:first-child {
-  width: 150px;
 }
 .daohang-box ul .daohang-yuan {
   width: 11px;

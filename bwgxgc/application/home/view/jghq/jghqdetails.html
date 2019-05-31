@@ -7,11 +7,11 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>资讯详情</title>
-  <link rel="stylesheet" href="../public/css/jghqdetails.css">
-  <link rel="stylesheet" href="../public/iconfont/iconfont.css">
-  <link rel="stylesheet" href="../public/css/foot_base.css">
-  <script src="../public/js/jquery.js"></script>
-  <script src="../public/js/jquery.lazyload.js"></script>
+  <link rel="stylesheet" href="{:config('home_css')}/jghqdetails.css">
+  <link rel="stylesheet" href="{:config('home_icon')}/iconfont.css">
+  <link rel="stylesheet" href="{:config('home_css')}/foot_base.css">
+  <script src="{:config('home_js')}/jquery.js"></script>
+  <script src="{:config('home_js')}/jquery.lazyload.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
         <a href="">
           <div class="h-f-i">
             <div class="header-img">
-              <img data-original="../public/img/asjgc.jpg" alt="">
+              <img data-original="{:config('home_img')}/asjgc.jpg" alt="">
             </div>
             <div class="h-l-t">手机工厂 |</div>
           </div>
@@ -68,7 +68,7 @@
 <div class="header">
   <div class="header-box-box">
     <div class="header-logo">
-      <img data-original="../public/img/a0.png" alt="">
+      <img data-original="{:config('home_img')}/a0.png" alt="">
     </div>
     <div class="header-right-box">
       <a href="" class="header-shoucangjia">
@@ -88,16 +88,19 @@
 </div>
 <!--导航-->
 <div class="daohang">
-  <nav>
-    <a href="{:url('/')}" target="_blank">首页</a>
-    <a href="{:url('home/custom/custom')}" target="_blank">产品定制</a>
-    <a href="{:url('home/stickacard/stickacard')}" target="_blank">加工专区</a>
-    <a href="{:url('home/inspection/inspection')}" target="_blank">优选验厂</a>
-    <a href="{:url('home/shebeitransfer/shebeitransfer')}" target="_blank">设备转让</a>
-    <a href="{:url('home/documentary/documentary')}" target="_blank">跟单专家</a>
-    <a href="{:url('home/jghq/jghq')}" target="_blank">价格行情</a>
-    <a href="javascript:;">工厂直批</a>
-  </nav>
+  <div class="daohang">
+    <nav>
+      <a href="{:url('/')}" target="_blank">首页</a>
+      <!-- <a href="{:url('home/custom/custom')}" target="_blank">产品定制</a> -->
+      <a href="{:url('home/stickacard/stickacard')}" target="_blank">成品专区</a>
+      <a href="" target="_blank">材料专区</a>
+      <a href="{:url('home/inspection/inspection')}" target="_blank">全部工厂</a>
+      <a href="{:url('home/shebeitransfer/shebeitransfer')}" target="_blank">设备专区</a>
+      <!-- <a href="{:url('home/documentary/documentary')}" target="_blank">跟单专家</a> -->
+      <a href="{:url('home/jghq/jghq')}" target="_blank">行业动态</a>
+      <!-- <a href="javascript:;">工厂直批</a> -->
+    </nav>
+  </div>
 </div>
 
 <!--网页路径-->
@@ -116,14 +119,14 @@
 <!-- 主体 -->
 <main>
   <div class="MainTitleBox">
-    <div class="MainTitle">3月份SAP市场价格及成本分析来了！</div>
+    <div class="MainTitle">{$pdid.hmtitle}</div>
     <div class="MainAuthorBox">
-      <div class="MainAuthor">杭州博卫</div>
-      <div class="MainTime">2019.12.30 <i class="iconfont icon-biao"></i></div>
+      <div class="MainAuthor">{$pdid.hmauthor}</div>
+      <div class="MainTime">{$pdid.create_time}<i class="iconfont icon-biao"></i></div>
     </div>
   </div>
   <div class="MainContent">
-    资讯内容
+    {$pdid.hmtext}
   </div>
 </main>
 <!-- 返回顶部 -->
@@ -156,13 +159,13 @@
     <div class="footer-right">
       <div class="footer-weixin-box">
         <div class="footer-weixin-img">
-          <img data-original="../public/img/weigzh.png" alt="">
+          <img data-original="{:config('home_img')}/weigzh.png" alt="">
         </div>
         <div class="footer-r-weixin-text">微信公众号</div>
       </div>
       <div class="footer-weixin-box">
         <div class="footer-weixin-img">
-          <img data-original="../public/img/weikefu.png" alt="">
+          <img data-original="{:config('home_img')}/weikefu.png" alt="">
         </div>
         <div class="footer-r-weixin-text">客服微信</div>
       </div>
@@ -176,7 +179,7 @@
 <div class="footer-beian">版权2018-2028 @杭州博卫传媒有限公司 闽ICP备16026715号</div>
 
 
-  <script src="../public/js/jghqdetails.js"></script>
+  <script src="{:config('home_js')}/jghqdetails.js"></script>
   <script>
     $(function () {
       $("img").lazyload({

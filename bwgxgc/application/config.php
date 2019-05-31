@@ -37,6 +37,8 @@ return [
 
 
     'public_uploads' => '/uploads',
+    //测试
+    'public' => '',
     //给静态资源设置访问路径【home分组】
     'home_css'              => '/home/css',
     'home_img'              => '/home/img',
@@ -60,6 +62,9 @@ return [
     'plugin'     => '/plugin/',
 
     //
+//    'datetime_format' => false,
+
+
     // 应用命名空间
     'app_namespace'          => 'app',
     // 应用调试模式

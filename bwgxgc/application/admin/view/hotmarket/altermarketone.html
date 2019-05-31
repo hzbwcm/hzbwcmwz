@@ -24,20 +24,21 @@
     <![endif]-->
     <!--/meta 作为公共模版分离出去-->
 
-    <title>添加一级分类</title>
+    <title>修改一级分类</title>
 </head>
 <body>
 <article class="page-container">
-    <form action="" method="post" class="form form-horizontal" id="form-admin-permission-add">
+    <form action="{$Request.url}" method="post" class="form form-horizontal" id="form-admin-permission-add">
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>一级分类名称：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value=""  name="caname" placeholder="请输入一级分类名称">
+                <input type="text" class="input-text" value="{$cas_data.caname|default=''}"  name="caname" placeholder="请输入一级分类名称">
+                <span style="color:red;">{$errorinfo.caname|default=''}</span>
             </div>
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                <button type="submit" class="btn btn-success radius" id="admin-permission-save" name="admin-permission-save"><i class="icon-ok"></i> 确定</button>
+                <button type="submit" class="btn btn-success radius" id="admin-permission-save"><i class="icon-ok"></i> 确定</button>
             </div>
         </div>
     </form>
@@ -77,31 +78,31 @@
 
 
         //form表单通过Ajax无刷新方式提交数据给服务器端
-        $('#form-admin-permission-add').submit(function(evt){
-            //组织浏览器默认的form表单提交
-            evt.preventDefault();
-            //收集form表单的信息,下述serialize()收集的信息传递给服务器端的时候与传统form表单提交的效果一致
-            var shuju = $(this).serialize();  //字符串  name=val&name=val&name=val...
-            //走Ajax
-            $.ajax({
-                url:'{$Request.url}',
-                data:shuju,
-                dataType:'json',
-                type:'post',
-                success:function(msg){
-                    if(msg.status=='success'){
-                        layer.alert('添加成功', {icon: 6},function(){
-                            //主页面刷新
-                            parent.window.location.href=parent.window.location.href;
-                            //当前窗口关闭
-                            layer_close();//本身的H-ui.admin.js封装的
-                        });
-                    }else{
-                        layer.alert('添加失败，【'+msg.errorinfo+'】', {icon: 5});
-                    }
-                }
-            });
-        });
+        // $('#form-admin-permission-add').submit(function(evt){
+        //     //组织浏览器默认的form表单提交
+        //     evt.preventDefault();
+        //     //收集form表单的信息,下述serialize()收集的信息传递给服务器端的时候与传统form表单提交的效果一致
+        //     var shuju = $(this).serialize();  //字符串  name=val&name=val&name=val...
+        //     //走Ajax
+        //     $.ajax({
+        //         url:'{$Request.url}',
+        //         data:shuju,
+        //         dataType:'json',
+        //         type:'post',
+        //         success:function(msg){
+        //             if(msg.status=='success'){
+        //                 layer.alert('添加成功', {icon: 6},function(){
+        //                     //主页面刷新
+        //                     parent.window.location.href=parent.window.location.href;
+        //                     //当前窗口关闭
+        //                     layer_close();//本身的H-ui.admin.js封装的
+        //                 });
+        //             }else{
+        //                 layer.alert('添加失败，【'+msg.errorinfo+'】', {icon: 5});
+        //             }
+        //         }
+        //     });
+        // });
     });
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
