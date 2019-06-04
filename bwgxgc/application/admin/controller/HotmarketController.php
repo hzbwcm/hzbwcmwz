@@ -178,12 +178,15 @@ class HotmarketController extends Controller
                 'cas' => $cas,
             ]);
             $data = $request->param();
+
             $rules = [
-                'cbname' => 'require|unique:categoryb,cbname'
+                'cbname' => 'require|unique:categoryb,cbname',
+                'ca_id' => 'require|notIn:-1'
             ];
             $msg = [
                 'cbname.require' => '二级分类名称必填',
                 'cbname.unique' => '二级分类名称不能重复',
+                'ca_id.notIn' => '一级分类名称必选'
             ];
             $validate = new Validate($rules,$msg);
             if($validate->batch()->check($data)){
@@ -217,6 +220,7 @@ class HotmarketController extends Controller
             $msg = [
                 'cbname.require' => '二级分类名称必填',
                 'cbname.unique' => '二级分类名称不能重复',
+
             ];
             $validate = new Validate($rules,$msg);
             if(!$validate->batch()->check($cbs)){
