@@ -34,20 +34,9 @@
     <article class="page-container">
         <form action="{$Request.url}" method="post" class="form form-horizontal" id="form-admin-permission-add">
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>所属一级分类：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    <select name="ca_id">
-                        <option value="-1">-请选择所属一级分类-</option>
-                        {volist name='cas' id='v'}
-                        <option name='' value="{$v.caid}">{$v.caname}</option>
-                        {/volist}
-                    </select>
-                </div>
-            </div>
-            <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>二级分类名称：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" class="input-text" value="" name="cbname">
+                    <input type="text" class="input-text" value="{$cbs_data.cbname}" name="cbname">
                     <span style="color:red;">{$errorinfo.cbname|default=''}</span>
                 </div>
             </div>

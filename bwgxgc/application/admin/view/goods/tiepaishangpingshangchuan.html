@@ -183,7 +183,7 @@
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">设备编号 ：</label>
             <input type="text" value="" name="sbbh"
                    class="InputOne col-xs-2 col-sm-3 col-md-3 col-lg-4">
-            </div>
+        </div>
         <div class="InputOneBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="LabelOne col-xs-4 col-sm-3 col-md-3 col-lg-2 col-md-offset-2 col-xs-offset-2">起订量 ：</label>
             <input type="text" value="" name="qdl"
@@ -252,27 +252,27 @@
             <h3>说明：</h3>
             <script id="editor" type="text/plain" style="width:100%;height:500px;" name="instruction"></script>
             <div href="javascript:;"
-                 class="GsjsButton col-xs-1 col-sm-1 col-md-1 col-lg-1  col-md-offset-10 col-xs-offset-10"
-                 onclick="setEnabled()">编辑
-            </div>
-        </div>
-        <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5 col-xs-offset-5">
-            <input type="submit" value="提交">
-        </div>
+            class="GsjsButton col-xs-1 col-sm-1 col-md-1 col-lg-1  col-md-offset-10 col-xs-offset-10"
+            onclick="setEnabled()">编辑
+                </div>
+                </div>
+                <div class="formButton col-xs-2 col-sm-2 col-md-1 col-lg-1  col-md-offset-5 col-xs-offset-5">
+                <input type="submit" value="提交">
+                </div>
 
-    </div>
-</form>
+                </div>
+                </form>
 
 
-<!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="{:config('admin_lib')}/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="{:config('admin_lib')}/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="{:config('admin_static')}/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="{:config('admin_static')}/h-ui.admin/js/H-ui.admin.js"></script>
-<!--/_footer 作为公共模版分离出去-->
-<script src="{:config('home_js')}/jquery.lazyload.js"></script>
-<!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript">
+                <!--_footer 作为公共模版分离出去-->
+                <script type="text/javascript" src="{:config('admin_lib')}/jquery/1.9.1/jquery.min.js"></script>
+            <script type="text/javascript" src="{:config('admin_lib')}/layer/2.4/layer.js"></script>
+            <script type="text/javascript" src="{:config('admin_static')}/h-ui/js/H-ui.min.js"></script>
+            <script type="text/javascript" src="{:config('admin_static')}/h-ui.admin/js/H-ui.admin.js"></script>
+            <!--/_footer 作为公共模版分离出去-->
+            <script src="{:config('home_js')}/jquery.lazyload.js"></script>
+            <!--请在下方写此页面业务相关的脚本-->
+            <script type="text/javascript">
 
                 //实例化编辑器
                 //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
